@@ -18,13 +18,13 @@ export function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
-          isScrolled 
-            ? "backdrop-blur-xl bg-background/90 border-b border-border/30 shadow-lg shadow-black/5" 
-            : "bg-gradient-to-b from-background/30 via-background/15 to-transparent backdrop-blur-sm"
-        }`}
-      >
+              <header
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
+            isScrolled 
+              ? "backdrop-blur-xl bg-background/90 border-b border-border/30 shadow-lg shadow-black/5" 
+              : "bg-transparent"
+          }`}
+        >
         {/* Subtle top accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent" />
         
