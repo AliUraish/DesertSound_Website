@@ -6,6 +6,7 @@
 Slide show with images and sleek design
 
 # Our Brands 
+Sliding/flowing UI with brands going left to right, and two strips
 
 # Services
 
