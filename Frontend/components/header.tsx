@@ -31,7 +31,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm lg:text-base font-normal text-foreground hover:text-foreground/70 transition-colors duration-200"
+                  className="text-sm lg:text-base font-normal text-black hover:text-black/70 transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -41,7 +41,7 @@ export function Header() {
             {/* Contact Button - Right */}
             <div className="hidden md:flex items-center">
               <Button
-                className="bg-foreground text-background hover:bg-foreground/90 rounded-lg px-6 py-2 text-sm font-normal transition-colors duration-200"
+                className="bg-black text-white hover:bg-black/90 rounded-lg px-6 py-2 text-sm font-normal transition-colors duration-200"
               >
                 Contact
               </Button>
@@ -49,7 +49,7 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2 text-foreground hover:text-foreground/70 transition-colors duration-200"
+              className="md:hidden p-2 text-black hover:text-black/70 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -89,7 +89,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-xl font-normal text-foreground hover:text-foreground/70 transition-colors duration-200"
+                  className="block text-xl font-normal text-black hover:text-black/70 transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -109,7 +109,7 @@ export function Header() {
             {/* Mobile CTA */}
             <div className="mt-8">
               <Button 
-                className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-lg py-4 text-base font-normal transition-colors duration-200"
+                className="w-full bg-black text-white hover:bg-black/90 rounded-lg py-4 text-base font-normal transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start Your Project
