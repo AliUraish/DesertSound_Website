@@ -1,17 +1,30 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5DC]">
+      <header className="fixed top-0 left-0 right-0 z-50 pt-4 lg:pt-6">
         <div className="max-w-[90%] mx-auto px-3 lg:px-4">
-          <div className="relative flex items-center justify-between py-4 lg:py-5">
+          <div className={`relative flex items-center justify-between py-4 lg:py-5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
+            isScrolled 
+              ? "bg-[#F5F5DC] shadow-lg backdrop-blur-sm" 
+              : "bg-white/10 backdrop-blur-md border border-white/20"
+          }`}>
             {/* Logo - Left */}
             <div className="flex items-center cursor-pointer">
               <img 
