@@ -20,7 +20,7 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 pt-4 lg:pt-6">
         <div className="max-w-[90%] mx-auto px-3 lg:px-4">
-          <div className={`relative flex items-center justify-between py-4 lg:py-5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
+          <div className={`relative flex items-center justify-between py-2.5 lg:py-1.5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
             isScrolled 
               ? "bg-[#F5F5DC] shadow-lg backdrop-blur-sm" 
               : "bg-white/10 backdrop-blur-md border border-white/20"
