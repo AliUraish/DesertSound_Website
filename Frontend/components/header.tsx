@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5DC]">
         <div className="max-w-[90%] mx-auto px-3 lg:px-4">
           <div className="relative flex items-center justify-between py-4 lg:py-5">
             {/* Logo - Left */}

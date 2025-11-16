@@ -36,7 +36,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen w-full bg-background">
+    <section className="relative min-h-screen w-full bg-[#F5F5DC]">
       <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-20 lg:pt-24">
         {/* Image Container */}
         <div className="relative w-full h-[calc(100vh-8rem)] lg:h-[calc(100vh-10rem)] rounded-lg overflow-hidden">
