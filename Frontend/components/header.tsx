@@ -36,11 +36,11 @@ export function Header() {
                 {/* Logo background glow */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/10 via-yellow-400/5 to-transparent rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 
-                <div className="relative text-2xl lg:text-3xl text-refined text-foreground">
-                  <span className="tracking-tight font-light">Desert</span>
-                  <span className="ml-1 font-normal text-yellow-400">Sound</span>
-                  <span className="text-yellow-400/80 font-serif italic text-lg lg:text-xl ml-1 animate-subtle-float">®</span>
-                </div>
+                <img 
+                  src="/0-removebg-preview.png" 
+                  alt="Desert Sound Logo" 
+                  className="relative h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                />
               </div>
             </div>
 
