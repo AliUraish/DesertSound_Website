@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Tv, Home, Smartphone, Shield, Zap, Headphones, Plus, X } from "lucide-react"
+import { Tv, Home, Smartphone, Shield, Zap, Headphones, Plus } from "lucide-react"
 
 const services = [
   {
@@ -55,11 +55,6 @@ export function ServicesSection() {
     setExpandedIndex(expandedIndex === index ? null : index)
   }
 
-  // Default image when nothing is selected
-  const currentImage = expandedIndex !== null 
-    ? services[expandedIndex].image 
-    : "/luxury-home-theater-cinematic-lighting.jpg"
-
   return (
     <section id="services" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -78,13 +73,15 @@ export function ServicesSection() {
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left: Dynamic Image */}
+          {/* Left: Dynamic Image with enhanced animations */}
           <div className="relative aspect-square lg:aspect-[4/5] w-full max-h-[600px] overflow-hidden rounded-lg">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  expandedIndex === index ? "opacity-100" : "opacity-0"
+                className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  expandedIndex === index 
+                    ? "opacity-100 scale-100 blur-0" 
+                    : "opacity-0 scale-105 blur-sm"
                 }`}
               >
                 <img
@@ -92,12 +89,16 @@ export function ServicesSection() {
                   alt={service.title}
                   className="w-full h-full object-cover"
                 />
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
             ))}
             {/* Default image when nothing is selected */}
             <div
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                expandedIndex === null ? "opacity-100" : "opacity-0"
+              className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                expandedIndex === null 
+                  ? "opacity-100 scale-100 blur-0" 
+                  : "opacity-0 scale-105 blur-sm"
               }`}
             >
               <img
@@ -105,65 +106,86 @@ export function ServicesSection() {
                 alt="Our Services"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
           </div>
 
-          {/* Right: Accordion List */}
+          {/* Right: Accordion List with enhanced animations */}
           <div className="flex flex-col">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="border-b border-border/60 last:border-b-0"
-              >
-                {/* Accordion Header */}
-                <button
-                  onClick={() => handleToggle(index)}
-                  className="w-full flex items-center justify-between py-5 lg:py-6 text-left group transition-colors duration-300 hover:bg-muted/30"
-                >
-                  <div className="flex items-center gap-4">
-                    <service.icon 
-                      className={`w-6 h-6 transition-colors duration-300 ${
-                        expandedIndex === index 
-                          ? "text-foreground" 
-                          : "text-muted-foreground group-hover:text-foreground"
-                      }`} 
-                      strokeWidth={1.5}
-                    />
-                    <span 
-                      className={`text-lg lg:text-xl font-normal transition-colors duration-300 cursor-pointer${
-                        expandedIndex === index 
-                          ? "text-foreground cursor-pointer" 
-                          : "text-foreground cursor-pointer"
-                      }`}
-                    >
-                      {service.title}
-                    </span>
-                  </div>
-                  <div className="flex-shrink-0 ml-4">
-                    {expandedIndex === index ? (
-                      <X className="w-5 h-5 text-foreground transition-transform duration-300 cursor-pointer" />
-                    ) : (
-                      <Plus className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300 cursor-pointer" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Accordion Content */}
+            {services.map((service, index) => {
+              const isExpanded = expandedIndex === index
+              
+              return (
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    expandedIndex === index 
-                      ? "max-h-96 opacity-100" 
-                      : "max-h-0 opacity-0"
+                  key={index}
+                  className={`border-b border-border/40 last:border-b-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    isExpanded ? "border-l-2 border-l-foreground -ml-[2px] pl-[2px]" : ""
                   }`}
                 >
-                  <div className="pb-6 pl-10 pr-4">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+                  {/* Accordion Header */}
+                  <button
+                    onClick={() => handleToggle(index)}
+                    className={`w-full flex items-center justify-between py-5 lg:py-6 text-left group transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer ${
+                      isExpanded 
+                        ? "bg-muted/20" 
+                        : "hover:bg-muted/10 hover:pl-2"
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <service.icon 
+                        className={`w-6 h-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                          isExpanded 
+                            ? "text-foreground scale-110" 
+                            : "text-muted-foreground group-hover:text-foreground group-hover:scale-105"
+                        }`} 
+                        strokeWidth={1.5}
+                      />
+                      <span 
+                        className={`text-lg lg:text-xl font-normal transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                          isExpanded 
+                            ? "text-foreground translate-x-1" 
+                            : "text-foreground group-hover:translate-x-1"
+                        }`}
+                      >
+                        {service.title}
+                      </span>
+                    </div>
+                    <div className="flex-shrink-0 ml-4">
+                      <Plus 
+                        className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer ${
+                          isExpanded 
+                            ? "rotate-45 text-foreground" 
+                            : "rotate-0 text-muted-foreground group-hover:text-foreground group-hover:rotate-90"
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  {/* Accordion Content with slide animation */}
+                  <div
+                    className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      isExpanded 
+                        ? "grid-rows-[1fr] opacity-100" 
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div 
+                        className={`pb-6 pl-10 pr-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+                          isExpanded 
+                            ? "translate-y-0 opacity-100" 
+                            : "translate-y-4 opacity-0"
+                        }`}
+                      >
+                        <p className="text-muted-foreground leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
