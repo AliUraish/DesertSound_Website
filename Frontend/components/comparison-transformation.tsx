@@ -42,7 +42,7 @@ export function ComparisonTransformation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-12 lg:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight max-w-3xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
             Transforming your space into something you'll love
           </h2>
         </div>
