@@ -130,10 +130,10 @@ export function ServicesSection() {
                       strokeWidth={1.5}
                     />
                     <span 
-                      className={`text-lg lg:text-xl font-normal transition-colors duration-300 ${
+                      className={`text-lg lg:text-xl font-normal transition-colors duration-300 cursor-pointer${
                         expandedIndex === index 
-                          ? "text-foreground" 
-                          : "text-foreground"
+                          ? "text-foreground cursor-pointer" 
+                          : "text-foreground cursor-pointer"
                       }`}
                     >
                       {service.title}
@@ -141,9 +141,9 @@ export function ServicesSection() {
                   </div>
                   <div className="flex-shrink-0 ml-4">
                     {expandedIndex === index ? (
-                      <X className="w-5 h-5 text-foreground transition-transform duration-300" />
+                      <X className="w-5 h-5 text-foreground transition-transform duration-300 cursor-pointer" />
                     ) : (
-                      <Plus className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                      <Plus className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300 cursor-pointer" />
                     )}
                   </div>
                 </button>
