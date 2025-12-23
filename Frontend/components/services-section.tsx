@@ -77,9 +77,9 @@ export function ServicesSection() {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Dynamic Image */}
-          <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden rounded-lg lg:sticky lg:top-32">
+          <div className="relative aspect-square lg:aspect-[4/5] w-full max-h-[600px] overflow-hidden rounded-lg">
             {services.map((service, index) => (
               <div
                 key={index}
