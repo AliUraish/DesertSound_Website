@@ -118,9 +118,7 @@ export function ServicesSection() {
               return (
                 <div
                   key={index}
-                  className={`border-b border-border/40 last:border-b-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                    isExpanded ? "border-l-2 border-l-foreground -ml-[2px] pl-[2px]" : ""
-                  }`}
+                  className="border-b border-border/40 last:border-b-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 >
                   {/* Accordion Header */}
                   <button
