@@ -82,7 +82,7 @@ export function ComparisonTransformation() {
               draggable={false}
             />
             {/* After Label */}
-            <div className="absolute top-4 right-4 lg:top-6 lg:right-6 bg-white/90 backdrop-blur-sm text-foreground text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">
+            <div className="absolute top-4 right-4 lg:top-6 lg:right-6 bg-white/90 backdrop-blur-sm text-black text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">
               After
             </div>
           </div>
@@ -98,22 +98,15 @@ export function ComparisonTransformation() {
           >
             {/* Handle Button */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95">
-              {/* Left/Right Arrows */}
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                className="text-foreground"
-              >
-                <path 
-                  d="M8 12L4 8M4 8L8 4M4 8H11M16 12L20 16M20 16L16 20M20 16H13" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              </svg>
+              {/* Solid Triangle Arrows ◀ ▶ */}
+              <div className="flex items-center gap-1">
+                <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" className="text-black">
+                  <path d="M10 6L0 12L0 0L10 6Z" transform="rotate(180 5 6)" />
+                </svg>
+                <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" className="text-black">
+                  <path d="M10 6L0 12L0 0L10 6Z" />
+                </svg>
+              </div>
             </div>
           </div>
 
@@ -122,7 +115,7 @@ export function ComparisonTransformation() {
         </div>
 
         {/* Optional: Instruction hint */}
-        <p className="text-center text-muted-foreground/60 text-sm mt-6 lg:mt-8">
+        <p className="text-center text-black/40 text-sm mt-6 lg:mt-8">
           Drag the slider to compare before and after
         </p>
       </div>
