@@ -4,26 +4,26 @@ import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-black">
+    <section id="contact" className="py-14 lg:py-18 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side - Contact Info */}
           <div className="text-white">
-            <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-8">
+            <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
               Contact
             </span>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
               Get in touch
             </h2>
             
-            <p className="text-white/50 text-lg mb-12 max-w-md">
+            <p className="text-white/50 text-lg mb-8 max-w-md">
               Ready to transform your space? Let's discuss your vision and create something extraordinary together.
             </p>
 
             {/* Contact Info List */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-4 h-4 text-white" />
@@ -67,15 +67,15 @@ export function ContactSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-[#F5F5DC] rounded-2xl p-8 lg:p-10">
+          <div className="bg-[#F5F5DC] rounded-2xl p-6 lg:p-8">
             <h3 className="text-2xl lg:text-3xl font-light text-black mb-2">
               Send us a message
             </h3>
-            <p className="text-black/50 mb-8">
+            <p className="text-black/50 mb-6">
               We'll get back to you within 24 hours
             </p>
 
-            <form className="space-y-5">
+            <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-black/60 text-sm mb-2">First Name</label>
