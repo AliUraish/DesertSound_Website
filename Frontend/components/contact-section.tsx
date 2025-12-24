@@ -1,15 +1,26 @@
 "use client"
 
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function ContactSection() {
+  const leftAnimation = useScrollAnimation({ threshold: 0.2 })
+  const rightAnimation = useScrollAnimation({ threshold: 0.2 })
+  
   return (
     <section id="contact" className="py-14 lg:py-18 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side - Contact Info */}
-          <div className="text-white">
+          <div 
+            ref={leftAnimation.ref}
+            className={`text-white transition-all duration-1000 ease-out ${
+              leftAnimation.isVisible 
+                ? "opacity-100 translate-x-0" 
+                : "opacity-0 -translate-x-12"
+            }`}
+          >
             <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
               Contact
             </span>
@@ -67,7 +78,14 @@ export function ContactSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-[#F5F5DC] rounded-2xl p-6 lg:p-8">
+          <div 
+            ref={rightAnimation.ref}
+            className={`bg-[#F5F5DC] rounded-2xl p-6 lg:p-8 transition-all duration-1000 ease-out delay-200 ${
+              rightAnimation.isVisible 
+                ? "opacity-100 translate-x-0" 
+                : "opacity-0 translate-x-12"
+            }`}
+          >
             <h3 className="text-2xl lg:text-3xl font-light text-black mb-2">
               Send us a message
             </h3>

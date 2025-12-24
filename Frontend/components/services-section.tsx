@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Tv, Home, Smartphone, Shield, Zap, Headphones, Plus } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const services = [
   {
@@ -50,6 +51,11 @@ const services = [
 
 export function ServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  
+  // Scroll animations
+  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
+  const imageAnimation = useScrollAnimation({ threshold: 0.2 })
+  const listAnimation = useScrollAnimation({ threshold: 0.1 })
 
   const handleToggle = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index)
@@ -59,7 +65,14 @@ export function ServicesSection() {
     <section id="services" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div 
+          ref={headerAnimation.ref}
+          className={`text-center mb-16 lg:mb-20 transition-all duration-700 ease-out ${
+            headerAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Services
           </span>
@@ -74,7 +87,14 @@ export function ServicesSection() {
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Dynamic Image with enhanced animations */}
-          <div className="relative aspect-square lg:aspect-[4/5] w-full max-h-[600px] overflow-hidden rounded-lg">
+          <div 
+            ref={imageAnimation.ref}
+            className={`relative aspect-square lg:aspect-[4/5] w-full max-h-[600px] overflow-hidden rounded-lg transition-all duration-1000 ease-out ${
+              imageAnimation.isVisible 
+                ? "opacity-100 translate-x-0" 
+                : "opacity-0 -translate-x-12"
+            }`}
+          >
             {services.map((service, index) => (
               <div
                 key={index}
@@ -111,7 +131,14 @@ export function ServicesSection() {
           </div>
 
           {/* Right: Accordion List with enhanced animations */}
-          <div className="flex flex-col">
+          <div 
+            ref={listAnimation.ref}
+            className={`flex flex-col transition-all duration-1000 ease-out delay-200 ${
+              listAnimation.isVisible 
+                ? "opacity-100 translate-x-0" 
+                : "opacity-0 translate-x-12"
+            }`}
+          >
             {services.map((service, index) => {
               const isExpanded = expandedIndex === index
               

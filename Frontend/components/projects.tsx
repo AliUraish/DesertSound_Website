@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ArrowLeft, ArrowRight, MapPin, Calendar, Maximize, ArrowUpRight } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const projects = [
   {
@@ -79,12 +80,23 @@ export function ProjectsSlideshow() {
   }
 
   const project = projects[currentProject]
+  
+  // Scroll animations
+  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
+  const contentAnimation = useScrollAnimation({ threshold: 0.1 })
 
   return (
     <section id="projects" className="py-24 lg:py-32 bg-background">
       <div className="max-w-[90%] xl:max-w-[85%] mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div 
+          ref={headerAnimation.ref}
+          className={`text-center mb-12 lg:mb-16 transition-all duration-700 ease-out ${
+            headerAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Projects
           </span>
@@ -97,7 +109,14 @@ export function ProjectsSlideshow() {
         </div>
 
         {/* Project Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
+        <div 
+          ref={contentAnimation.ref}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch transition-all duration-1000 ease-out ${
+            contentAnimation.isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-12"
+          }`}
+        >
           {/* Left: Project Image */}
           <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[650px] rounded-xl overflow-hidden group">
             {projects.map((p, index) => (

@@ -1,5 +1,7 @@
 "use client"
 
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+
 const testimonials = [
   {
     name: "Ahmed Khan",
@@ -96,10 +98,20 @@ function MarqueeRow({ testimonials, direction = "left" }: { testimonials: typeof
 }
 
 export function Testimonials() {
+  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
+  const contentAnimation = useScrollAnimation({ threshold: 0.1 })
+  
   return (
-    <section className="py-14 lg:py-16 bg-black overflow-hidden">
+    <section id="testimonials" className="py-14 lg:py-16 bg-black overflow-hidden">
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10 lg:mb-12">
+      <div 
+        ref={headerAnimation.ref}
+        className={`max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10 lg:mb-12 transition-all duration-700 ease-out ${
+          headerAnimation.isVisible 
+            ? "opacity-100 translate-y-0" 
+            : "opacity-0 translate-y-8"
+        }`}
+      >
         <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
           Testimonials
         </span>
@@ -112,7 +124,14 @@ export function Testimonials() {
       </div>
 
       {/* Testimonials Marquee */}
-      <div className="relative">
+      <div 
+        ref={contentAnimation.ref}
+        className={`relative transition-all duration-1000 ease-out delay-200 ${
+          contentAnimation.isVisible 
+            ? "opacity-100" 
+            : "opacity-0"
+        }`}
+      >
         {/* Left fade gradient */}
         <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         

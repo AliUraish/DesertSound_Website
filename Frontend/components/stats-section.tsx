@@ -34,7 +34,9 @@ export function StatsSection() {
     <section ref={sectionRef} className="py-12 lg:py-14 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-10 lg:mb-12">
+        <div className={`text-center mb-10 lg:mb-12 transition-all duration-700 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           <span className="inline-block bg-black text-white text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Our Impact
           </span>
@@ -47,13 +49,16 @@ export function StatsSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
+        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 transition-all duration-1000 ease-out delay-300 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`text-center py-4 lg:py-6 ${
+              className={`text-center py-4 lg:py-6 transition-all duration-700 ease-out ${
                 index < stats.length - 1 ? "lg:border-r lg:border-black/10" : ""
               }`}
+              style={{ transitionDelay: isVisible ? `${400 + index * 100}ms` : "0ms" }}
             >
               {/* Number */}
               <div className="mb-4">
