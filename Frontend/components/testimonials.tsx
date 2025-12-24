@@ -97,16 +97,16 @@ function MarqueeRow({ testimonials, direction = "left" }: { testimonials: typeof
 
 export function Testimonials() {
   return (
-    <section className="py-20 lg:py-24 bg-white overflow-hidden">
+    <section className="py-14 lg:py-16 bg-black overflow-hidden">
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-12 lg:mb-16">
-        <span className="inline-block bg-black text-white text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10 lg:mb-12">
+        <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
           Testimonials
         </span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4">
           Hear from our clients
         </h2>
-        <p className="text-black/50 text-lg max-w-2xl mx-auto">
+        <p className="text-white/50 text-lg max-w-2xl mx-auto">
           Hear from our happy clients about their experience working with Desert Sound and the quality of our craftsmanship
         </p>
       </div>
@@ -114,13 +114,13 @@ export function Testimonials() {
       {/* Testimonials Marquee */}
       <div className="relative">
         {/* Left fade gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         
         {/* Right fade gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
         {/* Row 1 - scrolls left */}
-        <div className="mb-6 lg:mb-8">
+        <div className="mb-4 lg:mb-6">
           <MarqueeRow testimonials={row1} direction="left" />
         </div>
 
