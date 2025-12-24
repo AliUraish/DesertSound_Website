@@ -1,8 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowRight, Play, ExternalLink } from "lucide-react"
+import { ArrowLeft, ArrowRight, MapPin, Calendar, Maximize, ArrowUpRight } from "lucide-react"
 
 const projects = [
   {
@@ -15,7 +14,6 @@ const projects = [
       "A state-of-the-art home cinema featuring 4K projection, Dolby Atmos surround sound, and custom Italian leather seating for the ultimate viewing experience.",
     year: "2024",
     size: "450 sq ft",
-    investment: "PKR 2.5M",
   },
   {
     id: 2,
@@ -27,7 +25,6 @@ const projects = [
       "Complete smart home transformation with integrated lighting, climate control, security systems, and voice-activated controls throughout the residence.",
     year: "2024",
     size: "3,200 sq ft",
-    investment: "PKR 1.8M",
   },
   {
     id: 3,
@@ -39,199 +36,189 @@ const projects = [
       "Professional-grade audiovisual setup with wireless presentation systems, video conferencing, and automated room controls for seamless business operations.",
     year: "2023",
     size: "800 sq ft",
-    investment: "PKR 3.2M",
   },
 ]
 
 export function ProjectsSlideshow() {
   const [currentProject, setCurrentProject] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
+  // Auto-advance every 8 seconds
   useEffect(() => {
-    if (!isAutoPlaying) return
-    
     const timer = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length)
-    }, 8000) // Slower for premium feel
-    
+      handleNext()
+    }, 8000)
     return () => clearInterval(timer)
-  }, [isAutoPlaying])
+  }, [currentProject])
 
-  const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length)
-    setIsAutoPlaying(false)
+  const handleNext = () => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentProject((prev) => (prev + 1) % projects.length)
+      setIsTransitioning(false)
+    }, 300)
   }
 
-  const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
-    setIsAutoPlaying(false)
+  const handlePrev = () => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const goToProject = (index: number) => {
-    setCurrentProject(index)
-    setIsAutoPlaying(false)
+    if (isTransitioning || index === currentProject) return
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentProject(index)
+      setIsTransitioning(false)
+    }, 300)
   }
 
-  const currentProjectData = projects[currentProject]
+  const project = projects[currentProject]
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+    <section id="projects" className="py-24 lg:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-20 lg:mb-28">
-          <div className="text-premium text-muted-foreground mb-6 animate-fade-in-up">
-            Featured Projects
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-foreground max-w-5xl animate-fade-in-up">
-            Transforming spaces into
-            <span className="accent-text text-muted-foreground block mt-2"> extraordinary experiences.</span>
+        <div className="text-center mb-16 lg:mb-20">
+          <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+            Projects
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
+            Our recent work
           </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Transforming spaces into extraordinary experiences
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
-          {/* Project Image */}
-          <div className="lg:col-span-7 relative group">
-            <div className="aspect-[4/3] overflow-hidden surface-floating rounded-xl lg:rounded-2xl">
-              <img
-                src={currentProjectData.image || "/placeholder.svg"}
-                alt={currentProjectData.title}
-                className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <button className="glass-effect border border-white/30 rounded-full p-6 hover:bg-white/20 transition-all duration-300 hover-lift group/play">
-                  <Play className="w-8 h-8 text-white ml-1 group-hover/play:scale-110 transition-transform duration-300" />
-                </button>
+        {/* Project Display */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {/* Left: Project Image */}
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[550px] rounded-xl overflow-hidden group">
+            {projects.map((p, index) => (
+              <div
+                key={p.id}
+                className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  index === currentProject
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-105"
+                }`}
+              >
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
+                />
               </div>
-
-              {/* Project Number Indicator */}
-              <div className="absolute top-6 left-6 glass-effect border border-border/30 px-4 py-2 rounded-lg">
-                <span className="text-premium text-foreground">
-                  {String(currentProject + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
-                </span>
-              </div>
+            ))}
+            
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            
+            {/* Project counter */}
+            <div className="absolute bottom-6 left-6 text-white/80 text-sm font-light tracking-wider">
+              <span className="text-white font-medium">{String(currentProject + 1).padStart(2, '0')}</span>
+              <span className="mx-2">/</span>
+              <span>{String(projects.length).padStart(2, '0')}</span>
             </div>
           </div>
 
-          {/* Project Details */}
-          <div className="lg:col-span-5 space-y-8 lg:space-y-10">
-            {/* Category & Title */}
-            <div className="space-y-4">
-              <div className="text-premium text-[color:var(--color-accent-gold)]">
-                {currentProjectData.category}
-              </div>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
-                {currentProjectData.title}
-              </h3>
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                {currentProjectData.description}
+          {/* Right: Project Details */}
+          <div className="flex flex-col justify-between py-2 lg:py-4">
+            {/* Content */}
+            <div 
+              className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+              }`}
+            >
+              {/* Category */}
+              <p className="text-sm uppercase tracking-[0.15em] text-muted-foreground mb-4">
+                {project.category}
               </p>
-            </div>
 
-            {/* Project Stats */}
-            <div className="surface-elevated border border-border/50 rounded-xl p-6 lg:p-8">
-              <div className="grid grid-cols-2 gap-6 lg:gap-8">
-                <div>
-                  <div className="text-premium text-muted-foreground mb-2">Location</div>
-                  <div className="text-foreground font-medium">{currentProjectData.location}</div>
+              {/* Title */}
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground mb-6 leading-tight">
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-lg">
+                {project.description}
+              </p>
+
+              {/* Project Meta */}
+              <div className="flex flex-wrap gap-6 mb-10">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm">{project.location}</span>
                 </div>
-                <div>
-                  <div className="text-premium text-muted-foreground mb-2">Year</div>
-                  <div className="text-foreground font-medium">{currentProjectData.year}</div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-sm">{project.year}</span>
                 </div>
-                <div>
-                  <div className="text-premium text-muted-foreground mb-2">Size</div>
-                  <div className="text-foreground font-medium">{currentProjectData.size}</div>
-                </div>
-                <div>
-                  <div className="text-premium text-muted-foreground mb-2">Investment</div>
-                  <div className="text-foreground font-medium">{currentProjectData.investment}</div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Maximize className="w-4 h-4" />
+                  <span className="text-sm">{project.size}</span>
                 </div>
               </div>
+
+              {/* CTA Button */}
+              <button className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 rounded-lg text-sm font-medium transition-all duration-300 hover:opacity-90 hover:gap-4 group">
+                <span>View Project</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between pt-4">
-              <div className="flex items-center space-x-6">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground p-0 h-auto text-premium group"
-                  onClick={prevProject}
+            <div className="flex items-center justify-between pt-8 mt-auto border-t border-border/40">
+              {/* Arrows */}
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={handlePrev}
+                  className="w-12 h-12 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300 hover:scale-105 active:scale-95"
+                  aria-label="Previous project"
                 >
-                  <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
-                  <span className="group-hover:tracking-wider transition-all duration-300">Previous</span>
-                </Button>
-
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-muted-foreground hover:text-foreground p-0 h-auto text-premium group"
-                  onClick={nextProject}
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="w-12 h-12 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300 hover:scale-105 active:scale-95"
+                  aria-label="Next project"
                 >
-                  <span className="group-hover:tracking-wider transition-all duration-300">Next</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
 
-              {/* Project Indicators */}
-              <div className="flex space-x-3">
+              {/* Dot Indicators */}
+              <div className="flex items-center gap-2">
                 {projects.map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2 rounded-full transition-all duration-500 hover-lift ${
-                      index === currentProject 
-                        ? "bg-[color:var(--color-accent-gold)] w-12" 
-                        : "bg-border hover:bg-muted-foreground w-2"
-                    }`}
                     onClick={() => goToProject(index)}
+                    className={`h-2 rounded-full transition-all duration-500 ${
+                      index === currentProject
+                        ? "w-8 bg-foreground"
+                        : "w-2 bg-border hover:bg-muted-foreground"
+                    }`}
                     aria-label={`Go to project ${index + 1}`}
                   />
                 ))}
               </div>
             </div>
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <button className="surface-elevated hover:bg-primary hover:text-primary-foreground border border-border/50 hover:border-primary/30 px-8 py-4 text-premium transition-all duration-500 hover-lift group inline-flex items-center space-x-3">
-                <span className="group-hover:tracking-wider transition-all duration-300">
-                  View Project Details
-                </span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </button>
-            </div>
           </div>
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="mt-20 lg:mt-28 flex flex-col sm:flex-row items-center justify-between space-y-6 sm:space-y-0">
-          <div className="flex items-center space-x-4">
-            <span className="text-premium text-muted-foreground">Autoplay</span>
-            <button
-              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className={`w-12 h-6 rounded-full border transition-all duration-300 relative ${
-                isAutoPlaying 
-                  ? 'bg-[color:var(--color-accent-gold)] border-[color:var(--color-accent-gold)]' 
-                  : 'bg-muted border-border'
-              }`}
-            >
-              <div 
-                className={`w-4 h-4 bg-white rounded-full absolute top-1 transition-all duration-300 ${
-                  isAutoPlaying ? 'left-7' : 'left-1'
-                }`}
-              />
-            </button>
-          </div>
-
-          <div className="text-center">
-            <button className="glass-effect text-foreground hover:bg-primary hover:text-primary-foreground border border-border/50 hover:border-primary/30 px-10 py-4 text-premium transition-all duration-700 hover-lift group">
-              <span className="group-hover:tracking-wider transition-all duration-300">
-                View All Projects
-              </span>
-            </button>
-          </div>
+        {/* View All Projects CTA */}
+        <div className="text-center mt-16 lg:mt-20">
+          <button className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm uppercase tracking-[0.15em] transition-colors duration-300 group">
+            <span>View all projects</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
         </div>
       </div>
     </section>
