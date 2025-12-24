@@ -1,16 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 const stats = [
-  { number: 500, suffix: "+", label: "Projects Completed", sublabel: "Across Pakistan" },
-  { number: 15, suffix: "+", label: "Years Experience", sublabel: "In the Industry" },
-  { number: 100, suffix: "%", label: "Client Satisfaction", sublabel: "Guaranteed Quality" },
-  { number: 50, suffix: "+", label: "Team Members", sublabel: "Expert Professionals" },
+  { number: 500, suffix: "+", label: "Projects Completed" },
+  { number: 15, suffix: "+", label: "Years Experience" },
+  { number: 100, suffix: "%", label: "Client Satisfaction" },
+  { number: 50, suffix: "+", label: "Team Members" },
 ]
 
 export function StatsSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,57 +23,59 @@ export function StatsSection() {
       { threshold: 0.3 },
     )
 
-    const element = document.getElementById("stats-section")
-    if (element) observer.observe(element)
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section id="stats-section" className="py-24 lg:py-32 bg-muted/20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
+    <section ref={sectionRef} className="py-24 lg:py-32 bg-[#F5F5DC]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <div className="text-premium text-muted-foreground mb-6">
+          <span className="inline-block bg-black text-white text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Our Impact
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight max-w-3xl mx-auto">
-            Excellence measured in 
-            <span className="accent-text text-muted-foreground block mt-2">numbers and satisfaction</span>
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-4">
+            Numbers that speak
           </h2>
+          <p className="text-black/50 text-lg max-w-xl mx-auto">
+            A track record of excellence and satisfied clients
+          </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
           {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="text-center group hover-lift animate-fade-in-up" 
-              style={{ animationDelay: `${index * 0.15}s` }}
+            <div
+              key={index}
+              className={`text-center py-8 lg:py-12 ${
+                index < stats.length - 1 ? "lg:border-r lg:border-black/10" : ""
+              }`}
             >
-              <div className="surface-elevated border border-border/30 rounded-xl p-8 lg:p-10 h-full flex flex-col justify-center transition-all duration-500 group-hover:border-border group-hover:shadow-lg">
-                <div className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 text-foreground transition-all duration-500 group-hover:text-[color:var(--color-accent-gold)]">
-                  <AnimatedNumber target={stat.number} suffix={stat.suffix} isVisible={isVisible} />
-                </div>
-                <div className="space-y-2">
-                  <div className="text-base lg:text-lg text-foreground font-medium">
-                    {stat.label}
-                  </div>
-                  <div className="text-premium text-muted-foreground">
-                    {stat.sublabel}
-                  </div>
-                </div>
+              {/* Number */}
+              <div className="mb-4">
+                <AnimatedNumber 
+                  target={stat.number} 
+                  suffix={stat.suffix} 
+                  isVisible={isVisible} 
+                />
               </div>
+              
+              {/* Label */}
+              <p className="text-black/60 text-sm lg:text-base tracking-wide">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Bottom Content */}
-        <div className="mt-16 lg:mt-20 text-center">
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            These numbers represent more than statistics — they reflect our commitment to 
-            <span className="text-foreground font-medium"> exceptional craftsmanship</span> and 
-            <span className="text-foreground font-medium"> client satisfaction</span>.
+        {/* Subtle bottom border */}
+        <div className="mt-16 lg:mt-20 pt-12 border-t border-black/10">
+          <p className="text-center text-black/40 text-sm lg:text-base max-w-2xl mx-auto">
+            Every project is a testament to our commitment to quality and innovation
           </p>
         </div>
       </div>
@@ -80,34 +83,43 @@ export function StatsSection() {
   )
 }
 
-function AnimatedNumber({ target, suffix, isVisible }: { target: number; suffix: string; isVisible: boolean }) {
+function AnimatedNumber({ 
+  target, 
+  suffix, 
+  isVisible 
+}: { 
+  target: number
+  suffix: string
+  isVisible: boolean 
+}) {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
     if (!isVisible) return
 
-    const duration = 2000 // 2 seconds for smoother animation
+    const duration = 2000
     const steps = 60
     const increment = target / steps
     const stepDuration = duration / steps
 
+    let currentValue = 0
     const timer = setInterval(() => {
-      setCurrent((prev) => {
-        if (prev >= target) {
-          clearInterval(timer)
-          return target
-        }
-        return Math.min(prev + increment, target)
-      })
+      currentValue += increment
+      if (currentValue >= target) {
+        setCurrent(target)
+        clearInterval(timer)
+      } else {
+        setCurrent(Math.floor(currentValue))
+      }
     }, stepDuration)
 
     return () => clearInterval(timer)
   }, [target, isVisible])
 
   return (
-    <span className="font-extralight tracking-tight">
-      {Math.floor(current)}
-      <span className="text-[color:var(--color-accent-gold)]">{suffix}</span>
+    <span className="text-5xl md:text-6xl lg:text-7xl font-light text-black tracking-tight">
+      {current}
+      <span className="text-black/40">{suffix}</span>
     </span>
   )
 }
