@@ -34,15 +34,15 @@ export function StatsSection() {
     <section ref={sectionRef} className="py-12 lg:py-14 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-8 lg:mb-10">
+        <div className="text-center mb-10 lg:mb-12">
           <span className="inline-block bg-black text-white text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Our Impact
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-6">
             Numbers that speak
           </h2>
-          <p className="text-black/50 text-lg max-w-xl mx-auto">
-            A track record of excellence and satisfied clients
+          <p className="text-black/60 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+            Since 2009, Desert Sound has been at the forefront of home entertainment and automation technology in Pakistan. We combine cutting-edge technology with artistic vision to create spaces that inspire and delight.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export function StatsSection() {
         {/* Subtle bottom border */}
         <div className="mt-8 lg:mt-10 pt-6 border-t border-black/10">
           <p className="text-center text-black/40 text-sm lg:text-base max-w-2xl mx-auto">
-            Every project is a testament to our commitment to quality and innovation
+            From intimate home theatres to comprehensive smart home ecosystems — exceeding expectations since day one
           </p>
         </div>
       </div>

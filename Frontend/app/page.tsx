@@ -5,7 +5,6 @@ import { ServicesSection } from "@/components/services-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
 import { ProjectsSlideshow } from "@/components/projects"
 import { StatsSection } from "@/components/stats-section"
-import { AboutSection } from "@/components/about-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
@@ -19,7 +18,6 @@ export default function HomePage() {
       <ComparisonTransformation />
       <ProjectsSlideshow />
       <StatsSection />
-      <AboutSection />
       <ContactSection />
       <Footer />
     </main>
