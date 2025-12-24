@@ -31,10 +31,10 @@ export function StatsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 lg:py-32 bg-[#F5F5DC]">
+    <section ref={sectionRef} className="py-12 lg:py-14 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-8 lg:mb-10">
           <span className="inline-block bg-black text-white text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Our Impact
           </span>
@@ -47,11 +47,11 @@ export function StatsSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`text-center py-8 lg:py-12 ${
+              className={`text-center py-4 lg:py-6 ${
                 index < stats.length - 1 ? "lg:border-r lg:border-black/10" : ""
               }`}
             >
@@ -73,7 +73,7 @@ export function StatsSection() {
         </div>
 
         {/* Subtle bottom border */}
-        <div className="mt-16 lg:mt-20 pt-12 border-t border-black/10">
+        <div className="mt-8 lg:mt-10 pt-6 border-t border-black/10">
           <p className="text-center text-black/40 text-sm lg:text-base max-w-2xl mx-auto">
             Every project is a testament to our commitment to quality and innovation
           </p>
