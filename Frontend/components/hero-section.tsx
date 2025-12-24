@@ -112,7 +112,7 @@ export function HeroSection() {
               >
                 <a href="#contact">
                   <Button
-                    className="bg-background text-foreground hover:bg-background/90 rounded-lg px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-normal transition-colors duration-200"
+                    className="bg-background text-foreground hover:bg-background/90 rounded-lg px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-normal transition-colors duration-200 cursor-pointer"
                   >
                     Work with us
                   </Button>
