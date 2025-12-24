@@ -3,15 +3,15 @@ import { Instagram, Facebook, Linkedin } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-[#F5F5DC]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 lg:py-10">
         {/* Main Footer Row */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-0 mb-12 lg:mb-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0 mb-6 lg:mb-8">
           {/* Logo */}
           <div>
             <img 
               src="/0-removebg-preview.png" 
               alt="Desert Sound Logo" 
-              className="h-12 lg:h-14 w-auto object-contain"
+              className="h-12 lg:h-25 w-auto object-contain"
             />
           </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-black/10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-black/10">
           <p className="text-black/40 text-sm">
             © 2024 Desert Sound. All rights reserved.
           </p>
