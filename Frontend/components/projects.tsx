@@ -85,7 +85,7 @@ export function ProjectsSlideshow() {
         </div>
 
         {/* Horizontal Scroll Track */}
-        <motion.div style={{ x }} className="flex gap-8 px-[10%] w-max">
+        <motion.div style={{ x }} className="flex gap-4 md:gap-8 px-4 md:px-[10%] w-max">
           {projects.map((project) => (
             <div 
               key={project.id}
