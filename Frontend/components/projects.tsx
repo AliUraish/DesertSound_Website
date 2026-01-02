@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { ArrowLeft, ArrowRight, MapPin, Calendar, Maximize, ArrowUpRight } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { ArrowUpRight, MapPin, Calendar, Maximize } from "lucide-react"
 
 const projects = [
   {
@@ -11,8 +11,7 @@ const projects = [
     category: "Luxury Villa Theatre",
     location: "Karachi, Pakistan",
     image: "/luxury-modern-home-theater-dark-atmospheric.jpg",
-    description:
-      "A state-of-the-art home cinema featuring 4K projection, Dolby Atmos surround sound, and custom Italian leather seating for the ultimate viewing experience.",
+    description: "A state-of-the-art home cinema featuring 4K projection, Dolby Atmos surround sound, and custom Italian leather seating.",
     year: "2024",
     size: "450 sq ft",
   },
@@ -22,8 +21,7 @@ const projects = [
     category: "Penthouse Automation",
     location: "Lahore, Pakistan",
     image: "/modern-smart-home-minimalist-blue-tones.jpg",
-    description:
-      "Complete smart home transformation with integrated lighting, climate control, security systems, and voice-activated controls throughout the residence.",
+    description: "Complete smart home transformation with integrated lighting, climate control, and voice-activated controls.",
     year: "2024",
     size: "3,200 sq ft",
   },
@@ -33,193 +31,122 @@ const projects = [
     category: "Corporate Installation",
     location: "Islamabad, Pakistan",
     image: "/corporate-boardroom-premium-av-equipment-modern.jpg",
-    description:
-      "Professional-grade audiovisual setup with wireless presentation systems, video conferencing, and automated room controls for seamless business operations.",
+    description: "Professional-grade audiovisual setup with wireless presentation systems and automated room controls.",
     year: "2023",
     size: "800 sq ft",
+  },
+  {
+    id: 4,
+    title: "Riverside Residence",
+    category: "Home Automation",
+    location: "Dubai, UAE",
+    image: "/luxury-home-theater-cinematic-lighting.jpg",
+    description: "A seamless blend of technology and design, featuring automated shades, lighting scenes, and multi-room audio.",
+    year: "2024",
+    size: "5,000 sq ft",
   },
 ]
 
 export function ProjectsSlideshow() {
-  const [currentProject, setCurrentProject] = useState(0)
+  const targetRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"]
+  })
 
-  // Auto-advance every 8 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext()
-    }, 8000)
-    return () => clearInterval(timer)
-  }, [currentProject])
-
-  const handleNext = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length)
-  }
-
-  const handlePrev = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
-  }
-
-  const goToProject = (index: number) => {
-    setCurrentProject(index)
-  }
-
-  const project = projects[currentProject]
+  // Transform vertical scroll into horizontal movement
+  // We want the scroll to start when the section hits the viewport
+  // and finish when we've scrolled past it
+  const x = useTransform(scrollYProgress, [0.1, 0.9], ["10%", "-95%"])
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-background">
-      <div className="max-w-[90%] xl:max-w-[85%] mx-auto px-4 lg:px-8">
-        {/* Section Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 lg:mb-16"
-        >
-          <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
-            Projects
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
-            Our recent work
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Transforming spaces into extraordinary experiences
-          </p>
-        </motion.div>
-
-        {/* Project Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
-          {/* Left: Project Image */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[650px] rounded-xl overflow-hidden group">
-            <AnimatePresence mode="popLayout">
-              <motion.div
-                key={currentProject}
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </AnimatePresence>
-            
-            {/* Subtle gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none z-10" />
-            
-            {/* Project counter */}
-            <div className="absolute bottom-6 left-6 text-white/80 text-sm font-light tracking-wider z-20">
-              <span className="text-white font-medium">{String(currentProject + 1).padStart(2, '0')}</span>
-              <span className="mx-2">/</span>
-              <span>{String(projects.length).padStart(2, '0')}</span>
+    <section ref={targetRef} className="relative h-[300vh] bg-background">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        
+        {/* Header */}
+        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div>
+              <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+                Selected Works
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
+                Recent Projects
+              </h2>
             </div>
-          </div>
+            <p className="text-muted-foreground text-lg max-w-sm">
+              Explore our portfolio of premium installations and smart home solutions.
+            </p>
+          </motion.div>
+        </div>
 
-          {/* Right: Project Details */}
-          <div className="flex flex-col justify-between py-2 lg:py-4">
-            {/* Content */}
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={currentProject}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                {/* Category */}
-                <p className="text-sm uppercase tracking-[0.15em] text-muted-foreground mb-4">
-                  {project.category}
-                </p>
+        {/* Horizontal Scroll Track */}
+        <motion.div style={{ x }} className="flex gap-8 px-[10%] w-max">
+          {projects.map((project) => (
+            <div 
+              key={project.id}
+              className="group relative h-[50vh] md:h-[60vh] aspect-[3/4] md:aspect-[4/3] rounded-2xl overflow-hidden bg-muted"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+              
+              <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                <div className="transform translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                  <p className="text-sm uppercase tracking-wider text-white/70 mb-2">
+                    {project.category}
+                  </p>
+                  <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+                    {project.title}
+                  </h3>
+                  
+                  <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-500">
+                    <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4 text-sm text-white/60 mb-6">
+                      <span className="flex items-center gap-2">
+                        <MapPin size={14} /> {project.location}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <Calendar size={14} /> {project.year}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <Maximize size={14} /> {project.size}
+                      </span>
+                    </div>
 
-                {/* Title */}
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground mb-6 leading-tight">
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-lg">
-                  {project.description}
-                </p>
-
-                {/* Project Meta */}
-                <div className="flex flex-wrap gap-6 mb-10">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm">{project.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">{project.year}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Maximize className="w-4 h-4" />
-                    <span className="text-sm">{project.size}</span>
+                    <button className="flex items-center gap-2 text-sm font-medium uppercase tracking-wide hover:gap-3 transition-all">
+                      View Case Study <ArrowUpRight size={14} />
+                    </button>
                   </div>
                 </div>
-
-                {/* CTA Button */}
-                <motion.button 
-                  whileHover={{ gap: "1rem" }}
-                  className="inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 rounded-lg text-sm font-medium transition-all duration-300 hover:opacity-90 group"
-                >
-                  <span>View Project</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </motion.button>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between pt-8 mt-auto border-t border-border/40">
-              {/* Arrows */}
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={handlePrev}
-                  className="w-12 h-12 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300 hover:scale-105 active:scale-95"
-                  aria-label="Previous project"
-                >
-                  <ArrowLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-12 h-12 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300 hover:scale-105 active:scale-95"
-                  aria-label="Next project"
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Dot Indicators */}
-              <div className="flex items-center gap-2">
-                {projects.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToProject(index)}
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      index === currentProject
-                        ? "w-8 bg-foreground"
-                        : "w-2 bg-border hover:bg-muted-foreground"
-                    }`}
-                    aria-label={`Go to project ${index + 1}`}
-                  />
-                ))}
               </div>
             </div>
+          ))}
+          
+          {/* "View All" Card */}
+          <div className="h-[50vh] md:h-[60vh] aspect-[3/4] md:aspect-[4/3] rounded-2xl overflow-hidden bg-foreground text-background flex items-center justify-center">
+            <a href="/projects" className="text-center group cursor-pointer">
+              <span className="block text-6xl md:text-8xl font-light mb-4 transition-transform duration-500 group-hover:scale-110">
+                →
+              </span>
+              <span className="text-lg uppercase tracking-widest border-b border-background/20 pb-1 group-hover:border-background transition-colors">
+                View All Projects
+              </span>
+            </a>
           </div>
-        </div>
-
-        {/* View All Projects CTA */}
-        <div className="text-center mt-16 lg:mt-20">
-          <button className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm uppercase tracking-[0.15em] transition-colors duration-300 group">
-            <span>View all projects</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
-
