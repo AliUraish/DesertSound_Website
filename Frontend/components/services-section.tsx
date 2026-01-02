@@ -160,7 +160,7 @@ export function ServicesSection() {
             Services
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
-            Our Expertise
+            What we do
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
              Tailored solutions for modern living and working spaces
