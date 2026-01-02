@@ -55,16 +55,15 @@ export function ProjectsSlideshow() {
   })
 
   // Transform vertical scroll into horizontal movement
-  // We want the scroll to start when the section hits the viewport
-  // and finish when we've scrolled past it
-  const x = useTransform(scrollYProgress, [0.1, 0.9], ["10%", "-95%"])
+  // Adjusted timing: start the scroll later (0.25) so the first card is fully visible before moving
+  const x = useTransform(scrollYProgress, [0.25, 0.95], ["0%", "-95%"])
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-background">
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         
         {/* Header */}
-        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12">
+        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-20 md:pt-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +71,7 @@ export function ProjectsSlideshow() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-6"
           >
             <div>
-              <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+              <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6 mt-8 md:mt-0">
                 Selected Works
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
