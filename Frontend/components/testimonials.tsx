@@ -1,6 +1,8 @@
 "use client"
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 
 const testimonials = [
   {
@@ -57,8 +59,11 @@ function StarRating() {
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <div className="flex-shrink-0 w-[350px] lg:w-[400px] mx-3 lg:mx-4">
-      <div className="bg-[#F5F5DC] rounded-xl p-6 lg:p-8 h-full">
+    <motion.div 
+      whileHover={{ y: -5 }}
+      className="flex-shrink-0 w-[350px] lg:w-[400px] mx-3 lg:mx-4"
+    >
+      <div className="bg-[#F5F5DC] rounded-xl p-6 lg:p-8 h-full shadow-lg cursor-grab active:cursor-grabbing">
         <StarRating />
         <p className="text-black/80 text-sm lg:text-base leading-relaxed mb-6">
           "{testimonial.quote}"
@@ -74,64 +79,69 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
           <span className="text-black font-medium text-sm">{testimonial.name}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
-function MarqueeRow({ testimonials, direction = "left" }: { testimonials: typeof row1; direction?: "left" | "right" }) {
-  const animationClass = direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
+function ParallaxMarquee({ testimonials, baseVelocity = 100 }: { testimonials: typeof row1; baseVelocity: number }) {
+  // Create an infinite loop of items
+  const items = [...testimonials, ...testimonials, ...testimonials, ...testimonials]
   
   return (
-    <div className="flex group">
-      <div className={`flex ${animationClass} group-hover:[animation-play-state:paused]`}>
-        {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={`first-${index}`} testimonial={testimonial} />
+    <div className="flex overflow-hidden -mx-4 lg:-mx-8">
+       <motion.div 
+        className="flex"
+        animate={{
+          x: baseVelocity < 0 ? [-1000, 0] : [0, -1000],
+        }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 50,
+            ease: "linear",
+          },
+        }}
+       >
+        {items.map((testimonial, index) => (
+          <TestimonialCard key={index} testimonial={testimonial} />
         ))}
-      </div>
-      <div className={`flex ${animationClass} group-hover:[animation-play-state:paused]`} aria-hidden="true">
-        {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={`second-${index}`} testimonial={testimonial} />
-        ))}
-      </div>
+       </motion.div>
     </div>
   )
 }
 
 export function Testimonials() {
-  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
-  const contentAnimation = useScrollAnimation({ threshold: 0.1 })
-  
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+
+  // Fade in elements as they enter view
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1])
+  const y = useTransform(scrollYProgress, [0, 0.2], [100, 0])
+
   return (
-    <section id="testimonials" className="py-14 lg:py-16 bg-black overflow-hidden">
+    <section ref={containerRef} id="testimonials" className="py-14 lg:py-16 bg-black overflow-hidden relative z-10">
       {/* Section Header */}
-      <div 
-        ref={headerAnimation.ref}
-        className={`max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10 lg:mb-12 transition-all duration-700 ease-out ${
-          headerAnimation.isVisible 
-            ? "opacity-100 translate-y-0" 
-            : "opacity-0 translate-y-8"
-        }`}
+      <motion.div 
+        style={{ opacity, y }}
+        className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10 lg:mb-12"
       >
         <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
           Testimonials
         </span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
           Hear from our clients
         </h2>
-        <p className="text-white/50 text-lg max-w-2xl mx-auto">
-          Hear from our happy clients about their experience working with Desert Sound and the quality of our craftsmanship
+        <p className="text-white/50 text-lg max-w-2xl mx-auto font-light">
+          Real experiences from homeowners who have transformed their living spaces with Desert Sound.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Testimonials Marquee */}
-      <div 
-        ref={contentAnimation.ref}
-        className={`relative transition-all duration-1000 ease-out delay-200 ${
-          contentAnimation.isVisible 
-            ? "opacity-100" 
-            : "opacity-0"
-        }`}
-      >
+      {/* Parallax Marquees */}
+      <div className="flex flex-col gap-8 lg:gap-12 relative">
         {/* Left fade gradient */}
         <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         
@@ -139,16 +149,11 @@ export function Testimonials() {
         <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
         {/* Row 1 - scrolls left */}
-        <div className="mb-4 lg:mb-6">
-          <MarqueeRow testimonials={row1} direction="left" />
-        </div>
+        <ParallaxMarquee testimonials={row1} baseVelocity={-1} />
 
         {/* Row 2 - scrolls right */}
-        <div>
-          <MarqueeRow testimonials={row2} direction="right" />
-        </div>
+        <ParallaxMarquee testimonials={row2} baseVelocity={1} />
       </div>
     </section>
   )
 }
-
