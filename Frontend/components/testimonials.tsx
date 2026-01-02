@@ -1,6 +1,5 @@
 "use client"
 
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
