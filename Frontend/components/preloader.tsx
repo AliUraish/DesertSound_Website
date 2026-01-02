@@ -30,12 +30,17 @@ export function Preloader() {
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="relative z-10 w-48 md:w-64 mb-8"
+              className="relative z-10 w-64 md:w-80 mb-8 p-8"
             >
+              {/* Premium Spotlight Effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 animate-pulse rounded-full blur-2xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/20 blur-[100px] rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/40 blur-[80px] rounded-full mix-blend-overlay" />
+              
               <img 
                 src="/0-removebg-preview.png" 
                 alt="Desert Sound" 
-                className="w-full h-auto object-contain drop-shadow-2xl"
+                className="relative w-full h-auto object-contain drop-shadow-2xl z-20"
               />
             </motion.div>
 
@@ -57,7 +62,7 @@ export function Preloader() {
                 transition={{ delay: 0.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="text-white/60 text-xs md:text-sm uppercase tracking-[0.4em] font-light"
               >
-                Experience Sound
+                Experience Luxury
               </motion.p>
             </div>
           </div>
