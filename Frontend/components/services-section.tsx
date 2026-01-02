@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
-import { Tv, Home, Smartphone, Shield, Zap, Headphones, Plus } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { useRef } from "react"
+import { Tv, Home, Smartphone, Shield, Zap, Headphones, ArrowUpRight } from "lucide-react"
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 const services = [
   {
@@ -11,6 +12,8 @@ const services = [
     description:
       "Transform your space into a premium cinema experience with state-of-the-art 4K/8K projectors, immersive Dolby Atmos surround sound, custom luxury seating, and professional acoustic treatment. We design and install complete home theater solutions tailored to your space and preferences.",
     image: "/luxury-home-theater-with-leather-recliners-and-amb.jpg",
+    color: "bg-[#1a1a1a]",
+    textColor: "text-white"
   },
   {
     icon: Home,
@@ -18,6 +21,8 @@ const services = [
     description:
       "Experience the future of living with intelligent automation that responds to your lifestyle. From climate control and automated lighting to voice integration and energy management, we create seamless smart home ecosystems that enhance comfort and efficiency.",
     image: "/modern-smart-home-living-room-with-automated-light.jpg",
+    color: "bg-[#f5f5f5]",
+    textColor: "text-zinc-900"
   },
   {
     icon: Smartphone,
@@ -25,6 +30,8 @@ const services = [
     description:
       "Unify your entire home with a single, intuitive control system. Our integration solutions bring together lighting, climate, entertainment, and security into one seamless interface—accessible via universal remotes, mobile apps, touch panels, or voice commands.",
     image: "/smart-home-control-room-futuristic.jpg",
+    color: "bg-[#1a1a1a]",
+    textColor: "text-white"
   },
   {
     icon: Shield,
@@ -32,6 +39,8 @@ const services = [
     description:
       "Protect what matters most with advanced surveillance and access control systems. We install HD camera networks, smart locks, motion detection, and remote monitoring solutions that provide complete peace of mind for your home or business.",
     image: "/corporate-boardroom-premium-av-equipment-modern.jpg",
+    color: "bg-[#f5f5f5]",
+    textColor: "text-zinc-900"
   },
   {
     icon: Zap,
@@ -39,6 +48,8 @@ const services = [
     description:
       "Elevate your spaces with architectural lighting that transforms ambiance at the touch of a button. Our lighting solutions include LED architectural fixtures, mood control systems, daylight harvesting, and automated scheduling for the perfect atmosphere.",
     image: "/luxury-modern-home-theater-dark-atmospheric.jpg",
+    color: "bg-[#1a1a1a]",
+    textColor: "text-white"
   },
   {
     icon: Headphones,
@@ -46,173 +57,132 @@ const services = [
     description:
       "Fill your home with crystal-clear sound through our multi-room audio solutions. From wireless streaming and hi-fi speaker installations to synchronized whole-home audio, we deliver premium sound experiences in every room.",
     image: "/luxury-modern-home-theater-room-with-warm-ambient-.jpg",
+    color: "bg-[#f5f5f5]",
+    textColor: "text-zinc-900"
   },
 ]
 
-export function ServicesSection() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
-  
-  // Scroll animations
-  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
-  const imageAnimation = useScrollAnimation({ threshold: 0.2 })
-  const listAnimation = useScrollAnimation({ threshold: 0.1 })
+interface CardProps {
+  i: number
+  title: string
+  description: string
+  image: string
+  icon: any
+  color: string
+  textColor: string
+  progress: MotionValue<number>
+  range: number[]
+  targetScale: number
+}
 
-  const handleToggle = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index)
-  }
+const Card = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale }: CardProps) => {
+  const container = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'start start']
+  })
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1])
+  const scale = useTransform(progress, range, [1, targetScale])
+  
+  return (
+    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
+      <motion.div 
+        style={{ scale, top: `calc(5vh + ${i * 25}px)` }} 
+        className={cn(
+          "relative flex flex-col md:flex-row gap-8 rounded-3xl p-8 md:p-12 h-[550px] md:h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden",
+          color
+        )}
+      >
+        {/* Content Side */}
+        <div className="flex flex-col justify-between w-full md:w-[45%] h-full z-10 relative">
+            <div>
+                <div className="flex items-center gap-3 mb-8">
+                    <div className={cn("p-3 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
+                        <Icon size={24} />
+                    </div>
+                    <span className={cn("text-sm uppercase tracking-wider font-medium opacity-70", textColor)}>Service 0{i + 1}</span>
+                </div>
+                
+                <h3 className={cn("text-3xl md:text-5xl font-light mb-6 leading-tight", textColor)}>
+                    {title}
+                </h3>
+                
+                <p className={cn("text-lg leading-relaxed opacity-80", textColor)}>
+                    {description}
+                </p>
+            </div>
+
+            <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", textColor)}>
+                <span>Explore Solution</span>
+                <ArrowUpRight size={16} />
+            </button>
+        </div>
+
+        {/* Image Side */}
+        <div className="absolute md:relative inset-0 md:inset-auto w-full md:w-[55%] h-full md:rounded-2xl overflow-hidden md:ml-auto">
+            <motion.div 
+                style={{ scale: imageScale }}
+                className="w-full h-full"
+            >
+                <img 
+                    src={image} 
+                    alt={title}
+                    className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                />
+            </motion.div>
+            {/* Mobile overlay for readability */}
+            <div className={cn("absolute inset-0 md:hidden bg-gradient-to-t from-black/80 via-black/40 to-transparent", color === "bg-[#f5f5f5]" ? "opacity-20" : "opacity-80")} />
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
+export function ServicesSection() {
+  const container = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  })
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
-        <div 
-          ref={headerAnimation.ref}
-          className={`text-center mb-16 lg:mb-20 transition-all duration-700 ease-out ${
-            headerAnimation.isVisible 
-              ? "opacity-100 translate-y-0" 
-              : "opacity-0 translate-y-8"
-          }`}
+    <section ref={container} id="services" className="relative bg-background">
+      {/* Header that scrolls away */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
         >
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Services
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
-            What we do
+            Our Expertise
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Find out which one of our services fit the needs of your project
+             Tailored solutions for modern living and working spaces
           </p>
-        </div>
+        </motion.div>
+      </div>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left: Dynamic Image with enhanced animations */}
-          <div 
-            ref={imageAnimation.ref}
-            className={`relative aspect-square lg:aspect-[4/5] w-full max-h-[600px] overflow-hidden rounded-lg transition-all duration-1000 ease-out ${
-              imageAnimation.isVisible 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 -translate-x-12"
-            }`}
-          >
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                  expandedIndex === index 
-                    ? "opacity-100 scale-100 blur-0" 
-                    : "opacity-0 scale-105 blur-sm"
-                }`}
-              >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div>
-            ))}
-            {/* Default image when nothing is selected */}
-            <div
-              className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                expandedIndex === null 
-                  ? "opacity-100 scale-100 blur-0" 
-                  : "opacity-0 scale-105 blur-sm"
-              }`}
-            >
-              <img
-                src="/luxury-home-theater-cinematic-lighting.jpg"
-                alt="Our Services"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-            </div>
-          </div>
-
-          {/* Right: Accordion List with enhanced animations */}
-          <div 
-            ref={listAnimation.ref}
-            className={`flex flex-col transition-all duration-1000 ease-out delay-200 ${
-              listAnimation.isVisible 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 translate-x-12"
-            }`}
-          >
-            {services.map((service, index) => {
-              const isExpanded = expandedIndex === index
-              
-              return (
-                <div
-                  key={index}
-                  className="border-b border-border/40 last:border-b-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                >
-                  {/* Accordion Header */}
-                  <button
-                    onClick={() => handleToggle(index)}
-                    className={`w-full flex items-center justify-between py-5 lg:py-6 text-left group transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer ${
-                      isExpanded 
-                        ? "bg-muted/20" 
-                        : "hover:bg-muted/10 hover:pl-2"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <service.icon 
-                        className={`w-6 h-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                          isExpanded 
-                            ? "text-foreground scale-110" 
-                            : "text-muted-foreground group-hover:text-foreground group-hover:scale-105"
-                        }`} 
-                        strokeWidth={1.5}
-                      />
-                      <span 
-                        className={`text-lg lg:text-xl font-normal transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                          isExpanded 
-                            ? "text-foreground translate-x-1" 
-                            : "text-foreground group-hover:translate-x-1"
-                        }`}
-                      >
-                        {service.title}
-                      </span>
-                    </div>
-                    <div className="flex-shrink-0 ml-4">
-                      <Plus 
-                        className={`w-5 h-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer ${
-                          isExpanded 
-                            ? "rotate-45 text-foreground" 
-                            : "rotate-0 text-muted-foreground group-hover:text-foreground group-hover:rotate-90"
-                        }`}
-                      />
-                    </div>
-                  </button>
-
-                  {/* Accordion Content with slide animation */}
-                  <div
-                    className={`grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      isExpanded 
-                        ? "grid-rows-[1fr] opacity-100" 
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <div 
-                        className={`pb-6 pl-10 pr-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
-                          isExpanded 
-                            ? "translate-y-0 opacity-100" 
-                            : "translate-y-4 opacity-0"
-                        }`}
-                      >
-                        <p className="text-muted-foreground leading-relaxed">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+      {/* Sticky Cards Container */}
+      <div className="pb-24 lg:pb-32 px-4">
+        {services.map((service, i) => {
+          const targetScale = 1 - ((services.length - i) * 0.05)
+          return (
+            <Card 
+              key={i} 
+              i={i} 
+              {...service} 
+              progress={scrollYProgress}
+              range={[i * 0.16, 1]}
+              targetScale={targetScale}
+            />
+          )
+        })}
       </div>
     </section>
   )
