@@ -1,8 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 const heroSlides = [
   {
@@ -28,6 +28,16 @@ const heroSlides = [
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  })
+
+  // Parallax effects
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,10 +47,13 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen w-full bg-[#F5F5DC] overflow-hidden">
-      <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-24 lg:pt-28">
-        {/* Image Container */}
-        <div className="relative w-full h-[calc(100vh-8rem)] lg:h-[calc(100vh-10rem)] rounded-lg overflow-hidden">
+    <section ref={containerRef} className="relative min-h-screen w-full bg-[#F5F5DC] overflow-hidden">
+      <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-24 lg:pt-28 h-screen pb-4 flex flex-col">
+        {/* Image Container with Parallax */}
+        <motion.div 
+          style={{ y, opacity, scale }}
+          className="relative w-full flex-grow rounded-lg overflow-hidden will-change-transform"
+        >
           <AnimatePresence mode="popLayout">
             <motion.div
               key={currentSlide}
@@ -144,9 +157,8 @@ export function HeroSection() {
               </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
-
