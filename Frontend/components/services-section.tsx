@@ -86,9 +86,9 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
   const scale = useTransform(progress, range, [1, targetScale])
   
   return (
-    <div ref={container} className="h-screen flex items-center justify-center sticky top-0">
+    <div ref={container} className="h-screen flex items-start justify-center sticky top-0 pt-16">
       <motion.div 
-        style={{ scale, top: `calc(5vh + ${i * 25}px)` }} 
+        style={{ scale, top: `calc(10vh + ${i * 25}px)` }} 
         className={cn(
           "relative flex flex-col md:flex-row gap-8 rounded-3xl p-8 md:p-12 h-[550px] md:h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden",
           color
@@ -149,7 +149,7 @@ export function ServicesSection() {
   return (
     <section ref={container} id="services" className="relative bg-background">
       {/* Header that scrolls away */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
