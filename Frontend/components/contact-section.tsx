@@ -1,25 +1,21 @@
 "use client"
 
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { motion } from "framer-motion"
 
 export function ContactSection() {
-  const leftAnimation = useScrollAnimation({ threshold: 0.2 })
-  const rightAnimation = useScrollAnimation({ threshold: 0.2 })
-  
   return (
     <section id="contact" className="py-14 lg:py-18 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side - Contact Info */}
-          <div 
-            ref={leftAnimation.ref}
-            className={`text-white transition-all duration-1000 ease-out ${
-              leftAnimation.isVisible 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 -translate-x-12"
-            }`}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-white"
           >
             <span className="inline-block bg-white text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
               Contact
@@ -35,56 +31,39 @@ export function ContactSection() {
 
             {/* Contact Info List */}
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Phone</p>
-                  <p className="text-white text-lg">+92 300 1234567</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Email</p>
-                  <p className="text-white text-lg">info@desertsound.com.pk</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Location</p>
-                  <p className="text-white text-lg">Karachi, Pakistan</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-wider mb-1">Hours</p>
-                  <p className="text-white text-lg">Mon - Sat: 9AM - 6PM</p>
-                </div>
-              </div>
+              {[
+                { icon: Phone, title: "Phone", value: "+92 300 1234567" },
+                { icon: Mail, title: "Email", value: "info@desertsound.com.pk" },
+                { icon: MapPin, title: "Location", value: "Karachi, Pakistan" },
+                { icon: Clock, title: "Hours", value: "Mon - Sat: 9AM - 6PM" }
+              ].map((item, index) => (
+                <motion.div 
+                  key={item.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white/40 text-sm uppercase tracking-wider mb-1">{item.title}</p>
+                    <p className="text-white text-lg">{item.value}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side - Contact Form */}
-          <div 
-            ref={rightAnimation.ref}
-            className={`bg-[#F5F5DC] rounded-2xl p-6 lg:p-8 transition-all duration-1000 ease-out delay-200 ${
-              rightAnimation.isVisible 
-                ? "opacity-100 translate-x-0" 
-                : "opacity-0 translate-x-12"
-            }`}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="bg-[#F5F5DC] rounded-2xl p-6 lg:p-8"
           >
             <h3 className="text-2xl lg:text-3xl font-light text-black mb-2">
               Send us a message
@@ -140,17 +119,20 @@ export function ContactSection() {
                 />
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
                 className="w-full bg-black text-white py-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-black/90 transition-colors group"
               >
                 <span>Send Message</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   )
 }
+
