@@ -63,7 +63,7 @@ export function ProjectsSlideshow() {
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         
         {/* Header */}
-        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-20 md:pt-0">
+        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-16 md:pt-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function ProjectsSlideshow() {
               <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6 mt-8 md:mt-0">
                 Selected Works
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground">
                 Recent Projects
               </h2>
             </div>

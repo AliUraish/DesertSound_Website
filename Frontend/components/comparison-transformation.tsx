@@ -43,7 +43,7 @@ export function ComparisonTransformation() {
   }, [handleMove])
 
   return (
-    <section className="py-24 lg:py-32 bg-[#F5F5DC]">
+    <section className="py-16 lg:py-32 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div 
@@ -54,7 +54,7 @@ export function ComparisonTransformation() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
             Transforming your space into something you'll love
           </h2>
         </div>

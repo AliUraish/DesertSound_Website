@@ -149,7 +149,7 @@ export function ServicesSection() {
   return (
     <section ref={container} id="services" className="relative bg-background">
       {/* Header that scrolls away */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-4">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 lg:pt-32 pb-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export function ServicesSection() {
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
             What we do
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
