@@ -70,11 +70,14 @@ export function ComparisonTransformation() {
         >
           <div 
             ref={containerRef}
-            className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-lg overflow-hidden cursor-ew-resize select-none"
+            className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-lg overflow-hidden cursor-ew-resize select-none touch-none"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             onClick={handleClick}
+            onTouchStart={handleMouseDown}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleMouseUp}
           >
             {/* Before Image (Background) */}
             <div className="absolute inset-0">
@@ -109,7 +112,7 @@ export function ComparisonTransformation() {
 
             {/* Slider Handle */}
             <div 
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize z-10"
+              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize z-10 touch-none"
               style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
               onMouseDown={handleMouseDown}
               onTouchStart={handleMouseDown}
