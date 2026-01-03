@@ -98,22 +98,22 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
         <div className="flex flex-col justify-between w-full md:w-[45%] h-full z-10 relative">
             <div>
                 <div className="flex items-center gap-3 mb-8">
-                    <div className={cn("p-3 rounded-xl bg-black/5 backdrop-blur-sm", "text-white md:text-[inherit]", textColor !== "text-white" && "md:text-zinc-900")}>
+                    <div className={cn("p-3 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
                         <Icon size={24} />
                     </div>
-                    <span className={cn("text-sm uppercase tracking-wider font-medium opacity-70", "text-white md:text-[inherit]", textColor !== "text-white" && "md:text-zinc-900")}>Service 0{i + 1}</span>
+                    <span className={cn("text-sm uppercase tracking-wider font-medium opacity-70", textColor)}>Service 0{i + 1}</span>
                 </div>
                 
-                <h3 className={cn("text-3xl md:text-5xl font-light mb-6 leading-tight", "text-white md:text-[inherit]", textColor !== "text-white" && "md:text-zinc-900")}>
+                <h3 className={cn("text-3xl md:text-5xl font-light mb-6 leading-tight", textColor)}>
                     {title}
                 </h3>
                 
-                <p className={cn("text-lg leading-relaxed opacity-80", "text-white/80 md:text-[inherit]", textColor !== "text-white" && "md:text-zinc-900")}>
+                <p className={cn("text-lg leading-relaxed opacity-80", textColor)}>
                     {description}
                 </p>
             </div>
 
-            <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", "text-white md:text-[inherit]", textColor !== "text-white" && "md:text-zinc-900")}>
+            <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", textColor)}>
                 <span>Explore Solution</span>
                 <ArrowUpRight size={16} />
             </button>
@@ -131,8 +131,8 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
                     className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                 />
             </motion.div>
-            {/* Mobile overlay for readability - Always dark on mobile to support white text */}
-            <div className={cn("absolute inset-0 md:hidden bg-gradient-to-t from-black/90 via-black/50 to-black/20")} />
+            {/* Mobile overlay for readability */}
+            <div className={cn("absolute inset-0 md:hidden bg-gradient-to-t from-black/80 via-black/40 to-transparent", color === "bg-[#f5f5f5]" ? "opacity-20" : "opacity-80")} />
         </div>
       </motion.div>
     </div>
