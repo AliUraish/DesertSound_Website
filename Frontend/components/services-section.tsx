@@ -75,8 +75,11 @@ interface CardProps {
   targetScale: number
 }
 
+import { useIsMobile } from "@/hooks/use-mobile"
+
 const Card = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale }: CardProps) => {
   const container = useRef(null)
+  const isMobile = useIsMobile()
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start end', 'start start']
@@ -85,6 +88,52 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1])
   const scale = useTransform(progress, range, [1, targetScale])
   
+  // On mobile, we disable the sticky behavior and scaling effect for better usability
+  if (isMobile) {
+    return (
+      <div className="mb-6 last:mb-0">
+        <div 
+          className={cn(
+            "relative flex flex-col gap-6 rounded-3xl p-6 w-full overflow-hidden shadow-lg",
+            color
+          )}
+        >
+          {/* Image on top for mobile */}
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+             <img 
+                src={image} 
+                alt={title}
+                className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Content below */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className={cn("p-2 rounded-lg bg-black/5 backdrop-blur-sm", textColor)}>
+                <Icon size={20} />
+              </div>
+              <span className={cn("text-xs uppercase tracking-wider font-medium opacity-70", textColor)}>Service 0{i + 1}</span>
+            </div>
+            
+            <h3 className={cn("text-2xl font-light leading-tight", textColor)}>
+                {title}
+            </h3>
+            
+            <p className={cn("text-base leading-relaxed opacity-80", textColor)}>
+                {description}
+            </p>
+
+            <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest mt-2", textColor)}>
+                <span>Explore</span>
+                <ArrowUpRight size={14} />
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div ref={container} className="h-screen flex items-start justify-center sticky top-0 pt-16">
       <motion.div 
