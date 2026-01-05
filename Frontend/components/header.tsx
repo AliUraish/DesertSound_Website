@@ -80,8 +80,8 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 transition-all duration-300 ease-out ${
+      {/* Mobile Menu - z-[60] to appear above header (z-50) */}
+      <div className={`fixed inset-0 z-[60] transition-all duration-300 ease-out ${
         isMobileMenuOpen ? "visible opacity-100" : "invisible opacity-0"
       }`}>
         {/* Backdrop */}
@@ -94,7 +94,15 @@ export function Header() {
         <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-[#F5F5DC] transform transition-all duration-300 ease-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}>
-          <div className="p-8 pt-24">
+          {/* Close button inside menu */}
+          <button 
+            className="absolute top-6 right-6 p-2 text-black hover:text-black/70 transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <div className="p-8 pt-20">
             {/* Mobile Navigation */}
             <nav className="space-y-6">
               {[...navItems, { name: "Contact", href: "#contact" }].map((item) => (

@@ -74,10 +74,11 @@ interface CardProps {
   progress: MotionValue<number>
   range: number[]
   targetScale: number
+  isMobile?: boolean
 }
 
-// Desktop Card with sticky scroll animation
-const DesktopCard = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale }: CardProps) => {
+// Unified Card component with sticky scroll animation
+const Card = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale, isMobile }: CardProps) => {
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
     target: container,
@@ -87,6 +88,66 @@ const DesktopCard = ({ i, title, description, image, icon: Icon, color, textColo
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.2, 1])
   const scale = useTransform(progress, range, [1, targetScale])
   
+  // Mobile layout - original format (image top, content below) with sticky effect
+  if (isMobile) {
+    return (
+      <div ref={container} className="h-[85vh] flex items-start justify-center sticky top-0 pt-20">
+        <motion.div 
+          style={{ scale, top: `calc(12vh + ${i * 18}px)` }} 
+          className={cn(
+            "relative rounded-2xl overflow-hidden shadow-2xl origin-top border border-black/5 w-full max-w-[92vw]",
+            color
+          )}
+        >
+          {/* Image Section - Top */}
+          <div className="relative h-48 w-full overflow-hidden">
+            <motion.div 
+              style={{ scale: imageScale }}
+              className="w-full h-full"
+            >
+              <img 
+                src={image} 
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            {/* Gradient overlay at bottom of image */}
+            <div className={cn(
+              "absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent",
+              color === "bg-[#f5f5f5]" ? "from-[#f5f5f5]" : "from-[#1a1a1a]"
+            )} />
+          </div>
+
+          {/* Content Section - Below */}
+          <div className="p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className={cn("p-2.5 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
+                <Icon size={20} />
+              </div>
+              <span className={cn("text-xs uppercase tracking-wider font-medium opacity-70", textColor)}>
+                Service 0{i + 1}
+              </span>
+            </div>
+            
+            <h3 className={cn("text-2xl font-light mb-3 leading-tight", textColor)}>
+              {title}
+            </h3>
+            
+            <p className={cn("text-sm leading-relaxed opacity-80 mb-5", textColor)}>
+              {description}
+            </p>
+
+            <button className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit", textColor)}>
+              <span>Explore Solution</span>
+              <ArrowUpRight size={14} />
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    )
+  }
+  
+  // Desktop layout - side by side
   return (
     <div ref={container} className="h-screen flex items-start justify-center sticky top-0 pt-16">
       <motion.div 
@@ -139,71 +200,6 @@ const DesktopCard = ({ i, title, description, image, icon: Icon, color, textColo
   )
 }
 
-// Mobile Card - simple stacked layout with fade-in animation
-interface MobileCardProps {
-  i: number
-  title: string
-  description: string
-  image: string
-  icon: any
-  color: string
-  textColor: string
-}
-
-const MobileCard = ({ i, title, description, image, icon: Icon, color, textColor }: MobileCardProps) => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={cn(
-        "relative rounded-2xl overflow-hidden shadow-xl",
-        color
-      )}
-    >
-      {/* Image Section */}
-      <div className="relative h-48 w-full overflow-hidden">
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover"
-        />
-        {/* Gradient overlay */}
-        <div className={cn(
-          "absolute inset-0 bg-gradient-to-b to-transparent",
-          color === "bg-[#f5f5f5]" ? "from-[#f5f5f5]/80" : "from-[#1a1a1a]/80"
-        )} style={{ top: '60%' }} />
-      </div>
-
-      {/* Content Section */}
-      <div className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className={cn("p-2.5 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
-            <Icon size={20} />
-          </div>
-          <span className={cn("text-xs uppercase tracking-wider font-medium opacity-70", textColor)}>
-            Service 0{i + 1}
-          </span>
-        </div>
-        
-        <h3 className={cn("text-2xl font-light mb-3 leading-tight", textColor)}>
-          {title}
-        </h3>
-        
-        <p className={cn("text-sm leading-relaxed opacity-80 mb-5", textColor)}>
-          {description}
-        </p>
-
-        <button className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit", textColor)}>
-          <span>Explore Solution</span>
-          <ArrowUpRight size={14} />
-        </button>
-      </div>
-    </motion.div>
-  )
-}
-
 export function ServicesSection() {
   const container = useRef(null)
   const isMobile = useIsMobile()
@@ -234,37 +230,26 @@ export function ServicesSection() {
         </motion.div>
       </div>
 
-      {/* Mobile Layout - Simple stacked cards */}
-      {isMobile && (
-        <div className="px-4 pb-16 pt-8 flex flex-col gap-6">
-          {services.map((service, i) => (
-            <MobileCard 
+      {/* Sticky Cards - Same effect for both mobile and desktop */}
+      <div className={cn(
+        "px-4",
+        isMobile ? "pb-16" : "pb-24 lg:pb-32"
+      )}>
+        {services.map((service, i) => {
+          const targetScale = 1 - ((services.length - i) * 0.05)
+          return (
+            <Card 
               key={i} 
               i={i} 
-              {...service}
+              {...service} 
+              progress={scrollYProgress}
+              range={[i * 0.16, 1]}
+              targetScale={targetScale}
+              isMobile={isMobile}
             />
-          ))}
-        </div>
-      )}
-
-      {/* Desktop Layout - Sticky scroll cards */}
-      {!isMobile && (
-        <div className="pb-24 lg:pb-32 px-4">
-          {services.map((service, i) => {
-            const targetScale = 1 - ((services.length - i) * 0.05)
-            return (
-              <DesktopCard 
-                key={i} 
-                i={i} 
-                {...service} 
-                progress={scrollYProgress}
-                range={[i * 0.16, 1]}
-                targetScale={targetScale}
-              />
-            )
-          })}
-        </div>
-      )}
+          )
+        })}
+      </div>
     </section>
   )
 }
