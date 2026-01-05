@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { Tv, Home, Smartphone, Shield, Zap, Headphones, ArrowUpRight } from "lucide-react"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const services = [
   {
@@ -75,7 +76,8 @@ interface CardProps {
   targetScale: number
 }
 
-const Card = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale }: CardProps) => {
+// Desktop Card with sticky scroll animation
+const DesktopCard = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale }: CardProps) => {
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
     target: container,
@@ -90,12 +92,12 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
       <motion.div 
         style={{ scale, top: `calc(10vh + ${i * 25}px)` }} 
         className={cn(
-          "relative flex flex-col md:flex-row gap-8 rounded-3xl p-8 md:p-12 h-[70vh] md:h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden",
+          "relative flex flex-row gap-8 rounded-3xl p-12 h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden",
           color
         )}
       >
         {/* Content Side */}
-        <div className="flex flex-col justify-between w-full md:w-[45%] h-full z-10 relative">
+        <div className="flex flex-col justify-between w-[45%] h-full z-10 relative">
             <div>
                 <div className="flex items-center gap-3 mb-8">
                     <div className={cn("p-3 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
@@ -104,7 +106,7 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
                     <span className={cn("text-sm uppercase tracking-wider font-medium opacity-70", textColor)}>Service 0{i + 1}</span>
                 </div>
                 
-                <h3 className={cn("text-3xl md:text-5xl font-light mb-6 leading-tight", textColor)}>
+                <h3 className={cn("text-5xl font-light mb-6 leading-tight", textColor)}>
                     {title}
                 </h3>
                 
@@ -120,7 +122,7 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
         </div>
 
         {/* Image Side */}
-        <div className="absolute md:relative inset-0 md:inset-auto w-full md:w-[55%] h-full md:rounded-2xl overflow-hidden md:ml-auto">
+        <div className="relative w-[55%] h-full rounded-2xl overflow-hidden ml-auto">
             <motion.div 
                 style={{ scale: imageScale }}
                 className="w-full h-full"
@@ -131,16 +133,80 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
                     className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                 />
             </motion.div>
-            {/* Mobile overlay for readability */}
-            <div className={cn("absolute inset-0 md:hidden bg-gradient-to-t from-black/80 via-black/40 to-transparent", color === "bg-[#f5f5f5]" ? "opacity-20" : "opacity-80")} />
         </div>
       </motion.div>
     </div>
   )
 }
 
+// Mobile Card - simple stacked layout with fade-in animation
+interface MobileCardProps {
+  i: number
+  title: string
+  description: string
+  image: string
+  icon: any
+  color: string
+  textColor: string
+}
+
+const MobileCard = ({ i, title, description, image, icon: Icon, color, textColor }: MobileCardProps) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={cn(
+        "relative rounded-2xl overflow-hidden shadow-xl",
+        color
+      )}
+    >
+      {/* Image Section */}
+      <div className="relative h-48 w-full overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+        {/* Gradient overlay */}
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-b to-transparent",
+          color === "bg-[#f5f5f5]" ? "from-[#f5f5f5]/80" : "from-[#1a1a1a]/80"
+        )} style={{ top: '60%' }} />
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className={cn("p-2.5 rounded-xl bg-black/5 backdrop-blur-sm", textColor)}>
+            <Icon size={20} />
+          </div>
+          <span className={cn("text-xs uppercase tracking-wider font-medium opacity-70", textColor)}>
+            Service 0{i + 1}
+          </span>
+        </div>
+        
+        <h3 className={cn("text-2xl font-light mb-3 leading-tight", textColor)}>
+          {title}
+        </h3>
+        
+        <p className={cn("text-sm leading-relaxed opacity-80 mb-5", textColor)}>
+          {description}
+        </p>
+
+        <button className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit", textColor)}>
+          <span>Explore Solution</span>
+          <ArrowUpRight size={14} />
+        </button>
+      </div>
+    </motion.div>
+  )
+}
+
 export function ServicesSection() {
   const container = useRef(null)
+  const isMobile = useIsMobile()
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end end']
@@ -148,8 +214,8 @@ export function ServicesSection() {
 
   return (
     <section ref={container} id="services" className="relative bg-background">
-      {/* Header that scrolls away */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-4">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-20 md:pt-24 lg:pt-32 pb-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,31 +225,46 @@ export function ServicesSection() {
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
             Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground mb-4">
             What we do
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto">
              Tailored solutions for modern living and working spaces
           </p>
         </motion.div>
       </div>
 
-      {/* Sticky Cards Container */}
-      <div className="pb-24 lg:pb-32 px-4">
-        {services.map((service, i) => {
-          const targetScale = 1 - ((services.length - i) * 0.05)
-          return (
-            <Card 
+      {/* Mobile Layout - Simple stacked cards */}
+      {isMobile && (
+        <div className="px-4 pb-16 pt-8 flex flex-col gap-6">
+          {services.map((service, i) => (
+            <MobileCard 
               key={i} 
               i={i} 
-              {...service} 
-              progress={scrollYProgress}
-              range={[i * 0.16, 1]}
-              targetScale={targetScale}
+              {...service}
             />
-          )
-        })}
-      </div>
+          ))}
+        </div>
+      )}
+
+      {/* Desktop Layout - Sticky scroll cards */}
+      {!isMobile && (
+        <div className="pb-24 lg:pb-32 px-4">
+          {services.map((service, i) => {
+            const targetScale = 1 - ((services.length - i) * 0.05)
+            return (
+              <DesktopCard 
+                key={i} 
+                i={i} 
+                {...service} 
+                progress={scrollYProgress}
+                range={[i * 0.16, 1]}
+                targetScale={targetScale}
+              />
+            )
+          })}
+        </div>
+      )}
     </section>
   )
 }

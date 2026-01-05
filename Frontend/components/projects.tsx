@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, MapPin, Calendar, Maximize } from "lucide-react"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const projects = [
   {
@@ -47,7 +48,108 @@ const projects = [
   },
 ]
 
-export function ProjectsSlideshow() {
+// Mobile Project Card - vertical layout with tap to expand
+function MobileProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative rounded-2xl overflow-hidden bg-muted aspect-[4/5]"
+    >
+      <img
+        src={project.image}
+        alt={project.title}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+      
+      <div className="absolute inset-0 p-5 flex flex-col justify-end text-white">
+        <p className="text-xs uppercase tracking-wider text-white/70 mb-1.5">
+          {project.category}
+        </p>
+        <h3 className="text-xl font-light mb-3 leading-tight">
+          {project.title}
+        </h3>
+        
+        <p className="text-white/70 text-sm leading-relaxed mb-4 line-clamp-2">
+          {project.description}
+        </p>
+        
+        <div className="flex flex-wrap gap-3 text-xs text-white/50 mb-4">
+          <span className="flex items-center gap-1.5">
+            <MapPin size={12} /> {project.location}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Calendar size={12} /> {project.year}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Maximize size={12} /> {project.size}
+          </span>
+        </div>
+
+        <button className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide w-fit">
+          View Case Study <ArrowUpRight size={12} />
+        </button>
+      </div>
+    </motion.div>
+  )
+}
+
+// Mobile Projects Layout
+function MobileProjects() {
+  return (
+    <section id="projects" className="py-16 bg-background">
+      {/* Header */}
+      <div className="px-5 mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-5">
+            Selected Works
+          </span>
+          <h2 className="text-3xl font-light text-foreground mb-3">
+            Recent Projects
+          </h2>
+          <p className="text-muted-foreground text-base max-w-sm">
+            Explore our portfolio of premium installations and smart home solutions.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Vertical Cards Grid */}
+      <div className="px-5 grid grid-cols-1 gap-5">
+        {projects.map((project, index) => (
+          <MobileProjectCard key={project.id} project={project} index={index} />
+        ))}
+        
+        {/* View All Card */}
+        <motion.a
+          href="/projects"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl overflow-hidden bg-foreground text-background flex items-center justify-center py-16"
+        >
+          <div className="text-center">
+            <span className="block text-5xl font-light mb-3">→</span>
+            <span className="text-sm uppercase tracking-widest border-b border-background/20 pb-1">
+              View All Projects
+            </span>
+          </div>
+        </motion.a>
+      </div>
+    </section>
+  )
+}
+
+// Desktop Projects with horizontal scroll
+function DesktopProjects() {
   const targetRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -55,26 +157,25 @@ export function ProjectsSlideshow() {
   })
 
   // Transform vertical scroll into horizontal movement
-  // Adjusted timing: start the scroll later (0.25) so the first card is fully visible before moving
   const x = useTransform(scrollYProgress, [0.25, 0.95], ["0%", "-95%"])
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-background">
+    <section ref={targetRef} id="projects" className="relative h-[300vh] bg-background">
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         
         {/* Header */}
-        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-20 md:pt-0">
+        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6"
+            className="flex flex-row items-end justify-between gap-6"
           >
             <div>
-              <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6 mt-8 md:mt-0">
+              <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
                 Selected Works
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
+              <h2 className="text-5xl lg:text-6xl font-light text-foreground">
                 Recent Projects
               </h2>
             </div>
@@ -85,11 +186,11 @@ export function ProjectsSlideshow() {
         </div>
 
         {/* Horizontal Scroll Track */}
-        <motion.div style={{ x }} className="flex gap-4 md:gap-8 px-4 md:px-[10%] w-max">
+        <motion.div style={{ x }} className="flex gap-8 px-[10%] w-max">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="group relative h-[50vh] md:h-[60vh] aspect-[3/4] md:aspect-[4/3] rounded-2xl overflow-hidden bg-muted"
+              className="group relative h-[60vh] aspect-[4/3] rounded-2xl overflow-hidden bg-muted"
             >
               <img
                 src={project.image}
@@ -103,12 +204,12 @@ export function ProjectsSlideshow() {
                   <p className="text-sm uppercase tracking-wider text-white/70 mb-2">
                     {project.category}
                   </p>
-                  <h3 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+                  <h3 className="text-3xl font-light mb-4 leading-tight">
                     {project.title}
                   </h3>
                   
                   <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-500">
-                    <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                    <p className="text-white/80 text-base leading-relaxed mb-6 max-w-md">
                       {project.description}
                     </p>
                     
@@ -134,9 +235,9 @@ export function ProjectsSlideshow() {
           ))}
           
           {/* "View All" Card */}
-          <div className="h-[50vh] md:h-[60vh] aspect-[3/4] md:aspect-[4/3] rounded-2xl overflow-hidden bg-foreground text-background flex items-center justify-center">
+          <div className="h-[60vh] aspect-[4/3] rounded-2xl overflow-hidden bg-foreground text-background flex items-center justify-center">
             <a href="/projects" className="text-center group cursor-pointer">
-              <span className="block text-6xl md:text-8xl font-light mb-4 transition-transform duration-500 group-hover:scale-110">
+              <span className="block text-8xl font-light mb-4 transition-transform duration-500 group-hover:scale-110">
                 →
               </span>
               <span className="text-lg uppercase tracking-widest border-b border-background/20 pb-1 group-hover:border-background transition-colors">
@@ -148,4 +249,16 @@ export function ProjectsSlideshow() {
       </div>
     </section>
   )
+}
+
+export function ProjectsSlideshow() {
+  const isMobile = useIsMobile()
+
+  // Show mobile layout on mobile devices
+  if (isMobile) {
+    return <MobileProjects />
+  }
+
+  // Show desktop layout with horizontal scroll on larger screens
+  return <DesktopProjects />
 }

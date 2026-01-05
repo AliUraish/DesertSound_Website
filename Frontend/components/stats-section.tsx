@@ -122,7 +122,7 @@ function AnimatedNumber({
   }, [target, isVisible])
 
   return (
-    <span className="text-5xl md:text-6xl lg:text-7xl font-light text-black tracking-tight">
+    <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-black tracking-tight">
       {current}
       <span className="text-black/40">{suffix}</span>
     </span>

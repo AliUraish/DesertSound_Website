@@ -116,8 +116,8 @@ export function ComparisonTransformation() {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleMouseUp}
             >
-              {/* Handle Button */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 lg:w-14 lg:h-14 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95">
+              {/* Handle Button - larger touch target on mobile */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white rounded-full shadow-xl flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95">
                 {/* Solid Triangle Arrows ◀ ▶ */}
                 <div className="flex items-center gap-1">
                   <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" className="text-black">
