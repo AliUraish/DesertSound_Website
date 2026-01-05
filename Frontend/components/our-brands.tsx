@@ -27,7 +27,7 @@ export function OurBrands() {
       </div>
 
       {/* Marquee Container */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         {/* Left fade gradient */}
         <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-[#F5F5DC] to-transparent z-10 pointer-events-none" />
         

@@ -301,6 +301,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: clip; /* Prevents horizontal scroll without breaking sticky */
 }
 
 /* Premium selection styling */

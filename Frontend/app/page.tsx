@@ -11,17 +11,19 @@ import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <HeroSection />
-      <OurBrands />
-      <ServicesSection />
-      <ComparisonTransformation />
-      <ProjectsSlideshow />
-      <StatsSection />
-      <Testimonials />
-      <ContactSection />
-      <Footer />
-    </main>
+    <div className="w-full overflow-x-clip">
+      <main className="min-h-screen bg-background">
+        <Header />
+        <HeroSection />
+        <OurBrands />
+        <ServicesSection />
+        <ComparisonTransformation />
+        <ProjectsSlideshow />
+        <StatsSection />
+        <Testimonials />
+        <ContactSection />
+        <Footer />
+      </main>
+    </div>
   )
 }
