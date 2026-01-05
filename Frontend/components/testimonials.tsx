@@ -60,7 +60,7 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className="flex-shrink-0 w-[300px] lg:w-[400px] mx-3 lg:mx-4"
+      className="flex-shrink-0 w-[350px] lg:w-[400px] mx-3 lg:mx-4"
     >
       <div className="bg-[#F5F5DC] rounded-xl p-6 lg:p-8 h-full shadow-lg cursor-grab active:cursor-grabbing">
         <StarRating />

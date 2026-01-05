@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, MapPin, Calendar, Maximize } from "lucide-react"
-import { useIsMobile } from "@/hooks/use-mobile"
 
 const projects = [
   {
@@ -50,7 +49,6 @@ const projects = [
 
 export function ProjectsSlideshow() {
   const targetRef = useRef<HTMLDivElement>(null)
-  const isMobile = useIsMobile()
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
@@ -59,89 +57,13 @@ export function ProjectsSlideshow() {
   // Transform vertical scroll into horizontal movement
   // Adjusted timing: start the scroll later (0.25) so the first card is fully visible before moving
   const x = useTransform(scrollYProgress, [0.25, 0.95], ["0%", "-95%"])
-  
-  if (isMobile) {
-      return (
-          <section className="relative py-16 bg-background">
-               {/* Header */}
-            <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-8 pt-8">
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex flex-col gap-4"
-                >
-                    <div>
-                    <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-4">
-                        Selected Works
-                    </span>
-                    <h2 className="text-3xl font-light text-foreground">
-                        Recent Projects
-                    </h2>
-                    </div>
-                    <p className="text-muted-foreground text-base max-w-sm">
-                    Explore our portfolio of premium installations and smart home solutions.
-                    </p>
-                </motion.div>
-            </div>
-
-             {/* Horizontal Scroll Track - Native Scrolling */}
-             <div className="flex gap-4 px-6 overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide w-full">
-                {projects.map((project) => (
-                    <div 
-                        key={project.id}
-                        className="snap-center shrink-0 w-[85vw] h-[50vh] relative rounded-2xl overflow-hidden bg-muted"
-                    >
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
-                          <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                                <p className="text-xs uppercase tracking-wider text-white/70 mb-2">
-                                    {project.category}
-                                </p>
-                                <h3 className="text-xl font-light mb-2 leading-tight">
-                                    {project.title}
-                                </h3>
-                                <div className="flex flex-wrap gap-3 text-xs text-white/60 mb-4">
-                                    <span className="flex items-center gap-1">
-                                        <MapPin size={12} /> {project.location}
-                                    </span>
-                                    <span className="flex items-center gap-1">
-                                        <Calendar size={12} /> {project.year}
-                                    </span>
-                                </div>
-                                <button className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide">
-                                    View Case Study <ArrowUpRight size={12} />
-                                </button>
-                          </div>
-                    </div>
-                ))}
-                
-                 {/* "View All" Card */}
-                 <div className="snap-center shrink-0 w-[85vw] h-[50vh] rounded-2xl overflow-hidden bg-foreground text-background flex items-center justify-center">
-                    <a href="/projects" className="text-center group cursor-pointer">
-                    <span className="block text-4xl font-light mb-4">
-                        →
-                    </span>
-                    <span className="text-sm uppercase tracking-widest border-b border-background/20 pb-1">
-                        View All Projects
-                    </span>
-                    </a>
-                </div>
-             </div>
-          </section>
-      )
-  }
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-background">
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         
         {/* Header */}
-        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-16 md:pt-0">
+        <div className="max-w-[90%] mx-auto w-full px-4 lg:px-8 mb-12 pt-20 md:pt-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +74,7 @@ export function ProjectsSlideshow() {
               <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6 mt-8 md:mt-0">
                 Selected Works
               </span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground">
                 Recent Projects
               </h2>
             </div>

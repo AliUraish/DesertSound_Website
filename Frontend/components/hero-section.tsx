@@ -47,8 +47,8 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={containerRef} className="relative min-h-[100dvh] w-full bg-[#F5F5DC] overflow-hidden">
-      <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-20 lg:pt-28 min-h-[100dvh] pb-4 flex flex-col">
+    <section ref={containerRef} className="relative min-h-screen w-full bg-[#F5F5DC] overflow-hidden">
+      <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-24 lg:pt-28 h-screen pb-4 flex flex-col">
         {/* Image Container with Parallax */}
         <motion.div 
           style={{ y, opacity, scale }}
@@ -107,7 +107,7 @@ export function HeroSection() {
                 {/* Title - animates second */}
                 <div className="overflow-hidden">
                   <motion.h1 
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-normal leading-tight"
+                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-normal leading-tight"
                   >
                     <span className="block overflow-hidden">
                       <motion.span

@@ -43,7 +43,7 @@ export function ComparisonTransformation() {
   }, [handleMove])
 
   return (
-    <section className="py-16 lg:py-32 bg-[#F5F5DC]">
+    <section className="py-24 lg:py-32 bg-[#F5F5DC]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div 
@@ -54,7 +54,7 @@ export function ComparisonTransformation() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
             Transforming your space into something you'll love
           </h2>
         </div>
@@ -70,14 +70,11 @@ export function ComparisonTransformation() {
         >
           <div 
             ref={containerRef}
-            className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-lg overflow-hidden cursor-ew-resize select-none touch-none"
+            className="relative w-full aspect-[16/10] lg:aspect-[16/9] rounded-lg overflow-hidden cursor-ew-resize select-none"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             onClick={handleClick}
-            onTouchStart={handleMouseDown}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleMouseUp}
           >
             {/* Before Image (Background) */}
             <div className="absolute inset-0">
@@ -112,7 +109,7 @@ export function ComparisonTransformation() {
 
             {/* Slider Handle */}
             <div 
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize z-10 touch-none"
+              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize z-10"
               style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
               onMouseDown={handleMouseDown}
               onTouchStart={handleMouseDown}
