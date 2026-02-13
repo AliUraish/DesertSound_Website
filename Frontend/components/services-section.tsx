@@ -58,6 +58,7 @@ const services = [
     description:
       "Fill your home with crystal-clear sound through our multi-room audio solutions. From wireless streaming and hi-fi speaker installations to synchronized whole-home audio, we deliver premium sound experiences in every room.",
     image: "/luxury-modern-home-theater-room-with-warm-ambient-.jpg",
+    imagePosition: "100% 100%",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900"
   },
@@ -68,6 +69,7 @@ interface CardProps {
   title: string
   description: string
   image: string
+  imagePosition?: string
   icon: any
   color: string
   textColor: string
@@ -78,7 +80,7 @@ interface CardProps {
 }
 
 // Unified Card component with sticky scroll animation
-const Card = ({ i, title, description, image, icon: Icon, color, textColor, progress, range, targetScale, isMobile }: CardProps) => {
+const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, textColor, progress, range, targetScale, isMobile }: CardProps) => {
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
     target: container,
@@ -109,6 +111,7 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
                 src={image} 
                 alt={title}
                 className="w-full h-full object-cover"
+                style={imagePosition ? { objectPosition: imagePosition } : undefined}
               />
             </motion.div>
             {/* Gradient overlay at bottom of image */}
@@ -192,6 +195,7 @@ const Card = ({ i, title, description, image, icon: Icon, color, textColor, prog
                     src={image} 
                     alt={title}
                     className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                    style={imagePosition ? { objectPosition: imagePosition } : undefined}
                 />
             </motion.div>
         </div>
