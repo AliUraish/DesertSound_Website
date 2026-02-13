@@ -5,33 +5,33 @@ import { useRef } from "react"
 
 const testimonials = [
   {
-    name: "Ahmed Khan",
-    quote: "Desert Sound did an incredible job on our home theatre. The craftsmanship was top-notch, and the team was professional from start to finish. Highly recommend!",
+    name: "Imran Ahmed",
+    quote: "One of the oldest hifi showroom with expertise and expert and the best price with gurantee satisfaction the friendly staff and the place and you don't have to worry for your car park as the beginning of entry there is a valley parking available. ",
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "Sarah Ahmed",
-    quote: "Brilliant service from start to finish. The team was professional, communicative, and the results exceeded my expectations. Our smart home system is amazing!",
+    name: "Rizwan Ghafoor",
+    quote: "Best place for audiophiles in Karachi. Samad Siddiqi is very knowledgable and friendly, guides you to the fullest. Some of the world's best brands you'll find here!",
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "Imran Malik",
-    quote: "I couldn't be happier with my home automation setup. The attention to detail and quality of work were outstanding. They made the whole process smooth and stress-free!",
+    name: "MA Samad Siddiqi",
+    quote: "Excellent Products and well Trained Employees",
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "Fatima Hassan",
-    quote: "Desert Sound transformed our living space with a beautiful audio system. The work was completed on time, and the finish is excellent. A great team to work with!",
+    name: "David Kenney",
+    quote: "A purveyor of state of the art smart home and office solutions. Karim and his team are knowledgeable and helpful. The upstairs has a home theatre set up for demonstrations of what you can expect from the latest technology on offer.",
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "Ali Raza",
-    quote: "From the first consultation to the final touches, Desert Sound delivered on every promise. Our home theatre is exactly what we wanted—immersive and beautifully finished!",
+    name: "Ryan D'Souza",
+    quote: "If you want the best audio equipment for home entertainment in Karachi, there is no better place than Desert Sound. I've helped configure and build a number of systems for friends and family and have a system built for myself as well. Their rates are surprisingly reasonable and they are the only home entertainment vendor that provides warranty on all their products. Very highly recommended.",
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "Zara Sheikh",
-    quote: "Exceptional workmanship! The team installed our security system with precision and it now works flawlessly. Would definitely use Desert Sound again.",
+    name: "Salahuddin Malik",
+    quote: "Desert sound is providing great services to the Pakistan audio video community, they have world's best brands like Marantz, Denon, Focal, Paradigm, SVS, Emotiva & so on. I have a very good experience with them & recently I purchased SVS PB 17 Ultra which is the beast in subwoofer category. Highly recommended.",
     avatar: "/placeholder-user.jpg",
   },
 ]
