@@ -32,7 +32,7 @@ export function ContactSection() {
             {/* Contact Info List */}
             <div className="space-y-6">
               {[
-                { icon: Phone, title: "Phone", value: "+92 300 1234567" },
+                { icon: Phone, title: "Phone", value: "(021) 111 570 111" },
                 { icon: Mail, title: "Email", value: "info@desertsound.com.pk" },
                 { icon: MapPin, title: "Location", value: "Karachi, Pakistan" },
                 { icon: Clock, title: "Hours", value: "Mon - Sat: 9AM - 6PM" }
