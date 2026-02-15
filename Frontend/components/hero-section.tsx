@@ -6,23 +6,54 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 const heroSlides = [
   {
-    image: "/luxury-modern-home-theater-room-with-warm-ambient-.jpg",
+    image: "/homepage1.jpeg",
+    title: "We Create",
+    subtitle: "Dream Spaces",
+    description:
+      "From luxurious home theaters to cutting-edge smart home systems, we design and install solutions that elevate your lifestyle and enhance your space.",
+  },
+  {
+    image: "/homepage5.jpg",
     title: "Where Vision",
     subtitle: "Meets Structure",
     description:
       "Transform your space into an immersive entertainment experience with our premium home theater solutions.",
   },
   {
-    image: "/luxury-modern-home-theater-dark-atmospheric.jpg",
+    image: "/homepage4.jpg",
     title: "Silence In",
     subtitle: "Motion",
     description: "Discover spaces where sound becomes memory, held in the air, the water, and the passing light.",
   },
   {
-    image: "/modern-smart-home-minimalist-blue-tones.jpg",
+    image: "/homepage2.jpg",
+    title: "Intelligent",
+    subtitle: "Automation",
+    description: "Experience the future of home automation with our state-of-the-art smart home solutions.",
+  },
+  {
+    image: "/homepage3.JPG",
+    title: "Custom",
+    subtitle: "Solutions",
+    description: "Tailored solutions for your unique needs, designed to enhance your lifestyle and elevate your space.",
+  },
+  {
+    image: "/homepage7.jpg",
     title: "The Future",
     subtitle: "Makes You Ready",
     description: "Smart home automation that anticipates your needs and elevates your lifestyle beyond imagination.",
+  },
+  {
+    image: "/homepage8.jpg",
+    title: "Experience",
+    subtitle: "Experience",
+    description: "Experience the future of home automation with our state-of-the-art smart home solutions.",
+  },
+  {
+    image: "/homepage9.jpg",
+    title: "Innovative",
+    subtitle: "Solutions",
+    description: "Tailored solutions for your unique needs, designed to enhance your lifestyle and elevate your space.",
   },
 ]
 
@@ -48,11 +79,11 @@ export function HeroSection() {
 
   return (
     <section ref={containerRef} className="relative min-h-screen w-full bg-[#F5F5DC] overflow-hidden">
-      <div className="max-w-[90%] mx-auto px-3 lg:px-4 pt-24 lg:pt-28 h-screen pb-4 flex flex-col">
+      <div className="w-full pt-24 lg:pt-28 h-screen pb-4 flex flex-col">
         {/* Image Container with Parallax */}
         <motion.div 
           style={{ y, opacity, scale }}
-          className="relative w-full flex-grow rounded-lg overflow-hidden will-change-transform"
+          className="relative w-full flex-grow overflow-hidden will-change-transform"
         >
           <AnimatePresence mode="popLayout">
             <motion.div
