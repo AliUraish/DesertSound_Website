@@ -15,7 +15,7 @@ const testimonials = [
     avatar: "/placeholder-user.jpg",
   },
   {
-    name: "MA Samad Siddiqi",
+    name: "MA Siddiqi",
     quote: "Excellent Products and well Trained Employees",
     avatar: "/placeholder-user.jpg",
   },
