@@ -3,10 +3,10 @@
 import { useEffect, useState, useRef } from "react"
 
 const stats = [
-  { number: 500, suffix: "+", label: "Projects Completed" },
-  { number: 15, suffix: "+", label: "Years Experience" },
-  { number: 100, suffix: "%", label: "Client Satisfaction" },
-  { number: 50, suffix: "+", label: "Team Members" },
+  { number: 1500, suffix: "+", label: "Projects Completed" },
+  { number: 30, suffix: "+", label: "Years Experience" },
+  { number: 10, suffix: "+", label: "Awards Won" },
+  { number: 40, suffix: "+", label: "Professionals" },
 ]
 
 export function StatsSection() {
@@ -44,7 +44,7 @@ export function StatsSection() {
             Numbers that speak
           </h2>
           <p className="text-black/60 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-            Since 2009, Desert Sound has been at the forefront of home entertainment and automation technology in Pakistan. We combine cutting-edge technology with artistic vision to create spaces that inspire and delight.
+            Since 1995, Desert Sound has been at the forefront of home entertainment and automation technology in Pakistan. We combine cutting-edge technology with artistic vision to create spaces that inspire and delight.
           </p>
         </div>
 
