@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { OurBrands } from "@/components/our-brands"
 import { ServicesSection } from "@/components/services-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
-import { ProjectsSlideshow } from "@/components/projects"
+import { ProjectLibraryChooser } from "@/components/project-library-chooser"
 import { StatsSection } from "@/components/stats-section"
 import { Testimonials } from "@/components/testimonials"
 import { ContactSection } from "@/components/contact-section"
@@ -18,7 +18,7 @@ export default function HomePage() {
         <OurBrands />
         <ServicesSection />
         <ComparisonTransformation />
-        <ProjectsSlideshow />
+        <ProjectLibraryChooser />
         <StatsSection />
         <Testimonials />
         <ContactSection />
