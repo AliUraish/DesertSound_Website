@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
-export function Header() {
+type HeaderProps = {
+  projectsHref?: string
+}
+
+export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -17,7 +21,7 @@ export function Header() {
 
   const navItems = [
     { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
+    { name: "Projects", href: projectsHref },
     { name: "Testimonials", href: "#testimonials" },
   ]
 
