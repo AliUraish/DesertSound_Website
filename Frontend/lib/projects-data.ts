@@ -71,12 +71,36 @@ export const allProjects: Project[] = [
     year: "2024",
     size: "Flagship Installation",
   },
+  {
+    id: 6,
+    slug: "cafe-flow",
+    title: "Cafe Flow",
+    category: "Commercial Hospitality",
+    location: "Karachi, Pakistan",
+    image: "/Cafe_Flow/Cover.JPG",
+    description:
+      "A refined hospitality AV environment designed to balance ambience, presentation clarity, and an immersive guest experience.",
+    year: "2024",
+    size: "Full Venue Installation",
+  },
+  {
+    id: 7,
+    slug: "xanders",
+    title: "Xanders",
+    category: "Commercial Installation",
+    location: "Karachi, Pakistan",
+    image: "/Xander%27s/Cover.JPG",
+    description:
+      "A placeholder commercial case study featuring a design-led space, integrated AV, and a refined presentation experience.",
+    year: "2024",
+    size: "Featured Installation",
+  },
 ]
 
 export const projectLibraries: {
   commercial: Project[]
   residential: Project[]
 } = {
-  commercial: allProjects.filter((project) => project.id === 1 || project.id === 2),
+  commercial: allProjects.filter((project) => project.id === 6 || project.id === 7),
   residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5),
 }
