@@ -107,6 +107,18 @@ export const allProjects: Project[] = [
     year: "2024",
     size: "Featured Installation",
   },
+  {
+    id: 9,
+    slug: "residency",
+    title: "Residency",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/spiderman/Cover.JPG",
+    description:
+      "A placeholder residential case study focused on immersive viewing, refined comfort, and a clean technology integration.",
+    year: "2024",
+    size: "Featured Installation",
+  },
 ]
 
 export const projectLibraries: {
@@ -114,5 +126,5 @@ export const projectLibraries: {
   residential: Project[]
 } = {
   commercial: allProjects.filter((project) => project.id === 6 || project.id === 7 || project.id === 8),
-  residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5),
+  residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5 || project.id === 9),
 }
