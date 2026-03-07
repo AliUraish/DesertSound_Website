@@ -95,12 +95,24 @@ export const allProjects: Project[] = [
     year: "2024",
     size: "Featured Installation",
   },
+  {
+    id: 8,
+    slug: "crossfit",
+    title: "Crossfit Gym",
+    category: "Commercial Fitness",
+    location: "Karachi, Pakistan",
+    image: "/Gym/Cover.JPG",
+    description:
+      "A placeholder fitness-focused commercial case study with integrated AV, strong atmosphere, and a clean presentation flow.",
+    year: "2024",
+    size: "Featured Installation",
+  },
 ]
 
 export const projectLibraries: {
   commercial: Project[]
   residential: Project[]
 } = {
-  commercial: allProjects.filter((project) => project.id === 6 || project.id === 7),
+  commercial: allProjects.filter((project) => project.id === 6 || project.id === 7 || project.id === 8),
   residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5),
 }
