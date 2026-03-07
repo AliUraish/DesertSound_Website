@@ -4,11 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
-type HeaderProps = {
-  projectsHref?: string
-}
-
-export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -21,9 +17,9 @@ export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
   }, [])
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: projectsHref },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Services", href: "/#services" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Testimonials", href: "/#testimonials" },
   ]
 
   return (
@@ -47,7 +43,7 @@ export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
             {/* Navigation - Centered */}
             <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 space-x-10 lg:space-x-12">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-sm lg:text-base font-medium relative transition-colors duration-300 group text-black hover:text-black/70"
@@ -55,7 +51,7 @@ export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
                   {item.name}
                   {/* Hover underline */}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-black" />
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -111,14 +107,14 @@ export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
             {/* Mobile Navigation */}
             <nav className="space-y-6">
               {[...navItems, { name: "Contact", href: "#contact" }].map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="block text-xl font-medium text-black hover:text-black/70 transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
 
