@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Calendar, MapPin, Maximize } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -13,7 +14,13 @@ type ProjectLibrarySectionProps = {
   projects: Project[]
 }
 
+const caseStudyRoutes: Record<string, string> = {
+  "studio-vellari": "/projects/residential/studio-vellari",
+}
+
 function MobileProjectCard({ project, index }: { project: Project; index: number }) {
+  const caseStudyHref = caseStudyRoutes[project.slug]
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -49,9 +56,18 @@ function MobileProjectCard({ project, index }: { project: Project; index: number
           </span>
         </div>
 
-        <button className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3" type="button">
-          View Case Study <ArrowUpRight size={12} />
-        </button>
+        {caseStudyHref ? (
+          <Link
+            href={caseStudyHref}
+            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3"
+          >
+            View Case Study <ArrowUpRight size={12} />
+          </Link>
+        ) : (
+          <button className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3" type="button">
+            View Case Study <ArrowUpRight size={12} />
+          </button>
+        )}
       </div>
     </motion.div>
   )
@@ -121,8 +137,11 @@ function DesktopLibrary({ badge, title, description, projects }: ProjectLibraryS
           className="flex-1 overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           <div className="flex gap-8 h-full w-max pr-[8%]">
-            {projects.map((project) => (
-              <div key={project.id} className="group relative h-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
+            {projects.map((project) => {
+              const caseStudyHref = caseStudyRoutes[project.slug]
+
+              return (
+                <div key={project.id} className="group relative h-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -150,12 +169,22 @@ function DesktopLibrary({ badge, title, description, projects }: ProjectLibraryS
                     </span>
                   </div>
 
-                  <button className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3" type="button">
-                    View Case Study <ArrowUpRight size={14} />
-                  </button>
+                    {caseStudyHref ? (
+                      <Link
+                        href={caseStudyHref}
+                        className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3"
+                      >
+                        View Case Study <ArrowUpRight size={14} />
+                      </Link>
+                    ) : (
+                      <button className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide transition-all duration-300 hover:gap-3" type="button">
+                        View Case Study <ArrowUpRight size={14} />
+                      </button>
+                    )}
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

@@ -59,6 +59,18 @@ export const allProjects: Project[] = [
     year: "2024",
     size: "5,000 sq ft",
   },
+  {
+    id: 5,
+    slug: "studio-vellari",
+    title: "Studio Vellari",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/vellari1.png",
+    description:
+      "Flagship Desert Sound cinema seating project featuring Studio Vellari Stanley recliners and daybed.",
+    year: "2024",
+    size: "Flagship Installation",
+  },
 ]
 
 export const projectLibraries: {
@@ -66,5 +78,5 @@ export const projectLibraries: {
   residential: Project[]
 } = {
   commercial: allProjects.filter((project) => project.id === 1 || project.id === 2),
-  residential: allProjects.filter((project) => project.id === 3 || project.id === 4),
+  residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5),
 }
