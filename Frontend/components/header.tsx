@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 type HeaderProps = {
@@ -35,13 +36,13 @@ export function Header({ projectsHref = "#projects" }: HeaderProps = {}) {
               : "bg-[#F5F5DC]"
           }`}>
             {/* Logo - Left */}
-            <a href="#" className="flex items-center cursor-pointer">
+            <Link href="/" className="flex items-center cursor-pointer">
               <img 
                 src="/0-removebg-preview.png" 
                 alt="Desert Sound Logo" 
                 className="h-16 lg:h-20 w-auto object-contain"
               />
-            </a>
+            </Link>
 
             {/* Navigation - Centered */}
             <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 space-x-10 lg:space-x-12">
