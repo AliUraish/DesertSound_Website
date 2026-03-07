@@ -58,7 +58,7 @@ export default function XandersPage() {
 
       <main>
         <section className="pt-24 lg:pt-28">
-          <img src={coverImage} alt="Xanders main image" className="h-[58vh] w-full object-cover lg:h-[68vh]" />
+        <img src={coverImage} alt="Xanders main image" className="h-[58vh] w-full object-cover object-[50%_40%] lg:h-[68vh]" />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
