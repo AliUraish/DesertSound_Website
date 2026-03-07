@@ -6,7 +6,7 @@ export default function CommercialProjectsPage() {
   return (
     <div className="w-full overflow-x-clip">
       <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden">
-        <Header projectsHref="/#projects" />
+        <Header />
         <div className="pt-24">
           <ProjectLibrarySection
             badge="Project Library"
