@@ -15,6 +15,8 @@ type ProjectLibrarySectionProps = {
 }
 
 const caseStudyRoutes: Record<string, string> = {
+  "cafe-flow": "/projects/commercial/cafe-flow",
+  xanders: "/projects/commercial/xanders",
   "studio-vellari": "/projects/residential/studio-vellari",
 }
 
