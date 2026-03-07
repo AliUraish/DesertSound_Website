@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 const heroSlides = [
   {
     image: "/homepage1.jpeg",
+    imagePosition: "50% 28%",
     title: "We Create",
     subtitle: "Dream Spaces",
     description:
@@ -98,6 +99,7 @@ export function HeroSection() {
                 className="w-full h-full bg-cover bg-center bg-no-repeat"
                 style={{
                   backgroundImage: `url('${heroSlides[currentSlide].image}')`,
+                  backgroundPosition: heroSlides[currentSlide].imagePosition ?? "50% 50%",
                 }}
               />
               <div className="absolute inset-0 bg-black/20" /> {/* Subtle overlay for text readability */}
