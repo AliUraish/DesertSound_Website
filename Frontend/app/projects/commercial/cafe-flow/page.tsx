@@ -82,7 +82,7 @@ export default function CafeFlowPage() {
 
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC]">
-      <Header projectsHref="/projects/commercial" />
+      <Header />
 
       <main>
         <section className="pt-24 lg:pt-28">
