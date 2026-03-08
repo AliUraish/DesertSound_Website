@@ -36,30 +36,6 @@ export const allProjects: Project[] = [
     size: "3,200 sq ft",
   },
   {
-    id: 3,
-    slug: "executive-boardroom-av",
-    title: "Executive Boardroom AV",
-    category: "Corporate Installation",
-    location: "Islamabad, Pakistan",
-    image: "/corporate-boardroom-premium-av-equipment-modern.jpg",
-    description:
-      "Professional-grade audiovisual setup with wireless presentation systems and automated room controls.",
-    year: "2023",
-    size: "800 sq ft",
-  },
-  {
-    id: 4,
-    slug: "riverside-residence",
-    title: "Riverside Residence",
-    category: "Home Automation",
-    location: "Dubai, UAE",
-    image: "/luxury-home-theater-cinematic-lighting.jpg",
-    description:
-      "A seamless blend of technology and design, featuring automated shades, lighting scenes, and multi-room audio.",
-    year: "2024",
-    size: "5,000 sq ft",
-  },
-  {
     id: 5,
     slug: "studio-vellari",
     title: "Studio Vellari",
@@ -119,6 +95,66 @@ export const allProjects: Project[] = [
     year: "2024",
     size: "Featured Installation",
   },
+  {
+    id: 10,
+    slug: "project-2",
+    title: "Project 2",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/projects_desert/project_2/Cover.jpg",
+    description:
+      "A placeholder residential case study focused on comfort, immersive viewing, and a balanced design language.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 11,
+    slug: "project-5",
+    title: "Project 5",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/projects_desert/project_5/Cover.webp",
+    description:
+      "A placeholder residential case study built around refined finishes, integrated AV, and a calm cinematic atmosphere.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 12,
+    slug: "project-7",
+    title: "Project 7",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/projects_desert/project_7/Cover.jpg",
+    description:
+      "A placeholder residential case study combining a polished interior mood with an immersive entertainment setup.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 13,
+    slug: "project-9",
+    title: "Project 9",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/projects_desert/project_9/Cover.jpg",
+    description:
+      "A placeholder residential case study centered on soft ambiance, practical comfort, and strong visual presentation.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 14,
+    slug: "project-11",
+    title: "Project 11",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/projects_desert/project_11/Cover.jpg",
+    description:
+      "A placeholder residential case study designed to present a quiet, intimate setting with integrated cinematic performance.",
+    year: "2024",
+    size: "Featured Installation",
+  },
 ]
 
 export const projectLibraries: {
@@ -126,5 +162,14 @@ export const projectLibraries: {
   residential: Project[]
 } = {
   commercial: allProjects.filter((project) => project.id === 6 || project.id === 7 || project.id === 8),
-  residential: allProjects.filter((project) => project.id === 3 || project.id === 4 || project.id === 5 || project.id === 9),
+  residential: allProjects.filter(
+    (project) =>
+      project.id === 5 ||
+      project.id === 9 ||
+      project.id === 10 ||
+      project.id === 11 ||
+      project.id === 12 ||
+      project.id === 13 ||
+      project.id === 14,
+  ),
 }
