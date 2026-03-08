@@ -42,11 +42,11 @@ export default function StudioVellariPage() {
       <Header />
 
       <main>
-        <section className="pt-24 lg:pt-28">
+        <section className="pt-[100px] md:pt-24 lg:pt-28">
           <img
             src="/vellari1.png"
             alt="Studio Vellari main image"
-            className="h-[58vh] lg:h-[68vh] w-full object-cover"
+            className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] lg:h-[68vh] object-cover"
           />
         </section>
 
@@ -69,7 +69,7 @@ export default function StudioVellariPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="max-w-[88%] mx-auto overflow-hidden rounded-xl relative h-[62vh] lg:h-[74vh]">
+          <div className="max-w-[88%] mx-auto overflow-hidden rounded-xl relative aspect-[3/2]">
             <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
