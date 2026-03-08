@@ -29,7 +29,7 @@ export function Header() {
           <div className={`relative flex items-center justify-between py-2 lg:py-1.5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
             isScrolled 
               ? "bg-[#F5F5DC] shadow-lg" 
-              : "bg-[#F5F5DC]"
+              : "bg-[#F5F5DC]/80 md:bg-[#F5F5DC] backdrop-blur-md"
           }`}>
             {/* Logo - Left */}
             <Link href="/" className="flex items-center cursor-pointer">
