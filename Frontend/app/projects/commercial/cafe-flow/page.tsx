@@ -85,11 +85,11 @@ export default function CafeFlowPage() {
       <Header />
 
       <main>
-        <section className="pt-24 lg:pt-28">
+        <section className="pt-[100px] md:pt-24 lg:pt-28">
           <img
             src="/Cafe_Flow/Cover.JPG"
             alt="Cafe Flow main image"
-            className="h-[58vh] w-full object-cover lg:h-[68vh]"
+            className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
           />
         </section>
 
@@ -108,7 +108,7 @@ export default function CafeFlowPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="relative mx-auto h-[62vh] max-w-[88%] overflow-hidden rounded-xl lg:h-[74vh]">
+          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[3/2]">
             <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
