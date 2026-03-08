@@ -26,26 +26,6 @@ const projects = [
     year: "2024",
     size: "3,200 sq ft",
   },
-  {
-    id: 3,
-    title: "Executive Boardroom AV",
-    category: "Corporate Installation",
-    location: "Islamabad, Pakistan",
-    image: "/corporate-boardroom-premium-av-equipment-modern.jpg",
-    description: "Professional-grade audiovisual setup with wireless presentation systems and automated room controls.",
-    year: "2023",
-    size: "800 sq ft",
-  },
-  {
-    id: 4,
-    title: "Riverside Residence",
-    category: "Home Automation",
-    location: "Dubai, UAE",
-    image: "/luxury-home-theater-cinematic-lighting.jpg",
-    description: "A seamless blend of technology and design, featuring automated shades, lighting scenes, and multi-room audio.",
-    year: "2024",
-    size: "5,000 sq ft",
-  },
 ]
 
 // Mobile Project Card - vertical layout with tap to expand
