@@ -79,8 +79,8 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={containerRef} className="relative min-h-screen w-full bg-[#F5F5DC] overflow-hidden">
-      <div className="w-full pt-24 lg:pt-28 h-screen pb-4 flex flex-col">
+    <section ref={containerRef} className="relative w-full bg-[#F5F5DC] overflow-hidden">
+      <div className="w-full pt-[100px] md:pt-24 lg:pt-28 h-[65vh] md:h-[80vh] lg:h-screen pb-4 flex flex-col">
         {/* Image Container with Parallax */}
         <motion.div 
           style={{ y, opacity, scale }}
@@ -95,11 +95,12 @@ export function HeroSection() {
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0 z-0"
             >
-              <div
-                className="w-full h-full bg-cover bg-center bg-no-repeat"
+              <img
+                src={heroSlides[currentSlide].image}
+                alt={`${heroSlides[currentSlide].title} ${heroSlides[currentSlide].subtitle}`}
+                className="w-full h-full object-cover"
                 style={{
-                  backgroundImage: `url('${heroSlides[currentSlide].image}')`,
-                  backgroundPosition: heroSlides[currentSlide].imagePosition ?? "50% 50%",
+                  objectPosition: heroSlides[currentSlide].imagePosition ?? "50% 50%",
                 }}
               />
               <div className="absolute inset-0 bg-black/20" /> {/* Subtle overlay for text readability */}
@@ -107,8 +108,8 @@ export function HeroSection() {
           </AnimatePresence>
 
           {/* Content Overlay - Bottom Positioned */}
-          <div className="relative z-10 h-full flex flex-col justify-end pb-8 lg:pb-12 px-6 lg:px-8">
-            <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
+          <div className="relative z-10 h-full flex flex-col justify-end pb-6 md:pb-8 lg:pb-12 px-4 md:px-6 lg:px-8">
+            <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 md:gap-6 lg:gap-8">
               {/* Text - Bottom Left with staggered animations */}
               <motion.div 
                 key={currentSlide}
@@ -132,7 +133,7 @@ export function HeroSection() {
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 0.7, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                   }}
-                  className="text-sm lg:text-base text-white font-normal"
+                  className="text-xs md:text-sm lg:text-base text-white font-normal"
                 >
                   {heroSlides[currentSlide].description}
                 </motion.p>
@@ -140,7 +141,7 @@ export function HeroSection() {
                 {/* Title - animates second */}
                 <div className="overflow-hidden">
                   <motion.h1 
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-normal leading-tight"
+                    className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-white font-normal leading-tight"
                   >
                     <span className="block overflow-hidden">
                       <motion.span
@@ -181,7 +182,7 @@ export function HeroSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button
-                      className="bg-background text-foreground hover:bg-background/90 rounded-lg px-6 lg:px-8 py-3 lg:py-4 text-sm lg:text-base font-normal transition-colors duration-200 cursor-pointer"
+                      className="bg-background text-foreground hover:bg-background/90 rounded-lg px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 text-xs md:text-sm lg:text-base font-normal transition-colors duration-200 cursor-pointer"
                     >
                       Work with us
                     </Button>
