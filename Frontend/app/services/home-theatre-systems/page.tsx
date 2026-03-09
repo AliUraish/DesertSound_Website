@@ -156,9 +156,8 @@ export default function HomeTheatreSystemsPage() {
     offset: ["start start", "end start"]
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "12%"])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.03])
 
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC]">
@@ -166,41 +165,128 @@ export default function HomeTheatreSystemsPage() {
 
       <main>
         {/* Hero Section */}
-        <section ref={containerRef} className="relative w-full overflow-hidden">
-          <div className="w-full pt-[100px] md:pt-24 lg:pt-28 h-[65vh] md:h-[80vh] lg:h-screen pb-4 flex flex-col">
-            <motion.div 
-              style={{ y, opacity, scale }}
-              className="relative w-full flex-grow overflow-hidden will-change-transform"
-            >
-              <div className="absolute inset-0 z-0">
-                <img
-                  src="/luxury-home-theater-with-leather-recliners-and-amb.jpg"
-                  alt="Luxury Home Theatre System"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+        <section ref={containerRef} className="relative w-full overflow-hidden bg-[#F5F5DC]">
+          <div className="w-full pt-[118px] md:pt-32 lg:pt-36 pb-12 md:pb-16 lg:pb-20">
+            <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+              <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(380px,0.9fr)] lg:gap-16">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="max-w-2xl"
+                >
+                  <div className="mb-10 flex items-center gap-4">
+                    <span className="h-px w-12 bg-black/20" />
+                    <p className="text-xs text-black/50 uppercase tracking-[0.26em] font-medium">
+                      Home Theatre Systems
+                    </p>
+                  </div>
+
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.8rem] text-black font-light tracking-[-0.03em] leading-[0.96] mb-8">
+                    Professional Cinema
+                    <br />
+                    <span className="font-serif italic text-black/65">Design & Installation</span>
+                  </h1>
+
+                  <p className="max-w-xl text-xl md:text-2xl text-black/75 font-light leading-[1.5] mb-10">
+                    Transform your space with state-of-the-art projection, immersive Dolby Atmos sound, and seamless smart integration—tailored to your home in Pakistan.
+                  </p>
+
+                  <div className="mb-10 grid grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-black/45 mb-2">Visual Excellence</p>
+                      <p className="text-sm text-black/70 font-light leading-relaxed">4K/8K projection systems with professional calibration</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-black/45 mb-2">Immersive Audio</p>
+                      <p className="text-sm text-black/70 font-light leading-relaxed">Dolby Atmos surround sound with acoustic treatment</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-black/45 mb-2">Smart Control</p>
+                      <p className="text-sm text-black/70 font-light leading-relaxed">Control4, Crestron & HDL automation integration</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-black/45 mb-2">Custom Design</p>
+                      <p className="text-sm text-black/70 font-light leading-relaxed">Luxury seating and tailored room acoustics</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-4 sm:flex-row">
+                    <a
+                      href="#features"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-black/90 hover:gap-3"
+                    >
+                      <span>Explore Complete Solutions</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <a
+                      href="/#contact"
+                      className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/80 px-8 py-4 text-sm font-medium text-black transition-colors duration-300 hover:bg-white"
+                    >
+                      Get Free Consultation
+                    </a>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.9, delay: 0.25 }}
+                  className="relative lg:mt-0 mt-8"
+                >
+                  <motion.div
+                    style={{ y, scale }}
+                    className="relative overflow-hidden rounded-[2rem] bg-[#0a0a0a] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
+                  >
+                    <div className="relative h-[450px] overflow-hidden rounded-[1.4rem] md:h-[550px] lg:h-[650px]">
+                      <img
+                        src="/luxury-home-theater-with-leather-recliners-and-amb.jpg"
+                        alt="Professional Home Theatre Installation"
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+
+                      <div className="absolute left-5 top-5 rounded-xl border border-white/15 bg-black/50 px-5 py-3.5 text-white backdrop-blur-xl md:left-7 md:top-7">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-white/55 mb-1">Premium Design</p>
+                        <p className="text-sm font-light leading-snug">Custom room planning & acoustics</p>
+                      </div>
+
+                      <div className="absolute bottom-5 right-5 rounded-xl border border-white/15 bg-white/15 px-5 py-3.5 text-white backdrop-blur-xl md:bottom-7 md:right-7">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-white/55 mb-1">Expert Installation</p>
+                        <p className="text-sm font-light leading-snug">Trusted across Pakistan</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
               </div>
 
-              <div className="relative z-10 h-full flex flex-col justify-end pb-8 md:pb-12 lg:pb-16 px-4 md:px-6 lg:px-8">
-                <div className="max-w-7xl mx-auto w-full">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                  >
-                    <p className="text-xs md:text-sm text-white/70 uppercase tracking-[0.2em] mb-4 font-light">
-                      Home / Services / Home Theatre Systems
-                    </p>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light tracking-tight leading-tight mb-6">
-                      Home Theatre<br />Systems
-                    </h1>
-                    <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-2xl leading-relaxed">
-                      Transform your space into a premium cinema experience with state-of-the-art technology and professional design.
-                    </p>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.35 }}
+                className="mt-12 grid gap-px overflow-hidden rounded-[2rem] bg-black/10 lg:grid-cols-3"
+              >
+                {[
+                  {
+                    label: "Complete Design Process",
+                    value: "From room planning and acoustic treatment to screen positioning and lighting—every detail carefully considered for your space.",
+                  },
+                  {
+                    label: "Premium Technology",
+                    value: "State-of-the-art 4K/8K projectors, Dolby Atmos sound systems, and luxury seating from brands like Studio Vellari.",
+                  },
+                  {
+                    label: "Local Expertise",
+                    value: "Extensive experience across Pakistan with knowledge of local construction, power specs, and installation requirements.",
+                  },
+                ].map((item) => (
+                  <div key={item.label} className="bg-white/70 px-7 py-7 backdrop-blur-sm lg:px-9 lg:py-8">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-black/45 mb-3">{item.label}</p>
+                    <p className="text-sm md:text-base text-black/70 font-light leading-relaxed">{item.value}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -231,7 +317,7 @@ export default function HomeTheatreSystemsPage() {
         </section>
 
         {/* Feature Cards Section */}
-        <section className="py-16 lg:py-24 bg-white">
+        <section id="features" className="py-16 lg:py-24 bg-white">
           <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -427,69 +513,6 @@ export default function HomeTheatreSystemsPage() {
                 </a>
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* Why Choose Desert Sound */}
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
-                Why Choose Desert Sound
-              </h2>
-              <p className="text-lg text-black/70 font-light leading-relaxed max-w-3xl mx-auto">
-                Pakistan's trusted partner for premium home theatre installations
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-              {[
-                { label: "Years Experience", value: "15+" },
-                { label: "Projects Completed", value: "500+" },
-                { label: "Premium Brands", value: "25+" },
-                { label: "Client Satisfaction", value: "100%" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-5xl lg:text-6xl font-light text-black mb-3 tracking-tight">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm uppercase tracking-[0.2em] text-black/60 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mt-16 p-8 lg:p-12 bg-black/5 rounded-2xl"
-            >
-              <h3 className="text-2xl lg:text-3xl font-light text-black mb-6 tracking-tight">
-                Local Expertise in Pakistan
-              </h3>
-              <p className="text-lg text-black/70 font-light leading-relaxed mb-4">
-                Our team has extensive experience with home theatre design and installation projects across Pakistan. This enables us to understand local construction techniques, power specifications, and user preferences.
-              </p>
-              <p className="text-lg text-black/70 font-light leading-relaxed">
-                We provide fully customized solutions that match your needs and budget—from consultation to final testing. Our solutions are scalable and can be upgraded with new technology in the future, whether you're enhancing an existing setup or creating a new home cinema.
-              </p>
-            </motion.div>
           </div>
         </section>
 
