@@ -108,7 +108,7 @@ export default function CafeFlowPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[3/2]">
+          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
             <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
