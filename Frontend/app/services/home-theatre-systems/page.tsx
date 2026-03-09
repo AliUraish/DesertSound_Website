@@ -167,27 +167,28 @@ export default function HomeTheatreSystemsPage() {
         {/* Hero Section */}
         <section ref={containerRef} className="relative w-full overflow-hidden bg-[#F5F5DC]">
           <div className="w-full pt-[130px] md:pt-36 lg:pt-40 pb-16 md:pb-20 lg:pb-24">
-            <div className="max-w-[88%] lg:max-w-6xl mx-auto px-4 lg:px-8">
+            <div className="max-w-[95%] xl:max-w-[1600px] mx-auto px-4 lg:px-8">
               {/* Text and Image Side by Side */}
-              <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                 {/* Header Text */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
+                  className="lg:pr-8"
                 >
-                  <p className="text-xs text-black/50 uppercase tracking-[0.26em] font-medium mb-6">
+                  <p className="text-xs text-black/50 uppercase tracking-[0.2em] font-medium mb-6">
                     Home Theatre Systems
                   </p>
                   
-                  <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-black font-light tracking-tight leading-[1.05] mb-6">
-                    Professional Cinema
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-5">
+                    Home Theatre Design
                     <br />
-                    Design & Installation
+                    & Installation
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    Transform your space with state-of-the-art 4K/8K projection, immersive Dolby Atmos sound, and seamless smart integration—tailored to your home in Pakistan.
+                    Complete cinema solutions with 4K/8K projection, Dolby Atmos sound, and smart control systems.
                   </p>
 
                   <div className="flex">
@@ -201,24 +202,38 @@ export default function HomeTheatreSystemsPage() {
                   </div>
                 </motion.div>
 
-                {/* Image - Extended */}
+                {/* Image */}
                 <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="lg:-mr-[10%]"
+                  className="relative"
                 >
                   <motion.div
                     style={{ y, scale }}
-                    className="relative overflow-hidden rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.18)]"
+                    className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
-                    <div className="relative h-[380px] md:h-[500px] lg:h-[620px] overflow-hidden">
+                    <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
                       <img
                         src="/luxury-home-theater-with-leather-recliners-and-amb.jpg"
                         alt="Professional Home Theatre Installation"
                         className="h-full w-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+                      
+                      {/* Floating Stats on Image */}
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20">
+                            <p className="text-xs uppercase tracking-[0.2em] text-white/70 mb-1">Visual</p>
+                            <p className="text-sm text-white font-medium">4K/8K Projection</p>
+                          </div>
+                          <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 border border-white/20">
+                            <p className="text-xs uppercase tracking-[0.2em] text-white/70 mb-1">Audio</p>
+                            <p className="text-sm text-white font-medium">Dolby Atmos</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 </motion.div>
