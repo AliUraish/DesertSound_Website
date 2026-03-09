@@ -69,7 +69,7 @@ export default function StudioVellariPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="max-w-[88%] mx-auto overflow-hidden rounded-xl relative aspect-[3/2]">
+          <div className="max-w-[88%] mx-auto overflow-hidden rounded-xl relative aspect-[18/9]">
             <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
