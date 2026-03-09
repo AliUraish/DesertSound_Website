@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Link from "next/link"
 import { Tv, Home, Smartphone, Shield, Zap, Headphones, ArrowUpRight } from "lucide-react"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { cn } from "@/lib/utils"
@@ -14,7 +15,8 @@ const services = [
       "Transform your space into a premium cinema experience with state-of-the-art 4K/8K projectors, immersive Dolby Atmos surround sound, custom luxury seating, and professional acoustic treatment. We design and install complete home theater solutions tailored to your space and preferences.",
     image: "/luxury-home-theater-with-leather-recliners-and-amb.jpg",
     color: "bg-[#1a1a1a]",
-    textColor: "text-white"
+    textColor: "text-white",
+    link: "/services/home-theatre-systems"
   },
   {
     icon: Home,
@@ -73,6 +75,7 @@ interface CardProps {
   icon: any
   color: string
   textColor: string
+  link?: string
   progress: MotionValue<number>
   range: number[]
   targetScale: number
@@ -80,7 +83,7 @@ interface CardProps {
 }
 
 // Unified Card component with sticky scroll animation
-const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, textColor, progress, range, targetScale, isMobile }: CardProps) => {
+const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, textColor, link, progress, range, targetScale, isMobile }: CardProps) => {
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
     target: container,
@@ -140,10 +143,17 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
               {description}
             </p>
 
-            <button className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit", textColor)}>
-              <span>Explore Solution</span>
-              <ArrowUpRight size={14} />
-            </button>
+            {link ? (
+              <Link href={link} className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit hover:gap-3 transition-all duration-300", textColor)}>
+                <span>Explore Solution</span>
+                <ArrowUpRight size={14} />
+              </Link>
+            ) : (
+              <button className={cn("flex items-center gap-2 text-xs uppercase tracking-widest w-fit", textColor)}>
+                <span>Explore Solution</span>
+                <ArrowUpRight size={14} />
+              </button>
+            )}
           </div>
         </motion.div>
       </div>
@@ -179,10 +189,17 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
                 </p>
             </div>
 
-            <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", textColor)}>
-                <span>Explore Solution</span>
-                <ArrowUpRight size={16} />
-            </button>
+            {link ? (
+              <Link href={link} className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", textColor)}>
+                  <span>Explore Solution</span>
+                  <ArrowUpRight size={16} />
+              </Link>
+            ) : (
+              <button className={cn("flex items-center gap-2 text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300 w-fit", textColor)}>
+                  <span>Explore Solution</span>
+                  <ArrowUpRight size={16} />
+              </button>
+            )}
         </div>
 
         {/* Image Side */}
