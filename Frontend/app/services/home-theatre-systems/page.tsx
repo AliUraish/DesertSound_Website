@@ -168,62 +168,67 @@ export default function HomeTheatreSystemsPage() {
         <section ref={containerRef} className="relative w-full overflow-hidden bg-[#F5F5DC]">
           <div className="w-full pt-[130px] md:pt-36 lg:pt-40 pb-16 md:pb-20 lg:pb-24">
             <div className="max-w-[88%] lg:max-w-6xl mx-auto px-4 lg:px-8">
-              {/* Simple Header */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-center mb-12 md:mb-16"
-              >
-                <p className="text-xs text-black/50 uppercase tracking-[0.26em] font-medium mb-6">
-                  Home Theatre Systems
-                </p>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-6">
-                  Professional Cinema Design & Installation
-                </h1>
-                
-                <p className="text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-3xl mx-auto mb-8">
-                  Transform your space with state-of-the-art projection, immersive Dolby Atmos sound, and seamless smart integration—tailored to your home in Pakistan.
-                </p>
-                
-                <div className="flex flex-col gap-3 sm:flex-row justify-center">
-                  <a
-                    href="#features"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-black/90 hover:gap-3"
-                  >
-                    <span>Explore Solutions</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="/#contact"
-                    className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-white"
-                  >
-                    Free Consultation
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Simple Landscape Image */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.25 }}
-              >
+              {/* Text and Image Side by Side */}
+              <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+                {/* Header Text */}
                 <motion.div
-                  style={{ y, scale }}
-                  className="relative overflow-hidden rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
                 >
-                  <div className="relative h-[280px] md:h-[400px] lg:h-[500px] overflow-hidden">
-                    <img
-                      src="/luxury-modern-home-theater-dark-atmospheric.jpg"
-                      alt="Professional Home Theatre Installation"
-                      className="h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  <p className="text-xs text-black/50 uppercase tracking-[0.26em] font-medium mb-6">
+                    Home Theatre Systems
+                  </p>
+                  
+                  <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-black font-light tracking-tight leading-[1.05] mb-6">
+                    Professional Cinema
+                    <br />
+                    Design & Installation
+                  </h1>
+                  
+                  <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
+                    Transform your space with state-of-the-art 4K/8K projection, immersive Dolby Atmos sound, and seamless smart integration—tailored to your home in Pakistan.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#features"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-black/90 hover:gap-3"
+                    >
+                      <span>Explore Solutions</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <a
+                      href="/#contact"
+                      className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-white"
+                    >
+                      Free Consultation
+                    </a>
                   </div>
                 </motion.div>
-              </motion.div>
+
+                {/* Image - Extended */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="lg:-mr-[10%]"
+                >
+                  <motion.div
+                    style={{ y, scale }}
+                    className="relative overflow-hidden rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.18)]"
+                  >
+                    <div className="relative h-[380px] md:h-[500px] lg:h-[620px] overflow-hidden">
+                      <img
+                        src="/luxury-home-theater-with-leather-recliners-and-amb.jpg"
+                        alt="Professional Home Theatre Installation"
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
