@@ -190,19 +190,13 @@ export default function HomeTheatreSystemsPage() {
                     Transform your space with state-of-the-art 4K/8K projection, immersive Dolby Atmos sound, and seamless smart integration—tailored to your home in Pakistan.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex">
                     <a
                       href="#features"
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-black/90 hover:gap-3"
                     >
                       <span>Explore Solutions</span>
                       <ArrowRight className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="/#contact"
-                      className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white/80 px-7 py-3.5 text-sm font-medium text-black transition-colors duration-300 hover:bg-white"
-                    >
-                      Free Consultation
                     </a>
                   </div>
                 </motion.div>
