@@ -36,6 +36,7 @@ const caseStudyRoutes: Record<string, string> = {
   "project-21": "/projects/residential/project-21",
   residency: "/projects/residential/residency",
   xanders: "/projects/commercial/xanders",
+  "stanley-seats": "/projects/residential/stanley-seats",
   "studio-vellari": "/projects/residential/studio-vellari",
 }
 
