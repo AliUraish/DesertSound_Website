@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import Link from "next/link"
-import { Tv, Home, Smartphone, Shield, Zap, Headphones, ArrowUpRight } from "lucide-react"
+import { Tv, Home, Smartphone, Wifi, Zap, Headphones, ArrowUpRight } from "lucide-react"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -39,13 +39,14 @@ const services = [
     link: "/services/control-integration"
   },
   {
-    icon: Shield,
-    title: "Security Solutions",
+    icon: Wifi,
+    title: "Home Networking and Wi-Fi",
     description:
-      "Protect what matters most with advanced surveillance and access control systems. We install HD camera networks, smart locks, motion detection, and remote monitoring solutions that provide complete peace of mind for your home or business.",
-    image: "/corporate-boardroom-premium-av-equipment-modern.jpg",
+      "Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home Network Setup and Optimization, extensive Wi-Fi Coverage and Performance Enhancement, and advanced Network Security and Parental Controls.",
+    image: "/smart-home-control-room-futuristic.jpg",
     color: "bg-[#f5f5f5]",
-    textColor: "text-zinc-900"
+    textColor: "text-zinc-900",
+    link: "/services/home-networking-and-wi-fi"
   },
   {
     icon: Zap,
@@ -54,7 +55,8 @@ const services = [
       "Elevate your spaces with architectural lighting that transforms ambiance at the touch of a button. Our lighting solutions include LED architectural fixtures, mood control systems, daylight harvesting, and automated scheduling for the perfect atmosphere.",
     image: "/luxury-modern-home-theater-dark-atmospheric.jpg",
     color: "bg-[#1a1a1a]",
-    textColor: "text-white"
+    textColor: "text-white",
+    link: "/services/lighting-design"
   },
   {
     icon: Headphones,
