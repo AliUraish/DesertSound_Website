@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useRef } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
@@ -15,7 +16,6 @@ import {
   CheckCircle2,
   ArrowRight
 } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const features = [
   {
@@ -437,13 +437,13 @@ export default function HomeTheatreSystemsPage() {
                   ))}
                 </div>
 
-                <a 
+                <Link
                   href="/#services"
                   className="inline-flex items-center gap-2 text-black hover:gap-4 transition-all duration-300 text-base font-light"
                 >
                   <span>Explore Smart Home Automation</span>
                   <ArrowRight className="w-5 h-5" />
-                </a>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -492,12 +492,12 @@ export default function HomeTheatreSystemsPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a 
-                  href="#contact"
+                <Link
+                  href="/#contact"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-lg text-base font-medium hover:bg-white/90 transition-colors duration-300"
                 >
                   Get Free Consultation
-                </a>
+                </Link>
                 <a 
                   href="tel:+922111570111"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg text-base font-medium hover:bg-white hover:text-black transition-all duration-300"
