@@ -57,12 +57,12 @@ export function Header() {
 
             {/* Contact Button - Right */}
             <div className="hidden md:flex items-center">
-              <a 
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="px-6 lg:px-8 py-2.5 lg:py-3 rounded-full text-sm font-medium transition-all duration-300 bg-black text-white hover:bg-black/90"
               >
                 Contact
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -106,7 +106,7 @@ export function Header() {
           <div className="p-8 pt-20">
             {/* Mobile Navigation */}
             <nav className="space-y-6">
-              {[...navItems, { name: "Contact", href: "#contact" }].map((item) => (
+              {[...navItems, { name: "Contact", href: "/#contact" }].map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -129,13 +129,13 @@ export function Header() {
 
             {/* Mobile CTA */}
             <div className="mt-8">
-              <a 
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="block w-full bg-black text-white text-center rounded-lg py-4 text-base font-medium transition-colors duration-200 hover:bg-black/90"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start Your Project
-              </a>
+              </Link>
             </div>
           </div>
         </div>
