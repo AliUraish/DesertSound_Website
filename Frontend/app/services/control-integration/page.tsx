@@ -195,6 +195,16 @@ export default function ControlIntegrationPage() {
                     applications, from industrial automation to aerospace and
                     automotive industries.
                   </p>
+
+                  <div className="mt-8 flex">
+                    <a
+                      href="#features"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:gap-3 hover:bg-black/90"
+                    >
+                      <span>Explore Solution</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </motion.div>
 
                 <motion.div
