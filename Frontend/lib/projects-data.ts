@@ -180,6 +180,18 @@ export const allProjects: Project[] = [
     size: "Featured Installation",
   },
   {
+    id: 25,
+    slug: "project-13",
+    title: "Project 13",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_13/img_1.jpg",
+    description:
+      "A residential cinema setting with clean lines, balanced lighting, and a composed entertainment-focused atmosphere.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
     id: 15,
     slug: "project-14",
     title: "Project 14",
@@ -293,6 +305,7 @@ export const projectLibraries: {
       project.id === 13 ||
       project.id === 24 ||
       project.id === 14 ||
+      project.id === 25 ||
       project.id === 15 ||
       project.id === 16 ||
       project.id === 17 ||
