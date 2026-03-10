@@ -24,6 +24,7 @@ const caseStudyRoutes: Record<string, string> = {
   "project-9": "/projects/residential/project-9",
   "project-10": "/projects/residential/project-10",
   "project-11": "/projects/residential/project-11",
+  "project-12": "/projects/residential/project-12",
   "project-13": "/projects/residential/project-13",
   "project-14": "/projects/residential/project-14",
   "project-15": "/projects/residential/project-15",
