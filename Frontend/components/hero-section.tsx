@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 const heroSlides = [
   {
-    image: "/homepage1.jpeg",
+    image: "/homepage_header/homepage1.jpeg",
     imagePosition: "50% 28%",
     title: "We Create",
     subtitle: "Dream Spaces",
@@ -14,44 +14,32 @@ const heroSlides = [
       "From luxurious home theaters to cutting-edge smart home systems, we design and install solutions that elevate your lifestyle and enhance your space.",
   },
   {
-    image: "/homepage5.jpg",
+    image: "/homepage_header/homepage2.jpg",
     title: "Where Vision",
     subtitle: "Meets Structure",
     description:
       "Transform your space into an immersive entertainment experience with our premium home theater solutions.",
   },
   {
-    image: "/homepage4.jpg",
+    image: "/homepage_header/homepage3.jpg",
     title: "Silence In",
     subtitle: "Motion",
     description: "Discover spaces where sound becomes memory, held in the air, the water, and the passing light.",
   },
   {
-    image: "/homepage2.jpg",
+    image: "/homepage_header/homepage4.jpg",
     title: "Intelligent",
     subtitle: "Automation",
     description: "Experience the future of home automation with our state-of-the-art smart home solutions.",
   },
   {
-    image: "/homepage3.JPG",
-    title: "Custom",
-    subtitle: "Solutions",
-    description: "Tailored solutions for your unique needs, designed to enhance your lifestyle and elevate your space.",
-  },
-  {
-    image: "/homepage7.jpg",
+    image: "/homepage_header/homepage8.jpg",
     title: "The Future",
     subtitle: "Makes You Ready",
     description: "Smart home automation that anticipates your needs and elevates your lifestyle beyond imagination.",
   },
   {
-    image: "/homepage8.jpg",
-    title: "Experience",
-    subtitle: "Experience",
-    description: "Experience the future of home automation with our state-of-the-art smart home solutions.",
-  },
-  {
-    image: "/homepage9.jpg",
+    image: "/homepage_header/homepage9.jpg",
     title: "Innovative",
     subtitle: "Solutions",
     description: "Tailored solutions for your unique needs, designed to enhance your lifestyle and elevate your space.",
