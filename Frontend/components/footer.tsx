@@ -51,10 +51,13 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black/60 hover:text-black transition-colors disabled:opacity-50"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black/60 hover:text-black transition-all disabled:opacity-50 group"
                   aria-label="Subscribe"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isSubmitting ? 'translate-x-1 opacity-0' : 'translate-x-0 opacity-100 group-hover:translate-x-0.5'}`} />
+                  {isSubmitting && (
+                    <ArrowRight className="w-4 h-4 absolute animate-[slideIn_0.3s_ease-out]" />
+                  )}
                 </button>
               </form>
               {message && (
@@ -64,39 +67,39 @@ export function Footer() {
           </div>
 
           {/* Right Section - Navigation & Social */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 lg:gap-12">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 lg:gap-10">
             {/* Navigation Links */}
-            <nav className="flex items-center gap-6 lg:gap-8">
-              <a href="#services" className="text-black/60 hover:text-black transition-colors text-sm lg:text-base">
+            <nav className="flex items-center gap-5 lg:gap-7">
+              <a href="#services" className="text-black/55 hover:text-black transition-colors text-sm">
                 Services
               </a>
-              <a href="#contact" className="text-black/60 hover:text-black transition-colors text-sm lg:text-base">
+              <a href="#contact" className="text-black/55 hover:text-black transition-colors text-sm">
                 Contact
               </a>
             </nav>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center text-black/60 hover:bg-black hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-black/55 hover:bg-black hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <Instagram className="w-[15px] h-[15px]" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center text-black/60 hover:bg-black hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-black/55 hover:bg-black hover:text-white transition-all duration-300"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-[15px] h-[15px]" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center text-black/60 hover:bg-black hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center text-black/55 hover:bg-black hover:text-white transition-all duration-300"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-[15px] h-[15px]" />
               </a>
             </div>
           </div>
