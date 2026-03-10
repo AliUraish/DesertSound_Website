@@ -25,7 +25,8 @@ const services = [
       "Experience the future of living with intelligent automation that responds to your lifestyle. From climate control and automated lighting to voice integration and energy management, we create seamless smart home ecosystems that enhance comfort and efficiency.",
     image: "/modern-smart-home-living-room-with-automated-light.jpg",
     color: "bg-[#f5f5f5]",
-    textColor: "text-zinc-900"
+    textColor: "text-zinc-900",
+    link: "/services/smart-home-automation"
   },
   {
     icon: Smartphone,
