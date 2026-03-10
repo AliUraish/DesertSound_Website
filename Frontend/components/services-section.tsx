@@ -101,11 +101,11 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
   // Mobile layout - original format (image top, content below) with sticky effect
   if (isMobile) {
     return (
-      <div ref={container} className="h-[85vh] flex items-start justify-center sticky top-0 pt-20">
+      <div ref={container} className="h-[85vh] flex items-start justify-center sticky top-0 pt-20 pointer-events-none">
         <motion.div 
           style={{ scale, top: `calc(12vh + ${i * 18}px)` }} 
           className={cn(
-            "relative rounded-2xl overflow-hidden shadow-2xl origin-top border border-black/5 w-full max-w-[92vw]",
+            "relative rounded-2xl overflow-hidden shadow-2xl origin-top border border-black/5 w-full max-w-[92vw] pointer-events-auto",
             color
           )}
         >
@@ -167,11 +167,11 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
   
   // Desktop layout - side by side
   return (
-    <div ref={container} className="h-screen flex items-start justify-center sticky top-0 pt-16">
+    <div ref={container} className="h-screen flex items-start justify-center sticky top-0 pt-16 pointer-events-none">
       <motion.div 
         style={{ scale, top: `calc(10vh + ${i * 25}px)` }} 
         className={cn(
-          "relative flex flex-row gap-8 rounded-3xl p-12 h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden",
+          "relative flex flex-row gap-8 rounded-3xl p-12 h-[600px] w-full max-w-6xl shadow-2xl origin-top border border-black/5 overflow-hidden pointer-events-auto",
           color
         )}
       >
