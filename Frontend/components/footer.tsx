@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link"
 import { Instagram, Facebook, Linkedin, ArrowRight, Mail, Sparkles } from "lucide-react"
 import { useState } from "react"
 
@@ -76,12 +77,12 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 lg:gap-10">
             {/* Navigation Links */}
             <nav className="flex items-center gap-5 lg:gap-7">
-              <a href="#services" className="text-black/55 hover:text-black transition-colors text-sm">
+              <Link href="/#services" className="text-black/55 hover:text-black transition-colors text-sm">
                 Services
-              </a>
-              <a href="#contact" className="text-black/55 hover:text-black transition-colors text-sm">
+              </Link>
+              <Link href="/#contact" className="text-black/55 hover:text-black transition-colors text-sm">
                 Contact
-              </a>
+              </Link>
             </nav>
 
             {/* Social Icons */}
