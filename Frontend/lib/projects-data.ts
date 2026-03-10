@@ -120,6 +120,18 @@ export const allProjects: Project[] = [
     size: "Featured Installation",
   },
   {
+    id: 23,
+    slug: "project-6",
+    title: "Project 6",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_6/img_1.webp",
+    description:
+      "A residential cinema room with a darker palette, layered finishes, and a clean layout built for immersive viewing.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
     id: 12,
     slug: "project-7",
     title: "Project 7",
@@ -144,6 +156,18 @@ export const allProjects: Project[] = [
     size: "Featured Installation",
   },
   {
+    id: 24,
+    slug: "project-10",
+    title: "Project 10",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_10/img_1.jpg",
+    description:
+      "A private media space designed around soft contrast, integrated technology, and a polished entertainment atmosphere.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
     id: 14,
     slug: "project-11",
     title: "Project 11",
@@ -152,6 +176,102 @@ export const allProjects: Project[] = [
     image: "/projects_desert/project_11/Cover.jpg",
     description:
       "A placeholder residential case study designed to present a quiet, intimate setting with integrated cinematic performance.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 15,
+    slug: "project-14",
+    title: "Project 14",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_14/img_1.jpg",
+    description:
+      "A residential cinema concept with warm textures, balanced lighting, and a clean visual focus around the screen wall.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 16,
+    slug: "project-15",
+    title: "Project 15",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_15/img_1.jpg",
+    description:
+      "A compact entertainment room shaped around layered comfort, practical luxury, and an immersive viewing setup.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 17,
+    slug: "project-16",
+    title: "Project 16",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_16/img_1.jpg",
+    description:
+      "A residential installation focused on a dark cinematic mood, integrated seating, and a polished media experience.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 18,
+    slug: "project-17",
+    title: "Project 17",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_17/img_1.jpg",
+    description:
+      "A private cinema environment designed to feel intimate, composed, and effortless in day-to-day use.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 19,
+    slug: "project-18",
+    title: "Project 18",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_18/img_1.jpg",
+    description:
+      "A refined home entertainment room combining clean detailing, soft ambiance, and a strong presentation focal point.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 20,
+    slug: "project-19",
+    title: "Project 19",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_19/img_1.jpg",
+    description:
+      "A residential showcase that balances rich finishes, comfortable seating, and a high-impact cinematic atmosphere.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 21,
+    slug: "project-20",
+    title: "Project 20",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_20/img_1.jpg",
+    description:
+      "A media-focused living environment planned around visual calm, smooth integration, and immersive performance.",
+    year: "2024",
+    size: "Featured Installation",
+  },
+  {
+    id: 22,
+    slug: "project-21",
+    title: "Project 21",
+    category: "Residential Cinema",
+    location: "Karachi, Pakistan",
+    image: "/project_21/img_1.jpg",
+    description:
+      "A private cinema project centered on comfort, tonal contrast, and a clean layout that keeps the room feeling composed.",
     year: "2024",
     size: "Featured Installation",
   },
@@ -168,8 +288,18 @@ export const projectLibraries: {
       project.id === 9 ||
       project.id === 10 ||
       project.id === 11 ||
+      project.id === 23 ||
       project.id === 12 ||
       project.id === 13 ||
-      project.id === 14,
+      project.id === 24 ||
+      project.id === 14 ||
+      project.id === 15 ||
+      project.id === 16 ||
+      project.id === 17 ||
+      project.id === 18 ||
+      project.id === 19 ||
+      project.id === 20 ||
+      project.id === 21 ||
+      project.id === 22,
   ),
 }
