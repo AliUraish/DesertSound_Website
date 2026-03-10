@@ -11,7 +11,7 @@ const brands = [
   { name: "Eversolo", logo: "/brands_final/eversolo.png", href: "https://www.eversolo.com/" },
   { name: "Focal", logo: "/brands_final/Focal.png", href: "https://www.focal.com/" },
   { name: "HDL", logo: "/brands_final/HDL.png", href: "https://www.hdl-usa.com/" },
-  { name: "HEOS", logo: "/brands_final/HEOS.png", href: "https://www.heos.com/" },
+  { name: "HEOS", logo: "/brands_final/HEOS.png", href: "https://www.denon.com/denon-heos.html" },
   { name: "IsoAcoustics", logo: "/brands_final/isoacoustics.png", href: "https://www.isoacoustics.com/" },
   { name: "JVC", logo: "/brands_final/JVC.png", href: "https://www.jvc.com/" },
   { name: "Marantz", logo: "/brands_final/marantz.png", href: "https://www.marantz.com/" },
