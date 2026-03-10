@@ -7,6 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import {
   AudioLines,
+  ArrowRight,
   CheckCircle2,
   ChevronDown,
   Phone,
@@ -46,6 +47,12 @@ const features = [
     title: "Hi-Fi audio systems",
     description:
       "Experience Audio Excellence with Our High-Fidelity Solutions, Delivering Crystal-Clear Sound and Rich, Detailed Acoustics. From Turntables to Amplifiers, Speakers, and Beyond, We Curate a Selection of Premium Audio Equipment to Elevate Your Listening Experience.",
+  },
+  {
+    icon: AudioLines,
+    title: "Premium audio equipment",
+    description:
+      "From Turntables to Amplifiers, Speakers, and Beyond, We Curate a Selection of Premium Audio Equipment to Elevate Your Listening Experience and Bring Music to Life in Its Truest Form.",
   },
 ]
 
@@ -193,6 +200,16 @@ export default function AudioSystemsPage() {
                     Favorite Tunes Wirelessly, Elevating Your Living Spaces with
                     Music Tailored to Your Mood and Moments.
                   </p>
+
+                  <div className="mt-8 flex">
+                    <a
+                      href="#features"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:gap-3 hover:bg-black/90"
+                    >
+                      <span>Explore Solutions</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </motion.div>
 
                 <motion.div
@@ -258,7 +275,7 @@ export default function AudioSystemsPage() {
                 <span className="h-px w-12 bg-black/20" />
               </div>
               <h2 className="mb-6 text-4xl font-light tracking-tight text-black md:text-5xl lg:text-6xl">
-                Five Essential Services
+                Six Essential Services
               </h2>
               <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-black/70 md:text-xl">
                 Seamlessly integrate high-fidelity sound in every room,
