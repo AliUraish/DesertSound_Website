@@ -48,6 +48,18 @@ export const allProjects: Project[] = [
     size: "Flagship Installation",
   },
   {
+    id: 27,
+    slug: "stanley-seats",
+    title: "Stanley Seats",
+    category: "Residential Cinema Seating",
+    location: "Karachi, Pakistan",
+    image: "/Stanley_Seats/Cover_page.png",
+    description:
+      "A residential seating-focused showcase built around Stanley recliners, tailored comfort, and a premium cinema presentation.",
+    year: "2024",
+    size: "Featured Seating Installation",
+  },
+  {
     id: 6,
     slug: "cafe-flow",
     title: "Cafe Flow",
@@ -309,6 +321,7 @@ export const projectLibraries: {
   residential: allProjects.filter(
     (project) =>
       project.id === 5 ||
+      project.id === 27 ||
       project.id === 9 ||
       project.id === 10 ||
       project.id === 11 ||
