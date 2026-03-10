@@ -51,7 +51,7 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black/60 hover:text-black transition-all disabled:opacity-50 group"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded border border-black/10 bg-white flex items-center justify-center text-black/60 hover:bg-black hover:text-white hover:border-black transition-all duration-300 disabled:opacity-50 group"
                   aria-label="Subscribe"
                 >
                   <ArrowRight className={`w-4 h-4 transition-all duration-300 ${isSubmitting ? 'translate-x-1 opacity-0' : 'translate-x-0 opacity-100 group-hover:translate-x-0.5'}`} />
