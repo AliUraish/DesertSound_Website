@@ -35,7 +35,8 @@ const services = [
       "Unify your entire home with a single, intuitive control system. Our integration solutions bring together lighting, climate, entertainment, and security into one seamless interface—accessible via universal remotes, mobile apps, touch panels, or voice commands.",
     image: "/smart-home-control-room-futuristic.jpg",
     color: "bg-[#1a1a1a]",
-    textColor: "text-white"
+    textColor: "text-white",
+    link: "/services/control-integration"
   },
   {
     icon: Shield,
@@ -63,7 +64,8 @@ const services = [
     image: "/luxury-modern-home-theater-room-with-warm-ambient-.jpg",
     imagePosition: "100% 100%",
     color: "bg-[#f5f5f5]",
-    textColor: "text-zinc-900"
+    textColor: "text-zinc-900",
+    link: "/services/audio-systems"
   },
 ]
 
