@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import Link from "next/link"
-import { Tv, Home, Smartphone, Wifi, Zap, Headphones, ArrowUpRight } from "lucide-react"
+import { Tv, Home, Smartphone, Wifi, Headphones, ArrowUpRight } from "lucide-react"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -13,7 +13,7 @@ const services = [
     title: "Home Theatre Systems",
     description:
       "Transform your space into a premium cinema experience with state-of-the-art 4K/8K projectors, immersive Dolby Atmos surround sound, custom luxury seating, and professional acoustic treatment. We design and install complete home theater solutions tailored to your space and preferences.",
-    image: "/luxury-home-theater-with-leather-recliners-and-amb.jpg",
+    image: "/Pictures%20Final/Services/Home_Theatre/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
     link: "/services/home-theatre-systems"
@@ -23,7 +23,7 @@ const services = [
     title: "Smart Home Automation",
     description:
       "Experience the future of living with intelligent automation that responds to your lifestyle. From climate control and automated lighting to voice integration and energy management, we create seamless smart home ecosystems that enhance comfort and efficiency.",
-    image: "/modern-smart-home-living-room-with-automated-light.jpg",
+    image: "/Pictures%20Final/Services/Smart_Home_Automation/image%20copy.png",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
     link: "/services/smart-home-automation"
@@ -33,7 +33,7 @@ const services = [
     title: "Control Integration",
     description:
       "Unify your entire home with a single, intuitive control system. Our integration solutions bring together lighting, climate, entertainment, and security into one seamless interface—accessible via universal remotes, mobile apps, touch panels, or voice commands.",
-    image: "/smart-home-control-room-futuristic.jpg",
+    image: "/Pictures%20Final/Services/Control_Integration/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
     link: "/services/control-integration"
@@ -43,30 +43,20 @@ const services = [
     title: "Home Networking and Wi-Fi",
     description:
       "Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home Network Setup and Optimization, extensive Wi-Fi Coverage and Performance Enhancement, and advanced Network Security and Parental Controls.",
-    image: "/smart-home-control-room-futuristic.jpg",
+    image: "/Pictures%20Final/Services/Home_networking/Cover.jpeg",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
     link: "/services/home-networking-and-wi-fi"
-  },
-  {
-    icon: Zap,
-    title: "Lighting Design",
-    description:
-      "Elevate your spaces with architectural lighting that transforms ambiance at the touch of a button. Our lighting solutions include LED architectural fixtures, mood control systems, daylight harvesting, and automated scheduling for the perfect atmosphere.",
-    image: "/luxury-modern-home-theater-dark-atmospheric.jpg",
-    color: "bg-[#1a1a1a]",
-    textColor: "text-white",
-    link: "/services/lighting-design"
   },
   {
     icon: Headphones,
     title: "Audio Systems",
     description:
       "Fill your home with crystal-clear sound through our multi-room audio solutions. From wireless streaming and hi-fi speaker installations to synchronized whole-home audio, we deliver premium sound experiences in every room.",
-    image: "/luxury-modern-home-theater-room-with-warm-ambient-.jpg",
-    imagePosition: "100% 100%",
-    color: "bg-[#f5f5f5]",
-    textColor: "text-zinc-900",
+    image: "/Pictures%20Final/Services/Audio_Systems/Cover.jpg",
+    imagePosition: "80% 50%",
+    color: "bg-[#1a1a1a]",
+    textColor: "text-white",
     link: "/services/audio-systems"
   },
 ]

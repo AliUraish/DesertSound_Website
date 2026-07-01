@@ -9,7 +9,7 @@ const libraryOptions = [
     title: "Commercial Projects",
     subtitle: "Explore curated AV and automation builds for business-focused spaces.",
     href: "/projects/commercial",
-    image: "/corporate-boardroom-with-premium-av-equipment.jpg",
+    image: "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2933.JPG",
   },
   {
     id: "residential",
@@ -22,7 +22,7 @@ const libraryOptions = [
 
 export function ProjectLibraryChooser() {
   return (
-    <section id="projects" className="py-16 lg:py-24 bg-background">
+    <section id="projects" className="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-background">
       <div className="max-w-[90%] mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

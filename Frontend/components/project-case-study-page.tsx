@@ -11,20 +11,15 @@ type ProjectCaseStudyPageProps = {
   coverImage: string
   coverImageAlt: string
   description: [string, string]
+  galleryAspectClass?: string
   galleryImages: string[]
   title: string
 }
 
 const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? "-100%" : "100%",
-  }),
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
+  exit: { opacity: 0 },
 }
 
 export function ProjectCaseStudyPage({
@@ -32,22 +27,20 @@ export function ProjectCaseStudyPage({
   coverImage,
   coverImageAlt,
   description,
+  galleryAspectClass = "aspect-[18/9]",
   galleryImages,
   title,
 }: ProjectCaseStudyPageProps) {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const handlePrev = () => {
     if (isAnimating) return
-    setDirection(-1)
     setActiveIndex((current) => (current === 0 ? galleryImages.length - 1 : current - 1))
   }
 
   const handleNext = () => {
     if (isAnimating) return
-    setDirection(1)
     setActiveIndex((current) => (current === galleryImages.length - 1 ? 0 : current + 1))
   }
 
@@ -67,25 +60,24 @@ export function ProjectCaseStudyPage({
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
-            <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
+          <div className={`relative mx-auto max-h-[calc(100vh-170px)] min-h-[220px] max-w-[88%] overflow-hidden rounded-xl ${galleryAspectClass}`}>
+            <AnimatePresence initial={false} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
                 alt={`${title} image ${activeIndex + 1}`}
-                custom={direction}
                 variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
                 onAnimationStart={() => setIsAnimating(true)}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </AnimatePresence>
           </div>
 
-          <div className="flex items-center justify-center gap-4 pt-6">
+          <div className="flex items-center justify-center gap-4 pt-4">
             <motion.button
               type="button"
               aria-label="Previous image"

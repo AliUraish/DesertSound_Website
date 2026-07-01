@@ -21,7 +21,7 @@ const projects = [
     title: "Smart Living Integration",
     category: "Penthouse Automation",
     location: "Lahore, Pakistan",
-    image: "/modern-smart-home-minimalist-blue-tones.jpg",
+    image: "/modern-smart-home-living-room-with-automated-light.jpg",
     description: "Complete smart home transformation with integrated lighting, climate control, and voice-activated controls.",
     year: "2024",
     size: "3,200 sq ft",
