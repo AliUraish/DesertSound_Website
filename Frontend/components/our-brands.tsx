@@ -17,7 +17,7 @@ const brands = [
   { name: "HDL", logo: "/brands_final/HDL.png", href: "https://www.hdl-usa.com/" },
   { name: "HEOS", logo: "/brands_final/HEOS.png", href: "https://www.denon.com/denon-heos.html" },
   { name: "IsoAcoustics", logo: "/brands_final/isoacoustics.png", href: "https://www.isoacoustics.com/" },
-  { name: "JVC", logo: "/brands_final/JVC.png", href: "https://www.jvc.com/" },
+  { name: "JVC", logo: "/brands_final/JVC.png", href: "https://www.jvc.com/sg/projectors/d-ila/" },
   { name: "Marantz", logo: "/brands_final/marantz.png", href: "https://www.marantz.com/" },
   { name: "Martin Logan", logo: "/brands_final/martin_logan.png", href: "https://www.martinlogan.com/" },
   { name: "Naim", logo: "/brands_final/naim.png", href: "https://www.naim.com/" },
@@ -34,12 +34,12 @@ const brands = [
 ]
 
 const awards = [
-  { name: "Award 1", logo: "/Awards/image-removebg-preview (1).png" },
-  { name: "Award 2", logo: "/Awards/global_2025.png" },
-  { name: "Award 3", logo: "/Awards/image_copy-removebg-preview.png" },
-  { name: "Award 4", logo: "/Awards/image_copy_2-removebg-preview.png" },
-  { name: "Award 5", logo: "/Awards/image_copy_3-removebg-preview.png", wide: true },
-  { name: "Award 6", logo: "/Awards/IE_2025.png" },
+  { name: "Award 1", logo: "/Awards/global_2025.png" },
+  { name: "Award 2", logo: "/Awards/IE_2025.png" },
+  { name: "Award 3", logo: "/Awards/image-removebg-preview (1).png" },
+  { name: "Award 4", logo: "/Awards/image_copy-removebg-preview.png" },
+  { name: "Award 5", logo: "/Awards/image_copy_2-removebg-preview.png" },
+  { name: "Award 6", logo: "/Awards/image_copy_3-removebg-preview.png", wide: true },
 ]
 
 const certifications = [
@@ -100,12 +100,14 @@ function BrandCard({
 function StaticLogoRow({
   title,
   items,
+  className = "mt-12",
 }: {
   title: string
   items: { name: string; logo: string; wide?: boolean }[]
+  className?: string
 }) {
   return (
-    <div className="mx-auto mt-12 max-w-7xl px-6 text-center lg:px-10">
+    <div className={`mx-auto max-w-7xl px-6 text-center lg:px-10 ${className}`}>
       <div className="mb-7 flex justify-center">
         <p className="text-center text-base font-medium uppercase tracking-[0.26em] text-black/45 lg:text-lg">
           {title}
@@ -290,7 +292,14 @@ export function OurBrands() {
       </div>
 
       <StaticLogoRow title="Awards" items={awards} />
-      <StaticLogoRow title="Certifications" items={certifications} />
+    </section>
+  )
+}
+
+export function CertificationsSection() {
+  return (
+    <section className="bg-[#F5F5DC] py-12 lg:py-16">
+      <StaticLogoRow title="Certifications" items={certifications} className="mt-0" />
     </section>
   )
 }
