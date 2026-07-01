@@ -215,7 +215,7 @@ export default function HomeTheatreSystemsPage() {
                   >
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
                       <img
-                        src="/luxury-home-theater-with-leather-recliners-and-amb.jpg"
+                        src="/Pictures%20Final/Services/Home_Theatre/Cover.jpg"
                         alt="Professional Home Theatre Installation"
                         className="h-full w-full object-cover"
                       />
@@ -287,7 +287,7 @@ export default function HomeTheatreSystemsPage() {
                 className="order-2 lg:order-1"
               >
                 <img
-                  src="/luxury-modern-home-theater-dark-atmospheric.jpg"
+                  src="/Pictures%20Final/Services/Home_Theatre/IMG_9762.JPG"
                   alt="Professional Home Cinema Design"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 />
@@ -376,7 +376,7 @@ export default function HomeTheatreSystemsPage() {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/luxury-modern-home-theater-room-with-warm-ambient-.jpg"
+                  src="/Pictures%20Final/Services/Home_Theatre/DSC09887.JPG"
                   alt="Immersive Audio Visual Experience"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 />
@@ -388,27 +388,13 @@ export default function HomeTheatreSystemsPage() {
         {/* Detailed Content Section C - Smart Control & Integration */}
         <section className="py-16 lg:py-24 bg-[#F5F5DC]">
           <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="flex justify-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="order-2 lg:order-1"
-              >
-                <img
-                  src="/modern-smart-home-living-room-with-automated-light.jpg"
-                  alt="Smart Control Integration"
-                  className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2"
+                className="max-w-4xl rounded-2xl bg-white p-8 text-center shadow-2xl lg:p-12"
               >
                 <span className="inline-block text-xs uppercase tracking-[0.2em] text-black/50 mb-4 font-medium">
                   Smart Technology
@@ -416,14 +402,14 @@ export default function HomeTheatreSystemsPage() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
                   Smart Control & Integration
                 </h2>
-                <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
+                <p className="mx-auto max-w-3xl text-lg text-black/70 font-light leading-relaxed mb-6">
                   Intelligent technology is a significant factor in modern home theatres. With smart home automation systems like Control4, Crestron, and HDL, users can manage lighting, audio, video, curtains, and temperature using just one touch or a simple voice command.
                 </p>
-                <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
+                <p className="mx-auto max-w-3xl text-lg text-black/70 font-light leading-relaxed mb-8">
                   Our expertise in customization and integration ensures all parts of the system—displays, speakers, automation, and networking—work together seamlessly. This unified approach makes usage more convenient and eliminates the need for multiple remotes.
                 </p>
                 
-                <div className="space-y-4 mb-8">
+                <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
                   {[
                     "Control4 & Crestron integration",
                     "Voice control compatibility",
@@ -438,8 +424,8 @@ export default function HomeTheatreSystemsPage() {
                 </div>
 
                 <Link
-                  href="/#services"
-                  className="inline-flex items-center gap-2 text-black hover:gap-4 transition-all duration-300 text-base font-light"
+                  href="/services/smart-home-automation"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
                   <span>Explore Smart Home Automation</span>
                   <ArrowRight className="w-5 h-5" />

@@ -6,48 +6,43 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 const heroSlides = [
   {
-    image: "/homepage_header/homepage1.jpeg",
+    image: "/Pictures%20Final/Hero%20Page/homepage_header/homepage1.jpg",
     imagePosition: "50% 28%",
     title: "We Create",
     subtitle: "Dream Spaces",
     description:
-      "From luxurious home theaters to cutting-edge smart home systems, we design and install solutions that elevate your lifestyle and enhance your space.",
+      "From bespoke home cinemas to intelligent home automation we deliver solutions that combine innovation craftsmanship and everyday luxury.",
   },
   {
-    image: "/homepage_header/homepage2.jpg",
+    image: "/Pictures%20Final/Hero%20Page/homepage_header/Homepage22.JPG",
     title: "Where Vision",
     subtitle: "Meets Structure",
     description:
-      "Transform your space into an immersive entertainment experience with our premium home theater solutions.",
+      "Experience the Art of Entertainment. Every project is thoughtfully designed expertly engineered and professionally installed to deliver exceptional performance without compromising aesthetics.",
   },
   {
-    image: "/homepage_header/homepage3.jpg",
+    image: "/Pictures%20Final/Hero%20Page/homepage_header/homepage4.jpg",
     title: "Silence In",
     subtitle: "Motion",
-    description: "Discover spaces where sound becomes memory, held in the air, the water, and the passing light.",
+    description: "create spaces where technology disappears leaving you with nothing but exceptional sound stunning visuals and unforgettable moments.",
   },
   {
-    image: "/homepage_header/homepage4.jpg",
+    image: "/Pictures%20Final/Hero%20Page/homepage_header/Homepage33.JPG",
+    title: "Bringing Cinema",
+    subtitle: "Home",
+    description: "Designed to Impress. Built to Perform. Creating immersive entertainment spaces with world class technology and timeless design.",
+  },
+  {
+    image: "/Pictures%20Final/Hero%20Page/homepage_header/Hompage3.JPG",
     title: "Intelligent",
     subtitle: "Automation",
-    description: "Experience the future of home automation with our state-of-the-art smart home solutions.",
-  },
-  {
-    image: "/homepage_header/homepage8.jpg",
-    title: "The Future",
-    subtitle: "Makes You Ready",
-    description: "Smart home automation that anticipates your needs and elevates your lifestyle beyond imagination.",
-  },
-  {
-    image: "/homepage_header/homepage9.jpg",
-    title: "Innovative",
-    subtitle: "Solutions",
-    description: "Tailored solutions for your unique needs, designed to enhance your lifestyle and elevate your space.",
+    description: "Your home deserves more than technology it deserves experiences that bring family and friends together.",
   },
 ]
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [canStartSlideshow, setCanStartSlideshow] = useState(false)
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -60,11 +55,20 @@ export function HeroSection() {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
 
   useEffect(() => {
+    const startSlideshow = () => setCanStartSlideshow(true)
+
+    window.addEventListener("desert-sound:preloader-complete", startSlideshow)
+    return () => window.removeEventListener("desert-sound:preloader-complete", startSlideshow)
+  }, [])
+
+  useEffect(() => {
+    if (!canStartSlideshow) return
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 6000)
+    }, 2500)
     return () => clearInterval(interval)
-  }, [])
+  }, [canStartSlideshow])
 
   return (
     <section ref={containerRef} className="relative w-full bg-[#F5F5DC] overflow-hidden">

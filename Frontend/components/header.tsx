@@ -20,28 +20,43 @@ export function Header() {
     { name: "Services", href: "/#services" },
     { name: "Projects", href: "/#projects" },
     { name: "Testimonials", href: "/#testimonials" },
+    { name: "Careers", href: "/careers" },
   ]
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 pt-1.5 lg:pt-2">
         <div className="max-w-[90%] mx-auto px-3 lg:px-4">
-          <div className={`relative flex items-center justify-between py-2 lg:py-1.5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
+          <div className={`relative flex items-center justify-between gap-6 py-2 lg:py-1.5 px-6 lg:px-8 rounded-full transition-all duration-300 ${
             isScrolled 
               ? "bg-[#F5F5DC] shadow-lg" 
               : "bg-[#F5F5DC]/80 md:bg-[#F5F5DC] backdrop-blur-md"
           }`}>
-            {/* Logo - Left */}
-            <Link href="/" className="flex items-center cursor-pointer">
-              <img 
-                src="/0-removebg-preview.png" 
-                alt="Desert Sound Logo" 
-                className="h-16 lg:h-20 w-auto object-contain"
+            {/* Logo - Left: Desert Sound (company) + CEDIA membership badge */}
+            <Link href="/" className="flex min-w-0 shrink-0 items-center gap-4 lg:gap-5 cursor-pointer">
+              {/* Primary brand */}
+              <img
+                src="/0-removebg-preview.png"
+                alt="Desert Sound Logo"
+                className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
               />
+              {/* Divider separating the company brand from its accreditation */}
+              <span
+                className="h-8 sm:h-9 lg:h-11 w-px bg-black/15 shrink-0"
+                aria-hidden="true"
+              />
+              {/* CEDIA membership badge (secondary) */}
+              <span className="flex h-14 items-center sm:h-16 lg:h-20">
+                <img
+                  src="/image-removebg-preview%20%281%29.png"
+                  alt="CEDIA Member"
+                  className="h-9 sm:h-11 lg:h-[52px] w-auto object-contain opacity-90"
+                />
+              </span>
             </Link>
 
             {/* Navigation - Centered */}
-            <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 space-x-10 lg:space-x-12">
+            <nav className="hidden xl:flex flex-1 items-center justify-center gap-10 2xl:gap-12">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -56,7 +71,7 @@ export function Header() {
             </nav>
 
             {/* Contact Button - Right */}
-            <div className="hidden md:flex items-center">
+            <div className="hidden xl:flex shrink-0 items-center">
               <Link
                 href="/#contact"
                 className="px-6 lg:px-8 py-2.5 lg:py-3 rounded-full text-sm font-medium transition-all duration-300 bg-black text-white hover:bg-black/90"
@@ -67,7 +82,7 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2 transition-colors duration-300 text-black"
+              className="xl:hidden p-2 transition-colors duration-300 text-black"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >

@@ -15,7 +15,12 @@ export function Preloader() {
   }, [])
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence
+      mode="wait"
+      onExitComplete={() => {
+        window.dispatchEvent(new Event("desert-sound:preloader-complete"))
+      }}
+    >
       {showEntrance && (
         <motion.div
           exit={{ y: "-100%" }}

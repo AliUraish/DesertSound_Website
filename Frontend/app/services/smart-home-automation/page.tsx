@@ -210,15 +210,6 @@ export default function SmartHomeAutomationPage() {
                     automation.
                   </p>
 
-                  <div className="flex">
-                    <a
-                      href="#features"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:gap-3 hover:bg-black/90"
-                    >
-                      <span>Explore Automation</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
-                  </div>
                 </motion.div>
 
                 <motion.div
@@ -233,7 +224,7 @@ export default function SmartHomeAutomationPage() {
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
                       <img
-                        src="/modern-smart-home-living-room-with-automated-light.jpg"
+                        src="/Pictures%20Final/Services/Smart_Home_Automation/image%20copy.png"
                         alt="Smart home automation living room"
                         className="h-full w-full object-cover"
                       />
@@ -311,8 +302,8 @@ export default function SmartHomeAutomationPage() {
                 className="order-2 lg:order-1"
               >
                 <img
-                  src="/smart-home-control-room-futuristic.jpg"
-                  alt="Centralized smart home control"
+                  src="/Pictures%20Final/Services/Control_Integration/image%20copy.png"
+                  alt="Smart home control and automation interface"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                 />
               </motion.div>
@@ -415,10 +406,14 @@ export default function SmartHomeAutomationPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/luxury-home-theater-room-with-ambient-lighting-and.jpg"
-                  alt="Automated scenes for lighting and entertainment"
+                <video
+                  src="/Pictures%20Final/Services/Smart_Home_Automation/curtain.mp4"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label="Automated curtain control demonstration"
                 />
               </motion.div>
             </div>
@@ -427,27 +422,13 @@ export default function SmartHomeAutomationPage() {
 
         <section className="bg-[#F5F5DC] py-16 lg:py-24">
           <div className="mx-auto max-w-[88%] px-4 lg:max-w-7xl lg:px-8">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="flex justify-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="order-2 lg:order-1"
-              >
-                <img
-                  src="/modern-smart-home-living-room-with-automated-light.jpg"
-                  alt="WiFi connected smart living room"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2"
+                className="max-w-4xl rounded-2xl bg-white p-8 text-center shadow-2xl lg:p-12"
               >
                 <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.2em] text-black/50">
                   Connectivity & Expansion
@@ -455,20 +436,20 @@ export default function SmartHomeAutomationPage() {
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
                   Stable Networking Makes Automation Reliable
                 </h2>
-                <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-6 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Remote control, fast response times, device sync, and system
                   monitoring all depend on a strong network. Smart home
                   automation is only as good as the WiFi and infrastructure
                   supporting it.
                 </p>
-                <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   We design automation with network stability and future
                   expansion in mind, so new rooms, security devices,
                   entertainment zones, and control interfaces can be added
                   without rebuilding the entire system later.
                 </p>
 
-                <div className="mb-8 space-y-4">
+                <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
                   {[
                     "Remote monitoring and control from anywhere",
                     "Reliable response across connected devices",
@@ -485,10 +466,10 @@ export default function SmartHomeAutomationPage() {
                 </div>
 
                 <Link
-                  href="/services/home-theatre-systems"
-                  className="inline-flex items-center gap-2 text-base font-light text-black transition-all duration-300 hover:gap-4"
+                  href="/services/control-integration"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
-                  <span>See Home Theatre Systems</span>
+                  <span>Explore Control Integration</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </motion.div>

@@ -219,7 +219,7 @@ export default function ControlIntegrationPage() {
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
                       <img
-                        src="/smart-home-control-room-futuristic.jpg"
+                        src="/Pictures%20Final/Services/Control_Integration/Cover.jpg"
                         alt="Control systems installation"
                         className="h-full w-full object-cover"
                       />
@@ -296,7 +296,7 @@ export default function ControlIntegrationPage() {
                 className="order-2 lg:order-1"
               >
                 <img
-                  src="/modern-smart-home-living-room-with-automated-light.jpg"
+                  src="/Pictures%20Final/Services/Control_Integration/Image.jpg"
                   alt="Smart home control panels"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                 />
@@ -396,7 +396,7 @@ export default function ControlIntegrationPage() {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/luxury-home-theater-room-with-ambient-lighting-and.jpg"
+                  src="/Pictures%20Final/Services/Control_Integration/image.png"
                   alt="Touchscreen interfaces"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                 />
@@ -407,27 +407,13 @@ export default function ControlIntegrationPage() {
 
         <section className="bg-[#F5F5DC] py-16 lg:py-24">
           <div className="mx-auto max-w-[88%] px-4 lg:max-w-7xl lg:px-8">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="flex justify-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="order-2 lg:order-1"
-              >
-                <img
-                  src="/smart-home-control-room-futuristic.jpg"
-                  alt="Remote and voice control integration"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2"
+                className="max-w-4xl rounded-2xl bg-white p-8 text-center shadow-2xl lg:p-12"
               >
                 <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.2em] text-black/50">
                   Remote control integration
@@ -435,20 +421,20 @@ export default function ControlIntegrationPage() {
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
                   Remote control integration
                 </h2>
-                <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-6 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Seamlessly integrate remote controls for effortless
                   management of your home systems. Enjoy convenience and
                   accessibility with centralized control over lighting,
                   entertainment, security, and more.
                 </p>
-                <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Voice Control Integration syncs your smart home systems with
                   leading voice assistants. Simply command adjustments to
                   lighting, temperature, entertainment, and security, enjoying
                   the ultimate convenience and accessibility in home automation.
                 </p>
 
-                <div className="mb-8 space-y-4">
+                <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
                   {[
                     "Effortless management of your home systems",
                     "Centralized control over lighting, entertainment, security, and more",
@@ -463,6 +449,14 @@ export default function ControlIntegrationPage() {
                     </div>
                   ))}
                 </div>
+
+                <Link
+                  href="/services/home-networking-and-wi-fi"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
+                >
+                  <span>Explore Home Networking</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
               </motion.div>
             </div>
           </div>

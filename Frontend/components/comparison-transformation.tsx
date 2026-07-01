@@ -3,6 +3,9 @@
 import { useState, useRef, useCallback } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
+const MIN_SLIDER_POSITION = 8
+const MAX_SLIDER_POSITION = 92
+
 export function ComparisonTransformation() {
   const [sliderPosition, setSliderPosition] = useState(50)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -17,7 +20,7 @@ export function ComparisonTransformation() {
     
     const rect = containerRef.current.getBoundingClientRect()
     const x = clientX - rect.left
-    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100))
+    const percentage = Math.max(MIN_SLIDER_POSITION, Math.min(MAX_SLIDER_POSITION, (x / rect.width) * 100))
     setSliderPosition(percentage)
   }, [])
 
@@ -79,7 +82,7 @@ export function ComparisonTransformation() {
             {/* Before Image (Background) */}
             <div className="absolute inset-0">
               <img
-                src="/luxury-home-theater-room-with-ambient-lighting-and.jpg"
+                src="/home-theater-before-generated.png"
                 alt="Before transformation"
                 className="w-full h-full object-cover"
                 draggable={false}
@@ -96,7 +99,7 @@ export function ComparisonTransformation() {
               style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
             >
               <img
-                src="/luxury-modern-home-theater-room-with-warm-ambient-.jpg"
+                src="/Pictures%20Final/Projects/Residential/New_Theatre/After.png"
                 alt="After transformation"
                 className="w-full h-full object-cover"
                 draggable={false}

@@ -214,7 +214,7 @@ export default function HomeNetworkingAndWifiPage() {
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
                       <img
-                        src="/smart-home-control-room-futuristic.jpg"
+                        src="/Pictures%20Final/Services/Home_networking/Cover.jpeg"
                         alt="Home Networking and Wi-Fi"
                         className="h-full w-full object-cover"
                       />
@@ -282,7 +282,7 @@ export default function HomeNetworkingAndWifiPage() {
                 className="order-2 lg:order-1"
               >
                 <img
-                  src="/modern-smart-home-living-room-with-automated-light.jpg"
+                  src="/Pictures%20Final/Services/Home_networking/Image2.png"
                   alt="Home network setup and optimization"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                 />
@@ -372,7 +372,7 @@ export default function HomeNetworkingAndWifiPage() {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/homepage8.jpg"
+                  src="/Pictures%20Final/Services/Home_networking/Image.png"
                   alt="Wired and wireless network solutions"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                 />
@@ -383,27 +383,13 @@ export default function HomeNetworkingAndWifiPage() {
 
         <section className="bg-[#F5F5DC] py-16 lg:py-24">
           <div className="mx-auto max-w-[88%] px-4 lg:max-w-7xl lg:px-8">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="flex justify-center">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="order-2 lg:order-1"
-              >
-                <img
-                  src="/homepage3.jpg"
-                  alt="Integration with smart devices"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2"
+                className="max-w-4xl rounded-2xl bg-white p-8 text-center shadow-2xl lg:p-12"
               >
                 <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.2em] text-black/50">
                   Smart Device Integration
@@ -411,16 +397,16 @@ export default function HomeNetworkingAndWifiPage() {
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
                   Integration with smart devices
                 </h2>
-                <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-6 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Additionally, we offer Integration with Smart Devices, enabling seamless connectivity for all your home
                   automation and entertainment systems.
                 </p>
-                <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
+                <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home
                   Network Setup and Optimization for peak performance.
                 </p>
 
-                <div className="mb-8 space-y-4">
+                <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
                   {[
                     "Integration with smart devices",
                     "Home network setup and optimization",
@@ -434,10 +420,10 @@ export default function HomeNetworkingAndWifiPage() {
                 </div>
 
                 <Link
-                  href="/#services"
-                  className="inline-flex items-center gap-2 text-base font-light text-black transition-all duration-300 hover:gap-4"
+                  href="/services/audio-systems"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
-                  <span>Explore Services</span>
+                  <span>Explore Audio Systems</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </motion.div>
