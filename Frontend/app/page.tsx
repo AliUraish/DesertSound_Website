@@ -1,13 +1,21 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { OurBrands } from "@/components/our-brands"
 import { ServicesSection } from "@/components/services-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
-import { StatsSection } from "@/components/stats-section"
 import { Testimonials } from "@/components/testimonials"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { createMetadata, defaultSeo, siteName } from "@/lib/seo"
+
+export const metadata: Metadata = createMetadata({
+  path: "/",
+  title: `${siteName} - ${defaultSeo.title}`,
+  description: defaultSeo.description,
+  image: defaultSeo.image,
+})
 
 export default function HomePage() {
   return (
@@ -19,7 +27,6 @@ export default function HomePage() {
         <ServicesSection />
         <ComparisonTransformation />
         <ProjectLibraryChooser />
-        <StatsSection />
         <Testimonials />
         <ContactSection />
         <Footer />

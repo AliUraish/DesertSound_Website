@@ -4,12 +4,12 @@ export default function Project12Page() {
   return (
     <ProjectCaseStudyPage
       title="Project 12"
-      coverImage="/project_12/img_1.jpg"
+      coverImage="/Pictures%20Final/Projects/Residential/project_12/img_1.jpg"
       coverImageAlt="Project 12 main image"
       galleryImages={[
-        "/project_12/img_2.jpg",
-        "/project_12/img_3.jpg",
-        "/project_12/img_4.jpg",
+        "/Pictures%20Final/Projects/Residential/project_12/img_2.jpg",
+        "/Pictures%20Final/Projects/Residential/project_12/img_3.jpg",
+        "/Pictures%20Final/Projects/Residential/project_12/img_4.jpg",
       ]}
       description={[
         "Project 12 is a residential cinema presentation shaped around warm contrast, controlled lighting, and a clean entertainment-focused layout. The space is intended to feel visually composed and comfortable while maintaining the sense of focus expected from a dedicated media room.",

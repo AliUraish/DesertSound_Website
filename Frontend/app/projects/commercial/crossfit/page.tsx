@@ -6,45 +6,33 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
-const coverImage = "/Gym/Cover.JPG"
+const coverImage = "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/Cover.JPG"
 
 const galleryImages = [
-  "/Gym/IMG_7887.JPG",
-  "/Gym/IMG_7890.JPG",
-  "/Gym/IMG_7898.JPG",
-  "/Gym/IMG_7899.JPG",
-  "/Gym/IMG_7900.JPG",
-  "/Gym/IMG_7906.JPG",
-  "/Gym/IMG_7911.JPG",
-  "/Gym/IMG_7918.JPG",
+  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7890.JPG",
+  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7898.JPG",
+  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7906.JPG",
+  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7911.JPG",
+  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7918.JPG",
 ]
 
 const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? "-100%" : "100%",
-  }),
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
+  exit: { opacity: 0 },
 }
 
 export default function CrossfitPage() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const handlePrev = () => {
     if (isAnimating) return
-    setDirection(-1)
     setActiveIndex((current) => (current === 0 ? galleryImages.length - 1 : current - 1))
   }
 
   const handleNext = () => {
     if (isAnimating) return
-    setDirection(1)
     setActiveIndex((current) => (current === galleryImages.length - 1 ? 0 : current + 1))
   }
 
@@ -76,25 +64,24 @@ export default function CrossfitPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
-            <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
+          <div className="relative mx-auto max-h-[calc(100vh-170px)] min-h-[220px] max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
+            <AnimatePresence initial={false} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
                 alt={`Crossfit Gym image ${activeIndex + 1}`}
-                custom={direction}
                 variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
                 onAnimationStart={() => setIsAnimating(true)}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </AnimatePresence>
           </div>
 
-          <div className="flex items-center justify-center gap-4 pt-6">
+          <div className="flex items-center justify-center gap-4 pt-4">
             <motion.button
               type="button"
               aria-label="Previous image"

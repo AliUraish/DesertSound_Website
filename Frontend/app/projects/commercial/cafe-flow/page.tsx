@@ -7,76 +7,33 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
 const galleryImages = [
-  "/Cafe_Flow/IMG_2842.JPG",
-  "/Cafe_Flow/IMG_2848.JPG",
-  "/Cafe_Flow/IMG_2852.JPG",
-  "/Cafe_Flow/IMG_2854.JPG",
-  "/Cafe_Flow/IMG_2857.JPG",
-  "/Cafe_Flow/IMG_2860.JPG",
-  "/Cafe_Flow/IMG_2863.JPG",
-  "/Cafe_Flow/IMG_2897.JPG",
-  "/Cafe_Flow/IMG_2911.JPG",
-  "/Cafe_Flow/IMG_2912.JPG",
-  "/Cafe_Flow/IMG_2913.JPG",
-  "/Cafe_Flow/IMG_2914.JPG",
-  "/Cafe_Flow/IMG_2915.JPG",
-  "/Cafe_Flow/IMG_2918.JPG",
-  "/Cafe_Flow/IMG_2920.JPG",
-  "/Cafe_Flow/IMG_2922.JPG",
-  "/Cafe_Flow/IMG_2925.JPG",
-  "/Cafe_Flow/IMG_2926.JPG",
-  "/Cafe_Flow/IMG_2933.JPG",
-  "/Cafe_Flow/IMG_2942.JPG",
-  "/Cafe_Flow/IMG_2945.JPG",
-  "/Cafe_Flow/IMG_2946.JPG",
-  "/Cafe_Flow/IMG_2954.JPG",
-  "/Cafe_Flow/IMG_2955.JPG",
-  "/Cafe_Flow/IMG_2969.JPG",
-  "/Cafe_Flow/IMG_2977.JPG",
-  "/Cafe_Flow/IMG_2978.JPG",
-  "/Cafe_Flow/IMG_2979.JPG",
-  "/Cafe_Flow/IMG_2980.JPG",
-  "/Cafe_Flow/IMG_2981.JPG",
-  "/Cafe_Flow/IMG_2982.JPG",
-  "/Cafe_Flow/IMG_2983.JPG",
-  "/Cafe_Flow/IMG_2984.JPG",
-  "/Cafe_Flow/IMG_2985.JPG",
-  "/Cafe_Flow/IMG_2988.JPG",
-  "/Cafe_Flow/IMG_2989.JPG",
-  "/Cafe_Flow/IMG_2990.JPG",
-  "/Cafe_Flow/IMG_2991.JPG",
-  "/Cafe_Flow/IMG_2997.JPG",
-  "/Cafe_Flow/IMG_3002.JPG",
-  "/Cafe_Flow/IMG_3008.JPG",
-  "/Cafe_Flow/IMG_3010.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2863.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2897.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2933.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2942.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2997.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3002.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3008.JPG",
+  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3010.JPG",
 ]
 
 const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-  }),
-  center: {
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? "-100%" : "100%",
-  }),
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
+  exit: { opacity: 0 },
 }
 
 export default function CafeFlowPage() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const handlePrev = () => {
     if (isAnimating) return
-    setDirection(-1)
     setActiveIndex((current) => (current === 0 ? galleryImages.length - 1 : current - 1))
   }
 
   const handleNext = () => {
     if (isAnimating) return
-    setDirection(1)
     setActiveIndex((current) => (current === galleryImages.length - 1 ? 0 : current + 1))
   }
 
@@ -87,7 +44,7 @@ export default function CafeFlowPage() {
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
           <img
-            src="/Cafe_Flow/Cover.JPG"
+            src="/Pictures%20Final/Projects/Commercial/Cafe%20Flow/Cover.JPG"
             alt="Cafe Flow main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
           />
@@ -108,25 +65,24 @@ export default function CafeFlowPage() {
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
-          <div className="relative mx-auto max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
-            <AnimatePresence initial={false} custom={direction} onExitComplete={() => setIsAnimating(false)}>
+          <div className="relative mx-auto max-h-[calc(100vh-170px)] min-h-[220px] max-w-[88%] overflow-hidden rounded-xl aspect-[18/9]">
+            <AnimatePresence initial={false} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
                 alt={`Cafe Flow image ${activeIndex + 1}`}
-                custom={direction}
                 variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
                 onAnimationStart={() => setIsAnimating(true)}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </AnimatePresence>
           </div>
 
-          <div className="flex items-center justify-center gap-4 pt-6">
+          <div className="flex items-center justify-center gap-4 pt-4">
             <motion.button
               type="button"
               aria-label="Previous image"
