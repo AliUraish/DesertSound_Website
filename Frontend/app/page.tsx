@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { OurBrands } from "@/components/our-brands"
+import { CertificationsSection, OurBrands } from "@/components/our-brands"
 import { ServicesSection } from "@/components/services-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
@@ -28,6 +28,7 @@ export default function HomePage() {
         <ComparisonTransformation />
         <ProjectLibraryChooser />
         <Testimonials />
+        <CertificationsSection />
         <ContactSection />
         <Footer />
       </main>
