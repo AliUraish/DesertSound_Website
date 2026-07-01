@@ -46,7 +46,7 @@ const features = [
     icon: Speaker,
     title: "Hi-Fi audio systems",
     description:
-      "Experience Audio Excellence with Our High-Fidelity Solutions, Delivering Crystal-Clear Sound and Rich, Detailed Acoustics. From Turntables to Amplifiers, Speakers, and Beyond, We Curate a Selection of Premium Audio Equipment to Elevate Your Listening Experience.",
+      "Audiophile experience with our high-fidelity solutions, delivering crystal-clear sound and rich, detailed acoustics. From turntables to amplifiers, speakers, and beyond, we curate a selection of premium audio equipment to elevate your listening experience.",
   },
   {
     icon: AudioLines,
@@ -456,14 +456,14 @@ export default function AudioSystemsPage() {
                   Hi-Fi Audio Systems
                 </span>
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                  Experience Audio Excellence
+                  Audiophile experience
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
-                  Experience Audio Excellence with Our High-Fidelity Solutions,
-                  Delivering Crystal-Clear Sound and Rich, Detailed Acoustics.
-                  From Turntables to Amplifiers, Speakers, and Beyond, We
-                  Curate a Selection of Premium Audio Equipment to Elevate Your
-                  Listening Experience.
+                  Audiophile experience with our high-fidelity solutions,
+                  delivering crystal-clear sound and rich, detailed acoustics.
+                  From turntables to amplifiers, speakers, and beyond, we
+                  curate a selection of premium audio equipment to elevate your
+                  listening experience.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
                   Whether You’re a Casual Listener or Audiophile, Our Expertise
