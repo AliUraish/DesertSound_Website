@@ -4,12 +4,12 @@ export default function StanleySeatsPage() {
   return (
     <ProjectCaseStudyPage
       title="Stanley Seats"
-      coverImage="/Stanley_Seats/Cover_page.png"
+      coverImage="/Pictures%20Final/Projects/Residential/Stanley_Seats/Cover_page.png"
       coverImageAlt="Stanley Seats cover image"
       galleryImages={[
-        "/Stanley_Seats/gallery_1.png",
-        "/Stanley_Seats/gallery_2.png",
-        "/Stanley_Seats/gallery_3.png",
+        "/Pictures%20Final/Projects/Residential/Stanley_Seats/gallery_1.png",
+        "/Pictures%20Final/Projects/Residential/Stanley_Seats/gallery_2.png",
+        "/Pictures%20Final/Projects/Residential/Stanley_Seats/gallery_3.png",
       ]}
       description={[
         "Stanley Seats is a residential cinema seating showcase centered on tailored comfort, clean detailing, and a premium visual presentation. The project is intended to highlight how dedicated recliner systems can shape the atmosphere and usability of a private entertainment room.",

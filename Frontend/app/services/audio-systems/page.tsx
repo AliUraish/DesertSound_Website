@@ -224,7 +224,7 @@ export default function AudioSystemsPage() {
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
                       <img
-                        src="/luxury-modern-home-theater-room-with-warm-ambient-.jpg"
+                        src="/Pictures%20Final/Services/Audio_Systems/Cover.jpg"
                         alt="Audio systems and distribution"
                         className="h-full w-full object-cover"
                       />
@@ -302,11 +302,13 @@ export default function AudioSystemsPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/modern-smart-home-living-room-with-automated-light.jpg"
-                  alt="In-house Wi-Fi music and multi-room audio"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                <div className="flex aspect-[4/3] w-full items-center justify-center overflow-visible">
+                  <img
+                    src="/Pictures%20Final/Services/Audio_Systems/image_copy-removebg-preview.png"
+                    alt="In-house Wi-Fi music and multi-room audio"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
               </motion.div>
 
               <motion.div
@@ -412,11 +414,13 @@ export default function AudioSystemsPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/luxury-home-theater-room-with-ambient-lighting-and.jpg"
-                  alt="Speaker installation and streaming integration"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                <div className="flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-2xl bg-[#111] shadow-2xl">
+                  <img
+                    src="/Pictures%20Final/Services/Audio_Systems/image.png"
+                    alt="Speaker installation and streaming integration"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -432,11 +436,13 @@ export default function AudioSystemsPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/luxury-home-theater-cinematic-lighting.jpg"
-                  alt="Hi-Fi audio systems"
-                  className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                <div className="mx-auto flex aspect-[2/3] h-[420px] max-h-[70vh] items-center justify-center overflow-hidden rounded-2xl shadow-2xl lg:h-[560px]">
+                  <img
+                    src="/Pictures%20Final/Services/Audio_Systems/IMG_9598.JPG"
+                    alt="Premium audio equipment"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
               </motion.div>
 
               <motion.div

@@ -4,12 +4,12 @@ export default function Project6Page() {
   return (
     <ProjectCaseStudyPage
       title="Project 6"
-      coverImage="/project_6/img_1.webp"
+      coverImage="/Pictures%20Final/Projects/Residential/project_6/img_1.webp"
       coverImageAlt="Project 6 main image"
       galleryImages={[
-        "/project_6/img_2.webp",
-        "/project_6/img_3.webp",
-        "/project_6/img_4.webp",
+        "/Pictures%20Final/Projects/Residential/project_6/img_2.webp",
+        "/Pictures%20Final/Projects/Residential/project_6/img_3.webp",
+        "/Pictures%20Final/Projects/Residential/project_6/img_4.webp",
       ]}
       description={[
         "Project 6 is a residential cinema environment shaped around a darker material palette, layered detailing, and a clear focus on immersive comfort. The room is intended to feel premium and composed while keeping the technology visually controlled within the architecture.",
