@@ -72,7 +72,7 @@ export function HeroSection() {
 
   return (
     <section ref={containerRef} className="relative w-full bg-[#F5F5DC] overflow-hidden">
-      <div className="w-full pt-[100px] md:pt-24 lg:pt-28 h-[65vh] md:h-[80vh] lg:h-screen pb-4 flex flex-col">
+      <div className="flex h-[84svh] min-h-[680px] w-full flex-col pt-[100px] pb-4 md:h-[82vh] md:min-h-0 md:pt-24 lg:h-screen lg:pt-28">
         {/* Image Container with Parallax */}
         <motion.div 
           style={{ y, opacity, scale }}
@@ -95,12 +95,13 @@ export function HeroSection() {
                   objectPosition: heroSlides[currentSlide].imagePosition ?? "50% 50%",
                 }}
               />
-              <div className="absolute inset-0 bg-black/20" /> {/* Subtle overlay for text readability */}
+              <div className="absolute inset-0 bg-black/25" />
+              <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/85 via-black/35 to-transparent md:h-1/2 md:from-black/50 md:via-black/20" />
             </motion.div>
           </AnimatePresence>
 
           {/* Content Overlay - Bottom Positioned */}
-          <div className="relative z-10 h-full flex flex-col justify-end pb-6 md:pb-8 lg:pb-12 px-4 md:px-6 lg:px-8">
+          <div className="relative z-10 flex h-full flex-col justify-end px-4 pb-5 md:px-6 md:pb-8 lg:px-8 lg:pb-12">
             <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 md:gap-6 lg:gap-8">
               {/* Text - Bottom Left with staggered animations */}
               <motion.div 
@@ -117,7 +118,7 @@ export function HeroSection() {
                     }
                   }
                 }}
-                className="flex flex-col gap-3 lg:max-w-2xl"
+                className="flex max-w-[22rem] flex-col gap-2 md:max-w-xl md:gap-3 lg:max-w-2xl"
               >
                 {/* Description - animates first */}
                 <motion.p 
@@ -125,7 +126,7 @@ export function HeroSection() {
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 0.7, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                   }}
-                  className="text-xs md:text-sm lg:text-base text-white font-normal"
+                  className="max-w-[21rem] text-[0.8rem] leading-relaxed text-white/90 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm lg:text-base"
                 >
                   {heroSlides[currentSlide].description}
                 </motion.p>
@@ -133,7 +134,7 @@ export function HeroSection() {
                 {/* Title - animates second */}
                 <div className="overflow-hidden">
                   <motion.h1 
-                    className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-white font-normal leading-tight"
+                    className="text-[2.85rem] font-normal leading-[0.95] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] md:text-4xl md:leading-tight lg:text-6xl xl:text-7xl"
                   >
                     <span className="block overflow-hidden">
                       <motion.span
