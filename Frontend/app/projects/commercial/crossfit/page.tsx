@@ -1,19 +1,20 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
-const coverImage = "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/Cover.JPG"
+const coverImage = "/Pictures Final/Projects/Commercial/Crossfit Gym/Cover.JPG"
 
 const galleryImages = [
-  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7890.JPG",
-  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7898.JPG",
-  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7906.JPG",
-  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7911.JPG",
-  "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/IMG_7918.JPG",
+  "/Pictures Final/Projects/Commercial/Crossfit Gym/IMG_7890.JPG",
+  "/Pictures Final/Projects/Commercial/Crossfit Gym/IMG_7898.JPG",
+  "/Pictures Final/Projects/Commercial/Crossfit Gym/IMG_7906.JPG",
+  "/Pictures Final/Projects/Commercial/Crossfit Gym/IMG_7911.JPG",
+  "/Pictures Final/Projects/Commercial/Crossfit Gym/IMG_7918.JPG",
 ]
 
 const variants = {
@@ -22,7 +23,7 @@ const variants = {
   exit: { opacity: 0 },
 }
 
-export default function CrossfitPage() {
+export default function CrossFitPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -42,24 +43,25 @@ export default function CrossfitPage() {
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <img
+          <Image
             src={coverImage}
-            alt="Crossfit Gym main image"
+            alt="CrossFit Gym main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover object-[62%_70%] lg:h-[68vh]"
-          />
+                width={1600}
+                height={1067}
+              />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
-          <h1 className="mb-6 text-4xl text-black lg:text-6xl">Crossfit Gym</h1>
+          <h1 className="mb-6 text-4xl text-black lg:text-6xl">CrossFit Gym</h1>
           <p className="max-w-5xl text-base text-black/70 lg:text-lg">
-            Crossfit Gym is a commercial fitness project built around energy, rhythm, and a clean visual presence. The
+            CrossFit Gym is a commercial fitness project built around energy, rhythm, and a clean visual presence. The
             space is intended to feel motivating and immersive, with integrated audiovisual elements supporting both
             training intensity and the overall brand atmosphere.
           </p>
           <p className="mt-6 max-w-5xl text-base text-black/70 lg:text-lg">
-            For now, this page uses placeholder copy to hold the structure while the final project story is prepared.
-            The layout follows the existing commercial case study pattern and can be updated with approved text later
-            without changing the presentation style.
+            The audio and display systems are positioned to support training sessions and daily operations while
+            maintaining a durable, uncluttered environment for members and staff.
           </p>
         </section>
 
@@ -69,7 +71,7 @@ export default function CrossfitPage() {
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
-                alt={`Crossfit Gym image ${activeIndex + 1}`}
+                alt={`CrossFit Gym image ${activeIndex + 1}`}
                 variants={variants}
                 initial="enter"
                 animate="center"
@@ -110,7 +112,7 @@ export default function CrossfitPage() {
 
           <div className="mx-auto max-w-[88%] px-4 pt-8 lg:px-8">
             <p className="text-sm uppercase tracking-[0.16em] text-black/50">
-              Home / Projects / Commercial / Crossfit Gym
+              Home / Projects / Commercial / CrossFit Gym
             </p>
           </div>
         </section>
