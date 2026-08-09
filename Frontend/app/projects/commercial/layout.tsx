@@ -7,7 +7,7 @@ export const metadata: Metadata = createMetadata({
   title: "Commercial AV Projects",
   description:
     "View Desert Sound commercial AV, audio, control, and hospitality technology projects for restaurants, gyms, and workspaces in Pakistan.",
-  image: "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/Cover.JPG",
+  image: "/Pictures Final/Projects/Commercial/Cafe Flow/Cover.JPG",
 })
 
 export default function CommercialProjectsLayout({ children }: { children: ReactNode }) {
