@@ -1,17 +1,18 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
-const coverImage = "/Pictures%20Final/Projects/Commercial/Xanders/Cover.JPG"
+const coverImage = "/Pictures Final/Projects/Commercial/Xanders/Cover.JPG"
 
 const galleryImages = [
-  "/Pictures%20Final/Projects/Commercial/Xanders/IMG_2766.JPG",
-  "/Pictures%20Final/Projects/Commercial/Xanders/IMG_2809.JPG",
-  "/Pictures%20Final/Projects/Commercial/Xanders/IMG_2810.JPG",
+  "/Pictures Final/Projects/Commercial/Xanders/IMG_2766.JPG",
+  "/Pictures Final/Projects/Commercial/Xanders/IMG_2809.JPG",
+  "/Pictures Final/Projects/Commercial/Xanders/IMG_2810.JPG",
 ]
 
 const variants = {
@@ -40,7 +41,10 @@ export default function XandersPage() {
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-        <img src={coverImage} alt="Xanders main image" className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover object-[50%_40%] lg:h-[68vh]" />
+        <Image src={coverImage} alt="Xanders main image" className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover object-[50%_40%] lg:h-[68vh]"
+                width={1600}
+                height={1067}
+              />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
@@ -51,9 +55,8 @@ export default function XandersPage() {
             experience without overwhelming the design.
           </p>
           <p className="mt-6 max-w-5xl text-base text-black/70 lg:text-lg">
-            This installation serves as a placeholder showcase for now, highlighting how audiovisual systems can
-            reinforce comfort, presence, and day-to-day usability in a commercial environment. The final project story
-            can be replaced once the approved copy is ready.
+            The audiovisual system reinforces comfort, presence, and day-to-day usability while remaining discreet
+            within the venue’s design-led commercial environment.
           </p>
         </section>
 
