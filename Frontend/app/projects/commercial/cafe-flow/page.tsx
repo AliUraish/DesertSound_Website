@@ -1,20 +1,21 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
 const galleryImages = [
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2863.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2897.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2933.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2942.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2997.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3002.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3008.JPG",
-  "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_3010.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2863.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2897.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2933.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2942.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2997.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_3002.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_3008.JPG",
+  "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_3010.JPG",
 ]
 
 const variants = {
@@ -43,11 +44,13 @@ export default function CafeFlowPage() {
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <img
-            src="/Pictures%20Final/Projects/Commercial/Cafe%20Flow/Cover.JPG"
+          <Image
+            src="/Pictures Final/Projects/Commercial/Cafe Flow/Cover.JPG"
             alt="Cafe Flow main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
-          />
+                width={1920}
+                height={1280}
+              />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
