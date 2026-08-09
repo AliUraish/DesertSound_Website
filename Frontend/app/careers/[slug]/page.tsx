@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation"
+import type { Metadata } from "next"
 import { ArrowLeft, ArrowRight, BriefcaseBusiness, MapPin } from "lucide-react"
 import Link from "next/link"
 import { CareersFooter } from "@/components/careers-footer"
 import { Header } from "@/components/header"
 import { positions } from "@/lib/careers-data"
+import { absoluteUrl, createMetadata, siteName } from "@/lib/seo"
 
 type CareerApplyPageProps = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export function generateStaticParams() {
@@ -17,16 +19,66 @@ export function generateStaticParams() {
   }))
 }
 
-export default function CareerApplyPage({ params }: CareerApplyPageProps) {
+export async function generateMetadata(props: CareerApplyPageProps): Promise<Metadata> {
+  const { slug } = await props.params
+  const position = positions.find((item) => item.slug === slug)
+
+  if (!position) {
+    return {
+      title: "Role Not Found",
+      robots: { index: false, follow: false },
+    }
+  }
+
+  return createMetadata({
+    path: `/careers/${position.slug}`,
+    title: `${position.title} in ${position.location}`,
+    description: `${position.description} Apply for this full-time role with ${siteName} in ${position.location}, Pakistan.`,
+    image: "/DSC09710.JPG",
+  })
+}
+
+export default async function CareerApplyPage(props: CareerApplyPageProps) {
+  const params = await props.params
   const position = positions.find((item) => item.slug === params.slug)
 
   if (!position) {
     notFound()
   }
 
+  const jobPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: position.title,
+    description: position.description,
+    employmentType: "FULL_TIME",
+    hiringOrganization: {
+      "@type": "Organization",
+      name: siteName,
+      sameAs: absoluteUrl("/"),
+      logo: absoluteUrl("/0-removebg-preview.png"),
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: position.location,
+        addressCountry: "PK",
+      },
+    },
+    url: absoluteUrl(`/careers/${position.slug}`),
+  }
+
   return (
     <div className="w-full overflow-x-clip bg-black text-[#F5F5DC]">
       <Header />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jobPostingJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
 
       <main className="mx-auto grid w-full max-w-[1480px] gap-10 px-5 pb-14 pt-[130px] sm:px-6 md:pt-40 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:pb-20">
         <section>
