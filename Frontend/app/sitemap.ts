@@ -6,8 +6,6 @@ import { absoluteUrl, servicePages } from "@/lib/seo"
 const staticRoutes = ["/", "/projects/residential", "/projects/commercial", "/careers"]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
-
   const residentialProjectRoutes = projectLibraries.residential.map(
     (project) => `/projects/residential/${project.slug}`,
   )
@@ -24,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...careerRoutes,
   ].map((route) => ({
     url: absoluteUrl(route),
-    lastModified: now,
     changeFrequency: route === "/" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : route.startsWith("/services") ? 0.9 : 0.7,
   }))
