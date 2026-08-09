@@ -4,18 +4,18 @@ export default function NewTheatrePage() {
   return (
     <ProjectCaseStudyPage
       title="New Theatre"
-      coverImage="/Pictures%20Final/Projects/Residential/New_Theatre/Cover.JPG"
+      coverImage="/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG"
       coverImageAlt="New Theatre main image"
       galleryImages={[
-        "/Pictures%20Final/Projects/Residential/New_Theatre/Theatre.JPG",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/DSC09622.JPG",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/DSC09639.JPG",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/DSC09650.JPG",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/DSC09743.JPG",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/image.png",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/image%20copy.png",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/image2.png",
-        "/Pictures%20Final/Projects/Residential/New_Theatre/After.png",
+        "/Pictures Final/Projects/Residential/New_Theatre/Theatre.JPG",
+        "/Pictures Final/Projects/Residential/New_Theatre/DSC09622.JPG",
+        "/Pictures Final/Projects/Residential/New_Theatre/DSC09639.JPG",
+        "/Pictures Final/Projects/Residential/New_Theatre/DSC09650.JPG",
+        "/Pictures Final/Projects/Residential/New_Theatre/DSC09743.JPG",
+        "/Pictures Final/Projects/Residential/New_Theatre/image.jpg",
+        "/Pictures Final/Projects/Residential/New_Theatre/image copy.jpg",
+        "/Pictures Final/Projects/Residential/New_Theatre/image2.jpg",
+        "/Pictures Final/Projects/Residential/New_Theatre/After.jpg",
       ]}
       description={[
         "New Theatre is a dedicated residential cinema built around a darker, more focused viewing environment with acoustic detailing, controlled lighting, and a clean front-stage presentation.",
