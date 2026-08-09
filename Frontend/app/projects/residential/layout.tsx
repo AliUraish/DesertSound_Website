@@ -7,7 +7,7 @@ export const metadata: Metadata = createMetadata({
   title: "Residential Home Theatre Projects",
   description:
     "Explore Desert Sound residential cinema, media room, smart home, and premium AV projects completed for private homes in Pakistan.",
-  image: "/Pictures%20Final/Projects/Residential/New_Theatre/Cover.JPG",
+  image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",
 })
 
 export default function ResidentialProjectsLayout({ children }: { children: ReactNode }) {
