@@ -11,7 +11,7 @@ export default function ResidentialProjectsPage() {
           <ProjectLibrarySection
             badge="Project Library"
             title="Residential Projects Library"
-            description="Discover private cinema and smart-home projects from the residential category."
+            description="Discover private cinemas and smart home systems designed for modern residential spaces."
             projects={projectLibraries.residential}
           />
         </div>
