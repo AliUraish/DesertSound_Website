@@ -11,7 +11,7 @@ export default function CommercialProjectsPage() {
           <ProjectLibrarySection
             badge="Project Library"
             title="Commercial Projects Library"
-            description="Explore featured commercial installations and AV-driven environments from the commercial category."
+            description="Explore commercial audiovisual and automation installations created for hospitality, fitness, and business spaces."
             projects={projectLibraries.commercial}
           />
         </div>
