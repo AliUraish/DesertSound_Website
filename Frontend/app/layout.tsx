@@ -27,6 +27,13 @@ export const metadata: Metadata = {
   },
   description: defaultSeo.description,
   applicationName: siteName,
+  category: "Home technology and audiovisual integration",
+  referrer: "strict-origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   authors: [{ name: siteName }],
   creator: siteName,
   publisher: siteName,
@@ -76,6 +83,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 }
 
 export default function RootLayout({
