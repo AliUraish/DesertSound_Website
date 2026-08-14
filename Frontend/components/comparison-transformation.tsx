@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useCallback } from "react"
+import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const MIN_SLIDER_POSITION = 8
@@ -12,8 +13,8 @@ export function ComparisonTransformation() {
   const isDragging = useRef(false)
   
   // Scroll animations
-  const headerAnimation = useScrollAnimation({ threshold: 0.2 })
-  const sliderAnimation = useScrollAnimation({ threshold: 0.2 })
+  const { ref: headerRef, isVisible: isHeaderVisible } = useScrollAnimation({ threshold: 0.2 })
+  const { ref: sliderRef, isVisible: isSliderVisible } = useScrollAnimation({ threshold: 0.2 })
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return
@@ -50,23 +51,23 @@ export function ComparisonTransformation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div 
-          ref={headerAnimation.ref}
+          ref={headerRef}
           className={`mb-12 lg:mb-16 transition-all duration-700 ease-out ${
-            headerAnimation.isVisible 
+            isHeaderVisible
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-8"
           }`}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight max-w-3xl">
-            Transforming your space into something you'll love
+            Transforming your space into something you’ll love
           </h2>
         </div>
 
         {/* Comparison Slider */}
         <div 
-          ref={sliderAnimation.ref}
+          ref={sliderRef}
           className={`transition-all duration-1000 ease-out delay-200 ${
-            sliderAnimation.isVisible 
+            isSliderVisible
               ? "opacity-100 scale-100" 
               : "opacity-0 scale-95"
           }`}
@@ -81,11 +82,13 @@ export function ComparisonTransformation() {
           >
             {/* Before Image (Background) */}
             <div className="absolute inset-0">
-              <img
+              <Image
                 src="/home-theater-before-generated.png"
                 alt="Before transformation"
                 className="w-full h-full object-cover"
                 draggable={false}
+                width={1280}
+                height={592}
               />
               {/* Before Label */}
               <div className="absolute top-4 left-4 lg:top-6 lg:left-6 bg-black/60 backdrop-blur-sm text-white text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">
@@ -98,11 +101,13 @@ export function ComparisonTransformation() {
               className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
             >
-              <img
-                src="/Pictures%20Final/Projects/Residential/New_Theatre/After.png"
+              <Image
+                src="/Pictures Final/Projects/Residential/New_Theatre/After.jpg"
                 alt="After transformation"
                 className="w-full h-full object-cover"
                 draggable={false}
+                width={1920}
+                height={1280}
               />
               {/* After Label */}
               <div className="absolute top-4 right-4 lg:top-6 lg:right-6 bg-white/90 backdrop-blur-sm text-black text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">
@@ -140,7 +145,7 @@ export function ComparisonTransformation() {
 
         {/* Optional: Instruction hint */}
         <p className={`text-center text-black/40 text-sm mt-6 lg:mt-8 transition-all duration-700 ease-out delay-500 ${
-          sliderAnimation.isVisible 
+          isSliderVisible
             ? "opacity-100" 
             : "opacity-0"
         }`}>
