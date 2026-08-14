@@ -41,7 +41,7 @@ export const allProjects: Project[] = [
     title: "Studio Vellari",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/vellari1.png",
+    image: "/vellari1.jpg",
     description:
       "Flagship Desert Sound cinema seating project featuring Studio Vellari Stanley recliners and daybed.",
     year: "2024",
@@ -53,7 +53,7 @@ export const allProjects: Project[] = [
     title: "Stanley Seats",
     category: "Residential Cinema Seating",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/Stanley_Seats/Cover_page.png",
+    image: "/Pictures Final/Projects/Residential/Stanley_Seats/Cover_page.jpg",
     description:
       "A residential seating-focused showcase built around Stanley recliners, tailored comfort, and a premium cinema presentation.",
     year: "2024",
@@ -65,7 +65,7 @@ export const allProjects: Project[] = [
     title: "New Theatre",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/New_Theatre/Cover.JPG",
+    image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",
     description:
       "A residential theatre showcase with a dedicated cinematic atmosphere, layered finishes, and a focused entertainment layout.",
     year: "2024",
@@ -77,7 +77,7 @@ export const allProjects: Project[] = [
     title: "Project Platinum",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/Project_Platinum/Cover.png",
+    image: "/Pictures Final/Projects/Residential/Project_Platinum/Cover.jpg",
     description:
       "A residential cinema project with a refined presentation style, integrated detailing, and a premium entertainment-focused atmosphere.",
     year: "2024",
@@ -89,7 +89,7 @@ export const allProjects: Project[] = [
     title: "Cafe Flow",
     category: "Commercial Hospitality",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/Cover.JPG",
+    image: "/Pictures Final/Projects/Commercial/Cafe Flow/Cover.JPG",
     description:
       "A refined hospitality AV environment designed to balance ambience, presentation clarity, and an immersive guest experience.",
     year: "2024",
@@ -101,21 +101,21 @@ export const allProjects: Project[] = [
     title: "Xanders",
     category: "Commercial Installation",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Commercial/Xanders/Cover.JPG",
+    image: "/Pictures Final/Projects/Commercial/Xanders/Cover.JPG",
     description:
-      "A placeholder commercial case study featuring a design-led space, integrated AV, and a refined presentation experience.",
+      "A design-led commercial space with integrated audiovisual systems and a refined guest experience.",
     year: "2024",
     size: "Featured Installation",
   },
   {
     id: 8,
     slug: "crossfit",
-    title: "Crossfit Gym",
+    title: "CrossFit Gym",
     category: "Commercial Fitness",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Commercial/Crossfit%20Gym/Cover.JPG",
+    image: "/Pictures Final/Projects/Commercial/Crossfit Gym/Cover.JPG",
     description:
-      "A placeholder fitness-focused commercial case study with integrated AV, strong atmosphere, and a clean presentation flow.",
+      "A high-energy fitness environment with integrated audio, a strong atmosphere, and a clean visual presentation.",
     year: "2024",
     size: "Featured Installation",
   },
@@ -125,9 +125,9 @@ export const allProjects: Project[] = [
     title: "Residency",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/Red&White/Cover.JPG",
+    image: "/Pictures Final/Projects/Residential/Red&White/Cover.JPG",
     description:
-      "A placeholder residential case study focused on immersive viewing, refined comfort, and a clean technology integration.",
+      "A residential cinema focused on immersive viewing, refined comfort, and discreet technology integration.",
     year: "2024",
     size: "Featured Installation",
   },
@@ -137,7 +137,7 @@ export const allProjects: Project[] = [
     title: "Project 6",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_6/img_1.webp",
+    image: "/Pictures Final/Projects/Residential/project_6/img_1.webp",
     description:
       "A residential cinema room with a darker palette, layered finishes, and a clean layout built for immersive viewing.",
     year: "2024",
@@ -149,7 +149,7 @@ export const allProjects: Project[] = [
     title: "Project 10",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_10/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_10/img_1.jpg",
     description:
       "A private media space designed around soft contrast, integrated technology, and a polished entertainment atmosphere.",
     year: "2024",
@@ -161,7 +161,7 @@ export const allProjects: Project[] = [
     title: "Project 12",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_12/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_12/img_1.jpg",
     description:
       "A residential cinema installation with warm contrast, integrated detailing, and a calm room composition built for immersive viewing.",
     year: "2024",
@@ -173,7 +173,7 @@ export const allProjects: Project[] = [
     title: "Project 13",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_13/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_13/img_1.jpg",
     description:
       "A residential cinema setting with clean lines, balanced lighting, and a composed entertainment-focused atmosphere.",
     year: "2024",
@@ -185,7 +185,7 @@ export const allProjects: Project[] = [
     title: "Project 14",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_14/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_14/img_1.jpg",
     description:
       "A residential cinema concept with warm textures, balanced lighting, and a clean visual focus around the screen wall.",
     year: "2024",
@@ -197,7 +197,7 @@ export const allProjects: Project[] = [
     title: "Project 15",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_15/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_15/img_1.jpg",
     description:
       "A compact entertainment room shaped around layered comfort, practical luxury, and an immersive viewing setup.",
     year: "2024",
@@ -209,7 +209,7 @@ export const allProjects: Project[] = [
     title: "Project 16",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_16/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_16/img_1.jpg",
     description:
       "A residential installation focused on a dark cinematic mood, integrated seating, and a polished media experience.",
     year: "2024",
@@ -221,7 +221,7 @@ export const allProjects: Project[] = [
     title: "Project 17",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_17/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_17/img_1.jpg",
     description:
       "A private cinema environment designed to feel intimate, composed, and effortless in day-to-day use.",
     year: "2024",
@@ -233,7 +233,7 @@ export const allProjects: Project[] = [
     title: "Project 18",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_18/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_18/img_1.jpg",
     description:
       "A refined home entertainment room combining clean detailing, soft ambiance, and a strong presentation focal point.",
     year: "2024",
@@ -245,7 +245,7 @@ export const allProjects: Project[] = [
     title: "Project 19",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_19/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_19/img_1.jpg",
     description:
       "A residential showcase that balances rich finishes, comfortable seating, and a high-impact cinematic atmosphere.",
     year: "2024",
@@ -257,7 +257,7 @@ export const allProjects: Project[] = [
     title: "Project 20",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_20/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_20/img_1.jpg",
     description:
       "A media-focused living environment planned around visual calm, smooth integration, and immersive performance.",
     year: "2024",
@@ -269,7 +269,7 @@ export const allProjects: Project[] = [
     title: "Project 21",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
-    image: "/Pictures%20Final/Projects/Residential/project_21/img_1.jpg",
+    image: "/Pictures Final/Projects/Residential/project_21/img_1.jpg",
     description:
       "A private cinema project centered on comfort, tonal contrast, and a clean layout that keeps the room feeling composed.",
     year: "2024",
@@ -302,4 +302,10 @@ export const projectLibraries: {
       project.id === 21 ||
       project.id === 22,
   ),
+}
+
+export type ProjectLibrary = keyof typeof projectLibraries
+
+export function getProject(library: ProjectLibrary, slug: string) {
+  return projectLibraries[library].find((project) => project.slug === slug)
 }
