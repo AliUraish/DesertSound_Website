@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react"
+import Image from "next/image"
 import { ArrowLeftRight } from "lucide-react"
 
 const brands = [
@@ -10,7 +11,7 @@ const brands = [
   { name: "Basalte", logo: "/brands_final/Basalte.png", href: "https://www.basalte.be/en" },
   { name: "Beemax", logo: "/brands_final/beemax.png", href: "https://bemaxsound.com/" },
   { name: "Control4", logo: "/brands_final/control4.png", href: "https://www.control4.com/" },
-  { name: "Creston", logo: "/brands_final/creston.png", sizeClass: "h-24 lg:h-32", href: "https://www.creston.com/" },
+  { name: "Crestron", logo: "/brands_final/creston.png", sizeClass: "h-24 lg:h-32", href: "https://www.crestron.com/" },
   { name: "Denon", logo: "/brands_final/denon.png", href: "https://www.denon.com/" },
   { name: "Eversolo", logo: "/brands_final/eversolo.png", href: "https://www.eversolo.com/" },
   { name: "Focal", logo: "/brands_final/Focal.png", href: "https://www.focal.com/" },
@@ -50,7 +51,7 @@ const certifications = [
   { name: "Certification 5", logo: "/certifications/image copy 4.png" },
   { name: "Certification 6", logo: "/certifications/image copy 5.png" },
   { name: "Certification 7", logo: "/certifications/image copy 6.png" },
-  { name: "Certification 8", logo: "/certifications/image copy 7.png" },
+  { name: "Certification 8", logo: "/certifications/image copy 7.jpg" },
   { name: "Certification 9", logo: "/certifications/image copy 8.png" },
 ]
 
@@ -75,24 +76,28 @@ function BrandCard({
         className={`${cardClassName} hover:bg-black/[0.08] hover:border-black/10`}
         aria-label={brand.name}
       >
-        <img
+        <Image
           src={brand.logo}
           alt={`${brand.name} logo`}
           className={`${brand.sizeClass ?? "h-24 lg:h-32"} w-full object-contain opacity-90`}
           loading="lazy"
-        />
+                width={1600}
+                height={1067}
+              />
       </a>
     )
   }
 
   return (
     <div className={cardClassName} data-brand-card="true">
-      <img
+      <Image
         src={brand.logo}
         alt={`${brand.name} logo`}
         className={`${brand.sizeClass ?? "h-24 lg:h-32"} w-full object-contain opacity-90`}
         loading="lazy"
-      />
+                width={1600}
+                height={1067}
+              />
     </div>
   )
 }
@@ -121,12 +126,14 @@ function StaticLogoRow({
               item.wide ? "w-[320px] sm:w-[380px] lg:w-[440px]" : "w-[190px] sm:w-[220px] lg:w-[250px]"
             }`}
           >
-            <img
+            <Image
               src={item.logo}
               alt={item.name}
               className="h-full w-full object-contain opacity-90"
               loading="lazy"
-            />
+                width={1600}
+                height={1067}
+              />
           </div>
         ))}
       </div>
