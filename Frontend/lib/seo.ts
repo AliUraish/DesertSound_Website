@@ -1,14 +1,20 @@
 import type { Metadata } from "next"
+import { getProject, type ProjectLibrary } from "@/lib/projects-data"
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.com.pk"
 
 export const siteName = "Desert Sound"
 
+export const socialLinks = {
+  facebook: "https://www.facebook.com/desertsoundpakistan",
+  instagram: "https://www.instagram.com/desertsoundpakistan",
+}
+
 export const defaultSeo = {
-  title: "Home Theater & Smart Home Automation in Pakistan",
+  title: "Home Theatre & Smart Home Automation in Pakistan",
   description:
     "Desert Sound designs and installs premium home theater systems, smart home automation, audio systems, control integration, and Wi-Fi networks in Karachi and across Pakistan.",
-  image: "/Pictures%20Final/Services/Home_Theatre/Cover.jpg",
+  image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
 }
 
 export type SeoPage = {
@@ -24,35 +30,35 @@ export const servicePages: SeoPage[] = [
     title: "Home Theatre Systems in Pakistan",
     description:
       "Custom home theatre design and installation in Pakistan, including projection, surround sound, acoustic treatment, cinema seating, and smart control.",
-    image: "/Pictures%20Final/Services/Home_Theatre/Cover.jpg",
+    image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
   },
   {
     path: "/services/smart-home-automation",
     title: "Smart Home Automation in Pakistan",
     description:
       "Integrated smart home automation for lighting, climate, entertainment, security, curtains, voice control, and one-touch control systems.",
-    image: "/Pictures%20Final/Services/Smart_Home_Automation/image%20copy.png",
+    image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
   },
   {
     path: "/services/audio-systems",
     title: "Audio Systems & Multi-Room Sound",
     description:
       "Hi-Fi audio, multi-room music, speaker installation, calibration, and premium sound systems for homes and commercial spaces.",
-    image: "/Pictures%20Final/Services/Audio_Systems/Cover.jpg",
+    image: "/Pictures Final/Services/Audio_Systems/Cover.jpg",
   },
   {
     path: "/services/control-integration",
     title: "Control Systems Integration",
     description:
       "Centralized control systems for AV, lighting, climate, entertainment, and smart home technology using elegant touch, app, and voice interfaces.",
-    image: "/Pictures%20Final/Services/Control_Integration/Cover.jpg",
+    image: "/Pictures Final/Services/Control_Integration/Cover.jpg",
   },
   {
     path: "/services/home-networking-and-wi-fi",
     title: "Home Networking & Wi-Fi Installation",
     description:
       "Reliable wired and wireless networking, Wi-Fi coverage planning, performance optimization, and network security for smart homes and offices.",
-    image: "/Pictures%20Final/Services/Home_networking/Cover.jpeg",
+    image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
   },
 ]
 
@@ -112,6 +118,24 @@ export function getServicePage(path: string) {
   return servicePage
 }
 
+export function createProjectMetadata(library: ProjectLibrary, slug: string): Metadata {
+  const project = getProject(library, slug)
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      robots: { index: false, follow: false },
+    }
+  }
+
+  return createMetadata({
+    path: `/projects/${library}/${project.slug}`,
+    title: `${project.title} | ${project.category}`,
+    description: `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`,
+    image: project.image,
+  })
+}
+
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -119,12 +143,14 @@ export const localBusinessJsonLd = {
   name: siteName,
   url: siteUrl,
   image: absoluteUrl(defaultSeo.image),
+  logo: absoluteUrl("/0-removebg-preview.png"),
   telephone: "+9221111570111",
   email: "info@desertsound.com.pk",
   address: {
     "@type": "PostalAddress",
     streetAddress: "22-C/II, 2nd Zamzama Commercial Lane, Phase V, D.H.A",
     addressLocality: "Karachi",
+    addressRegion: "Sindh",
     addressCountry: "PK",
   },
   areaServed: [
@@ -139,8 +165,8 @@ export const localBusinessJsonLd = {
   ],
   priceRange: "$$$",
   sameAs: [
-    "https://www.facebook.com/desertsoundpakistan",
-    "https://www.instagram.com/desertsoundpakistan",
+    socialLinks.facebook,
+    socialLinks.instagram,
   ],
   makesOffer: servicePages.map((service) => ({
     "@type": "Offer",
