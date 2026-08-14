@@ -26,14 +26,14 @@ export function ContactSection() {
             </h2>
             
             <p className="text-[#F5F5DC]/60 text-lg mb-8 max-w-md">
-              Ready to transform your space? Let's discuss your vision and create something extraordinary together.
+              Ready to transform your space? Let’s discuss your vision and create something extraordinary together.
             </p>
 
             {/* Contact Info List */}
             <div className="space-y-6">
               {[
-                { icon: Phone, title: "Phone", value: "(021) 111 570 111" },
-                { icon: Mail, title: "Email", value: "info@desertsound.com.pk" },
+                { icon: Phone, title: "Phone", value: "+92 21 111 570 111", href: "tel:+9221111570111" },
+                { icon: Mail, title: "Email", value: "info@desertsound.com.pk", href: "mailto:info@desertsound.com.pk" },
                 { icon: MapPin, title: "Location", value: "Karachi, Pakistan" },
                 { icon: Clock, title: "Hours", value: "Mon - Sat: 9:30am - 7:30pm" }
               ].map((item, index) => (
@@ -50,7 +50,13 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-[#F5F5DC]/50 text-sm uppercase tracking-wider mb-1">{item.title}</p>
-                    <p className="text-[#F5F5DC] text-lg">{item.value}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-lg text-[#F5F5DC] transition-colors hover:text-white">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-[#F5F5DC] text-lg">{item.value}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -69,7 +75,7 @@ export function ContactSection() {
               Send us a message
             </h3>
             <p className="text-black/60 mb-4">
-              We'll get back to you within 24 hours
+              We&apos;ll get back to you within 24 hours
             </p>
 
             <form className="space-y-3">
