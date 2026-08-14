@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useRef, useState } from "react"
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import { Header } from "@/components/header"
@@ -20,13 +21,13 @@ const features = [
     icon: SlidersHorizontal,
     title: "Smart home control panels",
     description:
-      "Desert Sound’s Smart Home Control Panel revolutionizes home management. With an intuitive interface, effortlessly monitor and command various systems like lighting, security, HVAC, and entertainment from one sleek hub.",
+      "Manage lighting, security, climate, and entertainment from one intuitive control panel designed for everyday use.",
   },
   {
     icon: TabletSmartphone,
     title: "Touchscreen interfaces",
     description:
-      "Desert Sound’s Touch Screen Interfaces redefine convenience and sophistication in home control. With intuitive touch controls, easily manage your smart home systems with precision and style.",
+      "Use elegant touchscreen interfaces to manage your smart home systems with clarity, precision, and convenience.",
   },
   {
     icon: Smartphone,
@@ -38,25 +39,25 @@ const features = [
     icon: Mic,
     title: "Voice control integration",
     description:
-      "Voice Control Integration syncs your smart home systems with leading voice assistants. Simply command adjustments to lighting, temperature, entertainment, and security, enjoying the ultimate convenience and accessibility in home automation.",
+      "Connect compatible voice assistants to adjust lighting, temperature, entertainment, and security with simple commands.",
   },
 ]
 
 const faqs = [
   {
-    question: "How much does a home theatre cost?",
+    question: "What can a single control system manage?",
     answer:
-      "Projects vary widely depending on your needs and budget. Our representatives visit with you to better understand your home remodeling needs. At Konstruktion Home Improvements we do more than give you a quote. We provide you with the information you need to make the right decisions for your home. Our representatives take time to explain the details regarding your project. We answer all of your questions and explain our estimates for your home improvement project. There is no obligation. Give us some time to review your wish list and we will give you valuable information. We believe that an educated consumer is our best customer!",
+      "A unified control system can manage compatible lighting, climate, audio, video, curtains, security, and other connected technology from one interface.",
   },
   {
-    question: "What is included with a free remodeling estimate?",
+    question: "Can you integrate technology that is already installed?",
     answer:
-      "Our free remodeling estimates include a detailed written scope of work. At times, when necessary or when requested, we will provide renderings for you to view what your remodel will look like upon completion. Renderings look like a picture of your home and are a likeness of what your remodel will look like so you can visualize the space to be remodeled.",
+      "Often, yes. We assess existing equipment, compatibility, wiring, and network conditions before recommending which components can be retained and which should be upgraded.",
   },
   {
-    question: "How long will my project take?",
+    question: "Which control options are available?",
     answer:
-      "During our free consultation with you, we will discuss the duration of your project. The key element in completing your project in a timely manner is for you to be available during the process so you can select your products. In addition, we will need full access to your home during the remodel during regular work hours (Monday through Friday 09:30 to 07:30). We will not begin work on your home until all the materials have been received. Our company policy is to stay on your project until completion once we have started construction.",
+      "Depending on the system, you can use handheld remotes, wall keypads, touchscreens, mobile apps, scheduled scenes, and compatible voice assistants.",
   },
 ]
 
@@ -218,11 +219,13 @@ export default function ControlIntegrationPage() {
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
-                      <img
-                        src="/Pictures%20Final/Services/Control_Integration/Cover.jpg"
+                      <Image
+                        src="/Pictures Final/Services/Control_Integration/Cover.jpg"
                         alt="Control systems installation"
                         className="h-full w-full object-cover"
-                      />
+                width={1920}
+                height={948}
+              />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-black/10" />
 
                       <div className="absolute bottom-6 left-6 right-6">
@@ -265,7 +268,7 @@ export default function ControlIntegrationPage() {
               <div className="mb-6 flex items-center justify-center gap-4">
                 <span className="h-px w-12 bg-black/20" />
                 <p className="text-xs font-medium uppercase tracking-[0.26em] text-black/50">
-                  We work in an integral manner
+                  Integrated Control
                 </p>
                 <span className="h-px w-12 bg-black/20" />
               </div>
@@ -273,7 +276,7 @@ export default function ControlIntegrationPage() {
                 Control Systems
               </h2>
               <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-black/70 md:text-xl">
-                We address projects in the following dimensions.
+                Bring lighting, climate, entertainment, and security together through one intuitive control experience.
               </p>
             </motion.div>
 
@@ -295,11 +298,13 @@ export default function ControlIntegrationPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/Pictures%20Final/Services/Control_Integration/Image.jpg"
+                <Image
+                  src="/Pictures Final/Services/Control_Integration/Image.jpg"
                   alt="Smart home control panels"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                width={1920}
+                height={1280}
+              />
               </motion.div>
 
               <motion.div
@@ -316,24 +321,21 @@ export default function ControlIntegrationPage() {
                   Smart home control panels
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
-                  Desert Sound’s Smart Home Control Panel revolutionizes home
-                  management. With an intuitive interface, effortlessly monitor
-                  and command various systems like lighting, security, HVAC,
-                  and entertainment from one sleek hub.
+                  Manage lighting, security, climate, and entertainment from one
+                  intuitive interface designed for everyday use.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
-                  Customizable layouts and advanced features offer tailored
+                  Customisable layouts and advanced features offer tailored
                   control, while integration with voice assistants ensures
-                  hands-free operation. Experience the pinnacle of convenience
-                  and efficiency as your smart home adapts to your needs with
-                  Desert Sound’s state-of-the-art control panel.
+                  hands-free operation. The result is a convenient system that
+                  adapts to your routines and remains easy for the whole family.
                 </p>
 
                 <div className="space-y-4">
                   {[
                     "Lighting, security, HVAC, and entertainment",
                     "One sleek hub",
-                    "Customizable layouts and advanced features",
+                    "Customisable layouts and advanced features",
                     "Integration with voice assistants",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
@@ -365,11 +367,9 @@ export default function ControlIntegrationPage() {
                   Touchscreen interfaces
                 </h2>
                 <p className="mb-8 text-lg font-light leading-relaxed text-white/70">
-                  Desert Sound’s Touch Screen Interfaces redefine convenience
-                  and sophistication in home control. With intuitive touch
-                  controls, easily manage your smart home systems with
-                  precision and style, enhancing your daily routines with
-                  effortless functionality and modern elegance.
+                  Touchscreen interfaces provide clear, precise access to your
+                  smart home systems. Custom pages and scenes keep common actions
+                  easy to find while maintaining a clean, modern appearance.
                 </p>
 
                 <div className="space-y-4">
@@ -395,11 +395,13 @@ export default function ControlIntegrationPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/Pictures%20Final/Services/Control_Integration/image.png"
+                <Image
+                  src="/Pictures Final/Services/Control_Integration/image.jpg"
                   alt="Touchscreen interfaces"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                width={1920}
+                height={1280}
+              />
               </motion.div>
             </div>
           </div>
@@ -428,10 +430,9 @@ export default function ControlIntegrationPage() {
                   entertainment, security, and more.
                 </p>
                 <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
-                  Voice Control Integration syncs your smart home systems with
-                  leading voice assistants. Simply command adjustments to
-                  lighting, temperature, entertainment, and security, enjoying
-                  the ultimate convenience and accessibility in home automation.
+                  Voice control connects compatible smart home systems with
+                  leading assistants, allowing simple adjustments to lighting,
+                  temperature, entertainment, and security.
                 </p>
 
                 <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
@@ -472,7 +473,7 @@ export default function ControlIntegrationPage() {
               className="mb-12 text-center"
             >
               <h2 className="mb-4 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                Frequently Ask Question
+                Frequently Asked Questions
               </h2>
             </motion.div>
 
@@ -496,7 +497,7 @@ export default function ControlIntegrationPage() {
                 Get Free Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-                Contact us now for a free consultation from our experts!
+                Speak with our team for expert guidance on your control system.
               </p>
 
               <div className="mb-12 flex justify-center">
@@ -513,10 +514,10 @@ export default function ControlIntegrationPage() {
                 <h3 className="text-2xl font-light leading-tight text-white md:text-3xl">
                   Ready to begin your
                   <br />
-                  home theater journey?
+                  home theatre journey?
                 </h3>
                 <p className="text-base font-light">
-                  Ask [email protected]
+                  Email info@desertsound.com.pk
                 </p>
                 <p className="text-base font-light">Tel: (+92)21-111-570-111</p>
               </div>
