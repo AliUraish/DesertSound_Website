@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function Preloader() {
@@ -42,10 +43,12 @@ export function Preloader() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/20 blur-[100px] rounded-full" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/40 blur-[80px] rounded-full mix-blend-overlay" />
               
-              <img 
+              <Image 
                 src="/0-removebg-preview.png" 
                 alt="Desert Sound" 
                 className="relative w-full h-auto object-contain drop-shadow-2xl z-20"
+                width={820}
+                height={304}
               />
             </motion.div>
 
