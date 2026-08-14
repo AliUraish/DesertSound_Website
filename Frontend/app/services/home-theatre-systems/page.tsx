@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useRef } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
@@ -20,40 +21,40 @@ import {
 const features = [
   {
     icon: Tv,
-    title: "Projector & Screen Setup",
+    title: "Projector & screen setup",
     description: "State-of-the-art 4K/8K projectors and large-format screens for the ultimate viewing experience. We install premium projection systems tailored to your room dimensions."
   },
   {
     icon: Volume2,
-    title: "Surround Sound System",
+    title: "Surround sound system",
     description: "Immersive Dolby Atmos and DTS:X surround sound installations that bring cinema-quality audio to your home with precision speaker placement."
   },
   {
     icon: Settings,
-    title: "Calibration & Optimization",
-    description: "Professional audio and visual calibration to ensure audiophile-grade sound and enthusiast-level visual dynamic range for the perfect experience."
+    title: "Calibration & optimisation",
+    description: "Professional audio and video calibration for balanced sound, accurate images, and consistent performance throughout the room."
   },
   {
     icon: Smartphone,
-    title: "Smart Integration",
-    description: "Seamless integration with Control4, Crestron, and HDL automation systems. Control your entire theater with a single touch or voice command."
+    title: "Smart integration",
+    description: "Seamless integration with Control4, Crestron, and HDL automation systems. Control your entire theatre with a single touch or voice command."
   },
   {
     icon: Waves,
-    title: "Acoustic Treatment",
+    title: "Acoustic treatment",
     description: "Professional room acoustics design and treatment to eliminate echo, optimize sound clarity, and create the perfect listening environment."
   },
   {
     icon: Armchair,
-    title: "Custom Seating",
+    title: "Custom seating",
     description: "Luxury cinema seating solutions from premium brands like Studio Vellari, featuring motorized recliners and custom upholstery options."
   }
 ]
 
 const faqs = [
   {
-    question: "What's included in a full home theater system in Pakistan?",
-    answer: "A complete system includes audio and video equipment (projector/screen or large display, surround sound speakers, AV receiver), custom seating, acoustic treatment, lighting control, control system integration, and professional home networking and WiFi for seamless streaming and automation."
+    question: "What's included in a complete home theatre system in Pakistan?",
+    answer: "A complete system can include a projector and screen or large display, surround sound speakers, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and reliable home networking for streaming and automation."
   },
   {
     question: "Can I integrate smart home features with my cinema?",
@@ -64,8 +65,8 @@ const faqs = [
     answer: "Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces."
   },
   {
-    question: "Can small spaces be customized for home theaters?",
-    answer: "Definitely. We specialize in customization and integration solutions for spaces of all sizes. Whether it's a dedicated cinema room or a multi-purpose media space, we design systems that maximize your available space."
+    question: "Can a small space be customised as a home theatre?",
+    answer: "Definitely. We specialise in custom solutions for spaces of all sizes. Whether it is a dedicated cinema room or a multipurpose media space, we design the system to make effective use of the available area."
   },
   {
     question: "How long does installation take?",
@@ -214,11 +215,13 @@ export default function HomeTheatreSystemsPage() {
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
-                      <img
-                        src="/Pictures%20Final/Services/Home_Theatre/Cover.jpg"
+                      <Image
+                        src="/Pictures Final/Services/Home_Theatre/Cover.jpg"
                         alt="Professional Home Theatre Installation"
                         className="h-full w-full object-cover"
-                      />
+                width={1920}
+                height={1057}
+              />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
                       
                       {/* Floating Stats on Image */}
@@ -263,7 +266,7 @@ export default function HomeTheatreSystemsPage() {
                 Six Essential Elements
               </h2>
               <p className="text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-3xl mx-auto">
-                Every component meticulously planned, installed, and calibrated to deliver a cinematic experience that transforms how you enjoy entertainment at home
+                Every component is carefully planned, installed, and calibrated to transform how you enjoy entertainment at home.
               </p>
             </motion.div>
 
@@ -286,11 +289,13 @@ export default function HomeTheatreSystemsPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/Pictures%20Final/Services/Home_Theatre/IMG_9762.JPG"
+                <Image
+                  src="/Pictures Final/Services/Home_Theatre/IMG_9762.JPG"
                   alt="Professional Home Cinema Design"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
-                />
+                width={1920}
+                height={1280}
+              />
               </motion.div>
 
               <motion.div
@@ -307,7 +312,7 @@ export default function HomeTheatreSystemsPage() {
                   Professional Home Cinema Design
                 </h2>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
-                  Professional design and installation of a home cinema goes beyond simply installing a screen and speakers. It involves careful consideration of room size, layout, acoustic settings, lighting environment, and user preferences.
+                  Professional home cinema design goes beyond installing a screen and speakers. It considers the room’s size, layout, acoustics, lighting, and the way you want to use the space.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
@@ -348,10 +353,10 @@ export default function HomeTheatreSystemsPage() {
                   Immersive Audio & Visual Experience
                 </h2>
                 <p className="text-lg text-white/70 font-light leading-relaxed mb-6">
-                  A complete home theatre experience includes high-definition projectors or large-format screens, Dolby Atmos or DTS:X surround sound systems, and smart lighting setups. We ensure spatial sound and immersion with expert installation of surround sound systems.
+                  A complete home theatre can include a high-definition projector or large-format screen, Dolby Atmos or DTS:X surround sound, and integrated lighting. Careful speaker placement and calibration create a convincing sense of space and immersion.
                 </p>
                 <p className="text-lg text-white/70 font-light leading-relaxed mb-8">
-                  Our calibration and optimization services ensure you get the best immersive audio and visual experience possible. We calibrate and optimize sound and visual systems to deliver audiophile-grade sound and enthusiast-level visual dynamic range, letting you feel every detail.
+                  Our calibration and optimisation services balance the audio and video systems for clear sound, accurate images, and consistent performance throughout the room.
                 </p>
                 
                 <div className="space-y-4">
@@ -375,11 +380,13 @@ export default function HomeTheatreSystemsPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/Pictures%20Final/Services/Home_Theatre/DSC09887.JPG"
+                <Image
+                  src="/Pictures Final/Services/Home_Theatre/DSC09887.JPG"
                   alt="Immersive Audio Visual Experience"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
-                />
+                width={1920}
+                height={1280}
+              />
               </motion.div>
             </div>
           </div>
@@ -406,7 +413,7 @@ export default function HomeTheatreSystemsPage() {
                   Intelligent technology is a significant factor in modern home theatres. With smart home automation systems like Control4, Crestron, and HDL, users can manage lighting, audio, video, curtains, and temperature using just one touch or a simple voice command.
                 </p>
                 <p className="mx-auto max-w-3xl text-lg text-black/70 font-light leading-relaxed mb-8">
-                  Our expertise in customization and integration ensures all parts of the system—displays, speakers, automation, and networking—work together seamlessly. This unified approach makes usage more convenient and eliminates the need for multiple remotes.
+                  Our expertise in customisation and integration ensures every part of the system—displays, speakers, automation, and networking—works together seamlessly. This unified approach makes the room easier to use and reduces the need for multiple remotes.
                 </p>
                 
                 <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
@@ -471,7 +478,7 @@ export default function HomeTheatreSystemsPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
-                Ready to Transform Your Space?
+                Ready to transform your space?
               </h2>
               <p className="text-lg text-white/70 font-light leading-relaxed mb-10 max-w-2xl mx-auto">
                 Get a free consultation from our experts and discover how we can create the perfect home theatre system for you.
