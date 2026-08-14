@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, MapPin, Calendar, Maximize } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -38,11 +39,13 @@ function MobileProjectCard({ project, index }: { project: typeof projects[0]; in
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative rounded-2xl overflow-hidden bg-muted aspect-[4/5]"
     >
-      <img
+      <Image
         src={project.image}
         alt={project.title}
         className="absolute inset-0 w-full h-full object-cover"
-      />
+                width={1600}
+                height={1067}
+              />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
       
       <div className="absolute inset-0 p-5 flex flex-col justify-end text-white">
@@ -172,10 +175,12 @@ function DesktopProjects() {
               key={project.id}
               className="group relative h-[60vh] aspect-[4/3] rounded-2xl overflow-hidden bg-muted"
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={1600}
+                height={1067}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
               
