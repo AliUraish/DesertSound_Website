@@ -1,8 +1,9 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import Link from "next/link"
-import { Tv, Home, Smartphone, Wifi, Headphones, ArrowUpRight } from "lucide-react"
+import { Tv, Home, Smartphone, Wifi, Headphones, ArrowUpRight, type LucideIcon } from "lucide-react"
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -12,8 +13,8 @@ const services = [
     icon: Tv,
     title: "Home Theatre Systems",
     description:
-      "Transform your space into a premium cinema experience with state-of-the-art 4K/8K projectors, immersive Dolby Atmos surround sound, custom luxury seating, and professional acoustic treatment. We design and install complete home theater solutions tailored to your space and preferences.",
-    image: "/Pictures%20Final/Services/Home_Theatre/Cover.jpg",
+      "Transform your space into a premium cinema experience with state-of-the-art 4K/8K projectors, immersive Dolby Atmos surround sound, custom luxury seating, and professional acoustic treatment. We design and install complete home theatre solutions tailored to your space and preferences.",
+    image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
     link: "/services/home-theatre-systems"
@@ -23,7 +24,7 @@ const services = [
     title: "Smart Home Automation",
     description:
       "Experience the future of living with intelligent automation that responds to your lifestyle. From climate control and automated lighting to voice integration and energy management, we create seamless smart home ecosystems that enhance comfort and efficiency.",
-    image: "/Pictures%20Final/Services/Smart_Home_Automation/image%20copy.png",
+    image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
     link: "/services/smart-home-automation"
@@ -33,7 +34,7 @@ const services = [
     title: "Control Integration",
     description:
       "Unify your entire home with a single, intuitive control system. Our integration solutions bring together lighting, climate, entertainment, and security into one seamless interface—accessible via universal remotes, mobile apps, touch panels, or voice commands.",
-    image: "/Pictures%20Final/Services/Control_Integration/Cover.jpg",
+    image: "/Pictures Final/Services/Control_Integration/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
     link: "/services/control-integration"
@@ -42,8 +43,8 @@ const services = [
     icon: Wifi,
     title: "Home Networking and Wi-Fi",
     description:
-      "Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home Network Setup and Optimization, extensive Wi-Fi Coverage and Performance Enhancement, and advanced Network Security and Parental Controls.",
-    image: "/Pictures%20Final/Services/Home_networking/Cover.jpeg",
+      "Stay connected with reliable home and office networking. We provide network setup and optimisation, stronger Wi-Fi coverage, performance improvements, and advanced security and parental controls.",
+    image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
     link: "/services/home-networking-and-wi-fi"
@@ -53,7 +54,7 @@ const services = [
     title: "Audio Systems",
     description:
       "Fill your home with crystal-clear sound through our multi-room audio solutions. From wireless streaming and hi-fi speaker installations to synchronized whole-home audio, we deliver premium sound experiences in every room.",
-    image: "/Pictures%20Final/Services/Audio_Systems/Cover.jpg",
+    image: "/Pictures Final/Services/Audio_Systems/Cover.jpg",
     imagePosition: "80% 50%",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
@@ -67,7 +68,7 @@ interface CardProps {
   description: string
   image: string
   imagePosition?: string
-  icon: any
+  icon: LucideIcon
   color: string
   textColor: string
   link?: string
@@ -105,11 +106,13 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
               style={{ scale: imageScale }}
               className="w-full h-full"
             >
-              <img 
+              <Image 
                 src={image} 
                 alt={title}
                 className="w-full h-full object-cover"
                 style={imagePosition ? { objectPosition: imagePosition } : undefined}
+                width={1600}
+                height={1067}
               />
             </motion.div>
             {/* Gradient overlay at bottom of image */}
@@ -203,12 +206,14 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
                 style={{ scale: imageScale }}
                 className="w-full h-full"
             >
-                <img 
+                <Image 
                     src={image} 
                     alt={title}
                     className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                     style={imagePosition ? { objectPosition: imagePosition } : undefined}
-                />
+                width={1600}
+                height={1067}
+              />
             </motion.div>
         </div>
       </motion.div>
