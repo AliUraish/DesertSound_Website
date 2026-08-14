@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
 import { useRef } from "react"
 
 const testimonials = [
@@ -155,15 +156,17 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
       <div className="bg-[#F5F5DC] rounded-xl p-6 lg:p-8 h-full shadow-lg cursor-grab active:cursor-grabbing">
         <StarRating />
         <p className="text-black/80 text-sm lg:text-base leading-relaxed mb-6">
-          "{testimonial.quote}"
+          &ldquo;{testimonial.quote}&rdquo;
         </p>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-black/10 overflow-hidden">
-            <img
+            <Image
               src={testimonial.avatar}
               alt={testimonial.name}
               className="w-full h-full object-cover"
-            />
+                width={1600}
+                height={1067}
+              />
           </div>
           <span className="text-black font-medium text-sm">{testimonial.name}</span>
         </div>
