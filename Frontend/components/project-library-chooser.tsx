@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 const libraryOptions = [
@@ -9,7 +10,7 @@ const libraryOptions = [
     title: "Commercial Projects",
     subtitle: "Explore curated AV and automation builds for business-focused spaces.",
     href: "/projects/commercial",
-    image: "/Pictures%20Final/Projects/Commercial/Cafe%20Flow/IMG_2933.JPG",
+    image: "/Pictures Final/Projects/Commercial/Cafe Flow/IMG_2933.JPG",
   },
   {
     id: "residential",
@@ -53,11 +54,13 @@ export function ProjectLibraryChooser() {
                 href={option.href}
                 className="group relative block rounded-2xl overflow-hidden min-h-[22rem] lg:min-h-[30rem]"
               >
-                <img
+                <Image
                   src={option.image}
                   alt={option.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                width={1600}
+                height={1067}
+              />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 text-white">
