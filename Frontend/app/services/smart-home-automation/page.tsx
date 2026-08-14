@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
@@ -50,7 +51,7 @@ const features = [
   },
   {
     icon: Wifi,
-    title: "Reliable WiFi Backbone",
+    title: "Reliable Wi-Fi Backbone",
     description:
       "Automation only works well when the network is solid, so we design stable connectivity for fast response and future expansion.",
   },
@@ -60,27 +61,27 @@ const faqs = [
   {
     question: "What does a smart home automation system mean?",
     answer:
-      "A smart home automation system is a system that links together a number of functions within the home, including lighting, security, climatic and entertainment via centralized or remote control.",
+      "A smart home automation system connects functions such as lighting, climate, security, curtains, and entertainment so they can be managed through central controls, schedules, scenes, or remote access.",
   },
   {
-    question: "Is it possible to be automated with entertainment systems?",
+    question: "Can entertainment systems be included in the automation?",
     answer:
-      "Yes, the smart homes frequently incorporate home theater design and installation and home theater systems in Pakistan solutions to the full control of the entertainment.",
+      "Yes. Home theatres, televisions, music systems, lighting, and motorised curtains can be integrated so an entire entertainment scene starts with one command.",
   },
   {
     question: "Is voice control a good idea in Pakistan?",
     answer:
-      "Yes, a voice control home automation system is effective with consistent internet connectivity and effective integration of the systems.",
+      "Voice control can be useful when it is supported by reliable internet access and careful system integration. We also provide physical and app-based controls so essential functions do not depend on voice commands alone.",
   },
   {
-    question: "Is there a need to have wifi automation and a strong internet?",
+    question: "Does home automation require strong Wi-Fi and internet access?",
     answer:
-      "Home automation components include reliable home networking and WiFi as a prerequisite to effective wifi control home automation performance.",
+      "A strong home network is essential for responsive app control, streaming, and connected devices. Many local automation functions can continue without internet access, depending on the selected system.",
   },
   {
-    question: "Are systems customizable at a later date?",
+    question: "Can the system be expanded later?",
     answer:
-      "Yes, automation solutions can be extended or increased by a customized and integration system.",
+      "Yes. We design scalable systems that can accommodate additional rooms, devices, scenes, and control interfaces as your needs change.",
   },
 ]
 
@@ -223,11 +224,13 @@ export default function SmartHomeAutomationPage() {
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
-                      <img
-                        src="/Pictures%20Final/Services/Smart_Home_Automation/image%20copy.png"
+                      <Image
+                        src="/Pictures Final/Services/Smart_Home_Automation/image copy.jpg"
                         alt="Smart home automation living room"
                         className="h-full w-full object-cover"
-                      />
+                width={1448}
+                height={1086}
+              />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-black/10" />
 
                       <div className="absolute bottom-6 left-6 right-6">
@@ -301,11 +304,13 @@ export default function SmartHomeAutomationPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/Pictures%20Final/Services/Control_Integration/image%20copy.png"
+                <Image
+                  src="/Pictures Final/Services/Control_Integration/image copy.jpg"
                   alt="Smart home control and automation interface"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                width={1920}
+                height={1280}
+              />
               </motion.div>
 
               <motion.div
@@ -319,7 +324,7 @@ export default function SmartHomeAutomationPage() {
                   System Design
                 </span>
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                  Automation That Fits The Way You Live
+                  Automation That Fits the Way You Live
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
                   A smart home automation system is most effective when it is
@@ -407,7 +412,7 @@ export default function SmartHomeAutomationPage() {
                 viewport={{ once: true }}
               >
                 <video
-                  src="/Pictures%20Final/Services/Smart_Home_Automation/curtain.mp4"
+                  src="/Pictures Final/Services/Smart_Home_Automation/curtain.mp4"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
                   autoPlay
                   loop
@@ -439,7 +444,7 @@ export default function SmartHomeAutomationPage() {
                 <p className="mx-auto mb-6 max-w-3xl text-lg font-light leading-relaxed text-black/70">
                   Remote control, fast response times, device sync, and system
                   monitoring all depend on a strong network. Smart home
-                  automation is only as good as the WiFi and infrastructure
+                  automation is only as good as the Wi-Fi and infrastructure
                   supporting it.
                 </p>
                 <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
@@ -512,7 +517,7 @@ export default function SmartHomeAutomationPage() {
               viewport={{ once: true }}
             >
               <h2 className="mb-6 text-3xl font-light tracking-tight text-white md:text-4xl lg:text-5xl">
-                Plan A Smarter Home Experience
+                Plan a Smarter Home Experience
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
                 Talk to our team about lighting scenes, climate control,
