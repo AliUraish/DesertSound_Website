@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
@@ -21,37 +22,37 @@ const features = [
     icon: Network,
     title: "Home and office networking solutions",
     description:
-      "Connect seamlessly with our Home and Office Networking solutions, designed to support reliable connectivity for everyday use, entertainment, and automation.",
+      "Connect reliably with home and office networks designed to support everyday work, entertainment, security, and automation.",
   },
   {
     icon: Settings,
-    title: "Home network setup and optimization",
+    title: "Home network setup and optimisation",
     description:
-      "Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home Network Setup and Optimization for peak performance.",
+      "We plan, configure, and optimise your network for stable coverage, responsive devices, and dependable performance.",
   },
   {
     icon: Wifi,
     title: "Wi-Fi coverage and performance enhancement",
     description:
-      "Get extensive Wi-Fi Coverage and Performance Enhancement to eliminate dead zones and improve connectivity throughout your space.",
+      "Improve Wi-Fi coverage, reduce dead zones, and strengthen connectivity throughout your home or workplace.",
   },
   {
     icon: Wifi,
     title: "Wired and wireless network solutions",
     description:
-      "Our experts design and implement reliable Wired and Wireless Network Solutions tailored to your needs, whether for a smart home, office, or multi-level environment.",
+      "Our experts design reliable wired and wireless networks for smart homes, offices, and multi-level environments.",
   },
   {
     icon: Shield,
     title: "Network security and parental controls",
     description:
-      "We prioritize Network Security and Parental Controls, safeguarding your data and controlling access for family members.",
+      "Protect your network and manage household access with appropriate security settings, guest networks, and parental controls.",
   },
   {
     icon: Smartphone,
     title: "Integration with smart devices",
     description:
-      "Additionally, we offer Integration with Smart Devices, enabling seamless connectivity for all your home automation and entertainment systems.",
+      "Connect smart devices, automation controllers, entertainment systems, cameras, and other networked technology through one dependable infrastructure.",
   },
 ]
 
@@ -187,8 +188,9 @@ export default function HomeNetworkingAndWifiPage() {
                   </h1>
 
                   <p className="mb-8 text-base font-light leading-relaxed text-black/70 md:text-lg">
-                    Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home
-                    Network Setup and Optimization for peak performance.
+                    Build a reliable home or office network for everyday work,
+                    entertainment, security, and automation, with strong coverage
+                    and dependable performance throughout the property.
                   </p>
 
                   <div className="flex">
@@ -213,11 +215,13 @@ export default function HomeNetworkingAndWifiPage() {
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
-                      <img
-                        src="/Pictures%20Final/Services/Home_networking/Cover.jpeg"
+                      <Image
+                        src="/Pictures Final/Services/Home_networking/Cover.jpeg"
                         alt="Home Networking and Wi-Fi"
                         className="h-full w-full object-cover"
-                      />
+                width={1096}
+                height={992}
+              />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
 
                       <div className="absolute bottom-6 left-6 right-6">
@@ -258,7 +262,7 @@ export default function HomeNetworkingAndWifiPage() {
                 Home Networking and Wi-Fi
               </h2>
               <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-black/70 md:text-xl">
-                Get extensive Wi-Fi Coverage and Performance Enhancement to eliminate dead zones and improve connectivity
+                Improve Wi-Fi coverage, eliminate dead zones, and strengthen connectivity
                 throughout your space.
               </p>
             </motion.div>
@@ -281,11 +285,13 @@ export default function HomeNetworkingAndWifiPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <img
-                  src="/Pictures%20Final/Services/Home_networking/Image2.png"
-                  alt="Home network setup and optimization"
+                <Image
+                  src="/Pictures Final/Services/Home_networking/Image2.jpg"
+                  alt="Home network setup and optimisation"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                width={1672}
+                height={941}
+              />
               </motion.div>
 
               <motion.div
@@ -299,20 +305,20 @@ export default function HomeNetworkingAndWifiPage() {
                   Home Networking and Wi-Fi
                 </span>
                 <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                  Home network setup and optimization
+                  Home network setup and optimisation
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
-                  Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home
-                  Network Setup and Optimization for peak performance.
+                  We plan and configure reliable home and office networks for
+                  everyday work, entertainment, security, and automation.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
-                  Get extensive Wi-Fi Coverage and Performance Enhancement to eliminate dead zones and improve connectivity
-                  throughout your space.
+                  Careful access-point placement and configuration improve
+                  coverage, reduce dead zones, and support consistent performance.
                 </p>
 
                 <div className="space-y-4">
                   {[
-                    "Home network setup and optimization",
+                    "Home network setup and optimisation",
                     "Wi-Fi coverage and performance enhancement",
                     "Wired and wireless network solutions",
                   ].map((item, index) => (
@@ -343,12 +349,12 @@ export default function HomeNetworkingAndWifiPage() {
                   Wired and wireless network solutions
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-white/70">
-                  Our experts design and implement reliable Wired and Wireless Network Solutions tailored to your needs,
+                  Our experts design and implement reliable wired and wireless networks tailored to your needs,
                   whether for a smart home, office, or multi-level environment.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-white/70">
-                  We prioritize Network Security and Parental Controls, safeguarding your data and controlling access for
-                  family members.
+                  We prioritise network security and parental controls, helping
+                  protect your data and manage access for family members.
                 </p>
 
                 <div className="space-y-4">
@@ -371,11 +377,13 @@ export default function HomeNetworkingAndWifiPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <img
-                  src="/Pictures%20Final/Services/Home_networking/Image.png"
+                <Image
+                  src="/Pictures Final/Services/Home_networking/Image.jpg"
                   alt="Wired and wireless network solutions"
                   className="h-[400px] w-full rounded-2xl object-cover shadow-2xl lg:h-[600px]"
-                />
+                width={1536}
+                height={1024}
+              />
               </motion.div>
             </div>
           </div>
@@ -398,18 +406,19 @@ export default function HomeNetworkingAndWifiPage() {
                   Integration with smart devices
                 </h2>
                 <p className="mx-auto mb-6 max-w-3xl text-lg font-light leading-relaxed text-black/70">
-                  Additionally, we offer Integration with Smart Devices, enabling seamless connectivity for all your home
-                  automation and entertainment systems.
+                  We connect smart devices, automation controllers, entertainment
+                  systems, cameras, and other networked technology through one
+                  dependable infrastructure.
                 </p>
                 <p className="mx-auto mb-8 max-w-3xl text-lg font-light leading-relaxed text-black/70">
-                  Connect seamlessly with our Home and Office Networking solutions. Our services ensure a robust Home
-                  Network Setup and Optimization for peak performance.
+                  A well-planned network keeps connected systems responsive today
+                  and provides room for future devices and services.
                 </p>
 
                 <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
                   {[
                     "Integration with smart devices",
-                    "Home network setup and optimization",
+                    "Home network setup and optimisation",
                     "Network security and parental controls",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
@@ -441,7 +450,7 @@ export default function HomeNetworkingAndWifiPage() {
               className="mb-12 text-center"
             >
               <h2 className="mb-4 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                Frequently Ask Question
+                Frequently Asked Questions
               </h2>
               <p className="text-lg font-light leading-relaxed text-black/70">
                 Home Networking and Wi-Fi
@@ -468,7 +477,7 @@ export default function HomeNetworkingAndWifiPage() {
                 Get Free Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-                Contact us now for a free consultation from our experts!
+                Speak with our team for expert guidance on your home or office network.
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
