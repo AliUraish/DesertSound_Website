@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-const galleryImages = ["/vellari2.png", "/vellari3.png", "/vellari4.png", "/vellari5.png"]
+const galleryImages = ["/vellari2.jpg", "/vellari3.jpg", "/vellari4.jpg", "/vellari5.jpg"]
 
 const variants = {
   enter: { opacity: 0 },
@@ -34,27 +35,29 @@ export default function StudioVellariPage() {
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <img
-            src="/vellari1.png"
+          <Image
+            src="/vellari1.jpg"
             alt="Studio Vellari main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] lg:h-[68vh] object-cover"
-          />
+                width={1920}
+                height={634}
+              />
         </section>
 
         <section className="max-w-[88%] mx-auto px-4 lg:px-8 py-12 lg:py-16">
-          <h1 className="text-4xl lg:text-6xl text-black mb-6">M.A Project</h1>
+          <h1 className="text-4xl lg:text-6xl text-black mb-6">Studio Vellari</h1>
           <p className="text-base lg:text-lg text-black/70 max-w-5xl">
             The Studio Vellari Stanley Recliners and Stanley Daybed take pride of place in the new Flagship Desert
             Sound Cinema, representing the pinnacle of luxury cinema seating. With a choice between a sleek single
             seat recliner and an expansive daybed, the Stanley collection caters to various preferences and space
-            requirements. Each piece features customizable console widths and distinctive 3D carbon fibre panelling,
+            requirements. Each piece features customisable console widths and distinctive 3D carbon fibre panelling,
             adding a modern, sophisticated touch.
           </p>
           <p className="text-base lg:text-lg text-black/70 max-w-5xl mt-6">
             The versatility of the Stanley is further enhanced by the option to personalize consoles and armrests with
-            a variety of quilted stitch patterns, seamlessly blending into any decor. Perfect for private home theaters
+            a variety of quilted stitch patterns, seamlessly blending into any décor. Designed for private home theatres
             or upscale entertainment spaces, the Stanley sets a new standard for both style and comfort. Available in
-            four exquisite upholstery options, Alcantara, Napa Leather, Nubuck, and Velvet, this collection meets the
+            four upholstery options—Alcantara, Nappa leather, nubuck, and velvet—this collection meets the
             diverse tastes of discerning customers.
           </p>
         </section>
