@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
@@ -22,55 +23,55 @@ const features = [
     icon: Wifi,
     title: "In-house Wi-Fi music systems",
     description:
-      "Bring Every Beat to Every Corner of Your Home. With Seamless Integration and High-Quality Audio, Enjoy Your Favorite Tunes Wirelessly, Elevating Your Living Spaces with Music Tailored to Your Mood and Moments.",
+      "Bring music to every corner of your home through reliable wireless streaming and high-quality audio tailored to each space and occasion.",
   },
   {
     icon: AudioLines,
     title: "Multi-room audio setup",
     description:
-      "Desert Sound’s Multi-Room Audio Set-Up Delivers an Unmatched Audio Experience Across Your Entire Home. Seamlessly Integrate High-Fidelity Sound in Every Room, Allowing You to Create Unique Soundscapes Tailored to Each Space and Occasion.",
+      "Enjoy high-fidelity sound throughout your home, with independent room control and listening experiences tailored to each space.",
   },
   {
     icon: SlidersHorizontal,
     title: "Speaker installation and calibration",
     description:
-      "Our Expert Technicians Tailor Every Detail of Your Audio Setup, Ensuring Optimal Placement, Acoustic Tuning, and Seamless Integration for an Unrivaled Listening Experience in Every Corner of Your Space.",
+      "Our technicians optimise speaker placement, acoustic tuning, and system integration for clear, balanced sound throughout your space.",
   },
   {
     icon: PlayCircle,
     title: "Streaming services integration",
     description:
-      "Connect and Customize Your Favorite Streaming Platforms Across Every Device and Room in Your Home. Our Comprehensive Solutions Ensure Fluid Access to Music, Movies, and More.",
+      "Connect your preferred streaming services across compatible devices and rooms for convenient access to music, films, and more.",
   },
   {
     icon: Speaker,
     title: "Hi-Fi audio systems",
     description:
-      "Audiophile experience with our high-fidelity solutions, delivering crystal-clear sound and rich, detailed acoustics. From turntables to amplifiers, speakers, and beyond, we curate a selection of premium audio equipment to elevate your listening experience.",
+      "Experience detailed, high-fidelity sound through carefully selected turntables, amplifiers, speakers, and supporting equipment.",
   },
   {
     icon: AudioLines,
     title: "Premium audio equipment",
     description:
-      "From Turntables to Amplifiers, Speakers, and Beyond, We Curate a Selection of Premium Audio Equipment to Elevate Your Listening Experience and Bring Music to Life in Its Truest Form.",
+      "We select and integrate premium audio equipment to match your room, listening preferences, and performance goals.",
   },
 ]
 
 const faqs = [
   {
-    question: "How much does a home theatre cost?",
+    question: "How does a multi-room audio system work?",
     answer:
-      "Projects vary widely depending on your needs and budget. Our representatives visit with you to better understand your home remodeling needs. At Konstruktion Home Improvements we do more than give you a quote. We provide you with the information you need to make the right decisions for your home. Our representatives take time to explain the details regarding your project. We answer all of your questions and explain our estimates for your home improvement project. There is no obligation. Give us some time to review your wish list and we will give you valuable information. We believe that an educated consumer is our best customer!",
+      "A multi-room audio system distributes music to speakers in different areas of your home. You can group rooms together or control them independently from an app, touchscreen, remote, or compatible voice assistant.",
   },
   {
-    question: "What is included with a free remodeling estimate?",
+    question: "Can different rooms play different music?",
     answer:
-      "Our free remodeling estimates include a detailed written scope of work. At times, when necessary or when requested, we will provide renderings for you to view what your remodel will look like upon completion. Renderings look like a picture of your home and are a likeness of what your remodel will look like so you can visualize the space to be remodeled.",
+      "Yes. A properly designed system can play one source throughout the home or different sources in individual rooms, depending on the selected equipment and control platform.",
   },
   {
-    question: "How long will my project take?",
+    question: "Do you install and calibrate the speakers?",
     answer:
-      "During our free consultation with you, we will discuss the duration of your project. The key element in completing your project in a timely manner is for you to be available during the process so you can select your products. In addition, we will need full access to your home during the remodel during regular work hours (Monday through Friday 09:30 to 07:30). We will not begin work on your home until all the materials have been received. Our company policy is to stay on your project until completion once we have started construction.",
+      "Yes. We handle speaker placement, wiring, installation, configuration, and calibration so the system performs consistently across each listening area.",
   },
 ]
 
@@ -195,10 +196,9 @@ export default function AudioSystemsPage() {
                   </h1>
 
                   <p className="text-base font-light leading-relaxed text-black/70 md:text-lg">
-                    Bring Every Beat to Every Corner of Your Home. With
-                    Seamless Integration and High-Quality Audio, Enjoy Your
-                    Favorite Tunes Wirelessly, Elevating Your Living Spaces with
-                    Music Tailored to Your Mood and Moments.
+                    Bring music to every corner of your home through seamless
+                    integration and high-quality wireless audio tailored to your
+                    rooms, routines, and listening preferences.
                   </p>
 
                   <div className="mt-8 flex">
@@ -223,11 +223,13 @@ export default function AudioSystemsPage() {
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] overflow-hidden md:h-[500px] lg:h-[550px] xl:h-[650px]">
-                      <img
-                        src="/Pictures%20Final/Services/Audio_Systems/Cover.jpg"
+                      <Image
+                        src="/Pictures Final/Services/Audio_Systems/Cover.jpg"
                         alt="Audio systems and distribution"
                         className="h-full w-full object-cover"
-                      />
+                width={895}
+                height={504}
+              />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-black/10" />
 
                       <div className="absolute bottom-6 left-6 right-6">
@@ -279,7 +281,7 @@ export default function AudioSystemsPage() {
               </h2>
               <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-black/70 md:text-xl">
                 Seamlessly integrate high-fidelity sound in every room,
-                customize your favorite streaming platforms, and elevate your
+                customise your preferred streaming platforms, and elevate your
                 listening experience with premium audio equipment.
               </p>
             </motion.div>
@@ -303,11 +305,13 @@ export default function AudioSystemsPage() {
                 className="order-2 lg:order-1"
               >
                 <div className="flex aspect-[4/3] w-full items-center justify-center overflow-visible">
-                  <img
-                    src="/Pictures%20Final/Services/Audio_Systems/image_copy-removebg-preview.png"
+                  <Image
+                    src="/Pictures Final/Services/Audio_Systems/image_copy-removebg-preview.png"
                     alt="In-house Wi-Fi music and multi-room audio"
                     className="h-full w-full object-contain"
-                  />
+                width={577}
+                height={433}
+              />
                 </div>
               </motion.div>
 
@@ -325,27 +329,23 @@ export default function AudioSystemsPage() {
                   Multi-room Audio Setup
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
-                  Bring Every Beat to Every Corner of Your Home. With Seamless
-                  Integration and High-Quality Audio, Enjoy Your Favorite Tunes
-                  Wirelessly, Elevating Your Living Spaces with Music Tailored
-                  to Your Mood and Moments.
+                  Bring music to every corner of your home through seamless
+                  integration and high-quality wireless audio tailored to your
+                  rooms, routines, and listening preferences.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
-                  Desert Sound’s Multi-Room Audio Set-Up Delivers an Unmatched
-                  Audio Experience Across Your Entire Home. Seamlessly Integrate
-                  High-Fidelity Sound in Every Room, Allowing You to Create
-                  Unique Soundscapes Tailored to Each Space and Occasion.
-                  Whether Hosting Guests or Relaxing Alone, Immerse Yourself in
-                  the Perfect Playlist, Effortlessly Controlled from Any Device,
-                  and Redefine Your Home’s Atmosphere with the Power of Music.
+                  Desert Sound’s multi-room audio systems deliver consistent,
+                  high-fidelity sound throughout your home. Play one source
+                  everywhere or create independent listening zones, all managed
+                  from a compatible app, touchscreen, remote, or voice assistant.
                 </p>
 
                 <div className="space-y-4">
                   {[
                     "In-house Wi-Fi music systems",
-                    "High-Quality Audio",
+                    "High-quality audio",
                     "Multi-room audio setup",
-                    "Effortlessly Controlled from Any Device",
+                    "Convenient control from compatible devices",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-black" />
@@ -376,27 +376,23 @@ export default function AudioSystemsPage() {
                   Streaming Services Integration
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-white/70">
-                  Our Expert Technicians Tailor Every Detail of Your Audio
-                  Setup, Ensuring Optimal Placement, Acoustic Tuning, and
-                  Seamless Integration for an Unrivaled Listening Experience in
-                  Every Corner of Your Space. From Home Theaters to Multi-Room
-                  Audio Systems, We Combine Precision Engineering with Artistic
-                  Sensibility to Elevate Your Audio Environment to New Heights.
+                  Our technicians optimise speaker placement, acoustic tuning,
+                  and system integration for balanced performance throughout
+                  your space. From home theatres to multi-room audio, every
+                  detail is planned around the room and the way you listen.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-white/70">
-                  Connect and Customize Your Favorite Streaming Platforms Across
-                  Every Device and Room in Your Home. Our Comprehensive
-                  Solutions Ensure Fluid Access to Music, Movies, and More,
-                  Elevating Your Entertainment Experience to Unprecedented
-                  Levels of Convenience and Enjoyment.
+                  Connect your preferred streaming platforms across compatible
+                  devices and rooms for convenient access to music, films, and
+                  other entertainment.
                 </p>
 
                 <div className="space-y-4">
                   {[
-                    "Optimal Placement",
-                    "Acoustic Tuning",
-                    "Seamless Integration",
-                    "Connect and Customize Your Favorite Streaming Platforms",
+                    "Optimised speaker placement",
+                    "Acoustic tuning",
+                    "Seamless integration",
+                    "Integration with preferred streaming platforms",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-white" />
@@ -415,11 +411,13 @@ export default function AudioSystemsPage() {
                 viewport={{ once: true }}
               >
                 <div className="flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-2xl bg-[#111] shadow-2xl">
-                  <img
-                    src="/Pictures%20Final/Services/Audio_Systems/image.png"
+                  <Image
+                    src="/Pictures Final/Services/Audio_Systems/image.jpg"
                     alt="Speaker installation and streaming integration"
                     className="h-full w-full object-contain"
-                  />
+                width={1672}
+                height={941}
+              />
                 </div>
               </motion.div>
             </div>
@@ -437,11 +435,13 @@ export default function AudioSystemsPage() {
                 className="order-2 lg:order-1"
               >
                 <div className="mx-auto flex aspect-[2/3] h-[420px] max-h-[70vh] items-center justify-center overflow-hidden rounded-2xl shadow-2xl lg:h-[560px]">
-                  <img
-                    src="/Pictures%20Final/Services/Audio_Systems/IMG_9598.JPG"
+                  <Image
+                    src="/Pictures Final/Services/Audio_Systems/IMG_9598.JPG"
                     alt="Premium audio equipment"
                     className="h-full w-full object-contain"
-                  />
+                width={1920}
+                height={1280}
+              />
                 </div>
               </motion.div>
 
@@ -459,17 +459,16 @@ export default function AudioSystemsPage() {
                   Audiophile experience
                 </h2>
                 <p className="mb-6 text-lg font-light leading-relaxed text-black/70">
-                  Audiophile experience with our high-fidelity solutions,
-                  delivering crystal-clear sound and rich, detailed acoustics.
+                  Explore high-fidelity solutions that deliver clear sound and
+                  rich, detailed acoustics.
                   From turntables to amplifiers, speakers, and beyond, we
                   curate a selection of premium audio equipment to elevate your
                   listening experience.
                 </p>
                 <p className="mb-8 text-lg font-light leading-relaxed text-black/70">
-                  Whether You’re a Casual Listener or Audiophile, Our Expertise
-                  Ensures Every Note is Captured with Precision, Bringing Music
-                  to Life in Its Truest Form. Rediscover the Joy of Listening
-                  with Desert Sound’s Hi-Fi Audio Systems.
+                  Whether you are a casual listener or an audiophile, we match
+                  the system to your room and preferences so music feels natural,
+                  detailed, and engaging.
                 </p>
 
                 <div className="mb-8 space-y-4">
@@ -505,7 +504,7 @@ export default function AudioSystemsPage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg font-light leading-relaxed text-black/70">
-                Frequently Ask Question
+                Learn more about planning, installing, and maintaining a high-quality audio system.
               </p>
             </motion.div>
 
@@ -529,7 +528,7 @@ export default function AudioSystemsPage() {
                 Get Free Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-                Contact us now for a free consultation from our experts!
+                Speak with our team for expert guidance on your audio system.
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
