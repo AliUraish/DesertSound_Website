@@ -4,12 +4,12 @@ export default function Project21Page() {
   return (
     <ProjectCaseStudyPage
       title="Project 21"
-      coverImage="/Pictures%20Final/Projects/Residential/project_21/img_1.jpg"
+      coverImage="/Pictures Final/Projects/Residential/project_21/img_1.jpg"
       coverImageAlt="Project 21 main image"
-      galleryImages={["/Pictures%20Final/Projects/Residential/project_21/img_2.jpg", "/Pictures%20Final/Projects/Residential/project_21/img_3.jpg", "/Pictures%20Final/Projects/Residential/project_21/img_4.jpg"]}
+      galleryImages={["/Pictures Final/Projects/Residential/project_21/img_2.jpg", "/Pictures Final/Projects/Residential/project_21/img_3.jpg", "/Pictures Final/Projects/Residential/project_21/img_4.jpg"]}
       description={[
         "Project 21 is a private cinema environment designed around tonal contrast, comfort, and a clean room layout that keeps the visual focus where it belongs. The space aims to feel composed and premium without losing its residential warmth.",
-        "The page currently uses temporary descriptive text to complete the presentation. When the final approved copy is ready, it can be inserted directly into the same structure together with any project-specific details.",
+        "The technology is arranged around clear sightlines and balanced sound, allowing the room's finishes and seating to remain central to the experience.",
       ]}
       breadcrumb="Home / Projects / Residential / Project 21"
     />
