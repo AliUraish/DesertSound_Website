@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
@@ -50,7 +51,10 @@ export function ProjectCaseStudyPage({
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <img src={coverImage} alt={coverImageAlt} className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]" />
+          <Image src={coverImage} alt={coverImageAlt} className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
+                width={1600}
+                height={1067}
+              />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
