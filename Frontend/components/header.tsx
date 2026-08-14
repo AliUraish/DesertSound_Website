@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
@@ -35,10 +36,12 @@ export function Header() {
             {/* Logo - Left: Desert Sound (company) + CEDIA membership badge */}
             <Link href="/" className="flex min-w-0 shrink-0 items-center gap-4 lg:gap-5 cursor-pointer">
               {/* Primary brand */}
-              <img
+              <Image
                 src="/0-removebg-preview.png"
                 alt="Desert Sound Logo"
                 className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+                width={820}
+                height={304}
               />
               {/* Divider separating the company brand from its accreditation */}
               <span
@@ -47,11 +50,13 @@ export function Header() {
               />
               {/* CEDIA membership badge (secondary) */}
               <span className="flex h-14 items-center sm:h-16 lg:h-20">
-                <img
-                  src="/image-removebg-preview%20%281%29.png"
+                <Image
+                  src="/image-removebg-preview (1).png"
                   alt="CEDIA Member"
                   className="h-9 sm:h-11 lg:h-[52px] w-auto object-contain opacity-90"
-                />
+                width={637}
+                height={313}
+              />
               </span>
             </Link>
 
@@ -137,7 +142,9 @@ export function Header() {
             <div className="mt-12 pt-8 border-t border-black/10 space-y-4">
               <div className="text-sm text-black/40 uppercase tracking-wider">Get in touch</div>
               <div className="space-y-2">
-                <p className="text-black/60">+92 300 1234567</p>
+                <a href="tel:+9221111570111" className="block text-black/60 hover:text-black">
+                  +92 21 111 570 111
+                </a>
                 <p className="text-black/60">info@desertsound.com.pk</p>
               </div>
             </div>
