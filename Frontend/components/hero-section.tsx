@@ -1,42 +1,43 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 
 const heroSlides = [
   {
-    image: "/Pictures%20Final/Hero%20Page/homepage_header/homepage1.jpg",
+    image: "/Pictures Final/Hero Page/homepage_header/homepage1.jpg",
     imagePosition: "50% 28%",
     title: "We Create",
     subtitle: "Dream Spaces",
     description:
-      "From bespoke home cinemas to intelligent home automation we deliver solutions that combine innovation craftsmanship and everyday luxury.",
+      "From bespoke home cinemas to intelligent home automation, we deliver solutions that combine innovation, craftsmanship, and everyday luxury.",
   },
   {
-    image: "/Pictures%20Final/Hero%20Page/homepage_header/Homepage22.JPG",
+    image: "/Pictures Final/Hero Page/homepage_header/Homepage22.JPG",
     title: "Where Vision",
     subtitle: "Meets Structure",
     description:
-      "Experience the Art of Entertainment. Every project is thoughtfully designed expertly engineered and professionally installed to deliver exceptional performance without compromising aesthetics.",
+      "Experience the art of entertainment. Every project is thoughtfully designed, expertly engineered, and professionally installed to deliver exceptional performance without compromising aesthetics.",
   },
   {
-    image: "/Pictures%20Final/Hero%20Page/homepage_header/homepage4.jpg",
-    title: "Silence In",
+    image: "/Pictures Final/Hero Page/homepage_header/homepage4.jpg",
+    title: "Silence in",
     subtitle: "Motion",
-    description: "create spaces where technology disappears leaving you with nothing but exceptional sound stunning visuals and unforgettable moments.",
+    description: "We create spaces where technology disappears, leaving you with exceptional sound, stunning visuals, and unforgettable moments.",
   },
   {
-    image: "/Pictures%20Final/Hero%20Page/homepage_header/Homepage33.JPG",
+    image: "/Pictures Final/Hero Page/homepage_header/Homepage33.JPG",
     title: "Bringing Cinema",
     subtitle: "Home",
-    description: "Designed to Impress. Built to Perform. Creating immersive entertainment spaces with world class technology and timeless design.",
+    description: "Designed to impress. Built to perform. We create immersive entertainment spaces with world-class technology and timeless design.",
   },
   {
-    image: "/Pictures%20Final/Hero%20Page/homepage_header/Hompage3.JPG",
+    image: "/Pictures Final/Hero Page/homepage_header/Hompage3.JPG",
     title: "Intelligent",
     subtitle: "Automation",
-    description: "Your home deserves more than technology it deserves experiences that bring family and friends together.",
+    description: "Your home deserves more than technology; it deserves experiences that bring family and friends together.",
   },
 ]
 
@@ -87,9 +88,14 @@ export function HeroSection() {
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0 z-0"
             >
-              <img
+              <Image
                 src={heroSlides[currentSlide].image}
                 alt={`${heroSlides[currentSlide].title} ${heroSlides[currentSlide].subtitle}`}
+                width={1920}
+                height={1080}
+                loading={currentSlide === 0 ? "eager" : "lazy"}
+                fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                decoding="async"
                 className="w-full h-full object-cover"
                 style={{
                   objectPosition: heroSlides[currentSlide].imagePosition ?? "50% 50%",
