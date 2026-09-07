@@ -6,8 +6,8 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.
 export const siteName = "Desert Sound"
 
 export const socialLinks = {
-  facebook: "https://www.facebook.com/desertsoundpakistan",
-  instagram: "https://www.instagram.com/desertsoundpakistan",
+  facebook: "https://www.facebook.com/share/1DLuj22aHw/?mibextid=wwXIfr",
+  instagram: "https://www.instagram.com/desertsoundpk?igsi=MXZwemlkN3o5enVkdQ==",
 }
 
 export const defaultSeo = {
