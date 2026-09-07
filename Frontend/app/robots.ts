@@ -1,14 +1,11 @@
 import type { MetadataRoute } from "next"
-import { absoluteUrl, siteUrl } from "@/lib/seo"
 
+// Staging lock until cutover: disallow all crawling, no sitemap pointer at live domain.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
-      disallow: "/api/",
+      disallow: "/",
     },
-    sitemap: absoluteUrl("/sitemap.xml"),
-    host: siteUrl,
   }
 }

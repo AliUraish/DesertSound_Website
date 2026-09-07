@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   authors: [{ name: siteName }],
   creator: siteName,
   publisher: siteName,
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "256x256" }],
+    shortcut: "/favicon.png",
+    apple: [{ url: "/favicon.png", type: "image/png", sizes: "256x256" }],
+  },
   keywords: [
     "home theater Pakistan",
     "home theatre systems Pakistan",
@@ -73,11 +78,11 @@ export const metadata: Metadata = {
     images: [absoluteUrl(defaultSeo.image)],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,

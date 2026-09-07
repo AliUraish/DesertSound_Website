@@ -10,12 +10,18 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { createMetadata, defaultSeo, siteName } from "@/lib/seo"
 
-export const metadata: Metadata = createMetadata({
-  path: "/",
-  title: `${siteName} - ${defaultSeo.title}`,
-  description: defaultSeo.description,
-  image: defaultSeo.image,
-})
+export const metadata: Metadata = {
+  ...createMetadata({
+    path: "/",
+    title: "Home Cinema Service in Pakistan | Home Theater Installation",
+    description:
+      "Experience professional home cinema, home theater, and sound system installation services across Pakistan.",
+    image: defaultSeo.image,
+  }),
+  title: {
+    absolute: "Home Cinema Service in Pakistan | Home Theater Installation",
+  },
+}
 
 export default function HomePage() {
   return (
