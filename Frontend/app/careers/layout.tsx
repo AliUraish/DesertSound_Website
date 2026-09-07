@@ -6,7 +6,7 @@ export const metadata: Metadata = createMetadata({
   path: "/careers",
   title: "Careers",
   description:
-    "Explore open roles at Desert Sound for AV installation, control systems, networking, acoustics, lighting, service, and project engineering.",
+    "Explore the full-time Senior Software Engineer opportunity at Desert Sound in Karachi, Pakistan.",
   image: "/DSC09710.JPG",
 })
 

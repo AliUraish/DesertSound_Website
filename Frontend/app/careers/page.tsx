@@ -32,37 +32,37 @@ export default function CareersPage() {
                 Open Positions
               </p>
               <h2 className="text-3xl font-light leading-tight md:text-4xl">
-                Select a role and apply directly.
+                Build thoughtful software with real-world impact.
               </h2>
             </div>
 
             <div className="grid gap-3">
               {positions.map((position) => (
-                  <Link
-                    key={position.id}
-                    href={`/careers/${position.slug}`}
-                    className="group flex w-full flex-col gap-4 border border-[#F5F5DC]/15 px-5 py-5 text-left text-[#F5F5DC] transition-colors hover:bg-[#F5F5DC]/10 md:flex-row md:items-center md:justify-between"
-                  >
-                    <span>
-                      <span className="block text-lg font-light md:text-xl">
-                        {position.title}
+                <Link
+                  key={position.id}
+                  href={`/careers/${position.slug}`}
+                  className="group flex w-full flex-col gap-4 border border-[#F5F5DC]/15 px-5 py-5 text-left text-[#F5F5DC] transition-colors hover:bg-[#F5F5DC]/10 md:flex-row md:items-center md:justify-between"
+                >
+                  <span>
+                    <span className="block text-lg font-light md:text-xl">
+                      {position.title}
+                    </span>
+                    <span className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#F5F5DC]/55">
+                      <span className="inline-flex items-center gap-1.5">
+                        <BriefcaseBusiness className="h-4 w-4" />
+                        {position.employmentType}
                       </span>
-                      <span className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#F5F5DC]/55">
-                        <span className="inline-flex items-center gap-1.5">
-                          <BriefcaseBusiness className="h-4 w-4" />
-                          Full-time
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <MapPin className="h-4 w-4" />
-                          {position.location}
-                        </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="h-4 w-4" />
+                        {position.location}
                       </span>
                     </span>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium">
-                      Apply
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Link>
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-sm font-medium">
+                    View role
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
