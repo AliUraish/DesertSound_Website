@@ -1,3 +1,5 @@
+import { cutoverRedirects } from "./cutover-redirects.mjs"
+
 const isProduction = process.env.NODE_ENV === "production"
 
 const contentSecurityPolicy = [
@@ -23,6 +25,7 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
+  { key: "X-Robots-Tag", value: "noindex, nofollow" },
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
   {
     key: "Permissions-Policy",
@@ -47,6 +50,9 @@ const nextConfig = {
         headers: securityHeaders,
       },
     ]
+  },
+  async redirects() {
+    return cutoverRedirects
   },
 }
 
