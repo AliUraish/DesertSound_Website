@@ -1,0 +1,7 @@
+Frontend/node_modules
+Frontend/.next
+Frontend/.next-dev
+Frontend/.next-build
+Frontend/.DS_Store
+**/.DS_Store
+*.tsbuildinfo
