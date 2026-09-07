@@ -2,8 +2,44 @@
 
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { useState } from "react"
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setStatus(null)
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      })
+      const result = (await response.json()) as { error?: string }
+
+      if (!response.ok) {
+        throw new Error(result.error ?? "Your message could not be sent.")
+      }
+
+      form.reset()
+      setStatus({ type: "success", message: "Your message has been sent. We’ll be in touch soon." })
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error instanceof Error ? error.message : "Your message could not be sent.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="bg-black py-14 lg:py-18">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -78,13 +114,18 @@ export function ContactSection() {
               We&apos;ll get back to you within 24 hours
             </p>
 
-            <form className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-black/70 text-sm mb-1.5">First Name</label>
                   <input
                     type="text"
+                    name="firstName"
                     placeholder="John"
+                    required
+                    maxLength={100}
+                    autoComplete="given-name"
                     className="w-full px-4 py-2.5 bg-white border border-black/10 rounded-lg text-black placeholder:text-black/40 focus:outline-none focus:border-black/40 transition-colors"
                   />
                 </div>
@@ -92,7 +133,10 @@ export function ContactSection() {
                   <label className="block text-black/70 text-sm mb-1.5">Last Name</label>
                   <input
                     type="text"
+                    name="lastName"
                     placeholder="Doe"
+                    maxLength={100}
+                    autoComplete="family-name"
                     className="w-full px-4 py-2.5 bg-white border border-black/10 rounded-lg text-black placeholder:text-black/40 focus:outline-none focus:border-black/40 transition-colors"
                   />
                 </div>
@@ -102,7 +146,11 @@ export function ContactSection() {
                 <label className="block text-black/70 text-sm mb-1.5">Email</label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="john@example.com"
+                  required
+                  maxLength={254}
+                  autoComplete="email"
                   className="w-full px-4 py-2.5 bg-white border border-black/10 rounded-lg text-black placeholder:text-black/40 focus:outline-none focus:border-black/40 transition-colors"
                 />
               </div>
@@ -111,7 +159,10 @@ export function ContactSection() {
                 <label className="block text-black/70 text-sm mb-1.5">Phone</label>
                 <input
                   type="tel"
-                  placeholder="+92 300 1234567"
+                  name="phone"
+                  placeholder="+92 21 111 570 111"
+                  maxLength={50}
+                  autoComplete="tel"
                   className="w-full px-4 py-2.5 bg-white border border-black/10 rounded-lg text-black placeholder:text-black/40 focus:outline-none focus:border-black/40 transition-colors"
                 />
               </div>
@@ -120,7 +171,10 @@ export function ContactSection() {
                 <label className="block text-black/70 text-sm mb-1.5">Message</label>
                 <textarea
                   rows={2}
+                  name="message"
                   placeholder="Tell us about your project..."
+                  required
+                  maxLength={5000}
                   className="w-full px-4 py-2.5 bg-white border border-black/10 rounded-lg text-black placeholder:text-black/40 focus:outline-none focus:border-black/40 transition-colors resize-none"
                 />
               </div>
@@ -129,11 +183,23 @@ export function ContactSection() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-black text-[#F5F5DC] py-3 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-black/90 transition-colors group"
+                disabled={isSubmitting}
+                className="w-full bg-black text-[#F5F5DC] py-3 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-black/90 transition-colors group disabled:cursor-not-allowed disabled:opacity-55"
               >
-                <span>Send Message</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span>{isSubmitting ? "Sending…" : "Send Message"}</span>
+                {!isSubmitting && (
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                )}
               </motion.button>
+
+              {status && (
+                <p
+                  role="status"
+                  className={`text-sm font-medium ${status.type === "success" ? "text-green-700" : "text-red-700"}`}
+                >
+                  {status.message}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
