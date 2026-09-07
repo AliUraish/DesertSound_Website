@@ -62,7 +62,7 @@ export const allProjects: Project[] = [
   {
     id: 28,
     slug: "new-theatre",
-    title: "New Theatre",
+    title: "Emerald Private Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",
