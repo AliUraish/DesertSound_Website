@@ -1,9 +1,16 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { ArrowLeft, ArrowRight, BriefcaseBusiness, MapPin } from "lucide-react"
+import {
+  ArrowLeft,
+  BriefcaseBusiness,
+  Building2,
+  Check,
+  MapPin,
+} from "lucide-react"
 import Link from "next/link"
 import { CareersFooter } from "@/components/careers-footer"
 import { Header } from "@/components/header"
+import { CareerApplicationForm } from "@/components/career-application-form"
 import { positions } from "@/lib/careers-data"
 import { absoluteUrl, createMetadata, siteName } from "@/lib/seo"
 
@@ -50,8 +57,11 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: position.title,
-    description: position.description,
+    description: [position.description, ...position.overview].join(" "),
+    datePosted: "2026-09-04",
     employmentType: "FULL_TIME",
+    directApply: true,
+    industry: "Smart home technology and audiovisual systems",
     hiringOrganization: {
       "@type": "Organization",
       name: siteName,
@@ -69,6 +79,13 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     url: absoluteUrl(`/careers/${position.slug}`),
   }
 
+  const jobSections = [
+    { title: "What you will do", items: position.responsibilities },
+    { title: "What we are looking for", items: position.qualifications },
+    { title: "Especially valuable", items: position.preferredQualifications },
+    { title: "What you can expect", items: position.whatWeOffer },
+  ]
+
   return (
     <div className="w-full overflow-x-clip bg-black text-[#F5F5DC]">
       <Header />
@@ -80,97 +97,102 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
         }}
       />
 
-      <main className="mx-auto grid w-full max-w-[1480px] gap-10 px-5 pb-14 pt-[130px] sm:px-6 md:pt-40 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:pb-20">
-        <section>
-          <Link
-            href="/careers"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#F5F5DC]/55 transition-colors hover:text-[#F5F5DC]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to careers
-          </Link>
+      <main>
+        <section className="mx-auto grid w-full max-w-[1480px] gap-12 px-5 pb-16 pt-[130px] sm:px-6 md:pt-40 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-20">
+          <div>
+            <Link
+              href="/careers"
+              className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#F5F5DC]/55 transition-colors hover:text-[#F5F5DC]"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to careers
+            </Link>
 
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F5DC]/45">
-            Apply For This Role
-          </p>
-          <h1 className="text-4xl font-light leading-tight md:text-6xl">
-            {position.title}
-          </h1>
-          <div className="mt-5 flex flex-wrap gap-3 text-sm text-[#F5F5DC]/60">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#F5F5DC]/15 px-4 py-2">
-              <BriefcaseBusiness className="h-4 w-4" />
-              Full-time
-            </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#F5F5DC]/15 px-4 py-2">
-              <MapPin className="h-4 w-4" />
-              {position.location}
-            </span>
-          </div>
-        </section>
-
-        <form className="w-full min-w-0 overflow-hidden border border-[#F5F5DC]/20 bg-[#F5F5DC] p-4 shadow-sm sm:p-5 md:p-8">
-          <div className="mb-7 border-b border-black/10 pb-6">
-            <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-black/45">
-              Role Summary
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F5DC]/45">
+              {position.department} · Join Desert Sound
             </p>
-            <p className="text-base font-light leading-relaxed text-black/70">
+            <h1 className="max-w-4xl text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+              {position.title}
+            </h1>
+            <p className="mt-7 max-w-3xl text-base font-light leading-relaxed text-[#F5F5DC]/65 md:text-lg">
               {position.description}
             </p>
           </div>
 
-          <div className="grid gap-5">
-            <label className="grid gap-2 text-sm font-medium text-black/70">
-              Name:
-              <input
-                type="text"
-                name="name"
-                required
-                className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
-                placeholder="Your full name"
-              />
-            </label>
+          <aside className="self-end border border-[#F5F5DC]/15 p-5 sm:p-6">
+            <dl className="grid gap-5 text-sm sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div>
+                <dt className="mb-2 flex items-center gap-2 text-[#F5F5DC]/40">
+                  <BriefcaseBusiness className="h-4 w-4" /> Employment
+                </dt>
+                <dd>{position.employmentType}</dd>
+              </div>
+              <div>
+                <dt className="mb-2 flex items-center gap-2 text-[#F5F5DC]/40">
+                  <MapPin className="h-4 w-4" /> Location
+                </dt>
+                <dd>{position.location}, Pakistan</dd>
+              </div>
+              <div>
+                <dt className="mb-2 flex items-center gap-2 text-[#F5F5DC]/40">
+                  <Building2 className="h-4 w-4" /> Department
+                </dt>
+                <dd>{position.department}</dd>
+              </div>
+              <div>
+                <dt className="mb-2 text-[#F5F5DC]/40">Experience</dt>
+                <dd>{position.experience}</dd>
+              </div>
+            </dl>
 
-            <label className="grid gap-2 text-sm font-medium text-black/70">
-              Email:
-              <input
-                type="email"
-                name="email"
-                required
-                className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
-                placeholder="you@example.com"
-              />
-            </label>
+          </aside>
+        </section>
 
-            <label className="grid gap-2 text-sm font-medium text-black/70">
-              Resume:
-              <input
-                type="file"
-                name="resume"
-                required
-                className="min-h-12 w-full min-w-0 max-w-full border border-black/15 bg-[#F5F5DC] px-3 py-3 text-sm text-black file:mb-2 file:mr-0 file:block file:border-0 file:bg-black file:px-3 file:py-2 file:text-sm file:font-medium file:text-[#F5F5DC] focus:border-black/45 sm:px-4 sm:text-base sm:file:mb-0 sm:file:mr-4 sm:file:inline-block sm:file:px-4"
-              />
-            </label>
+        <section className="bg-[#F5F5DC] text-black">
+          <div className="mx-auto grid w-full max-w-[1480px] gap-12 px-5 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+            <article className="min-w-0">
+              <div className="border-b border-black/10 pb-10">
+                <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-black/40">
+                  The opportunity
+                </p>
+                <h2 className="text-3xl font-light tracking-tight md:text-4xl">
+                  Build the software behind exceptional experiences.
+                </h2>
+                <div className="mt-6 grid gap-4 text-base font-light leading-relaxed text-black/65">
+                  {position.overview.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
 
-            <label className="grid gap-2 text-sm font-medium text-black/70">
-              LinkedIn URL:
-              <input
-                type="url"
-                name="linkedin"
-                required
-                className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
-                placeholder="https://linkedin.com/in/..."
-              />
-            </label>
+              {jobSections.map((section) => (
+                <section key={section.title} className="border-b border-black/10 py-10 last:border-b-0">
+                  <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+                    {section.title}
+                  </h2>
+                  <ul className="mt-6 grid gap-4">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-black/65 md:text-base">
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-black" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
 
-            <button
-              type="submit"
-              className="mt-2 inline-flex h-12 items-center justify-center gap-2 bg-black px-6 text-sm font-medium text-[#F5F5DC] transition-colors hover:bg-black/85"
-            >
-              Submit Application
-              <ArrowRight className="h-4 w-4" />
-            </button>
+              <p className="mt-4 text-sm leading-relaxed text-black/50">
+                Desert Sound welcomes applicants based on their ability, experience, and potential.
+                If your background does not match every preferred qualification, we still encourage
+                you to show us what you have built and how you think.
+              </p>
+            </article>
+
+            <aside id="apply" className="min-w-0 self-start lg:sticky lg:top-24">
+              <CareerApplicationForm description={position.description} jobSlug={position.slug} />
+            </aside>
           </div>
-        </form>
+        </section>
       </main>
 
       <CareersFooter />
