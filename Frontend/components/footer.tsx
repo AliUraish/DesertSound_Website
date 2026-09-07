@@ -13,17 +13,34 @@ export function Footer() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
 
-  const handleNewsletterSubmit = (event: React.FormEvent) => {
+  const [messageType, setMessageType] = useState<"success" | "error">("success")
+
+  const handleNewsletterSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
     setIsSubmitting(true)
     setMessage("")
 
-    setTimeout(() => {
-      setMessage("Thank you for subscribing!")
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      const result = (await response.json()) as { error?: string; alreadySubscribed?: boolean }
+
+      if (!response.ok) {
+        throw new Error(result.error ?? "Subscription could not be completed.")
+      }
+
+      setMessageType("success")
+      setMessage(result.alreadySubscribed ? "You’re already subscribed." : "Thank you for subscribing!")
       setEmail("")
+    } catch (error) {
+      setMessageType("error")
+      setMessage(error instanceof Error ? error.message : "Subscription could not be completed.")
+    } finally {
       setIsSubmitting(false)
-      setTimeout(() => setMessage(""), 3000)
-    }, 1000)
+    }
   }
 
   return (
@@ -49,6 +66,7 @@ export function Footer() {
               <form onSubmit={handleNewsletterSubmit} className="relative max-w-md">
                 <input
                   type="email"
+                  name="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder="Enter your email address"
@@ -69,7 +87,14 @@ export function Footer() {
                   {isSubmitting && <ArrowRight className="absolute h-4 w-4 animate-[slideIn_0.3s_ease-out]" />}
                 </button>
               </form>
-              {message && <p className="text-sm font-medium text-green-600">{message}</p>}
+              {message && (
+                <p
+                  role="status"
+                  className={`text-sm font-medium ${messageType === "success" ? "text-green-700" : "text-red-700"}`}
+                >
+                  {message}
+                </p>
+              )}
             </div>
           </div>
 
