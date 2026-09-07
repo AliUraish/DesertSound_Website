@@ -3,9 +3,9 @@ import { ProjectCaseStudyPage } from "@/components/project-case-study-page"
 export default function NewTheatrePage() {
   return (
     <ProjectCaseStudyPage
-      title="New Theatre"
+      title="Emerald Private Cinema"
       coverImage="/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG"
-      coverImageAlt="New Theatre main image"
+      coverImageAlt="Emerald Private Cinema main image"
       galleryImages={[
         "/Pictures Final/Projects/Residential/New_Theatre/Theatre.JPG",
         "/Pictures Final/Projects/Residential/New_Theatre/DSC09622.JPG",
@@ -18,10 +18,10 @@ export default function NewTheatrePage() {
         "/Pictures Final/Projects/Residential/New_Theatre/After.jpg",
       ]}
       description={[
-        "New Theatre is a dedicated residential cinema built around a darker, more focused viewing environment with acoustic detailing, controlled lighting, and a clean front-stage presentation.",
+        "Emerald Private Cinema is a dedicated residential cinema built around a darker, more focused viewing environment with acoustic detailing, controlled lighting, and a clean front-stage presentation.",
         "The room is presented as a complete entertainment space, balancing large-format visuals, immersive audio, concealed infrastructure, and a polished finish that keeps attention on the screen.",
       ]}
-      breadcrumb="Home / Projects / Residential / New Theatre"
+      breadcrumb="Home / Projects / Residential / Emerald Private Cinema"
     />
   )
 }
