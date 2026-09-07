@@ -434,14 +434,15 @@ export default function AudioSystemsPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <div className="mx-auto flex aspect-[2/3] h-[420px] max-h-[70vh] items-center justify-center overflow-hidden rounded-2xl shadow-2xl lg:h-[560px]">
+                <div className="relative mx-auto aspect-[2/3] w-full overflow-hidden rounded-2xl shadow-2xl">
                   <Image
                     src="/Pictures Final/Services/Audio_Systems/IMG_9598.JPG"
                     alt="Premium audio equipment"
-                    className="h-full w-full object-contain"
-                width={1920}
-                height={1280}
-              />
+                    className="absolute left-1/2 top-1/2 h-auto w-[150%] max-w-none -translate-x-1/2 -translate-y-1/2 -rotate-90"
+                    width={2400}
+                    height={1600}
+                    sizes="(min-width: 1024px) 75vw, 132vw"
+                  />
                 </div>
               </motion.div>
 
