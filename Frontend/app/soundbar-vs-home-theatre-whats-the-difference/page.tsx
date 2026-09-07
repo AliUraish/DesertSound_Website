@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
-import { BlogListingPage } from "@/components/blog-listing-page"
+import { notFound } from "next/navigation"
+import { RankingSeoPageView } from "@/components/ranking-seo-page"
 import { getRankingSeoPage } from "@/lib/ranking-seo-content"
 import { createMetadata } from "@/lib/seo"
 
-const slug = "/blogs"
+const slug = "/soundbar-vs-home-theatre-whats-the-difference"
+
 const page = getRankingSeoPage(slug)
 
 export const metadata: Metadata = page
@@ -18,6 +20,7 @@ export const metadata: Metadata = page
     }
   : { title: "Not Found", robots: { index: false, follow: false } }
 
-export default function BlogsPage() {
-  return <BlogListingPage />
+export default function RankingSeoRoutePage() {
+  if (!page) notFound()
+  return <RankingSeoPageView page={page} />
 }
