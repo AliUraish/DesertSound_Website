@@ -7,15 +7,15 @@
 
 ## Body
 
-Desert Sound designs and installs home cinema and home theatre systems across Pakistan. We plan the room, hide the wiring, calibrate picture and sound, and hand over one-button control.
+Desert Sound designs and installs professional home cinema systems and home theatre installations across Pakistan. From Karachi to Lahore and Islamabad, we plan the room, hide the wiring, calibrate picture and sound, and hand over one-button control for a complete home cinema experience in Pakistan.
 
 ### Home Theatre System Installation in Pakistan
 A proper [home theatre design and installation](/service/home-theatre-design-and-installation/) is seating distance, screen size, speaker layout, acoustics, and lighting — not a TV on a wall. We measure the room, place every component, and hide the cabling.
 
-### Smart Home Automation
-One press for movie mode: lights dim, curtains close, projector on, sound live. See [smart home automation](/service/smart-home-automation/).
+### Smart Home Automation for Home Cinema
+One press for movie mode: lights dim, curtains close, projector on, sound live. [Turn any room into a home theatre](/turn-any-room-into-a-home-theatre-with-smart-automation/) with [smart home automation](/service/smart-home-automation/).
 
-### Premium Sound System Installation
+### Premium Sound System Installation for Home Cinema in Pakistan
 Speakers chosen for the room, then calibrated for level, delay, and EQ so every seat gets the same mix.
 
 ### Home Networking and Wi-Fi
@@ -29,8 +29,8 @@ One source, many rooms, independent control in each. See [audio distribution](/s
 **How much does a home theatre cost in Pakistan?**
 It depends on room size, equipment tier, and how much automation you want. We scope this on a site visit and give a written estimate, no obligation.
 
-**Can a small apartment get a proper home cinema?**
-Yes — we design compact, wall-mounted setups for smaller rooms that still deliver a big-screen experience.
+**Can a small apartment get a proper home cinema in Pakistan?**
+Yes — we design compact, wall-mounted setups for smaller rooms across Pakistan that still deliver a big-screen home cinema experience.
 
 **Do you handle the wiring and mess?**
 Yes. Cables are hidden in walls, floors, or panels, and we clean up after installation.
@@ -42,6 +42,10 @@ Most homes are wired, installed, and tested within a couple of days once equipme
 
 - Home theatre design and installation -> `/service/home-theatre-design-and-installation/`
 - Smart home automation -> `/service/smart-home-automation/`
+- Turn any room into a home theatre -> `/turn-any-room-into-a-home-theatre-with-smart-automation/`
+- Voice-controlled home theatre -> `/the-rise-of-voice-controlled-home-theatre-service-in-pakistan/`
+- Soundproofing home cinema -> `/soundproofing-home-cinema-installation/`
+- Acoustic panels for home cinemas -> `/acoustic-panels-and-soundproofing-tips-for-private-home-cinemas/`
 - About us -> `/about-us/`
 - Contact us -> `/contact-us/`
 
