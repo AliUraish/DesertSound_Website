@@ -5,16 +5,8 @@ import { Footer } from "@/components/footer"
 import { rankingSeoPages } from "@/lib/ranking-seo-content"
 
 export function BlogListingPage() {
-  const blogPosts = rankingSeoPages.filter(page => {
-    if (page.slug === '/blogs') return false
-    if (page.slug.startsWith('/service/')) return false
-    if (page.slug === '/projects') return false
-    if (page.slug === '/about-us') return false
-    if (page.slug === '/contact-us') return false
-    if (page.slug === '/privacy-policy') return false
-    if (page.slug === '/terms-and-condition') return false
-    return true
-  })
+  // Filter to only blog posts using the type field
+  const blogPosts = rankingSeoPages.filter(page => page.type === 'blog')
 
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC] text-black">
