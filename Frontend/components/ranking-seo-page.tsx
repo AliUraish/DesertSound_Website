@@ -90,11 +90,11 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
 
           <div className="mt-8 max-w-3xl">{renderBody(page.body)}</div>
 
-          {page.faqs.length > 0 && (
+          {(page.faqs ?? []).length > 0 && (
             <div className="mt-14 border-t border-black/10 pt-10">
               <h2 className="text-2xl font-light tracking-tight md:text-3xl">FAQ</h2>
               <div className="mt-6 space-y-6">
-                {page.faqs.map((faq) => (
+                {(page.faqs ?? []).map((faq) => (
                   <div key={faq.q}>
                     <h3 className="text-lg font-medium text-black">{faq.q}</h3>
                     <p className="mt-2 text-base font-light leading-relaxed text-black/70">{faq.a}</p>
@@ -104,11 +104,11 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
             </div>
           )}
 
-          {page.links.length > 0 && (
+          {(page.links ?? []).length > 0 && (
             <div className="mt-14 border-t border-black/10 pt-10">
               <h2 className="text-2xl font-light tracking-tight md:text-3xl">Related</h2>
               <ul className="mt-5 space-y-3">
-                {page.links.map((link) => (
+                {(page.links ?? []).map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}

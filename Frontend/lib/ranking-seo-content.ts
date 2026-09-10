@@ -14,7 +14,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
 {
     "slug": "/about-us",
     "type": "page",
-    "type": "page",
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     "title": "About Us - Learn more about our mission and services",
     "description": "learn more about us our mission, and how we provide top-notch services to meet your needs and expectations.",
@@ -36,7 +35,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
 {
     
     "slug": "/blogs",
-    "type": "page",
     "type": "page",
     "image": "/luxury-home-theater-with-leather-recliners-and-amb.jpg",
     "title": "Our Blogs for Insights, Tips, and the Latest Trends!",
@@ -64,7 +62,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
     
     "slug": "/contact-us",
     "type": "page",
-    "type": "page",
     "image": "/Pictures Final/Hero Page/homepage_header/homepage1.jpg",
     "title": "Contact Us - Get in touch with us!",
     "description": "Get in touch with us for inquiries, support, or more information. We're here to assist you with all your needs.",
@@ -86,7 +83,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
 {
     
     "slug": "/service/home-theatre-design-and-installation",
-    "type": "page",
     "type": "page",
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     "title": "Home Theater & Home Cinema Design and Installation in Pakistan",
@@ -138,7 +134,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
 {
     
     "slug": "/service/smart-home-automation",
-    "type": "page",
     "type": "page",
     "image": "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
     "title": "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
@@ -198,7 +193,6 @@ export const rankingSeoPages: RankingSeoPage[] = [
 {
     
     "slug": "/service/audio-distribution",
-    "type": "page",
     "type": "page",
     "image": "/Pictures Final/Services/Audio_Systems/Cover.jpg",
     "title": "Audio Distribution Installation in Karachi | Audio Distribution Service",
