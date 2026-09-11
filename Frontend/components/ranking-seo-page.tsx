@@ -67,8 +67,12 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
     <div className="w-full overflow-x-clip bg-[#F5F5DC] text-black">
       <Header />
       <main>
-        <section className="mx-auto max-w-[92%] px-4 pb-10 pt-[130px] md:pb-12 md:pt-40 lg:max-w-[980px] lg:px-8">
+        <article className="mx-auto max-w-[92%] px-4 pb-16 pt-[130px] md:pb-20 md:pt-40 lg:max-w-[880px] lg:px-8">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.22em] text-black/45">
+            <Link href="/blogs" className="hover:text-black">
+              Blogs
+            </Link>
+            <span className="px-2 text-black/25">/</span>
             Desert Sound
           </p>
           <h1 className="text-4xl font-light leading-[1.08] tracking-tight text-black md:text-5xl lg:text-6xl">
@@ -76,27 +80,27 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
           </h1>
 
           {page.image ? (
-            <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-black/10 bg-black/5">
+            <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-3xl bg-black/5 shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
               <Image
                 src={page.image}
                 alt={page.h1}
                 fill
-                sizes="(max-width: 980px) 92vw, 980px"
+                sizes="(max-width: 880px) 92vw, 880px"
                 className="object-cover object-center"
                 priority
               />
             </div>
           ) : null}
 
-          <div className="mt-8 max-w-3xl">{renderBody(page.body)}</div>
+          <div className="mt-10 max-w-3xl">{renderBody(page.body)}</div>
 
           {page.faqs.length > 0 && (
-            <div className="mt-14 border-t border-black/10 pt-10">
-              <h2 className="text-2xl font-light tracking-tight md:text-3xl">FAQ</h2>
-              <div className="mt-6 space-y-6">
+            <div className="mt-16 rounded-2xl bg-white p-6 shadow-lg md:p-10">
+              <h2 className="text-2xl font-light tracking-tight md:text-3xl">Frequently asked questions</h2>
+              <div className="mt-6 divide-y divide-black/10">
                 {page.faqs.map((faq) => (
-                  <div key={faq.q}>
-                    <h3 className="text-lg font-medium text-black">{faq.q}</h3>
+                  <div key={faq.q} className="py-5 first:pt-0 last:pb-0">
+                    <h3 className="text-lg font-light text-black">{faq.q}</h3>
                     <p className="mt-2 text-base font-light leading-relaxed text-black/70">{faq.a}</p>
                   </div>
                 ))}
@@ -105,37 +109,37 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
           )}
 
           {page.links.length > 0 && (
-            <div className="mt-14 border-t border-black/10 pt-10">
-              <h2 className="text-2xl font-light tracking-tight md:text-3xl">Related</h2>
-              <ul className="mt-5 space-y-3">
+            <div className="mt-16">
+              <h2 className="mb-6 text-2xl font-light tracking-tight md:text-3xl">Continue exploring</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {page.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-base font-light text-black underline underline-offset-4 transition-colors hover:text-black/70"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-2xl border border-black/5 bg-white px-5 py-4 text-base font-light text-black transition-all hover:border-black/10 hover:shadow-md"
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
 
-          <div className="mt-14 rounded-2xl border border-black/10 bg-black px-6 py-8 text-[#F5F5DC] md:px-8">
-            <p className="text-sm uppercase tracking-[0.2em] text-[#F5F5DC]/50">Contact</p>
-            <p className="mt-3 text-xl font-light">+92 21 111 570 111 · info@desertsound.com.pk</p>
+          <div className="mt-16 rounded-2xl bg-black px-6 py-10 text-[#F5F5DC] md:px-10">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#F5F5DC]/50">Contact</p>
+            <p className="mt-3 text-2xl font-light">Ready to plan the room?</p>
+            <p className="mt-3 text-lg font-light">+92 21 111 570 111 · info@desertsound.com.pk</p>
             <p className="mt-2 text-sm font-light text-[#F5F5DC]/60">
               22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi
             </p>
             <Link
               href="/contact-us"
-              className="mt-6 inline-flex text-sm uppercase tracking-[0.18em] text-[#F5F5DC] underline underline-offset-4"
+              className="mt-6 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
             >
               Get in touch
             </Link>
           </div>
-        </section>
+        </article>
       </main>
       <Footer />
     </div>
