@@ -431,7 +431,7 @@ export default function HomeTheatreSystemsPage() {
                 </div>
 
                 <Link
-                  href="/services/smart-home-automation"
+                  href="/service/smart-home-automation"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
                   <span>Explore Smart Home Automation</span>
