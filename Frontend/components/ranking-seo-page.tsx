@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import type { RankingSeoPage } from "@/lib/ranking-seo-content"
+import type { RankingSeoPage } from "@/lib/ranking-seo-types"
 
 function renderInline(text: string): React.ReactNode {
   return text.split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {

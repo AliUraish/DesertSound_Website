@@ -6,9 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import type { getBlogPosts } from "@/lib/ranking-seo-content"
-
-type BlogPost = ReturnType<typeof getBlogPosts>[number]
+import type { BlogPost } from "@/lib/ranking-seo-types"
 
 export function BlogsPage({ posts }: { posts: BlogPost[] }) {
   return (
