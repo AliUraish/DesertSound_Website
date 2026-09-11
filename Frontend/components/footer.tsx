@@ -100,16 +100,22 @@ export function Footer() {
 
           <div className="flex flex-col items-start gap-7 sm:flex-row sm:items-center">
             <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-6 text-sm">
+              <Link href="/about-us" className="text-black/60 transition-colors hover:text-black">
+                About
+              </Link>
               <Link href="/#services" className="text-black/60 transition-colors hover:text-black">
                 Services
               </Link>
               <Link href="/#projects" className="text-black/60 transition-colors hover:text-black">
                 Projects
               </Link>
+              <Link href="/blogs" className="text-black/60 transition-colors hover:text-black">
+                Blogs
+              </Link>
               <Link href="/careers" className="text-black/60 transition-colors hover:text-black">
                 Careers
               </Link>
-              <Link href="/#contact" className="text-black/60 transition-colors hover:text-black">
+              <Link href="/contact-us" className="text-black/60 transition-colors hover:text-black">
                 Contact
               </Link>
             </nav>
