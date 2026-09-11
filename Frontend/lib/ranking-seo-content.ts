@@ -840,7 +840,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
         "href": "/contact-us/"
       }
     ],
-    "image": "/luxury-modern-home-theater-dark-atmospheric.jpg"
+    "image": "/Pictures Final/Hero Page/homepage_header/Homepage22.JPG"
   },
   {
     "slug": "/how-smart-home-automation-can-simplify-your-daily-life",
@@ -872,11 +872,11 @@ export const rankingSeoPages: RankingSeoPage[] = [
         "href": "/contact-us/"
       }
     ],
-    "image": "/modern-smart-home-living-room-with-automated-light.jpg"
+    "image": "/Pictures Final/Hero Page/homepage_header/homepage4.jpg"
   },
   {
     "slug": "/tips-for-calibrating-subwoofers-for-deep-crisp-bass-without-distortion",
-    "image": "/blog-images/why-calibration-is-key-to-a-stunning-home-theater-experience.jpg",
+    "image": "/Pictures Final/Services/Audio_Systems/IMG_9598.JPG",
     "title": "Tips for Calibrating Subwoofers for Deep, Crisp Bass Without Distortion - Desert Sound",
     "description": "A subwoofer only sounds tight if placement, gain, crossover, and phase are set before room correction runs. Get those right and you get deep bass without boom or distortion.",
     "h1": "Tips for Calibrating Subwoofers for Deep, Crisp Bass Without Distortion",
@@ -1516,7 +1516,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
   },
   {
     "slug": "/how-to-set-up-the-best-audio-distribution-system-for-your-home",
-    "image": "/blog-images/the-ultimate-guide-to-audio-distribution-ensuring-high-quality-sound-everywhere.jpeg",
+    "image": "/Pictures Final/Hero Page/homepage_header/Hompage3.JPG",
     "title": "How to Set Up the Best Audio Distribution System for Your Home - Desert Sound",
     "description": "Whole-home audio starts with zones, then amplifiers, speakers, and a wired or wireless path that fits the building. Tune each room, and leave a way to add the garden later.",
     "h1": "How to Set Up the Best Audio Distribution System for Your Home",
@@ -1762,7 +1762,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "/blog-images/affordable-ways-to-build-a-home-movie-space.jpg"
+    "image": "/vellari1.jpg"
   },
   {
     "slug": "/how-to-choose-the-right-audio-distribution-service",
@@ -2224,7 +2224,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "/blog-images/top-10-essential-components-for-building-the-ultimate-home-cinema.jpeg"
+    "image": "/Pictures Final/Hero Page/homepage_header/Homepage33.JPG"
   },
 ]
 
@@ -2241,6 +2241,12 @@ const listingSlugs = new Set([
   "/privacy-policy",
   "/terms-and-condition",
 ])
+
+export function isBlogArticle(slug: string) {
+  const normalized = slug.endsWith("/") && slug !== "/" ? slug.slice(0, -1) : slug
+  const path = normalized.startsWith("/") ? normalized : `/${normalized}`
+  return !listingSlugs.has(path) && !path.startsWith("/service/")
+}
 
 function excerptFromBody(body: string) {
   const withoutDate = body.replace(/^\*\*Published:[^*]+\*\*\s*/, "")
