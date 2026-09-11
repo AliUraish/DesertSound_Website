@@ -34,6 +34,7 @@ function VideoLightbox({ videoId, onClose }: VideoLightboxProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
+    const previousActiveElement = document.activeElement as HTMLElement
     closeButtonRef.current?.focus()
 
     const handleEscape = (e: KeyboardEvent) => {
@@ -42,8 +43,38 @@ function VideoLightbox({ videoId, onClose }: VideoLightboxProps) {
       }
     }
 
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return
+
+      const focusableElements = dialogRef.current?.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      if (!focusableElements || focusableElements.length === 0) return
+
+      const firstElement = focusableElements[0] as HTMLElement
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          lastElement.focus()
+          e.preventDefault()
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          firstElement.focus()
+          e.preventDefault()
+        }
+      }
+    }
+
     document.addEventListener("keydown", handleEscape)
-    return () => document.removeEventListener("keydown", handleEscape)
+    document.addEventListener("keydown", handleTabKey)
+    
+    return () => {
+      document.removeEventListener("keydown", handleEscape)
+      document.removeEventListener("keydown", handleTabKey)
+      previousActiveElement?.focus()
+    }
   }, [onClose])
 
   return (
