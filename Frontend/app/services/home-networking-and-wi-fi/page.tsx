@@ -429,7 +429,7 @@ export default function HomeNetworkingAndWifiPage() {
                 </div>
 
                 <Link
-                  href="/services/audio-systems"
+                  href="/service/audio-distribution"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
                   <span>Explore Audio Systems</span>
