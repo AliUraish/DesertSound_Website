@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Play, X } from "lucide-react"
@@ -30,8 +30,28 @@ interface VideoLightboxProps {
 }
 
 function VideoLightbox({ videoId, onClose }: VideoLightboxProps) {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    closeButtonRef.current?.focus()
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose()
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape)
+    return () => document.removeEventListener("keydown", handleEscape)
+  }, [onClose])
+
   return (
     <motion.div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video player"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -40,6 +60,7 @@ function VideoLightbox({ videoId, onClose }: VideoLightboxProps) {
       onClick={onClose}
     >
       <button
+        ref={closeButtonRef}
         onClick={onClose}
         className="absolute top-4 right-4 md:top-8 md:right-8 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
         aria-label="Close video"
@@ -76,6 +97,13 @@ interface VideoCardProps {
 function VideoCard({ video, index, onClick }: VideoCardProps) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 })
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault()
+      onClick()
+    }
+  }
+
   return (
     <motion.div
       ref={ref}
@@ -84,19 +112,22 @@ function VideoCard({ video, index, onClick }: VideoCardProps) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group cursor-pointer"
       onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Play ${video.title}`}
     >
       <div className="relative aspect-video rounded-xl overflow-hidden bg-black">
         <Image
           src={video.thumbnail}
           alt={video.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
         
-        {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -107,11 +138,9 @@ function VideoCard({ video, index, onClick }: VideoCardProps) {
           </motion.div>
         </div>
 
-        {/* Gradient overlay at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
 
-      {/* Video title */}
       <h3 className="mt-4 text-base md:text-lg font-light text-foreground group-hover:text-foreground/80 transition-colors duration-300">
         {video.title}
       </h3>
@@ -127,7 +156,6 @@ export function TheaterTourSection() {
     <>
       <section className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Section Header */}
           <motion.div
             ref={headerRef}
             initial={{ opacity: 0, y: 20 }}
@@ -146,7 +174,6 @@ export function TheaterTourSection() {
             </p>
           </motion.div>
 
-          {/* Video Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {videos.map((video, index) => (
               <VideoCard
@@ -160,7 +187,6 @@ export function TheaterTourSection() {
         </div>
       </section>
 
-      {/* Video Lightbox */}
       <AnimatePresence>
         {selectedVideoId && (
           <VideoLightbox
