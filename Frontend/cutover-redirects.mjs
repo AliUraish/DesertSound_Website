@@ -13,6 +13,8 @@ export const cutoverRedirects = [
   { source: '/services/audio-systems', destination: '/service/audio-distribution', permanent: true },
   { source: '/services/control-integration', destination: '/service/control-systems', permanent: true },
   { source: '/services/home-networking-and-wi-fi', destination: '/service/home-networking-and-wi-fi', permanent: true },
+  { source: '/services/customization-and-integration', destination: '/service/customization-and-integration', permanent: true },
+  { source: '/services/maintenance-and-support', destination: '/service/maintenance-and-support', permanent: true },
   { source: '/home-theatre-systems', destination: '/service/home-theatre-design-and-installation', permanent: true },
   { source: '/sitemap.html', destination: '/sitemap', permanent: true },
   { source: '/news/page/:path*', destination: '/blogs', permanent: true },
