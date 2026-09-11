@@ -880,3 +880,34 @@ export function getRankingSeoPage(slug: string) {
   const normalized = slug.endsWith('/') && slug !== '/' ? slug.slice(0, -1) : slug
   return rankingSeoPages.find((p) => p.slug === normalized || p.slug === slug)
 }
+
+const listingSlugs = new Set([
+  "/about-us",
+  "/blogs",
+  "/contact-us",
+  "/projects",
+  "/privacy-policy",
+  "/terms-and-condition",
+])
+
+function excerptFromBody(body: string) {
+  const withoutDate = body.replace(/^\*\*Published:[^*]+\*\*\s*/, "")
+  const first = withoutDate.split(/\n\n+/).find((block) => !block.startsWith("### ") && !block.startsWith("- ")) || ""
+  return first
+    .replace(/\*\*/g, "")
+    .replace(/\[(.+?)\]\([^)]+\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+export function getBlogPosts() {
+  return rankingSeoPages
+    .filter((page) => !listingSlugs.has(page.slug) && !page.slug.startsWith("/service/"))
+    .map((page) => ({
+      slug: page.slug,
+      title: page.h1,
+      description: page.description,
+      excerpt: excerptFromBody(page.body),
+      image: page.image,
+    }))
+}
