@@ -10,17 +10,17 @@ const videos = [
   {
     id: "2oBKLgLRRE0",
     title: "Desert Sound home theater / sound system experience",
-    thumbnail: `https://img.youtube.com/vi/2oBKLgLRRE0/maxresdefault.jpg`,
+    thumbnail: `https://img.youtube.com/vi/2oBKLgLRRE0/hqdefault.jpg`,
   },
   {
     id: "_a4IIzXZ52o",
     title: "State of the Art Home Theatres",
-    thumbnail: `https://img.youtube.com/vi/_a4IIzXZ52o/maxresdefault.jpg`,
+    thumbnail: `https://img.youtube.com/vi/_a4IIzXZ52o/hqdefault.jpg`,
   },
   {
     id: "qWrnXwWF2a4",
     title: "Home Theatre with Ambient Lighting",
-    thumbnail: `https://img.youtube.com/vi/qWrnXwWF2a4/maxresdefault.jpg`,
+    thumbnail: `https://img.youtube.com/vi/qWrnXwWF2a4/hqdefault.jpg`,
   },
 ]
 
