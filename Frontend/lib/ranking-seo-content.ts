@@ -909,7 +909,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/08/images-1.webp"
+    "image": "/blog-images/one-touch-smart-controls-for-lighting-sound-and-cinema-screens.webp"
   },
   {
     "slug": "/essential-checklist-for-building-a-custom-home-cinema",
@@ -928,7 +928,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/control-systems/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/08/images.webp"
+    "image": "/blog-images/essential-checklist-for-building-a-custom-home-cinema.webp"
   },
   {
     "slug": "/what-screen-size-works-best-for-home-theater-design",
@@ -943,7 +943,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/07/Ruttledge-Theater-001-e1619381992317_1a7f50fd-7700-4e87-8922-c1ebca7abb01.webp"
+    "image": "/blog-images/what-screen-size-works-best-for-home-theater-design.webp"
   },
   {
     "slug": "/how-to-prevent-home-theater-system-overheating-problems",
@@ -958,7 +958,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/07/A5_ARC_-_32-scaled.webp"
+    "image": "/blog-images/how-to-prevent-home-theater-system-overheating-problems.webp"
   },
   {
     "slug": "/good-wiring-home-theater-installation",
@@ -973,7 +973,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/07/lsg-home-theatre-installation-setup-sunshine-coast-1024x576-1.jpeg"
+    "image": "/blog-images/good-wiring-home-theater-installation.jpeg"
   },
   {
     "slug": "/the-real-benefits-of-using-underfloor-audio-distribution-in-modern-homes",
@@ -996,7 +996,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/06/Whole-Home-Audio-Video-Systems-South-Florida.jpg"
+    "image": "/blog-images/the-real-benefits-of-using-underfloor-audio-distribution-in-modern-homes.jpg"
   },
   {
     "slug": "/simple-tips-to-prevent-sound-echoes-in-large-tiled-living-areas",
@@ -1015,7 +1015,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/06/5-Affordable-Ways-to-Reduce-Room-Echoes.jpg"
+    "image": "/blog-images/simple-tips-to-prevent-sound-echoes-in-large-tiled-living-areas.jpg"
   },
   {
     "slug": "/how-to-choose-between-hidden-in-wall-speakers-and-floor-standing-systems",
@@ -1030,7 +1030,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-networking-and-wi-fi/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/06/Focal-300-IW6-LCR-installed.webp"
+    "image": "/blog-images/how-to-choose-between-hidden-in-wall-speakers-and-floor-standing-systems.webp"
   },
   {
     "slug": "/how-home-theatres-are-becoming-part-of-modern-living-in-pakistan",
@@ -1045,7 +1045,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/05/home-theater-room-getty-vostok-57f55aeb3df78c690f118170.jpg"
+    "image": "/blog-images/how-home-theatres-are-becoming-part-of-modern-living-in-pakistan.jpg"
   },
   {
     "slug": "/how-artificial-intelligence-is-making-your-home-theater-smarter",
@@ -1060,7 +1060,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/control-systems/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/05/AI-in-Smart-Home-scaled-1.jpeg"
+    "image": "/blog-images/how-artificial-intelligence-is-making-your-home-theater-smarter.jpeg"
   },
   {
     "slug": "/repair-upgrade-or-replace-a-guide-for-home-theater-cinema-systems",
@@ -1079,7 +1079,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/6-great-reasons-to-install-a-hom.webp"
+    "image": "/blog-images/repair-upgrade-or-replace-a-guide-for-home-theater-cinema-systems.webp"
   },
   {
     "slug": "/home-automation-for-security-comfort-and-convenience",
@@ -1098,7 +1098,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/home-automation-benefits.jpg"
+    "image": "/blog-images/home-automation-for-security-comfort-and-convenience.jpg"
   },
   {
     "slug": "/top-smart-home-brands-supported-in-pakistan",
@@ -1117,7 +1117,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/04/Whole-home-automation-systems-700x400-1.jpg"
+    "image": "/blog-images/top-smart-home-brands-supported-in-pakistan.jpg"
   },
   {
     "slug": "/multi-sensory-home-cinema-in-karachi-lighting-sound-scent-and-motion",
@@ -1136,7 +1136,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-theatre-design-and-installation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/04/stock-photo-home-theater-with-spacious-seating-2272310987-transformed.jpeg"
+    "image": "/blog-images/multi-sensory-home-cinema-in-karachi-lighting-sound-scent-and-motion.jpeg"
   },
   {
     "slug": "/can-home-automation-in-pakistan-reduce-electricity-bills",
@@ -1155,7 +1155,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-theatre-design-and-installation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/home-autmation-1024x607-1.webp"
+    "image": "/blog-images/can-home-automation-in-pakistan-reduce-electricity-bills.webp"
   },
   {
     "slug": "/can-a-home-theater-service-near-me-install-a-system-in-a-rental-property",
@@ -1178,7 +1178,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-networking-and-wi-fi/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/mobile-lead-3827-1024x683-1.webp"
+    "image": "/blog-images/can-a-home-theater-service-near-me-install-a-system-in-a-rental-property.webp"
   },
   {
     "slug": "/get-a-media-room-instead-of-a-dedicated-home-cinema",
@@ -1197,7 +1197,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-theatre-design-and-installation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/6480573c10bd504af0e4041f_Entertainment@2x-scaled.jpeg"
+    "image": "/blog-images/get-a-media-room-instead-of-a-dedicated-home-cinema.jpeg"
   },
   {
     "slug": "/tech-mistakes-that-make-expensive-home-theaters-feel-cheap",
@@ -1212,7 +1212,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2026/02/images.jpg"
+    "image": "/blog-images/tech-mistakes-that-make-expensive-home-theaters-feel-cheap.jpg"
   },
   {
     "slug": "/how-to-make-your-home-theater-kid-friendly-in-pakistani-homes",
@@ -1231,7 +1231,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-theatre-design-and-installation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/12/paint-the-walls-and-ceiling-gray-1664870739.jpg"
+    "image": "/blog-images/how-to-make-your-home-theater-kid-friendly-in-pakistani-homes.jpg"
   },
   {
     "slug": "/ultimate-checklist-before-hiring-a-home-theater-service-near-you",
@@ -1250,7 +1250,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/control-systems/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/12/ultimate-checklist-for-home-theater-setup-success-d7b94353-c4c8-46fd-8d25-6f5a2b09d206.jpeg"
+    "image": "/blog-images/ultimate-checklist-before-hiring-a-home-theater-service-near-you.jpeg"
   },
   {
     "slug": "/home-cinema-displays-made-simple-4k-8k-or-projector",
@@ -1269,7 +1269,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/12/Featured-image-Best-Projectors.jpg"
+    "image": "/blog-images/home-cinema-displays-made-simple-4k-8k-or-projector.jpg"
   },
   {
     "slug": "/reimagine-family-connections-through-immersive-home-entertainment",
@@ -1284,7 +1284,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/07/03e2511b-283d-4278-bace-097bfda6a117_large.webp"
+    "image": "/blog-images/reimagine-family-connections-through-immersive-home-entertainment.webp"
   },
   {
     "slug": "/the-unseen-benefits-of-underfloor-audio",
@@ -1299,7 +1299,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/07/DSC08394.jpg"
+    "image": "/blog-images/the-unseen-benefits-of-underfloor-audio.jpg"
   },
   {
     "slug": "/beginners-guide-to-smart-home-automation",
@@ -1314,7 +1314,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/07/smart-home.webp"
+    "image": "/blog-images/beginners-guide-to-smart-home-automation.webp"
   },
   {
     "slug": "/maintain-the-performance-of-your-home-entertainment-system",
@@ -1329,7 +1329,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/maintenance-and-support/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/08/5-ways-to-imrpove-your-home-theatre-featured-image.jpg"
+    "image": "/blog-images/maintain-the-performance-of-your-home-entertainment-system.jpg"
   },
   {
     "slug": "/customizing-home-theaters-for-apartments-vs-villas-in-pakistan",
@@ -1344,7 +1344,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/08/Basics-of-Home-Theatre-Cover-11-03.jpg"
+    "image": "/blog-images/customizing-home-theaters-for-apartments-vs-villas-in-pakistan.jpg"
   },
   {
     "slug": "/is-it-time-to-upgrade-your-entertainment-system-with-custom-home-theater",
@@ -1363,7 +1363,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/06/how-to-assemble-modern-home-theater-system-small.jpg"
+    "image": "/blog-images/is-it-time-to-upgrade-your-entertainment-system-with-custom-home-theater.jpg"
   },
   {
     "slug": "/is-multi-zone-audio-right-for-your-home",
@@ -1382,7 +1382,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/06/images.jpeg"
+    "image": "/blog-images/is-multi-zone-audio-right-for-your-home.jpeg"
   },
   {
     "slug": "/what-features-should-you-automate-first-in-your-home",
@@ -1401,7 +1401,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/06/2861b3e8df8de60.jpeg"
+    "image": "/blog-images/what-features-should-you-automate-first-in-your-home.jpeg"
   },
   {
     "slug": "/how-smart-home-automation-is-changing-lives-in-pakistan",
@@ -1420,7 +1420,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/06/Smart-Home-Automation-In-India-–-Guide-To-Intelligent-Living.png"
+    "image": "/blog-images/how-smart-home-automation-is-changing-lives-in-pakistan.png"
   },
   {
     "slug": "/why-calibration-is-key-to-a-stunning-home-theater-experience",
@@ -1439,7 +1439,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/05/elements-of-home-theater-system.jpg"
+    "image": "/blog-images/why-calibration-is-key-to-a-stunning-home-theater-experience.jpg"
   },
   {
     "slug": "/is-your-home-theater-truly-optimized-for-the-ultimate-experience",
@@ -1458,7 +1458,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/05/images.jpeg"
+    "image": "/blog-images/is-your-home-theater-truly-optimized-for-the-ultimate-experience.jpeg"
   },
   {
     "slug": "/how-to-achieve-the-best-picture-quality-for-your-home-theater-projector-setup",
@@ -1477,7 +1477,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/05/AVSPEC_May_Blog1_HomeTheaterInstallation_StPetersburgFL_Photo.jpg"
+    "image": "/blog-images/how-to-achieve-the-best-picture-quality-for-your-home-theater-projector-setup.jpg"
   },
   {
     "slug": "/top-mistakes-to-avoid-when-setting-up-your-home-theater-projector-and-screen",
@@ -1492,7 +1492,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/05/Home-Theater-In-Litchfield-County-CT.jpg"
+    "image": "/blog-images/top-mistakes-to-avoid-when-setting-up-your-home-theater-projector-and-screen.jpg"
   },
   {
     "slug": "/how-to-optimize-your-home-networking-and-wi-fi-for-maximum-speed",
@@ -1511,7 +1511,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/04/00Jz1RYHNPLskrffw3eUvWg-1.webp"
+    "image": "/blog-images/how-to-optimize-your-home-networking-and-wi-fi-for-maximum-speed.webp"
   },
   {
     "slug": "/how-to-set-up-the-best-audio-distribution-system-for-your-home",
@@ -1548,7 +1548,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/04/415-pro-HD_3054.jpg"
+    "image": "/blog-images/best-smart-home-automation-ideas-for-comfort-and-security.jpg"
   },
   {
     "slug": "/reasons-to-invest-in-professional-home-theatre-design-and-installation",
@@ -1567,7 +1567,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/04/nfgsjgjg.webp"
+    "image": "/blog-images/reasons-to-invest-in-professional-home-theatre-design-and-installation.webp"
   },
   {
     "slug": "/wireless-vs-wired-audio-systems-which-one-is-right-for-you",
@@ -1582,7 +1582,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-theatre-design-and-installation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/03/l-intro-1709157245.jpg"
+    "image": "/blog-images/wireless-vs-wired-audio-systems-which-one-is-right-for-you.jpg"
   },
   {
     "slug": "/the-role-of-networking-solutions-in-a-smart-home-setup",
@@ -1601,7 +1601,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/03/b2ap3_thumbnail_understanding-the-role-of-networking-solutions-in-a-smart-home.jpg"
+    "image": "/blog-images/the-role-of-networking-solutions-in-a-smart-home-setup.jpg"
   },
   {
     "slug": "/the-benefits-of-a-professionally-installed-home-theatre-system",
@@ -1620,7 +1620,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/03/6-great-reasons-to-install-a-home-theater-system.jpg"
+    "image": "/blog-images/the-benefits-of-a-professionally-installed-home-theatre-system.jpg"
   },
   {
     "slug": "/make-your-life-easier-with-integrated-control-systems",
@@ -1639,7 +1639,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/03/control-systems-automation-1920-1024x512.png"
+    "image": "/blog-images/make-your-life-easier-with-integrated-control-systems.png"
   },
   {
     "slug": "/why-home-theater-services-are-a-must-for-your-entertainment-setup",
@@ -1658,7 +1658,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/02/IMHOTE_February_Blog1_HomeTheaterInstallation_OceanCityMD_Photo_23bc1827af75057b3aff4866919e6ed2.jpg"
+    "image": "/blog-images/why-home-theater-services-are-a-must-for-your-entertainment-setup.jpg"
   },
   {
     "slug": "/why-sound-system-installation-is-key-for-optimal-audio-quality",
@@ -1677,7 +1677,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/02/image-2.jpg"
+    "image": "/blog-images/why-sound-system-installation-is-key-for-optimal-audio-quality.jpg"
   },
   {
     "slug": "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
@@ -1692,7 +1692,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/02/smart-home-innovation-technology-with-woman-using-control-panel-1-scaled-1.webp"
+    "image": "/blog-images/smart-home-automation-why-should-you-invest-in-it-for-your-home.webp"
   },
   {
     "slug": "/whole-home-audio-solutions-for-music-lovers",
@@ -1707,7 +1707,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/01/how-to-get-your-favorite-music-everywhere-with-whole-home-audio_3a0fbca9ff2f353793c76ccf67892875.jpg"
+    "image": "/blog-images/whole-home-audio-solutions-for-music-lovers.jpg"
   },
   {
     "slug": "/touchscreen-panels-vs-mobile-apps-which-is-best",
@@ -1722,7 +1722,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/01/touchscreen_1.jpg"
+    "image": "/blog-images/touchscreen-panels-vs-mobile-apps-which-is-best.jpg"
   },
   {
     "slug": "/affordable-home-theatre-installation-ideas",
@@ -1741,7 +1741,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2025/01/GettyImages-523294576-ba9ea696ada9493ea317bdf793d1bf61.jpg"
+    "image": "/blog-images/affordable-home-theatre-installation-ideas.jpg"
   },
   {
     "slug": "/affordable-ways-to-build-a-home-movie-space",
@@ -1760,7 +1760,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/12/home-theater-room-getty-vostok-57f55aeb3df78c690f118170.jpg"
+    "image": "/blog-images/affordable-ways-to-build-a-home-movie-space.jpg"
   },
   {
     "slug": "/how-to-choose-the-right-audio-distribution-service",
@@ -1775,7 +1775,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/12/download.jpg"
+    "image": "/blog-images/how-to-choose-the-right-audio-distribution-service.jpg"
   },
   {
     "slug": "/why-your-home-wifi-isnt-working-and-how-to-fix-it",
@@ -1794,7 +1794,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/12/shutterstock_327654092.webp"
+    "image": "/blog-images/why-your-home-wifi-isnt-working-and-how-to-fix-it.webp"
   },
   {
     "slug": "/how-to-improve-your-home-networking-and-wifi-coverage",
@@ -1809,7 +1809,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-networking-and-wi-fi/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/11/image.webp"
+    "image": "/blog-images/how-to-improve-your-home-networking-and-wifi-coverage.webp"
   },
   {
     "slug": "/latest-trends-in-home-theater-installation-you-should-know",
@@ -1828,7 +1828,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/11/home-theater.jpg"
+    "image": "/blog-images/latest-trends-in-home-theater-installation-you-should-know.jpg"
   },
   {
     "slug": "/how-to-plan-home-theater-installation-for-any-room",
@@ -1847,7 +1847,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/11/Planning-a-Home-Theater-Room-Setup-in-an-Existing-Home-scaled-1.jpeg"
+    "image": "/blog-images/how-to-plan-home-theater-installation-for-any-room.jpeg"
   },
   {
     "slug": "/diy-or-professional-home-theater-installation-which-is-better",
@@ -1866,7 +1866,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/11/How-to-Choose-the-Best-Home-Theater-Installation-Service.jpg"
+    "image": "/blog-images/diy-or-professional-home-theater-installation-which-is-better.jpg"
   },
   {
     "slug": "/7-unique-ways-to-use-your-home-theater-system-2024",
@@ -1885,7 +1885,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/10/665629b35947b9ebbf117f5a_dac1a4c1-f148-4d8a-8e2d-f1dbb482641f-1.webp"
+    "image": "/blog-images/7-unique-ways-to-use-your-home-theater-system-2024.webp"
   },
   {
     "slug": "/soundbar-vs-home-theatre-whats-the-difference",
@@ -1904,7 +1904,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/10/Soundbar-vs-Subwoofer.jpg"
+    "image": "/blog-images/soundbar-vs-home-theatre-whats-the-difference.jpg"
   },
   {
     "slug": "/what-are-must-have-smart-home-devices-an-overview",
@@ -1919,7 +1919,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/10/The-Evolution-of-Smart-Homes-copy.jpg"
+    "image": "/blog-images/what-are-must-have-smart-home-devices-an-overview.jpg"
   },
   {
     "slug": "/the-ultimate-guide-to-audio-distribution-ensuring-high-quality-sound-everywhere",
@@ -1934,7 +1934,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/audio-distribution/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/09/R.jpeg"
+    "image": "/blog-images/the-ultimate-guide-to-audio-distribution-ensuring-high-quality-sound-everywhere.jpeg"
   },
   {
     "slug": "/how-to-set-up-the-perfect-home-networking-and-wi-fi-system",
@@ -1949,7 +1949,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-networking-and-wi-fi/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/09/OIP.jpeg"
+    "image": "/blog-images/how-to-set-up-the-perfect-home-networking-and-wi-fi-system.jpeg"
   },
   {
     "slug": "/need-better-wi-fi-heres-how-to-upgrade-your-home-network",
@@ -1964,7 +1964,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/home-networking-and-wi-fi/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/08/securing-your-wifi-network.jpg"
+    "image": "/blog-images/need-better-wi-fi-heres-how-to-upgrade-your-home-network.jpg"
   },
   {
     "slug": "/how-expert-home-theater-services-can-elevate-your-entertainment",
@@ -1983,7 +1983,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/08/OIP.jpg"
+    "image": "/blog-images/how-expert-home-theater-services-can-elevate-your-entertainment.jpg"
   },
   {
     "slug": "/why-home-theater-installation-experts-are-worth-every-penny",
@@ -2002,7 +2002,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/08/6c2d16396b060d574be9c76501d83d6c.jpg"
+    "image": "/blog-images/why-home-theater-installation-experts-are-worth-every-penny.jpg"
   },
   {
     "slug": "/buy-jvc-projector-in-pakistan",
@@ -2021,7 +2021,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/08/jvc-in-pakistan.jpg"
+    "image": "/blog-images/buy-jvc-projector-in-pakistan.jpg"
   },
   {
     "slug": "/what-exactly-does-an-audio-visual-system-for-homes-comprise",
@@ -2040,7 +2040,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/07/R.jpeg"
+    "image": "/blog-images/what-exactly-does-an-audio-visual-system-for-homes-comprise.jpeg"
   },
   {
     "slug": "/are-two-speakers-better-than-4",
@@ -2059,7 +2059,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/07/OIP.jpeg"
+    "image": "/blog-images/are-two-speakers-better-than-4.jpeg"
   },
   {
     "slug": "/equip-your-home-theater-with-the-latest-tech-2024",
@@ -2078,7 +2078,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/07/Ananda-Ashton-Silom-Cinema-Lounge-1170x625-1.jpg"
+    "image": "/blog-images/equip-your-home-theater-with-the-latest-tech-2024.jpg"
   },
   {
     "slug": "/how-to-make-your-media-room-design-more-versatile",
@@ -2097,7 +2097,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/07/media-room-furniture-seating.jpg"
+    "image": "/blog-images/how-to-make-your-media-room-design-more-versatile.jpg"
   },
   {
     "slug": "/what-is-2-1-5-1-and-7-1-sound",
@@ -2116,7 +2116,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/06/OIP-2.jpeg"
+    "image": "/blog-images/what-is-2-1-5-1-and-7-1-sound.jpeg"
   },
   {
     "slug": "/what-is-the-difference-between-home-theater-and-home-cinema",
@@ -2135,7 +2135,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/06/slider8.png"
+    "image": "/blog-images/what-is-the-difference-between-home-theater-and-home-cinema.png"
   },
   {
     "slug": "/what-are-5-reasons-for-a-smart-home",
@@ -2150,7 +2150,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/06/stock-photo-smart-home-concept-remote-home-control-in-a-mobile-application-2242065869-transformed.jpeg"
+    "image": "/blog-images/what-are-5-reasons-for-a-smart-home.jpeg"
   },
   {
     "slug": "/exploring-home-automation-examples-2024",
@@ -2165,7 +2165,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/service/smart-home-automation/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/06/OIP.jpeg"
+    "image": "/blog-images/exploring-home-automation-examples-2024.jpeg"
   },
   {
     "slug": "/how-to-optimize-your-room-for-the-best-home-cinema-experience",
@@ -2184,7 +2184,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/05/Salle-de-Cinema-Megeve.jpg"
+    "image": "/blog-images/how-to-optimize-your-room-for-the-best-home-cinema-experience.jpg"
   },
   {
     "slug": "/future-of-smart-homes-2024",
@@ -2203,7 +2203,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/05/R.jpeg"
+    "image": "/blog-images/future-of-smart-homes-2024.jpeg"
   },
   {
     "slug": "/top-10-essential-components-for-building-the-ultimate-home-cinema",
@@ -2222,7 +2222,7 @@ export const rankingSeoPages: RankingSeoPage[] = [
                 "href": "/contact-us/"
           }
     ],
-    "image": "https://desertsound.com.pk/wp-content/uploads/2024/05/stock-photo-home-theater-with-spacious-seating-2272310987-transformed.jpeg"
+    "image": "/blog-images/top-10-essential-components-for-building-the-ultimate-home-cinema.jpeg"
   },
 ]
 
