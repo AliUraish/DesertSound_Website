@@ -70,7 +70,7 @@ export function ContactSection() {
               {[
                 { icon: Phone, title: "Phone", value: "+92 21 111 570 111", href: "tel:+9221111570111" },
                 { icon: Mail, title: "Email", value: "info@desertsound.com.pk", href: "mailto:info@desertsound.com.pk" },
-                { icon: MapPin, title: "Location", value: "Karachi, Pakistan" },
+                { icon: MapPin, title: "Showroom", value: "22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi" },
                 { icon: Clock, title: "Hours", value: "Mon - Sat: 9:30am - 7:30pm" }
               ].map((item, index) => (
                 <motion.div 
