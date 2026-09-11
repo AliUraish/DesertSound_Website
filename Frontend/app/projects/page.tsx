@@ -1,26 +1,21 @@
 import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { RankingSeoPageView } from "@/components/ranking-seo-page"
-import { getRankingSeoPage } from "@/lib/ranking-seo-content"
-import { createMetadata } from "@/lib/seo"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { ProjectLibraryChooser } from "@/components/project-library-chooser"
+import { serviceRouteMetadata } from "@/lib/service-route-metadata"
 
-const slug = "/projects"
+export const metadata: Metadata = serviceRouteMetadata("/projects")
 
-const page = getRankingSeoPage(slug)
-
-export const metadata: Metadata = page
-  ? {
-      ...createMetadata({
-        path: slug,
-        title: page.title,
-        description: page.description,
-        image: page.image || undefined,
-      }),
-      robots: { index: false, follow: false },
-    }
-  : { title: "Not Found", robots: { index: false, follow: false } }
-
-export default function RankingSeoRoutePage() {
-  if (!page) notFound()
-  return <RankingSeoPageView page={page} />
+export default function ProjectsPage() {
+  return (
+    <div className="w-full overflow-x-clip bg-background">
+      <Header />
+      <main className="min-h-screen bg-background">
+        <div className="pt-24">
+          <ProjectLibraryChooser />
+        </div>
+      </main>
+      <Footer />
+    </div>
+  )
 }
