@@ -25,14 +25,23 @@ export function CareersFooter() {
 
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
             <nav className="flex items-center gap-6 text-sm font-medium">
+              <Link href="/about-us" className="transition-colors hover:text-black/65">
+                About
+              </Link>
               <Link href="/#services" className="transition-colors hover:text-black/65">
                 Services
               </Link>
               <Link href="/#projects" className="transition-colors hover:text-black/65">
                 Projects
               </Link>
+              <Link href="/blogs" className="transition-colors hover:text-black/65">
+                Blogs
+              </Link>
               <Link href="/careers" className="transition-colors hover:text-black/65">
                 Careers
+              </Link>
+              <Link href="/contact-us" className="transition-colors hover:text-black/65">
+                Contact
               </Link>
             </nav>
 
