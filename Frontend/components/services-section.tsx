@@ -17,7 +17,7 @@ const services = [
     image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
-    link: "/services/home-theatre-systems"
+    link: "/service/home-theatre-design-and-installation"
   },
   {
     icon: Home,
@@ -27,7 +27,7 @@ const services = [
     image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
-    link: "/services/smart-home-automation"
+    link: "/service/smart-home-automation"
   },
   {
     icon: Smartphone,
@@ -37,7 +37,7 @@ const services = [
     image: "/Pictures Final/Services/Control_Integration/Cover.jpg",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
-    link: "/services/control-integration"
+    link: "/service/control-systems"
   },
   {
     icon: Wifi,
@@ -47,7 +47,7 @@ const services = [
     image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
     color: "bg-[#f5f5f5]",
     textColor: "text-zinc-900",
-    link: "/services/home-networking-and-wi-fi"
+    link: "/service/home-networking-and-wi-fi"
   },
   {
     icon: Headphones,
@@ -58,7 +58,7 @@ const services = [
     imagePosition: "80% 50%",
     color: "bg-[#1a1a1a]",
     textColor: "text-white",
-    link: "/services/audio-systems"
+    link: "/service/audio-distribution"
   },
 ]
 
