@@ -471,7 +471,7 @@ export default function SmartHomeAutomationPage() {
                 </div>
 
                 <Link
-                  href="/services/control-integration"
+                  href="/service/control-systems"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-black px-6 py-3 text-base font-light text-white transition-all duration-300 hover:gap-4 hover:bg-black/90"
                 >
                   <span>Explore Control Integration</span>
