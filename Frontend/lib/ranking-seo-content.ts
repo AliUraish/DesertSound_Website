@@ -155,7 +155,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Customization and Integration System in Karachi, Pakistan",
     "description": "Expert customization and integration system services in Karachi, Pakistan, tailored to meet your home or business automation needs.",
     "h1": "Customization and Integration",
-    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [creating the perfect acoustic environment](/blogs).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
+    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [how to optimize your room for the best home cinema experience](/how-to-optimize-your-room-for-the-best-home-cinema-experience/).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
     "faqs": [
       {
         "q": "Do you design custom furniture for the theatre room?",
@@ -348,16 +348,16 @@ const sitePages: RankingSeoPage[] = [
         "href": "/service/home-networking-and-wi-fi/"
       },
       {
-        "label": "The rise of voice-controlled home theatre service in Pakistan",
-        "href": "/the-rise-of-voice-controlled-home-theatre-service-in-pakistan/"
+        "label": "Beginner’s guide to smart home automation",
+        "href": "/beginners-guide-to-smart-home-automation/"
       },
       {
-        "label": "Voice-controlled smart home systems explained",
-        "href": "/voice-controlled-smart-home-systems-explained/"
+        "label": "What features should you automate first",
+        "href": "/what-features-should-you-automate-first-in-your-home/"
       },
       {
-        "label": "Turn any room into a home theatre with smart automation",
-        "href": "/turn-any-room-into-a-home-theatre-with-smart-automation/"
+        "label": "One-touch smart controls for lighting, sound, and cinema screens",
+        "href": "/one-touch-smart-controls-for-lighting-sound-and-cinema-screens/"
       }
     ]
   },
