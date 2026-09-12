@@ -7,18 +7,21 @@ const videos = [
   {
     id: "LUD17UiAaIM",
     src: "/theater-tour/LUD17UiAaIM.mp4",
+    preview: "/theater-tour/LUD17UiAaIM-preview.mp4",
     poster: "/theater-tour/LUD17UiAaIM.jpg",
     title: "Bespoke Home Theatre Solutions",
   },
   {
     id: "c6gsFbNvYqk",
     src: "/theater-tour/c6gsFbNvYqk.mp4",
+    preview: "/theater-tour/c6gsFbNvYqk-preview.mp4",
     poster: "/theater-tour/c6gsFbNvYqk.jpg",
     title: "Our Project Home Theatre Portfolio",
   },
   {
     id: "qWrnXwWF2a4",
     src: "/theater-tour/qWrnXwWF2a4.mp4",
+    preview: "/theater-tour/qWrnXwWF2a4-preview.mp4",
     poster: "/theater-tour/qWrnXwWF2a4.jpg",
     title: "Home Theatre with Ambient Lighting",
   },
@@ -58,12 +61,14 @@ function exitElementFullscreen() {
 
 function TourVideoCard({
   src,
+  preview,
   poster,
   title,
   isUnmuted,
   onToggleSound,
 }: {
   src: string
+  preview: string
   poster: string
   title: string
   isUnmuted: boolean
@@ -73,6 +78,8 @@ function TourVideoCard({
   const videoRef = useRef<HTMLVideoElement>(null)
   const [inView, setInView] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [useFullFilm, setUseFullFilm] = useState(false)
+  const activeSrc = useFullFilm ? src : inView ? preview : undefined
 
   useEffect(() => {
     const node = frameRef.current
@@ -82,7 +89,7 @@ function TourVideoCard({
       ([entry]) => {
         if (entry.isIntersecting) setInView(true)
       },
-      { rootMargin: "200px 0px" }
+      { rootMargin: "80px 0px" }
     )
 
     observer.observe(node)
@@ -90,12 +97,23 @@ function TourVideoCard({
   }, [])
 
   useEffect(() => {
+    if (isUnmuted || isFullscreen) setUseFullFilm(true)
+  }, [isUnmuted, isFullscreen])
+
+  useEffect(() => {
     const video = videoRef.current
-    if (!video || !inView) return
-    video.muted = !isUnmuted
-    if (isUnmuted) video.volume = 1
-    void video.play().catch(() => undefined)
-  }, [inView, isUnmuted])
+    if (!video || !activeSrc) return
+
+    const play = () => {
+      video.muted = !isUnmuted
+      if (isUnmuted) video.volume = 1
+      void video.play().catch(() => undefined)
+    }
+
+    play()
+    video.addEventListener("loadeddata", play)
+    return () => video.removeEventListener("loadeddata", play)
+  }, [activeSrc, isUnmuted])
 
   const syncFullscreenState = useCallback(() => {
     setIsFullscreen(getFullscreenElement() === frameRef.current)
@@ -113,6 +131,8 @@ function TourVideoCard({
   const toggleFullscreen = useCallback(async () => {
     const frame = frameRef.current
     if (!frame) return
+
+    setUseFullFilm(true)
 
     try {
       if (getFullscreenElement() === frame) {
@@ -133,12 +153,12 @@ function TourVideoCard({
       >
         <video
           ref={videoRef}
-          src={inView ? src : undefined}
+          src={activeSrc}
           poster={poster}
           muted={!isUnmuted}
           loop
           playsInline
-          preload={inView ? "auto" : "metadata"}
+          preload={useFullFilm ? "auto" : "none"}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -185,6 +205,7 @@ export function TheaterTourSection() {
             <TourVideoCard
               key={video.id}
               src={video.src}
+              preview={video.preview}
               poster={video.poster}
               title={video.title}
               isUnmuted={unmutedId === video.id}
