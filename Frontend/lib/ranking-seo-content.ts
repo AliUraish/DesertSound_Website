@@ -586,27 +586,27 @@ export const rankingSeoPages: RankingSeoPage[] = [
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     "title": "Home Theater & Home Cinema Design and Installation in Pakistan",
     "description": "home theater design and installation services in Pakistan, for an immersive and customized entertainment experience.",
-    "h1": "Home Theatre Design and Installation",
-    "body": "Home theatre design and installation is a planned project: room size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. We build cinema rooms for houses, apartments, and offices across Pakistan, not only large villas.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction.\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
+    "h1": "Home Cinema & Home Theatre Design and Installation in Pakistan",
+    "body": "Home cinema and home theatre design in Pakistan is a planned project: room size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. We build cinema rooms for houses, apartments, and offices across Pakistan — Karachi, Lahore, Islamabad, and beyond.\n\n### Professional Home Cinema Design\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable. Proper [acoustic treatment](/acoustic-panels-and-soundproofing-tips-for-private-home-cinemas/) ensures clarity, while [soundproofing](/soundproofing-home-cinema-installation/) controls what escapes the room.\n\n### Home Theatre Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. [Professional installation](/home-theater-design-and-installation-why-is-professional-help-important/) gets the fundamentals right before equipment goes in.\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat. Whether you're [planning a smart home theater](/how-to-plan-a-smart-home-theater-in-pakistan-tips-from-desert-sound/) or [transforming your entertainment space](/transform-your-entertainment-space-with-desert-sound/), professional tuning makes the difference.",
     "faqs": [
       {
-        "q": "What is in a full home theater system in Pakistan?",
+        "q": "What is included in a home cinema system in Pakistan?",
         "a": "Display, audio, seating, acoustics, lighting control, a control system, and home networking/Wi-Fi for streaming and automation."
       },
       {
-        "q": "Can a home cinema be smart?",
+        "q": "Can a home cinema in Pakistan include smart automation?",
         "a": "Yes. Home cinema design and installation now usually includes smart home automation so entertainment, lighting, and climate sit on one platform."
       },
       {
-        "q": "Do you do multi-room audio?",
+        "q": "Do you install multi-room audio?",
         "a": "Yes, through audio distribution installation with central control."
       },
       {
-        "q": "Can small spaces work?",
+        "q": "Can you build home theatres in small spaces?",
         "a": "Yes, we design for apartments and compact rooms as well as dedicated cinema rooms."
       },
       {
-        "q": "How long does installation take?",
+        "q": "How long does home theatre installation take?",
         "a": "Depends on complexity; most projects finish with limited disruption once equipment is on site."
       }
     ],
@@ -624,8 +624,20 @@ export const rankingSeoPages: RankingSeoPage[] = [
         "href": "/service/control-systems/"
       },
       {
-        "label": "Blogs",
-        "href": "/blogs/"
+        "label": "Acoustic panels and soundproofing tips",
+        "href": "/acoustic-panels-and-soundproofing-tips-for-private-home-cinemas/"
+      },
+      {
+        "label": "Why soundproofing matters",
+        "href": "/soundproofing-home-cinema-installation/"
+      },
+      {
+        "label": "Professional home theatre installation",
+        "href": "/home-theater-design-and-installation-why-is-professional-help-important/"
+      },
+      {
+        "label": "How to plan a smart home theater",
+        "href": "/how-to-plan-a-smart-home-theater-in-pakistan-tips-from-desert-sound/"
       }
     ],
   },
