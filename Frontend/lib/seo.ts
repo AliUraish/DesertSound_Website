@@ -6,8 +6,9 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.
 export const siteName = "Desert Sound"
 
 export function getMetadataBase() {
-  if (process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL) {
-    return new URL(`https://${process.env.VERCEL_URL}`)
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL
+  if (host) {
+    return new URL(host.startsWith("http") ? host : `https://${host}`)
   }
 
   return new URL(siteUrl)
@@ -23,6 +24,11 @@ export const defaultSeo = {
   description:
     "Desert Sound designs and installs premium home theater systems, smart home automation, audio systems, control integration, and Wi-Fi networks in Karachi and across Pakistan.",
   image: "/og.jpg",
+}
+
+export function shareImageUrl(path = defaultSeo.image) {
+  if (path.startsWith("http")) return path
+  return new URL(path.startsWith("/") ? path : `/${path}`, getMetadataBase()).toString()
 }
 
 export type SeoPage = {
@@ -93,7 +99,7 @@ export function createMetadata({
   const url = absoluteUrl(path)
   const imageAltTitle = title.replace(new RegExp(`^${siteName}\\s[-|]\\s`), "")
   const socialTitle = brandedSocialTitle(title)
-  const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`
+  const imageUrl = shareImageUrl(image.startsWith("/") || image.startsWith("http") ? image : `/${image}`)
 
   return {
     title,
@@ -108,7 +114,7 @@ export function createMetadata({
       siteName,
       images: [
         {
-          url: imagePath,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: `${siteName} - ${imageAltTitle}`,
@@ -121,7 +127,7 @@ export function createMetadata({
       card: "summary_large_image",
       title: socialTitle,
       description,
-      images: [imagePath],
+      images: [imageUrl],
     },
   }
 }

@@ -4,7 +4,7 @@ import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { Preloader } from "@/components/preloader"
-import { defaultSeo, getMetadataBase, localBusinessJsonLd, siteName, siteUrl } from "@/lib/seo"
+import { defaultSeo, getMetadataBase, localBusinessJsonLd, shareImageUrl, siteName, siteUrl } from "@/lib/seo"
 import "./globals.css"
 
 const inter = Inter({
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName,
     images: [
       {
-        url: defaultSeo.image,
+        url: shareImageUrl(),
         width: 1200,
         height: 630,
         alt: "Desert Sound — Home Theater & Smart Home Solutions",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteName} | ${defaultSeo.title}`,
     description: defaultSeo.description,
-    images: [defaultSeo.image],
+    images: [shareImageUrl()],
   },
   robots: {
     index: false,
