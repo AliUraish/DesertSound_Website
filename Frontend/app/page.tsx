@@ -5,6 +5,7 @@ import { CertificationsSection, OurBrands } from "@/components/our-brands"
 import { ServicesSection } from "@/components/services-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
+import { TheaterTourSection } from "@/components/theater-tour-section"
 import { Testimonials } from "@/components/testimonials"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
@@ -33,6 +34,7 @@ export default function HomePage() {
         <ServicesSection />
         <ComparisonTransformation />
         <ProjectLibraryChooser />
+        <TheaterTourSection />
         <Testimonials />
         <CertificationsSection />
         <ContactSection />

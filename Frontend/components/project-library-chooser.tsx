@@ -23,7 +23,7 @@ const libraryOptions = [
 
 export function ProjectLibraryChooser() {
   return (
-    <section id="projects" className="pt-16 pb-12 lg:pt-24 lg:pb-16 bg-background">
+    <section id="projects" className="bg-background pt-16 pb-10 lg:pt-24 lg:pb-12">
       <div className="max-w-[90%] mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
