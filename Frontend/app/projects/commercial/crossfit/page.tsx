@@ -55,7 +55,7 @@ export default function CrossFitPage() {
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
           <h1 className="mb-6 text-4xl text-black lg:text-6xl">CrossFit Gym AV Installation</h1>
           <p className="max-w-5xl text-base text-black/70 lg:text-lg">
-            CrossFit Gym AV Installation is a commercial fitness project built around energy, rhythm, and a clean visual presence. The
+            This commercial fitness project is built around energy, rhythm, and a clean visual presence. The
             space is intended to feel motivating and immersive, with integrated audiovisual elements supporting both
             training intensity and the overall brand atmosphere.
           </p>

@@ -8,7 +8,7 @@ export default function Project20Page() {
       coverImageAlt="Streamlined Media Cinema main image"
       galleryImages={["/Pictures Final/Projects/Residential/project_20/img_2.jpg", "/Pictures Final/Projects/Residential/project_20/img_3.jpg", "/Pictures Final/Projects/Residential/project_20/img_4.jpg"]}
       description={[
-        "Streamlined Media Cinema is a media-focused residential project with an emphasis on visual calm, integrated technology, and comfortable long-form viewing. The room is intended to feel seamless and polished, with every element supporting a straightforward cinematic experience.",
+        "This media-focused residential project emphasizes visual calm, integrated technology, and comfortable long-form viewing. The room is intended to feel seamless and polished, with every element supporting a straightforward cinematic experience.",
         "A streamlined control experience brings the room's display, audio, and lighting together, making the system intuitive for films, music, and everyday entertainment.",
       ]}
       breadcrumb="Home / Projects / Residential / Streamlined Media Cinema"

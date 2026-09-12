@@ -55,7 +55,7 @@ export default function ResidencyPage() {
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
           <h1 className="mb-6 text-4xl text-black lg:text-6xl">Residency Private Cinema</h1>
           <p className="max-w-5xl text-base text-black/70 lg:text-lg">
-            Residency Private Cinema is a residential showcase project shaped around comfort, visual atmosphere, and a balanced
+            This residential showcase is shaped around comfort, visual atmosphere, and a balanced
             integration of entertainment technology. The space is intended to feel refined and welcoming, while still
             delivering a strong cinematic presence throughout the room.
           </p>

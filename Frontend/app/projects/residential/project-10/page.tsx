@@ -12,7 +12,7 @@ export default function Project10Page() {
         "/Pictures Final/Projects/Residential/project_10/img_4.jpg",
       ]}
       description={[
-        "Soft-Tone Private Media Room presents a private media room designed around soft tonal contrast, clean geometry, and a polished cinematic mood. The overall composition is meant to balance residential warmth with the focus and clarity expected from a dedicated entertainment space.",
+        "This private media room is designed around soft tonal contrast, clean geometry, and a polished cinematic mood. The overall composition is meant to balance residential warmth with the focus and clarity expected from a dedicated entertainment space.",
         "The display, audio system, lighting, and seating work together as one cohesive environment, keeping operation simple while preserving the room's clean residential character.",
       ]}
       breadcrumb="Home / Projects / Residential / Soft-Tone Private Media Room"

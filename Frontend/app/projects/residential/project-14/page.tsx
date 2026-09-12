@@ -8,7 +8,7 @@ export default function Project14Page() {
       coverImageAlt="Understated Luxury Cinema main image"
       galleryImages={["/Pictures Final/Projects/Residential/project_14/img_2.jpg", "/Pictures Final/Projects/Residential/project_14/img_3.jpg"]}
       description={[
-        "Understated Luxury Cinema is a residential cinema presentation shaped around understated luxury, warm material tones, and a strong visual anchor at the screen wall. The room is intended to feel calm and inviting while still delivering a clear sense of cinematic focus.",
+        "This residential cinema is shaped around understated luxury, warm material tones, and a strong visual anchor at the screen wall. The room is intended to feel calm and inviting while still delivering a clear sense of cinematic focus.",
         "Discreet technology integration and layered lighting preserve the design intent while supporting a focused, comfortable viewing experience.",
       ]}
       breadcrumb="Home / Projects / Residential / Understated Luxury Cinema"
