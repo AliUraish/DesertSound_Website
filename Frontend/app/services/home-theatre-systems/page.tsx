@@ -190,7 +190,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan each home cinema and home theatre installation in Pakistan around the room, including homes in Karachi, with 4K/8K projection, Dolby Atmos, and smart control.
+                    We plan each home cinema and home theatre installation in Pakistan around the room, with 4K/8K projection, Dolby Atmos, and smart control. Home theater installation in Karachi is one local example of that nationwide work.
                   </p>
 
                   <div className="flex">
@@ -315,7 +315,7 @@ export default function HomeTheatreSystemsPage() {
                   >
                     Home theater installation
                   </Link>{" "}
-                  in Karachi starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment.
+                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment anywhere in Pakistan.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
