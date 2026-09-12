@@ -75,6 +75,7 @@ function TourVideoCard({
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const soundRequestRef = useRef(0)
   const [inView, setInView] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
 
@@ -119,20 +120,29 @@ function TourVideoCard({
     if (!video) return
 
     if (isUnmuted) {
+      soundRequestRef.current += 1
       video.muted = true
       onMute()
       return
     }
 
+    const soundRequest = ++soundRequestRef.current
     const token = onClaimUnmute()
     video.muted = false
     video.volume = 1
     void video
       .play()
       .then(() => {
-        if (!onConfirmUnmute(token)) video.muted = true
+        if (soundRequest !== soundRequestRef.current) return
+        if (onConfirmUnmute(token)) {
+          video.muted = false
+          video.volume = 1
+          return
+        }
+        video.muted = true
       })
       .catch(() => {
+        if (soundRequest !== soundRequestRef.current) return
         video.muted = true
         if (onConfirmUnmute(token)) onMute()
       })
