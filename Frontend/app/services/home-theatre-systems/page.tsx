@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     question: "Can a small space be customised as a home theatre?",
-    answer: "Definitely. We specialise in custom solutions for spaces of all sizes. Whether it is a dedicated cinema room or a multipurpose media space, we design the system to make effective use of the available area."
+    answer: "Yes. Home theater installation in Pakistan works in apartments and compact rooms, not only a dedicated cinema."
   },
   {
     question: "How long does installation take?",
@@ -189,7 +189,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan each home cinema in Pakistan around the room, including theatre rooms in Karachi, with 4K/8K projection, Dolby Atmos, and smart control.
+                    We plan each home cinema and home theater installation in Pakistan around the room, including theatre rooms in Karachi, with 4K/8K projection, Dolby Atmos, and smart control.
                   </p>
 
                   <div className="flex">
@@ -312,7 +312,14 @@ export default function HomeTheatreSystemsPage() {
                   Professional Home Cinema Design
                 </h2>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
-                  Professional home cinema design in Pakistan goes beyond a screen and speakers. It starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema in Karachi or a compact apartment.
+                  Professional home cinema design in Pakistan goes beyond a screen and speakers.{" "}
+                  <Link
+                    href="/how-to-plan-home-theater-installation-for-any-room"
+                    className="underline underline-offset-4 hover:text-black"
+                  >
+                    Home theater installation
+                  </Link>{" "}
+                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema in Karachi or a compact apartment.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
