@@ -6,11 +6,11 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isProduction ? "" : " 'unsafe-eval'"} https://va.vercel-scripts.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com https://i.ytimg.com",
+  "img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com",
   "font-src 'self' data:",
   "media-src 'self' blob:",
   "connect-src 'self' https://*.vercel-insights.com https://va.vercel-scripts.com",
-  "frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com",
+  "frame-src https://www.google.com",
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
@@ -43,14 +43,6 @@ const nextConfig = {
   devIndicators: false,
   outputFileTracingIncludes: {
     "/*": ["./content/articles/**/*"],
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ytimg.com",
-      },
-    ],
   },
   turbopack: {
     root: process.cwd(),

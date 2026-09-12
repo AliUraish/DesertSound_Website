@@ -1,50 +1,28 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import { Volume2, VolumeX } from "lucide-react"
-
-const YOUTUBE_ORIGIN = "https://www.youtube.com"
 
 const videos = [
   {
     id: "LUD17UiAaIM",
+    src: "/theater-tour/LUD17UiAaIM.mp4",
+    poster: "/theater-tour/LUD17UiAaIM.jpg",
     title: "Bespoke Home Theatre Solutions",
   },
   {
     id: "c6gsFbNvYqk",
+    src: "/theater-tour/c6gsFbNvYqk.mp4",
+    poster: "/theater-tour/c6gsFbNvYqk.jpg",
     title: "Our Project Home Theatre Portfolio",
   },
   {
     id: "qWrnXwWF2a4",
+    src: "/theater-tour/qWrnXwWF2a4.mp4",
+    poster: "/theater-tour/qWrnXwWF2a4.jpg",
     title: "Home Theatre with Ambient Lighting",
   },
 ] as const
-
-function youtubeThumbnail(id: string) {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
-}
-
-function youtubePreviewSrc(id: string, origin: string) {
-  const params = new URLSearchParams({
-    autoplay: "1",
-    mute: "1",
-    loop: "1",
-    playlist: id,
-    controls: "0",
-    modestbranding: "1",
-    rel: "0",
-    playsinline: "1",
-    iv_load_policy: "3",
-    enablejsapi: "1",
-    origin,
-  })
-  return `${YOUTUBE_ORIGIN}/embed/${id}?${params.toString()}`
-}
-
-function sendPlayerCommand(iframe: HTMLIFrameElement | null, func: string, args: unknown[] = []) {
-  iframe?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args }), YOUTUBE_ORIGIN)
-}
 
 function requestElementFullscreen(element: HTMLElement) {
   const request =
@@ -60,21 +38,18 @@ function requestElementFullscreen(element: HTMLElement) {
 }
 
 function TourVideoCard({
-  id,
+  src,
+  poster,
   title,
 }: {
-  id: string
+  src: string
+  poster: string
   title: string
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const [origin, setOrigin] = useState("")
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [inView, setInView] = useState(false)
   const [withSound, setWithSound] = useState(false)
-
-  useEffect(() => {
-    setOrigin(window.location.origin)
-  }, [])
 
   useEffect(() => {
     const node = frameRef.current
@@ -91,17 +66,29 @@ function TourVideoCard({
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || !inView) return
+    video.muted = true
+    void video.play().catch(() => undefined)
+  }, [inView])
+
   const muteAndKeepPlaying = useCallback(() => {
-    sendPlayerCommand(iframeRef.current, "mute")
-    sendPlayerCommand(iframeRef.current, "playVideo")
+    const video = videoRef.current
+    if (!video) return
+    video.muted = true
+    void video.play().catch(() => undefined)
     setWithSound(false)
   }, [])
 
   const playWithSound = useCallback(async () => {
     const frame = frameRef.current
-    sendPlayerCommand(iframeRef.current, "unMute")
-    sendPlayerCommand(iframeRef.current, "setVolume", [100])
-    sendPlayerCommand(iframeRef.current, "playVideo")
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = false
+    video.volume = 1
+    void video.play().catch(() => undefined)
     setWithSound(true)
 
     if (!frame) return
@@ -109,14 +96,15 @@ function TourVideoCard({
     try {
       await requestElementFullscreen(frame)
     } catch {
-      // iOS and some desktop browsers block programmatic fullscreen.
-      // Sound still starts in-place from the tap.
+      // Sound still starts in-place if fullscreen is blocked.
     }
   }, [])
 
   useEffect(() => {
     const onFullscreenChange = () => {
-      const active = document.fullscreenElement ?? (document as Document & { webkitFullscreenElement?: Element }).webkitFullscreenElement
+      const active =
+        document.fullscreenElement ??
+        (document as Document & { webkitFullscreenElement?: Element }).webkitFullscreenElement
       if (!active || active !== frameRef.current) {
         muteAndKeepPlaying()
       }
@@ -130,52 +118,28 @@ function TourVideoCard({
     }
   }, [muteAndKeepPlaying])
 
-  const handleIframeLoad = () => {
-    const startMuted = () => {
-      iframeRef.current?.contentWindow?.postMessage(
-        JSON.stringify({ event: "listening", id }),
-        YOUTUBE_ORIGIN
-      )
-      sendPlayerCommand(iframeRef.current, "mute")
-      sendPlayerCommand(iframeRef.current, "playVideo")
-    }
-
-    startMuted()
-    window.setTimeout(startMuted, 500)
-    window.setTimeout(startMuted, 1400)
-  }
-
   return (
     <article className="group">
       <div
         ref={frameRef}
         className="relative aspect-video overflow-hidden rounded-2xl bg-black shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]"
       >
-        <Image
-          src={youtubeThumbnail(id)}
-          alt=""
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
+        <video
+          ref={videoRef}
+          src={inView ? src : undefined}
+          poster={poster}
+          muted
+          loop
+          playsInline
+          preload={inView ? "auto" : "metadata"}
+          className="absolute inset-0 h-full w-full object-cover"
         />
-
-        {inView && origin ? (
-          <iframe
-            ref={iframeRef}
-            src={youtubePreviewSrc(id, origin)}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            allowFullScreen
-            onLoad={handleIframeLoad}
-            className={`absolute inset-0 h-full w-full border-0 ${withSound ? "pointer-events-auto" : "pointer-events-none"}`}
-          />
-        ) : null}
 
         {!withSound ? (
           <button
             type="button"
             onClick={playWithSound}
-            className="absolute inset-0 z-10 flex flex-col items-end justify-end bg-black/20 p-4 text-left transition-colors duration-500 hover:bg-black/30"
+            className="absolute inset-0 z-10 flex flex-col items-end justify-end bg-black/15 p-4 text-left transition-colors duration-500 hover:bg-black/25"
             aria-label={`Play ${title} with sound`}
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-black shadow-lg">
@@ -224,7 +188,7 @@ export function TheaterTourSection() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
           {videos.map((video) => (
-            <TourVideoCard key={video.id} id={video.id} title={video.title} />
+            <TourVideoCard key={video.id} src={video.src} poster={video.poster} title={video.title} />
           ))}
         </div>
       </div>
