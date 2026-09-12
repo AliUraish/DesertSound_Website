@@ -41,6 +41,9 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next",
   poweredByHeader: false,
   devIndicators: false,
+  outputFileTracingIncludes: {
+    "/*": ["./content/articles/**/*"],
+  },
   turbopack: {
     root: process.cwd(),
   },

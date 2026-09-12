@@ -21,19 +21,6 @@ const links = [
   { href: "/service/home-networking-and-wi-fi", label: "Home networking and Wi-Fi" },
   { href: "/service/customization-and-integration", label: "Customization and integration" },
   { href: "/service/maintenance-and-support", label: "Maintenance and support" },
-  { href: "/transform-your-entertainment-space-with-desert-sound", label: "Transform your entertainment space" },
-  { href: "/optimal-steps-to-improve-the-sound-experience-of-your-home-theater-designs", label: "Steps to enhance home theater sound" },
-  { href: "/creating-the-perfect-acoustic-environment", label: "Creating the perfect acoustic environment" },
-  { href: "/the-rise-of-voice-controlled-home-theatre-service-in-pakistan", label: "Voice-controlled home theatre in Pakistan" },
-  { href: "/turn-any-room-into-a-home-theatre-with-smart-automation", label: "Turn any room into a home theatre" },
-  { href: "/voice-controlled-smart-home-systems-explained", label: "Voice-controlled smart home systems" },
-  { href: "/home-theater-companies-near-me-are-leveling-up-gaming-setups", label: "Home theater companies near me" },
-  { href: "/how-to-plan-a-smart-home-theater-in-pakistan-tips-from-desert-sound", label: "How to plan a smart home theater in Pakistan" },
-  { href: "/soundproofing-home-cinema-installation", label: "Soundproofing home cinema" },
-  { href: "/home-theater-design-and-installation-why-is-professional-help-important", label: "Why professional home theater help matters" },
-  { href: "/set-home-theater-systems-with-desert-sound-2024", label: "Set home theater systems 2024" },
-  { href: "/acoustic-panels-and-soundproofing-tips-for-private-home-cinemas", label: "Acoustic panels and soundproofing tips" },
-  { href: "/why-decoupled-walls-and-floors-matter-for-complete-sound-isolation", label: "Decoupled walls and floors" },
 ]
 
 export default function SitemapPage() {

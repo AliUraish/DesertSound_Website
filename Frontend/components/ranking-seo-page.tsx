@@ -2,32 +2,40 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import type { RankingSeoPage } from "@/lib/ranking-seo-content"
+import type { RankingSeoPage } from "@/lib/ranking-seo-types"
 
 function renderInline(text: string): React.ReactNode {
-  return text.split(/(\*\*.+?\*\*|\[.+?\]\(\/[^)]+\))/g).map((part, i) => {
+  return text.split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i}>{renderInline(part.slice(2, -2))}</strong>
     }
-    const link = part.match(/^\[(.+?)\]\((\/[^)]+)\)$/)
-    if (link && !link[2].startsWith("//")) {
-      return (
-        <Link key={i} href={link[2]} className="underline underline-offset-4 hover:text-black">
-          {renderInline(link[1])}
-        </Link>
-      )
+    const link = part.match(/^\[(.+?)\]\(([^)]+)\)$/)
+    if (link) {
+      const href = link[2]
+      if (href.startsWith("/") && !href.startsWith("//") && href !== "/") {
+        return (
+          <Link key={i} href={href} className="underline underline-offset-4 hover:text-black">
+            {renderInline(link[1])}
+          </Link>
+        )
+      }
+      return <span key={i}>{renderInline(link[1])}</span>
     }
     return part
   })
 }
 
+function headingText(block: string) {
+  return block.replace(/^#{1,6}\s+/, "").replace(/\*\*/g, "").trim()
+}
+
 function renderBody(body: string) {
-  const blocks = body.split(/\n\n+/).filter(Boolean)
+  const blocks = body.replace(/\u00a0/g, " ").split(/\n\n+/).filter(Boolean)
   return blocks.map((block, i) => {
-    if (block.startsWith("### ")) {
+    if (/^#{1,6}\s+/.test(block)) {
       return (
         <h2 key={i} className="mt-10 text-2xl font-light tracking-tight text-black md:text-3xl">
-          {block.replace(/^###\s+/, "")}
+          {renderInline(headingText(block))}
         </h2>
       )
     }
@@ -118,7 +126,7 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
                     href={link.href}
                     className="rounded-2xl border border-black/5 bg-white px-5 py-4 text-base font-light text-black transition-all hover:border-black/10 hover:shadow-md"
                   >
-                    {link.label}
+                    {link.label.replace(/\*\*/g, "")}
                   </Link>
                 ))}
               </div>
