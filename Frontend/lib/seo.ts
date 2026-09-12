@@ -5,6 +5,14 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.
 
 export const siteName = "Desert Sound"
 
+export function getMetadataBase() {
+  if (process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`)
+  }
+
+  return new URL(siteUrl)
+}
+
 export const socialLinks = {
   facebook: "https://www.facebook.com/share/1DLuj22aHw/?mibextid=wwXIfr",
   instagram: "https://www.instagram.com/desertsoundpk?igsi=MXZwemlkN3o5enVkdQ==",
@@ -14,7 +22,7 @@ export const defaultSeo = {
   title: "Home Theatre & Smart Home Automation in Pakistan",
   description:
     "Desert Sound designs and installs premium home theater systems, smart home automation, audio systems, control integration, and Wi-Fi networks in Karachi and across Pakistan.",
-  image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
+  image: "/og.jpg",
 }
 
 export type SeoPage = {
@@ -64,7 +72,12 @@ export const servicePages: SeoPage[] = [
 
 export function absoluteUrl(path = "/") {
   if (path.startsWith("http")) return path
-  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`
+  const normalized = path.startsWith("/") ? path : `/${path}`
+  const encoded = normalized
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/")
+  return `${siteUrl}${encoded}`
 }
 
 function brandedSocialTitle(title: string) {
@@ -78,9 +91,9 @@ export function createMetadata({
   image = defaultSeo.image,
 }: SeoPage): Metadata {
   const url = absoluteUrl(path)
-  const imageUrl = absoluteUrl(image)
   const imageAltTitle = title.replace(new RegExp(`^${siteName}\\s[-|]\\s`), "")
   const socialTitle = brandedSocialTitle(title)
+  const imagePath = image.startsWith("http") ? image : image.startsWith("/") ? image : `/${image}`
 
   return {
     title,
@@ -95,7 +108,7 @@ export function createMetadata({
       siteName,
       images: [
         {
-          url: imageUrl,
+          url: imagePath,
           width: 1200,
           height: 630,
           alt: `${siteName} - ${imageAltTitle}`,
@@ -108,7 +121,7 @@ export function createMetadata({
       card: "summary_large_image",
       title: socialTitle,
       description,
-      images: [imageUrl],
+      images: [imagePath],
     },
   }
 }
