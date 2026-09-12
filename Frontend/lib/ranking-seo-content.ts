@@ -363,7 +363,7 @@ const sitePages: RankingSeoPage[] = [
   },
   {
     "slug": "/projects",
-    "title": "Our Projects | Desert Sound",
+    "title": "Our Projects",
     "description": "Explore Desert Sound residential and commercial home theatre and smart home projects across Pakistan.",
     "h1": "Our Projects",
     "body": "Browse Desert Sound project work across Pakistan — private cinemas, media rooms, and smart home installations.\n\n### Residential\nSee private home theatres and residential smart systems in our [residential projects library](/projects/residential).\n\n### Commercial\nSee hospitality, gym, and commercial AV installs in our [commercial projects library](/projects/commercial).\n\nNeed a similar build? [Contact us](/contact-us/) for a site visit.",

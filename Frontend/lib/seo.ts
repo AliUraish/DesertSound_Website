@@ -67,6 +67,10 @@ export function absoluteUrl(path = "/") {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`
 }
 
+function brandedSocialTitle(title: string) {
+  return title.includes(siteName) ? title : `${title} | ${siteName}`
+}
+
 export function createMetadata({
   path,
   title,
@@ -76,6 +80,7 @@ export function createMetadata({
   const url = absoluteUrl(path)
   const imageUrl = absoluteUrl(image)
   const imageAltTitle = title.replace(new RegExp(`^${siteName}\\s[-|]\\s`), "")
+  const socialTitle = brandedSocialTitle(title)
 
   return {
     title,
@@ -84,7 +89,7 @@ export function createMetadata({
       canonical: url,
     },
     openGraph: {
-      title,
+      title: socialTitle,
       description,
       url,
       siteName,
@@ -101,7 +106,7 @@ export function createMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
       images: [imageUrl],
     },
@@ -128,12 +133,17 @@ export function createProjectMetadata(library: ProjectLibrary, slug: string): Me
     }
   }
 
-  return createMetadata({
-    path: `/projects/${library}/${project.slug}`,
-    title: `${project.title} | ${project.category}`,
-    description: `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`,
-    image: project.image,
-  })
+  return {
+    ...createMetadata({
+      path: `/projects/${library}/${project.slug}`,
+      title: project.title,
+      description: `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`,
+      image: project.image,
+    }),
+    title: {
+      absolute: brandedSocialTitle(project.title),
+    },
+  }
 }
 
 export const localBusinessJsonLd = {

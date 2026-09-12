@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Calendar, MapPin, Maximize } from "lucide-react"
+import { ArrowUpRight, Maximize } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 import type { Project } from "@/lib/projects-data"
 
@@ -67,12 +67,6 @@ function MobileProjectCard({ project, index }: { project: Project; index: number
         </div>
 
         <div className="flex flex-wrap gap-3 text-xs text-white/50 mb-4">
-          <span className="flex items-center gap-1.5">
-            <MapPin size={12} /> {project.location}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Calendar size={12} /> {project.year}
-          </span>
           <span className="flex items-center gap-1.5">
             <Maximize size={12} /> {project.size}
           </span>
@@ -182,12 +176,6 @@ function DesktopLibrary({ badge, title, description, projects }: ProjectLibraryS
                   </div>
 
                   <div className="flex flex-wrap gap-4 text-sm text-white/60 mb-6">
-                    <span className="flex items-center gap-2">
-                      <MapPin size={14} /> {project.location}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <Calendar size={14} /> {project.year}
-                    </span>
                     <span className="flex items-center gap-2">
                       <Maximize size={14} /> {project.size}
                     </span>

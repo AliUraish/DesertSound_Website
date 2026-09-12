@@ -45,7 +45,7 @@ export default function CrossFitPage() {
         <section className="pt-[100px] md:pt-24 lg:pt-28">
           <Image
             src={coverImage}
-            alt="CrossFit Gym main image"
+            alt="CrossFit Gym AV Installation main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover object-[62%_70%] lg:h-[68vh]"
                 width={1600}
                 height={1067}
@@ -53,9 +53,9 @@ export default function CrossFitPage() {
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
-          <h1 className="mb-6 text-4xl text-black lg:text-6xl">CrossFit Gym</h1>
+          <h1 className="mb-6 text-4xl text-black lg:text-6xl">CrossFit Gym AV Installation</h1>
           <p className="max-w-5xl text-base text-black/70 lg:text-lg">
-            CrossFit Gym is a commercial fitness project built around energy, rhythm, and a clean visual presence. The
+            This commercial fitness project is built around energy, rhythm, and a clean visual presence. The
             space is intended to feel motivating and immersive, with integrated audiovisual elements supporting both
             training intensity and the overall brand atmosphere.
           </p>
@@ -71,7 +71,7 @@ export default function CrossFitPage() {
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
-                alt={`CrossFit Gym image ${activeIndex + 1}`}
+                alt={`CrossFit Gym AV Installation image ${activeIndex + 1}`}
                 variants={variants}
                 initial="enter"
                 animate="center"
@@ -112,7 +112,7 @@ export default function CrossFitPage() {
 
           <div className="mx-auto max-w-[88%] px-4 pt-8 lg:px-8">
             <p className="text-sm uppercase tracking-[0.16em] text-black/50">
-              Home / Projects / Commercial / CrossFit Gym
+              Home / Projects / Commercial / CrossFit Gym AV Installation
             </p>
           </div>
         </section>
