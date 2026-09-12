@@ -62,14 +62,16 @@ function TourVideoCard({
   title,
   isUnmuted,
   onMute,
-  onUnmute,
+  onClaimUnmute,
+  onConfirmUnmute,
 }: {
   src: string
   poster: string
   title: string
   isUnmuted: boolean
   onMute: () => void
-  onUnmute: () => void
+  onClaimUnmute: () => number
+  onConfirmUnmute: (token: number) => boolean
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -122,15 +124,19 @@ function TourVideoCard({
       return
     }
 
+    const token = onClaimUnmute()
     video.muted = false
     video.volume = 1
     void video
       .play()
-      .then(() => onUnmute())
+      .then(() => {
+        if (!onConfirmUnmute(token)) video.muted = true
+      })
       .catch(() => {
         video.muted = true
+        if (onConfirmUnmute(token)) onMute()
       })
-  }, [isUnmuted, onMute, onUnmute])
+  }, [isUnmuted, onClaimUnmute, onConfirmUnmute, onMute])
 
   const toggleFullscreen = useCallback(async () => {
     const frame = frameRef.current
@@ -193,6 +199,7 @@ function TourVideoCard({
 
 export function TheaterTourSection() {
   const [unmutedId, setUnmutedId] = useState<string | null>(null)
+  const unmuteTokenRef = useRef(0)
 
   return (
     <section id="theater-tour" aria-label="Theater Tour" className="bg-background pb-16 lg:pb-24">
@@ -212,10 +219,16 @@ export function TheaterTourSection() {
               poster={video.poster}
               title={video.title}
               isUnmuted={unmutedId === video.id}
-              onMute={() =>
+              onMute={() => {
+                unmuteTokenRef.current += 1
                 setUnmutedId((current) => (current === video.id ? null : current))
-              }
-              onUnmute={() => setUnmutedId(video.id)}
+              }}
+              onClaimUnmute={() => {
+                unmuteTokenRef.current += 1
+                setUnmutedId(video.id)
+                return unmuteTokenRef.current
+              }}
+              onConfirmUnmute={(token) => token === unmuteTokenRef.current}
             />
           ))}
         </div>
