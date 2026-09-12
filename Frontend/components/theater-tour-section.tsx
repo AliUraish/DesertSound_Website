@@ -1,19 +1,19 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
+import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { Play, X } from "lucide-react"
+import { Volume2, VolumeX } from "lucide-react"
+
+const YOUTUBE_ORIGIN = "https://www.youtube.com"
 
 const videos = [
   {
-    id: "2oBKLgLRRE0",
-    title: "Desert Sound home theater / sound system experience",
+    id: "LUD17UiAaIM",
+    title: "Bespoke Home Theatre Solutions",
   },
   {
-    id: "_a4IIzXZ52o",
-    title: "State of the Art Home Theatres",
+    id: "c6gsFbNvYqk",
+    title: "Our Project Home Theatre Portfolio",
   },
   {
     id: "qWrnXwWF2a4",
@@ -25,202 +25,209 @@ function youtubeThumbnail(id: string) {
   return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
 }
 
-function youtubeEmbedSrc(id: string) {
-  return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`
+function youtubePreviewSrc(id: string, origin: string) {
+  const params = new URLSearchParams({
+    autoplay: "1",
+    mute: "1",
+    loop: "1",
+    playlist: id,
+    controls: "0",
+    modestbranding: "1",
+    rel: "0",
+    playsinline: "1",
+    iv_load_policy: "3",
+    enablejsapi: "1",
+    origin,
+  })
+  return `${YOUTUBE_ORIGIN}/embed/${id}?${params.toString()}`
 }
 
-function getFocusableElements(container: HTMLElement) {
-  return Array.from(
-    container.querySelectorAll<HTMLElement>(
-      'button:not([disabled]), iframe, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )
-  ).filter((element) => element.tabIndex !== -1)
+function sendPlayerCommand(iframe: HTMLIFrameElement | null, func: string, args: unknown[] = []) {
+  iframe?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args }), YOUTUBE_ORIGIN)
 }
 
-interface VideoPlayerDialogProps {
-  videoId: string
+function requestElementFullscreen(element: HTMLElement) {
+  const request =
+    element.requestFullscreen?.bind(element) ||
+    (
+      element as HTMLElement & {
+        webkitRequestFullscreen?: () => Promise<void> | void
+      }
+    ).webkitRequestFullscreen?.bind(element)
+
+  if (!request) return Promise.reject(new Error("Fullscreen is not available"))
+  return Promise.resolve(request())
+}
+
+function TourVideoCard({
+  id,
+  title,
+}: {
+  id: string
   title: string
-  onClose: () => void
-}
-
-function VideoPlayerDialog({ videoId, title, onClose }: VideoPlayerDialogProps) {
-  const dialogRef = useRef<HTMLDivElement>(null)
-  const closeButtonRef = useRef<HTMLButtonElement>(null)
-  const [mounted, setMounted] = useState(false)
+}) {
+  const frameRef = useRef<HTMLDivElement>(null)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [origin, setOrigin] = useState("")
+  const [inView, setInView] = useState(false)
+  const [withSound, setWithSound] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    setOrigin(window.location.origin)
   }, [])
 
   useEffect(() => {
-    if (!mounted) return
+    const node = frameRef.current
+    if (!node) return
 
-    const dialog = dialogRef.current
-    if (!dialog) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true)
+      },
+      { rootMargin: "200px 0px" }
+    )
 
-    const previouslyFocused = document.activeElement as HTMLElement | null
-    const { overflow } = document.body.style
-    document.body.style.overflow = "hidden"
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
 
-    const inertSiblings: HTMLElement[] = []
-    for (const child of Array.from(document.body.children)) {
-      if (child instanceof HTMLElement && child !== dialog) {
-        child.inert = true
-        inertSiblings.push(child)
+  const muteAndKeepPlaying = useCallback(() => {
+    sendPlayerCommand(iframeRef.current, "mute")
+    sendPlayerCommand(iframeRef.current, "playVideo")
+    setWithSound(false)
+  }, [])
+
+  const playWithSound = useCallback(async () => {
+    const frame = frameRef.current
+    sendPlayerCommand(iframeRef.current, "unMute")
+    sendPlayerCommand(iframeRef.current, "setVolume", [100])
+    sendPlayerCommand(iframeRef.current, "playVideo")
+    setWithSound(true)
+
+    if (!frame) return
+
+    try {
+      await requestElementFullscreen(frame)
+    } catch {
+      // iOS and some desktop browsers block programmatic fullscreen.
+      // Sound still starts in-place from the tap.
+    }
+  }, [])
+
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      const active = document.fullscreenElement ?? (document as Document & { webkitFullscreenElement?: Element }).webkitFullscreenElement
+      if (!active || active !== frameRef.current) {
+        muteAndKeepPlaying()
       }
     }
 
-    closeButtonRef.current?.focus()
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault()
-        onClose()
-        return
-      }
-
-      if (event.key !== "Tab") return
-
-      const focusable = getFocusableElements(dialog)
-      if (focusable.length === 0) {
-        event.preventDefault()
-        dialog.focus()
-        return
-      }
-
-      const first = focusable[0]
-      const last = focusable[focusable.length - 1]
-      const active = document.activeElement
-
-      if (event.shiftKey) {
-        if (active === first || !dialog.contains(active)) {
-          event.preventDefault()
-          last.focus()
-        }
-        return
-      }
-
-      if (active === last || !dialog.contains(active)) {
-        event.preventDefault()
-        first.focus()
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown)
-
+    document.addEventListener("fullscreenchange", onFullscreenChange)
+    document.addEventListener("webkitfullscreenchange", onFullscreenChange)
     return () => {
-      document.removeEventListener("keydown", handleKeyDown)
-      document.body.style.overflow = overflow
-      for (const sibling of inertSiblings) {
-        sibling.inert = false
-      }
-      previouslyFocused?.focus()
+      document.removeEventListener("fullscreenchange", onFullscreenChange)
+      document.removeEventListener("webkitfullscreenchange", onFullscreenChange)
     }
-  }, [mounted, onClose])
+  }, [muteAndKeepPlaying])
 
-  if (!mounted) return null
+  const handleIframeLoad = () => {
+    const startMuted = () => {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "listening", id }),
+        YOUTUBE_ORIGIN
+      )
+      sendPlayerCommand(iframeRef.current, "mute")
+      sendPlayerCommand(iframeRef.current, "playVideo")
+    }
 
-  return createPortal(
-    <div
-      ref={dialogRef}
-      role="dialog"
-      aria-modal="true"
-      aria-label={title}
-      tabIndex={-1}
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4"
-      onClick={onClose}
-    >
+    startMuted()
+    window.setTimeout(startMuted, 500)
+    window.setTimeout(startMuted, 1400)
+  }
+
+  return (
+    <article className="group">
       <div
-        className="relative aspect-video w-full max-w-5xl"
-        onClick={(event) => event.stopPropagation()}
+        ref={frameRef}
+        className="relative aspect-video overflow-hidden rounded-2xl bg-black shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]"
       >
-        <button
-          ref={closeButtonRef}
-          type="button"
-          onClick={onClose}
-          className="absolute -top-12 right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-lg transition-colors hover:bg-white/90"
-          aria-label="Close video"
-        >
-          <X size={20} />
-        </button>
-        <iframe
-          src={youtubeEmbedSrc(videoId)}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          tabIndex={0}
-          className="h-full w-full rounded-lg"
+        <Image
+          src={youtubeThumbnail(id)}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
         />
+
+        {inView && origin ? (
+          <iframe
+            ref={iframeRef}
+            src={youtubePreviewSrc(id, origin)}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            allowFullScreen
+            onLoad={handleIframeLoad}
+            className={`absolute inset-0 h-full w-full border-0 ${withSound ? "pointer-events-auto" : "pointer-events-none"}`}
+          />
+        ) : null}
+
+        {!withSound ? (
+          <button
+            type="button"
+            onClick={playWithSound}
+            className="absolute inset-0 z-10 flex flex-col items-end justify-end bg-black/20 p-4 text-left transition-colors duration-500 hover:bg-black/30"
+            aria-label={`Play ${title} with sound`}
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-black shadow-lg">
+              <Volume2 size={13} />
+              Tap for sound
+            </span>
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => {
+              if (document.fullscreenElement) {
+                void document.exitFullscreen()
+                return
+              }
+              muteAndKeepPlaying()
+            }}
+            className="absolute top-3 right-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-lg"
+            aria-label={`Mute ${title}`}
+          >
+            <VolumeX size={16} />
+          </button>
+        )}
       </div>
-    </div>,
-    document.body
+
+      <h3 className="mt-4 text-base font-light text-foreground md:text-lg">{title}</h3>
+    </article>
   )
 }
 
 export function TheaterTourSection() {
-  const [selectedVideo, setSelectedVideo] = useState<(typeof videos)[number] | null>(null)
-
   return (
-    <>
-      <section id="theater-tour" className="bg-background pt-12 pb-16 lg:pt-16 lg:pb-24">
-        <div className="mx-auto max-w-[90%] px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-10 lg:mb-14"
-          >
-            <h2 className="text-3xl font-light text-foreground lg:text-6xl">Theater Tour</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
-            {videos.map((video, index) => (
-              <motion.div
-                key={video.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setSelectedVideo(video)}
-                  className="group block w-full text-left"
-                  aria-label={`Play ${video.title}`}
-                >
-                  <div className="relative aspect-video overflow-hidden rounded-2xl bg-black">
-                    <Image
-                      src={youtubeThumbnail(video.id)}
-                      alt={video.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-colors duration-300 group-hover:bg-white md:h-20 md:w-20">
-                        <Play className="ml-1 h-8 w-8 text-black" fill="currentColor" aria-hidden />
-                      </span>
-                    </div>
-                  </div>
-                  <h3 className="mt-4 text-base font-light text-foreground transition-colors duration-300 group-hover:text-foreground/80 md:text-lg">
-                    {video.title}
-                  </h3>
-                </button>
-              </motion.div>
-            ))}
+    <section id="theater-tour" aria-label="Theater Tour" className="bg-background pb-16 lg:pb-24">
+      <div className="mx-auto max-w-[90%] px-4 lg:px-8">
+        <div className="mb-6 flex flex-col gap-2 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span className="mb-3 inline-block rounded-full bg-foreground px-4 py-2 text-xs font-medium uppercase tracking-wide text-background">
+              Theater Tour
+            </span>
+            <h2 className="text-2xl font-light text-foreground lg:text-4xl">Recent rooms, playing now</h2>
           </div>
+          <p className="max-w-md text-sm text-muted-foreground lg:text-base">
+            The films keep running quietly. Tap one to open it full screen with sound.
+          </p>
         </div>
-      </section>
 
-      {selectedVideo && (
-        <VideoPlayerDialog
-          videoId={selectedVideo.id}
-          title={selectedVideo.title}
-          onClose={() => setSelectedVideo(null)}
-        />
-      )}
-    </>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          {videos.map((video) => (
+            <TourVideoCard key={video.id} id={video.id} title={video.title} />
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
