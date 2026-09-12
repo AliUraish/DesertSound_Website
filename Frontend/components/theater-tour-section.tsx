@@ -127,23 +127,22 @@ function VideoPlayerDialog({ videoId, title, onClose }: VideoPlayerDialogProps) 
       aria-modal="true"
       aria-label={title}
       tabIndex={-1}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4"
       onClick={onClose}
     >
-      <button
-        ref={closeButtonRef}
-        type="button"
-        onClick={onClose}
-        className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20 md:top-8 md:right-8"
-        aria-label="Close video"
-      >
-        <X size={24} />
-      </button>
-
       <div
         className="relative aspect-video w-full max-w-5xl"
         onClick={(event) => event.stopPropagation()}
       >
+        <button
+          ref={closeButtonRef}
+          type="button"
+          onClick={onClose}
+          className="absolute -top-12 right-0 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-lg transition-colors hover:bg-white/90"
+          aria-label="Close video"
+        >
+          <X size={20} />
+        </button>
         <iframe
           src={youtubeEmbedSrc(videoId)}
           title={title}
