@@ -173,16 +173,11 @@ export function TheaterTourSection() {
   return (
     <section id="theater-tour" aria-label="Theater Tour" className="bg-background pb-16 lg:pb-24">
       <div className="mx-auto max-w-[90%] px-4 lg:px-8">
-        <div className="mb-6 flex flex-col gap-2 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <span className="mb-3 inline-block rounded-full bg-foreground px-4 py-2 text-xs font-medium uppercase tracking-wide text-background">
-              Theater Tour
-            </span>
-            <h2 className="text-2xl font-light text-foreground lg:text-4xl">Recent rooms, playing now</h2>
-          </div>
-          <p className="max-w-md text-sm text-muted-foreground lg:text-base">
-            The films keep running quietly. Unmute one room, or open it full screen.
-          </p>
+        <div className="mb-6 lg:mb-8">
+          <span className="mb-3 inline-block rounded-full bg-foreground px-4 py-2 text-xs font-medium uppercase tracking-wide text-background">
+            Theater Tour
+          </span>
+          <h2 className="text-2xl font-light text-foreground lg:text-4xl">Recent rooms, playing now</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
