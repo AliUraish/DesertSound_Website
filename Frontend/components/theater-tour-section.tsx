@@ -7,21 +7,18 @@ const videos = [
   {
     id: "LUD17UiAaIM",
     src: "/theater-tour/LUD17UiAaIM.mp4",
-    preview: "/theater-tour/LUD17UiAaIM-preview.mp4",
     poster: "/theater-tour/LUD17UiAaIM.jpg",
     title: "Bespoke Home Theatre Solutions",
   },
   {
     id: "c6gsFbNvYqk",
     src: "/theater-tour/c6gsFbNvYqk.mp4",
-    preview: "/theater-tour/c6gsFbNvYqk-preview.mp4",
     poster: "/theater-tour/c6gsFbNvYqk.jpg",
     title: "Our Project Home Theatre Portfolio",
   },
   {
     id: "qWrnXwWF2a4",
     src: "/theater-tour/qWrnXwWF2a4.mp4",
-    preview: "/theater-tour/qWrnXwWF2a4-preview.mp4",
     poster: "/theater-tour/qWrnXwWF2a4.jpg",
     title: "Home Theatre with Ambient Lighting",
   },
@@ -59,37 +56,25 @@ function exitElementFullscreen() {
   return Promise.resolve(exit())
 }
 
-function clampTime(time: number, duration: number) {
-  if (!Number.isFinite(time) || time < 0) return 0
-  if (!Number.isFinite(duration) || duration <= 0) return time
-  return Math.min(time, Math.max(0, duration - 0.05))
-}
-
 function TourVideoCard({
   src,
-  preview,
   poster,
   title,
   isUnmuted,
-  onToggleSound,
+  onMute,
+  onUnmute,
 }: {
   src: string
-  preview: string
   poster: string
   title: string
   isUnmuted: boolean
-  onToggleSound: () => void
+  onMute: () => void
+  onUnmute: () => void
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
-  const previewRef = useRef<HTMLVideoElement>(null)
-  const fullRef = useRef<HTMLVideoElement>(null)
-  const resumeTimeRef = useRef(0)
-  const useFullFilmRef = useRef(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [inView, setInView] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [useFullFilm, setUseFullFilm] = useState(false)
-  const [fullReady, setFullReady] = useState(false)
-  useFullFilmRef.current = useFullFilm
 
   useEffect(() => {
     const node = frameRef.current
@@ -106,81 +91,13 @@ function TourVideoCard({
     return () => observer.disconnect()
   }, [])
 
-  const requestFullFilm = useCallback(() => {
-    if (useFullFilmRef.current) return
-    const previewVideo = previewRef.current
-    resumeTimeRef.current =
-      previewVideo && Number.isFinite(previewVideo.currentTime) ? previewVideo.currentTime : 0
-    setUseFullFilm(true)
-  }, [])
-
   useEffect(() => {
-    if (isUnmuted || isFullscreen) requestFullFilm()
-  }, [isUnmuted, isFullscreen, requestFullFilm])
-
-  useEffect(() => {
-    const video = previewRef.current
-    if (!video || !inView || fullReady) return
-    video.muted = true
-    void video.play().catch(() => undefined)
-  }, [inView, fullReady])
-
-  useEffect(() => {
-    const video = previewRef.current
-    if (!video || !fullReady) return
-    video.pause()
-    video.removeAttribute("src")
-    video.load()
-  }, [fullReady])
-
-  useEffect(() => {
-    const video = fullRef.current
-    if (!video || !useFullFilm) return
-
-    let cancelled = false
-
-    const takeOver = () => {
-      if (cancelled) return
-      void video.play().catch(() => undefined)
-      setFullReady(true)
-    }
-
-    const restoreThenPlay = () => {
-      if (cancelled) return
-      const nextTime = clampTime(resumeTimeRef.current, video.duration)
-      if (Math.abs(video.currentTime - nextTime) <= 0.1) {
-        takeOver()
-        return
-      }
-
-      const onSeeked = () => {
-        video.removeEventListener("seeked", onSeeked)
-        takeOver()
-      }
-
-      video.addEventListener("seeked", onSeeked)
-      video.currentTime = nextTime
-    }
-
-    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
-      restoreThenPlay()
-    } else {
-      video.addEventListener("loadedmetadata", restoreThenPlay)
-    }
-
-    return () => {
-      cancelled = true
-      video.removeEventListener("loadedmetadata", restoreThenPlay)
-    }
-  }, [useFullFilm])
-
-  useEffect(() => {
-    const video = fullRef.current
-    if (!video || !useFullFilm) return
+    const video = videoRef.current
+    if (!video || !inView) return
     video.muted = !isUnmuted
     if (isUnmuted) video.volume = 1
-    if (fullReady) void video.play().catch(() => undefined)
-  }, [useFullFilm, isUnmuted, fullReady])
+    void video.play().catch(() => undefined)
+  }, [inView, isUnmuted])
 
   const syncFullscreenState = useCallback(() => {
     setIsFullscreen(getFullscreenElement() === frameRef.current)
@@ -195,11 +112,30 @@ function TourVideoCard({
     }
   }, [syncFullscreenState])
 
+  const handleSoundClick = useCallback(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (isUnmuted) {
+      video.muted = true
+      onMute()
+      return
+    }
+
+    video.muted = false
+    video.volume = 1
+    void video
+      .play()
+      .then(() => onUnmute())
+      .catch(() => {
+        video.muted = true
+      })
+  }, [isUnmuted, onMute, onUnmute])
+
   const toggleFullscreen = useCallback(async () => {
     const frame = frameRef.current
+    const video = videoRef.current
     if (!frame) return
-
-    requestFullFilm()
 
     try {
       if (getFullscreenElement() === frame) {
@@ -207,10 +143,11 @@ function TourVideoCard({
         return
       }
       await requestElementFullscreen(frame)
+      if (video?.paused) void video.play().catch(() => undefined)
     } catch {
       // Fullscreen can be blocked by the browser; the film still plays in place.
     }
-  }, [requestFullFilm])
+  }, [])
 
   return (
     <article className="group">
@@ -219,31 +156,20 @@ function TourVideoCard({
         className="relative aspect-video overflow-hidden rounded-2xl bg-black shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]"
       >
         <video
-          ref={previewRef}
-          src={inView && !fullReady ? preview : undefined}
+          ref={videoRef}
+          src={inView ? src : undefined}
           poster={poster}
           muted
           loop
           playsInline
-          preload="none"
-          className={`absolute inset-0 h-full w-full object-cover ${fullReady ? "invisible" : ""}`}
+          preload={inView ? "metadata" : "none"}
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        {useFullFilm ? (
-          <video
-            ref={fullRef}
-            src={src}
-            muted={!isUnmuted}
-            loop
-            playsInline
-            preload="auto"
-            className={`absolute inset-0 h-full w-full object-cover ${fullReady ? "" : "invisible"}`}
-          />
-        ) : null}
 
         <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
           <button
             type="button"
-            onClick={onToggleSound}
+            onClick={handleSoundClick}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-black shadow-lg"
             aria-label={isUnmuted ? `Mute ${title}` : `Unmute ${title}`}
           >
@@ -283,13 +209,13 @@ export function TheaterTourSection() {
             <TourVideoCard
               key={video.id}
               src={video.src}
-              preview={video.preview}
               poster={video.poster}
               title={video.title}
               isUnmuted={unmutedId === video.id}
-              onToggleSound={() =>
-                setUnmutedId((current) => (current === video.id ? null : video.id))
+              onMute={() =>
+                setUnmutedId((current) => (current === video.id ? null : current))
               }
+              onUnmute={() => setUnmutedId(video.id)}
             />
           ))}
         </div>
