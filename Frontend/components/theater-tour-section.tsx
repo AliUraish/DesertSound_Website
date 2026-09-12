@@ -76,10 +76,13 @@ function TourVideoCard({
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const resumeTimeRef = useRef<number | null>(null)
+  const useFullFilmRef = useRef(false)
   const [inView, setInView] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [useFullFilm, setUseFullFilm] = useState(false)
   const activeSrc = useFullFilm ? src : inView ? preview : undefined
+  useFullFilmRef.current = useFullFilm
 
   useEffect(() => {
     const node = frameRef.current
@@ -96,24 +99,53 @@ function TourVideoCard({
     return () => observer.disconnect()
   }, [])
 
+  const requestFullFilm = useCallback(() => {
+    if (useFullFilmRef.current) return
+    const video = videoRef.current
+    if (video && Number.isFinite(video.currentTime)) {
+      resumeTimeRef.current = video.currentTime
+    }
+    setUseFullFilm(true)
+  }, [])
+
   useEffect(() => {
-    if (isUnmuted || isFullscreen) setUseFullFilm(true)
-  }, [isUnmuted, isFullscreen])
+    if (isUnmuted || isFullscreen) requestFullFilm()
+  }, [isUnmuted, isFullscreen, requestFullFilm])
 
   useEffect(() => {
     const video = videoRef.current
     if (!video || !activeSrc) return
 
-    const play = () => {
+    const syncPlayback = () => {
       video.muted = !isUnmuted
       if (isUnmuted) video.volume = 1
       void video.play().catch(() => undefined)
     }
 
-    play()
-    video.addEventListener("loadeddata", play)
-    return () => video.removeEventListener("loadeddata", play)
-  }, [activeSrc, isUnmuted])
+    const restoreAndPlay = () => {
+      const resumeAt = resumeTimeRef.current
+      const isFullSrc = video.getAttribute("src") === src
+
+      if (resumeAt != null && isFullSrc) {
+        resumeTimeRef.current = null
+        const duration = Number.isFinite(video.duration) ? video.duration : resumeAt
+        const nextTime = Math.min(Math.max(resumeAt, 0), Math.max(0, duration - 0.05))
+        if (Math.abs(video.currentTime - nextTime) > 0.1) {
+          video.currentTime = nextTime
+        }
+      }
+
+      syncPlayback()
+    }
+
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+      restoreAndPlay()
+      return
+    }
+
+    video.addEventListener("loadedmetadata", restoreAndPlay)
+    return () => video.removeEventListener("loadedmetadata", restoreAndPlay)
+  }, [activeSrc, isUnmuted, src])
 
   const syncFullscreenState = useCallback(() => {
     setIsFullscreen(getFullscreenElement() === frameRef.current)
@@ -132,7 +164,7 @@ function TourVideoCard({
     const frame = frameRef.current
     if (!frame) return
 
-    setUseFullFilm(true)
+    requestFullFilm()
 
     try {
       if (getFullscreenElement() === frame) {
@@ -143,7 +175,7 @@ function TourVideoCard({
     } catch {
       // Fullscreen can be blocked by the browser; the film still plays in place.
     }
-  }, [])
+  }, [requestFullFilm])
 
   return (
     <article className="group">
