@@ -319,7 +319,7 @@ export default function HomeTheatreSystemsPage() {
                   >
                     Home theater installation
                   </Link>{" "}
-                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is home theatre or theater installation in Karachi, or a compact apartment.
+                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment for home theatre or theater installation in Karachi.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
