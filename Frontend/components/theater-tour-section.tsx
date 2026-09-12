@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useRef, useState } from "react"
-import { Volume2, VolumeX } from "lucide-react"
+import { Maximize2, Minimize2, Volume2, VolumeX } from "lucide-react"
 
 const videos = [
   {
@@ -24,6 +24,14 @@ const videos = [
   },
 ] as const
 
+function getFullscreenElement() {
+  return (
+    document.fullscreenElement ??
+    (document as Document & { webkitFullscreenElement?: Element }).webkitFullscreenElement ??
+    null
+  )
+}
+
 function requestElementFullscreen(element: HTMLElement) {
   const request =
     element.requestFullscreen?.bind(element) ||
@@ -37,19 +45,34 @@ function requestElementFullscreen(element: HTMLElement) {
   return Promise.resolve(request())
 }
 
+function exitElementFullscreen() {
+  const exit =
+    document.exitFullscreen?.bind(document) ||
+    (document as Document & { webkitExitFullscreen?: () => Promise<void> | void }).webkitExitFullscreen?.bind(
+      document
+    )
+
+  if (!exit) return Promise.resolve()
+  return Promise.resolve(exit())
+}
+
 function TourVideoCard({
   src,
   poster,
   title,
+  isUnmuted,
+  onToggleSound,
 }: {
   src: string
   poster: string
   title: string
+  isUnmuted: boolean
+  onToggleSound: () => void
 }) {
   const frameRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [inView, setInView] = useState(false)
-  const [withSound, setWithSound] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   useEffect(() => {
     const node = frameRef.current
@@ -69,54 +92,38 @@ function TourVideoCard({
   useEffect(() => {
     const video = videoRef.current
     if (!video || !inView) return
-    video.muted = true
+    video.muted = !isUnmuted
+    if (isUnmuted) video.volume = 1
     void video.play().catch(() => undefined)
-  }, [inView])
+  }, [inView, isUnmuted])
 
-  const muteAndKeepPlaying = useCallback(() => {
-    const video = videoRef.current
-    if (!video) return
-    video.muted = true
-    void video.play().catch(() => undefined)
-    setWithSound(false)
-  }, [])
-
-  const playWithSound = useCallback(async () => {
-    const frame = frameRef.current
-    const video = videoRef.current
-    if (!video) return
-
-    video.muted = false
-    video.volume = 1
-    void video.play().catch(() => undefined)
-    setWithSound(true)
-
-    if (!frame) return
-
-    try {
-      await requestElementFullscreen(frame)
-    } catch {
-      // Sound still starts in-place if fullscreen is blocked.
-    }
+  const syncFullscreenState = useCallback(() => {
+    setIsFullscreen(getFullscreenElement() === frameRef.current)
   }, [])
 
   useEffect(() => {
-    const onFullscreenChange = () => {
-      const active =
-        document.fullscreenElement ??
-        (document as Document & { webkitFullscreenElement?: Element }).webkitFullscreenElement
-      if (!active || active !== frameRef.current) {
-        muteAndKeepPlaying()
-      }
-    }
-
-    document.addEventListener("fullscreenchange", onFullscreenChange)
-    document.addEventListener("webkitfullscreenchange", onFullscreenChange)
+    document.addEventListener("fullscreenchange", syncFullscreenState)
+    document.addEventListener("webkitfullscreenchange", syncFullscreenState)
     return () => {
-      document.removeEventListener("fullscreenchange", onFullscreenChange)
-      document.removeEventListener("webkitfullscreenchange", onFullscreenChange)
+      document.removeEventListener("fullscreenchange", syncFullscreenState)
+      document.removeEventListener("webkitfullscreenchange", syncFullscreenState)
     }
-  }, [muteAndKeepPlaying])
+  }, [syncFullscreenState])
+
+  const toggleFullscreen = useCallback(async () => {
+    const frame = frameRef.current
+    if (!frame) return
+
+    try {
+      if (getFullscreenElement() === frame) {
+        await exitElementFullscreen()
+        return
+      }
+      await requestElementFullscreen(frame)
+    } catch {
+      // Fullscreen can be blocked by the browser; the film still plays in place.
+    }
+  }, [])
 
   return (
     <article className="group">
@@ -128,41 +135,31 @@ function TourVideoCard({
           ref={videoRef}
           src={inView ? src : undefined}
           poster={poster}
-          muted
+          muted={!isUnmuted}
           loop
           playsInline
           preload={inView ? "auto" : "metadata"}
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        {!withSound ? (
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
           <button
             type="button"
-            onClick={playWithSound}
-            className="absolute inset-0 z-10 flex flex-col items-end justify-end bg-black/15 p-4 text-left transition-colors duration-500 hover:bg-black/25"
-            aria-label={`Play ${title} with sound`}
+            onClick={onToggleSound}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-black shadow-lg"
+            aria-label={isUnmuted ? `Mute ${title}` : `Unmute ${title}`}
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-black shadow-lg">
-              <Volume2 size={13} />
-              Tap for sound
-            </span>
+            {isUnmuted ? <Volume2 size={14} /> : <VolumeX size={14} />}
           </button>
-        ) : (
           <button
             type="button"
-            onClick={() => {
-              if (document.fullscreenElement) {
-                void document.exitFullscreen()
-                return
-              }
-              muteAndKeepPlaying()
-            }}
-            className="absolute top-3 right-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-lg"
-            aria-label={`Mute ${title}`}
+            onClick={toggleFullscreen}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/95 text-black shadow-lg"
+            aria-label={isFullscreen ? `Exit full screen ${title}` : `Open ${title} full screen`}
           >
-            <VolumeX size={16} />
+            {isFullscreen ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
           </button>
-        )}
+        </div>
       </div>
 
       <h3 className="mt-4 text-base font-light text-foreground md:text-lg">{title}</h3>
@@ -171,6 +168,8 @@ function TourVideoCard({
 }
 
 export function TheaterTourSection() {
+  const [unmutedId, setUnmutedId] = useState<string | null>(null)
+
   return (
     <section id="theater-tour" aria-label="Theater Tour" className="bg-background pb-16 lg:pb-24">
       <div className="mx-auto max-w-[90%] px-4 lg:px-8">
@@ -182,13 +181,22 @@ export function TheaterTourSection() {
             <h2 className="text-2xl font-light text-foreground lg:text-4xl">Recent rooms, playing now</h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground lg:text-base">
-            The films keep running quietly. Tap one to open it full screen with sound.
+            The films keep running quietly. Unmute one room, or open it full screen.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
           {videos.map((video) => (
-            <TourVideoCard key={video.id} src={video.src} poster={video.poster} title={video.title} />
+            <TourVideoCard
+              key={video.id}
+              src={video.src}
+              poster={video.poster}
+              title={video.title}
+              isUnmuted={unmutedId === video.id}
+              onToggleSound={() =>
+                setUnmutedId((current) => (current === video.id ? null : video.id))
+              }
+            />
           ))}
         </div>
       </div>
