@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -152,9 +152,16 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
 
 export default function HomeTheatreSystemsPage() {
   const containerRef = useRef(null)
+  const [canParallax, setCanParallax] = useState(false)
+
+  useEffect(() => {
+    setCanParallax(true)
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
+    layoutEffect: false,
   })
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "12%"])
@@ -172,12 +179,7 @@ export default function HomeTheatreSystemsPage() {
               {/* Text and Image Side by Side */}
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                 {/* Header Text */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  className="lg:pr-8"
-                >
+                <div className="lg:pr-8">
                   <p className="text-xs text-black/50 uppercase tracking-[0.2em] font-medium mb-6">
                     Home Theatre Systems
                   </p>
@@ -189,7 +191,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan each home cinema and home theater installation in Pakistan around the room, with 4K/8K projection, Dolby Atmos, and smart control. Home theatre and theater installation in Karachi is one local example of that nationwide work.
+                    We plan each home cinema and home theatre installation in Pakistan around the room, including homes in Karachi, with 4K/8K projection, Dolby Atmos, and smart control.
                   </p>
 
                   <div className="flex">
@@ -201,17 +203,12 @@ export default function HomeTheatreSystemsPage() {
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Image */}
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="relative"
-                >
+                <div className="relative">
                   <motion.div
-                    style={{ y, scale }}
+                    style={canParallax ? { y, scale } : undefined}
                     className="relative overflow-hidden rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.2)]"
                   >
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
@@ -239,7 +236,7 @@ export default function HomeTheatreSystemsPage() {
                       </div>
                     </div>
                   </motion.div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
@@ -319,7 +316,7 @@ export default function HomeTheatreSystemsPage() {
                   >
                     Home theater installation
                   </Link>{" "}
-                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment anywhere in Pakistan.
+                  in Karachi starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
