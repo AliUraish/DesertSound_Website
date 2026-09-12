@@ -6,11 +6,6 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.
 export const siteName = "Desert Sound"
 
 export function getMetadataBase() {
-  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL
-  if (host) {
-    return new URL(host.startsWith("http") ? host : `https://${host}`)
-  }
-
   return new URL(siteUrl)
 }
 
@@ -28,7 +23,8 @@ export const defaultSeo = {
 
 export function shareImageUrl(path = defaultSeo.image) {
   if (path.startsWith("http")) return path
-  return new URL(path.startsWith("/") ? path : `/${path}`, getMetadataBase()).toString()
+  const normalized = path.startsWith("/") ? path : `/${path}`
+  return new URL(normalized, siteUrl).toString()
 }
 
 export type SeoPage = {
