@@ -183,13 +183,13 @@ export default function HomeTheatreSystemsPage() {
                   </p>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-5">
-                    Home Theatre Design
+                    Home Cinema Design
                     <br />
                     & Installation
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    Complete cinema solutions with 4K/8K projection, Dolby Atmos sound, and smart control systems.
+                    We plan each home cinema Pakistan install around the room — including Karachi theatre and theater rooms — with 4K/8K projection, Dolby Atmos, and smart control.
                   </p>
 
                   <div className="flex">
@@ -312,7 +312,7 @@ export default function HomeTheatreSystemsPage() {
                   Professional Home Cinema Design
                 </h2>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
-                  Professional home cinema design goes beyond installing a screen and speakers. It considers the room’s size, layout, acoustics, lighting, and the way you want to use the space.
+                  Professional home cinema design in Pakistan goes beyond installing a screen and speakers. It considers the room’s size, layout, acoustics, lighting, and how you use the space — a dedicated Karachi theatre or theater room, or a compact apartment.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
                   By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
