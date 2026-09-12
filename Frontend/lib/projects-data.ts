@@ -110,7 +110,7 @@ export const allProjects: Project[] = [
   {
     id: 8,
     slug: "crossfit",
-    title: "CrossFit Gym",
+    title: "CrossFit Gym AV Installation",
     category: "Commercial Fitness",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Commercial/Crossfit Gym/Cover.JPG",
@@ -122,7 +122,7 @@ export const allProjects: Project[] = [
   {
     id: 9,
     slug: "residency",
-    title: "Residency",
+    title: "Residency Private Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/Red&White/Cover.JPG",
@@ -134,7 +134,7 @@ export const allProjects: Project[] = [
   {
     id: 23,
     slug: "project-6",
-    title: "Project 6",
+    title: "Dark-Material Residential Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_6/img_1.webp",
@@ -146,7 +146,7 @@ export const allProjects: Project[] = [
   {
     id: 24,
     slug: "project-10",
-    title: "Project 10",
+    title: "Soft-Tone Private Media Room",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_10/img_1.jpg",
@@ -158,7 +158,7 @@ export const allProjects: Project[] = [
   {
     id: 26,
     slug: "project-12",
-    title: "Project 12",
+    title: "Warm-Contrast Residential Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_12/img_1.jpg",
@@ -170,7 +170,7 @@ export const allProjects: Project[] = [
   {
     id: 25,
     slug: "project-13",
-    title: "Project 13",
+    title: "Geometric Residential Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_13/img_1.jpg",
@@ -182,7 +182,7 @@ export const allProjects: Project[] = [
   {
     id: 15,
     slug: "project-14",
-    title: "Project 14",
+    title: "Understated Luxury Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_14/img_1.jpg",
@@ -194,7 +194,7 @@ export const allProjects: Project[] = [
   {
     id: 16,
     slug: "project-15",
-    title: "Project 15",
+    title: "Compact Star-Ceiling Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_15/img_1.jpg",
@@ -206,7 +206,7 @@ export const allProjects: Project[] = [
   {
     id: 17,
     slug: "project-16",
-    title: "Project 16",
+    title: "Dark Immersive Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_16/img_1.jpg",
@@ -218,7 +218,7 @@ export const allProjects: Project[] = [
   {
     id: 18,
     slug: "project-17",
-    title: "Project 17",
+    title: "Intimate Private Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_17/img_1.jpg",
@@ -230,7 +230,7 @@ export const allProjects: Project[] = [
   {
     id: 19,
     slug: "project-18",
-    title: "Project 18",
+    title: "Soft-Ambience Cinema Showcase",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_18/img_1.jpg",
@@ -242,7 +242,7 @@ export const allProjects: Project[] = [
   {
     id: 20,
     slug: "project-19",
-    title: "Project 19",
+    title: "Rich-Finish Entertainment Room",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_19/img_1.jpg",
@@ -254,7 +254,7 @@ export const allProjects: Project[] = [
   {
     id: 21,
     slug: "project-20",
-    title: "Project 20",
+    title: "Streamlined Media Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_20/img_1.jpg",
@@ -266,7 +266,7 @@ export const allProjects: Project[] = [
   {
     id: 22,
     slug: "project-21",
-    title: "Project 21",
+    title: "Balanced-Contrast Home Cinema",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/project_21/img_1.jpg",

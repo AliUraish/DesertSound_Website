@@ -45,7 +45,7 @@ export default function ResidencyPage() {
         <section className="pt-[100px] md:pt-24 lg:pt-28">
           <Image
             src={coverImage}
-            alt="Residency main image"
+            alt="Residency Private Cinema main image"
             className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover object-[50%_15%] lg:h-[68vh]"
                 width={1600}
                 height={1067}
@@ -53,9 +53,9 @@ export default function ResidencyPage() {
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
-          <h1 className="mb-6 text-4xl text-black lg:text-6xl">Residency</h1>
+          <h1 className="mb-6 text-4xl text-black lg:text-6xl">Residency Private Cinema</h1>
           <p className="max-w-5xl text-base text-black/70 lg:text-lg">
-            Residency is a residential showcase project shaped around comfort, visual atmosphere, and a balanced
+            Residency Private Cinema is a residential showcase project shaped around comfort, visual atmosphere, and a balanced
             integration of entertainment technology. The space is intended to feel refined and welcoming, while still
             delivering a strong cinematic presence throughout the room.
           </p>
@@ -71,7 +71,7 @@ export default function ResidencyPage() {
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
-                alt={`Residency image ${activeIndex + 1}`}
+                alt={`Residency Private Cinema image ${activeIndex + 1}`}
                 variants={variants}
                 initial="enter"
                 animate="center"
@@ -112,7 +112,7 @@ export default function ResidencyPage() {
 
           <div className="mx-auto max-w-[88%] px-4 pt-8 lg:px-8">
             <p className="text-sm uppercase tracking-[0.16em] text-black/50">
-              Home / Projects / Residential / Residency
+              Home / Projects / Residential / Residency Private Cinema
             </p>
           </div>
         </section>
