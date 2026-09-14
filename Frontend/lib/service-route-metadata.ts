@@ -9,13 +9,10 @@ export function serviceRouteMetadata(slug: string): Metadata {
     return { title: "Not Found", robots: { index: false, follow: false } }
   }
 
-  return {
-    ...createMetadata({
-      path: slug,
-      title: page.title,
-      description: page.description,
-      image: page.image || undefined,
-    }),
-    robots: { index: false, follow: false },
-  }
+  return createMetadata({
+    path: slug,
+    title: page.title,
+    description: page.description,
+    image: page.image || undefined,
+  })
 }

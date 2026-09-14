@@ -22,15 +22,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     return { title: "Not Found", robots: { index: false, follow: false } }
   }
 
-  return {
-    ...createMetadata({
-      path: page.slug,
-      title: page.title,
-      description: page.description,
-      image: page.image || undefined,
-    }),
-    robots: { index: false, follow: false },
-  }
+  return createMetadata({
+    path: page.slug,
+    title: page.title,
+    description: page.description,
+    image: page.image || undefined,
+  })
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
