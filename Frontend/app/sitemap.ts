@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { positions } from "@/lib/careers-data"
 import { projectLibraries } from "@/lib/projects-data"
 import { rankingSeoPages } from "@/lib/ranking-seo-content"
-import { absoluteUrl, servicePages } from "@/lib/seo"
+import { absoluteUrl } from "@/lib/seo"
 
 const staticRoutes = ["/", "/projects", "/projects/residential", "/projects/commercial", "/careers"]
 
@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(
     new Set([
       ...staticRoutes,
-      ...servicePages.map((page) => page.path),
       ...residentialProjectRoutes,
       ...commercialProjectRoutes,
       ...careerRoutes,
@@ -30,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: absoluteUrl(route),
     changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority:
-      route === "/" ? 1 : route.startsWith("/service") || route.startsWith("/services") ? 0.9 : 0.7,
+    priority: route === "/" ? 1 : route.startsWith("/service/") ? 0.9 : 0.7,
   }))
 }
