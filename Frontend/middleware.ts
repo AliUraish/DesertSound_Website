@@ -4,8 +4,16 @@ import type { NextRequest } from "next/server"
 const APEX_HOST = "desertsound.com.pk"
 const WWW_HOST = "www.desertsound.com.pk"
 const CUTOVER_COOKIE = "ds-cutover"
+const GOOGLE_VERIFICATION_FILE = /^\/google[^/]+\.html$/
 
 export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname
+
+  // GSC fetches the URL-prefix host as-is and rejects 3xx / redirect bodies.
+  if (GOOGLE_VERIFICATION_FILE.test(pathname)) {
+    return NextResponse.next()
+  }
+
   const host = request.headers.get("host")?.split(":")[0]?.toLowerCase() || ""
 
   if (host === APEX_HOST) {
@@ -34,6 +42,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|favicon.png|og.jpg|googlec06da3523f100fb5.html).*)",
+    "/((?!_next/static|_next/image|favicon.ico|favicon.png|og.jpg|google[^/]+\\.html$).*)",
   ],
 }
