@@ -9,15 +9,12 @@ const slug = "/privacy-policy"
 const page = getRankingSeoPage(slug)
 
 export const metadata: Metadata = page
-  ? {
-      ...createMetadata({
-        path: slug,
-        title: page.title,
-        description: page.description,
-        image: page.image || undefined,
-      }),
-      robots: { index: false, follow: false },
-    }
+  ? createMetadata({
+      path: slug,
+      title: page.title,
+      description: page.description,
+      image: page.image || undefined,
+    })
   : { title: "Not Found", robots: { index: false, follow: false } }
 
 export default function RankingSeoRoutePage() {

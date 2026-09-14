@@ -6,11 +6,11 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isProduction ? "" : " 'unsafe-eval'"} https://va.vercel-scripts.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://desertsound.com.pk https://www.desertsound.com.pk https://*.google.com https://*.googleapis.com https://*.gstatic.com",
+  "img-src 'self' data: blob: https://desertsound.com.pk https://www.desertsound.com.pk https://*.google.com https://*.googleapis.com https://*.gstatic.com https://img.youtube.com",
   "font-src 'self' data:",
   "media-src 'self' blob:",
   "connect-src 'self' https://*.vercel-insights.com https://va.vercel-scripts.com",
-  "frame-src https://www.google.com",
+  "frame-src https://www.google.com https://www.youtube.com",
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
@@ -25,7 +25,6 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
-  { key: "X-Robots-Tag", value: "noindex, nofollow" },
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
   {
     key: "Permissions-Policy",
@@ -46,6 +45,15 @@ const nextConfig = {
   },
   turbopack: {
     root: process.cwd(),
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        pathname: "/**",
+      },
+    ],
   },
   async headers() {
     return [
