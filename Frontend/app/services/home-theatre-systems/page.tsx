@@ -53,8 +53,8 @@ const features = [
 
 const faqs = [
   {
-    question: "What's included in a complete home theatre system in Pakistan?",
-    answer: "A complete system can include a projector and screen or large display, surround sound speakers, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and reliable home networking for streaming and automation."
+    question: "What's included in home theater installation in Pakistan?",
+    answer: "Home theater installation in Pakistan includes a projector and screen or large display, surround sound, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and networking for streaming — designed and calibrated for the room, not a boxed retail system."
   },
   {
     question: "Can I integrate smart home features with my cinema?",
@@ -190,7 +190,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan each home cinema and home theatre installation in Pakistan around the room, with 4K/8K projection, Dolby Atmos, and smart control. Home theater installation in Karachi is one local example of that nationwide work.
+                    We plan the best home theater installation in Pakistan around the room: home cinema and home theatre installation with 4K/8K projection, Dolby Atmos, and smart control. Karachi is the local market for that nationwide work.
                   </p>
 
                   <div className="flex">
@@ -308,7 +308,7 @@ export default function HomeTheatreSystemsPage() {
                   Professional Home Cinema Design
                 </h2>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
-                  Professional home cinema design in Pakistan goes beyond a screen and speakers.{" "}
+                  Professional home cinema design and installation in Pakistan goes beyond a screen and speakers.{" "}
                   <Link
                     href="/how-to-plan-home-theater-installation-for-any-room"
                     className="underline underline-offset-4 hover:text-black"
@@ -459,7 +459,7 @@ export default function HomeTheatreSystemsPage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-black/70 font-light leading-relaxed">
-                Everything you need to know about our home theatre systems
+                Everything you need to know about home theater installation in Pakistan
               </p>
             </motion.div>
 
@@ -484,7 +484,7 @@ export default function HomeTheatreSystemsPage() {
                 Ready to transform your space?
               </h2>
               <p className="text-lg text-white/70 font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                Get a free consultation from our experts and discover how we can create the perfect home theatre system for you.
+                Book a consultation for home cinema or home theater installation in Pakistan.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
