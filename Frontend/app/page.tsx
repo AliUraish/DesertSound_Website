@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     path: "/",
     title: "Home Cinema Service in Pakistan | Home Theater Installation",
     description:
-      "Best home theater installation in Pakistan: home cinema and home theater installation nationwide, with Karachi theatre and theater as the local market.",
+      "Best home theater installation in Pakistan: home cinema and home theatre installation nationwide, with Karachi as the local market.",
     image: defaultSeo.image,
   }),
   title: {

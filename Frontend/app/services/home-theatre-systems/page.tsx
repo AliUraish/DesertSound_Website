@@ -54,7 +54,7 @@ const features = [
 const faqs = [
   {
     question: "What's included in home theater installation in Pakistan?",
-    answer: "The best home theater installation in Pakistan is room-first: display, surround, seating, acoustics, lighting, and control, installed and calibrated — not a boxed retail home theater system."
+    answer: "Home theater installation in Pakistan includes a projector and screen or large display, surround sound, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and networking for streaming — designed and calibrated for the room, not a boxed retail system."
   },
   {
     question: "Can I integrate smart home features with my cinema?",
@@ -190,7 +190,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan the best home theater installation in Pakistan around the room: home cinema and home theatre installation with 4K/8K projection, Dolby Atmos, and smart control. Karachi theatre and theater installation is the local market for that nationwide work.
+                    We plan the best home theater installation in Pakistan around the room: home cinema and home theatre installation with 4K/8K projection, Dolby Atmos, and smart control. Karachi is the local market for that nationwide work.
                   </p>
 
                   <div className="flex">
@@ -459,7 +459,7 @@ export default function HomeTheatreSystemsPage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-black/70 font-light leading-relaxed">
-                Home cinema and home theater installation in Pakistan
+                Everything you need to know about home theater installation in Pakistan
               </p>
             </motion.div>
 
