@@ -30,7 +30,7 @@ const brands = [
   { name: "Supra Cables", logo: "/brands_final/Supra_cables.png", sizeClass: "h-24 lg:h-32", href: "https://www.supracables.com/" },
   { name: "Workiw", logo: "/brands_final/Workiw.png", sizeClass: "h-24 lg:h-32", href: "https://www.workiw.com/" },
   { name: "Zidoo", logo: "/brands_final/zidoo.png", href: "https://www.zidoo.com/" },
-  { name: "Zaricr", logo: "/brands_final/zaricr.png", href: "https://zaricr.com/" },
+  { name: "Zaricr", logo: "/brands_final/Zaricr.png", href: "https://zaricr.com/" },
   { name: "Arylic", logo: "/brands_final/Arylic.png", href: "https://www.arylic.com/?srsltid=AfmBOopZVgqwJo-W21JKzjG7mcfAwHMfgE1vBQzvxdFvkLhYXfVkww15" },
 ]
 
