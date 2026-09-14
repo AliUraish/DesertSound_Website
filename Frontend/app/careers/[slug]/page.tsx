@@ -20,6 +20,8 @@ type CareerApplyPageProps = {
   }>
 }
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return positions.map((position) => ({
     slug: position.slug,
@@ -31,10 +33,7 @@ export async function generateMetadata(props: CareerApplyPageProps): Promise<Met
   const position = positions.find((item) => item.slug === slug)
 
   if (!position) {
-    return {
-      title: "Role Not Found",
-      robots: { index: false, follow: false },
-    }
+    notFound()
   }
 
   return createMetadata({

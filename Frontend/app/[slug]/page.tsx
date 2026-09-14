@@ -8,6 +8,10 @@ type ArticlePageProps = {
   params: Promise<{ slug: string }>
 }
 
+// Unknown slugs must 404 at the router. Returning noindex metadata here
+// prerenders a 200 soft-404 that Google treats as a leftover page.
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return getBlogPosts().map((post) => ({
     slug: post.slug.replace(/^\//, ""),
@@ -19,7 +23,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const page = getRankingSeoPage(`/${slug}`)
 
   if (!page || !isBlogArticle(page.slug)) {
-    return { title: "Not Found", robots: { index: false, follow: false } }
+    notFound()
   }
 
   return createMetadata({

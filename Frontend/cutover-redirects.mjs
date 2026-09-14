@@ -3,6 +3,8 @@ export const cutoverRedirects = [
   { source: '/favicon.ico', destination: '/favicon.png', permanent: true },
   { source: '/blog', destination: '/blogs', permanent: true },
   { source: '/news', destination: '/blogs', permanent: true },
+  { source: '/contact', destination: '/contact-us', permanent: true },
+  { source: '/about', destination: '/about-us', permanent: true },
   { source: '/portfolio', destination: '/projects', permanent: true },
   { source: '/portfolio/smart-home-automation', destination: '/service/smart-home-automation', permanent: true },
   { source: '/services', destination: '/', permanent: true },
