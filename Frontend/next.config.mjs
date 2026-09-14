@@ -6,7 +6,7 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isProduction ? "" : " 'unsafe-eval'"} https://va.vercel-scripts.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com",
+  "img-src 'self' data: blob: https://desertsound.com.pk https://www.desertsound.com.pk https://*.google.com https://*.googleapis.com https://*.gstatic.com",
   "font-src 'self' data:",
   "media-src 'self' blob:",
   "connect-src 'self' https://*.vercel-insights.com https://va.vercel-scripts.com",

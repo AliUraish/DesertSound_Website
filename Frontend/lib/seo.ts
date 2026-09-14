@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { getProject, type ProjectLibrary } from "@/lib/projects-data"
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://desertsound.com.pk"
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.desertsound.com.pk"
 
 export const siteName = "Desert Sound"
 
