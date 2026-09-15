@@ -43,6 +43,7 @@ export function Header() {
                 className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
                 width={820}
                 height={304}
+                priority
               />
               {/* Divider separating the company brand from its accreditation */}
               <span
