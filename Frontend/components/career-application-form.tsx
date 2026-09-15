@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { normalizeGitHubProfileUrl, normalizeHttpUrl } from "@/lib/form-urls"
 import { submitForm } from "@/lib/submit-form"
 
 type CareerApplicationFormProps = {
@@ -21,6 +22,9 @@ export function CareerApplicationForm({ description, jobSlug }: CareerApplicatio
     const form = event.currentTarget
     const formData = new FormData(form)
     formData.set("jobSlug", jobSlug)
+    formData.set("linkedin", normalizeHttpUrl(String(formData.get("linkedin") ?? "")) ?? "")
+    formData.set("github", normalizeGitHubProfileUrl(String(formData.get("github") ?? "")) ?? "")
+    formData.set("previousWork", normalizeHttpUrl(String(formData.get("previousWork") ?? "")) ?? "")
 
     try {
       const response = await submitForm("/api/job-applications", {
@@ -102,34 +106,43 @@ export function CareerApplicationForm({ description, jobSlug }: CareerApplicatio
         <label className="grid gap-2 text-sm font-medium text-black/70">
           LinkedIn profile
           <input
-            type="url"
+            type="text"
             name="linkedin"
             required
             maxLength={500}
+            inputMode="url"
+            autoComplete="url"
             className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
-            placeholder="https://linkedin.com/in/..."
+            placeholder="linkedin.com/in/your-name"
           />
         </label>
 
         <label className="grid gap-2 text-sm font-medium text-black/70">
           GitHub profile
           <input
-            type="url"
+            type="text"
             name="github"
             required
             maxLength={500}
+            inputMode="url"
+            autoComplete="url"
             className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
-            placeholder="https://github.com/your-username"
+            placeholder="github.com/your-username"
           />
+          <span className="text-xs font-normal text-black/45">
+            Username, github.com/your-username, or a repo URL.
+          </span>
         </label>
 
         <label className="grid gap-2 text-sm font-medium text-black/70">
           Previous work
           <input
-            type="url"
+            type="text"
             name="previousWork"
             required
             maxLength={500}
+            inputMode="url"
+            autoComplete="url"
             className="h-12 w-full min-w-0 border border-black/15 bg-[#F5F5DC] px-4 text-base text-black outline-none transition-colors placeholder:text-black/35 focus:border-black/45"
             placeholder="Portfolio, live product, or case study URL"
           />
