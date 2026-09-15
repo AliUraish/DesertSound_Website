@@ -21,21 +21,51 @@ function getResend() {
   return resend
 }
 
+export type NotificationAttachment = {
+  filename: string
+  content: Buffer
+  contentType?: string
+}
+
 type Notification = {
   subject: string
   html: string
   replyTo?: string
+  attachments?: NotificationAttachment[]
 }
 
-export async function sendNotification({ subject, html, replyTo }: Notification) {
-  const resend = getResend()
-  const { error } = await resend.emails.send({
-    from: notificationSender,
+function emailPayload({
+  from,
+  subject,
+  html,
+  replyTo,
+  attachments,
+}: Notification & { from: string }) {
+  return {
+    from,
     to: notificationRecipient,
     subject,
     html,
     replyTo,
-  })
+    attachments: attachments?.map((attachment) => ({
+      filename: attachment.filename.replace(/[/\\]/g, "").trim() || "resume.pdf",
+      content: attachment.content,
+      contentType: attachment.contentType,
+    })),
+  }
+}
+
+export async function sendNotification({ subject, html, replyTo, attachments }: Notification) {
+  const resend = getResend()
+  const { error } = await resend.emails.send(
+    emailPayload({
+      from: notificationSender,
+      subject,
+      html,
+      replyTo,
+      attachments,
+    }),
+  )
 
   if (!error) {
     return
@@ -45,13 +75,15 @@ export async function sendNotification({ subject, html, replyTo }: Notification)
   const alreadyUsingResendDev = notificationSender.toLowerCase().includes("@resend.dev")
 
   if (unverifiedDomain && !alreadyUsingResendDev) {
-    const fallback = await resend.emails.send({
-      from: "Desert Sound Website <onboarding@resend.dev>",
-      to: notificationRecipient,
-      subject,
-      html,
-      replyTo,
-    })
+    const fallback = await resend.emails.send(
+      emailPayload({
+        from: "Desert Sound Website <onboarding@resend.dev>",
+        subject,
+        html,
+        replyTo,
+        attachments,
+      }),
+    )
 
     if (!fallback.error) {
       return
