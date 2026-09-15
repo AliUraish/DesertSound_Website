@@ -1,8 +1,9 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
+import { ArrowLeftRight } from "lucide-react"
 import Image from "next/image"
-import { useRef } from "react"
+import { useEffect, useRef, useState, type PointerEvent } from "react"
 
 const testimonials = [
   {
@@ -147,58 +148,175 @@ function StarRating() {
   )
 }
 
-function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
+function TestimonialCard({
+  testimonial,
+  inert = false,
+}: {
+  testimonial: (typeof testimonials)[0]
+  inert?: boolean
+}) {
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[350px] lg:w-[400px] mx-2 sm:mx-3 lg:mx-4"
+    <motion.div
+      whileHover={inert ? undefined : { y: -5 }}
+      className="mx-2 w-[280px] flex-shrink-0 sm:mx-3 sm:w-[320px] md:w-[350px] lg:mx-4 lg:w-[400px]"
+      aria-hidden={inert}
     >
-      <div className="bg-[#F5F5DC] rounded-xl p-6 lg:p-8 h-full shadow-lg cursor-grab active:cursor-grabbing">
+      <div className="h-full rounded-xl bg-[#F5F5DC] p-6 shadow-lg lg:p-8">
         <StarRating />
-        <p className="text-black/80 text-sm lg:text-base leading-relaxed mb-6">
+        <p className="mb-6 text-sm leading-relaxed text-black/80 lg:text-base">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-black/10 overflow-hidden">
+          <div className="h-10 w-10 overflow-hidden rounded-full bg-black/10">
             <Image
               src={testimonial.avatar}
-              alt={testimonial.name}
-              className="w-full h-full object-cover"
-                width={1600}
-                height={1067}
-              />
+              alt={inert ? "" : testimonial.name}
+              className="h-full w-full object-cover"
+              draggable={false}
+              width={1600}
+              height={1067}
+            />
           </div>
-          <span className="text-black font-medium text-sm">{testimonial.name}</span>
+          <span className="text-sm font-medium text-black">{testimonial.name}</span>
         </div>
       </div>
     </motion.div>
   )
 }
 
-function ParallaxMarquee({ testimonials, baseVelocity = 100 }: { testimonials: typeof row1; baseVelocity: number }) {
-  // Duplicate once so the animation can loop through the full row cleanly.
-  const items = [...testimonials, ...testimonials]
-  
+function useDraggableMarquee(direction: "left" | "right") {
+  const trackRef = useRef<HTMLDivElement | null>(null)
+  const animationFrameRef = useRef<number | null>(null)
+  const dragStartOffsetRef = useRef(0)
+  const dragStartXRef = useRef(0)
+  const isDraggingRef = useRef(false)
+  const lastTimeRef = useRef<number | null>(null)
+  const offsetRef = useRef(0)
+  const [isDragging, setIsDragging] = useState(false)
+
+  const normalizeOffset = () => {
+    const track = trackRef.current
+    if (!track) return
+
+    const loopWidth = track.scrollWidth / 2
+    if (!loopWidth) return
+
+    while (offsetRef.current <= -loopWidth) {
+      offsetRef.current += loopWidth
+    }
+
+    while (offsetRef.current > 0) {
+      offsetRef.current -= loopWidth
+    }
+  }
+
+  const applyOffset = () => {
+    const track = trackRef.current
+    if (!track) return
+
+    track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`
+  }
+
+  useEffect(() => {
+    const animate = (time: number) => {
+      const track = trackRef.current
+      const loopWidth = track ? track.scrollWidth / 2 : 0
+
+      if (lastTimeRef.current === null) {
+        lastTimeRef.current = time
+      }
+
+      const delta = time - lastTimeRef.current
+      lastTimeRef.current = time
+
+      if (!isDraggingRef.current && loopWidth) {
+        const distance = (loopWidth / 80000) * delta
+        offsetRef.current += direction === "left" ? -distance : distance
+        normalizeOffset()
+        applyOffset()
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate)
+    }
+
+    animationFrameRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
+  }, [direction])
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return
+
+    isDraggingRef.current = true
+    dragStartXRef.current = event.clientX
+    dragStartOffsetRef.current = offsetRef.current
+    setIsDragging(true)
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return
+
+    offsetRef.current = dragStartOffsetRef.current + (event.clientX - dragStartXRef.current)
+    normalizeOffset()
+    applyOffset()
+  }
+
+  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    isDraggingRef.current = false
+    setIsDragging(false)
+
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }
+
+  return {
+    trackRef,
+    isDragging,
+    handlePointerDown,
+    handlePointerMove,
+    handlePointerUp,
+  }
+}
+
+function ParallaxMarquee({
+  testimonials,
+  direction,
+}: {
+  testimonials: typeof row1
+  direction: "left" | "right"
+}) {
+  const { trackRef, isDragging, handlePointerDown, handlePointerMove, handlePointerUp } =
+    useDraggableMarquee(direction)
+
   return (
     <div className="flex -mx-4 -my-3 overflow-x-hidden overflow-y-visible py-3 lg:-mx-8">
-       <motion.div 
-        className="flex"
-        animate={{
-          x: baseVelocity < 0 ? ["-50%", "0%"] : ["0%", "-50%"],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 80,
-            ease: "linear",
-          },
-        }}
-       >
-        {items.map((testimonial, index) => (
-          <TestimonialCard key={index} testimonial={testimonial} />
-        ))}
-       </motion.div>
+      <div
+        ref={trackRef}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
+        className={`flex w-max touch-pan-y select-none will-change-transform transform-gpu [backface-visibility:hidden] ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
+      >
+        <div className="flex shrink-0">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={`first-${index}`} testimonial={testimonial} />
+          ))}
+        </div>
+        <div className="flex shrink-0" aria-hidden="true">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={`second-${index}`} testimonial={testimonial} inert />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
@@ -240,11 +358,18 @@ export function Testimonials() {
         {/* Right fade gradient */}
         <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-        {/* Row 1 - scrolls left */}
-        <ParallaxMarquee testimonials={row1} baseVelocity={-1} />
+        {/* Row 1 - auto-scrolls right, matching the previous marquee direction */}
+        <ParallaxMarquee testimonials={row1} direction="right" />
 
-        {/* Row 2 - scrolls right */}
-        <ParallaxMarquee testimonials={row2} baseVelocity={1} />
+        {/* Row 2 - auto-scrolls left */}
+        <ParallaxMarquee testimonials={row2} direction="left" />
+      </div>
+
+      <div className="mt-8 flex justify-center px-6 lg:mt-10">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white/55">
+          <ArrowLeftRight className="h-4 w-4" />
+          <span>Drag to move</span>
+        </div>
       </div>
     </section>
   )
