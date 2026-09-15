@@ -136,6 +136,13 @@ export async function POST(request: Request) {
       await sendNotification({
         subject: `New job application: ${position.title} — ${name}`,
         replyTo: email,
+        attachments: [
+          {
+            filename: resume.name,
+            content: Buffer.from(resumeBytes),
+            contentType: resume.type,
+          },
+        ],
         html: emailLayout("New Job Application", [
           ["Position", position.title],
           ["Location", position.location],
@@ -147,7 +154,7 @@ export async function POST(request: Request) {
           ["Experience", experience],
           ["Project ownership", projectImpact],
           ["Why Desert Sound", motivation],
-          ["Resume", `${resume.name} (${Math.ceil(resume.size / 1024)} KB) — saved in Neon`],
+          ["Resume", `${resume.name} (${Math.ceil(resume.size / 1024)} KB) — attached`],
           ["Application ID", id],
         ]),
       })
