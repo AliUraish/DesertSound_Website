@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { formJson, formOptions } from "@/lib/form-cors"
 import { positions } from "@/lib/careers-data"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
 import { emailLayout, sendNotification } from "@/lib/notifications"
@@ -31,6 +31,10 @@ function isValidGitHubUrl(value: string) {
   return ["github.com", "www.github.com"].includes(hostname) && url.pathname.split("/").filter(Boolean).length > 0
 }
 
+export function OPTIONS(request: Request) {
+  return formOptions(request)
+}
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData()
@@ -46,55 +50,59 @@ export async function POST(request: Request) {
     const resume = formData.get("resume")
 
     if (formData.get("website")) {
-      return NextResponse.json({ ok: true })
+      return formJson(request, { ok: true })
     }
 
     const position = positions.find((item) => item.slug === jobSlug)
     if (!position) {
-      return NextResponse.json({ error: "This job position could not be found." }, { status: 400 })
+      return formJson(request, { error: "This job position could not be found." }, 400)
     }
     if (!name || name.length > 150) {
-      return NextResponse.json({ error: "Please enter your full name." }, { status: 400 })
+      return formJson(request, { error: "Please enter your full name." }, 400)
     }
     if (!emailPattern.test(email) || email.length > 254) {
-      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid email address." }, 400)
     }
 
     if (!isValidHttpUrl(linkedin)) {
-      return NextResponse.json({ error: "Please enter a valid LinkedIn URL." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid LinkedIn URL." }, 400)
     }
     if (!isValidGitHubUrl(github)) {
-      return NextResponse.json({ error: "Please enter a valid GitHub profile URL." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid GitHub profile URL." }, 400)
     }
     if (!isValidHttpUrl(previousWork)) {
-      return NextResponse.json(
+      return formJson(
+        request,
         { error: "Please enter a valid link to your previous work." },
-        { status: 400 },
+        400,
       )
     }
     if (!experienceOptions.has(experience)) {
-      return NextResponse.json({ error: "Please select your experience level." }, { status: 400 })
+      return formJson(request, { error: "Please select your experience level." }, 400)
     }
     if (projectImpact.length < 80 || projectImpact.length > 2000) {
-      return NextResponse.json(
+      return formJson(
+        request,
         { error: "Please describe your project in 80 to 2,000 characters." },
-        { status: 400 },
+        400,
       )
     }
     if (motivation.length < 50 || motivation.length > 1500) {
-      return NextResponse.json(
+      return formJson(
+        request,
         { error: "Please describe your interest in 50 to 1,500 characters." },
-        { status: 400 },
+        400,
       )
     }
 
     if (!(resume instanceof File) || resume.size === 0) {
-      return NextResponse.json({ error: "Please attach your resume." }, { status: 400 })
+      return formJson(request, { error: "Please attach your resume." }, 400)
     }
     if (!allowedResumeTypes.has(resume.type) || resume.size > maximumResumeSize) {
-      return NextResponse.json(
+      return formJson(
+        request,
         { error: "Resume must be a PDF, DOC, or DOCX file no larger than 5 MB." },
-        { status: 400 },
+        400,
       )
     }
 
@@ -170,9 +178,9 @@ export async function POST(request: Request) {
       console.error("Job application notification failed", { id, error: notificationError })
     }
 
-    return NextResponse.json({ ok: true }, { status: 201 })
+    return formJson(request, { ok: true }, 201)
   } catch (error) {
     console.error("Job application failed", error)
-    return NextResponse.json({ error: "Your application could not be submitted. Please try again." }, { status: 500 })
+    return formJson(request, { error: "Your application could not be submitted. Please try again." }, 500)
   }
 }
