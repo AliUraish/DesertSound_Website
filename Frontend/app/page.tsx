@@ -7,9 +7,15 @@ import { ComparisonTransformation } from "@/components/comparison-transformation
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
 import { TheaterTourSection } from "@/components/theater-tour-section"
 import { Testimonials } from "@/components/testimonials"
+import { HomepageInstallFaq } from "@/components/homepage-install-faq"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
-import { createMetadata, defaultSeo, siteName } from "@/lib/seo"
+import {
+  createMetadata,
+  defaultSeo,
+  faqPageJsonLd,
+  homepageInstallFaqs,
+} from "@/lib/seo"
 
 export const metadata: Metadata = {
   ...createMetadata({
@@ -27,6 +33,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="w-full overflow-x-clip">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqPageJsonLd(homepageInstallFaqs)).replace(/</g, "\\u003c"),
+        }}
+      />
       <main className="min-h-screen bg-background">
         <Header />
         <HeroSection />
@@ -37,6 +49,7 @@ export default function HomePage() {
         <TheaterTourSection />
         <Testimonials />
         <CertificationsSection />
+        <HomepageInstallFaq />
         <ContactSection />
         <Footer />
       </main>

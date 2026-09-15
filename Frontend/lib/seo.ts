@@ -309,3 +309,52 @@ export function serviceJsonLd(service: SeoPage) {
     },
   }
 }
+
+export type FaqItem = {
+  question: string
+  answer: string
+}
+
+/** Homepage-only install-intent Q/As. Do not use for retail “best system” copy. */
+export const homepageInstallFaqs: FaqItem[] = [
+  {
+    question: "Do you offer home theater installation in Pakistan?",
+    answer:
+      "Yes. Desert Sound installs home theater systems across Pakistan. Karachi is our local market; we survey the room, hide the wiring, and calibrate picture and sound.",
+  },
+  {
+    question: "Do you install home cinemas in Karachi?",
+    answer:
+      "Yes. Home cinema installation in Karachi is our core work: projector or screen, surround speakers, acoustics, and one-button control for the room.",
+  },
+  {
+    question: "Is this a retail “best home theater system” package?",
+    answer:
+      "No. We do not sell boxed retail systems. Home theater installation here is a designed, installed, and calibrated room—not a shelf SKU.",
+  },
+  {
+    question: "Can you install a home cinema outside Karachi?",
+    answer:
+      "Yes. We take home cinema installation projects nationwide after a site visit and a written scope.",
+  },
+  {
+    question: "What does professional home theater installation include?",
+    answer:
+      "Room layout, speaker and screen placement, hidden cabling, picture and sound calibration, and control. Equipment is specified for the space, not a generic bundle.",
+  },
+]
+
+export function faqPageJsonLd(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+}
