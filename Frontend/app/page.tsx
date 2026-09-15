@@ -48,7 +48,7 @@ export default function HomePage() {
         <TheaterTourSection />
         <Testimonials />
         <CertificationsSection />
-        <ContactSection />
+        <ContactSection showFaq />
         <Footer />
       </main>
     </div>
