@@ -1,8 +1,12 @@
-import { NextResponse } from "next/server"
+import { formJson, formOptions } from "@/lib/form-cors"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
 import { emailLayout, sendNotification } from "@/lib/notifications"
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+export function OPTIONS(request: Request) {
+  return formOptions(request)
+}
 
 export async function POST(request: Request) {
   try {
@@ -10,11 +14,11 @@ export async function POST(request: Request) {
     const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : ""
 
     if (body.website) {
-      return NextResponse.json({ ok: true })
+      return formJson(request, { ok: true })
     }
 
     if (!emailPattern.test(email) || email.length > 254) {
-      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid email address." }, 400)
     }
 
     await ensureSubmissionSchema()
@@ -27,7 +31,7 @@ export async function POST(request: Request) {
     `
 
     if (rows.length === 0) {
-      return NextResponse.json({ ok: true, alreadySubscribed: true })
+      return formJson(request, { ok: true, alreadySubscribed: true })
     }
 
     const id = String(rows[0].id)
@@ -51,9 +55,9 @@ export async function POST(request: Request) {
       console.error("Newsletter notification failed", { id, error: message })
     }
 
-    return NextResponse.json({ ok: true }, { status: 201 })
+    return formJson(request, { ok: true }, 201)
   } catch (error) {
     console.error("Newsletter submission failed", error)
-    return NextResponse.json({ error: "Subscription could not be saved. Please try again." }, { status: 500 })
+    return formJson(request, { error: "Subscription could not be saved. Please try again." }, 500)
   }
 }
