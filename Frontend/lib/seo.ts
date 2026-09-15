@@ -323,9 +323,9 @@ export const homepageInstallFaqs: FaqItem[] = [
       "Yes. Desert Sound offers home theater installation across Pakistan. Karachi is our local market; we survey the room, hide the wiring, and calibrate picture and sound.",
   },
   {
-    question: "Do you install home cinemas in Karachi?",
+    question: "Do you install home cinemas in Karachi and outside?",
     answer:
-      "Yes. Home cinema installation in Karachi is our core work: projector or screen, surround speakers, acoustics, and one-button control for the room.",
+      "Yes. Home cinema installation in Karachi is our core work, and we take projects nationwide after a site visit and a written scope. Local rooms get the full survey, hidden wiring, and calibration; out-of-city installs follow the same process after we visit the space.",
   },
   {
     question: "Is this a retail “best home theater system” package?",
@@ -333,9 +333,9 @@ export const homepageInstallFaqs: FaqItem[] = [
       "No. We do not sell boxed retail systems. Home theater installation here is a designed, installed, and calibrated room—not a shelf SKU.",
   },
   {
-    question: "Can you install a home cinema outside Karachi?",
+    question: "Can you install a home cinema in an existing room?",
     answer:
-      "Yes. We take home cinema installation projects nationwide after a site visit and a written scope.",
+      "Yes. We design the install around the room you already have: layout, speaker and screen placement, hidden cabling, and calibration. A new extension is not required.",
   },
   {
     question: "What does professional home theater installation include?",
