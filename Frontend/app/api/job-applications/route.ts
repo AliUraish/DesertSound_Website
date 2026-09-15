@@ -1,4 +1,5 @@
 import { formJson, formOptions } from "@/lib/form-cors"
+import { normalizeGitHubProfileUrl, normalizeHttpUrl } from "@/lib/form-urls"
 import { positions } from "@/lib/careers-data"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
 import { emailLayout, sendNotification } from "@/lib/notifications"
@@ -14,23 +15,6 @@ const allowedResumeTypes = new Set([
 const maximumResumeSize = 5 * 1024 * 1024
 const experienceOptions = new Set(["3-4 years", "5-7 years", "8-10 years", "10+ years"])
 
-function isValidHttpUrl(value: string, maximumLength = 500) {
-  try {
-    const url = new URL(value)
-    return ["http:", "https:"].includes(url.protocol) && value.length <= maximumLength
-  } catch {
-    return false
-  }
-}
-
-function isValidGitHubUrl(value: string) {
-  if (!isValidHttpUrl(value)) return false
-
-  const url = new URL(value)
-  const hostname = url.hostname.toLowerCase()
-  return ["github.com", "www.github.com"].includes(hostname) && url.pathname.split("/").filter(Boolean).length > 0
-}
-
 export function OPTIONS(request: Request) {
   return formOptions(request)
 }
@@ -40,9 +24,9 @@ export async function POST(request: Request) {
     const formData = await request.formData()
     const name = String(formData.get("name") ?? "").trim()
     const email = String(formData.get("email") ?? "").trim().toLowerCase()
-    const linkedin = String(formData.get("linkedin") ?? "").trim()
-    const github = String(formData.get("github") ?? "").trim()
-    const previousWork = String(formData.get("previousWork") ?? "").trim()
+    const linkedin = normalizeHttpUrl(String(formData.get("linkedin") ?? ""))
+    const github = normalizeGitHubProfileUrl(String(formData.get("github") ?? ""))
+    const previousWork = normalizeHttpUrl(String(formData.get("previousWork") ?? ""))
     const experience = String(formData.get("experience") ?? "").trim()
     const projectImpact = String(formData.get("projectImpact") ?? "").trim()
     const motivation = String(formData.get("motivation") ?? "").trim()
@@ -64,13 +48,13 @@ export async function POST(request: Request) {
       return formJson(request, { error: "Please enter a valid email address." }, 400)
     }
 
-    if (!isValidHttpUrl(linkedin)) {
+    if (!linkedin) {
       return formJson(request, { error: "Please enter a valid LinkedIn URL." }, 400)
     }
-    if (!isValidGitHubUrl(github)) {
+    if (!github) {
       return formJson(request, { error: "Please enter a valid GitHub profile URL." }, 400)
     }
-    if (!isValidHttpUrl(previousWork)) {
+    if (!previousWork) {
       return formJson(
         request,
         { error: "Please enter a valid link to your previous work." },
