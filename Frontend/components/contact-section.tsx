@@ -1,10 +1,53 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, ChevronDown } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
+import { homepageInstallFaqs, type FaqItem } from "@/lib/seo"
 
-export function ContactSection() {
+function HomepageFaqAccordion({ faq, index }: { faq: FaqItem; index: number }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const panelId = `homepage-faq-panel-${index}`
+
+  return (
+    <div className="border-b border-[#F5F5DC]/10 last:border-0">
+      <h3 className="text-base font-medium text-[#F5F5DC]">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          className="flex w-full items-center justify-between gap-4 py-4 text-left"
+        >
+          <span>{faq.question}</span>
+          <motion.span
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex-shrink-0"
+          >
+            <ChevronDown className="h-5 w-5 text-[#F5F5DC]/60" />
+          </motion.span>
+        </button>
+      </h3>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            id={panelId}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <p className="pb-4 text-sm font-light leading-relaxed text-[#F5F5DC]/60">{faq.answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
@@ -43,6 +86,40 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-black py-14 lg:py-18">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {showFaq && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            role="region"
+            aria-labelledby="homepage-install-faq-heading"
+            className="mb-14 border-b border-[#F5F5DC]/10 pb-14 lg:mb-16 lg:pb-16"
+          >
+            <span className="inline-block bg-[#F5F5DC] text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+              FAQ
+            </span>
+            <h2
+              id="homepage-install-faq-heading"
+              className="text-3xl md:text-4xl font-light text-[#F5F5DC] mb-8 leading-tight max-w-2xl"
+            >
+              What to know before we install
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+              <div>
+                {homepageInstallFaqs.slice(0, 3).map((faq, index) => (
+                  <HomepageFaqAccordion key={faq.question} faq={faq} index={index} />
+                ))}
+              </div>
+              <div>
+                {homepageInstallFaqs.slice(3, 6).map((faq, index) => (
+                  <HomepageFaqAccordion key={faq.question} faq={faq} index={index + 3} />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side - Contact Info */}

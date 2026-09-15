@@ -309,3 +309,57 @@ export function serviceJsonLd(service: SeoPage) {
     },
   }
 }
+
+export type FaqItem = {
+  question: string
+  answer: string
+}
+
+/** Homepage-only install-intent Q/As. Do not use for retail “best system” copy. */
+export const homepageInstallFaqs: FaqItem[] = [
+  {
+    question: "Do you offer home theater installation in Pakistan?",
+    answer:
+      "Yes. Desert Sound offers home theater installation across Pakistan. Karachi is our local market; we survey the room, hide the wiring, and calibrate picture and sound.",
+  },
+  {
+    question: "Do you install home cinemas in Karachi and outside?",
+    answer:
+      "Yes. Home cinema installation in Karachi is our core work, and we take projects nationwide after a site visit and a written scope. Local rooms get the full survey, hidden wiring, and calibration; out-of-city installs follow the same process after we visit the space.",
+  },
+  {
+    question: "Is this a retail “best home theater system” package?",
+    answer:
+      "No. We do not sell boxed retail systems. Home theater installation here is a designed, installed, and calibrated room—not a shelf SKU.",
+  },
+  {
+    question: "Can you install a home cinema in an existing room?",
+    answer:
+      "Yes. We design the install around the room you already have: layout, speaker and screen placement, hidden cabling, and calibration. A new extension is not required.",
+  },
+  {
+    question: "What does professional home theater installation include?",
+    answer:
+      "Room layout, speaker and screen placement, hidden cabling, picture and sound calibration, and control. Equipment is specified for the space, not a generic bundle.",
+  },
+  {
+    question: "How do I start a home theater or home cinema installation?",
+    answer:
+      "Book a site visit. We measure the room, write a scope, and install after you approve the design—Karachi locally, nationwide after a survey.",
+  },
+]
+
+export function faqPageJsonLd(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+}
