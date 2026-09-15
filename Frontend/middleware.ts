@@ -1,16 +1,17 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
+import { shouldBypassApexRedirect } from "@/lib/form-origins"
 
 const APEX_HOST = "desertsound.com.pk"
 const WWW_HOST = "www.desertsound.com.pk"
 const CUTOVER_COOKIE = "ds-cutover"
-const GOOGLE_VERIFICATION_FILE = /^\/google[^/]+\.html$/
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // GSC fetches the URL-prefix host as-is and rejects 3xx / redirect bodies.
-  if (GOOGLE_VERIFICATION_FILE.test(pathname)) {
+  // Keep API posts on the host the browser used. A 308 from apex to www
+  // makes fetch() throw "Failed to fetch" because the redirect is cross-origin.
+  if (shouldBypassApexRedirect(pathname)) {
     return NextResponse.next()
   }
 
@@ -42,6 +43,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|favicon.png|og.jpg|google[^/]+\\.html$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|favicon.png|og.jpg|api/|google[^/]+\\.html$).*)",
   ],
 }
