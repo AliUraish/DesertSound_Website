@@ -342,6 +342,11 @@ export const homepageInstallFaqs: FaqItem[] = [
     answer:
       "Room layout, speaker and screen placement, hidden cabling, picture and sound calibration, and control. Equipment is specified for the space, not a generic bundle.",
   },
+  {
+    question: "How do I start a home theater or home cinema installation?",
+    answer:
+      "Book a site visit. We measure the room, write a scope, and install after you approve the design—Karachi locally, nationwide after a survey.",
+  },
 ]
 
 export function faqPageJsonLd(faqs: FaqItem[]) {

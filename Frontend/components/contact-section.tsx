@@ -1,9 +1,51 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { Phone, Mail, MapPin, Clock, ArrowUpRight, ChevronDown } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
-import { homepageInstallFaqs } from "@/lib/seo"
+import { homepageInstallFaqs, type FaqItem } from "@/lib/seo"
+
+function HomepageFaqAccordion({ faq, index }: { faq: FaqItem; index: number }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const panelId = `homepage-faq-panel-${index}`
+
+  return (
+    <div className="border-b border-[#F5F5DC]/10 last:border-0">
+      <h3 className="text-base font-medium text-[#F5F5DC]">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          className="flex w-full items-center justify-between gap-4 py-4 text-left"
+        >
+          <span>{faq.question}</span>
+          <motion.span
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex-shrink-0"
+          >
+            <ChevronDown className="h-5 w-5 text-[#F5F5DC]/60" />
+          </motion.span>
+        </button>
+      </h3>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            id={panelId}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <p className="pb-4 text-sm font-light leading-relaxed text-[#F5F5DC]/60">{faq.answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -63,13 +105,17 @@ export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
             >
               Home theater &amp; home cinema installation
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-              {homepageInstallFaqs.map((faq) => (
-                <div key={faq.question}>
-                  <h3 className="text-base font-medium text-[#F5F5DC] mb-1.5">{faq.question}</h3>
-                  <p className="text-[#F5F5DC]/60 text-sm leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+              <div>
+                {homepageInstallFaqs.slice(0, 3).map((faq, index) => (
+                  <HomepageFaqAccordion key={faq.question} faq={faq} index={index} />
+                ))}
+              </div>
+              <div>
+                {homepageInstallFaqs.slice(3, 6).map((faq, index) => (
+                  <HomepageFaqAccordion key={faq.question} faq={faq} index={index + 3} />
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
