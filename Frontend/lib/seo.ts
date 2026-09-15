@@ -14,6 +14,22 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/desertsoundpk?igsi=MXZwemlkN3o5enVkdQ==",
 }
 
+/** Clean profile URLs for JSON-LD sameAs. Footer hrefs stay on socialLinks. */
+export const sameAsProfiles = [
+  "https://www.instagram.com/desertsoundpk",
+  "https://www.facebook.com/desertsoundpk",
+] as const
+
+/**
+ * Showroom coordinates from the existing Google Maps embed in contact-section.tsx
+ * (`2d` = lng 67.03972317603166, `3d` = lat 24.815761947043313) for
+ * 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi.
+ */
+export const showroomGeo = {
+  latitude: 24.815761947043313,
+  longitude: 67.03972317603166,
+} as const
+
 export const defaultSeo = {
   title: "Home Theatre & Smart Home Automation in Pakistan",
   description:
@@ -69,6 +85,58 @@ export const servicePages: SeoPage[] = [
     description:
       "Reliable wired and wireless networking, Wi-Fi coverage planning, performance optimization, and network security for smart homes and offices.",
     image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
+  },
+]
+
+/** Live `/service/...` routes used in LocalBusiness offers / hasOfferCatalog. */
+export const catalogServicePages: SeoPage[] = [
+  {
+    path: "/service/home-theatre-design-and-installation",
+    title: "Home Theater & Home Cinema Design and Installation in Pakistan",
+    description:
+      "home theater design and installation services in Pakistan, for an immersive and customized entertainment experience.",
+    image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
+  },
+  {
+    path: "/service/smart-home-automation",
+    title: "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
+    description: "Smart Home Automation Services in Karachi, Pakistan - Desert Sound",
+    image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
+  },
+  {
+    path: "/service/audio-distribution",
+    title: "Audio Distribution Installation in Karachi | Audio Distribution Service",
+    description:
+      "Professional audio distribution installation in Karachi, Pakistan for seamless sound in every room with a reliable smart audio system.",
+    image: "/Pictures Final/Services/Audio_Systems/Cover.jpg",
+  },
+  {
+    path: "/service/control-systems",
+    title: "Control Systems installation in Karachi, Pakistan",
+    description:
+      "Expert control systems installation services in Karachi, Pakistan, offering seamless automation and control for your home or business.",
+    image: "/Pictures Final/Services/Control_Integration/Cover.jpg",
+  },
+  {
+    path: "/service/home-networking-and-wi-fi",
+    title: "Best Home Networking & Wi-Fi Service in Karachi",
+    description:
+      "Best Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
+    image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
+  },
+  {
+    path: "/service/customization-and-integration",
+    title: "Customization and Integration System in Karachi, Pakistan",
+    description:
+      "Expert customization and integration system services in Karachi, Pakistan, tailored to meet your home or business automation needs.",
+    image: "/Pictures Final/Services/Control_Integration/image copy.jpg",
+  },
+  {
+    path: "/service/maintenance-and-support",
+    title: "Maintenance and Support Service in Karachi, Pakistan",
+    description:
+      "Discover our comprehensive maintenance and support services, ensuring optimal performance and longevity for your systems and equipment.",
+    image: "/Pictures Final/Services/Home_networking/Image2.jpg",
   },
 ]
 
@@ -161,6 +229,18 @@ export function createProjectMetadata(library: ProjectLibrary, slug: string): Me
   }
 }
 
+function toServiceOffer(service: SeoPage) {
+  return {
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: service.title,
+      description: service.description,
+      url: absoluteUrl(service.path),
+    },
+  }
+}
+
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -178,6 +258,11 @@ export const localBusinessJsonLd = {
     addressRegion: "Sindh",
     addressCountry: "PK",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: showroomGeo.latitude,
+    longitude: showroomGeo.longitude,
+  },
   areaServed: [
     {
       "@type": "Country",
@@ -187,21 +272,25 @@ export const localBusinessJsonLd = {
       "@type": "City",
       name: "Karachi",
     },
+    {
+      "@type": "City",
+      name: "Lahore",
+    },
+    {
+      "@type": "City",
+      name: "Islamabad",
+    },
   ],
   priceRange: "$$$",
-  sameAs: [
-    socialLinks.facebook,
-    socialLinks.instagram,
-  ],
-  makesOffer: servicePages.map((service) => ({
-    "@type": "Offer",
-    itemOffered: {
-      "@type": "Service",
-      name: service.title,
-      description: service.description,
-      url: absoluteUrl(service.path),
-    },
-  })),
+  sameAs: [...sameAsProfiles],
+  // openingHours omitted: hours are not published anywhere in-repo.
+  offers: catalogServicePages.map(toServiceOffer),
+  makesOffer: catalogServicePages.map(toServiceOffer),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Desert Sound services",
+    itemListElement: catalogServicePages.map(toServiceOffer),
+  },
 }
 
 export function serviceJsonLd(service: SeoPage) {
