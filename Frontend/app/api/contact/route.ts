@@ -1,8 +1,12 @@
-import { NextResponse } from "next/server"
+import { formJson, formOptions } from "@/lib/form-cors"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
 import { emailLayout, sendNotification } from "@/lib/notifications"
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+export function OPTIONS(request: Request) {
+  return formOptions(request)
+}
 
 export async function POST(request: Request) {
   try {
@@ -14,20 +18,20 @@ export async function POST(request: Request) {
     const message = typeof body.message === "string" ? body.message.trim() : ""
 
     if (body.website) {
-      return NextResponse.json({ ok: true })
+      return formJson(request, { ok: true })
     }
 
     if (!firstName || firstName.length > 100 || lastName.length > 100) {
-      return NextResponse.json({ error: "Please enter your name." }, { status: 400 })
+      return formJson(request, { error: "Please enter your name." }, 400)
     }
     if (!emailPattern.test(email) || email.length > 254) {
-      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid email address." }, 400)
     }
     if (phone.length > 50) {
-      return NextResponse.json({ error: "Please enter a valid phone number." }, { status: 400 })
+      return formJson(request, { error: "Please enter a valid phone number." }, 400)
     }
     if (!message || message.length > 5000) {
-      return NextResponse.json({ error: "Please enter a message under 5,000 characters." }, { status: 400 })
+      return formJson(request, { error: "Please enter a message under 5,000 characters." }, 400)
     }
 
     await ensureSubmissionSchema()
@@ -62,9 +66,9 @@ export async function POST(request: Request) {
       console.error("Contact notification failed", { id, error: notificationError })
     }
 
-    return NextResponse.json({ ok: true }, { status: 201 })
+    return formJson(request, { ok: true }, 201)
   } catch (error) {
     console.error("Contact submission failed", error)
-    return NextResponse.json({ error: "Your message could not be sent. Please try again." }, { status: 500 })
+    return formJson(request, { error: "Your message could not be sent. Please try again." }, 500)
   }
 }
