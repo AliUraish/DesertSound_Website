@@ -3,6 +3,8 @@
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
+import { submitForm } from "@/lib/submit-form"
+import { homepageInstallFaqs } from "@/lib/seo"
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -17,7 +19,7 @@ export function ContactSection() {
     const formData = new FormData(form)
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await submitForm("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Object.fromEntries(formData)),
@@ -43,6 +45,29 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-black py-14 lg:py-18">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-14 border-b border-[#F5F5DC]/10 pb-14 lg:mb-16 lg:pb-16"
+        >
+          <span className="inline-block bg-[#F5F5DC] text-black text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-6">
+            FAQ
+          </span>
+          <h2 className="text-3xl md:text-4xl font-light text-[#F5F5DC] mb-8 leading-tight max-w-2xl">
+            Home theater &amp; home cinema installation
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            {homepageInstallFaqs.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="text-base font-medium text-[#F5F5DC] mb-1.5">{faq.question}</h3>
+                <p className="text-[#F5F5DC]/60 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side - Contact Info */}

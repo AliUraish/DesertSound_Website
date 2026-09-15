@@ -7,7 +7,6 @@ import { ComparisonTransformation } from "@/components/comparison-transformation
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
 import { TheaterTourSection } from "@/components/theater-tour-section"
 import { Testimonials } from "@/components/testimonials"
-import { HomepageInstallFaq } from "@/components/homepage-install-faq"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import {
@@ -49,7 +48,6 @@ export default function HomePage() {
         <TheaterTourSection />
         <Testimonials />
         <CertificationsSection />
-        <HomepageInstallFaq />
         <ContactSection />
         <Footer />
       </main>
