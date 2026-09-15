@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { submitForm } from "@/lib/submit-form"
 
 type CareerApplicationFormProps = {
   description: string
@@ -22,7 +23,7 @@ export function CareerApplicationForm({ description, jobSlug }: CareerApplicatio
     formData.set("jobSlug", jobSlug)
 
     try {
-      const response = await fetch("/api/job-applications", {
+      const response = await submitForm("/api/job-applications", {
         method: "POST",
         body: formData,
       })
