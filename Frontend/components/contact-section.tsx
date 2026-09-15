@@ -103,7 +103,7 @@ export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
               id="homepage-install-faq-heading"
               className="text-3xl md:text-4xl font-light text-[#F5F5DC] mb-8 leading-tight max-w-2xl"
             >
-              Home theater &amp; home cinema installation
+              What to know before we install
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
               <div>
