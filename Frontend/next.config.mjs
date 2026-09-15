@@ -9,7 +9,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data: blob: https://desertsound.com.pk https://www.desertsound.com.pk https://*.google.com https://*.googleapis.com https://*.gstatic.com https://img.youtube.com",
   "font-src 'self' data:",
   "media-src 'self' blob:",
-  "connect-src 'self' https://*.vercel-insights.com https://va.vercel-scripts.com",
+  "connect-src 'self' https://www.desertsound.com.pk https://desertsound.com.pk https://*.vercel-insights.com https://va.vercel-scripts.com",
   "frame-src https://www.google.com https://www.youtube.com",
   "worker-src 'self' blob:",
   "object-src 'none'",
