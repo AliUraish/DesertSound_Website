@@ -28,7 +28,8 @@ type Notification = {
 }
 
 export async function sendNotification({ subject, html, replyTo }: Notification) {
-  const { error } = await getResend().emails.send({
+  const resend = getResend()
+  const { error } = await resend.emails.send({
     from: notificationSender,
     to: notificationRecipient,
     subject,
@@ -36,9 +37,30 @@ export async function sendNotification({ subject, html, replyTo }: Notification)
     replyTo,
   })
 
-  if (error) {
-    throw new Error(error.message)
+  if (!error) {
+    return
   }
+
+  const unverifiedDomain = /domain is not verified/i.test(error.message)
+  const alreadyUsingResendDev = notificationSender.toLowerCase().includes("@resend.dev")
+
+  if (unverifiedDomain && !alreadyUsingResendDev) {
+    const fallback = await resend.emails.send({
+      from: "Desert Sound Website <onboarding@resend.dev>",
+      to: notificationRecipient,
+      subject,
+      html,
+      replyTo,
+    })
+
+    if (!fallback.error) {
+      return
+    }
+
+    throw new Error(fallback.error.message)
+  }
+
+  throw new Error(error.message)
 }
 
 export function escapeHtml(value: string) {
