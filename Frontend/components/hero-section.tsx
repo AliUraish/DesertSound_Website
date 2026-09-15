@@ -46,6 +46,10 @@ type HeroSlide = (typeof heroSlides)[number]
 const copyClassName = "flex max-w-[22rem] flex-col gap-2 md:max-w-xl md:gap-3 lg:max-w-2xl"
 const descriptionClassName =
   "max-w-[21rem] text-[0.8rem] leading-relaxed text-white/90 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm lg:text-base"
+const installSubhead =
+  "Professional home cinema & home theater installation across Pakistan, including Karachi."
+const installSubheadClassName =
+  "max-w-[21rem] text-[0.8rem] leading-snug text-white/85 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm"
 const titleClassName =
   "text-[2.85rem] font-normal leading-[0.95] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] md:text-4xl md:leading-tight lg:text-6xl xl:text-7xl"
 const parallaxClassName = "relative w-full flex-grow overflow-hidden will-change-transform"
@@ -121,6 +125,8 @@ function HeroSlideImage({
 }
 
 function HeroCopy({ slide, animate }: { slide: HeroSlide; animate: boolean }) {
+  const installSubheadLine = <p className={installSubheadClassName}>{installSubhead}</p>
+
   if (!animate) {
     return (
       <div className={copyClassName}>
@@ -135,63 +141,67 @@ function HeroCopy({ slide, animate }: { slide: HeroSlide; animate: boolean }) {
             </span>
           </h1>
         </div>
+        {installSubheadLine}
       </div>
     )
   }
 
   return (
-    <motion.div
-      key={`${slide.title}-${slide.subtitle}`}
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.5,
-          },
-        },
-      }}
-      className={copyClassName}
-    >
-      <motion.p
+    <div className={copyClassName}>
+      <motion.div
+        key={`${slide.title}-${slide.subtitle}`}
+        initial="hidden"
+        animate="visible"
         variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 0.7, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.5,
+            },
+          },
         }}
-        className={descriptionClassName}
+        className="flex flex-col gap-2 md:gap-3"
       >
-        {slide.description}
-      </motion.p>
-      <div className="overflow-hidden">
-        <h1 className={titleClassName}>
-          <span className="block overflow-hidden">
-            <motion.span
-              variants={{
-                hidden: { y: "100%" },
-                visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
-              }}
-              className="block"
-            >
-              {slide.title}{" "}
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden">
-            <motion.span
-              variants={{
-                hidden: { y: "100%" },
-                visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
-              }}
-              className="block"
-            >
-              {slide.subtitle}
-            </motion.span>
-          </span>
-        </h1>
-      </div>
-    </motion.div>
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 0.7, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+          }}
+          className={descriptionClassName}
+        >
+          {slide.description}
+        </motion.p>
+        <div className="overflow-hidden">
+          <h1 className={titleClassName}>
+            <span className="block overflow-hidden">
+              <motion.span
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block"
+              >
+                {slide.title}{" "}
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden">
+              <motion.span
+                variants={{
+                  hidden: { y: "100%" },
+                  visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block"
+              >
+                {slide.subtitle}
+              </motion.span>
+            </span>
+          </h1>
+        </div>
+      </motion.div>
+      {installSubheadLine}
+    </div>
   )
 }
 
