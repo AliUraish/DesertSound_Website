@@ -320,7 +320,7 @@ export const homepageInstallFaqs: FaqItem[] = [
   {
     question: "Do you offer home theater installation in Pakistan?",
     answer:
-      "Yes. Desert Sound installs home theater systems across Pakistan. Karachi is our local market; we survey the room, hide the wiring, and calibrate picture and sound.",
+      "Yes. Desert Sound offers home theater installation across Pakistan. Karachi is our local market; we survey the room, hide the wiring, and calibrate picture and sound.",
   },
   {
     question: "Do you install home cinemas in Karachi?",
