@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { submitForm } from "@/lib/submit-form"
 import { socialLinks } from "@/lib/seo"
 
 const currentYear = new Date().getFullYear()
@@ -21,7 +22,7 @@ export function Footer() {
     setMessage("")
 
     try {
-      const response = await fetch("/api/newsletter", {
+      const response = await submitForm("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
