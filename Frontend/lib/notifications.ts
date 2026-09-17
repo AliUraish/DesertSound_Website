@@ -27,26 +27,34 @@ export type NotificationAttachment = {
   contentType?: string
 }
 
-type Notification = {
+type EmailMessage = {
+  to?: string
   subject: string
   html: string
+  text?: string
   replyTo?: string
+  headers?: Record<string, string>
   attachments?: NotificationAttachment[]
 }
 
 function emailPayload({
   from,
+  to = notificationRecipient,
   subject,
   html,
+  text,
   replyTo,
+  headers,
   attachments,
-}: Notification & { from: string }) {
+}: EmailMessage & { from: string }) {
   return {
     from,
-    to: notificationRecipient,
+    to,
     subject,
     html,
+    text,
     replyTo,
+    headers,
     attachments: attachments?.map((attachment) => ({
       filename: attachment.filename.replace(/[/\\]/g, "").trim() || "resume.pdf",
       content: attachment.content,
@@ -55,14 +63,25 @@ function emailPayload({
   }
 }
 
-export async function sendNotification({ subject, html, replyTo, attachments }: Notification) {
+export async function sendEmail({
+  to = notificationRecipient,
+  subject,
+  html,
+  text,
+  replyTo,
+  headers,
+  attachments,
+}: EmailMessage) {
   const resend = getResend()
   const { error } = await resend.emails.send(
     emailPayload({
       from: notificationSender,
+      to,
       subject,
       html,
+      text,
       replyTo,
+      headers,
       attachments,
     }),
   )
@@ -78,9 +97,12 @@ export async function sendNotification({ subject, html, replyTo, attachments }: 
     const fallback = await resend.emails.send(
       emailPayload({
         from: "Desert Sound Website <onboarding@resend.dev>",
+        to,
         subject,
         html,
+        text,
         replyTo,
+        headers,
         attachments,
       }),
     )
@@ -93,6 +115,24 @@ export async function sendNotification({ subject, html, replyTo, attachments }: 
   }
 
   throw new Error(error.message)
+}
+
+export async function syncNewsletterContact(email: string, unsubscribed: boolean) {
+  try {
+    const resend = getResend()
+    const created = await resend.contacts.create({ email, unsubscribed })
+    if (!created.error) {
+      return
+    }
+
+    await resend.contacts.update({ email, unsubscribed })
+  } catch (error) {
+    console.error("Resend contact sync failed", error)
+  }
+}
+
+export async function sendNotification(message: EmailMessage) {
+  await sendEmail(message)
 }
 
 export function escapeHtml(value: string) {
