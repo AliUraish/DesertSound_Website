@@ -1,6 +1,7 @@
 import { formJson, formOptions } from "@/lib/form-cors"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
-import { emailLayout, sendNotification } from "@/lib/notifications"
+import { newsletterWelcomeEmail } from "@/lib/newsletter-welcome"
+import { emailLayout, sendEmail, sendNotification, syncNewsletterContact } from "@/lib/notifications"
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -26,7 +27,11 @@ export async function POST(request: Request) {
     const rows = await sql`
       INSERT INTO newsletter_subscribers (email)
       VALUES (${email})
-      ON CONFLICT (email) DO NOTHING
+      ON CONFLICT (email) DO UPDATE
+      SET
+        unsubscribed_at = NULL,
+        subscribed_at = NOW()
+      WHERE newsletter_subscribers.unsubscribed_at IS NOT NULL
       RETURNING id
     `
 
@@ -35,6 +40,25 @@ export async function POST(request: Request) {
     }
 
     const id = String(rows[0].id)
+    await syncNewsletterContact(email, false)
+
+    const errors: string[] = []
+    const welcome = newsletterWelcomeEmail(email)
+
+    try {
+      await sendEmail({
+        to: email,
+        subject: welcome.subject,
+        html: welcome.html,
+        text: welcome.text,
+        replyTo: welcome.replyTo,
+        headers: welcome.headers,
+      })
+    } catch (error) {
+      const message = error instanceof Error ? error.message.slice(0, 500) : "Welcome email failed"
+      errors.push(`welcome: ${message}`)
+      console.error("Newsletter welcome email failed", { id, error: message })
+    }
 
     try {
       await sendNotification({
@@ -42,17 +66,24 @@ export async function POST(request: Request) {
         html: emailLayout("New Newsletter Subscriber", [
           ["Email", email],
           ["Submission ID", id],
+          ["Welcome email", errors.some((item) => item.startsWith("welcome:")) ? "Failed" : "Sent to subscriber"],
         ]),
       })
-      await sql`UPDATE newsletter_subscribers SET notification_status = 'sent' WHERE id = ${id}`
     } catch (error) {
-      const message = error instanceof Error ? error.message.slice(0, 1000) : "Unknown email error"
+      const message = error instanceof Error ? error.message.slice(0, 500) : "Internal email failed"
+      errors.push(`internal: ${message}`)
+      console.error("Newsletter notification failed", { id, error: message })
+    }
+
+    if (errors.length > 0) {
+      const notificationError = errors.join(" | ").slice(0, 1000)
       await sql`
         UPDATE newsletter_subscribers
-        SET notification_status = 'failed', notification_error = ${message}
+        SET notification_status = 'failed', notification_error = ${notificationError}
         WHERE id = ${id}
       `
-      console.error("Newsletter notification failed", { id, error: message })
+    } else {
+      await sql`UPDATE newsletter_subscribers SET notification_status = 'sent' WHERE id = ${id}`
     }
 
     return formJson(request, { ok: true }, 201)
