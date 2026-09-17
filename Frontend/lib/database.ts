@@ -84,4 +84,9 @@ async function createSubmissionSchema() {
       ADD COLUMN IF NOT EXISTS project_impact TEXT NOT NULL DEFAULT '',
       ADD COLUMN IF NOT EXISTS motivation TEXT NOT NULL DEFAULT ''
   `
+
+  await sql`
+    ALTER TABLE newsletter_subscribers
+      ADD COLUMN IF NOT EXISTS unsubscribed_at TIMESTAMPTZ
+  `
 }
