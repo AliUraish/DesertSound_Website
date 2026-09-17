@@ -77,15 +77,16 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded border border-black/10 bg-white text-black/60 transition-all duration-300 hover:border-black hover:bg-black hover:text-white disabled:opacity-50"
+                  className="group absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center overflow-hidden border border-black/10 bg-white text-black/60 transition-[border-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-black hover:scale-105 disabled:opacity-50"
                   aria-label="Subscribe"
                 >
+                  <span className="absolute inset-0 origin-left scale-x-0 bg-black transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100" />
                   <ArrowRight
-                    className={`h-4 w-4 transition-all duration-300 ${
+                    className={`relative z-10 h-4 w-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-[#F5F5DC] ${
                       isSubmitting ? "translate-x-1 opacity-0" : "translate-x-0 opacity-100 group-hover:translate-x-0.5"
                     }`}
                   />
-                  {isSubmitting && <ArrowRight className="absolute h-4 w-4 animate-[slideIn_0.3s_ease-out]" />}
+                  {isSubmitting && <ArrowRight className="absolute z-10 h-4 w-4 text-black animate-[slideIn_0.3s_ease-out]" />}
                 </button>
               </form>
               {message && (
