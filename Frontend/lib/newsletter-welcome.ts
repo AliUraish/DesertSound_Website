@@ -112,6 +112,9 @@ export function newsletterWelcomeEmail(subscriberEmail: string) {
         opacity: 1 !important;
         letter-spacing: 0.02em;
       }
+      html, body {
+        background-color: #F5F5DC !important;
+      }
       @media only screen and (max-width: 620px) {
         .stack { display: block !important; width: 100% !important; }
         .stack-pad { padding-left: 0 !important; padding-right: 0 !important; padding-bottom: 18px !important; }
@@ -121,14 +124,14 @@ export function newsletterWelcomeEmail(subscriberEmail: string) {
       }
     </style>
   </head>
-  <body style="margin:0;padding:0;background:#0c0c0c;">
+  <body style="margin:0;padding:0;background:#F5F5DC;" bgcolor="#F5F5DC">
     <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
       ${escapeHtml(preheader)}
     </div>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0c0c0c;margin:0;padding:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#F5F5DC" style="background:#F5F5DC;margin:0;padding:0;">
       <tr>
-        <td align="center" style="padding:32px 12px 40px;">
-          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;border-collapse:collapse;border:1px solid rgba(245,245,220,0.12);">
+        <td align="center" bgcolor="#F5F5DC" style="padding:24px 12px 32px;background:#F5F5DC;">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;border-collapse:collapse;">
             <tr>
               <td style="background:#F5F5DC;padding:20px 32px 18px;">
                 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
