@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     question: "Can a small space be customised as a home theatre?",
-    answer: "Yes. Home theater installation in Pakistan works in apartments and compact rooms, not only a dedicated cinema."
+    answer: "Yes. Home theater installation works in Karachi apartments and other compact rooms across Pakistan, not only a dedicated cinema."
   },
   {
     question: "How long does installation take?",
@@ -184,13 +184,13 @@ export default function HomeTheatreSystemsPage() {
                   </p>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-5">
-                    Home Cinema Design
+                    Home Theater
                     <br />
-                    & Installation
+                    Installation
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan the best home theater installation in Pakistan around the room: home cinema and home theatre installation with 4K/8K projection, Dolby Atmos, and smart control. Karachi is the local market for that nationwide work.
+                    We plan home theater installation in Karachi and across Pakistan around the room: 4K/8K projection, Dolby Atmos, and smart control. This is cinema installation work, not a boxed retail system.
                   </p>
 
                   <div className="flex">

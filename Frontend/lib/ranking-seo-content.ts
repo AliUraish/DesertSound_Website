@@ -230,8 +230,8 @@ const sitePages: RankingSeoPage[] = [
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg",
     "title": "Home Theater & Home Cinema Design and Installation in Pakistan",
     "description": "home theater design and installation services in Pakistan, for an immersive and customized entertainment experience.",
-    "h1": "Home Cinema Design & Installation",
-    "body": "We plan each home cinema and home theater installation in Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room/).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
+    "h1": "Home Theater Installation",
+    "body": "We plan each home theater installation in Karachi and across Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room/).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
     "faqs": [
       {
         "q": "What is in a full home theater system in Pakistan?",
@@ -247,7 +247,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "q": "Can small spaces work?",
-        "a": "Yes, we design for apartments and compact rooms as well as dedicated cinema rooms."
+        "a": "Yes. Home theater installation works in Karachi apartments and other compact rooms across Pakistan, not only a dedicated cinema."
       },
       {
         "q": "How long does installation take?",
