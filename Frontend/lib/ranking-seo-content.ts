@@ -1,4 +1,4 @@
-import { loadBlogArticles } from "./load-blog-articles"
+import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import type { RankingSeoPage } from "./ranking-seo-types"
 
 export type { BlogPost, RankingSeoFaq, RankingSeoLink, RankingSeoPage } from "./ranking-seo-types"
@@ -457,13 +457,16 @@ function excerptFromBody(body: string) {
 }
 
 export function getBlogPosts() {
-  return rankingSeoPages
-    .filter((page) => !listingSlugs.has(page.slug) && !page.slug.startsWith("/service/"))
-    .map((page) => ({
-      slug: page.slug,
-      title: page.h1,
-      description: page.description,
-      excerpt: excerptFromBody(page.body),
-      image: page.image,
-    }))
+  return sortBlogArticles(
+    rankingSeoPages
+      .filter((page) => !listingSlugs.has(page.slug) && !page.slug.startsWith("/service/"))
+      .map((page) => ({
+        slug: page.slug,
+        title: page.h1,
+        description: page.description,
+        excerpt: excerptFromBody(page.body),
+        image: page.image,
+        date: page.date,
+      })),
+  )
 }
