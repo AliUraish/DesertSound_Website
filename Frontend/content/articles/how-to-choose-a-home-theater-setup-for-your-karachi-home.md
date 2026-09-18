@@ -4,6 +4,7 @@
   "title": "How to Choose a Home Theater Setup for Your Karachi Home - Desert Sound",
   "description": "Choose a home theater by the Karachi room you have — light, power, seating, and wiring — not by a boxed system. Plan the install before the screen arrives.",
   "h1": "How to Choose a Home Theater Setup for Your Karachi Home",
+  "date": "2026-09-18",
   "image": "/blog-images/how-to-choose-a-home-theater-setup-for-your-karachi-home.jpg",
   "faqs": [],
   "links": [

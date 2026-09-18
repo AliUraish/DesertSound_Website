@@ -9,6 +9,7 @@ export type RankingSeoPage = {
   faqs: RankingSeoFaq[]
   links: RankingSeoLink[]
   image?: string
+  date?: string
 }
 
 export type BlogPost = {
@@ -17,4 +18,5 @@ export type BlogPost = {
   description: string
   excerpt: string
   image?: string
+  date?: string
 }
