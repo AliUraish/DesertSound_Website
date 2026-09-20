@@ -65,7 +65,7 @@ const faqs = [
     answer: "Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces."
   },
   {
-    question: "Can a small space be customised as a home theatre?",
+    question: "Can a small space be customized as a home theater?",
     answer: "Yes. Home theater installation works in Karachi apartments and other compact rooms across Pakistan, not only a dedicated cinema."
   },
   {
@@ -180,7 +180,7 @@ export default function HomeTheatreSystemsPage() {
                 {/* Header Text */}
                 <div className="lg:pr-8">
                   <p className="text-xs text-black/50 uppercase tracking-[0.2em] font-medium mb-6">
-                    Home Theatre Systems
+                    Home Theater Systems
                   </p>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-5">
@@ -213,7 +213,7 @@ export default function HomeTheatreSystemsPage() {
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
                       <Image
                         src="/Pictures Final/Services/Home_Theatre/Cover.jpg"
-                        alt="Professional Home Theatre Installation"
+                        alt="Professional Home Theater Installation"
                         className="h-full w-full object-cover"
                 width={1920}
                 height={1057}
