@@ -26,7 +26,22 @@ function parseArticleMarkdown(raw: string, filename: string): RankingSeoPage {
     faqs: meta.faqs ?? [],
     links: meta.links ?? [],
     ...(meta.image ? { image: meta.image } : {}),
+    ...(meta.date ? { date: meta.date } : {}),
   }
+}
+
+function articleTimestamp(article: { date?: string }) {
+  if (!article.date) return 0
+  const timestamp = Date.parse(article.date)
+  return Number.isNaN(timestamp) ? 0 : timestamp
+}
+
+export function sortBlogArticles<T extends { date?: string; slug: string }>(articles: T[]): T[] {
+  return [...articles].sort((a, b) => {
+    const byDate = articleTimestamp(b) - articleTimestamp(a)
+    if (byDate !== 0) return byDate
+    return a.slug.localeCompare(b.slug)
+  })
 }
 
 function readArticlesFromDisk(): RankingSeoPage[] {
@@ -34,13 +49,14 @@ function readArticlesFromDisk(): RankingSeoPage[] {
     throw new Error(`Missing articles folder: ${ARTICLES_DIR}`)
   }
 
-  return fs
+  const articles = fs
     .readdirSync(ARTICLES_DIR)
     .filter((name) => name.endsWith(".md"))
-    .sort()
     .map((name) =>
       parseArticleMarkdown(fs.readFileSync(path.join(ARTICLES_DIR, name), "utf8"), name),
     )
+
+  return sortBlogArticles(articles)
 }
 
 let cachedArticles: RankingSeoPage[] | undefined
