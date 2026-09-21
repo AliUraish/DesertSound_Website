@@ -5,7 +5,7 @@ export function InstallProcessSection() {
     <section
       id="install-process"
       aria-labelledby="install-process-heading"
-      className="border-t border-foreground/5 bg-background py-16 md:py-20 lg:py-24"
+      className="scroll-mt-28 border-t border-foreground/5 bg-background py-16 md:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mb-10 text-center lg:mb-14">
@@ -27,7 +27,7 @@ export function InstallProcessSection() {
 
         <ol className="grid list-none grid-cols-1 gap-8 p-0 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {homepageInstallProcessSteps.map((step, index) => (
-            <li key={step.id} id={step.id} className="min-w-0">
+            <li key={step.id} id={step.id} className="min-w-0 scroll-mt-28">
               <span
                 aria-hidden="true"
                 className="mb-3 block text-sm font-medium tracking-widest text-muted-foreground"
