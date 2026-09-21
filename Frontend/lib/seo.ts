@@ -363,3 +363,85 @@ export function faqPageJsonLd(faqs: FaqItem[]) {
     })),
   }
 }
+
+export type InstallProcessStep = {
+  id: string
+  name: string
+  text: string
+}
+
+/** Homepage process strip — keep HTML copy and HowTo / ItemList JSON-LD in lockstep. */
+export const homepageInstallProcessSteps: InstallProcessStep[] = [
+  {
+    id: "install-process-brief",
+    name: "Brief & site visit",
+    text: "We visit the room, measure seating and light, and agree how the cinema should work. Karachi is the local market; Pakistan-wide projects start with the same site visit.",
+  },
+  {
+    id: "install-process-design",
+    name: "System design",
+    text: "We write a home theater layout for that space — screen, speakers, hidden cabling, and control — then you approve the theatre design before anything is fitted.",
+  },
+  {
+    id: "install-process-install",
+    name: "Install & calibrate",
+    text: "The team installs the theater, conceals the wiring, and calibrates picture and sound so the mix holds in every seat. This is a fitted room, not a boxed system.",
+  },
+  {
+    id: "install-process-handover",
+    name: "Handover & support",
+    text: "We walk you through one-button control and stay on the room after opening night, whether the install is in Karachi or elsewhere in Pakistan.",
+  },
+]
+
+export const homepageInstallHowToName =
+  "How Desert Sound installs a home theater in Pakistan"
+
+export const homepageInstallHowToDescription =
+  "How Desert Sound installs a home theater in Pakistan — four steps from brief and site visit to handover, for rooms in Karachi and nationwide."
+
+export function installHowToJsonLd(steps: InstallProcessStep[] = homepageInstallProcessSteps) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${siteUrl}/#install-howto`,
+    name: homepageInstallHowToName,
+    description: homepageInstallHowToDescription,
+    url: `${siteUrl}/#install-process`,
+    provider: {
+      "@id": `${siteUrl}/#localbusiness`,
+    },
+    areaServed: [
+      { "@type": "Country", name: "Pakistan" },
+      { "@type": "City", name: "Karachi" },
+    ],
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      url: `${siteUrl}/#${step.id}`,
+    })),
+  }
+}
+
+export function installProcessItemListJsonLd(
+  steps: InstallProcessStep[] = homepageInstallProcessSteps,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${siteUrl}/#install-process-list`,
+    name: "Home theater installation process",
+    description: homepageInstallHowToDescription,
+    numberOfItems: steps.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: steps.map((step, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: step.name,
+      description: step.text,
+      url: `${siteUrl}/#${step.id}`,
+    })),
+  }
+}

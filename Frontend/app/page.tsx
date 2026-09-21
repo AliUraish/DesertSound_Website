@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { CertificationsSection, OurBrands } from "@/components/our-brands"
 import { ServicesSection } from "@/components/services-section"
+import { InstallProcessSection } from "@/components/install-process-section"
 import { ComparisonTransformation } from "@/components/comparison-transformation"
 import { ProjectLibraryChooser } from "@/components/project-library-chooser"
 import { TheaterTourSection } from "@/components/theater-tour-section"
@@ -14,6 +15,8 @@ import {
   defaultSeo,
   faqPageJsonLd,
   homepageInstallFaqs,
+  installHowToJsonLd,
+  installProcessItemListJsonLd,
 } from "@/lib/seo"
 
 export const metadata: Metadata = {
@@ -38,11 +41,24 @@ export default function HomePage() {
           __html: JSON.stringify(faqPageJsonLd(homepageInstallFaqs)).replace(/</g, "\\u003c"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(installHowToJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(installProcessItemListJsonLd()).replace(/</g, "\\u003c"),
+        }}
+      />
       <main className="min-h-screen bg-background">
         <Header />
         <HeroSection />
         <OurBrands />
         <ServicesSection />
+        <InstallProcessSection />
         <ComparisonTransformation />
         <ProjectLibraryChooser />
         <TheaterTourSection />
