@@ -9,10 +9,10 @@ const heroSlides = [
   {
     image: "/Pictures Final/Hero Page/homepage_header/homepage1.jpg",
     imagePosition: "50% 28%",
-    title: "We Create",
-    subtitle: "Dream Spaces",
+    title: "Home Theater",
+    subtitle: "Installation in Karachi",
     description:
-      "From bespoke home cinemas to intelligent home automation, we deliver solutions that combine innovation, craftsmanship, and everyday luxury.",
+      "Room-led cinema installation for Karachi homes, with professional home theater installs across Pakistan.",
   },
   {
     image: "/Pictures Final/Hero Page/homepage_header/Homepage22.JPG",
@@ -47,7 +47,7 @@ const copyClassName = "flex max-w-[22rem] flex-col gap-2 md:max-w-xl md:gap-3 lg
 const descriptionClassName =
   "max-w-[21rem] text-[0.8rem] leading-relaxed text-white/90 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm lg:text-base"
 const installSubhead =
-  "Professional home cinema & home theater installation across Pakistan, including Karachi."
+  "Karachi home theater & home theatre installation, then Pakistan-wide."
 const installSubheadClassName =
   "max-w-[21rem] text-[0.8rem] leading-snug text-white/85 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm"
 const titleClassName =
@@ -263,12 +263,12 @@ export function HeroSection() {
                   {hasMounted ? (
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                       <Button className="bg-background text-foreground hover:bg-background/90 rounded-lg px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 text-xs md:text-sm lg:text-base font-normal transition-colors duration-200 cursor-pointer">
-                        Work with us
+                        Book a site visit
                       </Button>
                     </motion.div>
                   ) : (
                     <Button className="bg-background text-foreground hover:bg-background/90 rounded-lg px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 text-xs md:text-sm lg:text-base font-normal transition-colors duration-200 cursor-pointer">
-                      Work with us
+                      Book a site visit
                     </Button>
                   )}
                 </a>
