@@ -47,7 +47,7 @@ const copyClassName = "flex max-w-[22rem] flex-col gap-2 md:max-w-xl md:gap-3 lg
 const descriptionClassName =
   "max-w-[21rem] text-[0.8rem] leading-relaxed text-white/90 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm lg:text-base"
 const installSubhead =
-  "Professional home cinema & home theater installation across Pakistan, including Karachi."
+  "Professional home cinema & home theater installation across Pakistan."
 const installSubheadClassName =
   "max-w-[21rem] text-[0.8rem] leading-snug text-white/85 drop-shadow-[0_3px_10px_rgba(0,0,0,0.85)] md:max-w-xl md:text-sm"
 const titleClassName =
