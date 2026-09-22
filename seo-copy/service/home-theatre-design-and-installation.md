@@ -7,13 +7,13 @@
 
 ## Body
 
-Home theatre design and installation is a planned project: room size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. We build cinema rooms for houses, apartments, and offices across Pakistan, not only large villas.
+We install home theaters across Pakistan from our Karachi HQ. Each room is planned around size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices nationwide; in Karachi the team works from the DHA showroom and runs site visits in DHA, Clifton, and Bahria-style homes.
 
 ### Home Cinema Design and Installation
-We start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.
+We start with a site visit: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.
 
 ### Home Theater Installation Company in Pakistan
-Consultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction.
+Consultation through calibration from our Karachi HQ, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room/), or [book a site visit](/contact-us/).
 
 ### Surround Sound and Calibration
 We install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.

@@ -180,7 +180,7 @@ export default function HomeTheatreSystemsPage() {
                 {/* Header Text */}
                 <div className="lg:pr-8">
                   <p className="text-xs text-black/50 uppercase tracking-[0.2em] font-medium mb-6">
-                    Home Theater Systems
+                    Pakistan Home Theater
                   </p>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl text-black font-light tracking-tight leading-[1.1] mb-5">
@@ -190,7 +190,7 @@ export default function HomeTheatreSystemsPage() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
-                    We plan home theater installation in Karachi and across Pakistan around the room: 4K/8K projection, Dolby Atmos, and smart control. This is cinema installation work, not a boxed retail system.
+                    We install home theaters across Pakistan from our Karachi HQ: 4K/8K projection, Dolby Atmos, and smart control, planned around the room. Site visits in DHA, Clifton, and Bahria-style homes — cinema installation, not a boxed retail system.
                   </p>
 
                   <div className="flex">
@@ -213,7 +213,7 @@ export default function HomeTheatreSystemsPage() {
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
                       <Image
                         src="/Pictures Final/Services/Home_Theatre/Cover.jpg"
-                        alt="Professional Home Theater Installation"
+                        alt="Home theater installation with a projection screen and cinema seating"
                         className="h-full w-full object-cover"
                 width={1920}
                 height={1057}
@@ -262,7 +262,7 @@ export default function HomeTheatreSystemsPage() {
                 Six Essential Elements
               </h2>
               <p className="text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-3xl mx-auto">
-                Every component is carefully planned, installed, and calibrated to transform how you enjoy entertainment at home.
+                Every component is planned, installed, and calibrated so the room plays as a cinema — Pakistan-wide, from our Karachi team.
               </p>
             </motion.div>
 
@@ -287,7 +287,7 @@ export default function HomeTheatreSystemsPage() {
               >
                 <Image
                   src="/Pictures Final/Services/Home_Theatre/IMG_9762.JPG"
-                  alt="Professional Home Cinema Design"
+                  alt="Finished home theater install with acoustic treatment and cinema seating"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 width={1920}
                 height={1280}
@@ -305,20 +305,24 @@ export default function HomeTheatreSystemsPage() {
                   Design Excellence
                 </span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
-                  Professional Home Cinema Design
+                  Home Cinema Design and Installation
                 </h2>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-6">
-                  Professional home cinema design and installation in Pakistan goes beyond a screen and speakers.{" "}
+                  Home cinema design and installation in Pakistan goes beyond a screen and speakers. The team is based at our DHA Karachi showroom.{" "}
                   <Link
                     href="/how-to-plan-home-theater-installation-for-any-room"
                     className="underline underline-offset-4 hover:text-black"
                   >
                     Home theater installation
                   </Link>{" "}
-                  starts with the room: size, layout, acoustics, lighting, and how you watch, whether that is a dedicated cinema or a compact apartment anywhere in Pakistan.
+                  starts with a site visit: size, layout, acoustics, lighting, and how you watch — a dedicated cinema or a compact apartment.
                 </p>
                 <p className="text-lg text-black/70 font-light leading-relaxed mb-8">
-                  By integrating these elements, we deliver a cinematic experience that rivals commercial theatres without leaving the comfort of your home. The spatial and acoustic needs of every home are unique, which is why our design process is meticulously planned to ensure the best sound quality, accurate screen positioning, and effective lighting control.
+                  We hide the wiring, set screen position and seating distance, then calibrate picture and sound so the room holds in every seat.{" "}
+                  <Link href="/contact-us" className="underline underline-offset-4 hover:text-black">
+                    Book a site visit
+                  </Link>{" "}
+                  and we will write a scope before equipment is ordered.
                 </p>
                 
                 <div className="space-y-4">
@@ -385,7 +389,7 @@ export default function HomeTheatreSystemsPage() {
               >
                 <Image
                   src="/Pictures Final/Services/Home_Theatre/DSC09887.JPG"
-                  alt="Immersive Audio Visual Experience"
+                  alt="Home theater surround-sound and projection install in a dedicated cinema room"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 width={1920}
                 height={1280}
@@ -484,7 +488,7 @@ export default function HomeTheatreSystemsPage() {
                 Ready to transform your space?
               </h2>
               <p className="text-lg text-white/70 font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                Book a consultation for home cinema or home theater installation in Pakistan.
+                Book a site visit for home theater installation in Pakistan. The Karachi team surveys the room, then designs, installs, and calibrates.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -492,7 +496,7 @@ export default function HomeTheatreSystemsPage() {
                   href="/#contact"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-lg text-base font-medium hover:bg-white/90 transition-colors duration-300"
                 >
-                  Get Free Consultation
+                  Book a site visit
                 </Link>
                 <a 
                   href="tel:+922111570111"
