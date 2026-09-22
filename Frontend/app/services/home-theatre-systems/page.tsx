@@ -70,11 +70,11 @@ const faqs = [
   },
   {
     question: "Can I integrate smart home features with my cinema?",
-    answer: "Absolutely. Modern home cinema design incorporates smart home automation systems like Control4, Crestron, and HDL, enabling you to manage entertainment, lighting, climate, and more from a single platform with touch or voice control."
+    answer: "Yes. We install a control system and program cinema scenes so one command dims the lights, drops the screen, and starts the source. Lighting, display, and playback are wired into that system during install."
   },
   {
     question: "Do you provide multi-room audio solutions?",
-    answer: "Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces."
+    answer: "Yes. We install audio distribution with the cinema and whole-home system so sources play in other rooms with independent volume in each. Zones, speakers, and control go in during the same install; the cinema mix stays separate when a film is on."
   },
   {
     question: "Can a small space be customized as a home theater?",
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     question: "How long does installation take?",
-    answer: "Project timelines vary based on system complexity and room requirements. Most installations are completed efficiently with minimal disruption to your daily routine. We provide detailed timelines during the consultation phase."
+    answer: "A compact apartment cinema can take a few days once the room is ready; a dedicated cinema with hidden wiring, seating, and treatment can take several weeks. Wiring access, construction readiness, and calibration set the pace. We confirm a schedule after the site visit."
   }
 ]
 

@@ -33,16 +33,16 @@ Design sets screen size, speaker layout, and hidden wiring for the room. Install
 Yes. The showroom is at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi — for listening and planning. We install cinema rooms across Pakistan after a site visit. Karachi work covers DHA, Clifton, and Bahria-style homes; other cities use the same design, install, and calibrate process.
 
 **Can I integrate smart home features with my cinema?**
-Absolutely. Modern home cinema design incorporates smart home automation systems like Control4, Crestron, and HDL, enabling you to manage entertainment, lighting, climate, and more from a single platform with touch or voice control.
+Yes. We install a control system and program cinema scenes so one command dims the lights, drops the screen, and starts the source. Lighting, display, and playback are wired into that system during install.
 
 **Do you provide multi-room audio solutions?**
-Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces.
+Yes. We install audio distribution with the cinema and whole-home system so sources play in other rooms with independent volume in each. Zones, speakers, and control go in during the same install; the cinema mix stays separate when a film is on.
 
 **Can a small space be customized as a home theater?**
 Yes. Home theater installation works in compact Karachi apartments and other rooms across Pakistan, not only a dedicated cinema.
 
 **How long does installation take?**
-Project timelines vary based on system complexity and room requirements. Most installations are completed efficiently with minimal disruption to your daily routine. We provide detailed timelines during the consultation phase.
+A compact apartment cinema can take a few days once the room is ready; a dedicated cinema with hidden wiring, seating, and treatment can take several weeks. Wiring access, construction readiness, and calibration set the pace. We confirm a schedule after the site visit.
 
 ## Internal link suggestions
 
