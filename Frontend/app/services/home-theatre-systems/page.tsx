@@ -57,6 +57,18 @@ const faqs = [
     answer: "Home theater installation in Pakistan includes a projector and screen or large display, surround sound, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and networking for streaming — designed and calibrated for the room, not a boxed retail system."
   },
   {
+    question: "Do you visit the site before installing a home theater?",
+    answer: "Yes. Home theater installation in Pakistan starts with a site visit. From our DHA Karachi HQ we survey seating distance, light, power, and cable paths, then write a scope before equipment is ordered. Rooms outside Karachi follow the same visit-first process."
+  },
+  {
+    question: "What does design, install, and calibrate include?",
+    answer: "Design sets screen size, speaker layout, and hidden wiring for the room. Install covers projection or display, surround or Atmos, seating, and control. Calibration measures picture and sound so dialogue stays clear in every seat."
+  },
+  {
+    question: "Can I visit the Karachi showroom, and do you install across Pakistan?",
+    answer: "Yes. The showroom is at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi — for listening and planning. We install cinema rooms across Pakistan after a site visit. Karachi work covers DHA, Clifton, and Bahria-style homes; other cities use the same design, install, and calibrate process."
+  },
+  {
     question: "Can I integrate smart home features with my cinema?",
     answer: "Absolutely. Modern home cinema design incorporates smart home automation systems like Control4, Crestron, and HDL, enabling you to manage entertainment, lighting, climate, and more from a single platform with touch or voice control."
   },
@@ -66,7 +78,7 @@ const faqs = [
   },
   {
     question: "Can a small space be customized as a home theater?",
-    answer: "Yes. Home theater installation works in Karachi apartments and other compact rooms across Pakistan, not only a dedicated cinema."
+    answer: "Yes. Home theater installation works in compact Karachi apartments and other rooms across Pakistan, not only a dedicated cinema."
   },
   {
     question: "How long does installation take?",

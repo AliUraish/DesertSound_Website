@@ -20,20 +20,29 @@ We install surround and Atmos layouts, then calibrate levels, delays, and EQ so 
 
 ## FAQ
 
-**What is in a full home theater system in Pakistan?**
-Display, audio, seating, acoustics, lighting control, a control system, and home networking/Wi-Fi for streaming and automation.
+**What's included in home theater installation in Pakistan?**
+Home theater installation in Pakistan includes a projector and screen or large display, surround sound, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and networking for streaming — designed and calibrated for the room, not a boxed retail system.
 
-**Can a home cinema be smart?**
-Yes. Home cinema design and installation now usually includes smart home automation so entertainment, lighting, and climate sit on one platform.
+**Do you visit the site before installing a home theater?**
+Yes. Home theater installation in Pakistan starts with a site visit. From our DHA Karachi HQ we survey seating distance, light, power, and cable paths, then write a scope before equipment is ordered. Rooms outside Karachi follow the same visit-first process.
 
-**Do you do multi-room audio?**
-Yes, through audio distribution installation with central control.
+**What does design, install, and calibrate include?**
+Design sets screen size, speaker layout, and hidden wiring for the room. Install covers projection or display, surround or Atmos, seating, and control. Calibration measures picture and sound so dialogue stays clear in every seat.
 
-**Can small spaces work?**
-Yes, we design for apartments and compact rooms as well as dedicated cinema rooms.
+**Can I visit the Karachi showroom, and do you install across Pakistan?**
+Yes. The showroom is at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi — for listening and planning. We install cinema rooms across Pakistan after a site visit. Karachi work covers DHA, Clifton, and Bahria-style homes; other cities use the same design, install, and calibrate process.
+
+**Can I integrate smart home features with my cinema?**
+Absolutely. Modern home cinema design incorporates smart home automation systems like Control4, Crestron, and HDL, enabling you to manage entertainment, lighting, climate, and more from a single platform with touch or voice control.
+
+**Do you provide multi-room audio solutions?**
+Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces.
+
+**Can a small space be customized as a home theater?**
+Yes. Home theater installation works in compact Karachi apartments and other rooms across Pakistan, not only a dedicated cinema.
 
 **How long does installation take?**
-Depends on complexity; most projects finish with limited disruption once equipment is on site.
+Project timelines vary based on system complexity and room requirements. Most installations are completed efficiently with minimal disruption to your daily routine. We provide detailed timelines during the consultation phase.
 
 ## Internal link suggestions
 
@@ -41,5 +50,6 @@ Depends on complexity; most projects finish with limited disruption once equipme
 - Audio distribution -> `/service/audio-distribution/`
 - Control systems -> `/service/control-systems/`
 - Blogs -> `/blogs/`
+- Book a site visit -> `/contact-us/`
 
 **Contact:** +92 21 111 570 111 · info@desertsound.com.pk
