@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { theatreServiceFaqs } from "@/lib/theatre-service-faqs"
 import { 
   Tv, 
   Volume2, 
@@ -51,28 +52,7 @@ const features = [
   }
 ]
 
-const faqs = [
-  {
-    question: "What's included in home theater installation in Pakistan?",
-    answer: "Home theater installation in Pakistan includes a projector and screen or large display, surround sound, an AV receiver or processor, seating, acoustic treatment, lighting control, system integration, and networking for streaming — designed and calibrated for the room, not a boxed retail system."
-  },
-  {
-    question: "Can I integrate smart home features with my cinema?",
-    answer: "Absolutely. Modern home cinema design incorporates smart home automation systems like Control4, Crestron, and HDL, enabling you to manage entertainment, lighting, climate, and more from a single platform with touch or voice control."
-  },
-  {
-    question: "Do you provide multi-room audio solutions?",
-    answer: "Yes. With our audio distribution installation services, we deliver high-quality sound to multiple rooms with centralized control. Perfect for syncing music throughout your home—from living rooms to bedrooms and outdoor spaces."
-  },
-  {
-    question: "Can a small space be customized as a home theater?",
-    answer: "Yes. Home theater installation works in Karachi apartments and other compact rooms across Pakistan, not only a dedicated cinema."
-  },
-  {
-    question: "How long does installation take?",
-    answer: "Project timelines vary based on system complexity and room requirements. Most installations are completed efficiently with minimal disruption to your daily routine. We provide detailed timelines during the consultation phase."
-  }
-]
+const faqs = theatreServiceFaqs
 
 function FeatureCard({ feature, index }: { feature: typeof features[0], index: number }) {
   const Icon = feature.icon
@@ -213,7 +193,7 @@ export default function HomeTheatreSystemsPage() {
                     <div className="relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[650px] overflow-hidden">
                       <Image
                         src="/Pictures Final/Services/Home_Theatre/Cover.jpg"
-                        alt="Professional Home Theater Installation"
+                        alt="Home theater installation in Pakistan with a projection screen and cinema seating"
                         className="h-full w-full object-cover"
                 width={1920}
                 height={1057}
@@ -287,7 +267,7 @@ export default function HomeTheatreSystemsPage() {
               >
                 <Image
                   src="/Pictures Final/Services/Home_Theatre/IMG_9762.JPG"
-                  alt="Professional Home Cinema Design"
+                  alt="Finished cinema room with acoustic treatment and seating after a home theater install"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 width={1920}
                 height={1280}
@@ -385,7 +365,7 @@ export default function HomeTheatreSystemsPage() {
               >
                 <Image
                   src="/Pictures Final/Services/Home_Theatre/DSC09887.JPG"
-                  alt="Immersive Audio Visual Experience"
+                  alt="Surround-sound and projection equipment installed in a dedicated home theater"
                   className="w-full h-[400px] lg:h-[600px] object-cover rounded-2xl shadow-2xl"
                 width={1920}
                 height={1280}
