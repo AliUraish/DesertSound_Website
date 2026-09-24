@@ -77,6 +77,9 @@ export function ProjectCaseStudyPage({
     setActiveIndex((current) => (current === galleryImages.length - 1 ? 0 : current + 1))
   }
 
+  const coverNeedsRawSrc = coverImage.includes("&")
+  const coverSrc = coverNeedsRawSrc ? encodeAssetPath(coverImage) : coverImage
+
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC]">
       <Header />
@@ -84,11 +87,12 @@ export function ProjectCaseStudyPage({
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
           <Image
-            src={coverImage}
+            src={coverSrc}
             alt={coverImageAlt}
             className={coverImageClassName}
             width={coverWidth}
             height={coverHeight}
+            unoptimized={coverNeedsRawSrc}
           />
         </section>
 
