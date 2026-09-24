@@ -33,6 +33,13 @@ const variants = {
 const defaultCoverClassName =
   "w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
 
+function encodeAssetPath(path: string) {
+  return path
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/")
+}
+
 export function TheatreInstallLink({ children = "home theater installation" }: { children?: ReactNode }) {
   return (
     <Link
@@ -102,7 +109,7 @@ export function ProjectCaseStudyPage({
             <AnimatePresence initial={false} onExitComplete={() => setIsAnimating(false)}>
               <motion.img
                 key={activeIndex}
-                src={galleryImages[activeIndex]}
+                src={encodeAssetPath(galleryImages[activeIndex])}
                 alt={galleryImageAlts?.[activeIndex] ?? `${title} image ${activeIndex + 1}`}
                 variants={variants}
                 initial="enter"
