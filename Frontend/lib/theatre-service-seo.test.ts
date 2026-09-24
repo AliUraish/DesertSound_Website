@@ -19,7 +19,7 @@ const schema = readFileSync(join(root, "lib/theatre-service-schema.ts"), "utf8")
 
 const title = "Home Theater Installation in Pakistan | Design and Install"
 const description =
-  "Home theater installation across Pakistan from our Karachi HQ in DHA. We design, install, and calibrate cinema rooms — site visits in DHA, Clifton, and nationwide."
+  "Home theater installation across Pakistan, including Karachi. We design, install, and calibrate cinema rooms — site visits nationwide."
 
 test("theatre service ranking meta matches catalog SERP strings", () => {
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
@@ -61,13 +61,20 @@ test("FAQPage JSON-LD uses the same five visible accordion Q&As", () => {
   }
 })
 
-test("theatre SERP copy is Pakistan-first and never says including Karachi", () => {
-  assert.doesNotMatch(title, /including Karachi/i)
-  assert.doesNotMatch(description, /including Karachi/i)
+test("theatre SERP copy is Pakistan-first including Karachi, with no HQ branding", () => {
   assert.match(title, /^Home Theater Installation in Pakistan/)
-  assert.match(description, /Karachi HQ in DHA/)
-  assert.doesNotMatch(ranking, /including Karachi/)
+  assert.match(description, /including Karachi/)
+  assert.doesNotMatch(title, /\bHQ\b/i)
+  assert.doesNotMatch(description, /\bHQ\b/i)
+  assert.doesNotMatch(description, /Karachi HQ|DHA HQ|from our Karachi HQ/i)
+  assert.match(ranking, /including Karachi/)
+  assert.match(seo, /including Karachi/)
+  assert.doesNotMatch(schema, /\bHQ\b/)
+  assert.doesNotMatch(seo, /\bHQ\b/)
+  assert.doesNotMatch(ranking, /\bHQ\b/)
   assert.doesNotMatch(livePage, /including Karachi/)
+  assert.match(livePage, /Explore Solutions/)
+  assert.match(livePage, /Get Free Consultation/)
 })
 
 test("homepage Theater title lock is untouched", () => {
