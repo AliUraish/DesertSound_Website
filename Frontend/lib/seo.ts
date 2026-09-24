@@ -94,7 +94,7 @@ export const catalogServicePages: SeoPage[] = [
     path: "/service/home-theatre-design-and-installation",
     title: "Home Theater Installation in Pakistan | Design and Install",
     description:
-      "Home theater installation across Pakistan from our Karachi HQ in DHA. We design, install, and calibrate cinema rooms — site visits in DHA, Clifton, and nationwide.",
+      "Home theater installation across Pakistan from Karachi. We design, install, and calibrate cinema rooms — site visits nationwide.",
     image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
   },
   {
