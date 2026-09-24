@@ -32,7 +32,7 @@ export default function CareersPage() {
                 Open Positions
               </p>
               <h2 className="text-3xl font-light leading-tight md:text-4xl">
-                Build thoughtful software with real-world impact.
+                We are hiring.
               </h2>
             </div>
 
