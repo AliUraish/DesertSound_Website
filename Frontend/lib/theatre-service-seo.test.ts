@@ -19,7 +19,7 @@ const schema = readFileSync(join(root, "lib/theatre-service-schema.ts"), "utf8")
 
 const title = "Home Theater Installation in Pakistan | Design and Install"
 const description =
-  "Home theater installation across Pakistan from our Karachi HQ in DHA. We design, install, and calibrate cinema rooms — site visits in DHA, Clifton, and nationwide."
+  "Home theater installation across Pakistan from Karachi. We design, install, and calibrate cinema rooms — site visits nationwide."
 
 test("theatre service ranking meta matches catalog SERP strings", () => {
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
@@ -65,7 +65,8 @@ test("theatre SERP copy is Pakistan-first and never says including Karachi", () 
   assert.doesNotMatch(title, /including Karachi/i)
   assert.doesNotMatch(description, /including Karachi/i)
   assert.match(title, /^Home Theater Installation in Pakistan/)
-  assert.match(description, /Karachi HQ in DHA/)
+  assert.match(description, /from Karachi/)
+  assert.doesNotMatch(description, /Karachi HQ/)
   assert.doesNotMatch(ranking, /including Karachi/)
   assert.doesNotMatch(livePage, /including Karachi/)
 })
