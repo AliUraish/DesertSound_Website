@@ -5,7 +5,9 @@ import type { Metadata } from "next"
  * Override those signals here only; keep the default Next.js 404 UI.
  */
 export const metadata: Metadata = {
-  title: "404: This page could not be found.",
+  title: {
+    absolute: "404: This page could not be found.",
+  },
   robots: {
     index: false,
     follow: true,
