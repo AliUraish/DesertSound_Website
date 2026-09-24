@@ -2,6 +2,8 @@ export type Project = {
   id: number
   slug: string
   title: string
+  /** Optional SERP title used by createProjectMetadata. Listing cards keep `title`. */
+  seoTitle?: string
   category: string
   location: string
   image: string
@@ -39,11 +41,12 @@ export const allProjects: Project[] = [
     id: 5,
     slug: "studio-vellari",
     title: "Studio Vellari",
+    seoTitle: "Studio Vellari | Home Theater Installation in Karachi",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/vellari1.jpg",
     description:
-      "Flagship Desert Sound cinema seating project featuring Studio Vellari Stanley recliners and daybed.",
+      "Flagship Karachi cinema with Studio Vellari Stanley recliners and daybed — seating, acoustics, hidden wiring, and calibration.",
     year: "2024",
     size: "Flagship Installation",
   },
@@ -51,11 +54,12 @@ export const allProjects: Project[] = [
     id: 27,
     slug: "stanley-seats",
     title: "Stanley Seats",
+    seoTitle: "Stanley Seats | Home Theater Installation in Karachi",
     category: "Residential Cinema Seating",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/Stanley_Seats/Cover_page.jpg",
     description:
-      "A residential seating-focused showcase built around Stanley recliners, tailored comfort, and a premium cinema presentation.",
+      "Karachi home cinema seating installation built around Stanley recliners, tailored comfort, and a calibrated viewing room.",
     year: "2024",
     size: "Featured Seating Installation",
   },
@@ -63,11 +67,12 @@ export const allProjects: Project[] = [
     id: 28,
     slug: "new-theatre",
     title: "Emerald Private Cinema",
+    seoTitle: "Emerald Private Cinema | Home Theater Installation in Karachi",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",
     description:
-      "A residential theatre showcase with a dedicated cinematic atmosphere, layered finishes, and a focused entertainment layout.",
+      "Dedicated home theater installation in Karachi with acoustic detailing, hidden wiring, and calibrated picture and sound.",
     year: "2024",
     size: "Featured Installation",
   },
@@ -75,11 +80,12 @@ export const allProjects: Project[] = [
     id: 29,
     slug: "project-platinum",
     title: "Project Platinum",
+    seoTitle: "Project Platinum | Home Theater Installation in Karachi",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/Project_Platinum/Cover.jpg",
     description:
-      "A residential cinema project with a refined presentation style, integrated detailing, and a premium entertainment-focused atmosphere.",
+      "Karachi home theater installation with discreet equipment placement, refined detailing, and a calibrated cinema room.",
     year: "2024",
     size: "Featured Installation",
   },
@@ -123,11 +129,12 @@ export const allProjects: Project[] = [
     id: 9,
     slug: "residency",
     title: "Residency Private Cinema",
+    seoTitle: "Residency Private Cinema | Home Theater Installation in Karachi",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/Red&White/Cover.JPG",
     description:
-      "A residential cinema focused on immersive viewing, refined comfort, and discreet technology integration.",
+      "Karachi home theater installation for immersive viewing, refined comfort, and discreet lighting, sound, and display integration.",
     year: "2024",
     size: "Featured Installation",
   },

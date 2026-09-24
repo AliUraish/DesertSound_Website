@@ -1,19 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ReactNode } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
+export const theatreInstallServiceHref = "/service/home-theatre-design-and-installation/"
+
 type ProjectCaseStudyPageProps = {
   breadcrumb: string
   coverImage: string
   coverImageAlt: string
-  description: [string, string]
+  coverImageClassName?: string
+  coverWidth?: number
+  coverHeight?: number
+  description: ReactNode[]
   galleryAspectClass?: string
   galleryImages: string[]
+  galleryImageAlts?: string[]
   title: string
 }
 
@@ -23,13 +30,31 @@ const variants = {
   exit: { opacity: 0 },
 }
 
+const defaultCoverClassName =
+  "w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
+
+export function TheatreInstallLink({ children = "home theater installation" }: { children?: ReactNode }) {
+  return (
+    <Link
+      href={theatreInstallServiceHref}
+      className="underline underline-offset-4 decoration-black/30 transition-colors hover:text-black hover:decoration-black/70"
+    >
+      {children}
+    </Link>
+  )
+}
+
 export function ProjectCaseStudyPage({
   breadcrumb,
   coverImage,
   coverImageAlt,
+  coverImageClassName = defaultCoverClassName,
+  coverWidth = 1600,
+  coverHeight = 1067,
   description,
   galleryAspectClass = "aspect-[18/9]",
   galleryImages,
+  galleryImageAlts,
   title,
 }: ProjectCaseStudyPageProps) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -51,16 +76,25 @@ export function ProjectCaseStudyPage({
 
       <main>
         <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <Image src={coverImage} alt={coverImageAlt} className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] object-cover lg:h-[68vh]"
-                width={1600}
-                height={1067}
-              />
+          <Image
+            src={coverImage}
+            alt={coverImageAlt}
+            className={coverImageClassName}
+            width={coverWidth}
+            height={coverHeight}
+          />
         </section>
 
         <section className="mx-auto max-w-[88%] px-4 py-12 lg:px-8 lg:py-16">
           <h1 className="mb-6 text-4xl text-black lg:text-6xl">{title}</h1>
-          <p className="max-w-5xl text-base text-black/70 lg:text-lg">{description[0]}</p>
-          <p className="mt-6 max-w-5xl text-base text-black/70 lg:text-lg">{description[1]}</p>
+          {description.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`max-w-5xl text-base text-black/70 lg:text-lg${index > 0 ? " mt-6" : ""}`}
+            >
+              {paragraph}
+            </p>
+          ))}
         </section>
 
         <section className="w-full pb-12 lg:pb-16">
@@ -69,7 +103,7 @@ export function ProjectCaseStudyPage({
               <motion.img
                 key={activeIndex}
                 src={galleryImages[activeIndex]}
-                alt={`${title} image ${activeIndex + 1}`}
+                alt={galleryImageAlts?.[activeIndex] ?? `${title} image ${activeIndex + 1}`}
                 variants={variants}
                 initial="enter"
                 animate="center"

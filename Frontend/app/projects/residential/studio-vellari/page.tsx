@@ -1,121 +1,30 @@
-"use client"
-
-import { useState } from "react"
-import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-
-const galleryImages = ["/vellari2.jpg", "/vellari3.jpg", "/vellari4.jpg", "/vellari5.jpg"]
-
-const variants = {
-  enter: { opacity: 0 },
-  center: { opacity: 1 },
-  exit: { opacity: 0 },
-}
+import { ProjectCaseStudyPage, TheatreInstallLink } from "@/components/project-case-study-page"
 
 export default function StudioVellariPage() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-
-  const handlePrev = () => {
-    if (isAnimating) return
-    setActiveIndex((current) => (current === 0 ? galleryImages.length - 1 : current - 1))
-  }
-
-  const handleNext = () => {
-    if (isAnimating) return
-    setActiveIndex((current) => (current === galleryImages.length - 1 ? 0 : current + 1))
-  }
-
   return (
-    <div className="w-full overflow-x-clip bg-[#F5F5DC]">
-      <Header />
-
-      <main>
-        <section className="pt-[100px] md:pt-24 lg:pt-28">
-          <Image
-            src="/vellari1.jpg"
-            alt="Studio Vellari main image"
-            className="w-full aspect-[3/2] md:aspect-auto md:h-[58vh] lg:h-[68vh] object-cover"
-                width={1920}
-                height={634}
-              />
-        </section>
-
-        <section className="max-w-[88%] mx-auto px-4 lg:px-8 py-12 lg:py-16">
-          <h1 className="text-4xl lg:text-6xl text-black mb-6">Studio Vellari</h1>
-          <p className="text-base lg:text-lg text-black/70 max-w-5xl">
-            The Studio Vellari Stanley Recliners and Stanley Daybed take pride of place in the new Flagship Desert
-            Sound Cinema, representing the pinnacle of luxury cinema seating. With a choice between a sleek single
-            seat recliner and an expansive daybed, the Stanley collection caters to various preferences and space
-            requirements. Each piece features customisable console widths and distinctive 3D carbon fibre panelling,
-            adding a modern, sophisticated touch.
-          </p>
-          <p className="text-base lg:text-lg text-black/70 max-w-5xl mt-6">
-            The versatility of the Stanley is further enhanced by the option to personalize consoles and armrests with
-            a variety of quilted stitch patterns, seamlessly blending into any décor. Designed for private home theatres
-            or upscale entertainment spaces, the Stanley sets a new standard for both style and comfort. Available in
-            four upholstery options—Alcantara, Nappa leather, nubuck, and velvet—this collection meets the
-            diverse tastes of discerning customers.
-          </p>
-        </section>
-
-        <section className="w-full pb-12 lg:pb-16">
-          <div className="max-w-[88%] mx-auto max-h-[calc(100vh-170px)] min-h-[220px] overflow-hidden rounded-xl relative aspect-[18/9]">
-            <AnimatePresence initial={false} onExitComplete={() => setIsAnimating(false)}>
-              <motion.img
-                key={activeIndex}
-                src={galleryImages[activeIndex]}
-                alt={`Studio Vellari image ${activeIndex + 2}`}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                onAnimationStart={() => setIsAnimating(true)}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </AnimatePresence>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 pt-4">
-            <motion.button
-              type="button"
-              aria-label="Previous image"
-              onClick={handlePrev}
-              whileHover={{ scale: 1.06, x: -2 }}
-              whileTap={{ scale: 0.94 }}
-              className="inline-flex items-center justify-center h-11 w-11 rounded-full border border-black/25 text-black hover:bg-black/10 transition-colors"
-            >
-              <motion.span whileHover={{ x: -2 }} transition={{ duration: 0.15 }}>
-                <ChevronLeft size={20} />
-              </motion.span>
-            </motion.button>
-            <motion.button
-              type="button"
-              aria-label="Next image"
-              onClick={handleNext}
-              whileHover={{ scale: 1.06, x: 2 }}
-              whileTap={{ scale: 0.94 }}
-              className="inline-flex items-center justify-center h-11 w-11 rounded-full border border-black/25 text-black hover:bg-black/10 transition-colors"
-            >
-              <motion.span whileHover={{ x: 2 }} transition={{ duration: 0.15 }}>
-                <ChevronRight size={20} />
-              </motion.span>
-            </motion.button>
-          </div>
-
-          <div className="max-w-[88%] mx-auto px-4 lg:px-8 pt-8">
-            <p className="text-sm text-black/50 uppercase tracking-[0.16em]">
-              Home / Projects / Residential / Studio Vellari
-            </p>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+    <ProjectCaseStudyPage
+      title="Studio Vellari"
+      coverImage="/vellari1.jpg"
+      coverImageAlt="Studio Vellari flagship cinema in Karachi with Stanley seating facing the screen"
+      coverWidth={1920}
+      coverHeight={634}
+      galleryImages={["/vellari2.jpg", "/vellari3.jpg", "/vellari4.jpg", "/vellari5.jpg"]}
+      galleryImageAlts={[
+        "Entry lounge to the Studio Vellari cinema with a lit marble niche and steps into the theatre",
+        "Studio Vellari Stanley recliners with carbon-fibre panelling and under-seat lighting",
+        "Stanley daybed and recliner rows in the Studio Vellari flagship cinema",
+        "Studio Vellari screen wall with a star ceiling and flanking speakers",
+      ]}
+      description={[
+        "Studio Vellari is a flagship Desert Sound cinema in Karachi. Studio Vellari Stanley recliners and a Stanley daybed take the centre of the room — the seating is specified with the install, not added after.",
+        "The Stanley collection offers a single-seat recliner or an expansive daybed, with customisable console widths and distinctive 3D carbon fibre panelling. Consoles and armrests can take quilted stitch patterns; upholstery options include Alcantara, Nappa leather, nubuck, and velvet.",
+        "Around the seats, the room is a dedicated cinema: a finished envelope, concealed wiring, acoustic surfaces, and a screen wall that keeps attention forward. Lighting and circulation are planned so every seat has a clear, comfortable view.",
+        <>
+          The room is calibrated as a complete cinema, not a furniture drop. Seating, acoustics, and picture belong to
+          the same <TheatreInstallLink /> — designed, installed, and tuned together.
+        </>,
+      ]}
+      breadcrumb="Home / Projects / Residential / Studio Vellari"
+    />
   )
 }
