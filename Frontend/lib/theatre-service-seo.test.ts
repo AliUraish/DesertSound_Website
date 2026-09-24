@@ -61,14 +61,20 @@ test("FAQPage JSON-LD uses the same five visible accordion Q&As", () => {
   }
 })
 
-test("theatre SERP copy is Pakistan-first and never says including Karachi", () => {
-  assert.doesNotMatch(title, /including Karachi/i)
-  assert.doesNotMatch(description, /including Karachi/i)
+test("theatre SERP copy is Pakistan-first from Karachi, with no HQ branding", () => {
   assert.match(title, /^Home Theater Installation in Pakistan/)
   assert.match(description, /from Karachi/)
-  assert.doesNotMatch(description, /Karachi HQ/)
+  assert.doesNotMatch(description, /including Karachi/i)
+  assert.doesNotMatch(description, /\bHQ\b/i)
+  assert.doesNotMatch(title, /\bHQ\b/i)
   assert.doesNotMatch(ranking, /including Karachi/)
+  assert.doesNotMatch(seo, /including Karachi/)
+  assert.doesNotMatch(schema, /\bHQ\b/)
+  assert.doesNotMatch(seo, /\bHQ\b/)
+  assert.doesNotMatch(ranking, /\bHQ\b/)
   assert.doesNotMatch(livePage, /including Karachi/)
+  assert.match(livePage, /Explore Solutions/)
+  assert.match(livePage, /Get Free Consultation/)
 })
 
 test("homepage Theater title lock is untouched", () => {

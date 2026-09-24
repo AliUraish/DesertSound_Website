@@ -14,8 +14,8 @@ export function getTheatreCatalogService() {
 }
 
 /**
- * Service JSON-LD for the live theatre route. Pakistan first; Karachi is the
- * HQ / city market inside Pakistan (not “including Karachi”).
+ * Service JSON-LD for the live theatre route. Pakistan-first nationwide
+ * installation from Karachi.
  */
 export function theatreServiceJsonLd() {
   const service = getTheatreCatalogService()
