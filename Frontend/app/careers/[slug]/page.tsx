@@ -52,12 +52,16 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     notFound()
   }
 
+  const datePosted = "2026-09-04"
+  const validThrough = "2026-12-03"
+
   const jobPostingJsonLd = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: position.title,
     description: [position.description, ...position.overview].join(" "),
-    datePosted: "2026-09-04",
+    datePosted,
+    validThrough,
     employmentType: "FULL_TIME",
     directApply: true,
     industry: "Smart home technology and audiovisual systems",
@@ -71,7 +75,10 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "22-C/II, 2nd Zamzama Commercial Lane, Phase V, D.H.A",
         addressLocality: position.location,
+        addressRegion: "Sindh",
+        postalCode: "75500",
         addressCountry: "PK",
       },
     },
@@ -143,7 +150,9 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
                 <dd>{position.experience}</dd>
               </div>
             </dl>
-
+            <p className="mt-5 text-sm font-light text-[#F5F5DC]/65">
+              Applications open through 3 Dec 2026
+            </p>
           </aside>
         </section>
 
