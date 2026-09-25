@@ -51,7 +51,7 @@ Load shedding and voltage swings are part of planning in Pakistan. Laser project
 
 ### Seating
 
-If you have two rows, raise the rear 8–12 inches so heads don't become the screen. Leave 4–5 feet from the front row to the image. Recliners with cup holders and USB are fine; sightlines matter more than the upholstery.
+If you have two rows, raise the rear 8–12 inches so heads don't become the screen. Leave 4–5 feet from the front row to the image. Recliners with cup holders and USB are fine; sightlines matter more than the upholstery. Stepped recliner rows are how [Emerald Private Cinema in Karachi](/projects/residential/new-theatre) keeps the back row on the image.
 
 ### Climate and Lighting
 

@@ -28,7 +28,7 @@ A [home theatre install](/service/home-theatre-design-and-installation/) is a la
 
 Write down a normal week, not a showroom Saturday. News and PSL in the lounge is a different job from two films a week in a spare bedroom. Guests, kids, and a sofa that still has to face conversation all change speaker height, screen size, and how much bass the neighbours will tolerate.
 
-If the room stays a living room by day, plan a setup that can disappear: wall-mounted display, in-wall or compact speakers, cables in the wall or in trunking. If you can close a door on a spare room, you can take a darker picture, a larger image, and a fuller surround layout.
+If the room stays a living room by day, plan a setup that can disappear: wall-mounted display, in-wall or compact speakers, cables in the wall or in trunking. If you can close a door on a spare room, you can take a darker picture, a larger image, and a fuller surround layout — the brief behind [Emerald Private Cinema in Karachi](/projects/residential/new-theatre), a dedicated room with acoustic detailing and calibrated picture and sound.
 
 ### Let Karachi light and heat veto the fantasy
 

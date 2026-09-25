@@ -35,7 +35,7 @@ Fixed-frame for a dedicated room. Motorized if the wall has to disappear during 
 
 ### Seating
 
-Comfort and sightlines. Risers for a second row. Distance matched to the screen.
+Comfort and sightlines. Risers for a second row. Distance matched to the screen. Specify the chairs with the room, as in [Stanley Seats](/projects/residential/stanley-seats) — a Karachi cinema seating install built around Stanley recliners.
 
 ### Acoustic treatment
 
