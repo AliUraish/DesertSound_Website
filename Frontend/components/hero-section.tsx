@@ -212,6 +212,7 @@ export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [canStartSlideshow, setCanStartSlideshow] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
+  const [hasLeftFirstSlide, setHasLeftFirstSlide] = useState(false)
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -242,7 +243,14 @@ export function HeroSection() {
     return () => clearInterval(interval)
   }, [canStartSlideshow])
 
+  useEffect(() => {
+    if (currentSlide !== 0) setHasLeftFirstSlide(true)
+  }, [currentSlide])
+
   const slide = heroSlides[currentSlide]
+  // Keep the LCP hero painted through hydration. A 1.5s fade-from-0 on the first
+  // slide is invisible to LCP and was competing with the ~8.7s mobile baseline.
+  const animateSlide = hasMounted && (currentSlide !== 0 || hasLeftFirstSlide)
 
   return (
     <section ref={containerRef} className="relative w-full bg-[#F5F5DC] overflow-hidden">
@@ -252,7 +260,7 @@ export function HeroSection() {
             <HeroSlideImage
               key={currentSlide}
               slide={slide}
-              animate={hasMounted}
+              animate={animateSlide}
               isFirstSlide={currentSlide === 0}
             />
           </AnimatePresence>
