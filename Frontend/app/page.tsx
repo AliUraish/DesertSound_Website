@@ -9,6 +9,7 @@ import { TheaterTourSection } from "@/components/theater-tour-section"
 import { Testimonials } from "@/components/testimonials"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { NewsletterPrompt } from "@/components/newsletter-prompt"
 import {
   createMetadata,
   defaultSeo,
@@ -40,6 +41,7 @@ export default function HomePage() {
       />
       <main className="min-h-screen bg-background">
         <Header />
+        <NewsletterPrompt />
         <HeroSection />
         <OurBrands />
         <ServicesSection />
