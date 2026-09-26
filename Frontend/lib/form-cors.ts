@@ -18,6 +18,6 @@ export function formOptions(request: Request) {
   return applyFormCors(request, new NextResponse(null, { status: 204 }))
 }
 
-export function formJson(request: Request, body: unknown, status = 200) {
-  return applyFormCors(request, NextResponse.json(body, { status }))
+export function formJson(request: Request, body: unknown, status = 200, headers?: HeadersInit) {
+  return applyFormCors(request, NextResponse.json(body, { status, headers }))
 }

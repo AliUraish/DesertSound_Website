@@ -1,5 +1,6 @@
 import { formJson, formOptions } from "@/lib/form-cors"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
+import { formRateLimitRejection } from "@/lib/form-rate-limit"
 import { emailLayout, sendNotification } from "@/lib/notifications"
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -9,6 +10,9 @@ export function OPTIONS(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const limited = formRateLimitRejection(request, "contact")
+  if (limited) return formJson(request, limited.body, limited.status, limited.headers)
+
   try {
     const body = (await request.json()) as Record<string, unknown>
     const firstName = typeof body.firstName === "string" ? body.firstName.trim() : ""
