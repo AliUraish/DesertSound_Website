@@ -58,6 +58,9 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     title: position.title,
     description: [position.description, ...position.overview].join(" "),
     datePosted: "2026-09-04",
+    // Hidden Google expiry only. The page says the role stays open until it is filled.
+    // Move this date forward if the role is still open on that day.
+    validThrough: "2027-09-04",
     employmentType: "FULL_TIME",
     directApply: true,
     industry: "Smart home technology and audiovisual systems",
