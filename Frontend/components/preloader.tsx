@@ -8,10 +8,9 @@ export function Preloader() {
   const [showEntrance, setShowEntrance] = useState(true)
 
   useEffect(() => {
-    // Simply show the welcome screen for 2.5 seconds then lift the curtain
     const timer = setTimeout(() => {
       setShowEntrance(false)
-    }, 2500)
+    }, 800)
     return () => clearTimeout(timer)
   }, [])
 
@@ -25,7 +24,7 @@ export function Preloader() {
       {showEntrance && (
         <motion.div
           exit={{ y: "-100%" }}
-          transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-[100] bg-[#1a1a1a] flex flex-col items-center justify-center overflow-hidden"
         >
           {/* Main Logo Container */}
@@ -35,7 +34,7 @@ export function Preloader() {
               initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               className="relative z-10 w-64 md:w-80 mb-8 p-8"
             >
               {/* Premium Spotlight Effect */}
@@ -58,7 +57,7 @@ export function Preloader() {
               initial={{ width: 0 }}
               animate={{ width: "120px" }}
               exit={{ width: 0, opacity: 0 }}
-              transition={{ delay: 0.5, duration: 0.8, ease: "easeInOut" }}
+              transition={{ delay: 0.15, duration: 0.35, ease: "easeInOut" }}
               className="h-[1px] bg-white/20 mb-6"
             />
 
@@ -68,7 +67,7 @@ export function Preloader() {
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 exit={{ y: "-100%" }}
-                transition={{ delay: 0.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ delay: 0.25, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-white/60 text-xs md:text-sm uppercase tracking-[0.4em] font-light"
               >
                 Experience Luxury
