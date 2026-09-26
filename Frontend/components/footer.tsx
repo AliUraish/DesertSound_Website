@@ -53,9 +53,12 @@ export function Footer() {
               src="/0-removebg-preview.png"
               alt="Desert Sound"
               className="mb-8 h-16 w-auto object-contain lg:h-20"
-                width={820}
-                height={304}
-              />
+              width={320}
+              height={119}
+              sizes="(min-width: 1024px) 160px, 128px"
+              quality={75}
+              loading="lazy"
+            />
 
             <div className="space-y-4">
               <h3 className="text-3xl font-bold text-black lg:text-4xl">Newsletter</h3>

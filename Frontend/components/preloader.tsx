@@ -46,9 +46,12 @@ export function Preloader() {
                 src="/0-removebg-preview.png"
                 alt="Desert Sound"
                 className="relative z-20 h-auto w-full object-contain drop-shadow-2xl"
-                width={820}
-                height={304}
-                priority
+                width={320}
+                height={119}
+                sizes="256px"
+                quality={75}
+                loading="eager"
+                fetchPriority="low"
               />
             </motion.div>
 

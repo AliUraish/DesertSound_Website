@@ -111,8 +111,11 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
                 alt={title}
                 className="w-full h-full object-cover"
                 style={imagePosition ? { objectPosition: imagePosition } : undefined}
-                width={1600}
-                height={1067}
+                width={1200}
+                height={800}
+                sizes="92vw"
+                quality={75}
+                loading="lazy"
               />
             </motion.div>
             {/* Gradient overlay at bottom of image */}
@@ -211,8 +214,11 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
                     alt={title}
                     className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                     style={imagePosition ? { objectPosition: imagePosition } : undefined}
-                width={1600}
-                height={1067}
+                    width={1200}
+                    height={800}
+                    sizes="(min-width: 1024px) 55vw, 90vw"
+                    quality={75}
+                    loading="lazy"
               />
             </motion.div>
         </div>

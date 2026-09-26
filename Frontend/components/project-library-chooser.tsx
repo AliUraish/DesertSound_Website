@@ -58,9 +58,12 @@ export function ProjectLibraryChooser() {
                   src={option.image}
                   alt={option.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                width={1600}
-                height={1067}
-              />
+                  width={1200}
+                  height={800}
+                  sizes="(min-width: 1024px) 45vw, 90vw"
+                  quality={75}
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 text-white">

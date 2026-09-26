@@ -89,6 +89,9 @@ export function ComparisonTransformation() {
                 draggable={false}
                 width={1280}
                 height={592}
+                sizes="(min-width: 1024px) 1120px, 100vw"
+                quality={75}
+                loading="lazy"
               />
               {/* Before Label */}
               <div className="absolute top-4 left-4 lg:top-6 lg:left-6 bg-black/60 backdrop-blur-sm text-white text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">
@@ -108,6 +111,9 @@ export function ComparisonTransformation() {
                 draggable={false}
                 width={1920}
                 height={1280}
+                sizes="(min-width: 1024px) 1120px, 100vw"
+                quality={75}
+                loading="lazy"
               />
               {/* After Label */}
               <div className="absolute top-4 right-4 lg:top-6 lg:right-6 bg-white/90 backdrop-blur-sm text-black text-xs lg:text-sm font-medium uppercase tracking-wider px-3 py-1.5 rounded-full">

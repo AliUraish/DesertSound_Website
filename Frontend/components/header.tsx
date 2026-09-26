@@ -41,9 +41,12 @@ export function Header() {
                 src="/0-removebg-preview.png"
                 alt="Desert Sound Logo"
                 className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
-                width={820}
-                height={304}
-                priority
+                width={320}
+                height={119}
+                sizes="(min-width: 1024px) 160px, 128px"
+                quality={75}
+                loading="eager"
+                fetchPriority="low"
               />
               {/* Divider separating the company brand from its accreditation */}
               <span
@@ -56,9 +59,13 @@ export function Header() {
                   src="/image-removebg-preview (1).png"
                   alt="CEDIA Member"
                   className="h-9 sm:h-11 lg:h-[52px] w-auto object-contain opacity-90"
-                width={637}
-                height={313}
-              />
+                  width={200}
+                  height={98}
+                  sizes="(min-width: 1024px) 120px, 88px"
+                  quality={75}
+                  loading="eager"
+                  fetchPriority="low"
+                />
               </span>
             </Link>
 
