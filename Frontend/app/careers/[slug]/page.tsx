@@ -58,6 +58,9 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     title: position.title,
     description: [position.description, ...position.overview].join(" "),
     datePosted: "2026-09-04",
+    // Hidden Google expiry only. The page says the role stays open until it is filled.
+    // Move this date forward if the role is still open on that day.
+    validThrough: "2027-09-04",
     employmentType: "FULL_TIME",
     directApply: true,
     industry: "Smart home technology and audiovisual systems",
@@ -71,7 +74,10 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "22-C/II, 2nd Zamzama Commercial Lane, Phase V, D.H.A",
         addressLocality: position.location,
+        addressRegion: "Sindh",
+        postalCode: "75500",
         addressCountry: "PK",
       },
     },
@@ -143,7 +149,9 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
                 <dd>{position.experience}</dd>
               </div>
             </dl>
-
+            <p className="mt-5 text-sm font-light text-[#F5F5DC]/65">
+              Open until the role is filled.
+            </p>
           </aside>
         </section>
 
