@@ -52,16 +52,12 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     notFound()
   }
 
-  const datePosted = "2026-09-04"
-  const validThrough = "2026-12-03"
-
   const jobPostingJsonLd = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: position.title,
     description: [position.description, ...position.overview].join(" "),
-    datePosted,
-    validThrough,
+    datePosted: "2026-09-04",
     employmentType: "FULL_TIME",
     directApply: true,
     industry: "Smart home technology and audiovisual systems",
@@ -151,7 +147,7 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
               </div>
             </dl>
             <p className="mt-5 text-sm font-light text-[#F5F5DC]/65">
-              Applications open through 3 Dec 2026
+              Open until the role is filled.
             </p>
           </aside>
         </section>
