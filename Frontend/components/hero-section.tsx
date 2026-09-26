@@ -94,6 +94,9 @@ function HeroSlideImage({
         alt={`${slide.title} ${slide.subtitle}`}
         width={1920}
         height={1080}
+        sizes="100vw"
+        quality={75}
+        priority={isFirstSlide}
         loading={isFirstSlide ? "eager" : "lazy"}
         fetchPriority={isFirstSlide ? "high" : "auto"}
         decoding="async"

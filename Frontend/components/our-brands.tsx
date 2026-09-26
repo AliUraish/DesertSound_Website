@@ -81,9 +81,11 @@ function BrandCard({
           alt={`${brand.name} logo`}
           className={`${brand.sizeClass ?? "h-24 lg:h-32"} w-full object-contain opacity-90`}
           loading="lazy"
-                width={1600}
-                height={1067}
-              />
+          width={280}
+          height={160}
+          sizes="(min-width: 1024px) 280px, 220px"
+          quality={75}
+        />
       </a>
     )
   }
@@ -95,9 +97,11 @@ function BrandCard({
         alt={`${brand.name} logo`}
         className={`${brand.sizeClass ?? "h-24 lg:h-32"} w-full object-contain opacity-90`}
         loading="lazy"
-                width={1600}
-                height={1067}
-              />
+        width={280}
+        height={160}
+        sizes="(min-width: 1024px) 280px, 220px"
+        quality={75}
+      />
     </div>
   )
 }
@@ -131,9 +135,11 @@ function StaticLogoRow({
               alt={item.name}
               className="h-full w-full object-contain opacity-90"
               loading="lazy"
-                width={1600}
-                height={1067}
-              />
+              width={item.wide ? 440 : 250}
+              height={176}
+              sizes={item.wide ? "(min-width: 1024px) 440px, 320px" : "(min-width: 1024px) 250px, 190px"}
+              quality={75}
+            />
           </div>
         ))}
       </div>
@@ -151,6 +157,11 @@ export function OurBrands() {
   const lastTimeRef = useRef<number | null>(null)
   const offsetRef = useRef(0)
   const [isDragging, setIsDragging] = useState(false)
+  const [hasLoopClone, setHasLoopClone] = useState(false)
+
+  useEffect(() => {
+    setHasLoopClone(true)
+  }, [])
 
   const normalizeOffset = () => {
     const track = trackRef.current
@@ -176,6 +187,8 @@ export function OurBrands() {
   }
 
   useEffect(() => {
+    if (!hasLoopClone) return
+
     const animate = (time: number) => {
       const track = trackRef.current
       const loopWidth = track ? track.scrollWidth / 2 : 0
@@ -203,7 +216,7 @@ export function OurBrands() {
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [])
+  }, [hasLoopClone])
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return
@@ -282,11 +295,13 @@ export function OurBrands() {
                 <BrandCard key={`first-${index}`} brand={brand} />
               ))}
             </div>
-            <div className="flex items-center gap-10 lg:gap-14 shrink-0" aria-hidden="true">
-              {brands.map((brand, index) => (
-                <BrandCard key={`second-${index}`} brand={brand} interactive={false} />
-              ))}
-            </div>
+            {hasLoopClone ? (
+              <div className="flex items-center gap-10 lg:gap-14 shrink-0" aria-hidden="true">
+                {brands.map((brand, index) => (
+                  <BrandCard key={`second-${index}`} brand={brand} interactive={false} />
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
