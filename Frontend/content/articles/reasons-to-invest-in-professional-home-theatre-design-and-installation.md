@@ -35,7 +35,7 @@ Professionals also set brightness and placement against the actual light: west-f
 
 ### Built Around the House
 
-Karachi rooms are rarely empty boxes. Windows, columns, and existing furniture get planned around. The system should look like it belongs, not like a rack parked in the lounge.
+Karachi rooms are rarely empty boxes. Windows, columns, and existing furniture get planned around. The system should look like it belongs, not like a rack parked in the lounge. [Studio Vellari](/projects/residential/studio-vellari) is a flagship Karachi cinema built that way: seating, acoustics, and the screen wall specified together.
 
 A spare bedroom, a basement, or a living-room wall can all work. The layout changes; the rules do not: one main seat on axis, speakers that can actually see that seat, and a rack that can breathe.
 

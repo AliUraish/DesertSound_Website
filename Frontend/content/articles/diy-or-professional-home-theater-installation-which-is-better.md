@@ -35,7 +35,7 @@ A “quick” weekend becomes three weekends when the projector keystone is ugly
 
 ### What a Professional Does
 
-Survey. Design to the room. Wire before paint if we can. Calibrate with measurement. Hand over one way to turn it on.
+Survey. Design to the room. Wire before paint if we can. Calibrate with measurement. Hand over one way to turn it on. That is [home theatre design and installation](/service/home-theatre-design-and-installation/), not unpacking boxes.
 
 That includes acoustics, light, and the boring parts: cable gauge, power, and a rack that does not cook. Special requests — a hidden screen, a keypad, a second row — are normal work, not a surprise invoice for “complexity.”
 

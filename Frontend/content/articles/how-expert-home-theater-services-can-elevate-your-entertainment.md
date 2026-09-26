@@ -35,7 +35,7 @@ One remote or app for source, volume, lights, and screen. Cables hidden in walls
 
 ### Seating and light
 
-Sightlines and distance first. Everyone should see the screen without necks craned. Dimmable or bias lighting keeps the picture readable without washing it out.
+Sightlines and distance first. Everyone should see the screen without necks craned. [Studio Vellari](/projects/residential/studio-vellari) shows that in a flagship Karachi room: seating specified with the install, then lighting planned so every seat has a clear view. Dimmable or bias lighting keeps the picture readable without washing it out.
 
 ### After install
 

@@ -25,7 +25,7 @@ A lot of [smart home automation system](/service/smart-home-automation/) searche
 
 Dedicated cinemas look finished in photos: rows, dark paint, house lights. Most families don't watch a film every night. They need sport, YouTube, games, PSL, and a place that still works with the lights up. A sealed shrine sits empty. A media room stays in the circulation of the house.
 
-Clients often arrive asking for a theatre and leave with a flexible room once we talk through the week. Same finish, daily use.
+Clients often arrive asking for a theatre and leave with a flexible room once we talk through the week. Same finish, daily use. [Residency Private Cinema](/projects/residential/residency) is that Karachi brief — immersive viewing with recliners and a sofa, still livable when the film is over.
 
 ### Plan the Use, Then the Kit
 

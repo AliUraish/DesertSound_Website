@@ -19,7 +19,7 @@ A television and a soundbar used to be enough. In more Pakistani homes now, the 
 
 ### Personal Rooms, Not Just Villas
 
-Urban families in Karachi, Lahore, and Islamabad are spending on a room they control: screen size, seats, lighting, and acoustic treatment matched to the space. Apartment media rooms are part of that — small footprint, still a proper picture if the plan is honest. [Audio distribution](/service/audio-distribution/) lets the same house play music elsewhere without a second rack.
+Urban families in Karachi, Lahore, and Islamabad are spending on a room they control: screen size, seats, lighting, and acoustic treatment matched to the space. Apartment media rooms are part of that — small footprint, still a proper picture if the plan is honest. [Residency Private Cinema](/projects/residential/residency) is a Karachi room in that vein: cinematic, but still a space people use. [Audio distribution](/service/audio-distribution/) lets the same house play music elsewhere without a second rack.
 
 Desert Sound designs each room to the walls you have, not a catalogue layout.
 

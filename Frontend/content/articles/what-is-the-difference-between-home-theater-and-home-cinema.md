@@ -27,7 +27,7 @@ Large TV or projector, surround sound, seating you can sit in for two hours, lig
 
 ### Home cinema
 
-A room that exists for playback. Darker finishes, acoustic treatment, usually a projector and a larger screen, seats laid out for one purpose. Soundproofing matters more here because the volume stays up.
+A room that exists for playback. Darker finishes, acoustic treatment, usually a projector and a larger screen, seats laid out for one purpose. [Emerald Private Cinema in Karachi](/projects/residential/new-theatre) is that dedicated-room version. Soundproofing matters more here because the volume stays up.
 
 ### The real differences
 

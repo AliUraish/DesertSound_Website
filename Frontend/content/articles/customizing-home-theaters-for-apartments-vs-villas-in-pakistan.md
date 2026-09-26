@@ -25,7 +25,7 @@ Hard, close walls bounce sound into the next flat. Treatment and sealing matter 
 
 ### Villas
 
-A dedicated room changes the brief: pre-wire, a high-output projector, a full surround or Atmos layout, and seating on more than one row if the floor plan allows it. [Smart home automation](/service/smart-home-automation/) can take lights, shades, and volume on one scene. Outdoor audio is an option when the garden is part of how the house entertains.
+A dedicated room changes the brief: pre-wire, a high-output projector, a full surround or Atmos layout, and seating on more than one row if the floor plan allows it. [Project Platinum](/projects/residential/project-platinum) is a Karachi example — two recliner rows, discreet equipment, and a room that still feels composed. [Smart home automation](/service/smart-home-automation/) can take lights, shades, and volume on one scene. Outdoor audio is an option when the garden is part of how the house entertains.
 
 Acoustic treatment has room to be done properly — not a single panel behind the sofa.
 
