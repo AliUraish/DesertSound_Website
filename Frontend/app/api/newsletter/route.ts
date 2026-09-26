@@ -1,5 +1,6 @@
 import { formJson, formOptions } from "@/lib/form-cors"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
+import { formRateLimitRejection } from "@/lib/form-rate-limit"
 import { newsletterWelcomeEmail } from "@/lib/newsletter-welcome"
 import { emailLayout, sendEmail, sendNotification, syncNewsletterContact } from "@/lib/notifications"
 
@@ -10,6 +11,9 @@ export function OPTIONS(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const limited = formRateLimitRejection(request, "newsletter")
+  if (limited) return formJson(request, limited.body, limited.status, limited.headers)
+
   try {
     const body = (await request.json()) as { email?: unknown; website?: unknown }
     const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : ""

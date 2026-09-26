@@ -1,4 +1,5 @@
 import { formJson, formOptions } from "@/lib/form-cors"
+import { formRateLimitRejection } from "@/lib/form-rate-limit"
 import { normalizeGitHubProfileUrl, normalizeHttpUrl } from "@/lib/form-urls"
 import { positions } from "@/lib/careers-data"
 import { ensureSubmissionSchema, getDatabase } from "@/lib/database"
@@ -20,6 +21,9 @@ export function OPTIONS(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const limited = formRateLimitRejection(request, "job-applications")
+  if (limited) return formJson(request, limited.body, limited.status, limited.headers)
+
   try {
     const formData = await request.formData()
     const name = String(formData.get("name") ?? "").trim()
