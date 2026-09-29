@@ -78,9 +78,9 @@ Choose by the week, not the brochure. If you can close a door, you can take a da
 
 Karachi apartments and Lahore houses fail for the same reason when they skip the survey: gear chosen for a showroom, then forced into the room. Islamabad villas with glass and stone fail the same way if treatment and bass are an afterthought. The city changes the light and the neighbours. The sequence does not.
 
-### Pakistan-wide install, Karachi as the working city
+### Across Pakistan, from Karachi
 
-Desert Sound installs home cinema rooms across Pakistan. Karachi is the working city: the residential cases you can visit or study in detail are Karachi rooms, because that is where we finish work week after week. A project in another city still starts with a site visit, a layout for that building, and the same design–install–calibrate path.
+Desert Sound installs home cinema rooms across Pakistan, from Karachi. The residential cases you can visit or study in detail are Karachi rooms, because that is where we finish work week after week. A project in another city still starts with a site visit, a layout for that building, and the same design–install–calibrate path.
 
 Do not hire on a national claim with no local rooms. Do not hire on a shop floor. Ask for a survey, a written scope that includes concealment and calibration, and finished theatres that match the brief.
 
