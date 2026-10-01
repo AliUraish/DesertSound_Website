@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { canonicalizePath } from "@/lib/canonical-path"
 import { getProject, type ProjectLibrary } from "@/lib/projects-data"
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.desertsound.com.pk"
@@ -143,7 +144,8 @@ export const catalogServicePages: SeoPage[] = [
 export function absoluteUrl(path = "/") {
   if (path.startsWith("http")) return path
   const normalized = path.startsWith("/") ? path : `/${path}`
-  const encoded = normalized
+  const canonical = canonicalizePath(normalized)
+  const encoded = canonical
     .split("/")
     .map((segment) => encodeURIComponent(segment))
     .join("/")

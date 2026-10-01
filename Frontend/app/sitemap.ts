@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { canonicalizePath } from "@/lib/canonical-path"
 import { positions } from "@/lib/careers-data"
 import { projectLibraries } from "@/lib/projects-data"
 import { rankingSeoPages } from "@/lib/ranking-seo-content"
@@ -17,13 +18,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const rankingRoutes = rankingSeoPages.map((page) => page.slug)
 
   const routes = Array.from(
-    new Set([
-      ...staticRoutes,
-      ...residentialProjectRoutes,
-      ...commercialProjectRoutes,
-      ...careerRoutes,
-      ...rankingRoutes,
-    ]),
+    new Set(
+      [
+        ...staticRoutes,
+        ...residentialProjectRoutes,
+        ...commercialProjectRoutes,
+        ...careerRoutes,
+        ...rankingRoutes,
+      ].map((route) => canonicalizePath(route)),
+    ),
   )
 
   return routes.map((route) => ({
