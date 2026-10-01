@@ -1,4 +1,8 @@
-// Cutover leftovers — permanent 301s. Do not 301 ranking 1:1 URLs or the 3 extra blogs.
+// Cutover leftovers — permanent 301/308s. Do not 301 ranking 1:1 URLs or the 3 extra blogs.
+// GSC still lists some of these as "Page with redirect" / "Redirect error" leftovers:
+//   /services/smart-home-automation → /service/smart-home-automation
+//   /how-to-optimize-your-room-for-the-best-home-cinema-experience/ → slashless
+//   /affordable-home-theatre-installation-ideas/ → slashless (was a platform slash 308)
 export const cutoverRedirects = [
   { source: '/favicon.ico', destination: '/favicon.png', permanent: true },
   { source: '/blog', destination: '/blogs', permanent: true },
@@ -39,3 +43,40 @@ export const cutoverRedirects = [
   { source: '/how-smart-home-automation-can-simplify-your-daily-life', destination: '/blogs', permanent: true },
   { source: '/change-the-way-you-live-by-integrating-smart-home-automation', destination: '/blogs', permanent: true },
 ]
+
+function isExactSource(source) {
+  return !source.includes(":") && !source.includes("*")
+}
+
+function stripTrailingSlash(pathname) {
+  if (!pathname || pathname === "/") return pathname || "/"
+  return pathname.endsWith("/") ? pathname.slice(0, -1) : pathname
+}
+
+const exactDestinationBySource = new Map(
+  cutoverRedirects
+    .filter((rule) => isExactSource(rule.source))
+    .map((rule) => [stripTrailingSlash(rule.source), rule.destination]),
+)
+
+/** Slashless + cutover remap. Used by proxy, sitemap, canonicals, and internal links. */
+export function canonicalizePath(pathname) {
+  const stripped = stripTrailingSlash(pathname)
+  return exactDestinationBySource.get(stripped) ?? stripped
+}
+
+/** Explicit `/legacy/` → canonical so GSC slash leftovers are app-owned 308s, not only Vercel slash strip. */
+export function withTrailingSlashRedirects(redirects) {
+  const slashVariants = redirects
+    .filter((rule) => isExactSource(rule.source) && !rule.source.endsWith("/") && !rule.source.includes("."))
+    .map((rule) => ({
+      ...rule,
+      source: `${rule.source}/`,
+    }))
+
+  return [
+    ...slashVariants,
+    ...redirects,
+    { source: "/:path+/", destination: "/:path+", permanent: true },
+  ]
+}

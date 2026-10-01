@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
+import { canonicalizePath } from "@/lib/canonical-path"
 import { shouldBypassApexRedirect } from "@/lib/form-origins"
 
 const APEX_HOST = "desertsound.com.pk"
@@ -16,11 +17,20 @@ export function proxy(request: NextRequest) {
   }
 
   const host = request.headers.get("host")?.split(":")[0]?.toLowerCase() || ""
+  const canonicalPath = canonicalizePath(pathname)
+  const isApex = host === APEX_HOST
+  const pathChanged = canonicalPath !== pathname
 
-  if (host === APEX_HOST) {
+  // One hop: apex → www and/or slash|/services/ leftovers → slashless /service/... .
+  if (isApex || pathChanged) {
     const url = request.nextUrl.clone()
-    url.protocol = "https:"
-    url.host = WWW_HOST
+    if (isApex) {
+      url.protocol = "https:"
+      url.host = WWW_HOST
+    }
+    if (pathChanged) {
+      url.pathname = canonicalPath
+    }
     return NextResponse.redirect(url, 308)
   }
 

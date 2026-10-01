@@ -7,6 +7,8 @@ export type Position = {
   employmentType: "Full-time"
   experience: string
   description: string
+  datePosted: string
+  validThrough: string
   overview: string[]
   responsibilities: string[]
   qualifications: string[]
@@ -25,6 +27,10 @@ export const positions: Position[] = [
     experience: "5+ years",
     description:
       "Lead the design and delivery of reliable software that powers Desert Sound's digital customer experience, internal operations, and connected-technology workflows.",
+    datePosted: "2026-09-04",
+    // Hidden Google expiry only. Visible copy stays "Open until the role is filled."
+    // Move this date forward if the role is still open on that day.
+    validThrough: "2027-09-04",
     overview: [
       "Desert Sound creates premium home theatre, automation, audio, networking, and lighting experiences. We are looking for a senior engineer who can turn complex business and technical requirements into software that feels simple, dependable, and carefully crafted.",
       "You will own meaningful projects from discovery through production, make sound architectural decisions, raise engineering standards, and work closely with business and technical teams. This is a hands-on role for someone who is equally comfortable shaping a solution and shipping the details.",

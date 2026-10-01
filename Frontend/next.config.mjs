@@ -1,4 +1,4 @@
-import { cutoverRedirects } from "./cutover-redirects.mjs"
+import { cutoverRedirects, withTrailingSlashRedirects } from "./cutover-redirects.mjs"
 
 const isProduction = process.env.NODE_ENV === "production"
 
@@ -40,6 +40,8 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next",
   poweredByHeader: false,
   devIndicators: false,
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
   outputFileTracingIncludes: {
     "/*": ["./content/articles/**/*"],
   },
@@ -68,7 +70,7 @@ const nextConfig = {
     ]
   },
   async redirects() {
-    return cutoverRedirects
+    return withTrailingSlashRedirects(cutoverRedirects)
   },
 }
 

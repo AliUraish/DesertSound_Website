@@ -12,7 +12,8 @@ import { CareersFooter } from "@/components/careers-footer"
 import { Header } from "@/components/header"
 import { CareerApplicationForm } from "@/components/career-application-form"
 import { positions } from "@/lib/careers-data"
-import { absoluteUrl, createMetadata, siteName } from "@/lib/seo"
+import { jobPostingJsonLd } from "@/lib/job-posting-schema"
+import { createMetadata, siteName } from "@/lib/seo"
 
 type CareerApplyPageProps = {
   params: Promise<{
@@ -52,37 +53,7 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
     notFound()
   }
 
-  const jobPostingJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    title: position.title,
-    description: [position.description, ...position.overview].join(" "),
-    datePosted: "2026-09-04",
-    // Hidden Google expiry only. The page says the role stays open until it is filled.
-    // Move this date forward if the role is still open on that day.
-    validThrough: "2027-09-04",
-    employmentType: "FULL_TIME",
-    directApply: true,
-    industry: "Smart home technology and audiovisual systems",
-    hiringOrganization: {
-      "@type": "Organization",
-      name: siteName,
-      sameAs: absoluteUrl("/"),
-      logo: absoluteUrl("/0-removebg-preview.png"),
-    },
-    jobLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "22-C/II, 2nd Zamzama Commercial Lane, Phase V, D.H.A",
-        addressLocality: position.location,
-        addressRegion: "Sindh",
-        postalCode: "75500",
-        addressCountry: "PK",
-      },
-    },
-    url: absoluteUrl(`/careers/${position.slug}`),
-  }
+  const jobPosting = jobPostingJsonLd(position)
 
   const jobSections = [
     { title: "What you will do", items: position.responsibilities },
@@ -98,7 +69,7 @@ export default async function CareerApplyPage(props: CareerApplyPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jobPostingJsonLd).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(jobPosting).replace(/</g, "\\u003c"),
         }}
       />
 

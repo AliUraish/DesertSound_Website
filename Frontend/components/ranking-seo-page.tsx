@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { canonicalizePath } from "@/lib/canonical-path"
 import type { RankingSeoPage } from "@/lib/ranking-seo-types"
 
 function renderInline(text: string): React.ReactNode {
@@ -14,7 +15,7 @@ function renderInline(text: string): React.ReactNode {
       const href = link[2]
       if (href.startsWith("/") && !href.startsWith("//") && href !== "/") {
         return (
-          <Link key={i} href={href} className="underline underline-offset-4 hover:text-black">
+          <Link key={i} href={canonicalizePath(href)} className="underline underline-offset-4 hover:text-black">
             {renderInline(link[1])}
           </Link>
         )
@@ -123,7 +124,7 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
                 {page.links.map((link) => (
                   <Link
                     key={link.href}
-                    href={link.href}
+                    href={canonicalizePath(link.href)}
                     className="rounded-2xl border border-black/5 bg-white px-5 py-4 text-base font-light text-black transition-all hover:border-black/10 hover:shadow-md"
                   >
                     {link.label.replace(/\*\*/g, "")}
