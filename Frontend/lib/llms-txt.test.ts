@@ -11,6 +11,7 @@ const agentsMd = readFileSync(join(root, "public/agents.md"), "utf8")
 const requiredPaths = [
   "/",
   "/service/home-theatre-design-and-installation",
+  "/service/home-cinema-installation-islamabad",
   "/contact-us",
   "/about-us",
   "/blogs",

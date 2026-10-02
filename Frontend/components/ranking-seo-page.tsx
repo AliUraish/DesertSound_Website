@@ -78,7 +78,7 @@ function renderBody(body: string) {
 
 export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
   const faqSchema =
-    page.faqs.length > 0
+    page.faqs.length > 0 && !page.slug.startsWith("/service/")
       ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
       : null
 
@@ -91,11 +91,23 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
       <main>
         <article className="mx-auto max-w-[92%] px-4 pb-16 pt-[130px] md:pb-20 md:pt-40 lg:max-w-[880px] lg:px-8">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.22em] text-black/45">
-            <Link href="/blogs" className="hover:text-black">
-              Blogs
-            </Link>
-            <span className="px-2 text-black/25">/</span>
-            Desert Sound
+            {page.slug.startsWith("/service/") ? (
+              <>
+                <Link href="/" className="hover:text-black">
+                  Home
+                </Link>
+                <span className="px-2 text-black/25">/</span>
+                Service
+              </>
+            ) : (
+              <>
+                <Link href="/blogs" className="hover:text-black">
+                  Blogs
+                </Link>
+                <span className="px-2 text-black/25">/</span>
+                Desert Sound
+              </>
+            )}
           </p>
           <h1 className="text-4xl font-light leading-[1.08] tracking-tight text-black md:text-5xl lg:text-6xl">
             {page.h1}
@@ -123,7 +135,9 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
                 {page.faqs.map((faq) => (
                   <div key={faq.q} className="py-5 first:pt-0 last:pb-0">
                     <h3 className="text-lg font-light text-black">{faq.q}</h3>
-                    <p className="mt-2 text-base font-light leading-relaxed text-black/70">{faq.a}</p>
+                    <p className="mt-2 text-base font-light leading-relaxed text-black/70">
+                      {renderInline(faq.a)}
+                    </p>
                   </div>
                 ))}
               </div>
