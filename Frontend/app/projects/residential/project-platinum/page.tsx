@@ -1,4 +1,9 @@
-import { ProjectCaseStudyPage, TheatreInstallLink } from "@/components/project-case-study-page"
+import {
+  CaseStudyLink,
+  cinemaInstallerArticleHref,
+  ProjectCaseStudyPage,
+  TheatreInstallLink,
+} from "@/components/project-case-study-page"
 
 export default function ProjectPlatinumPage() {
   return (
@@ -15,13 +20,43 @@ export default function ProjectPlatinumPage() {
         "Project Platinum seating rows with wood-edged risers, cove lighting, and a rear bar wall",
       ]}
       description={[
+        "Karachi home theater / home cinema installation — finished residential room.",
         "Project Platinum is a residential cinema in Karachi shaped around a premium viewing experience — clean detailing, an elevated entertainment atmosphere, and equipment placed so the room still feels composed.",
         "The install keeps technology discreet. Projector, speakers, and cabling sit where they belong; controlled lighting and stepped seating do the visual work without turning the room into a rack of hardware.",
         "Two rows of recliners balance comfort, circulation, and a clear view of the screen. Acoustic surfaces and a calm lighting scheme support the picture rather than competing with it.",
-        <>
-          Once the envelope is finished, picture and sound are calibrated to the room. For a dedicated cinema like this,
-          that is the core of our <TheatreInstallLink /> work.
-        </>,
+        "Once the envelope is finished, picture and sound are calibrated to the room. For a dedicated cinema like this, that is the core of the install.",
+      ]}
+      sections={[
+        {
+          heading: "What this room needed",
+          paragraphs: [
+            "The room had to play as a cinema without looking like a showroom floor. Projector, speakers, and cabling needed a home in the architecture so the star ceiling, cove lighting, and wood-edged risers could stay the visual language. Two recliner rows plus a rear bar wall meant sightlines and circulation were part of the brief, not a later furniture pass.",
+          ],
+        },
+        {
+          heading: "How the install shows up",
+          paragraphs: [
+            "Concealment first: the projector sits discreetly, speakers flank the screen, wiring does not show. Calibration second: once the envelope is closed, picture and sound are matched to this room rather than left on a factory preset. That is the Platinum proof — a composed Karachi cinema, not a rack on display.",
+          ],
+        },
+        {
+          heading: "Explore more",
+          paragraphs: [
+            <>
+              This room is one finished example of{" "}
+              <TheatreInstallLink>home cinema installation in Karachi</TheatreInstallLink>. The
+              sequence behind it — design, hide the work, calibrate — is the{" "}
+              <CaseStudyLink href={cinemaInstallerArticleHref}>
+                home cinema installer process for Karachi rooms
+              </CaseStudyLink>
+              . For a livable media-room counterpart, see{" "}
+              <CaseStudyLink href="/projects/residential/residency">
+                Residency Private Cinema
+              </CaseStudyLink>
+              .
+            </>,
+          ],
+        },
       ]}
       breadcrumb="Home / Projects / Residential / Project Platinum"
     />
