@@ -59,7 +59,7 @@
 
 People searching **home cinema Pakistan** are rarely looking for a boxed theater in a mall. They want a room that plays like a cinema: picture sized to the seats, dialogue that stays clear, cables that do not show, and one way to start the film. That is an install. The person you hire is a **cinema installer**, not a counter that hands you a carton.
 
-Desert Sound’s [home theatre design and installation](/service/home-theatre-design-and-installation/) work follows one sequence across Pakistan: design the room, conceal wiring and power, then calibrate picture and sound to those seats. Karachi is where we survey week to week — the finished residential theatres live there. Lahore, [Islamabad](/service/home-cinema-installation-islamabad), and other cities get the same cinema-installer method on a site visit, not a boxed kit and not a different product.
+Desert Sound’s [home theatre design and installation](/service/home-theatre-design-and-installation/) work follows one sequence across Pakistan: design the room, conceal wiring and power, then calibrate picture and sound to those seats. Karachi is where we survey week to week — the finished residential theatres live there. [Lahore](/service/home-cinema-installation-lahore), [Islamabad](/service/home-cinema-installation-islamabad), and other cities get the same cinema-installer method on a site visit, not a boxed kit and not a different product.
 
 ### Home cinema is a room, not a shopping list
 
@@ -121,7 +121,7 @@ Not every brief is a sealed theatre. Some houses want the cinema feel without lo
 
 Choose by the week, not the brochure. If you can close a door, you can take a darker picture and a fuller surround layout. If the room stays a lounge by day, plan a setup that can disappear: wall-mounted display, compact or in-wall speakers, cables in the wall. Both are home cinema work. One is not a failed version of the other.
 
-Karachi apartments and Lahore houses fail for the same reason when they skip the survey: gear chosen for a showroom, then forced into the room. [Home cinema installation in Islamabad](/service/home-cinema-installation-islamabad) has the same problem in villas with glass and stone if treatment and bass are an afterthought. The city changes the light and the neighbours. The sequence does not.
+Karachi apartments and [Lahore](/service/home-cinema-installation-lahore) houses fail for the same reason when they skip the survey: gear chosen for a showroom, then forced into the room. [Home cinema installation in Islamabad](/service/home-cinema-installation-islamabad) has the same problem in villas with glass and stone if treatment and bass are an afterthought. The city changes the light and the neighbours. The sequence does not.
 
 ### Across Pakistan, from Karachi
 
