@@ -99,6 +99,18 @@ export const catalogServicePages: SeoPage[] = [
     image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
   },
   {
+    path: "/service/home-cinema-installation-islamabad",
+    title: "Home Cinema Installation in Islamabad | Desert Sound",
+    description:
+      "Home cinema installation in Islamabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+  },
+  {
+    path: "/service/home-cinema-installation-multan",
+    title: "Home Cinema Installation in Multan | Desert Sound",
+    description:
+      "Home cinema installation in Multan from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan.",
+  },
+  {
     path: "/service/home-cinema-installation-faisalabad",
     title: "Home Cinema Installation in Faisalabad | Desert Sound",
     description:

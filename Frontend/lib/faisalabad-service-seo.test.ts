@@ -82,9 +82,14 @@ test("Faisalabad ranking catalog and Service JSON-LD stay in lockstep", () => {
 test("Faisalabad copy is install-led, 450–700 words, with required mesh links", () => {
   const words = wordCount(copy)
   assert.ok(words >= 450 && words <= 700, `copy is ${words} words; want 450–700`)
-  assert.match(faisalabadServicePage.body, /What installation in Faisalabad means/)
-  assert.match(faisalabadServicePage.body, /Site visits from Karachi/)
-  assert.match(faisalabadServicePage.body, /Rooms we've finished \(Karachi proof\)/)
+  assert.match(faisalabadServicePage.body, /What home cinema installation in Faisalabad means/)
+  assert.match(faisalabadServicePage.body, /Site visits from Karachi: how we work in Faisalabad/)
+  assert.match(faisalabadServicePage.body, /### Rooms we've finished\n/)
+  assert.doesNotMatch(faisalabadServicePage.body, /Karachi proof/)
+  assert.match(
+    faisalabadServicePage.body,
+    /\[finished residential theatres\]\(\/projects\/residential\)/,
+  )
   assert.match(faisalabadServicePage.body, /What installation includes/)
   assert.match(faisalabadServicePage.body, /home theater installation in Faisalabad/i)
   assert.match(faisalabadServicePage.body, /home cinema installer in Faisalabad/i)
@@ -106,7 +111,7 @@ test("Faisalabad copy is install-led, 450–700 words, with required mesh links"
   assert.match(faisalabadServicePage.faqs[0].q, /install home cinemas in Faisalabad/)
   assert.match(faisalabadServicePage.faqs[1].q, /based in Faisalabad/)
   assert.match(faisalabadServicePage.faqs[2].q, /site visit/)
-  assert.match(faisalabadServicePage.faqs[3].q, /professional installation include/)
+  assert.match(faisalabadServicePage.faqs[3].q, /professional home theater installation include/)
 })
 
 test("Faisalabad lander does not invent local proof, superlatives, or sister brands", () => {
@@ -124,8 +129,9 @@ test("Faisalabad lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /Madina Town|Peoples Colony|Susan Road|Canal Garden|DHA Faisalabad/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
-  assert.match(copy, /do not invent Faisalabad case studies/)
-  assert.match(copy, /Karachi rooms/)
+  assert.match(copy, /These are not Faisalabad case studies/)
+  assert.match(copy, /finished residential theatres/)
+  assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(faisalabadServiceTitle, /Site Visits from Karachi/i)
   assert.match(faisalabadServiceDescription, /site visit/)
   assert.match(faisalabadServiceDescription, /Karachi/)
@@ -159,7 +165,7 @@ test("theatre inbound is one Faisalabad nationwide-strip line without remaking l
 test("#33 names Faisalabad once as a lean inbound to the city lander", () => {
   assert.match(
     article33,
-    /Lahore, Islamabad, \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
 })

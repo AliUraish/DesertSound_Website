@@ -1,5 +1,8 @@
 import { faisalabadServicePage } from "./faisalabad-service-content"
+import { islamabadServicePage } from "./islamabad-service-content"
+import { lahoreCityLanderPage } from "./lahore-city-lander"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
+import { multanServicePage } from "./multan-service-content"
 import type { RankingSeoPage } from "./ranking-seo-types"
 
 export type { BlogPost, RankingSeoFaq, RankingSeoLink, RankingSeoPage } from "./ranking-seo-types"
@@ -274,6 +277,8 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  islamabadServicePage,
+  multanServicePage,
   faisalabadServicePage,
   {
     "slug": "/service/maintenance-and-support",
@@ -423,7 +428,8 @@ const sitePages: RankingSeoPage[] = [
       }
     ],
     "image": "/Pictures Final/Hero Page/homepage_header/homepage1.jpg"
-  }
+  },
+  lahoreCityLanderPage,
 ]
 
 export const rankingSeoPages: RankingSeoPage[] = [...sitePages, ...loadBlogArticles()]
