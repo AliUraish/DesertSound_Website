@@ -3,7 +3,12 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { canonicalizePath } from "@/lib/canonical-path"
+import { faqPageJsonLd } from "@/lib/seo"
 import type { RankingSeoPage } from "@/lib/ranking-seo-types"
+
+function jsonLdScript(data: unknown) {
+  return JSON.stringify(data).replace(/</g, "\\u003c")
+}
 
 function renderInline(text: string): React.ReactNode {
   return text.split(/(\*\*.+?\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
@@ -72,8 +77,16 @@ function renderBody(body: string) {
 }
 
 export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
+  const faqSchema =
+    page.faqs.length > 0
+      ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
+      : null
+
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC] text-black">
+      {faqSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(faqSchema) }} />
+      ) : null}
       <Header />
       <main>
         <article className="mx-auto max-w-[92%] px-4 pb-16 pt-[130px] md:pb-20 md:pt-40 lg:max-w-[880px] lg:px-8">
