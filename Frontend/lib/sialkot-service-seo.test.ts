@@ -82,9 +82,14 @@ test("Sialkot ranking catalog and Service JSON-LD stay in lockstep", () => {
 test("Sialkot copy is install-led, 450–700 words, with required mesh links", () => {
   const words = wordCount(copy)
   assert.ok(words >= 450 && words <= 700, `copy is ${words} words; want 450–700`)
-  assert.match(sialkotServicePage.body, /What installation in Sialkot means/)
-  assert.match(sialkotServicePage.body, /Site visits from Karachi/)
-  assert.match(sialkotServicePage.body, /Rooms we've finished \(Karachi proof\)/)
+  assert.match(sialkotServicePage.body, /What home cinema installation in Sialkot means/)
+  assert.match(sialkotServicePage.body, /Site visits from Karachi: how we work in Sialkot/)
+  assert.match(sialkotServicePage.body, /### Rooms we've finished\n/)
+  assert.doesNotMatch(sialkotServicePage.body, /Karachi proof/)
+  assert.match(
+    sialkotServicePage.body,
+    /\[finished residential theatres\]\(\/projects\/residential\)/,
+  )
   assert.match(sialkotServicePage.body, /What installation includes/)
   assert.match(sialkotServicePage.body, /home theater installation in Sialkot/i)
   assert.match(sialkotServicePage.body, /home cinema installer in Sialkot/i)
@@ -110,7 +115,7 @@ test("Sialkot copy is install-led, 450–700 words, with required mesh links", (
   assert.match(sialkotServicePage.faqs[0].q, /install home cinemas in Sialkot/)
   assert.match(sialkotServicePage.faqs[1].q, /based in Sialkot/)
   assert.match(sialkotServicePage.faqs[2].q, /site visit/)
-  assert.match(sialkotServicePage.faqs[3].q, /professional installation include/)
+  assert.match(sialkotServicePage.faqs[3].q, /professional home theater installation include/)
 })
 
 test("Sialkot lander does not invent local proof, superlatives, or sister brands", () => {
@@ -128,8 +133,9 @@ test("Sialkot lander does not invent local proof, superlatives, or sister brands
   assert.doesNotMatch(copy, /Sialkot Cantt|Sambrial|Ugoki|Defence Sialkot|Model Town Sialkot/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
-  assert.match(copy, /do not invent Sialkot case studies/)
-  assert.match(copy, /Karachi rooms/)
+  assert.match(copy, /These are not Sialkot case studies/)
+  assert.match(copy, /finished residential theatres/)
+  assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(sialkotServiceTitle, /Site Visits from Karachi/i)
   assert.match(sialkotServiceDescription, /site visit/)
   assert.match(sialkotServiceDescription, /Karachi/)
@@ -163,7 +169,7 @@ test("theatre inbound is one Sialkot nationwide-strip line without remaking lock
 test("#33 names Sialkot once as a lean inbound to the city lander", () => {
   assert.match(
     article33,
-    /Lahore, Islamabad, \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-sialkot").length - 1, 1)
 })
