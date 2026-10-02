@@ -7,7 +7,7 @@ export const lahoreCityLanderTitle = "Home Cinema Installation in Lahore | Deser
 export const lahoreCityLanderH1 = "Home Cinema Installation in Lahore"
 
 export const lahoreCityLanderDescription =
-  "Home cinema installation in Lahore from Desert Sound’s Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
+  "Home cinema installation in Lahore from Desert Sound’s team in Lahore. We design, install, and calibrate on the ground — cinema rooms across Pakistan."
 
 export const lahoreCityLanderPage: RankingSeoPage = {
   slug: lahoreCityLanderSlug,
@@ -15,11 +15,10 @@ export const lahoreCityLanderPage: RankingSeoPage = {
   description: lahoreCityLanderDescription,
   h1: lahoreCityLanderH1,
   image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
-  imageAlt:
-    "Karachi home cinema installation — the finished-room method we bring on Lahore site visits",
-  body: `Karachi-based Desert Sound designs and installs home theaters in Lahore on a **site visit** — the same design–install–calibrate process we use across Pakistan. This is cinema installation work: the room, the concealment, and the calibration. Not a boxed retail system. Not a Lahore showroom.
+  imageAlt: "Home cinema installation by Desert Sound’s team in Lahore",
+  body: `Desert Sound designs and installs home theaters in Lahore with a **team in Lahore** — the same design–install–calibrate process we use across Pakistan. This is cinema installation work: the room, the concealment, and the calibration. Not a boxed retail system. Not a Lahore showroom.
 
-Book a survey. We measure the space, write a scope, and travel from Karachi to install. Call **+92 21 111 570 111** or email **info@desertsound.com.pk**.
+Book a survey. We measure the space, write a scope, and the Lahore team installs. Call **+92 21 111 570 111** or email **info@desertsound.com.pk**.
 
 ### What home cinema installation in Lahore means
 
@@ -29,41 +28,39 @@ Karachi apartments and Lahore houses fail for the same reason when gear is chose
 
 That is why a home cinema installer in Lahore, in our meaning, is the person who surveys first. For the full nationwide scope, see [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).
 
-### Site visits from Karachi: how we work in Lahore
+### We have a team in Lahore
 
-A Lahore project starts with a site visit from our Karachi team. Survey the room. Design seats, screen, and speakers to the building. Install with concealment and power in mind. Calibrate picture and sound to those seats. The method is the same across Pakistan.
+Our team in Lahore runs the project on the ground. They survey the room, then lock seats, screen, and speakers to the building. Install covers concealment and power. Calibration matches picture and sound to those seats. The method is the same one Desert Sound uses across Pakistan.
 
-Karachi is where finished residential rooms are studied week to week. Lahore uses that method on a visit — we do not claim a local crew or a Lahore address. Read [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the sequence in full.
+Read [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the sequence in full.
 
-### Rooms we've finished (Karachi proof)
+### Rooms we've finished
 
-Proof of the method is Karachi work you can study. We do not invent Lahore case studies. These are Karachi rooms; a Lahore install uses the same process after survey.
-
-- [Project Platinum — Karachi cinema install (concealment)](/projects/residential/project-platinum)
-- [Residency Private Cinema — Karachi livable theatre](/projects/residential/residency)
-- [Studio Vellari — Karachi flagship room](/projects/residential/studio-vellari)
-- [Stanley Seats — cinema seating install in a Karachi room](/projects/residential/stanley-seats)
+- [Project Platinum](/projects/residential/project-platinum)
+- [Residency Private Cinema](/projects/residential/residency)
+- [Studio Vellari](/projects/residential/studio-vellari)
+- [Stanley Seats](/projects/residential/stanley-seats)
 
 ### What installation includes
 
 A professional home theater installation includes room design, AV install and concealment, acoustic and lighting work as scoped, calibration, and one-button start where specified. We do not publish a generic gear list or a seat count before the survey.
 
-Detail sits on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation) and [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). Home theatre installation in Lahore follows that same written scope after we visit.
+Detail sits on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation) and [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). Home theatre installation in Lahore follows that same written scope with our team in Lahore.
 
-### Book a Lahore site-visit survey
+### Book a survey in Lahore
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a Lahore site-visit survey.
+Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a survey with our team in Lahore.
 
 **Karachi showroom**
 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi`,
   faqs: [
     {
       q: "Do you install home cinemas in Lahore?",
-      a: "Yes — site visits from our Karachi team; same design–install–calibrate process across Pakistan.",
+      a: "Yes. We have a team in Lahore, and the design–install–calibrate process is the same one we use across Pakistan.",
     },
     {
       q: "Is Desert Sound based in Lahore?",
-      a: "No. We are Karachi-based: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. Phone +92 21 111 570 111. We travel for Lahore surveys and installs; we do not claim a Lahore HQ.",
+      a: "The showroom is in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. Phone +92 21 111 570 111. We have a team in Lahore for surveys and installs. We do not claim a Lahore showroom.",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
@@ -84,19 +81,19 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a Lahor
       href: "/home-cinema-and-cinema-installer-pakistan/",
     },
     {
-      label: "Project Platinum — Karachi cinema install (concealment)",
+      label: "Project Platinum",
       href: "/projects/residential/project-platinum",
     },
     {
-      label: "Residency Private Cinema — Karachi livable theatre",
+      label: "Residency Private Cinema",
       href: "/projects/residential/residency",
     },
     {
-      label: "Studio Vellari — Karachi flagship room",
+      label: "Studio Vellari",
       href: "/projects/residential/studio-vellari",
     },
     {
-      label: "Stanley Seats — cinema seating install in a Karachi room",
+      label: "Stanley Seats",
       href: "/projects/residential/stanley-seats",
     },
   ],

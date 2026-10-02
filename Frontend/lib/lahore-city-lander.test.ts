@@ -48,7 +48,7 @@ test("Lahore lander uses locked slug, title, H1, and meta", () => {
   assert.equal(lahoreCityLanderH1, "Home Cinema Installation in Lahore")
   assert.equal(
     lahoreCityLanderDescription,
-    "Home cinema installation in Lahore from Desert Sound’s Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+    "Home cinema installation in Lahore from Desert Sound’s team in Lahore. We design, install, and calibrate on the ground — cinema rooms across Pakistan.",
   )
   assert.ok(lahoreCityLanderDescription.length >= 145)
   assert.ok(lahoreCityLanderDescription.length <= 165)
@@ -72,7 +72,7 @@ test("Lahore copy stays in the 450–700 word band with required mesh links", ()
   assert.match(lahoreCityLanderPage.body, /home theater installation in Lahore/i)
   assert.match(lahoreCityLanderPage.body, /home cinema installer in Lahore/i)
   assert.match(lahoreCityLanderPage.body, /Home theatre installation in Lahore/)
-  assert.match(lahoreCityLanderPage.body, /site visit/)
+  assert.match(lahoreCityLanderPage.body, /We have a team in Lahore/)
   assert.match(
     lahoreCityLanderPage.body,
     /\[home theater \/ home cinema design and installation in Pakistan\]\(\/service\/home-theatre-design-and-installation\)/,
@@ -108,13 +108,20 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
   assert.match(haystack, /Not a Lahore showroom/)
   assert.match(haystack, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
   assert.match(haystack, /\+92 21 111 570 111/)
-  assert.match(haystack, /Karachi rooms/)
-  assert.match(haystack, /do not invent Lahore case studies/i)
+  assert.match(haystack, /We have a team in Lahore/)
+  assert.doesNotMatch(lahoreCityLanderPage.body, /Karachi proof/)
+  assert.doesNotMatch(lahoreCityLanderPage.body, /do not invent Lahore case studies/i)
+  assert.doesNotMatch(lahoreCityLanderPage.body, /Karachi cinema install|Karachi livable|Karachi flagship|Karachi room/)
+  for (const link of lahoreCityLanderPage.links) {
+    if (link.href.startsWith("/projects/residential/")) {
+      assert.doesNotMatch(link.label, /Karachi/i)
+    }
+  }
   assert.doesNotMatch(lahoreCityLanderPage.body, /islamabad/i)
 })
 
 test("theatre inbound is one nationwide line; SERP title and meta stay locked", () => {
-  assert.match(theatreLive, /Site visits nationwide from Karachi include/)
+  assert.match(theatreLive, /We have a team in Lahore for/)
   assert.match(theatreLive, /\/service\/home-cinema-installation-lahore/)
   assert.match(theatreLive, /home cinema installation in Lahore/)
   assert.equal(
