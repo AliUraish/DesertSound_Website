@@ -12,6 +12,8 @@ const requiredPaths = [
   "/",
   "/service/home-theatre-design-and-installation",
   "/service/home-cinema-installation-islamabad",
+  "/service/home-cinema-installation-lahore",
+  "/service/home-cinema-installation-multan",
   "/contact-us",
   "/about-us",
   "/blogs",

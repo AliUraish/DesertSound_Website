@@ -312,6 +312,13 @@ export default function HomeTheatreSystemsPage() {
               </Link>
               .
             </p>
+            <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
+              Site visits nationwide from Karachi include{" "}
+              <Link href="/service/home-cinema-installation-multan" className="underline underline-offset-4 hover:text-black">
+                home cinema installation in Multan
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
