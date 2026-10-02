@@ -149,7 +149,7 @@ test("theatre inbound is one Islamabad line without remaking locked SERP title",
 test("#33 upgrades existing Islamabad mentions to the city lander", () => {
   assert.match(
     article33,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), and other cities/,
   )
   assert.match(
     article33,
