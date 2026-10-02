@@ -22,7 +22,7 @@
 
 People searching **home cinema Pakistan** are rarely looking for a boxed theater in a mall. They want a room that plays like a cinema: picture sized to the seats, dialogue that stays clear, cables that do not show, and one way to start the film. That is an install. The person you hire is a **cinema installer**, not a counter that hands you a carton.
 
-Desert Sound’s [home theatre design and installation](/service/home-theatre-design-and-installation/) work follows one sequence across Pakistan: design the room, install into the building, then calibrate picture and sound to those seats. Karachi is the city we survey every week — the finished residential theatres live there. Lahore, Islamabad, and other cities get the same process on a site visit, not a different product.
+Desert Sound’s [home theatre design and installation](/service/home-theatre-design-and-installation/) work follows one sequence across Pakistan: design the room, install into the building, then calibrate picture and sound to those seats. Karachi is the city we survey every week — the finished residential theatres live there. Lahore, Islamabad, [Multan](/service/home-cinema-installation-multan), and other cities get the same process on a site visit, not a different product.
 
 ### Home cinema is a room, not a shopping list
 
