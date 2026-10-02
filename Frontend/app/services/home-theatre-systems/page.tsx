@@ -169,8 +169,15 @@ export default function HomeTheatreSystemsPage() {
                     Installation
                   </h1>
                   
-                  <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
+                  <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-4">
                     We plan home theater installation in Karachi and across Pakistan around the room: 4K/8K projection, Dolby Atmos, and smart control. This is cinema installation work, not a boxed retail system.
+                  </p>
+                  <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
+                    Site visits include{" "}
+                    <Link href="/service/home-cinema-installation-islamabad" className="underline underline-offset-4 hover:text-black">
+                      home cinema installation in Islamabad
+                    </Link>
+                    {" "}— the same process, from Karachi.
                   </p>
 
                   <div className="flex">
@@ -295,7 +302,17 @@ export default function HomeTheatreSystemsPage() {
                 {" "}behind those rooms
               </li>
             </ul>
-            <p className="max-w-3xl mt-6 text-lg text-black/70 font-light leading-relaxed">
+            <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
+              We have a team in Lahore for{" "}
+              <Link
+                href="/service/home-cinema-installation-lahore"
+                className="underline underline-offset-4 hover:text-black"
+              >
+                home cinema installation in Lahore
+              </Link>
+              .
+            </p>
+            <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
               Site visits nationwide from Karachi include{" "}
               <Link href="/service/home-cinema-installation-multan" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Multan

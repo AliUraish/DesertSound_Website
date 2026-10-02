@@ -83,9 +83,14 @@ test("Multan ranking catalog and Service JSON-LD stay in lockstep", () => {
 test("Multan copy is install-led, 450–700 words, with required mesh links", () => {
   const words = wordCount(copy)
   assert.ok(words >= 450 && words <= 700, `copy is ${words} words; want 450–700`)
-  assert.match(multanServicePage.body, /What installation in Multan means/)
-  assert.match(multanServicePage.body, /Site visits from Karachi/)
-  assert.match(multanServicePage.body, /Rooms we've finished \(Karachi proof\)/)
+  assert.match(multanServicePage.body, /What home cinema installation in Multan means/)
+  assert.match(multanServicePage.body, /Site visits from Karachi: how we work in Multan/)
+  assert.match(multanServicePage.body, /### Rooms we've finished\n/)
+  assert.doesNotMatch(multanServicePage.body, /Karachi proof/)
+  assert.match(
+    multanServicePage.body,
+    /\[finished residential theatres\]\(\/projects\/residential\)/,
+  )
   assert.match(multanServicePage.body, /What installation includes/)
   assert.match(multanServicePage.body, /home theatre installation in Multan/i)
   assert.match(copy, /\/service\/home-theatre-design-and-installation/)
@@ -101,7 +106,7 @@ test("Multan copy is install-led, 450–700 words, with required mesh links", ()
   assert.match(multanServicePage.faqs[0].q, /install home cinemas in Multan/)
   assert.match(multanServicePage.faqs[1].q, /based in Multan/)
   assert.match(multanServicePage.faqs[2].q, /site visit/)
-  assert.match(multanServicePage.faqs[3].q, /professional installation include/)
+  assert.match(multanServicePage.faqs[3].q, /professional home theater installation include/)
 })
 
 test("Multan lander does not invent local proof, superlatives, or sister brands", () => {
@@ -120,7 +125,8 @@ test("Multan lander does not invent local proof, superlatives, or sister brands"
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
   assert.match(copy, /These are not Multan case studies/)
-  assert.match(copy, /Karachi residential theatres/)
+  assert.match(copy, /finished residential theatres/)
+  assert.doesNotMatch(copy, /Karachi residential theatres/)
   assert.doesNotMatch(multanServiceTitle, /Site Visits from Karachi/i)
   assert.match(multanServiceDescription, /site visit/)
   assert.match(multanServiceDescription, /Karachi/)
@@ -154,7 +160,7 @@ test("theatre inbound is one Multan nationwide-strip line without remaking locke
 test("#33 names Multan once as a lean inbound to the city lander", () => {
   assert.match(
     article33,
-    /Lahore, Islamabad, \[Multan\]\(\/service\/home-cinema-installation-multan\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-multan").length - 1, 1)
 })
