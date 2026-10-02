@@ -15,6 +15,7 @@ const links = [
   { href: "/privacy-policy", label: "Privacy policy" },
   { href: "/terms-and-condition", label: "Terms and condition" },
   { href: "/service/home-theatre-design-and-installation", label: "Home theatre design and installation" },
+  { href: "/service/home-cinema-installation-sialkot", label: "Home cinema installation in Sialkot" },
   { href: "/service/smart-home-automation", label: "Smart home automation" },
   { href: "/service/audio-distribution", label: "Audio distribution" },
   { href: "/service/control-systems", label: "Control systems" },

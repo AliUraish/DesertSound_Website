@@ -1,5 +1,6 @@
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import type { RankingSeoPage } from "./ranking-seo-types"
+import { sialkotServicePage } from "./sialkot-service-content"
 
 export type { BlogPost, RankingSeoFaq, RankingSeoLink, RankingSeoPage } from "./ranking-seo-types"
 
@@ -273,6 +274,7 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  sialkotServicePage,
   {
     "slug": "/service/maintenance-and-support",
     "image": "/Pictures Final/Services/Home_networking/Image2.jpg",
