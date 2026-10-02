@@ -85,7 +85,12 @@ test("Islamabad copy is install-led, 600–900 words, with required mesh links",
   assert.ok(words >= 600 && words <= 900, `copy is ${words} words; want 600–900`)
   assert.match(islamabadServicePage.body, /What home cinema installation in Islamabad means/)
   assert.match(islamabadServicePage.body, /Site visits from Karachi: how we work in Islamabad/)
-  assert.match(islamabadServicePage.body, /Rooms we've finished \(Karachi proof, honest geography\)/)
+  assert.match(islamabadServicePage.body, /### Rooms we've finished\n/)
+  assert.doesNotMatch(islamabadServicePage.body, /Karachi proof, honest geography/)
+  assert.match(
+    islamabadServicePage.body,
+    /\[finished residential theatres\]\(\/projects\/residential\)/,
+  )
   assert.match(islamabadServicePage.body, /What installation includes/)
   assert.match(islamabadServicePage.body, /home theatre installation in Islamabad/i)
   assert.match(copy, /\/service\/home-theatre-design-and-installation/)
@@ -118,7 +123,8 @@ test("Islamabad lander does not invent local proof, superlatives, or sister bran
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
   assert.match(copy, /These are not Islamabad case studies/)
-  assert.match(copy, /Karachi residential theatres/)
+  assert.match(copy, /finished residential theatres/)
+  assert.doesNotMatch(copy, /Karachi residential theatres/)
 })
 
 test("sitemap and llms listings include the Islamabad service URL", () => {
