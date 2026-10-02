@@ -77,6 +77,12 @@ test("theatre SERP copy is Pakistan-first from Karachi, with no HQ branding", ()
   assert.match(livePage, /Get Free Consultation/)
 })
 
+test("theatre finished-rooms strip is present without remaking locked SERP title", () => {
+  assert.match(livePage, /Karachi home cinema installations we&apos;ve finished/)
+  assert.match(livePage, /cinema installer process/)
+  assert.equal(title, "Home Theater Installation in Pakistan | Design and Install")
+})
+
 test("homepage Theater title lock is untouched", () => {
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
   assert.doesNotMatch(homepage, /Home Theater Installation in Pakistan \| Design and Install/)

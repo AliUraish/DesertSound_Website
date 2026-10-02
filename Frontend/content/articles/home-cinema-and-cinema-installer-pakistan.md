@@ -46,7 +46,7 @@ Proof is local. We finish rooms in Karachi and take that method on the road. You
 
 Start with how the house is used. News and cricket in a living room is a different job from two films a week behind a door. Guests, children, and a sofa that still has to face conversation change speaker height, screen size, and how much bass the next room will tolerate.
 
-Lock the seats first. Then the screen. Then the speakers. Reverse that and you will move a display twice. [Studio Vellari](/projects/residential/studio-vellari) is the flagship Karachi example of that order: Stanley recliners and a daybed specified with the install, acoustics and the screen wall designed around them, then the room calibrated as one cinema rather than furniture dropped in front of a panel.
+Lock the seats first. Then the screen. Then the speakers. Reverse that and you will move a display twice. [Studio Vellari, a flagship Karachi cinema](/projects/residential/studio-vellari) shows that order: Stanley recliners and a daybed specified with the install, acoustics and the screen wall designed around them, then the room calibrated as one cinema rather than furniture dropped in front of a panel.
 
 Display follows light and throw, not the largest panel in the shop. A bright lounge usually wants a large television. A darker, deeper room can take a projector and a 100-inch-plus image if blackout is honest. Heat is part of the design: a closed TV niche and a Karachi summer will cook a receiver. Vent the rack, or do not put the AVR in a cabinet.
 
@@ -58,7 +58,7 @@ Installation is the unglamorous half, and it is where cheap quotes fail. Speaker
 
 Power is part of the brief in Pakistan. Load-shedding and voltage swings hard-shut projectors and receivers. Put the theatre on a UPS or inverter and a conditioner at the rack. Dedicated circuits beat a shared kitchen ring. Dust and heat need a ventilated space, not a pretty cupboard with no airflow.
 
-Concealment is a design finish, not a tidy-up. [Project Platinum](/projects/residential/project-platinum) is a Karachi cinema where the projector, speakers, and cabling sit where they belong — two recliner rows, a star ceiling, equipment discreet enough that the room still feels composed. That is install quality you can see without opening a rack.
+Concealment is a design finish, not a tidy-up. [Project Platinum, a finished Karachi cinema](/projects/residential/project-platinum) is where the projector, speakers, and cabling sit where they belong — two recliner rows, a star ceiling, equipment discreet enough that the room still feels composed. That is install quality you can see without opening a rack.
 
 In a finished Clifton or Bahria apartment, the honest survey names what you can hide without opening marble: surface trunking, furniture routing, or a compact layout. In a house still being built, pull cable now even if the speakers come later. The installer who shows up after the painter has left is already late.
 
@@ -66,13 +66,13 @@ In a finished Clifton or Bahria apartment, the honest survey names what you can 
 
 An uncalibrated room plays the showroom preset. Colours run cool, dialogue sits under the effects, and one seat gets all the bass. Calibration matches picture and speakers to the seats you locked in design — levels, distances, EQ, brightness against the actual light.
 
-That pass belongs in the install, not as a favour six weeks later. Cinema or movie picture modes are a starting point. Measurement at the main row is the finish. If you have two rows, the rear has to see the screen; [Stanley Seats](/projects/residential/stanley-seats) is a Karachi seating install built around Stanley recliners so comfort, circulation, and sightlines are set before picture and sound are tuned to them.
+That pass belongs in the install, not as a favour six weeks later. Cinema or movie picture modes are a starting point. Measurement at the main row is the finish. If you have two rows, the rear has to see the screen; [Stanley Seats, a Karachi cinema seating install](/projects/residential/stanley-seats) is built around Stanley recliners so comfort, circulation, and sightlines are set before picture and sound are tuned to them.
 
 A one-button start is part of calibration in a house several people use. Four remotes on the sofa means the room is not handed over. Lights, playback, and volume should meet on one scene when you sit down. Support after that — a setting that drifts, a speaker that fails — is why you hire an installer who stays reachable, not a one-day crew.
 
 ### Dedicated cinema or a room you still live in
 
-Not every brief is a sealed theatre. Some houses want the cinema feel without losing a sitting room. [Residency Private Cinema](/projects/residential/residency) is that Karachi install: a large-format screen and acoustic walls, but recliners and a sofa in a layout people still use when the film is over. The process does not change — hidden wiring, acoustic control, calibrated picture and sound — the envelope does.
+Not every brief is a sealed theatre. Some houses want the cinema feel without losing a sitting room. [Residency Private Cinema, a livable Karachi media room](/projects/residential/residency) is that install: a large-format screen and acoustic walls, but recliners and a sofa in a layout people still use when the film is over. The process does not change — hidden wiring, acoustic control, calibrated picture and sound — the envelope does.
 
 Choose by the week, not the brochure. If you can close a door, you can take a darker picture and a fuller surround layout. If the room stays a lounge by day, plan a setup that can disappear: wall-mounted display, compact or in-wall speakers, cables in the wall. Both are home cinema work. One is not a failed version of the other.
 

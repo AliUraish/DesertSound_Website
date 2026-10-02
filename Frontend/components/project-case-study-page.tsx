@@ -9,6 +9,15 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
 export const theatreInstallServiceHref = "/service/home-theatre-design-and-installation/"
+export const cinemaInstallerArticleHref = "/home-cinema-and-cinema-installer-pakistan"
+
+const caseLinkClassName =
+  "underline underline-offset-4 decoration-black/30 transition-colors hover:text-black hover:decoration-black/70"
+
+export type ProjectCaseSection = {
+  heading: string
+  paragraphs: ReactNode[]
+}
 
 type ProjectCaseStudyPageProps = {
   breadcrumb: string
@@ -21,6 +30,7 @@ type ProjectCaseStudyPageProps = {
   galleryAspectClass?: string
   galleryImages: string[]
   galleryImageAlts?: string[]
+  sections?: ProjectCaseSection[]
   title: string
 }
 
@@ -40,12 +50,17 @@ function encodeAssetPath(path: string) {
     .join("/")
 }
 
+export function CaseStudyLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link href={href} className={caseLinkClassName}>
+      {children}
+    </Link>
+  )
+}
+
 export function TheatreInstallLink({ children = "home theater installation" }: { children?: ReactNode }) {
   return (
-    <Link
-      href={theatreInstallServiceHref}
-      className="underline underline-offset-4 decoration-black/30 transition-colors hover:text-black hover:decoration-black/70"
-    >
+    <Link href={theatreInstallServiceHref} className={caseLinkClassName}>
       {children}
     </Link>
   )
@@ -62,6 +77,7 @@ export function ProjectCaseStudyPage({
   galleryAspectClass = "aspect-[18/9]",
   galleryImages,
   galleryImageAlts,
+  sections,
   title,
 }: ProjectCaseStudyPageProps) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -105,6 +121,19 @@ export function ProjectCaseStudyPage({
             >
               {paragraph}
             </p>
+          ))}
+          {sections?.map((section) => (
+            <div key={section.heading} className="mt-10 max-w-5xl">
+              <h2 className="mb-4 text-2xl text-black lg:text-3xl">{section.heading}</h2>
+              {section.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={`text-base text-black/70 lg:text-lg${index > 0 ? " mt-6" : ""}`}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           ))}
         </section>
 

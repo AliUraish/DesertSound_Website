@@ -254,6 +254,50 @@ export default function HomeTheatreSystemsPage() {
           </div>
         </section>
 
+        <section className="py-16 lg:py-20 bg-[#F5F5DC]">
+          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+            <p className="text-xs text-black/50 uppercase tracking-[0.26em] font-medium mb-4">
+              Finished rooms
+            </p>
+            <h2 className="text-3xl md:text-4xl font-light text-black mb-6 tracking-tight">
+              Karachi home cinema installations we&apos;ve finished
+            </h2>
+            <ul className="max-w-3xl space-y-3 text-lg text-black/70 font-light leading-relaxed">
+              <li>
+                <Link href="/projects/residential/project-platinum" className="underline underline-offset-4 hover:text-black">
+                  Project Platinum
+                </Link>
+                {" "}— discreet equipment and a calibrated cinema
+              </li>
+              <li>
+                <Link href="/projects/residential/residency" className="underline underline-offset-4 hover:text-black">
+                  Residency Private Cinema
+                </Link>
+                {" "}— a livable private cinema
+              </li>
+              <li>
+                <Link href="/projects/residential/studio-vellari" className="underline underline-offset-4 hover:text-black">
+                  Studio Vellari
+                </Link>
+                {" "}— flagship Karachi cinema, seating specified with the install
+              </li>
+              <li>
+                <Link href="/projects/residential/stanley-seats" className="underline underline-offset-4 hover:text-black">
+                  Stanley Seats
+                </Link>
+                {" "}— cinema seating inside a viewing room
+              </li>
+              <li>
+                The{" "}
+                <Link href="/home-cinema-and-cinema-installer-pakistan" className="underline underline-offset-4 hover:text-black">
+                  cinema installer process
+                </Link>
+                {" "}behind those rooms
+              </li>
+            </ul>
+          </div>
+        </section>
+
         {/* Detailed Content Section A - Professional Home Cinema Design */}
         <section className="py-16 lg:py-24 bg-[#F5F5DC]">
           <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
