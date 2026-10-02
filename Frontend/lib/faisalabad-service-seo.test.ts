@@ -165,7 +165,7 @@ test("theatre inbound is one Faisalabad nationwide-strip line without remaking l
 test("#33 names Faisalabad once as a lean inbound to the city lander", () => {
   assert.match(
     article33,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
 })
