@@ -32,9 +32,9 @@ On the visit we measure, lock seats, screen, and speakers to the structure, and 
 
 The longer installer checklist — what to ask before the walls close, what calibration actually measures — is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page is the city-focus support under that national work. It does not rewrite that article.
 
-### Rooms we've finished (Karachi proof, honest geography)
+### Rooms we've finished
 
-The finished rooms you can study in detail are Karachi residential theatres. Islamabad work uses the same process after a survey. These are not Islamabad case studies, and we will not relabel them as such.
+The finished rooms you can study in detail are [finished residential theatres](/projects/residential). Islamabad work uses the same process after a survey. These are not Islamabad case studies, and we will not relabel them as such.
 
 - [Project Platinum — Karachi cinema install (concealment)](/projects/residential/project-platinum)
 - [Residency Private Cinema — Karachi livable theatre](/projects/residential/residency)
