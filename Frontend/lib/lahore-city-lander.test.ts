@@ -143,7 +143,7 @@ test("theatre inbound is one nationwide line; SERP title and meta stay locked", 
 test("#33 upgrades existing Lahore mentions to the city lander", () => {
   assert.match(
     article,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), Islamabad, and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), and other cities/,
   )
   assert.match(
     article,
@@ -151,7 +151,7 @@ test("#33 upgrades existing Lahore mentions to the city lander", () => {
   )
   assert.match(
     article,
-    /title": "Home Cinema in Pakistan: A Cinema Installer from Design to Calibration - Desert Sound"/,
+    /title": "Home Cinema in Pakistan: A Cinema Installer from Design to Calibration"/,
   )
 })
 

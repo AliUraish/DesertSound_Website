@@ -1,3 +1,4 @@
+import { islamabadServicePage } from "./islamabad-service-content"
 import { lahoreCityLanderPage } from "./lahore-city-lander"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import type { RankingSeoPage } from "./ranking-seo-types"
@@ -274,6 +275,7 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  islamabadServicePage,
   {
     "slug": "/service/maintenance-and-support",
     "image": "/Pictures Final/Services/Home_networking/Image2.jpg",
