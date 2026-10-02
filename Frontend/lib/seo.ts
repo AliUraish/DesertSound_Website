@@ -99,6 +99,12 @@ export const catalogServicePages: SeoPage[] = [
     image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
   },
   {
+    path: "/service/home-cinema-installation-faisalabad",
+    title: "Home Cinema Installation in Faisalabad | Desert Sound",
+    description:
+      "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+  },
+  {
     path: "/service/smart-home-automation",
     title: "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
     description: "Smart Home Automation Services in Karachi, Pakistan - Desert Sound",

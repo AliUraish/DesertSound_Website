@@ -295,6 +295,13 @@ export default function HomeTheatreSystemsPage() {
                 {" "}behind those rooms
               </li>
             </ul>
+            <p className="max-w-3xl mt-6 text-lg text-black/70 font-light leading-relaxed">
+              Site visits nationwide from Karachi include{" "}
+              <Link href="/service/home-cinema-installation-faisalabad" className="underline underline-offset-4 hover:text-black">
+                home cinema installation in Faisalabad
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

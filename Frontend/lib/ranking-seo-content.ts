@@ -1,3 +1,4 @@
+import { faisalabadServicePage } from "./faisalabad-service-content"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import type { RankingSeoPage } from "./ranking-seo-types"
 
@@ -273,6 +274,7 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  faisalabadServicePage,
   {
     "slug": "/service/maintenance-and-support",
     "image": "/Pictures Final/Services/Home_networking/Image2.jpg",
