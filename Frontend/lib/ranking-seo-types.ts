@@ -9,6 +9,7 @@ export type RankingSeoPage = {
   faqs: RankingSeoFaq[]
   links: RankingSeoLink[]
   image?: string
+  imageAlt?: string
   date?: string
 }
 

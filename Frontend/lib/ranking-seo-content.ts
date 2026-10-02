@@ -1,3 +1,4 @@
+import { lahoreCityLanderPage } from "./lahore-city-lander"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import type { RankingSeoPage } from "./ranking-seo-types"
 
@@ -421,7 +422,8 @@ const sitePages: RankingSeoPage[] = [
       }
     ],
     "image": "/Pictures Final/Hero Page/homepage_header/homepage1.jpg"
-  }
+  },
+  lahoreCityLanderPage,
 ]
 
 export const rankingSeoPages: RankingSeoPage[] = [...sitePages, ...loadBlogArticles()]

@@ -78,9 +78,15 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
       <main>
         <article className="mx-auto max-w-[92%] px-4 pb-16 pt-[130px] md:pb-20 md:pt-40 lg:max-w-[880px] lg:px-8">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.22em] text-black/45">
-            <Link href="/blogs" className="hover:text-black">
-              Blogs
-            </Link>
+            {page.slug.startsWith("/service/") ? (
+              <Link href="/service/home-theatre-design-and-installation" className="hover:text-black">
+                Services
+              </Link>
+            ) : (
+              <Link href="/blogs" className="hover:text-black">
+                Blogs
+              </Link>
+            )}
             <span className="px-2 text-black/25">/</span>
             Desert Sound
           </p>
@@ -92,7 +98,7 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
             <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-3xl bg-black/5 shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
               <Image
                 src={page.image}
-                alt={page.h1}
+                alt={page.imageAlt || page.h1}
                 fill
                 sizes="(max-width: 880px) 92vw, 880px"
                 className="object-cover object-center"
