@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { canonicalizePath } from "@/lib/canonical-path"
 import { theatreServiceFaqs } from "@/lib/theatre-service-faqs"
 import { 
   Tv, 
@@ -53,6 +54,22 @@ const features = [
 ]
 
 const faqs = theatreServiceFaqs
+
+function faqAnswerNodes(answer: string) {
+  return answer.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    const link = part.match(/^\[(.+?)\]\(([^)]+)\)$/)
+    if (!link) return part
+    const href = link[2]
+    if (href.startsWith("/") && !href.startsWith("//") && href !== "/") {
+      return (
+        <Link key={i} href={canonicalizePath(href)} className="underline underline-offset-4 hover:text-black">
+          {link[1]}
+        </Link>
+      )
+    }
+    return <span key={i}>{link[1]}</span>
+  })
+}
 
 function FeatureCard({ feature, index }: { feature: typeof features[0], index: number }) {
   const Icon = feature.icon
@@ -121,7 +138,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
             className="overflow-hidden"
           >
             <p className="pb-6 text-base text-black/70 font-light leading-relaxed">
-              {faq.answer}
+              {faqAnswerNodes(faq.answer)}
             </p>
           </motion.div>
         )}

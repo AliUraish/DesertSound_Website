@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
-import { theatreServiceFaqs } from "./theatre-service-faqs.ts"
+import { theatreFaqJsonLdItems, theatreServiceFaqs } from "./theatre-service-faqs.ts"
 import { theatreInstallHowToSteps } from "./theatre-service-howto.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
@@ -49,16 +49,83 @@ test("theatre service HowTo stays lockstep with visible copy", () => {
   assert.match(schema, /theatreServiceJsonLd/)
   assert.match(serviceRoute, /theatreServiceJsonLd/)
   assert.match(serviceRoute, /theatreInstallHowToJsonLd/)
-  assert.match(serviceRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
+  assert.match(serviceRoute, /faqPageJsonLd\(theatreFaqJsonLdItems\(\)\)/)
+  assert.doesNotMatch(serviceRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
 })
 
 test("FAQPage JSON-LD uses the same five visible accordion Q&As", () => {
   assert.equal(theatreServiceFaqs.length, 5)
+  assert.equal(theatreFaqJsonLdItems().length, 5)
   assert.match(livePage, /theatreServiceFaqs/)
+  assert.match(livePage, /faqAnswerNodes/)
+  assert.equal((serviceRoute.match(/faqPageJsonLd\(/g) || []).length, 1)
+  assert.doesNotMatch(serviceRoute, /"@type": "FAQPage"/)
   for (const faq of theatreServiceFaqs) {
     assert.ok(faq.question.length > 0)
     assert.ok(faq.answer.length > 0)
   }
+  const jsonLd = theatreFaqJsonLdItems()
+  for (let i = 0; i < theatreServiceFaqs.length; i++) {
+    assert.equal(jsonLd[i].question, theatreServiceFaqs[i].question)
+    assert.equal(
+      jsonLd[i].answer,
+      theatreServiceFaqs[i].answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, ""),
+    )
+    assert.doesNotMatch(jsonLd[i].answer, /\[[^\]]+\]\([^)]+\)/)
+  }
+})
+
+test("theatre FAQ copy is lean Karachi-installer with locked case links", () => {
+  const faqs = theatreServiceFaqs
+  const answers = faqs.map((faq) => faq.answer).join("\n")
+  const questions = faqs.map((faq) => faq.question).join("\n")
+  const q1 = faqs[0]
+  const q2 = faqs[1]
+  const q3 = faqs[2]
+  const q5 = faqs[4]
+
+  assert.equal(q1.question, "What's included in home theater installation in Pakistan?")
+  assert.equal(q2.question, "Do you offer home cinema installation in Karachi?")
+  assert.equal(q3.question, "Can a small space or apartment be a home theater?")
+  assert.equal(faqs[3].question, "Can smart home control be integrated with the cinema?")
+  assert.equal(q5.question, "How does the cinema installer process fit this service?")
+
+  assert.match(q1.answer, /\[Project Platinum, a finished private cinema\]\(\/projects\/residential\/project-platinum\)/)
+  assert.match(q2.answer, /Other cities get the same method on a site visit from Karachi\.$/)
+  assert.match(q3.answer, /Karachi apartments/)
+  assert.match(q3.answer, /\[Residency Private Cinema, a livable media room\]\(\/projects\/residential\/residency\)/)
+  assert.match(
+    q5.answer,
+    /\[cinema installer process behind those rooms\]\(\/home-cinema-and-cinema-installer-pakistan\)/,
+  )
+  assert.match(q5.answer, /\[Studio Vellari, a flagship private cinema\]\(\/projects\/residential\/studio-vellari\)/)
+  assert.match(
+    q5.answer,
+    /\[Stanley Seats, cinema seating inside a viewing room\]\(\/projects\/residential\/stanley-seats\)/,
+  )
+
+  for (const href of [
+    "/projects/residential/project-platinum",
+    "/projects/residential/residency",
+    "/home-cinema-and-cinema-installer-pakistan",
+    "/projects/residential/studio-vellari",
+    "/projects/residential/stanley-seats",
+  ]) {
+    assert.equal(answers.split(href).length - 1, 1)
+  }
+
+  assert.doesNotMatch(q2.answer, /22-C/)
+  assert.doesNotMatch(q2.answer, /Zamzama/)
+  assert.doesNotMatch(q2.answer, /\+92/)
+  assert.doesNotMatch(q2.answer, /111 570 111/)
+  assert.doesNotMatch(questions + "\n" + answers, /Digital Sound/i)
+  assert.doesNotMatch(questions + "\n" + answers, /\bbest\b/i)
+  assert.doesNotMatch(questions + "\n" + answers, /#1/)
+  assert.doesNotMatch(q1.answer, /Karachi/)
+  assert.doesNotMatch(q5.answer, /Karachi/)
+  assert.doesNotMatch(q1.answer, /finished Karachi cinema/)
+  assert.doesNotMatch(q3.answer, /livable Karachi media room/)
+  assert.doesNotMatch(q5.answer, /flagship Karachi cinema/)
 })
 
 test("theatre SERP copy is Pakistan-first from Karachi, with no HQ branding", () => {
