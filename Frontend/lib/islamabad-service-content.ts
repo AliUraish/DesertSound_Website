@@ -51,7 +51,7 @@ See [home theater / home cinema design and installation in Pakistan](/service/ho
 
 ### Book an Islamabad site-visit survey
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for an Islamabad site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The national install service is [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).`,
+Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for an Islamabad site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The same site-visit work covers [home cinema installation in Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot). The national install service is [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).`,
   faqs: [
     {
       q: "Do you install home cinemas in Islamabad?",
