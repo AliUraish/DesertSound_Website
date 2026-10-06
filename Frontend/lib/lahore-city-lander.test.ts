@@ -85,6 +85,18 @@ test("Lahore copy stays in the 450–700 word band with required mesh links", ()
   assert.match(lahoreCityLanderPage.body, /\/projects\/residential\/residency/)
   assert.match(lahoreCityLanderPage.body, /\/projects\/residential\/studio-vellari/)
   assert.match(lahoreCityLanderPage.body, /\/projects\/residential\/stanley-seats/)
+  assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-islamabad/)
+  assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-multan/)
+  assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-faisalabad/)
+  assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-sialkot/)
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-islamabad").length - 1, 1)
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-multan").length - 1, 1)
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-sialkot").length - 1, 1)
+  assert.doesNotMatch(
+    lahoreCityLanderPage.body,
+    /home-cinema-installation-bahawalpur|home-cinema-installation-punjab/,
+  )
   assert.equal(lahoreCityLanderPage.faqs.length, 4)
 })
 
@@ -117,7 +129,10 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
       assert.doesNotMatch(link.label, /Karachi/i)
     }
   }
-  assert.doesNotMatch(lahoreCityLanderPage.body, /islamabad/i)
+  assert.match(
+    lahoreCityLanderPage.body,
+    /The same site-visit work covers \[home cinema installation in Islamabad\]\(\/service\/home-cinema-installation-islamabad\)/,
+  )
 })
 
 test("theatre inbound is one nationwide line; SERP title and meta stay locked", () => {
