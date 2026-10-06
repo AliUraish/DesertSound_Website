@@ -125,7 +125,12 @@ const meshPages = [
 function meshWordCount(source: string) {
   const lead = source.match(/description=\{\[\s*"([^"]+)"/)?.[1] ?? ""
   let sectionSrc = source.split("sections={[")[1]?.split("breadcrumb=")[0] ?? ""
-  const skip = new Set(["What this room needed", "How the install shows up", "Explore more"])
+  const skip = new Set([
+    "What this room needed",
+    "How the install shows up",
+    "Survey → design → install on this room",
+    "Explore more",
+  ])
   const quoted = [...sectionSrc.matchAll(/"([^"]*)"/g)]
     .map((match) => match[1])
     .filter((value) => value.trim() && !skip.has(value) && !value.startsWith("/"))
@@ -167,6 +172,18 @@ test("Karachi case mesh deepens four rooms with unique H2s and required links", 
   assert.ok(theatreAnchors.has("home theater installation in Karachi"))
   assert.equal(meshPages.filter((page) => /Karachi/.test(page.articleAnchor)).length, 2)
   assert.ok(articleHrefs.has("what a cinema installer in Pakistan actually does"))
+})
+
+test("Project Platinum adds survey-design-install proof between install-shows-up and Explore more", () => {
+  const source = readFileSync(join(root, "app/projects/residential/project-platinum/page.tsx"), "utf8")
+  const installIdx = source.indexOf('heading: "How the install shows up"')
+  const surveyIdx = source.indexOf('heading: "Survey → design → install on this room"')
+  const exploreIdx = source.indexOf('heading: "Explore more"')
+  assert.ok(installIdx !== -1 && surveyIdx !== -1 && exploreIdx !== -1)
+  assert.ok(installIdx < surveyIdx && surveyIdx < exploreIdx)
+  assert.doesNotMatch(source, /FAQPage/)
+  assert.equal(source.split("<TheatreInstallLink").length - 1, 1)
+  assert.equal(source.split("cinemaInstallerArticleHref").length - 1, 1)
 })
 
 test("Stanley Seats stays seating-scoped and does not primary-target Karachi cinema install", () => {
