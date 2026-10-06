@@ -12,9 +12,9 @@ export const multanServicePage: RankingSeoPage = {
   title: multanServiceTitle,
   description: multanServiceDescription,
   h1: multanServiceH1,
-  body: `Desert Sound's Karachi team designs and installs home theaters in Multan on a **site visit** — design, install, then calibrate for those seats. That is cinema installation built into the house, not a boxed retail kit and not a claim of a Multan showroom.
+  body: `Desert Sound's Karachi team designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
 
-Multan is a travel market for this work. We come from Karachi, survey the building, and install to it. Book a Multan site-visit survey through [contact](/contact).
+We travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact).
 
 ### What home cinema installation in Multan means
 
@@ -53,7 +53,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
 
 ### Book a Multan site-visit survey
 
-Book a Multan site-visit survey through [contact](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad).`,
+[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad).`,
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
@@ -61,7 +61,7 @@ Book a Multan site-visit survey through [contact](/contact). The same site-visit
     },
     {
       q: "Is Desert Sound based in Multan?",
-      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. Book through [contact](/contact).",
+      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. [Book a survey](/contact).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
