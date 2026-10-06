@@ -12,62 +12,72 @@ export const multanServicePage: RankingSeoPage = {
   title: multanServiceTitle,
   description: multanServiceDescription,
   h1: multanServiceH1,
-  body: `Karachi-based Desert Sound designs and installs home theaters in Multan on a **site visit** — the same design–install–calibrate process used across Pakistan. Cinema installation means the room is designed, built into the house, and calibrated to those seats. It is not a boxed retail system, and it is not a local showroom claim.
+  body: `Desert Sound's Karachi team designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
 
-Multan is a working market for this work, not a second headquarters. We travel from Karachi, survey the space, and install to that building. Book a survey on **+92 21 111 570 111** or **info@desertsound.com.pk**. Phone, email, and address stay in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi.
+We travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact).
 
 ### What home cinema installation in Multan means
 
-Home cinema installation in Multan is room-first. Inland heat, dust, hard tile or marble, neighbours, and power decide what the space can hold. A floor plan emailed overnight is not a survey. Bright glass cooks a projector niche with no airflow; hard finishes bounce dialogue; a shared wall limits bass. That is an acoustic fact about the building, not a named Multan project.
+In Multan, the house decides the cinema. Tall windows throw hard afternoon light on the screen. Marble and tile bounce the dialogue. Dust from the courtyard settles on the equipment, and summer heat builds up inside a closed rack. A floor plan sent by email is not a survey. Someone has to walk the room before any equipment is ordered.
 
-A dedicated cinema can go darker and louder. A shared lounge uses the same process in a different envelope: a smaller image, less bass the next room will tolerate, cables still hidden where the structure allows. Either way, a home cinema installer in Multan — in the site-visit sense, not a venue — walks the room before anyone orders kit.
+A room used only as a cinema can be darker, and quieter for the neighbours. A living room that is also a theatre follows the same steps, with a smaller picture, less bass next door, and cables hidden where the walls allow. In both cases we fit the seats, the screen, and the speakers to this house, not to a package from a catalogue.
 
-The full service scope lives on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Home theatre installation in Multan follows that same brief: seats, then screen, then speakers, locked to the building you already have.
+What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Multan work follows that after the visit.
 
 ### Site visits from Karachi: how we work in Multan
 
-Work in Multan follows one sequence: survey, design, install (concealment and power), then calibrate. The method is the same nationwide. Karachi is where finished residential rooms are studied week to week.
+A Multan job runs survey → design → install (concealment and power) → calibrate. The steps match the rest of Pakistan. The finished rooms we study week to week sit in Karachi; Multan gets the same method on travel.
 
-On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a same-day Multan showroom, and we do not staff a second headquarters there.
+On site we measure, fix the seating and screen positions to the structure, and plan routes for cables and power before paint goes on. Then comes the install, then a calibration pass at the main seat. There is no Multan showroom.
 
-The longer installer checklist — what to ask before the walls close, what calibration actually measures — is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page is the city-focus support under that national work. It does not rewrite that article.
+The longer checklist is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page supports that national work; it does not replace it.
+
+### Homes we visit in Multan
+
+Site visits from Karachi cover homes across Multan, including DHA Multan, Multan Cantt, Gulgasht Colony and Wapda Town. These are areas we survey, not finished Multan projects. On the visit we compare the rooms you have (a lounge, a spare bedroom, a basement or an upper floor) and choose the one that can be darkened and sealed best.
 
 ### Rooms we've finished
 
-The finished rooms you can study in detail are [finished residential theatres](/projects/residential). Multan work uses the same process after a survey. These are not Multan case studies, and we will not relabel them as such.
+You can study finished rooms under [finished residential theatres](/projects/residential). Multan installs use that same process after a survey. They are Karachi proof, not Multan case studies, and we will not relabel them.
 
 - [Project Platinum — Karachi cinema install (concealment)](/projects/residential/project-platinum)
 - [Residency Private Cinema — Karachi livable theatre](/projects/residential/residency)
 - [Studio Vellari — Karachi flagship room](/projects/residential/studio-vellari)
 - [Stanley Seats — cinema seating install in a Karachi room](/projects/residential/stanley-seats)
 
-If the Multan room is still a drawing, call before the walls close. If it is already painted, call before you buy the screen.
+If the Multan room is still on paper, call before the walls close. If paint is already up, call before you buy the screen.
 
-### What installation includes
+### Planning for Multan's heat, dust and power
 
-At a high level: design (seats, then screen, then speakers), concealment and power, calibration, and one-button start where that is scoped. Acoustic and lighting work as the room needs, not as a catalogue add-on. Equipment is specified for the measured space.
-
-See [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation) for what a full install covers, and [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the checklist mindset — survey, written scope, concealment, calibration.
+Summer afternoons in Multan often pass 40°C, and dust storms are common before the monsoon. A cinema room here is planned around that. The projector and AV rack need airflow or a cooled space, not a sealed cabinet. Intakes sit away from doors that open onto dusty courtyards. Air conditioning is placed so its noise stays off the main seats. Power backup for load-shedding is discussed on the site visit.
 
 ### Book a Multan site-visit survey
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for a Multan site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot).`,
+[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot).`,
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
-      a: "Yes — site visits from our Karachi team; same design–install–calibrate process used across Pakistan.",
+      a: "Yes. Our Karachi crew travels for Multan surveys and installs, using the same design–install–calibrate sequence we use across Pakistan.",
     },
     {
       q: "Is Desert Sound based in Multan?",
-      a: "No. We are Karachi-based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi, +92 21 111 570 111. We travel for Multan surveys and installs; we do not claim a Multan headquarters.",
+      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. [Book a survey](/contact).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
-      a: "Measure the room, lock seats, screen, and speakers to the building, plan concealment and power, then install and calibrate. The full process is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
+      a: "Walk the room, lock seats, screen and speakers to the building, plan concealment and power, then install and calibrate. The full process is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
     },
     {
       q: "What does professional home theater installation include?",
-      a: "Room design, AV install and concealment, acoustic and lighting considerations as scoped, calibration, and integrated control when specified. Detail is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+      a: "Design for the measured room, AV install and concealment, acoustic and lighting work as scoped, calibration, and integrated control when specified. Detail is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+    },
+    {
+      q: "Can a home cinema in Multan handle the summer heat and dust?",
+      a: "Yes, when it is planned for. The projector and AV rack get ventilation or a cooled space instead of a closed cabinet, intakes sit away from dusty doors, and air conditioning is placed so it stays quiet at the seats. That is decided on the site visit, before equipment is ordered.",
+    },
+    {
+      q: "Which areas of Multan do you visit?",
+      a: "We survey homes in DHA Multan, Multan Cantt, Gulgasht Colony, Wapda Town and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [
