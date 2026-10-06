@@ -110,6 +110,7 @@ test("Sialkot copy is install-led, 450–700 words, with required mesh links", (
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-multan").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
+  assert.doesNotMatch(copy, /home-cinema-installation-bahawalpur|home-cinema-installation-punjab/)
   assert.match(copy, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
   assert.match(copy, /\+92 21 111 570 111/)
   assert.match(sialkotServicePage.faqs[0].q, /install home cinemas in Sialkot/)
