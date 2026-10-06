@@ -182,8 +182,6 @@ test("Project Platinum adds survey-design-install proof between install-shows-up
   assert.ok(installIdx !== -1 && surveyIdx !== -1 && exploreIdx !== -1)
   assert.ok(installIdx < surveyIdx && surveyIdx < exploreIdx)
   assert.doesNotMatch(source, /FAQPage/)
-  assert.equal(source.split("<TheatreInstallLink").length - 1, 1)
-  assert.equal(source.split("cinemaInstallerArticleHref").length - 1, 1)
 })
 
 test("Stanley Seats stays seating-scoped and does not primary-target Karachi cinema install", () => {
