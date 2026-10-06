@@ -18,11 +18,11 @@ We travel from Karachi, survey the building, and install for that house. [Book a
 
 ### What home cinema installation in Multan means
 
-In Multan the room itself drives the install. Afternoon light through tall windows, marble or tile floors that throw dialogue back, courtyard dust that settles on intakes, and summer heat that stacks in a closed rack all shape what the space can hold. An emailed floor plan is not enough — someone has to walk the room before kit is ordered.
+In Multan, the house decides the cinema. Tall windows throw hard afternoon light on the screen. Marble and tile bounce the dialogue. Dust from the courtyard settles on the equipment, and summer heat builds up inside a closed rack. A floor plan sent by email is not a survey. Someone has to walk the room before any equipment is ordered.
 
-A full cinema can go darker and quieter to the neighbours. A living room that doubles as a theatre uses the same method in a smaller envelope: a more modest image, bass the next room can live with, and cables hidden where the walls allow. Either way, the Multan survey locks seats, screen and speakers to the building you already have, not to a catalogue package.
+A room used only as a cinema can be darker, and quieter for the neighbours. A living room that is also a theatre follows the same steps, with a smaller picture, less bass next door, and cables hidden where the walls allow. In both cases we fit the seats, the screen, and the speakers to this house, not to a package from a catalogue.
 
-The national brief is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Multan work follows that brief after the visit.
+What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Multan work follows that after the visit.
 
 ### Site visits from Karachi: how we work in Multan
 
@@ -53,7 +53,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
 
 ### Book a Multan site-visit survey
 
-[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad).`,
+[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot).`,
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
