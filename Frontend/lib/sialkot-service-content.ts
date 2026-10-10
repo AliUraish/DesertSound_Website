@@ -12,62 +12,72 @@ export const sialkotServicePage: RankingSeoPage = {
   title: sialkotServiceTitle,
   description: sialkotServiceDescription,
   h1: sialkotServiceH1,
-  body: `Karachi-based Desert Sound designs and installs home theaters in Sialkot on a **site visit** — the same design–install–calibrate process used across Pakistan. Cinema installation means the room is designed, built into the house, and calibrated to those seats. It is not a boxed retail system, and it is not a local showroom claim.
+  body: `A Sialkot home theatre has to suit its street as much as its owner. Whether the house shares a wall in the old city or stands on a broad cantonment lawn, Desert Sound sends its Karachi specialists to read the building, lay out the cinema for it, put it in, and balance the sound at your chair. Nothing is sold off a shelf, and we run no Sialkot outlet.
 
-Sialkot is a working market for this work, not a second headquarters. We travel from Karachi, survey the space, and install to that building. Book a survey on **+92 21 111 570 111** or **info@desertsound.com.pk**. Phone, email, and address stay in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi.
+Our Sialkot work is visit-led: specialists come in from Karachi, inspect the property, and set the design by what they find. Ask for your Sialkot inspection through [contact](/contact).
 
 ### What home cinema installation in Sialkot means
 
-Home theater installation in Sialkot is room-first. This is an export and industrial city, and family compounds sit close to workshops and freight. Courtyard light, shared walls, hard finishes, and power all decide what the space can hold. A floor plan emailed overnight is not a survey. Hard tile bounces dialogue; a projector niche with no airflow cooks in summer. That is an acoustic fact about the building, not a named Sialkot project.
+In Sialkot the room itself drives the install. This export and industrial city puts family compounds close to workshops and freight; courtyard light, shared walls and hard finishes decide what the space can hold. An emailed floor plan is not enough — someone has to walk the room before kit is ordered.
 
-A dedicated cinema can go darker and louder. A shared lounge uses the same process in a different envelope: a smaller image, less bass the next room will tolerate, cables still hidden where the structure allows. Either way, a home cinema installer in Sialkot — in the site-visit sense, not a venue — walks the room before anyone orders kit.
+Where a household can spare a whole room, the cinema gets blackout and isolation built in, which matters when a neighbour is on the far side of the wall. Where the theatre lives in a lounge, it uses modest scale, restrained low frequencies that respect the attached house next door, and concealed runs only where the structure lets us. Either route is shaped to your particular property.
 
-The full service scope lives on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Home theatre installation in Sialkot follows that same brief: seats, then screen, then speakers, locked to the building you already have.
+The complete service, from layout to final balancing, is described at [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Sialkot designs are finalised against it only after our specialists have stood inside.
 
 ### Site visits from Karachi: how we work in Sialkot
 
-Work in Sialkot follows one sequence: survey, design, install (concealment and power), then calibrate. The method is the same nationwide. Karachi is where finished residential rooms are studied week to week.
+Sialkot projects move through four stages: inspection, drawings, fitting (with concealed wiring and supply), then balancing. Our showcase rooms are Karachi homes, and those are where the stages were proven; Sialkot clients receive the identical routine on each trip.
 
-On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a Sialkot address, and we do not staff a second headquarters there.
+During the inspection we listen as well as measure. Shared walls, the floor above, and any workshop or traffic noise reaching the room are noted, and the screen, seating and cable paths are fixed before decorators arrive. Fitting comes next, then balancing at the principal chair. Sialkot has no Desert Sound branch.
 
-The longer installer checklist is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).
+If you are comparing installers, our checklist at [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) is the deeper read. Here we simply apply it to Sialkot streets.
+
+### Homes we visit in Sialkot
+
+Site-visit surveys from Karachi cover Sialkot Cantt, Citi Housing, Model Town and Ghazi Officers Colony. These are areas we survey, not finished Sialkot projects. Cantonment streets are wider and its lawns larger than the lanes nearer the old core, so we judge each option by how far it sits from the party wall and the road, and choose the one that seals best.
 
 ### Rooms we've finished
 
-The finished rooms you can study in detail are [finished residential theatres](/projects/residential). Sialkot work uses the same process after a survey. These are not Sialkot case studies, and we will not relabel them as such.
+Our showcase sits under [finished residential theatres](/projects/residential): real rooms, all in Karachi. Sialkot builds run on that same playbook, yet those Karachi rooms stay labelled as Karachi.
 
 - [Project Platinum — Karachi cinema install (concealment)](/projects/residential/project-platinum)
 - [Residency Private Cinema — Karachi livable theatre](/projects/residential/residency)
 - [Studio Vellari — Karachi flagship room](/projects/residential/studio-vellari)
 - [Stanley Seats — cinema seating install in a Karachi room](/projects/residential/stanley-seats)
 
-If the Sialkot room is still a drawing, call before the walls close. If it is already painted, call before you buy the screen.
+Sialkot house not built yet? Get in touch while the walls are still open. Interiors complete? Speak to our specialists first, then order the screen.
 
-### What installation includes
+### Planning for Sialkot's export workshops and dense housing
 
-At a high level: design (seats, then screen, then speakers), concealment and power, calibration, and one-button start where that is scoped. Acoustic and lighting work as the room needs, not as a catalogue add-on. Equipment is specified for the measured space.
-
-See [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation) for what a full install covers, and [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the checklist mindset — survey, written scope, concealment, calibration.
+Sialkot is an export and industrial city — sports goods, surgical instruments and related workshops line the main roads and sit throughout the urban fabric, not only on a distant estate. Family compounds and the dense old city often mean shared walls, hard finishes and neighbours close enough that bass has to be planned, not guessed. On a site visit we walk the room against that setting — courtyard light, structure, and whatever freight or workshop noise the building already has — before anyone orders kit. Power backup for outages is discussed on the site visit.
 
 ### Book a Sialkot site-visit survey
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for a Sialkot site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Faisalabad](/service/home-cinema-installation-faisalabad).`,
+Book a Sialkot site-visit survey through [contact](/contact). Mention your neighbourhood and the room you are considering, and we will arrange the inspection. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Faisalabad](/service/home-cinema-installation-faisalabad).`,
   faqs: [
     {
       q: "Do you install home cinemas in Sialkot?",
-      a: "Yes — site visits from our Karachi team; same design–install–calibrate process used across Pakistan.",
+      a: "Yes. Specialists from Karachi make the trip to inspect your property and complete the build, with the same drawings-to-balancing approach used countrywide.",
     },
     {
       q: "Is Desert Sound based in Sialkot?",
-      a: "No. We are Karachi-based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi, +92 21 111 570 111. We travel for Sialkot surveys and installs; we do not claim a Sialkot headquarters.",
+      a: "No. We operate from Karachi and serve Sialkot by visiting. There is no Sialkot branch or display room. Arrange an inspection via [contact](/contact).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
-      a: "Measure the room, lock seats, screen, and speakers to the building, plan concealment and power, then install and calibrate. The full process is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
+      a: "Inspect the room and its neighbours, settle seating and screen and speaker spots, map concealed wiring and supply, and later fit and balance the system. A fuller explanation sits at [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
     },
     {
       q: "What does professional home theater installation include?",
-      a: "Room design, AV install and concealment, acoustic and lighting considerations as scoped, calibration, and integrated control when specified. Detail is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+      a: "Drawings for your specific room, equipment fitted with concealed runs, acoustic treatment and lighting as agreed, a final calibrate-and-balance pass, and simple single-remote operation if requested. The full service is at [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+    },
+    {
+      q: "How does Sialkot's industrial and dense housing affect a home cinema?",
+      a: "Export workshops and freight sit close to many family compounds, and dense old-city homes often share walls and hard finishes. On the survey we measure what the room can hold — quieter bass for the next room, concealment the structure allows, and light control — then design to that building.",
+    },
+    {
+      q: "Which areas of Sialkot do you visit?",
+      a: "We survey homes in Sialkot Cantt, Citi Housing, Model Town, Ghazi Officers Colony and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [
