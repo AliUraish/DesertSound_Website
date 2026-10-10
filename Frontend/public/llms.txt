@@ -28,6 +28,7 @@ Canonical site: https://www.desertsound.com.pk
 
 ## Key projects
 
+- Project Platinum: https://www.desertsound.com.pk/projects/residential/project-platinum
 - Studio Vellari: https://www.desertsound.com.pk/projects/residential/studio-vellari
 - Emerald Private Cinema: https://www.desertsound.com.pk/projects/residential/new-theatre
 - Stanley Seats: https://www.desertsound.com.pk/projects/residential/stanley-seats
