@@ -184,6 +184,16 @@ test("Project Platinum adds survey-design-install proof between install-shows-up
   assert.doesNotMatch(source, /FAQPage/)
 })
 
+test("Residency adds survey-design-install proof between install-shows-up and Explore more", () => {
+  const source = readFileSync(join(root, "app/projects/residential/residency/page.tsx"), "utf8")
+  const installIdx = source.indexOf('heading: "How the install shows up"')
+  const surveyIdx = source.indexOf('heading: "Survey → design → install on this room"')
+  const exploreIdx = source.indexOf('heading: "Explore more"')
+  assert.ok(installIdx !== -1 && surveyIdx !== -1 && exploreIdx !== -1)
+  assert.ok(installIdx < surveyIdx && surveyIdx < exploreIdx)
+  assert.doesNotMatch(source, /FAQPage/)
+})
+
 test("Stanley Seats stays seating-scoped and does not primary-target Karachi cinema install", () => {
   const source = readFileSync(join(root, "app/projects/residential/stanley-seats/page.tsx"), "utf8")
   assert.doesNotMatch(source, /home cinema installation in Karachi/)
