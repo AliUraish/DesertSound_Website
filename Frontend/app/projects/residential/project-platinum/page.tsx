@@ -40,6 +40,12 @@ export default function ProjectPlatinumPage() {
           ],
         },
         {
+          heading: "Survey → design → install on this room",
+          paragraphs: [
+            "Survey locked the projector niche and wood-edged riser geometry before paint, so the star ceiling and cove lighting could stay the visual language. Design locked two recliner rows and circulation to the rear bar wall. Install hid the kit — discreet projector, speakers flanking the screen, wiring out of sight. Once the envelope was finished, picture and sound were calibrated to the main seat.",
+          ],
+        },
+        {
           heading: "Explore more",
           paragraphs: [
             <>
