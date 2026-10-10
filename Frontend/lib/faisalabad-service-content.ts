@@ -12,62 +12,72 @@ export const faisalabadServicePage: RankingSeoPage = {
   title: faisalabadServiceTitle,
   description: faisalabadServiceDescription,
   h1: faisalabadServiceH1,
-  body: `Karachi-based Desert Sound designs and installs home theaters in Faisalabad on a **site visit** — the same design–install–calibrate process used across Pakistan. Cinema installation means the room is designed, built into the house, and calibrated to those seats. It is not a boxed retail system, and it is not a local showroom claim.
+  body: `Planning a home cinema in a Faisalabad family home? Desert Sound's crew travels from Karachi, looks at the house with you, and builds the theatre into it: picture, sound and seating are designed around your room, fitted, and then tuned from the seat you will actually use. You are buying a room, not a box from a shop counter, and we keep no premises in Faisalabad.
 
-Faisalabad is a working market for this work, not a second headquarters. We travel from Karachi, survey the space, and install to that building. Book a survey on **+92 21 111 570 111** or **info@desertsound.com.pk**. Phone, email, and address stay in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi.
+Every Faisalabad project begins the same way. You ask for a visit, our people travel in, study the structure, and only then start drawing. Request your Faisalabad visit on the [contact](/contact) page.
 
 ### What home cinema installation in Faisalabad means
 
-Home theater installation in Faisalabad is room-first. Punjab heat, mill-city dust, courtyard light, neighbours in a family compound, and power all decide what the space can hold. A floor plan emailed overnight is not a survey. Hard tile bounces dialogue; a projector niche with no airflow cooks in summer. That is an acoustic fact about the building, not a named Faisalabad project.
+In Faisalabad, home theatre installation starts with the room itself. Mill-city heat and dust, courtyard light in a family compound, hard tile that throws dialogue back, and neighbours close enough that bass has to be planned all shape what the space can hold. An emailed floor plan is not enough — someone has to walk the room before kit is ordered.
 
-A dedicated cinema can go darker and louder. A shared lounge uses the same process in a different envelope: a smaller image, less bass the next room will tolerate, cables still hidden where the structure allows. Either way, a home cinema installer in Faisalabad — in the site-visit sense, not a venue — walks the room before anyone orders kit.
+Some families give the cinema a room of its own; there the screen can sit in true darkness, and the walls can be built to keep the sound in for the rest of the household. Others want the family lounge to work as a theatre too. That brings a sensible picture size, low end tuned so the household is not disturbed, and wiring tucked into whatever the plaster permits. Whichever you choose, the layout follows your compound, not a brochure.
 
-The full service scope lives on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Home theatre installation in Faisalabad follows that same brief: seats, then screen, then speakers, locked to the building you already have.
+How we plan, fit and tune a theatre anywhere in Pakistan is set out on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation); a Faisalabad home is drawn up to that standard once we have seen it.
 
 ### Site visits from Karachi: how we work in Faisalabad
 
-Work in Faisalabad follows one sequence: survey, design, install (concealment and power), then calibrate. The method is the same nationwide. Karachi is where finished residential rooms are studied week to week.
+For Faisalabad, our order never changes: look first, draw second, build third (hidden cabling, power), and tune last. The rooms we are proudest of are in Karachi, and that is where we refine this method; a Faisalabad family gets exactly the same discipline, brought to your door.
 
-On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a Faisalabad address, and we do not staff a second headquarters there.
+Walking through, we measure the room, pin down where the sofa row and the screen wall will be, and sketch where wiring and power need to run while the plaster is still open. Fitting follows, and the job closes with tuning from your favourite seat. No Faisalabad office or showroom exists to visit.
 
-The longer installer checklist — what to ask before the walls close, what calibration actually measures — is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page is the city-focus support under that national work. It does not rewrite that article.
+Buyers who want the full set of questions to ask an installer will find it at [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). Treat this Faisalabad page as a local companion to that guide.
+
+### Homes we visit in Faisalabad
+
+On visits from Karachi we survey homes across Faisalabad in Madina Town, Wapda City, Peoples Colony and Civil Lines. These are areas we survey, not finished Faisalabad projects. In a family compound there is often more than one candidate room, so we stand in each with you and pick whichever shuts out daylight and keeps sound in most easily.
 
 ### Rooms we've finished
 
-The finished rooms you can study in detail are [finished residential theatres](/projects/residential). Faisalabad work uses the same process after a survey. These are not Faisalabad case studies, and we will not relabel them as such.
+Want to see the standard first? Our completed home theatres are under [finished residential theatres](/projects/residential). Every one is in Karachi. A Faisalabad build follows that same process, but we will never present those Karachi rooms as Faisalabad work.
 
 - [Project Platinum — Karachi cinema install (concealment)](/projects/residential/project-platinum)
 - [Residency Private Cinema — Karachi livable theatre](/projects/residential/residency)
 - [Studio Vellari — Karachi flagship room](/projects/residential/studio-vellari)
 - [Stanley Seats — cinema seating install in a Karachi room](/projects/residential/stanley-seats)
 
-If the Faisalabad room is still a drawing, call before the walls close. If it is already painted, call before you buy the screen.
+Still at the drawing stage in Faisalabad? Ring us while ceilings and walls can be opened. Already finished and painted? Talk to us before choosing a projector screen.
 
-### What installation includes
+### Planning for Faisalabad's mill-city heat and dust
 
-At a high level: design (seats, then screen, then speakers), concealment and power, calibration, and one-button start where that is scoped. Acoustic and lighting work as the room needs, not as a catalogue add-on. Equipment is specified for the measured space.
-
-See [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation) for what a full install covers, and [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the checklist mindset — survey, written scope, concealment, calibration.
+Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storms are common in the dry summer, especially in June, in this textile mill city. A cinema room here is planned around heat and mill-city dust: the projector and AV rack need airflow or a cooled space, not a sealed cabinet. We draw fresh air for the equipment from the cleanest side of the room, away from openings that face road and industrial dust, so June dust is kept away from the electronics. Cooling is positioned so its hum never reaches the front row. Power backup for outages is discussed on the site visit.
 
 ### Book a Faisalabad site-visit survey
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for a Faisalabad site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Sialkot](/service/home-cinema-installation-sialkot).`,
+Book a Faisalabad site-visit survey through [contact](/contact). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Sialkot](/service/home-cinema-installation-sialkot).`,
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",
-      a: "Yes — site visits from our Karachi team; same design–install–calibrate process used across Pakistan.",
+      a: "Yes. Our people travel from Karachi to survey and then fit the theatre, following the identical plan, build and tune routine we use for every Pakistani home.",
     },
     {
       q: "Is Desert Sound based in Faisalabad?",
-      a: "No. We are Karachi-based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi, +92 21 111 570 111. We travel for Faisalabad surveys and installs; we do not claim a Faisalabad headquarters.",
+      a: "No. Our base is Karachi, and Faisalabad jobs are handled through visits from there. You will not find a Faisalabad showroom. Request a visit on the [contact](/contact) page.",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
-      a: "Measure the room, lock seats, screen, and speakers to the building, plan concealment and power, then install and calibrate. The full process is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
+      a: "They measure the room, decide where you sit and where the screen and speakers go, work out hidden wiring and power, and afterwards fit and tune everything. Our step-by-step version is [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).",
     },
     {
       q: "What does professional home theater installation include?",
-      a: "Room design, AV install and concealment, acoustic and lighting considerations as scoped, calibration, and integrated control when specified. Detail is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+      a: "A layout drawn for your measured room, fitting of the equipment with cabling kept out of sight, sound treatment and lighting where agreed, a tuning pass, and one-touch control if you ask for it. The full scope is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+    },
+    {
+      q: "How do you plan a home cinema for Faisalabad's mill-city heat and dust?",
+      a: "June is the month we plan hardest for. Afternoons often reach or exceed 40°C and dry dust storms roll through, so the projector and equipment rack are given room to breathe or a cooled spot, never a shut cupboard, and they draw their air from the side away from road and industrial dust. We settle this during the survey, before anything is bought.",
+    },
+    {
+      q: "Which areas of Faisalabad do you visit?",
+      a: "We survey homes in Madina Town, Wapda City, Peoples Colony, Civil Lines and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [
