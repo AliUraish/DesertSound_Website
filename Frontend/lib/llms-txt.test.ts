@@ -23,6 +23,7 @@ const requiredPaths = [
   "/projects/residential",
   "/projects/commercial",
   "/projects/residential/project-platinum",
+  "/projects/residential/residency",
   "/projects/residential/studio-vellari",
   "/projects/commercial/xanders",
 ]
@@ -44,6 +45,10 @@ test("llms.txt is plain text with canonical URL, locked NAP, and existing paths"
   assert.match(
     keyProjects,
     /Project Platinum: https:\/\/www\.desertsound\.com\.pk\/projects\/residential\/project-platinum/,
+  )
+  assert.match(
+    keyProjects,
+    /Residency Private Cinema: https:\/\/www\.desertsound\.com\.pk\/projects\/residential\/residency/,
   )
 })
 
