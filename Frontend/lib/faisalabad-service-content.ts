@@ -12,17 +12,17 @@ export const faisalabadServicePage: RankingSeoPage = {
   title: faisalabadServiceTitle,
   description: faisalabadServiceDescription,
   h1: faisalabadServiceH1,
-  body: `Planning a home cinema in a Faisalabad family home? Desert Sound's crew travels from Karachi, looks at the house with you, and builds the theatre into it: picture, sound and seating are designed around your room, fitted, and then tuned from the seat you will actually use. You are buying a room, not a box from a shop counter, and we keep no premises in Faisalabad.
+  body: `Desert Sound's Karachi team designs and installs home theaters in Faisalabad. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Faisalabad showroom.
 
-Every Faisalabad project begins the same way. You ask for a visit, our people travel in, study the structure, and only then start drawing. Request your Faisalabad visit on the [contact](/contact) page.
+We have teams in Lahore and Karachi. For a Faisalabad house we travel from Karachi, survey the building, and install for that house. [Book a Faisalabad site-visit survey](/contact).
 
 ### What home cinema installation in Faisalabad means
 
-In Faisalabad, home theatre installation starts with the room itself. Mill-city heat and dust, courtyard light in a family compound, hard tile that throws dialogue back, and neighbours close enough that bass has to be planned all shape what the space can hold. An emailed floor plan is not enough — someone has to walk the room before kit is ordered.
+In Faisalabad, the house decides the cinema. Mill-city heat and dust settle on the equipment. Courtyard light in a family compound falls across the screen. Hard tile bounces the dialogue, and neighbours are close enough that bass has to be planned. A floor plan sent by email is not a survey. Someone has to walk the room before any equipment is ordered.
 
-Some families give the cinema a room of its own; there the screen can sit in true darkness, and the walls can be built to keep the sound in for the rest of the household. Others want the family lounge to work as a theatre too. That brings a sensible picture size, low end tuned so the household is not disturbed, and wiring tucked into whatever the plaster permits. Whichever you choose, the layout follows your compound, not a brochure.
+Some families give the cinema a room of its own, so the screen can sit in the dark and the walls can keep the sound in. Others use the family lounge as a theatre too, with a smaller picture, less bass for the rest of the house, and cables hidden where the plaster allows. Either way, we fit the seats, the screen, and the speakers to this compound, not to a brochure.
 
-How we plan, fit and tune a theatre anywhere in Pakistan is set out on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation); a Faisalabad home is drawn up to that standard once we have seen it.
+What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Faisalabad work follows that after the visit.
 
 ### Site visits from Karachi: how we work in Faisalabad
 
@@ -53,7 +53,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
 
 ### Book a Faisalabad site-visit survey
 
-Book a Faisalabad site-visit survey through [contact](/contact). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Sialkot](/service/home-cinema-installation-sialkot).`,
+[Book a Faisalabad site-visit survey](/contact). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), and [Sialkot](/service/home-cinema-installation-sialkot).`,
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",
@@ -61,7 +61,7 @@ Book a Faisalabad site-visit survey through [contact](/contact). Tell us which r
     },
     {
       q: "Is Desert Sound based in Faisalabad?",
-      a: "No. Our base is Karachi, and Faisalabad jobs are handled through visits from there. You will not find a Faisalabad showroom. Request a visit on the [contact](/contact) page.",
+      a: "No. Our base is Karachi, and Faisalabad jobs are site visits from there. There is no Faisalabad showroom. [Book a survey](/contact).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
