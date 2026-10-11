@@ -65,7 +65,8 @@ export function canonicalizePath(pathname) {
   return exactDestinationBySource.get(stripped) ?? stripped
 }
 
-/** Explicit `/legacy/` → canonical so GSC slash leftovers are app-owned 308s, not only Vercel slash strip. */
+/** Explicit `/legacy/` → canonical so GSC slash leftovers are app-owned 308s, not only Vercel slash strip.
+ * Apex + trailing slash is one 308 to www slashless; www trailing slash stays a same-host strip. */
 export function withTrailingSlashRedirects(redirects) {
   const slashVariants = redirects
     .filter((rule) => isExactSource(rule.source) && !rule.source.endsWith("/") && !rule.source.includes("."))
@@ -77,6 +78,12 @@ export function withTrailingSlashRedirects(redirects) {
   return [
     ...slashVariants,
     ...redirects,
+    {
+      source: "/:path+/",
+      has: [{ type: "host", value: "desertsound.com.pk" }],
+      destination: "https://www.desertsound.com.pk/:path+",
+      permanent: true,
+    },
     { source: "/:path+/", destination: "/:path+", permanent: true },
   ]
 }
