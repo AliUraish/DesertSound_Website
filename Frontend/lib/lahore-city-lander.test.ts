@@ -93,9 +93,11 @@ test("Lahore copy stays in the 450–700 word band with required mesh links", ()
   assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-multan").length - 1, 1)
   assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-sialkot").length - 1, 1)
+  assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-bahawalpur/)
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
   assert.doesNotMatch(
     lahoreCityLanderPage.body,
-    /home-cinema-installation-bahawalpur|home-cinema-installation-punjab/,
+    /home-cinema-installation-punjab/,
   )
   assert.equal(lahoreCityLanderPage.faqs.length, 4)
 })
@@ -158,7 +160,7 @@ test("theatre inbound is one nationwide line; SERP title and meta stay locked", 
 test("#33 upgrades existing Lahore mentions to the city lander", () => {
   assert.match(
     article,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), \[Bahawalpur\]\(\/service\/home-cinema-installation-bahawalpur\), and other cities/,
   )
   assert.match(
     article,

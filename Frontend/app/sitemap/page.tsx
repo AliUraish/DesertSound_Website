@@ -20,6 +20,7 @@ const links = [
   { href: "/service/home-cinema-installation-multan", label: "Home cinema installation in Multan" },
   { href: "/service/home-cinema-installation-faisalabad", label: "Home cinema installation in Faisalabad" },
   { href: "/service/home-cinema-installation-sialkot", label: "Home cinema installation in Sialkot" },
+  { href: "/service/home-cinema-installation-bahawalpur", label: "Home cinema installation in Bahawalpur" },
   { href: "/service/smart-home-automation", label: "Smart home automation" },
   { href: "/service/audio-distribution", label: "Audio distribution" },
   { href: "/service/control-systems", label: "Control systems" },
