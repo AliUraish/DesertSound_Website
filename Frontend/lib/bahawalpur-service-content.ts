@@ -12,7 +12,7 @@ export const bahawalpurServicePage: RankingSeoPage = {
   title: bahawalpurServiceTitle,
   description: bahawalpurServiceDescription,
   h1: bahawalpurServiceH1,
-  body: `Thinking about a private cinema for a Bahawalpur bungalow? Desert Sound works this city by travelling up from Karachi. Our Karachi team walks your house, draw the theatre around the chairs your family will use, fit it into the walls, and tune it on the spot. Nothing arrives as a carton to unpack, and we hold no office or showroom anywhere in Bahawalpur.
+  body: `Thinking about a private cinema for a Bahawalpur bungalow? Desert Sound works this city by travelling up from Karachi. Our Karachi team walks your house, draws the theatre around the chairs your family will use, fits it into the walls, and tunes it on the spot. Nothing arrives as a carton to unpack, and we hold no office or showroom anywhere in Bahawalpur.
 
 Each Bahawalpur job opens with a survey visit. Request one through [contact](/contact-us).
 
