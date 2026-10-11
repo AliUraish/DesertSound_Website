@@ -47,6 +47,12 @@ export default function ResidencyPage() {
           ],
         },
         {
+          heading: "Survey → design → install on this room",
+          paragraphs: [
+            "The survey started with how the room would be used, not with the kit: this brief called for a shared media room rather than a sealed theatre. Design kept that envelope residential, with recliners and a sofa facing a large-format screen and acoustic wall finishes, so the room still works when the film is over. The install hid the wiring, ceiling-mounted the projector and built the speakers into the architecture. Calibration of picture and sound came last.",
+          ],
+        },
+        {
           heading: "Explore more",
           paragraphs: [
             <>

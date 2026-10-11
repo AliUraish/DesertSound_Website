@@ -14,7 +14,7 @@ export const multanServicePage: RankingSeoPage = {
   h1: multanServiceH1,
   body: `Desert Sound's Karachi team designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
 
-We travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact).
+We have teams in Lahore and Karachi. For a Multan house we travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact).
 
 ### What home cinema installation in Multan means
 
