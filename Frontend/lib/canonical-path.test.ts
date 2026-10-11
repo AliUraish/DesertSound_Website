@@ -81,6 +81,34 @@ test("redirect table owns /services/ leftovers and slash catch-all", () => {
   assert.match(sitemap, /canonicalizePath/)
 })
 
+test("truncated smart-home invest slug redirects to the live post", () => {
+  assert.equal(
+    canonicalizePath("/smart-home-automation-why-should-you-invest-in-it"),
+    "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
+  )
+  assert.equal(
+    canonicalizePath("/smart-home-automation-why-should-you-invest-in-it/"),
+    "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
+  )
+  const rules = withTrailingSlashRedirects(cutoverRedirects)
+  assert.ok(
+    rules.some(
+      (rule) =>
+        rule.source === "/smart-home-automation-why-should-you-invest-in-it" &&
+        rule.destination === "/smart-home-automation-why-should-you-invest-in-it-for-your-home" &&
+        rule.permanent === true,
+    ),
+  )
+  assert.ok(
+    rules.some(
+      (rule) =>
+        rule.source === "/smart-home-automation-why-should-you-invest-in-it/" &&
+        rule.destination === "/smart-home-automation-why-should-you-invest-in-it-for-your-home" &&
+        rule.permanent === true,
+    ),
+  )
+})
+
 test("homepage Theater title lock is untouched", () => {
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
   assert.doesNotMatch(homepage, /Home Theater Installation in Pakistan \| Design and Install/)

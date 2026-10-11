@@ -42,6 +42,11 @@ export const cutoverRedirects = [
   { source: '/home-theatre-and-automation-in-pakistan-how-to-prevent-costly-errors', destination: '/blogs', permanent: true },
   { source: '/how-smart-home-automation-can-simplify-your-daily-life', destination: '/blogs', permanent: true },
   { source: '/change-the-way-you-live-by-integrating-smart-home-automation', destination: '/blogs', permanent: true },
+  {
+    source: '/smart-home-automation-why-should-you-invest-in-it',
+    destination: '/smart-home-automation-why-should-you-invest-in-it-for-your-home',
+    permanent: true,
+  },
 ]
 
 function isExactSource(source) {
