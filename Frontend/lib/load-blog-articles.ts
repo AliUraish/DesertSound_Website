@@ -26,6 +26,7 @@ function parseArticleMarkdown(raw: string, filename: string): RankingSeoPage {
     faqs: meta.faqs ?? [],
     links: meta.links ?? [],
     ...(meta.image ? { image: meta.image } : {}),
+    ...(meta.imageAlt ? { imageAlt: meta.imageAlt } : {}),
     ...(meta.date ? { date: meta.date } : {}),
   }
 }

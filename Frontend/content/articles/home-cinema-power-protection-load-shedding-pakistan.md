@@ -2,10 +2,11 @@
 {
   "slug": "/home-cinema-power-protection-load-shedding-pakistan",
   "title": "Home Cinema Power Protection in Pakistan",
-  "description": "Load-shedding, voltage swings and surges in Pakistan: what a stabilizer, UPS and surge protection each do for a home cinema, and what to plan before finishes.",
+  "description": "Load-shedding, voltage swings and surges in Pakistan: what a stabilizer, UPS and surge protection do for a home cinema, and what to plan before finishes.",
   "h1": "Planning Power for a Home Cinema in Pakistan: Load-Shedding, Voltage and Surges",
   "date": "2026-10-11",
-  "image": "/blog-images/top-10-essential-components-for-building-the-ultimate-home-cinema.jpeg",
+  "image": "/Pictures Final/Projects/Residential/Project_Platinum/Cover.jpg",
+  "imageAlt": "Karachi home cinema by Desert Sound",
   "faqs": [
     {
       "q": "Do I need a UPS or a stabilizer for my home theater in Pakistan?",
@@ -27,19 +28,19 @@
   "links": [
     {
       "label": "Full home cinema design-and-install scope",
-      "href": "/service/home-theatre-design-and-installation/"
+      "href": "/service/home-theatre-design-and-installation"
     },
     {
       "label": "What a cinema installer in Pakistan actually does",
-      "href": "/home-cinema-and-cinema-installer-pakistan/"
+      "href": "/home-cinema-and-cinema-installer-pakistan"
     },
     {
       "label": "How to prevent home theater overheating",
-      "href": "/how-to-prevent-home-theater-system-overheating-problems/"
+      "href": "/how-to-prevent-home-theater-system-overheating-problems"
     },
     {
       "label": "Book a site visit",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -87,7 +88,7 @@ These are decisions for a qualified electrician. The cinema plan tells them wher
 
 A UPS and its batteries need a spot with good airflow that you can still reach. Battery life falls quickly as batteries run hotter, and that matters in a Karachi summer.
 
-UPS makers point out that the battery inside a UPS always runs warmer than the room around it, and they recommend installing the unit somewhere with good airflow and proper ventilation. So keep the UPS and its batteries out of sealed joinery. Batteries need replacing eventually, so leave a way in that does not mean dismantling the room. Where possible, keep power equipment in a ventilated space beside or behind the room, not among the seats.
+UPS makers point out that the battery inside a UPS can run warmer than the room around it, and they recommend installing the unit somewhere with good airflow and proper ventilation. So keep the UPS and its batteries out of sealed joinery. Batteries need replacing eventually, so leave a way in that does not mean dismantling the room. Where possible, keep power equipment in a ventilated space beside or behind the room, not among the seats.
 
 Hiding equipment is part of the finish in any cinema room. In [Project Platinum](/projects/residential/project-platinum), the projector, speakers and cabling sit where they belong, so the room stays composed and the wiring does not show.
 
@@ -113,10 +114,10 @@ Earthing should be tested by an electrician, not assumed, especially in older or
 
 Many lamp projectors keep a fan running after switch-off, and their manuals say to wait until the cool-down finishes before cutting the power. Some newer models skip the cool-down entirely, so check your own manual.
 
-That is why the projector belongs on the backed-up supply: a load-shedding cut should not end a cool-down early. Switch off from the remote and let the fan stop on its own; our guide to [preventing home theater overheating](/how-to-prevent-home-theater-system-overheating-problems/) covers the rest of the projector's heat.
+That is why the projector belongs on the backed-up supply: a load-shedding cut should not end a cool-down early. Switch off from the remote and let the fan stop on its own; our guide to [preventing home theater overheating](/how-to-prevent-home-theater-system-overheating-problems) covers the rest of the projector's heat.
 
 ### What to Raise on the Site Visit
 
 Bring three things to the survey: your outage pattern, the backup you already have, and your electrician's contact. Power backup is discussed on the site visit, alongside the room, light and seating.
 
-If you already run a UPS, inverter, solar system or generator, note what it powers today and where it sits. The rest of the room, from layout to concealment to calibration, is covered under [home theatre design and installation](/service/home-theatre-design-and-installation/), and this overview explains [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan/). When you are ready, [book a site visit](/contact-us/). Visits run across Pakistan.
+If you already run a UPS, inverter, solar system or generator, note what it powers today and where it sits. The rest of the room, from layout to concealment to calibration, is covered under [home theatre design and installation](/service/home-theatre-design-and-installation), and this overview explains [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). When you are ready, [book a site visit](/contact-us). Visits run across Pakistan.
