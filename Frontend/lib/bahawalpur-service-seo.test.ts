@@ -127,10 +127,13 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   assert.equal(copy.split("/service/home-cinema-installation-multan").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
-  assert.match(copy, /through \[contact\]\(\/contact\)/)
-  assert.match(copy, /via \[contact\]\(\/contact\)/)
-  assert.match(copy, /Use \[contact\]\(\/contact\) to ask for a Bahawalpur survey/)
-  assert.ok(copy.split("](/contact)").length - 1 >= 2)
+  assert.match(copy, /through \[contact\]\(\/contact-us\)/)
+  assert.match(copy, /via \[contact\]\(\/contact-us\)/)
+  assert.match(copy, /Use \[contact\]\(\/contact-us\) to ask for a Bahawalpur survey/)
+  assert.equal(copy.split("](/contact-us)").length - 1, 3)
+  assert.doesNotMatch(copy, /\]\(\/contact(?:\/)?\)/)
+  assert.doesNotMatch(copy, /\]\(\/contact-us\/\)/)
+  assert.doesNotMatch(copy, /\]\(\/[^)\s]+\/\)/)
   assert.doesNotMatch(copy, /22-C\/II/)
   assert.doesNotMatch(copy, /Zamzama/)
   assert.doesNotMatch(copy, /\+92 21/)
@@ -176,6 +179,7 @@ test("Bahawalpur lander does not invent local proof, superlatives, or sister bra
 test("sitemap and llms listings include the Bahawalpur service URL", () => {
   assert.match(sitemap, /rankingSeoPages/)
   assert.match(htmlSitemap, /\/service\/home-cinema-installation-bahawalpur/)
+  assert.doesNotMatch(htmlSitemap, /\/service\/home-cinema-installation-bahawalpur\//)
   assert.match(
     readFileSync(join(root, "public/llms.txt"), "utf8"),
     /https:\/\/www\.desertsound\.com\.pk\/service\/home-cinema-installation-bahawalpur/,
@@ -187,6 +191,7 @@ test("theatre inbound is one Bahawalpur nationwide-strip line without remaking l
   assert.match(theatreLive, /home cinema installation in Bahawalpur/)
   assert.match(theatreLive, /\/service\/home-cinema-installation-bahawalpur/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
+  assert.doesNotMatch(theatreLive, /\/service\/home-cinema-installation-bahawalpur\//)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
   assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
   assert.match(
@@ -204,4 +209,20 @@ test("#33 names Bahawalpur once as a lean inbound to the city lander", () => {
     /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), \[Bahawalpur\]\(\/service\/home-cinema-installation-bahawalpur\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
+  assert.doesNotMatch(article33, /\/service\/home-cinema-installation-bahawalpur\//)
+})
+
+test("added Bahawalpur mesh links are slashless on sibling city pages", () => {
+  const cityFiles = [
+    "lib/islamabad-service-content.ts",
+    "lib/lahore-city-lander.ts",
+    "lib/multan-service-content.ts",
+    "lib/faisalabad-service-content.ts",
+    "lib/sialkot-service-content.ts",
+  ]
+  for (const file of cityFiles) {
+    const source = readFileSync(join(root, file), "utf8")
+    assert.equal(source.split("/service/home-cinema-installation-bahawalpur").length - 1, 1, file)
+    assert.doesNotMatch(source, /\/service\/home-cinema-installation-bahawalpur\//)
+  }
 })

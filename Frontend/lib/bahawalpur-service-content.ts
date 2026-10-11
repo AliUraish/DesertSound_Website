@@ -14,7 +14,7 @@ export const bahawalpurServicePage: RankingSeoPage = {
   h1: bahawalpurServiceH1,
   body: `Thinking about a private cinema for a Bahawalpur bungalow? Desert Sound works this city by travelling up from Karachi. Our Karachi team walks your house, draw the theatre around the chairs your family will use, fit it into the walls, and tune it on the spot. Nothing arrives as a carton to unpack, and we hold no office or showroom anywhere in Bahawalpur.
 
-Each Bahawalpur job opens with a survey visit. Request one through [contact](/contact).
+Each Bahawalpur job opens with a survey visit. Request one through [contact](/contact-us).
 
 ### What home cinema installation in Bahawalpur means
 
@@ -53,7 +53,7 @@ Summers in Bahawalpur run very hot and dry, and dust storms reach the city. For 
 
 ### Book a Bahawalpur site-visit survey
 
-Use [contact](/contact) to ask for a Bahawalpur survey. Tell us your neighbourhood and which room you have in mind, and we'll schedule our trip. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot).`,
+Use [contact](/contact-us) to ask for a Bahawalpur survey. Tell us your neighbourhood and which room you have in mind, and we'll schedule our trip. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot).`,
   faqs: [
     {
       q: "Do you install home cinemas in Bahawalpur?",
@@ -61,7 +61,7 @@ Use [contact](/contact) to ask for a Bahawalpur survey. Tell us your neighbourho
     },
     {
       q: "Is Desert Sound based in Bahawalpur?",
-      a: "No. Desert Sound operates from Karachi and reaches Bahawalpur on site visits from Karachi. No Bahawalpur office or showroom exists. Request a visit via [contact](/contact).",
+      a: "No. Desert Sound operates from Karachi and reaches Bahawalpur on site visits from Karachi. No Bahawalpur office or showroom exists. Request a visit via [contact](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
