@@ -9,13 +9,13 @@
   "links": [
     {
       "label": "Smart home automation",
-      "href": "/service/smart-home-automation/"
+      "href": "/service/smart-home-automation"
     }
   ]
 }
 ---
 
-[Smart home automation](/service/smart-home-automation/) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps. For homes in Pakistan, the same plan can link lights, AC, security and the home cinema so they run from one control.
+[Smart home automation](/service/smart-home-automation) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps. In Pakistan, a smart-home plan can start with lighting, AC and the home cinema, then add security once the wiring is planned.
 
 ### Control That Matches How You Live
 

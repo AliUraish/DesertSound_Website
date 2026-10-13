@@ -13,7 +13,7 @@ const investH1 = "Smart Home Automation: Why Should You Invest in It for Your Ho
 const investDescription =
   "Is home automation in Pakistan worth it? One app for lights, AC, security and your home cinema. See what's worth automating first in your home."
 const pakistanSentence =
-  "For homes in Pakistan, the same plan can link lights, AC, security and the home cinema so they run from one control."
+  "In Pakistan, a smart-home plan can start with lighting, AC and the home cinema, then add security once the wiring is planned."
 
 function parseFrontmatter(raw: string) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
