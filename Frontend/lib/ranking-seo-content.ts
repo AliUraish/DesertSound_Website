@@ -4,6 +4,7 @@ import { islamabadServicePage } from "./islamabad-service-content"
 import { lahoreCityLanderPage } from "./lahore-city-lander"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import { multanServicePage } from "./multan-service-content"
+import { punjabServicePage } from "./punjab-service-content"
 import type { RankingSeoPage } from "./ranking-seo-types"
 import { sialkotServicePage } from "./sialkot-service-content"
 
@@ -284,6 +285,7 @@ const sitePages: RankingSeoPage[] = [
   faisalabadServicePage,
   sialkotServicePage,
   bahawalpurServicePage,
+  punjabServicePage,
   {
     "slug": "/service/maintenance-and-support",
     "image": "/Pictures Final/Services/Home_networking/Image2.jpg",

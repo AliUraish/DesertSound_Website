@@ -325,9 +325,13 @@ export default function HomeTheatreSystemsPage() {
               <Link href="/service/home-cinema-installation-sialkot" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Sialkot
               </Link>
-              {", and "}
+              {", "}
               <Link href="/service/home-cinema-installation-bahawalpur" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Bahawalpur
+              </Link>
+              {", and "}
+              <Link href="/service/home-cinema-installation-punjab" className="underline underline-offset-4 hover:text-black">
+                home cinema installation in Punjab
               </Link>
               .
             </p>

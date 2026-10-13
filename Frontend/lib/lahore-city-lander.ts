@@ -49,7 +49,7 @@ Detail sits on [home theater / home cinema design and installation in Pakistan](
 
 ### Book a survey in Lahore
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a survey with our team in Lahore. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur).
+Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a survey with our team in Lahore. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).
 
 **Karachi showroom**
 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi`,

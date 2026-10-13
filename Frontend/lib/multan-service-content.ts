@@ -53,7 +53,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
 
 ### Book a Multan site-visit survey
 
-[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur).`,
+[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
