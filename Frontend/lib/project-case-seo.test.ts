@@ -12,6 +12,8 @@ const flagshipPages = [
     slug: "new-theatre",
     file: "app/projects/residential/new-theatre/page.tsx",
     seoTitle: "Emerald Private Cinema | Home Theater Installation in Karachi",
+    seoDescription:
+      "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
     description:
       "Dedicated home theater installation in Karachi with acoustic detailing, hidden wiring, and calibrated picture and sound.",
     category: "Residential Cinema",
@@ -28,6 +30,8 @@ const flagshipPages = [
     slug: "residency",
     file: "app/projects/residential/residency/page.tsx",
     seoTitle: "Residency Private Cinema | Home Theater Installation in Karachi",
+    seoDescription:
+      "A private cinema in Karachi built as a shared media room: recliners, a sofa, a large-format screen and acoustic walls, surveyed, designed and installed.",
     description:
       "Karachi home theater installation for immersive viewing, refined comfort, and discreet lighting, sound, and display integration.",
     category: "Residential Cinema",
@@ -50,15 +54,24 @@ const flagshipPages = [
   },
 ] as const
 
+function projectSerpDescription(project: NonNullable<ReturnType<typeof getProject>>) {
+  return (
+    project.seoDescription ??
+    `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`
+  )
+}
+
 test("flagship residential case studies yield install-intent SERP metadata", () => {
   const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
   assert.match(seo, /project\.seoTitle \?\? project\.title/)
+  assert.match(seo, /project\.seoDescription \?\?/)
 
   for (const page of flagshipPages) {
     const project = getProject("residential", page.slug)
     assert.ok(project, `missing project ${page.slug}`)
     assert.equal(project.seoTitle, page.seoTitle)
     assert.equal(project.description, page.description)
+    assert.equal(project.seoDescription, "seoDescription" in page ? page.seoDescription : undefined)
     assert.equal(project.category, page.category)
     assert.equal(project.location, "Karachi, Pakistan")
     assert.match(page.seoTitle, /Home Theater Installation in Karachi/)
@@ -67,6 +80,23 @@ test("flagship residential case studies yield install-intent SERP metadata", () 
     assert.doesNotMatch(page.seoTitle, /\bHQ\b/)
     assert.doesNotMatch(page.description, /\bHQ\b/)
   }
+
+  const emerald = getProject("residential", "new-theatre")
+  const residency = getProject("residential", "residency")
+  const platinum = getProject("residential", "project-platinum")
+  assert.ok(emerald && residency && platinum)
+  assert.equal(
+    projectSerpDescription(emerald),
+    "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
+  )
+  assert.equal(
+    projectSerpDescription(residency),
+    "A private cinema in Karachi built as a shared media room: recliners, a sofa, a large-format screen and acoustic walls, surveyed, designed and installed.",
+  )
+  assert.equal(
+    projectSerpDescription(platinum),
+    `${platinum.description} View this ${platinum.category.toLowerCase()} project by Desert Sound in ${platinum.location}.`,
+  )
 })
 
 test("flagship residential pages deepen copy and link the theatre install service once", () => {

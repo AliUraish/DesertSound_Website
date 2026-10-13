@@ -4,6 +4,8 @@ export type Project = {
   title: string
   /** Optional SERP title used by createProjectMetadata. Listing cards keep `title`. */
   seoTitle?: string
+  /** Optional full SERP description. Listing cards keep `description`. */
+  seoDescription?: string
   category: string
   location: string
   image: string
@@ -68,6 +70,8 @@ export const allProjects: Project[] = [
     slug: "new-theatre",
     title: "Emerald Private Cinema",
     seoTitle: "Emerald Private Cinema | Home Theater Installation in Karachi",
+    seoDescription:
+      "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",
@@ -130,6 +134,8 @@ export const allProjects: Project[] = [
     slug: "residency",
     title: "Residency Private Cinema",
     seoTitle: "Residency Private Cinema | Home Theater Installation in Karachi",
+    seoDescription:
+      "A private cinema in Karachi built as a shared media room: recliners, a sofa, a large-format screen and acoustic walls, surveyed, designed and installed.",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/Red&White/Cover.JPG",

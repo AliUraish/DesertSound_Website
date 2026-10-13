@@ -1,8 +1,8 @@
 ---
 {
   "slug": "/affordable-home-theatre-installation-ideas",
-  "title": "Affordable Home Theatre Installation Ideas",
-  "description": "A usable home theatre starts with a dark-enough room, a screen you can sit at, and sound that is not the TV speakers. Spend there first.",
+  "title": "Affordable Home Theatre Installation: Where to Spend First",
+  "description": "Room, screen, sound, seating, light and cables: where to spend first on an affordable home theatre, what to build in stages and what not to cheap out on.",
   "h1": "Affordable Home Theatre Installation Ideas",
   "image": "/blog-images/affordable-home-theatre-installation-ideas.jpg",
   "faqs": [],

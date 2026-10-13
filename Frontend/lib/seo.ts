@@ -249,12 +249,15 @@ export function createProjectMetadata(library: ProjectLibrary, slug: string): Me
   }
 
   const title = project.seoTitle ?? project.title
+  const description =
+    project.seoDescription ??
+    `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`
 
   return {
     ...createMetadata({
       path: `/projects/${library}/${project.slug}`,
       title,
-      description: `${project.description} View this ${project.category.toLowerCase()} project by Desert Sound in ${project.location}.`,
+      description,
       image: project.image,
     }),
     title: {
