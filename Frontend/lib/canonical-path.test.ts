@@ -66,9 +66,47 @@ test("redirect table owns /services/ leftovers and slash catch-all", () => {
     ),
   )
   assert.ok(rules.some((rule) => rule.source === "/:path+/" && rule.destination === "/:path+"))
+  assert.ok(
+    rules.some(
+      (rule) =>
+        rule.source === "/:path+/" &&
+        rule.destination === "https://www.desertsound.com.pk/:path+" &&
+        rule.permanent === true &&
+        Array.isArray(rule.has) &&
+        rule.has.some((condition) => condition.type === "host" && condition.value === "desertsound.com.pk"),
+    ),
+  )
   assert.match(nextConfig, /trailingSlash:\s*false/)
   assert.match(nextConfig, /skipTrailingSlashRedirect:\s*true/)
   assert.match(sitemap, /canonicalizePath/)
+})
+
+test("truncated smart-home invest slug redirects to the live post", () => {
+  assert.equal(
+    canonicalizePath("/smart-home-automation-why-should-you-invest-in-it"),
+    "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
+  )
+  assert.equal(
+    canonicalizePath("/smart-home-automation-why-should-you-invest-in-it/"),
+    "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
+  )
+  const rules = withTrailingSlashRedirects(cutoverRedirects)
+  assert.ok(
+    rules.some(
+      (rule) =>
+        rule.source === "/smart-home-automation-why-should-you-invest-in-it" &&
+        rule.destination === "/smart-home-automation-why-should-you-invest-in-it-for-your-home" &&
+        rule.permanent === true,
+    ),
+  )
+  assert.ok(
+    rules.some(
+      (rule) =>
+        rule.source === "/smart-home-automation-why-should-you-invest-in-it/" &&
+        rule.destination === "/smart-home-automation-why-should-you-invest-in-it-for-your-home" &&
+        rule.permanent === true,
+    ),
+  )
 })
 
 test("homepage Theater title lock is untouched", () => {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { RankingSeoPageView } from "@/components/ranking-seo-page"
+import { blogTitleSegment } from "@/lib/load-blog-articles"
 import { getBlogPosts, getRankingSeoPage, isBlogArticle } from "@/lib/ranking-seo-content"
 import { createMetadata } from "@/lib/seo"
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   return createMetadata({
     path: page.slug,
-    title: page.title,
+    title: blogTitleSegment(page.title),
     description: page.description,
     image: page.image || undefined,
   })

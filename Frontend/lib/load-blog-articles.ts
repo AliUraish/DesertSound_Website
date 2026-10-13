@@ -4,6 +4,11 @@ import type { RankingSeoPage } from "./ranking-seo-types"
 
 const ARTICLES_DIR = path.join(process.cwd(), "content/articles")
 
+/** Drop a trailing " - Desert Sound" / "| Desert Sound" so the layout template brands once. */
+export function blogTitleSegment(title: string) {
+  return title.replace(/\s[-|]\sDesert Sound$/, "").trim()
+}
+
 function parseArticleMarkdown(raw: string, filename: string): RankingSeoPage {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
   if (!match) {
