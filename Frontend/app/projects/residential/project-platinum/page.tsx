@@ -59,6 +59,10 @@ export default function ProjectPlatinumPage() {
               <CaseStudyLink href="/projects/residential/residency">
                 Residency Private Cinema
               </CaseStudyLink>
+              . For seating rows, sightlines and hidden wiring in your own home, see our{" "}
+              <CaseStudyLink href="/private-home-cinema-karachi">
+                private home cinema planning guide
+              </CaseStudyLink>
               .
             </>,
           ],

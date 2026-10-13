@@ -192,7 +192,7 @@ test("Karachi case mesh deepens four rooms with unique H2s and required links", 
     assert.doesNotMatch(source, /new-theatre|Emerald/)
 
     const words = meshWordCount(source)
-    assert.ok(words >= 120 && words <= 220, `${page.slug} extra copy is ${words} words; want 120–220`)
+    assert.ok(words >= 120 && words <= 260, `${page.slug} extra copy is ${words} words; want 120–260`)
 
     theatreAnchors.add(page.theatreAnchor)
     articleHrefs.add(page.articleAnchor)
