@@ -19,7 +19,7 @@ The biggest screen is not always the right one. Too large and you scan left to r
 
 ### The 1.5x Distance Rule
 
-Multiply the screen's width by 1.5 to get a workable seating distance. An 8-foot-wide image wants the main seat around 12 feet out. If you can only sit 9 feet from the wall, drop the width to about 6 feet. That's the rule we use on Pakistani home theatre jobs when we need a first number before we fine-tune for the room.
+Multiply the screen's width by 1.5 to get a workable seating distance. An 8-foot-wide image wants the main seat around 12 feet out. If you can only sit 9 feet from the wall, drop the width to about 6 feet. That's the rule we use on [Pakistani home theatre jobs](/service/home-theatre-design-and-installation) when we need a first number before we fine-tune for the room.
 
 ### Match Size to the Room
 

@@ -19,7 +19,7 @@
 }
 ---
 
-A new theatre and young kids in the same room is a short story if the install ignores them. Loose HDMI cables, a standing screen, and speakers within reach get pulled, tipped, or juiced. We have replaced enough of those systems to plan for it the first time.
+A new theatre and young kids in the same room is a short story if [the installer's plan](/home-cinema-and-cinema-installer-pakistan) ignores them. Loose HDMI cables, a standing screen, and speakers within reach get pulled, tipped, or juiced. We have replaced enough of those systems to plan for it the first time.
 
 [Smart home automation in Pakistan](/service/smart-home-automation/) helps — parental controls, a movie scene, a kids' playlist on voice — but the room still has to be safe to touch.
 

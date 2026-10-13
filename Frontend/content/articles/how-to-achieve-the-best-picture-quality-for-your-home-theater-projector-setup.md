@@ -43,7 +43,7 @@ Contrast lives or dies here.
 
 ### Set the picture, then the sound
 
-Leave the box on "vivid" and you will fight green or crushed blacks. Use a cinema mode, then tune on a film you know. Skip auto-keystone if it warps the geometry.
+Leave the box on "vivid" and you will fight green or crushed blacks. Use a cinema mode, then tune on a film you know; [calibration at the main seat](/home-cinema-and-cinema-installer-pakistan) is the finish. Skip auto-keystone if it warps the geometry.
 
 A sharp image still needs speakers at ear height, a receiver set for the room, and a check on real content. Picture and [audio](/service/audio-distribution/) are one system.
 

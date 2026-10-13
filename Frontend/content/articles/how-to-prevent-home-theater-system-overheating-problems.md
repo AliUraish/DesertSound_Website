@@ -15,7 +15,7 @@
 }
 ---
 
-A cinema rack makes heat. Receivers, amps, media players, and projectors all dump it during a long session. If that heat stays in a closed cabinet, films freeze, sound thins, and boards fail.
+A cinema rack makes heat. Receivers, amps, media players, and projectors all dump it during a long session. If that heat stays in a closed cabinet, films freeze, sound thins, and boards fail, which is why [a cinema installer plans that airflow](/home-cinema-and-cinema-installer-pakistan).
 
 ### Give Equipment Air
 

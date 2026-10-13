@@ -19,7 +19,7 @@
 }
 ---
 
-Desert Sound supplies and installs JVC projectors in Pakistan. JVC's cinema line is known for contrast and dark-room performance, which is why it shows up in dedicated theatres rather than bright shop floors.
+Desert Sound supplies and installs JVC projectors in Pakistan as part of a [complete cinema install](/home-cinema-and-cinema-installer-pakistan). JVC's cinema line is known for contrast and dark-room performance, which is why it shows up in dedicated theatres rather than bright shop floors.
 
 A projector is not a TV you aim at a wall. Throw distance, screen size, ambient light, and the HDMI path decide whether the image holds up.
 
