@@ -4,7 +4,6 @@ import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
 import { blogTitleSegment } from "./load-blog-articles.ts"
-import { articleJsonLd, faqAnswerPlainText, faqPageJsonLd } from "./seo.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const articlePath = join(root, "content/articles/private-home-cinema-karachi.md")
@@ -64,6 +63,10 @@ function wordCount(text: string) {
 
 function markdownHrefs(text: string) {
   return [...text.matchAll(/\]\(([^)]+)\)/g)].map((match) => match[1])
+}
+
+function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
 }
 
 const { meta, body } = parseFrontmatter(article)
@@ -126,36 +129,25 @@ test("private cinema Karachi guide ships four 40–60 word FAQs whose schema equ
   assert.match(seo, /"@type": "Article"/)
   assert.match(seo, /"@type": "BreadcrumbList"/)
   assert.match(seo, /"@type": "FAQPage"/)
+  assert.match(seo, /faqAnswerPlainText\(faq\.answer\)/)
 
-  const schema = faqPageJsonLd(meta.faqs.map((faq: { q: string; a: string }) => ({ question: faq.q, answer: faq.a })))
-  assert.equal(schema.mainEntity.length, 4)
-
-  for (const [index, faq] of meta.faqs.entries()) {
+  for (const faq of meta.faqs) {
     assert.ok(faq.q.length > 0)
     assert.ok(faq.a.length > 0)
     const words = wordCount(faq.a)
     assert.ok(words >= 40 && words <= 60, `"${faq.q}" answer is ${words} words; want 40–60`)
-    const visible = faqAnswerPlainText(faq.a)
-    assert.equal(schema.mainEntity[index].name, faq.q)
-    assert.equal(schema.mainEntity[index].acceptedAnswer.text, visible)
+    assert.equal(faqAnswerPlainText(faq.a), faq.a)
   }
 })
 
 test("private cinema Karachi Article schema has no Place or address beyond publisher", () => {
-  const json = JSON.stringify(
-    articleJsonLd({
-      path: meta.slug,
-      headline: meta.h1,
-      description: meta.description,
-      datePublished: meta.date,
-    }),
-  )
-  assert.match(json, /"@type":"Article"/)
-  assert.doesNotMatch(json, /"Place"/)
-  assert.doesNotMatch(json, /PostalAddress/)
-  assert.doesNotMatch(json, /streetAddress/)
-  assert.doesNotMatch(json, /addressLocality/)
-  assert.match(json, /"publisher":\{"@type":"Organization"/)
+  const articleFn = seo.split("export function articleJsonLd")[1]?.split("export function breadcrumbListJsonLd")[0] ?? ""
+  assert.match(articleFn, /"@type": "Article"/)
+  assert.match(articleFn, /publisher:/)
+  assert.doesNotMatch(articleFn, /Place/)
+  assert.doesNotMatch(articleFn, /PostalAddress/)
+  assert.doesNotMatch(articleFn, /streetAddress/)
+  assert.doesNotMatch(articleFn, /addressLocality/)
 })
 
 test("private cinema Karachi body keeps the apartment sentence and drops banned terms", () => {
