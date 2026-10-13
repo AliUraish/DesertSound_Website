@@ -168,9 +168,8 @@ test("Islamabad lander does not invent local proof, superlatives, or sister bran
   assert.doesNotMatch(copy, /local Islamabad showroom/i)
   assert.doesNotMatch(copy, /Islamabad-based (team|office|showroom|staff|branch)/i)
   assert.doesNotMatch(copy, /we (have|keep|staff|run) (an? )?(Islamabad|local) (office|showroom|team|branch)/i)
-  assert.match(copy, /do not keep a same-day Islamabad showroom/)
+  assert.match(copy, /We do not keep an office in Islamabad\./)
   assert.match(copy, /do not claim an office or showroom there/)
-  assert.match(copy, /do not keep an office or showroom there/)
   assert.doesNotMatch(copy, /headquarters/i)
   assert.doesNotMatch(
     copy,

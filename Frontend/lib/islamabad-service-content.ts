@@ -28,7 +28,7 @@ The full service scope lives on [home theater / home cinema design and installat
 
 Work in Islamabad follows one sequence: survey, design, install (concealment and power), then calibrate. The method is the same nationwide. Karachi is where finished residential rooms are studied week to week. That is proof of process, not a claim that every city has the same street of completed houses waiting for a tour.
 
-On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a same-day Islamabad showroom, and we do not keep an office or showroom there.
+On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep an office in Islamabad.
 
 The longer installer checklist — what to ask before the walls close, what calibration actually measures — is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page is the city-focus support under that national work. It does not rewrite that article.
 
