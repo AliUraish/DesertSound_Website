@@ -107,7 +107,9 @@ test("Islamabad copy is install-led, 600–900 words, with required mesh links",
   assert.equal(copy.split("/service/home-cinema-installation-multan").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
-  assert.doesNotMatch(copy, /home-cinema-installation-bahawalpur|home-cinema-installation-punjab/)
+  assert.match(copy, /\/service\/home-cinema-installation-bahawalpur/)
+  assert.equal(copy.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
+  assert.doesNotMatch(copy, /home-cinema-installation-punjab/)
   assert.match(copy, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
   assert.match(copy, /\+92 21 111 570 111/)
   assert.match(islamabadServicePage.faqs[0].q, /install home cinemas in Islamabad/)
@@ -158,7 +160,7 @@ test("theatre inbound is one Islamabad line without remaking locked SERP title",
 test("#33 upgrades existing Islamabad mentions to the city lander", () => {
   assert.match(
     article33,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), \[Bahawalpur\]\(\/service\/home-cinema-installation-bahawalpur\), and other cities/,
   )
   assert.match(
     article33,

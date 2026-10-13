@@ -119,6 +119,8 @@ test("Multan copy is install-led, 600–900 words, with required mesh links", ()
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
+  assert.match(copy, /\/service\/home-cinema-installation-bahawalpur/)
+  assert.equal(copy.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
   assert.doesNotMatch(copy, /smaller envelope|national brief|drives the install/)
   assert.match(copy, /We have teams in Lahore and Karachi/)
   assert.match(copy, /\[Book a Multan site-visit survey\]\(\/contact\)/)
@@ -128,7 +130,7 @@ test("Multan copy is install-led, 600–900 words, with required mesh links", ()
   assert.doesNotMatch(copy, /Zamzama/)
   assert.doesNotMatch(copy, /\+92 21/)
   assert.doesNotMatch(copy, /headquarters/i)
-  assert.doesNotMatch(copy, /home-cinema-installation-bahawalpur|home-cinema-installation-punjab/)
+  assert.doesNotMatch(copy, /home-cinema-installation-punjab/)
   assert.match(multanServicePage.faqs[0].q, /install home cinemas in Multan/)
   assert.match(multanServicePage.faqs[1].q, /based in Multan/)
   assert.match(multanServicePage.faqs[2].q, /site visit/)
@@ -190,7 +192,7 @@ test("theatre inbound is one Multan nationwide-strip line without remaking locke
 test("#33 names Multan once as a lean inbound to the city lander", () => {
   assert.match(
     article33,
-    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), and other cities/,
+    /\[Lahore\]\(\/service\/home-cinema-installation-lahore\), \[Islamabad\]\(\/service\/home-cinema-installation-islamabad\), \[Multan\]\(\/service\/home-cinema-installation-multan\), \[Faisalabad\]\(\/service\/home-cinema-installation-faisalabad\), \[Sialkot\]\(\/service\/home-cinema-installation-sialkot\), \[Bahawalpur\]\(\/service\/home-cinema-installation-bahawalpur\), and other cities/,
   )
   assert.equal(article33.split("/service/home-cinema-installation-multan").length - 1, 1)
 })
