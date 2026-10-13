@@ -5,6 +5,8 @@
   "description": "Planning a private cinema at home in Karachi? Compare a dedicated room with a shared lounge, then plan seating, screen, sound, wiring and the site survey.",
   "h1": "Planning a Private Home Cinema in Karachi",
   "date": "2026-10-13",
+  "image": "/Pictures Final/Projects/Residential/Project_Platinum/Cover.jpg",
+  "imageAlt": "Karachi private home cinema by Desert Sound",
   "faqs": [
     {
       "q": "Is this the same as booking a private cinema in Karachi?",

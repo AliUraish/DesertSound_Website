@@ -97,6 +97,8 @@ test("private cinema Karachi guide locks title, H1, and meta without doubling th
     assert.doesNotMatch(field, /installer/i)
     assert.doesNotMatch(field, /installation/i)
   }
+  assert.equal(meta.image, "/Pictures Final/Projects/Residential/Project_Platinum/Cover.jpg")
+  assert.equal(meta.imageAlt, "Karachi private home cinema by Desert Sound")
 })
 
 test("private cinema Karachi guide has each of seven internal links exactly once, none with a trailing slash", () => {
