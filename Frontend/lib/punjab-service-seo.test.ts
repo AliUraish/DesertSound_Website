@@ -124,7 +124,11 @@ test("Punjab hub copy links each destination once, slashless, with booking only 
 test("Punjab hub stays fact-locked: Lahore team line only, no invented local presence or banned terms", () => {
   assert.match(punjabServicePage.body, /We have a team in Lahore/)
   const lahoreBlock = punjabServicePage.body.split("#### Lahore")[1]?.split("####")[0] ?? ""
-  assert.ok(lahoreBlock.startsWith("\n\nWe have a team in Lahore."))
+  assert.match(
+    lahoreBlock,
+    /\[We have a team in Lahore\]\(\/service\/home-cinema-installation-lahore\)/,
+  )
+  assert.doesNotMatch(lahoreBlock, /\/service\/home-cinema-installation-lahore\//)
   const withoutLahoreTeam = copy.replace(/We have a team in Lahore/g, "")
   assert.doesNotMatch(withoutLahoreTeam, /team in (?:Lahore|Faisalabad|Multan|Sialkot|Bahawalpur)/i)
   assert.doesNotMatch(copy, /our (?:Faisalabad|Multan|Sialkot|Bahawalpur|Punjab) (?:office|HQ|showroom|team|branch)/i)
@@ -187,8 +191,22 @@ test("inbound mesh is one hub link from each Punjab city, the installer city lin
   assert.match(theatreLive, /home cinema installation in Punjab/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-punjab").length - 1, 1)
   assert.doesNotMatch(theatreLive, /\/service\/home-cinema-installation-punjab\//)
+  const nationwide = theatreLive.split("Site visits nationwide from Karachi include")[1]?.split("</p>")[0] ?? ""
+  assert.match(nationwide, /home-cinema-installation-multan/)
+  assert.match(nationwide, /home-cinema-installation-faisalabad/)
+  assert.match(nationwide, /home-cinema-installation-sialkot/)
+  assert.match(nationwide, /home-cinema-installation-bahawalpur/)
+  assert.match(nationwide, /home-cinema-installation-punjab/)
+  assert.doesNotMatch(nationwide, /home-cinema-installation-lahore/)
+  assert.doesNotMatch(nationwide, /home-cinema-installation-islamabad/)
+  assert.match(theatreLive, /We have a team in Lahore for/)
   assert.match(theatreLive, /\/service\/home-cinema-installation-lahore/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-lahore").length - 1, 1)
+  assert.doesNotMatch(theatreLive, /\/service\/home-cinema-installation-lahore\//)
+  assert.match(
+    article33,
+    /\[home theatre design and installation\]\(\/service\/home-theatre-design-and-installation\) work follows one sequence/,
+  )
   assert.equal(article33.split("/service/home-cinema-installation-punjab").length - 1, 1)
   assert.doesNotMatch(article33, /\/service\/home-cinema-installation-punjab\//)
 })

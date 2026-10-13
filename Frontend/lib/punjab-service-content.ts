@@ -22,7 +22,7 @@ Every Punjab project starts with a site visit. Ask for one on our [contact page]
 
 #### Lahore
 
-We have a team in Lahore. Survey, design, install and calibration run the same way as everywhere else. See [home cinema installation in Lahore](/service/home-cinema-installation-lahore).
+[We have a team in Lahore](/service/home-cinema-installation-lahore). Survey, design, install and calibration run the same way as everywhere else.
 
 #### Faisalabad
 

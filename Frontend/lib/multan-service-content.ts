@@ -14,7 +14,7 @@ export const multanServicePage: RankingSeoPage = {
   h1: multanServiceH1,
   body: `Desert Sound's Karachi team designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
 
-We have teams in Lahore and Karachi. For a Multan house we travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact).
+We have teams in Lahore and Karachi. For a Multan house we travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact-us).
 
 ### What home cinema installation in Multan means
 
@@ -53,7 +53,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
 
 ### Book a Multan site-visit survey
 
-[Book a Multan site-visit survey](/contact). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Multan site-visit survey](/contact-us). The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
@@ -61,7 +61,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
     },
     {
       q: "Is Desert Sound based in Multan?",
-      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. [Book a survey](/contact).",
+      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

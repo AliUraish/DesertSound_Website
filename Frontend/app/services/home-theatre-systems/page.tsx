@@ -303,14 +303,14 @@ export default function HomeTheatreSystemsPage() {
               </li>
             </ul>
             <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
-              We have a team in Lahore for home cinema installation in Lahore.
-            </p>
-            <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
-              Site visits nationwide from Karachi include{" "}
+              We have a team in Lahore for{" "}
               <Link href="/service/home-cinema-installation-lahore" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Lahore
               </Link>
-              {", "}
+              .
+            </p>
+            <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
+              Site visits nationwide from Karachi include{" "}
               <Link href="/service/home-cinema-installation-multan" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Multan
               </Link>
