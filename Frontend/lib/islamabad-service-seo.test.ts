@@ -76,8 +76,23 @@ test("Islamabad ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(schema, /serviceJsonLd\(service\)/)
   assert.match(serviceRoute, /islamabadServiceJsonLd/)
   assert.match(serviceRoute, /faqPageJsonLd\(islamabadFaqJsonLdItems\(\)\)/)
-  assert.equal(islamabadFaqJsonLdItems().length, 4)
-  assert.equal(islamabadServicePage.faqs.length, 4)
+  assert.equal(islamabadFaqJsonLdItems().length, 5)
+  assert.equal(islamabadServicePage.faqs.length, 5)
+  for (const [index, faq] of islamabadServicePage.faqs.entries()) {
+    const jsonLd = islamabadFaqJsonLdItems()[index]
+    const stripped = faq.a.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+    assert.equal(jsonLd.question, faq.q)
+    assert.equal(jsonLd.answer, stripped)
+    assert.doesNotMatch(jsonLd.answer, /\[[^\]]+\]\([^)]+\)/)
+  }
+  assert.equal(
+    islamabadFaqJsonLdItems()[1].answer,
+    "No. Desert Sound is based in Karachi. We travel for Islamabad surveys and installs, and we do not claim an Islamabad office or showroom.",
+  )
+  assert.equal(
+    islamabadFaqJsonLdItems()[4].answer,
+    "It depends on the room and what goes into it. A site-visit survey of your Islamabad home measures the room and plans seats, screen, speakers, concealment and power, and that survey sets the scope for your room. Book the survey through our contact page.",
+  )
 })
 
 test("Islamabad copy is install-led, 600–900 words, with required mesh links", () => {
@@ -110,27 +125,57 @@ test("Islamabad copy is install-led, 600–900 words, with required mesh links",
   assert.match(copy, /\/service\/home-cinema-installation-bahawalpur/)
   assert.equal(copy.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
   assert.doesNotMatch(copy, /home-cinema-installation-punjab/)
-  assert.match(copy, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
-  assert.match(copy, /\+92 21 111 570 111/)
+  assert.doesNotMatch(copy, /22-C\/II/)
+  assert.doesNotMatch(copy, /Zamzama/)
+  assert.doesNotMatch(copy, /\+92 21/)
+  assert.doesNotMatch(copy, /info@desertsound/)
+  assert.doesNotMatch(copy, /headquarters/i)
+  assert.match(copy, /\[Book an Islamabad site-visit survey\]\(\/contact-us\)/)
+  assert.match(copy, /our \[contact page\]\(\/contact-us\)/)
+  assert.equal(copy.split("](/contact-us)").length - 1, 3)
+  assert.doesNotMatch(copy, /\]\(\/contact(?:\/)?\)/)
+  assert.doesNotMatch(copy, /\]\(\/contact-us\/\)/)
+  assert.doesNotMatch(copy, /\]\(\/[^)\s]+\/\)/)
   assert.match(islamabadServicePage.faqs[0].q, /install home cinemas in Islamabad/)
   assert.match(islamabadServicePage.faqs[1].q, /based in Islamabad/)
+  assert.equal(
+    islamabadServicePage.faqs[1].a,
+    "No. Desert Sound is based in Karachi. We travel for Islamabad surveys and installs, and we do not claim an Islamabad office or showroom.",
+  )
   assert.match(islamabadServicePage.faqs[2].q, /site visit/)
   assert.match(islamabadServicePage.faqs[3].q, /professional home theater installation/)
+  assert.equal(islamabadServicePage.faqs[4].q, "How much does home cinema installation in Islamabad cost?")
+  assert.equal(
+    islamabadServicePage.faqs[4].a,
+    "It depends on the room and what goes into it. A site-visit survey of your Islamabad home measures the room and plans seats, screen, speakers, concealment and power, and that survey sets the scope for your room. Book the survey through our [contact page](/contact-us).",
+  )
 })
 
 test("Islamabad lander does not invent local proof, superlatives, or sister brands", () => {
   const heroAndMeta = `${islamabadServiceTitle}\n${islamabadServiceH1}\n${islamabadServiceDescription}\n${islamabadServicePage.body.split("###")[0]}`
+  assert.doesNotMatch(copy, /\bbest\b/i)
+  assert.doesNotMatch(copy, /#1/)
   assert.doesNotMatch(heroAndMeta, /\bbest\b/i)
   assert.doesNotMatch(heroAndMeta, /#1/)
   assert.doesNotMatch(copy, /Digital Sound/)
   assert.doesNotMatch(copy, /Daraz/)
   assert.doesNotMatch(copy, /Cinematics/)
   assert.doesNotMatch(copy, /Nashco/)
-  assert.doesNotMatch(copy, /our Islamabad (office|HQ|showroom)/i)
-  assert.doesNotMatch(copy, /Islamabad office/i)
+  assert.doesNotMatch(copy, /\bprices?\b/i)
+  assert.doesNotMatch(copy, /PKR|Rs\.?\s*\d|lakh|crore/i)
+  assert.doesNotMatch(copy, /our Islamabad (office|HQ|showroom|team|branch|staff)/i)
+  assert.doesNotMatch(copy, /local (Islamabad )?(team|office|branch)/i)
+  assert.doesNotMatch(copy, /local Islamabad showroom/i)
+  assert.doesNotMatch(copy, /Islamabad-based (team|office|showroom|staff|branch)/i)
+  assert.doesNotMatch(copy, /we (have|keep|staff|run) (an? )?(Islamabad|local) (office|showroom|team|branch)/i)
   assert.match(copy, /do not keep a same-day Islamabad showroom/)
-  assert.match(copy, /not a second headquarters/)
-  assert.doesNotMatch(copy, /Blue Area|F-7|F-8|F-sectors/i)
+  assert.match(copy, /do not claim an office or showroom there/)
+  assert.match(copy, /do not keep an office or showroom there/)
+  assert.doesNotMatch(copy, /headquarters/i)
+  assert.doesNotMatch(
+    copy,
+    /Blue Area|F-7|F-8|F-6|F-10|F-11|F-sectors|G-6|G-8|G-9|G-10|G-11|E-11|I-8|I-9|DHA Islamabad|Bahria|Diplomatic Enclave|Margalla|Centaurus/i,
+  )
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
   assert.match(copy, /These are not Islamabad case studies/)

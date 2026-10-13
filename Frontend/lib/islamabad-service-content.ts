@@ -14,7 +14,7 @@ export const islamabadServicePage: RankingSeoPage = {
   h1: islamabadServiceH1,
   body: `Karachi-based Desert Sound designs and installs home theaters in Islamabad on a **site visit** — the same design–install–calibrate process used across Pakistan. Cinema installation means the room is designed, built into the house, and calibrated to those seats. It is not a boxed retail system, and it is not a local showroom claim.
 
-Islamabad is a working market for this work, not a second headquarters. We travel from Karachi, survey the space, and install to that building. Book a survey on **+92 21 111 570 111** or **info@desertsound.com.pk**. Phone, email, and address stay in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi.
+Islamabad is a working market for this work, and we do not claim an office or showroom there. We travel from Karachi, survey the space, and install to that building. [Book an Islamabad site-visit survey](/contact-us).
 
 ### What home cinema installation in Islamabad means
 
@@ -28,7 +28,7 @@ The full service scope lives on [home theater / home cinema design and installat
 
 Work in Islamabad follows one sequence: survey, design, install (concealment and power), then calibrate. The method is the same nationwide. Karachi is where finished residential rooms are studied week to week. That is proof of process, not a claim that every city has the same street of completed houses waiting for a tour.
 
-On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a same-day Islamabad showroom, and we do not staff a second headquarters there.
+On the visit we measure, lock seats, screen, and speakers to the structure, and plan cable paths and power before paint. After that comes the install and a calibration pass at the main seat. We do not keep a same-day Islamabad showroom, and we do not keep an office or showroom there.
 
 The longer installer checklist — what to ask before the walls close, what calibration actually measures — is in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan). This page is the city-focus support under that national work. It does not rewrite that article.
 
@@ -51,7 +51,7 @@ See [home theater / home cinema design and installation in Pakistan](/service/ho
 
 ### Book an Islamabad site-visit survey
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for an Islamabad site-visit survey. Desert Sound is based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. The same site-visit work covers [home cinema installation in Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). The national install service is [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).`,
+[Book an Islamabad site-visit survey](/contact-us). The same site-visit work covers [home cinema installation in Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). The national install service is [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).`,
   faqs: [
     {
       q: "Do you install home cinemas in Islamabad?",
@@ -59,7 +59,7 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for an Islamaba
     },
     {
       q: "Is Desert Sound based in Islamabad?",
-      a: "No. We are Karachi-based at 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi, +92 21 111 570 111. We travel for Islamabad surveys and installs; we do not claim an Islamabad headquarters.",
+      a: "No. Desert Sound is based in Karachi. We travel for Islamabad surveys and installs, and we do not claim an Islamabad office or showroom.",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
@@ -68,6 +68,10 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** for an Islamaba
     {
       q: "What does professional home theater installation include?",
       a: "Room design, AV install and concealment, acoustic and lighting considerations as scoped, calibration, and integrated control when specified. Detail is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation).",
+    },
+    {
+      q: "How much does home cinema installation in Islamabad cost?",
+      a: "It depends on the room and what goes into it. A site-visit survey of your Islamabad home measures the room and plans seats, screen, speakers, concealment and power, and that survey sets the scope for your room. Book the survey through our [contact page](/contact-us).",
     },
   ],
   links: [
