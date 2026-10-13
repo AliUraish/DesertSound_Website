@@ -11,7 +11,6 @@ import {
   punjabServicePath,
   punjabServiceTitle,
 } from "./punjab-service-content.ts"
-import { punjabServiceJsonLd } from "./punjab-service-schema.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
@@ -83,21 +82,9 @@ test("Punjab ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(schema, /name: "Bahawalpur"/)
   assert.match(schema, /serviceType: "Home cinema installation"/)
   assert.match(schema, /serviceJsonLd\(service\)/)
-  const jsonLd = punjabServiceJsonLd() as {
-    provider?: { "@id"?: string }
-    areaServed?: Array<{ "@type"?: string; name?: string }>
-    telephone?: unknown
-    address?: unknown
-  }
-  assert.equal(jsonLd.provider?.["@id"], "https://www.desertsound.com.pk/#localbusiness")
-  assert.equal(jsonLd.areaServed?.[0]?.["@type"], "AdministrativeArea")
-  assert.equal(jsonLd.areaServed?.[0]?.name, "Punjab")
-  assert.deepEqual(
-    jsonLd.areaServed?.slice(1).map((area) => area.name),
-    ["Lahore", "Faisalabad", "Multan", "Sialkot", "Bahawalpur"],
-  )
-  assert.equal(jsonLd.telephone, undefined)
-  assert.equal(jsonLd.address, undefined)
+  assert.match(seo, /@id": `\$\{siteUrl\}\/#localbusiness`/)
+  assert.doesNotMatch(schema, /streetAddress/)
+  assert.doesNotMatch(schema, /telephone/)
   assert.match(serviceRoute, /punjabServiceJsonLd/)
   assert.match(serviceRoute, /faqPageJsonLd\(punjabFaqJsonLdItems\(\)\)/)
   assert.equal(punjabFaqJsonLdItems().length, 5)
