@@ -26,19 +26,19 @@ We have a team in Lahore. Survey, design, install and calibration run the same w
 
 #### Faisalabad
 
-A textile city where family compounds are common, so picking the right room comes first. Our team travels from Karachi for surveys in Madina Town, Wapda City and nearby. See [home cinema installation in Faisalabad](/service/home-cinema-installation-faisalabad).
+A textile city where family compounds are common, so picking the right room comes first. Our team travels from Karachi for surveys in Faisalabad. See [home cinema installation in Faisalabad](/service/home-cinema-installation-faisalabad).
 
 #### Multan
 
-Bright afternoons and pre-monsoon dust decide where the screen and the equipment go. We come up from Karachi for surveys in DHA Multan, Gulgasht Colony and nearby. See [home cinema installation in Multan](/service/home-cinema-installation-multan).
+Bright afternoons and pre-monsoon dust decide where the screen and the equipment go. We come up from Karachi for surveys in Multan. See [home cinema installation in Multan](/service/home-cinema-installation-multan).
 
 #### Sialkot
 
-Export workshops and close-set old-city houses make isolation an early question. Surveys from Karachi reach Sialkot Cantt, Citi Housing and nearby. See [home cinema installation in Sialkot](/service/home-cinema-installation-sialkot).
+Export workshops and close-set old-city houses make isolation an early question. Surveys from Karachi reach Sialkot. See [home cinema installation in Sialkot](/service/home-cinema-installation-sialkot).
 
 #### Bahawalpur
 
-On the edge of the Cholistan desert, a cinema room has to keep out daylight and grit. We travel from Karachi to DHA Bahawalpur, Model Town and nearby. See [home cinema installation in Bahawalpur](/service/home-cinema-installation-bahawalpur).
+On the edge of the Cholistan desert, a cinema room has to keep out daylight and grit. We travel from Karachi to Bahawalpur. See [home cinema installation in Bahawalpur](/service/home-cinema-installation-bahawalpur).
 
 ### One method for every Punjab home
 
@@ -60,7 +60,7 @@ Tell us your city, your area and the room you have in mind through our [contact 
     },
     {
       q: "Which Punjab cities do you cover?",
-      a: "Lahore, Faisalabad, Multan, Sialkot and Bahawalpur each have their own page, linked above. For another Punjab town, ask us and we will confirm whether a visit is possible.",
+      a: "Lahore, Faisalabad, Multan, Sialkot and Bahawalpur each have their own page, linked above. For another Punjab city, ask us and we will confirm whether a visit is possible.",
     },
     {
       q: "What happens on a Punjab site visit?",
