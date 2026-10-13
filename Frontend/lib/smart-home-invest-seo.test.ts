@@ -58,7 +58,7 @@ test("smart-home invest rendered title is single-branded", () => {
 })
 
 test("smart-home invest body keeps the Pakistan one-control sentence", () => {
-  assert.match(body, pakistanSentence)
+  assert.ok(body.includes(pakistanSentence), "body must include the Pakistan one-control sentence")
   assert.doesNotMatch(pakistanSentence, /\bUPS\b/i)
   assert.doesNotMatch(pakistanSentence, /backup power/i)
   assert.doesNotMatch(pakistanSentence, /PKR|Rs\.?\s*\d/)
