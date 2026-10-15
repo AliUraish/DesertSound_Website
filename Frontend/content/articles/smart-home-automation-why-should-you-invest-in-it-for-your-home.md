@@ -1,21 +1,21 @@
 ---
 {
   "slug": "/smart-home-automation-why-should-you-invest-in-it-for-your-home",
-  "title": "Smart Home Automation: Why Should You Invest in It for Your Home? - Desert Sound",
-  "description": "Smart home automation is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps.",
+  "title": "Is Smart Home Automation Worth It in Pakistan?",
+  "description": "Is home automation in Pakistan worth it? One app for lights, AC, security and your home cinema. See what's worth automating first in your home.",
   "h1": "Smart Home Automation: Why Should You Invest in It for Your Home?",
   "image": "/blog-images/smart-home-automation-why-should-you-invest-in-it-for-your-home.webp",
   "faqs": [],
   "links": [
     {
       "label": "Smart home automation",
-      "href": "/service/smart-home-automation/"
+      "href": "/service/smart-home-automation"
     }
   ]
 }
 ---
 
-[Smart home automation](/service/smart-home-automation/) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps.
+[Smart home automation](/service/smart-home-automation) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps. In Pakistan, a smart-home plan can start with lighting, AC and the home cinema, then add security once the wiring is planned.
 
 ### Control That Matches How You Live
 
