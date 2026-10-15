@@ -386,6 +386,11 @@ export const homepageInstallFaqs: FaqItem[] = [
   },
 ]
 
+/** Visible FAQ text with markdown links/bold stripped, for FAQPage JSON-LD lockstep. */
+export function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
 export function faqPageJsonLd(faqs: FaqItem[]) {
   return {
     "@context": "https://schema.org",
@@ -395,8 +400,63 @@ export function faqPageJsonLd(faqs: FaqItem[]) {
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: faqAnswerPlainText(faq.answer),
       },
+    })),
+  }
+}
+
+export function articleJsonLd({
+  path,
+  headline,
+  description,
+  datePublished,
+  image,
+}: {
+  path: string
+  headline: string
+  description: string
+  datePublished?: string
+  image?: string
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url: absoluteUrl(path),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(path),
+    },
+    ...(datePublished ? { datePublished, dateModified: datePublished } : {}),
+    ...(image ? { image: absoluteUrl(image) } : {}),
+    author: {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/0-removebg-preview.png"),
+      },
+    },
+  }
+}
+
+export function breadcrumbListJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
     })),
   }
 }

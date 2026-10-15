@@ -3,8 +3,12 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { canonicalizePath } from "@/lib/canonical-path"
-import { faqPageJsonLd } from "@/lib/seo"
+import { articleJsonLd, breadcrumbListJsonLd, faqPageJsonLd } from "@/lib/seo"
 import type { RankingSeoPage } from "@/lib/ranking-seo-types"
+
+function isBlogArticlePage(slug: string) {
+  return !slug.startsWith("/service/") && slug !== "/privacy-policy" && slug !== "/terms-and-condition"
+}
 
 function jsonLdScript(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c")
@@ -36,13 +40,20 @@ function headingText(block: string) {
 }
 
 function renderBody(body: string) {
+  const useSemanticHeadings = /(^|\n)## [^#]/.test(body)
   const blocks = body.replace(/\u00a0/g, " ").split(/\n\n+/).filter(Boolean)
   return blocks.map((block, i) => {
     if (/^#{1,6}\s+/.test(block)) {
+      const hashes = block.match(/^(#{1,6})/)?.[1].length ?? 2
+      const Tag = useSemanticHeadings && hashes >= 3 ? "h3" : "h2"
+      const className =
+        Tag === "h3"
+          ? "mt-8 text-xl font-light tracking-tight text-black md:text-2xl"
+          : "mt-10 text-2xl font-light tracking-tight text-black md:text-3xl"
       return (
-        <h2 key={i} className="mt-10 text-2xl font-light tracking-tight text-black md:text-3xl">
+        <Tag key={i} className={className}>
           {renderInline(headingText(block))}
-        </h2>
+        </Tag>
       )
     }
     if (block.startsWith("- ")) {
@@ -81,9 +92,31 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
     page.faqs.length > 0 && !page.slug.startsWith("/service/")
       ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
       : null
+  const articleSchema = isBlogArticlePage(page.slug)
+    ? articleJsonLd({
+        path: page.slug,
+        headline: page.h1,
+        description: page.description,
+        datePublished: page.date,
+        image: page.image,
+      })
+    : null
+  const breadcrumbSchema = isBlogArticlePage(page.slug)
+    ? breadcrumbListJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Blogs", path: "/blogs" },
+        { name: page.h1, path: page.slug },
+      ])
+    : null
 
   return (
     <div className="w-full overflow-x-clip bg-[#F5F5DC] text-black">
+      {articleSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(articleSchema) }} />
+      ) : null}
+      {breadcrumbSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(breadcrumbSchema) }} />
+      ) : null}
       {faqSchema ? (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(faqSchema) }} />
       ) : null}

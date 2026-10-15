@@ -1,4 +1,4 @@
-import { ProjectCaseStudyPage, TheatreInstallLink } from "@/components/project-case-study-page"
+import { CaseStudyLink, ProjectCaseStudyPage, TheatreInstallLink } from "@/components/project-case-study-page"
 
 export default function NewTheatrePage() {
   return (
@@ -37,6 +37,20 @@ export default function NewTheatrePage() {
           <TheatreInstallLink /> across dedicated residential cinemas: survey the room, hide the wiring, finish the
           envelope, and tune what you see and hear.
         </>,
+      ]}
+      sections={[
+        {
+          heading: "Explore more",
+          paragraphs: [
+            <>
+              Planning your own dedicated room? Our guide to{" "}
+              <CaseStudyLink href="/private-home-cinema-karachi">
+                planning a private home cinema in Karachi
+              </CaseStudyLink>{" "}
+              covers seating, screen, sound and the survey.
+            </>,
+          ],
+        },
       ]}
       breadcrumb="Home / Projects / Residential / Emerald Private Cinema"
     />

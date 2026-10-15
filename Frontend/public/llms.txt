@@ -27,6 +27,10 @@ Canonical site: https://www.desertsound.com.pk
 - Residential projects: https://www.desertsound.com.pk/projects/residential
 - Commercial projects: https://www.desertsound.com.pk/projects/commercial
 
+## Guides
+
+- Private home cinema in Karachi: https://www.desertsound.com.pk/private-home-cinema-karachi
+
 ## Key projects
 
 - Project Platinum: https://www.desertsound.com.pk/projects/residential/project-platinum

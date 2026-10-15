@@ -66,6 +66,10 @@ export default function ResidencyPage() {
               <CaseStudyLink href="/projects/residential/project-platinum">
                 Project Platinum
               </CaseStudyLink>
+              . If you want a lounge that doubles as a cinema, read{" "}
+              <CaseStudyLink href="/private-home-cinema-karachi">
+                how to plan a private home cinema in Karachi
+              </CaseStudyLink>
               .
             </>,
           ],
