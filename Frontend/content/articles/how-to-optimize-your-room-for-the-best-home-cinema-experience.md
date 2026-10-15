@@ -19,7 +19,7 @@
 }
 ---
 
-The room decides more than the TV. A high-end display in a bright, echoey lounge still looks and sounds ordinary.
+The room decides more than the TV, which is why [installers survey it first](/home-cinema-and-cinema-installer-pakistan). A high-end display in a bright, echoey lounge still looks and sounds ordinary.
 
 ### Pick the room
 

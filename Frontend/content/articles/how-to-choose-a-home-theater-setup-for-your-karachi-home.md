@@ -20,7 +20,7 @@
 }
 ---
 
-You do not choose a home theater in Karachi by picking a TV in a mall. You choose by the room, the household, and what an installer can hide, power, and calibrate in that space.
+You do not choose a home theater in Karachi by picking a TV in a mall. You choose by the room, the household, and what [a cinema installer](/home-cinema-and-cinema-installer-pakistan) can hide, power, and calibrate in that space.
 
 A [home theatre install](/service/home-theatre-design-and-installation/) is a layout decision first. The screen, speakers, and rack come after you know how the room is used, how much light it takes, and whether the walls are still open.
 

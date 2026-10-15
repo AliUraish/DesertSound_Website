@@ -27,7 +27,7 @@ A small screen in a large room feels like a TV on a stage. An oversized screen i
 
 ### No light control
 
-A bright projector does not beat a sunlit window. Blackout and dimming are part of the install. Afternoon glare will wash a cricket match the same way it washes a film.
+A bright projector does not beat a sunlit window. Blackout and dimming are part of [the home theater installation](/service/home-theatre-design-and-installation). Afternoon glare will wash a cricket match the same way it washes a film.
 
 ### Sound treated as an extra
 

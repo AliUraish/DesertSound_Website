@@ -62,7 +62,7 @@ Use the system’s room correction, then listen. Cinema or movie picture modes a
 
 Lock the seats. Then the screen. Then the speakers. Then the cable routes. Then paint and panels. Reverse that and you will move a TV twice. We specify seating with the room, the same way [Stanley Seats](/projects/residential/stanley-seats) is built around the recliners rather than adding them after.
 
-On a Pakistan install, also plan power and heat on day one. A closed niche and a summer afternoon will shut a receiver down. Vent the rack or do not put the AVR in it.
+On [a Pakistan home cinema install](/home-cinema-and-cinema-installer-pakistan), also plan power and heat on day one. A closed niche and a summer afternoon will shut a receiver down. Vent the rack or do not put the AVR in it.
 
 If several people use the room, write the one-button start into the plan. A beautiful layout that needs four remotes is not finished.
 

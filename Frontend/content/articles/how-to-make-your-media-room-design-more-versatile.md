@@ -33,6 +33,6 @@ Front speakers that are good for music. Add surrounds and a sub so the same room
 
 "Movie," "music," and "game" as real scenes: shades, dimming, and source in one press. Movie night drops the lights and closes the shades. Game night can stay brighter so people can talk.
 
-That's a layout and a control plan, not themed wallpaper.
+That's [a theatre layout and control plan](/service/home-theatre-design-and-installation), not themed wallpaper.
 
 [Contact us](/contact-us/) to design a media room that changes use without a rebuild.

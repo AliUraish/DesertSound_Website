@@ -33,7 +33,7 @@ In-walls can get closer with custom back-boxes. That is extra construction, not 
 
 Towers unpack, place, and connect. Rearrange the sofa or move house and they move with you. No drywall work.
 
-In-walls mean cutting rectangles, pulling fire-rated cable through the bays, and fixing frames to studs. That's a construction job. Once they're in, they're part of the wall. A new layout means new holes and a patch.
+In-walls mean cutting rectangles, pulling fire-rated cable through the bays, and fixing frames to studs. That's a construction job, planned into [a home cinema install](/home-cinema-and-cinema-installer-pakistan) before the walls close. Once they're in, they're part of the wall. A new layout means new holes and a patch.
 
 ### Let the Room Decide
 

@@ -35,7 +35,7 @@ Micro-LED is bright and holds colour in larger, well-lit rooms and villas. In a 
 
 A projector fills a wall and feels like a cinema if you can darken the room. It needs throw distance, a proper screen, and upkeep — filters, and lamp or laser service depending on the model. A TV is brighter, simpler, and holds up in a sunlit lounge. It will not match projector size.
 
-In a typical Karachi apartment, sunlight, wall space, and seating decide it — not a brochure. Measure first. A huge image in a short room feels cramped; side seats should still see a usable picture.
+In a typical Karachi apartment, sunlight, wall space, and seating decide it — not a brochure. Measure first, the way [a cinema installer surveys the room](/home-cinema-and-cinema-installer-pakistan). A huge image in a short room feels cramped; side seats should still see a usable picture.
 
 ### What to decide before you buy
 
