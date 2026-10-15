@@ -1,6 +1,14 @@
-import { punjabCityCards, punjabTownNote } from "@/lib/punjab-service-content"
-import { punjabMapPoints, punjabMapTowns } from "@/lib/punjab-map-geometry"
-import { PunjabMapScene, type MapLocation, type MapSide } from "@/components/punjab-map-scene"
+"use client"
+
+import dynamic from "next/dynamic"
+import { punjabCityCards } from "@/lib/punjab-service-content"
+import { punjabMapPoints, punjabMapSize, punjabMapStage, punjabMapTowns } from "@/lib/punjab-map-geometry"
+import type { MapLocation, MapSide } from "@/components/punjab-map-scene"
+
+const PunjabMapScene = dynamic(
+  () => import("@/components/punjab-map-scene").then((mod) => ({ default: mod.PunjabMapScene })),
+  { ssr: false },
+)
 
 // Label side per place, chosen so neighbouring labels never sit on top of each other.
 const sides: Record<string, MapSide> = {
@@ -29,7 +37,9 @@ const sides: Record<string, MapSide> = {
   "Nankana Sahib": "below",
 }
 
-// Every place is the same kind of pin. Cities with a page link to it; the rest show a short note.
+const { width: mapWidth, height: mapHeight } = punjabMapSize
+
+// Cities with a page keep the same write-up as the visible body section.
 const cityLocations = punjabCityCards.map((card) => ({
   key: card.key,
   name: card.name,
@@ -42,20 +52,14 @@ const cityLocations = punjabCityCards.map((card) => ({
   tail: card.tail,
 }))
 
-const townLocations = punjabMapTowns.map((town) => {
-  const note = punjabTownNote(town.name)
-  return {
-    key: town.name,
-    name: town.name,
-    x: town.x,
-    y: town.y,
-    href: null as string | null,
-    lead: note.lead,
-    linkText: note.linkText,
-    linkHref: note.href,
-    tail: note.tail,
-  }
-})
+// Pinned towns without a page: name only. No notes or service claims.
+const townLocations = punjabMapTowns.map((town) => ({
+  key: town.name,
+  name: town.name,
+  x: town.x,
+  y: town.y,
+  href: null as string | null,
+}))
 
 // North to south, so the pins drop in as a sweep down the province.
 const locations: MapLocation[] = [...cityLocations, ...townLocations]
@@ -91,10 +95,15 @@ export function PunjabCityMap() {
   return (
     <figure className="pm mt-6 md:mt-8" data-gl="pending">
       <style>{css}</style>
-      <PunjabMapScene locations={locations} />
+      <div
+        className="relative mx-auto w-full max-w-[680px]"
+        style={{ aspectRatio: `${mapWidth} / ${mapHeight * punjabMapStage}` }}
+      >
+        <PunjabMapScene locations={locations} />
+      </div>
       <figcaption className="mx-auto mt-8 max-w-[680px] text-center">
         <p className="text-base font-light tracking-tight text-black md:text-lg">
-          We have a team in Karachi and Lahore.
+          We have a team in Lahore.
         </p>
         <p className="mt-3 text-[10px] font-light text-black/30">Boundaries: geoBoundaries, CC BY 4.0</p>
       </figcaption>

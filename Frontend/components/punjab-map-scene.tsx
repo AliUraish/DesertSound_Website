@@ -17,10 +17,10 @@ export type MapLocation = {
   y: number
   /** Pin link for cities that have their own page. Towns without a page have none. */
   href: string | null
-  lead: string
-  linkText: string
-  linkHref: string
-  tail: string
+  lead?: string
+  linkText?: string
+  linkHref?: string
+  tail?: string
   side: MapSide
   delay: number
 }
@@ -31,8 +31,6 @@ const { x: CX, y: CY } = punjabMapCentroid
 const DEPTH = 16
 const PIN_HEAD_Z = 19
 const TILT = (32 * Math.PI) / 180
-// The tilted province is shorter on screen, so the stage is a little shorter than the flat map.
-const STAGE = 0.92
 const RING_SCALES = [0.95, 0.89, 0.83, 0.77, 0.71]
 
 const labelSide: Record<MapSide, string> = {
@@ -112,16 +110,18 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
     const figure = box?.closest<HTMLElement>(".pm")
     if (!box || !figure) return
 
-    // A fresh canvas per mount: a WebGL context can't be reused after it was lost.
-    const canvas = document.createElement("canvas")
-    canvas.setAttribute("aria-hidden", "true")
-    canvas.className = "pm-canvas pointer-events-none absolute inset-0 h-full w-full"
-    box.prepend(canvas)
-
     let cancelled = false
     let cleanup = () => {}
+    let canvas: HTMLCanvasElement | null = null
 
-    ;(async () => {
+    const loadScene = async () => {
+      // A fresh canvas per mount: a WebGL context can't be reused after it was lost.
+      const glCanvas = document.createElement("canvas")
+      glCanvas.setAttribute("aria-hidden", "true")
+      glCanvas.className = "pm-canvas pointer-events-none absolute inset-0 h-full w-full"
+      canvas = glCanvas
+      box.prepend(glCanvas)
+
       try {
         const THREE = await import("three")
         const { Line2 } = await import("three/addons/lines/Line2.js")
@@ -131,7 +131,7 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
 
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
         const renderer = new THREE.WebGLRenderer({
-          canvas,
+          canvas: glCanvas,
           antialias: true,
           alpha: true,
           powerPreference: "low-power",
@@ -409,7 +409,7 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           dirty = false
           if (!ready) {
             ready = true
-            canvas.style.opacity = "1"
+            glCanvas.style.opacity = "1"
             figure.dataset.gl = "on"
           }
         }
@@ -430,17 +430,28 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
       } catch {
         if (!cancelled) figure.dataset.gl = "off"
       }
-    })()
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        io.disconnect()
+        void loadScene()
+      },
+      { rootMargin: "200px 0px" },
+    )
+    io.observe(box)
 
     return () => {
       cancelled = true
+      io.disconnect()
       cleanup()
-      canvas.remove()
+      canvas?.remove()
     }
   }, [locations])
 
   return (
-    <div ref={boxRef} className="relative mx-auto w-full max-w-[680px]" style={{ aspectRatio: `${W} / ${H * STAGE}` }}>
+    <div ref={boxRef} className="absolute inset-0 h-full w-full">
       <svg
         viewBox={`0 0 ${W} ${H}`}
         preserveAspectRatio="none"
@@ -495,22 +506,24 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
                 {label}
               </Link>
             ) : (
-              <button type="button" aria-label={loc.name} className={hit}>
+              <span className={hit} aria-label={loc.name}>
                 {label}
-              </button>
+              </span>
             )}
-            <div className={`pm-card absolute top-full w-[min(260px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
-              <div className="rounded-xl bg-white px-4 py-3.5 text-left shadow-[0_18px_40px_rgba(43,29,16,0.22)]">
-                <p className="text-base font-light tracking-tight text-black">{loc.name}</p>
-                <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">
-                  {loc.lead}
-                  <Link href={loc.linkHref} className="text-[#7A5230] underline underline-offset-2 hover:text-black">
-                    {loc.linkText}
-                  </Link>
-                  {loc.tail}
-                </p>
+            {loc.linkText && loc.linkHref ? (
+              <div className={`pm-card absolute top-full w-[min(260px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
+                <div className="rounded-xl bg-white px-4 py-3.5 text-left shadow-[0_18px_40px_rgba(43,29,16,0.22)]">
+                  <p className="text-base font-light tracking-tight text-black">{loc.name}</p>
+                  <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">
+                    {loc.lead}
+                    <Link href={loc.linkHref} className="text-[#7A5230] underline underline-offset-2 hover:text-black">
+                      {loc.linkText}
+                    </Link>
+                    {loc.tail}
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
         )
       })}
