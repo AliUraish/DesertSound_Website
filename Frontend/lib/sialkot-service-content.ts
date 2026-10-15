@@ -14,7 +14,7 @@ export const sialkotServicePage: RankingSeoPage = {
   h1: sialkotServiceH1,
   body: `Desert Sound's Karachi team designs and installs home theaters in Sialkot. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Sialkot showroom.
 
-We have teams in Lahore and Karachi. For a Sialkot house we travel from Karachi, survey the building, and install for that house. [Book a Sialkot site-visit survey](/contact).
+We have teams in Lahore and Karachi. For a Sialkot house we travel from Karachi, survey the building, and install for that house. [Book a Sialkot site-visit survey](/contact-us).
 
 ### What home cinema installation in Sialkot means
 
@@ -53,7 +53,7 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
 
 ### Book a Sialkot site-visit survey
 
-[Book a Sialkot site-visit survey](/contact). Mention your neighbourhood and the room you are considering, and we will arrange the inspection. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Bahawalpur](/service/home-cinema-installation-bahawalpur).`,
+[Book a Sialkot site-visit survey](/contact-us). Mention your neighbourhood and the room you are considering, and we will arrange the inspection. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Sialkot?",
@@ -61,7 +61,7 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
     },
     {
       q: "Is Desert Sound based in Sialkot?",
-      a: "No. We operate from Karachi and serve Sialkot by visiting. There is no Sialkot showroom. [Book a survey](/contact).",
+      a: "No. We operate from Karachi and serve Sialkot by visiting. There is no Sialkot showroom. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

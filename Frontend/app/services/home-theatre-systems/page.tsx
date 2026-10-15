@@ -304,10 +304,7 @@ export default function HomeTheatreSystemsPage() {
             </ul>
             <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
               We have a team in Lahore for{" "}
-              <Link
-                href="/service/home-cinema-installation-lahore"
-                className="underline underline-offset-4 hover:text-black"
-              >
+              <Link href="/service/home-cinema-installation-lahore" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Lahore
               </Link>
               .
@@ -325,9 +322,13 @@ export default function HomeTheatreSystemsPage() {
               <Link href="/service/home-cinema-installation-sialkot" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Sialkot
               </Link>
-              {", and "}
+              {", "}
               <Link href="/service/home-cinema-installation-bahawalpur" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Bahawalpur
+              </Link>
+              {", and "}
+              <Link href="/service/home-cinema-installation-punjab" className="underline underline-offset-4 hover:text-black">
+                home cinema installation in Punjab
               </Link>
               .
             </p>
