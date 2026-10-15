@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url"
 import {
   punjabCityCards,
   punjabCityCopy,
-  punjabTownNote,
   punjabFaqJsonLdItems,
   punjabServiceDescription,
   punjabServiceH1,
@@ -221,24 +220,57 @@ test("Punjab map hover cards may repeat the visible city body copy", () => {
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
 })
 
-test("Punjab towns without a page keep the existing short map note", () => {
-  const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
-  const towns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
-  assert.ok(towns.length >= 25)
-  const mainCities = punjabCityCards.map((city) => city.name)
-  for (const name of towns) {
-    assert.ok(!mainCities.includes(name), `${name} already has a page`)
-    const note = punjabTownNote(name)
-    assert.equal(note.href, "/contact-us")
-    const text = `${note.lead}${note.linkText}${note.tail}`
-    assert.match(text, new RegExp(`We don't have a page for ${name} yet`))
-    assert.match(text, /confirm whether a visit is possible/)
-    assert.doesNotMatch(text, /team in|office|showroom|branch|headquarters/i)
-    assert.ok(text.length < 130, `${name} note is short`)
-  }
+test("Punjab map data and source pin only the five lander cities", () => {
   const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
-  assert.match(map, /punjabMapTowns/)
-  assert.match(map, /punjabTownNote/)
+  const scene = readFileSync(join(root, "components/punjab-map-scene.tsx"), "utf8")
+  const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
+  const content = readFileSync(join(root, "lib/punjab-service-content.ts"), "utf8")
+  const mapSource = `${map}\n${scene}\n${geometry}`
+  assert.doesNotMatch(mapSource, /punjabMapTowns/)
+  assert.doesNotMatch(content, /punjabTownNote/)
+  const landerCities = ["Lahore", "Faisalabad", "Multan", "Sialkot", "Bahawalpur"]
+  assert.deepEqual(
+    punjabCityCards.map((city) => city.name),
+    landerCities,
+  )
+  const bannedTowns = [
+    "Rawalpindi",
+    "Gujranwala",
+    "Sargodha",
+    "Sheikhupura",
+    "Jhang",
+    "Gujrat",
+    "Kasur",
+    "Rahim Yar Khan",
+    "Sahiwal",
+    "Okara",
+    "Wah Cantt",
+    "Dera Ghazi Khan",
+    "Mianwali",
+    "Chiniot",
+    "Attock",
+    "Jhelum",
+    "Hafizabad",
+    "Mandi Bahauddin",
+    "Narowal",
+    "Khanewal",
+    "Vehari",
+    "Layyah",
+    "Muzaffargarh",
+    "Bahawalnagar",
+    "Pakpattan",
+    "Toba Tek Singh",
+    "Khushab",
+    "Bhakkar",
+    "Chakwal",
+    "Rajanpur",
+    "Nankana Sahib",
+    "Burewala",
+  ]
+  for (const name of bannedTowns) {
+    const pattern = new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    assert.doesNotMatch(mapSource, pattern, name)
+  }
 })
 
 test("Punjab map caption is exactly the Lahore team line; no other team claim", () => {
