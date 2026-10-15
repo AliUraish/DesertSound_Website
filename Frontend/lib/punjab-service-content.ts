@@ -64,6 +64,17 @@ export const punjabCityCopy = punjabCityCards
   .map((city) => `${city.name}\n${city.lead}[${city.linkText}](${city.href})${city.tail}`)
   .join("\n\n")
 
+// Punjab towns that have no page of their own get this short note on the map.
+// It makes no claim of local presence and matches the "Which Punjab cities do you cover?" FAQ.
+export function punjabTownNote(name: string) {
+  return {
+    lead: `We don't have a page for ${name} yet. `,
+    linkText: "Ask us",
+    href: "/contact-us",
+    tail: " and we will confirm whether a visit is possible.",
+  } as const
+}
+
 export const punjabServicePage: RankingSeoPage = {
   slug: punjabServicePath,
   title: punjabServiceTitle,

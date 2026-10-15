@@ -17,10 +17,10 @@ export type MapLocation = {
   y: number
   /** Pin link for cities that have their own page. Towns without a page have none. */
   href: string | null
-  lead?: string
-  linkText?: string
-  linkHref?: string
-  tail?: string
+  lead: string
+  linkText: string
+  linkHref: string
+  tail: string
   side: MapSide
   delay: number
 }
@@ -506,24 +506,22 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
                 {label}
               </Link>
             ) : (
-              <span className={hit} aria-label={loc.name}>
+              <button type="button" aria-label={loc.name} className={hit}>
                 {label}
-              </span>
+              </button>
             )}
-            {loc.linkText && loc.linkHref ? (
-              <div className={`pm-card absolute top-full w-[min(260px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
-                <div className="rounded-xl bg-white px-4 py-3.5 text-left shadow-[0_18px_40px_rgba(43,29,16,0.22)]">
-                  <p className="text-base font-light tracking-tight text-black">{loc.name}</p>
-                  <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">
-                    {loc.lead}
-                    <Link href={loc.linkHref} className="text-[#7A5230] underline underline-offset-2 hover:text-black">
-                      {loc.linkText}
-                    </Link>
-                    {loc.tail}
-                  </p>
-                </div>
+            <div className={`pm-card absolute top-full w-[min(260px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
+              <div className="rounded-xl bg-white px-4 py-3.5 text-left shadow-[0_18px_40px_rgba(43,29,16,0.22)]">
+                <p className="text-base font-light tracking-tight text-black">{loc.name}</p>
+                <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">
+                  {loc.lead}
+                  <Link href={loc.linkHref} className="text-[#7A5230] underline underline-offset-2 hover:text-black">
+                    {loc.linkText}
+                  </Link>
+                  {loc.tail}
+                </p>
               </div>
-            ) : null}
+            </div>
           </div>
         )
       })}

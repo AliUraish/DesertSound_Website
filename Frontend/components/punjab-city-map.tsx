@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { punjabCityCards } from "@/lib/punjab-service-content"
+import { punjabCityCards, punjabTownNote } from "@/lib/punjab-service-content"
 import { punjabMapPoints, punjabMapSize, punjabMapStage, punjabMapTowns } from "@/lib/punjab-map-geometry"
 import type { MapLocation, MapSide } from "@/components/punjab-map-scene"
 
@@ -39,7 +39,7 @@ const sides: Record<string, MapSide> = {
 
 const { width: mapWidth, height: mapHeight } = punjabMapSize
 
-// Cities with a page keep the same write-up as the visible body section.
+// Every place is the same kind of pin. Cities with a page link to it; the rest show a short note.
 const cityLocations = punjabCityCards.map((card) => ({
   key: card.key,
   name: card.name,
@@ -52,14 +52,20 @@ const cityLocations = punjabCityCards.map((card) => ({
   tail: card.tail,
 }))
 
-// Pinned towns without a page: name only. No notes or service claims.
-const townLocations = punjabMapTowns.map((town) => ({
-  key: town.name,
-  name: town.name,
-  x: town.x,
-  y: town.y,
-  href: null as string | null,
-}))
+const townLocations = punjabMapTowns.map((town) => {
+  const note = punjabTownNote(town.name)
+  return {
+    key: town.name,
+    name: town.name,
+    x: town.x,
+    y: town.y,
+    href: null as string | null,
+    lead: note.lead,
+    linkText: note.linkText,
+    linkHref: note.href,
+    tail: note.tail,
+  }
+})
 
 // North to south, so the pins drop in as a sweep down the province.
 const locations: MapLocation[] = [...cityLocations, ...townLocations]

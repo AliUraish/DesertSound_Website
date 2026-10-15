@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url"
 import {
   punjabCityCards,
   punjabCityCopy,
+  punjabTownNote,
   punjabFaqJsonLdItems,
   punjabServiceDescription,
   punjabServiceH1,
@@ -207,10 +208,8 @@ test("Punjab cities we cover is server-rendered in the page body and always visi
   assert.match(serviceRoute, /RankingSeoPageView page=\{page\}/)
 })
 
-test("Punjab map hover cards may repeat body copy; towns without a page are name-only", () => {
+test("Punjab map hover cards may repeat the visible city body copy", () => {
   const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
-  const scene = readFileSync(join(root, "components/punjab-map-scene.tsx"), "utf8")
-  const content = readFileSync(join(root, "lib/punjab-service-content.ts"), "utf8")
   assert.match(map, /punjabCityCards/)
   assert.match(punjabCityCopy, /\[We have a team in Lahore\]/)
   for (const href of cityHrefs) {
@@ -220,23 +219,26 @@ test("Punjab map hover cards may repeat body copy; towns without a page are name
     assert.match(punjabServicePage.body, new RegExp(`\\[${card.linkText}\\]\\(${href}\\)`))
   }
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
-  assert.doesNotMatch(content, /punjabTownNote/)
-  assert.doesNotMatch(map, /punjabTownNote/)
-  assert.doesNotMatch(map, /don't have a page/)
-  assert.doesNotMatch(scene, /don't have a page/)
-  assert.match(map, /Pinned towns without a page: name only/)
-  assert.match(scene, /loc\.linkText && loc\.linkHref/)
+})
+
+test("Punjab towns without a page keep the existing short map note", () => {
   const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
   const towns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
   assert.ok(towns.length >= 25)
-  assert.ok(towns.includes("Rawalpindi"))
   const mainCities = punjabCityCards.map((city) => city.name)
   for (const name of towns) {
     assert.ok(!mainCities.includes(name), `${name} already has a page`)
-    assert.doesNotMatch(punjabServicePage.body, new RegExp(name))
+    const note = punjabTownNote(name)
+    assert.equal(note.href, "/contact-us")
+    const text = `${note.lead}${note.linkText}${note.tail}`
+    assert.match(text, new RegExp(`We don't have a page for ${name} yet`))
+    assert.match(text, /confirm whether a visit is possible/)
+    assert.doesNotMatch(text, /team in|office|showroom|branch|headquarters/i)
+    assert.ok(text.length < 130, `${name} note is short`)
   }
-  assert.doesNotMatch(map, /don't have a page|visit is possible|Ask us/)
-  assert.doesNotMatch(content, /We don't have a page for/)
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  assert.match(map, /punjabMapTowns/)
+  assert.match(map, /punjabTownNote/)
 })
 
 test("Punjab map caption is exactly the Lahore team line; no other team claim", () => {
