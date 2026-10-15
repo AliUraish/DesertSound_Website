@@ -4,6 +4,9 @@ import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
 import {
+  punjabCityCards,
+  punjabCityCopy,
+  punjabTownNote,
   punjabFaqJsonLdItems,
   punjabServiceDescription,
   punjabServiceH1,
@@ -29,7 +32,7 @@ const article33 = readFileSync(
   join(root, "content/articles/home-cinema-and-cinema-installer-pakistan.md"),
   "utf8",
 )
-const copy = `${punjabServicePage.body}\n${punjabServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const copy = `${punjabServicePage.body}\n${punjabCityCopy}\n${punjabServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
 
 const cityHrefs = [
   "/service/home-cinema-installation-lahore",
@@ -122,8 +125,9 @@ test("Punjab hub copy links each destination once, slashless, with booking only 
 })
 
 test("Punjab hub stays fact-locked: Lahore team line only, no invented local presence or banned terms", () => {
-  assert.match(punjabServicePage.body, /We have a team in Lahore/)
-  const lahoreBlock = punjabServicePage.body.split("#### Lahore")[1]?.split("####")[0] ?? ""
+  assert.match(punjabCityCopy, /We have a team in Lahore/)
+  const lahoreCard = punjabCityCards.find((city) => city.key === "Lahore")
+  const lahoreBlock = `${lahoreCard?.lead}[${lahoreCard?.linkText}](${lahoreCard?.href})${lahoreCard?.tail}`
   assert.match(
     lahoreBlock,
     /\[We have a team in Lahore\]\(\/service\/home-cinema-installation-lahore\)/,
@@ -162,17 +166,57 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.doesNotMatch(homepage, /home-cinema-installation-punjab/)
 })
 
-test("Punjab hub draws a linked city map and leaves the copy links untouched", () => {
+test("Punjab hub shows the city write-ups inside the map, not in the page body", () => {
+  assert.doesNotMatch(punjabServicePage.body, /Punjab cities we cover/)
+  assert.doesNotMatch(punjabServicePage.body, /####/)
+  assert.match(punjabServicePage.body, /Pick your city on the map for the local detail/)
   assert.match(serviceRoute, /PunjabCityMap/)
   assert.match(serviceRoute, /beforeBody=\{<PunjabCityMap/)
   const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
   for (const href of cityHrefs) {
-    assert.equal(map.split(href).length - 1, 1, href)
+    assert.equal(map.split(href).length - 1, 0, href)
+    assert.equal(punjabCityCards.filter((city) => city.href === href).length, 1, href)
   }
+  assert.match(map, /punjabCityCards/)
   assert.match(map, /prefers-reduced-motion/)
   assert.doesNotMatch(map, /home-cinema-installation-islamabad/)
   assert.doesNotMatch(map, /home-cinema-installation-punjab/)
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
+})
+
+test("Punjab towns without a page get a short note: no own link, no invented presence", () => {
+  const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
+  const towns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
+  assert.ok(towns.length >= 25)
+  const mainCities = punjabCityCards.map((city) => city.name)
+  for (const name of towns) {
+    assert.ok(!mainCities.includes(name), `${name} already has a page`)
+    const note = punjabTownNote(name)
+    assert.equal(note.href, "/contact-us")
+    const text = `${note.lead}${note.linkText}${note.tail}`
+    assert.match(text, new RegExp(`We don't have a page for ${name} yet`))
+    assert.match(text, /confirm whether a visit is possible/)
+    assert.doesNotMatch(text, /team in|office|showroom|branch|headquarters/i)
+    assert.ok(text.length < 130, `${name} note is short`)
+  }
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  assert.match(map, /punjabMapTowns/)
+  assert.match(map, /punjabTownNote/)
+})
+
+test("Punjab map is a Three.js scene with equal pins and the Karachi and Lahore team line below it", () => {
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  const scene = readFileSync(join(root, "components/punjab-map-scene.tsx"), "utf8")
+  assert.match(map, /We have a team in Karachi and Lahore\./)
+  assert.match(map, /<figcaption/)
+  assert.match(scene, /^"use client"/)
+  assert.match(scene, /await import\("three"\)/)
+  assert.match(scene, /prefers-reduced-motion/)
+  assert.match(scene, /WebGLRenderer/)
+  // One pin geometry for every place: no per-city sizes.
+  assert.equal(scene.split("new THREE.SphereGeometry").length - 1, 1)
+  const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"))
+  assert.ok(pkg.dependencies.three)
 })
 
 test("sitemap and llms listings include the Punjab hub URL slashless", () => {

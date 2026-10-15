@@ -7,38 +7,82 @@ export const punjabServiceH1 = "Home Cinema Installation in Punjab"
 export const punjabServiceDescription =
   "Home cinema installation in Punjab from Desert Sound. Lahore, Faisalabad, Multan, Sialkot and Bahawalpur: survey, design, install and calibrate on site."
 
+export type PunjabCityCard = {
+  key: "Lahore" | "Faisalabad" | "Multan" | "Sialkot" | "Bahawalpur"
+  name: string
+  href: string
+  lead: string
+  linkText: string
+  tail: string
+}
+
+// These write-ups are shown inside the Punjab map. They are not part of the page body.
+export const punjabCityCards: readonly PunjabCityCard[] = [
+  {
+    key: "Lahore",
+    name: "Lahore",
+    href: "/service/home-cinema-installation-lahore",
+    lead: "",
+    linkText: "We have a team in Lahore",
+    tail: ". Survey, design, install and calibration run the same way as everywhere else.",
+  },
+  {
+    key: "Faisalabad",
+    name: "Faisalabad",
+    href: "/service/home-cinema-installation-faisalabad",
+    lead: "A textile city where family compounds are common, so picking the right room comes first. Our team travels from Karachi for surveys in Faisalabad. See ",
+    linkText: "home cinema installation in Faisalabad",
+    tail: ".",
+  },
+  {
+    key: "Multan",
+    name: "Multan",
+    href: "/service/home-cinema-installation-multan",
+    lead: "Bright afternoons and pre-monsoon dust decide where the screen and the equipment go. We come up from Karachi for surveys in Multan. See ",
+    linkText: "home cinema installation in Multan",
+    tail: ".",
+  },
+  {
+    key: "Sialkot",
+    name: "Sialkot",
+    href: "/service/home-cinema-installation-sialkot",
+    lead: "Export workshops and close-set old-city houses make isolation an early question. Surveys from Karachi reach Sialkot. See ",
+    linkText: "home cinema installation in Sialkot",
+    tail: ".",
+  },
+  {
+    key: "Bahawalpur",
+    name: "Bahawalpur",
+    href: "/service/home-cinema-installation-bahawalpur",
+    lead: "On the edge of the Cholistan desert, a cinema room has to keep out daylight and grit. We travel from Karachi to Bahawalpur. See ",
+    linkText: "home cinema installation in Bahawalpur",
+    tail: ".",
+  },
+]
+
+export const punjabCityCopy = punjabCityCards
+  .map((city) => `${city.name}\n${city.lead}[${city.linkText}](${city.href})${city.tail}`)
+  .join("\n\n")
+
+// Punjab towns that have no page of their own get this short note on the map.
+// It makes no claim of local presence and matches the "Which Punjab cities do you cover?" FAQ.
+export function punjabTownNote(name: string) {
+  return {
+    lead: `We don't have a page for ${name} yet. `,
+    linkText: "Ask us",
+    href: "/contact-us",
+    tail: " and we will confirm whether a visit is possible.",
+  } as const
+}
+
 export const punjabServicePage: RankingSeoPage = {
   slug: punjabServicePath,
   title: punjabServiceTitle,
   description: punjabServiceDescription,
   h1: punjabServiceH1,
-  image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
-  imageAlt: "Home cinema design and installation by Desert Sound",
-  body: `Desert Sound is a Karachi home cinema company, and this page covers our work in Punjab. Treat it as a map: pick your city below for the local detail. Wherever the house is, a project runs in one order. We survey the room, design the theatre for it, build it in with the wiring hidden, and calibrate picture and sound from the seats you will use.
+  body: `Desert Sound is a Karachi home cinema company, and this page covers our work in Punjab. Pick your city on the map for the local detail. Wherever the house is, a project runs in one order. We survey the room, design the theatre for it, build it in with the wiring hidden, and calibrate picture and sound from the seats you will use.
 
 Every Punjab project starts with a site visit. Ask for one on our [contact page](/contact-us).
-
-### Punjab cities we cover
-
-#### Lahore
-
-[We have a team in Lahore](/service/home-cinema-installation-lahore). Survey, design, install and calibration run the same way as everywhere else.
-
-#### Faisalabad
-
-A textile city where family compounds are common, so picking the right room comes first. Our team travels from Karachi for surveys in Faisalabad. See [home cinema installation in Faisalabad](/service/home-cinema-installation-faisalabad).
-
-#### Multan
-
-Bright afternoons and pre-monsoon dust decide where the screen and the equipment go. We come up from Karachi for surveys in Multan. See [home cinema installation in Multan](/service/home-cinema-installation-multan).
-
-#### Sialkot
-
-Export workshops and close-set old-city houses make isolation an early question. Surveys from Karachi reach Sialkot. See [home cinema installation in Sialkot](/service/home-cinema-installation-sialkot).
-
-#### Bahawalpur
-
-On the edge of the Cholistan desert, a cinema room has to keep out daylight and grit. We travel from Karachi to Bahawalpur. See [home cinema installation in Bahawalpur](/service/home-cinema-installation-bahawalpur).
 
 ### One method for every Punjab home
 
