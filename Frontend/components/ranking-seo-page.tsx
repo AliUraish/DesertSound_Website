@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -76,7 +77,13 @@ function renderBody(body: string) {
   })
 }
 
-export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
+export function RankingSeoPageView({
+  page,
+  beforeBody,
+}: {
+  page: RankingSeoPage
+  beforeBody?: ReactNode
+}) {
   const faqSchema =
     page.faqs.length > 0 && !page.slug.startsWith("/service/")
       ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
@@ -125,6 +132,8 @@ export function RankingSeoPageView({ page }: { page: RankingSeoPage }) {
               />
             </div>
           ) : null}
+
+          {beforeBody}
 
           <div className="mt-10 max-w-3xl">{renderBody(page.body)}</div>
 

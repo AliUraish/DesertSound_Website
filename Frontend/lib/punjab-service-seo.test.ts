@@ -162,6 +162,19 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.doesNotMatch(homepage, /home-cinema-installation-punjab/)
 })
 
+test("Punjab hub draws a linked city map and leaves the copy links untouched", () => {
+  assert.match(serviceRoute, /PunjabCityMap/)
+  assert.match(serviceRoute, /beforeBody=\{<PunjabCityMap/)
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  for (const href of cityHrefs) {
+    assert.equal(map.split(href).length - 1, 1, href)
+  }
+  assert.match(map, /prefers-reduced-motion/)
+  assert.doesNotMatch(map, /home-cinema-installation-islamabad/)
+  assert.doesNotMatch(map, /home-cinema-installation-punjab/)
+  assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
+})
+
 test("sitemap and llms listings include the Punjab hub URL slashless", () => {
   assert.match(sitemap, /rankingSeoPages/)
   assert.match(htmlSitemap, /\/service\/home-cinema-installation-punjab/)

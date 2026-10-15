@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { PunjabCityMap } from "@/components/punjab-city-map"
 import { RankingSeoPageView } from "@/components/ranking-seo-page"
 import { punjabFaqJsonLdItems, punjabServicePath } from "@/lib/punjab-service-content"
 import { punjabServiceJsonLd } from "@/lib/punjab-service-schema"
@@ -27,7 +28,7 @@ export default function ServicePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(faqPageJsonLd(punjabFaqJsonLdItems())) }}
       />
-      <RankingSeoPageView page={page} />
+      <RankingSeoPageView page={page} beforeBody={<PunjabCityMap />} />
     </>
   )
 }
