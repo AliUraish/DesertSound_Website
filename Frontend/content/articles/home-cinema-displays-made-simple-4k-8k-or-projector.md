@@ -1,8 +1,8 @@
 ---
 {
   "slug": "/home-cinema-displays-made-simple-4k-8k-or-projector",
-  "title": "Home Cinema Displays Made Simple: 4K, 8K, or Projector - Desert Sound",
-  "description": "Pick 4K, 8K, Micro-LED, or a projector from the room — size, daylight, and seating — not from a spec sheet. In most Karachi apartments, 4K or a well-planned projector beats an 8K screen you cannot sit far enough from.",
+  "title": "4K vs 8K vs Projector for Your Home Cinema",
+  "description": "4K, 8K or a projector for your home cinema? In most Karachi apartments, 4K or a well-planned projector beats 8K. Choose by room size, daylight and seating.",
   "h1": "Home Cinema Displays Made Simple: 4K, 8K, or Projector",
   "image": "/blog-images/home-cinema-displays-made-simple-4k-8k-or-projector.jpg",
   "faqs": [],
