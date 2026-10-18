@@ -27,6 +27,10 @@ function wordCount(text: string) {
   return text.split(/\s+/).filter((word) => /[A-Za-z0-9]/.test(word)).length
 }
 
+function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
 const { meta, body } = parseFrontmatter(article)
 const banned = [
   /\bbest\b/i,
@@ -103,6 +107,30 @@ test("#33 lean copy keeps installer / Karachi AEO without stuffing H1", () => {
     assert.doesNotMatch(meta.title, pattern)
     assert.doesNotMatch(meta.h1, pattern)
     assert.doesNotMatch(meta.description, pattern)
+  }
+})
+
+test("#33 apartment line is city-only Karachi, not Clifton or Bahria", () => {
+  const showroomAddress = "22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi"
+  const faqs = (meta.faqs as { q: string; a: string }[])
+    .map((faq) => `${faq.q}\n${faq.a}`)
+    .join("\n")
+  const pageCopy = [
+    meta.title,
+    meta.h1,
+    meta.description,
+    faqs,
+    body,
+    rankingPage,
+  ].join("\n")
+  const outsideShowroom = pageCopy.split(showroomAddress).join("")
+
+  assert.match(body, /In a finished Karachi apartment/)
+  assert.doesNotMatch(outsideShowroom, /\bClifton\b/)
+  assert.doesNotMatch(outsideShowroom, /\bBahria\b/)
+
+  for (const faq of meta.faqs as { q: string; a: string }[]) {
+    assert.equal(faqAnswerPlainText(faq.a), faq.a)
   }
 })
 

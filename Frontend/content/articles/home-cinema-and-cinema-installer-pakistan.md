@@ -105,7 +105,7 @@ Power is part of the brief in Pakistan. Load-shedding and voltage swings hard-sh
 
 Concealment is a design finish, not a tidy-up. [Project Platinum, a finished Karachi cinema](/projects/residential/project-platinum) is where the projector, speakers, and cabling sit where they belong — two recliner rows, a star ceiling, equipment discreet enough that the room still feels composed. That is install quality you can see without opening a rack.
 
-In a finished Clifton or Bahria apartment, the honest survey names what you can hide without opening marble: surface trunking, furniture routing, or a compact layout. In a house still being built, pull cable now even if the speakers come later. The installer who shows up after the painter has left is already late.
+In a finished Karachi apartment, the honest survey names what you can hide without opening marble: surface trunking, furniture routing, or a compact layout. In a house still being built, pull cable now even if the speakers come later. The installer who shows up after the painter has left is already late.
 
 ### Calibrate: first picture is not the finish
 
