@@ -13,8 +13,8 @@ const sitePages: RankingSeoPage[] = [
   {
     "slug": "/about-us",
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg",
-    "title": "About Us - Learn more about our mission and services",
-    "description": "learn more about us our mission, and how we provide top-notch services to meet your needs and expectations.",
+    "title": "About Us: Karachi Home Theatre & Smart Homes",
+    "description": "Desert Sound is a Karachi-based home theatre, AV and smart home company and CEDIA member. Turn-key rooms across Pakistan. Visit our Karachi showroom.",
     "h1": "About Desert Sound",
     "body": "Desert Sound is a Karachi-based home theatre, high-end audio-video, and smart home company. We spec the right products, handle the technical build, and deliver turn-key cinema rooms and smart homes across Pakistan — multi-room AV, home automation, motorized screens and curtains, custom theatre furniture, and full installation of high-end equipment.\n\n### Recognition\n- The Silicon Review \"50 Most Admired\" (2021)\n- Global 100 Winner, Best Home Theater and Smart Home Solutions Company in Pakistan (2022)\n- APAC Award, Best Home Theater Company in Pakistan\n- CEDIA member (Custom Electronic Design & Installation Association)\n\nCEDIA membership means we follow industry codes, keep training current, and install to professional standards, not hobbyist guesswork.",
     "faqs": [],
