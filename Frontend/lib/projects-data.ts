@@ -69,9 +69,9 @@ export const allProjects: Project[] = [
     id: 28,
     slug: "new-theatre",
     title: "Emerald Private Cinema",
-    seoTitle: "Emerald Private Cinema | Home Theater Installation in Karachi",
+    seoTitle: "Private Cinema Case Study: Karachi",
     seoDescription:
-      "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
+      "A dedicated private cinema in Karachi: stepped recliner rows, acoustic wall treatments, a controlled ceiling and hidden wiring, calibrated to the room.",
     category: "Residential Cinema",
     location: "Karachi, Pakistan",
     image: "/Pictures Final/Projects/Residential/New_Theatre/Cover.JPG",

@@ -11,9 +11,9 @@ const flagshipPages = [
   {
     slug: "new-theatre",
     file: "app/projects/residential/new-theatre/page.tsx",
-    seoTitle: "Emerald Private Cinema | Home Theater Installation in Karachi",
+    seoTitle: "Private Cinema Case Study: Karachi",
     seoDescription:
-      "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
+      "A dedicated private cinema in Karachi: stepped recliner rows, acoustic wall treatments, a controlled ceiling and hidden wiring, calibrated to the room.",
     description:
       "Dedicated home theater installation in Karachi with acoustic detailing, hidden wiring, and calibrated picture and sound.",
     category: "Residential Cinema",
@@ -74,7 +74,10 @@ test("flagship residential case studies yield install-intent SERP metadata", () 
     assert.equal(project.seoDescription, "seoDescription" in page ? page.seoDescription : undefined)
     assert.equal(project.category, page.category)
     assert.equal(project.location, "Karachi, Pakistan")
-    assert.match(page.seoTitle, /Home Theater Installation in Karachi/)
+    // new-theatre uses a case-study snippet, not the shared install-intent title formula.
+    if (page.slug !== "new-theatre") {
+      assert.match(page.seoTitle, /Home Theater Installation in Karachi/)
+    }
     assert.doesNotMatch(page.seoTitle, /including Karachi/i)
     assert.doesNotMatch(page.description, /including Karachi/i)
     assert.doesNotMatch(page.seoTitle, /\bHQ\b/)
@@ -87,7 +90,7 @@ test("flagship residential case studies yield install-intent SERP metadata", () 
   assert.ok(emerald && residency && platinum)
   assert.equal(
     projectSerpDescription(emerald),
-    "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it.",
+    "A dedicated private cinema in Karachi: stepped recliner rows, acoustic wall treatments, a controlled ceiling and hidden wiring, calibrated to the room.",
   )
   assert.equal(
     projectSerpDescription(residency),
@@ -97,6 +100,45 @@ test("flagship residential case studies yield install-intent SERP metadata", () 
     projectSerpDescription(platinum),
     `${platinum.description} View this ${platinum.category.toLowerCase()} project by Desert Sound in ${platinum.location}.`,
   )
+})
+
+const newTheatreTitleSegment = "Private Cinema Case Study: Karachi"
+const newTheatreMeta =
+  "A dedicated private cinema in Karachi: stepped recliner rows, acoustic wall treatments, a controlled ceiling and hidden wiring, calibrated to the room."
+const newTheatreBanned = [
+  /\bClifton\b/,
+  /\bDHA\b/,
+  /\bZamzama\b/,
+  /\bBahria\b/,
+  /\bPhase\b/,
+  /\bbest\b/i,
+  /#1/,
+  /Digital Sound/,
+  /\bRs\b/,
+  /\bPKR\b/,
+  /\$\d/,
+  /\bprice\b/i,
+  /\bweeks?\b/i,
+  /\bdays?\b/i,
+  /\bmonths?\b/i,
+]
+
+test("new-theatre SERP title is a case-study snippet, not the flagship install-intent formula", () => {
+  const project = getProject("residential", "new-theatre")
+  assert.ok(project)
+  assert.equal(project.title, "Emerald Private Cinema")
+  assert.equal(project.seoTitle, newTheatreTitleSegment)
+  assert.equal(project.seoDescription, newTheatreMeta)
+  assert.doesNotMatch(newTheatreTitleSegment, /Desert Sound/)
+  assert.doesNotMatch(newTheatreTitleSegment, /Emerald/)
+  assert.equal(`${newTheatreTitleSegment} | Desert Sound`, "Private Cinema Case Study: Karachi | Desert Sound")
+  assert.equal(`${newTheatreTitleSegment} | Desert Sound`.length, 49)
+  assert.equal(newTheatreMeta.length, 151)
+  for (const field of [newTheatreTitleSegment, newTheatreMeta]) {
+    for (const pattern of newTheatreBanned) {
+      assert.doesNotMatch(field, pattern)
+    }
+  }
 })
 
 test("flagship residential pages deepen copy and link the theatre install service once", () => {
