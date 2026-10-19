@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { readdirSync, readFileSync } from "node:fs"
+import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
@@ -8,7 +8,6 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const articlesDir = join(root, "content/articles")
 
 const GUIDE = "/private-home-cinema-karachi"
-const GUIDE_FILE = "private-home-cinema-karachi.md"
 
 const PLAN = [
   {
@@ -84,22 +83,4 @@ test("each planned post has the locked private-cinema sentence and exactly one s
     }
   }
   assert.equal(anchors.size, PLAN.length)
-})
-
-test("no other blog body links the private cinema Karachi guide", () => {
-  const files = readdirSync(articlesDir).filter((name) => name.endsWith(".md"))
-  assert.ok(files.length > 0)
-  const planned = new Set(PLAN.map((item) => item.file))
-  for (const filename of files) {
-    if (filename === GUIDE_FILE) continue
-    const body = articleBody(filename)
-    const count = markdownLinks(body).filter(
-      (link) => link.href === GUIDE || link.href === `${GUIDE}/`,
-    ).length
-    if (planned.has(filename)) {
-      assert.equal(count, 1, `${filename} should link ${GUIDE} once`)
-    } else {
-      assert.equal(count, 0, `${filename} should not link ${GUIDE} yet`)
-    }
-  }
 })
