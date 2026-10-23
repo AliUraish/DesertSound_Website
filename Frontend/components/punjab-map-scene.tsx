@@ -22,7 +22,6 @@ export type MapLocation = {
   linkHref: string
   tail: string
   side: MapSide
-  delay: number
 }
 
 const { width: W, height: H } = punjabMapSize
@@ -46,15 +45,6 @@ function cardAlign(x: number) {
   if (x < W * 0.35) return "left-[-8px]"
   if (x > W * 0.65) return "right-[-8px]"
   return "left-1/2 -translate-x-1/2"
-}
-
-const clamp01 = (v: number) => Math.min(1, Math.max(0, v))
-const easeOutCubic = (v: number) => 1 - Math.pow(1 - v, 3)
-const easeInOut = (v: number) => (v < 0.5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2)
-const easeOutBack = (v: number) => {
-  const c1 = 1.9
-  const c3 = c1 + 1
-  return 1 + c3 * Math.pow(v - 1, 3) + c1 * Math.pow(v - 1, 2)
 }
 
 type Vec = [number, number]
@@ -129,7 +119,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
         const { LineMaterial } = await import("three/addons/lines/LineMaterial.js")
         if (cancelled) return
 
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
         const renderer = new THREE.WebGLRenderer({
           canvas,
           antialias: true,
@@ -176,8 +165,9 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
         shadow.position.set(12, -20, -1)
         scene.add(shadow)
 
-        // Everything that sits on the top face rides this group while the body rises.
+        // Everything that sits on the top face.
         const top = new THREE.Group()
+        top.position.z = DEPTH
         scene.add(top)
 
         const dotTex = track(
@@ -220,7 +210,7 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
             if (insidePolygon(x, y, outline)) grid.push(tx(x), ty(y), 0.4)
           }
         }
-        const gridMat = makePoints(grid, 4.6, 0)
+        makePoints(grid, 4.6, 0.4)
 
         // Stippled rings that thin out toward the middle.
         const rim = resampleClosed(outline, 520)
@@ -230,17 +220,17 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           const b = rim[(i + 1) % rim.length]
           perimeter += Math.hypot(b[0] - a[0], b[1] - a[1])
         }
-        const ringMats = RING_SCALES.map((scale, i) => {
+        RING_SCALES.forEach((scale, i) => {
           const spacing = Math.max(1, Math.round(7 / ((perimeter / rim.length) * scale)))
           const coords: number[] = []
           for (let k = 0; k < rim.length; k += spacing) {
             const [x, y] = rim[k]
             coords.push(tx(CX + (x - CX) * scale), ty(CY + (y - CY) * scale), 0.5)
           }
-          return { mat: makePoints(coords, 5.2 - i * 0.5, 0), target: 0.62 - i * 0.1 }
+          makePoints(coords, 5.2 - i * 0.5, 0.62 - i * 0.1)
         })
 
-        // The border: draws itself in, then a short ink dash travels around it.
+        // The border.
         const loop = [...rim, rim[0]]
         const linePositions = loop.flatMap(([x, y]) => [tx(x), ty(y), 0.8])
 
@@ -250,25 +240,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
         const border = new Line2(borderGeo, borderMat)
         border.renderOrder = 3
         top.add(border)
-
-        const orbitGeo = track(new LineGeometry())
-        orbitGeo.setPositions(linePositions)
-        const orbitMat = track(
-          new LineMaterial({
-            color: 0x2b1d10,
-            linewidth: 2.8,
-            dashed: true,
-            dashSize: perimeter * 0.07,
-            gapSize: perimeter * 0.93,
-            transparent: true,
-            opacity: 0,
-          }),
-        )
-        const orbit = new Line2(orbitGeo, orbitMat)
-        orbit.computeLineDistances()
-        orbit.renderOrder = 4
-        orbit.visible = !reduce
-        top.add(orbit)
 
         // Pins: every location gets the same pin.
         const ringGeo = track(new THREE.RingGeometry(5.5, 8, 40))
@@ -291,9 +262,8 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           const head = new THREE.Mesh(headGeo, headMat)
           head.position.z = PIN_HEAD_Z
           group.add(ring, stem, head)
-          group.scale.setScalar(reduce ? 1 : 0.0001)
           top.add(group)
-          return { group, hover: 1 }
+          return group
         })
 
         // Camera + sizing.
@@ -309,7 +279,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           // Fit the province width exactly when seen from above.
           distance = W / (2 * fovTan * camera.aspect)
           borderMat.resolution.set(width, height)
-          orbitMat.resolution.set(width, height)
           dirty = true
         }
 
@@ -317,25 +286,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
         invalidateRef.current = () => {
           dirty = true
         }
-
-        let yaw = 0
-        let yawTarget = 0
-        let tiltExtra = 0
-        let tiltExtraTarget = 0
-        const onPointerMove = (event: PointerEvent) => {
-          if (reduce || event.pointerType !== "mouse") return
-          const rect = box.getBoundingClientRect()
-          const nx = (event.clientX - rect.left) / rect.width - 0.5
-          const ny = (event.clientY - rect.top) / rect.height - 0.5
-          yawTarget = nx * 0.3
-          tiltExtraTarget = ny * 0.16
-        }
-        const onPointerLeave = () => {
-          yawTarget = 0
-          tiltExtraTarget = 0
-        }
-        box.addEventListener("pointermove", onPointerMove)
-        box.addEventListener("pointerleave", onPointerLeave)
 
         const vec = new THREE.Vector3()
         const placeLabels = (topZ: number) => {
@@ -348,37 +298,13 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           }
         }
 
-        const drawIntro = (t: number) => {
-          const rise = reduce ? 1 : easeOutCubic(clamp01(t / 1.1))
-          body.scale.z = Math.max(rise, 0.001)
-          top.position.z = DEPTH * rise
-
-          const flat = reduce ? TILT : TILT * easeInOut(clamp01((t - 0.15) / 1.5)) + tiltExtra
-          camera.position.set(
-            distance * Math.sin(flat) * Math.sin(yaw),
-            -distance * Math.sin(flat) * Math.cos(yaw),
-            distance * Math.cos(flat),
-          )
+        // Fixed camera: tilted toward the north, never moving.
+        const draw = () => {
+          camera.position.set(0, -distance * Math.sin(TILT), distance * Math.cos(TILT))
           camera.lookAt(0, 0, 0)
-
-          const draw = reduce ? 1 : easeInOut(clamp01((t - 0.3) / 2.4))
-          borderGeo.instanceCount = Math.max(1, Math.floor(draw * (loop.length - 1)))
-          gridMat.opacity = reduce ? 0.4 : 0.4 * clamp01((t - 0.9) / 1.2)
-          for (const ring of ringMats) {
-            ring.mat.opacity = reduce ? ring.target : ring.target * clamp01((t - 1.1) / 1.4)
-          }
-          if (!reduce) {
-            orbitMat.opacity = clamp01((t - 2.8) / 0.6)
-            orbitMat.dashOffset = -(Math.max(0, t - 2.8) * perimeter) / 9
-          }
-
-          pins.forEach((pin, i) => {
-            const target = hoverRef.current === i ? 1.5 : 1
-            pin.hover += (target - pin.hover) * (reduce ? 1 : 0.2)
-            const appear = reduce ? 1 : Math.max(0.0001, easeOutBack(clamp01((t - locations[i].delay) / 0.7)))
-            pin.group.scale.setScalar(appear * pin.hover)
-          })
-          placeLabels(DEPTH * rise)
+          pins.forEach((pin, i) => pin.scale.setScalar(hoverRef.current === i ? 1.5 : 1))
+          placeLabels(DEPTH)
+          renderer.render(scene, camera)
         }
 
         resize()
@@ -393,20 +319,12 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
         io.observe(box)
 
         let raf = 0
-        const start = performance.now()
         let ready = false
-        const frame = (now: number) => {
+        const frame = () => {
           raf = requestAnimationFrame(frame)
-          if (!visible || document.hidden) return
-          const t = (now - start) / 1000
-          yaw += (yawTarget - yaw) * 0.08
-          tiltExtra += (tiltExtraTarget - tiltExtra) * 0.08
-          const animating = !reduce
-          const hoverMoving = pins.some((pin, i) => Math.abs((hoverRef.current === i ? 1.5 : 1) - pin.hover) > 0.001)
-          if (!animating && !dirty && !hoverMoving) return
-          drawIntro(t)
-          renderer.render(scene, camera)
+          if (!dirty || !visible || document.hidden) return
           dirty = false
+          draw()
           if (!ready) {
             ready = true
             canvas.style.opacity = "1"
@@ -419,8 +337,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
           cancelAnimationFrame(raf)
           resizeObserver.disconnect()
           io.disconnect()
-          box.removeEventListener("pointermove", onPointerMove)
-          box.removeEventListener("pointerleave", onPointerLeave)
           invalidateRef.current = () => {}
           disposables.forEach((item) => item.dispose())
           renderer.dispose()
@@ -471,7 +387,6 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
             style={{
               left: `${(loc.x / W) * 100}%`,
               top: `${(loc.y / H) * 100}%`,
-              animationDelay: `${loc.delay}s`,
             }}
             onPointerEnter={() => {
               hoverRef.current = i
