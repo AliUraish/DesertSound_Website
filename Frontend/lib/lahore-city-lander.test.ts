@@ -95,10 +95,8 @@ test("Lahore copy stays in the 450–700 word band with required mesh links", ()
   assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-sialkot").length - 1, 1)
   assert.match(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-bahawalpur/)
   assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
-  assert.doesNotMatch(
-    lahoreCityLanderPage.body,
-    /home-cinema-installation-punjab/,
-  )
+  assert.equal(lahoreCityLanderPage.body.split("/service/home-cinema-installation-punjab").length - 1, 1)
+  assert.doesNotMatch(lahoreCityLanderPage.body, /\/service\/home-cinema-installation-punjab\//)
   assert.equal(lahoreCityLanderPage.faqs.length, 4)
 })
 

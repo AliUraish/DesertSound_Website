@@ -129,6 +129,13 @@ export const catalogServicePages: SeoPage[] = [
       "Home cinema installation in Bahawalpur from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   },
   {
+    path: "/service/home-cinema-installation-punjab",
+    title: "Home Cinema Installation in Punjab",
+    description:
+      "Home cinema installation in Punjab from Desert Sound. Lahore, Faisalabad, Multan, Sialkot and Bahawalpur: survey, design, install and calibrate on site.",
+    image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
+  },
+  {
     path: "/service/smart-home-automation",
     title: "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
     description: "Smart Home Automation Services in Karachi, Pakistan - Desert Sound",

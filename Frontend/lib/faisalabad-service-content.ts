@@ -14,7 +14,7 @@ export const faisalabadServicePage: RankingSeoPage = {
   h1: faisalabadServiceH1,
   body: `Desert Sound's Karachi team designs and installs home theaters in Faisalabad. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Faisalabad showroom.
 
-We have teams in Lahore and Karachi. For a Faisalabad house we travel from Karachi, survey the building, and install for that house. [Book a Faisalabad site-visit survey](/contact).
+We have teams in Lahore and Karachi. For a Faisalabad house we travel from Karachi, survey the building, and install for that house. [Book a Faisalabad site-visit survey](/contact-us).
 
 ### What home cinema installation in Faisalabad means
 
@@ -53,7 +53,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
 
 ### Book a Faisalabad site-visit survey
 
-[Book a Faisalabad site-visit survey](/contact). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur).`,
+[Book a Faisalabad site-visit survey](/contact-us). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",
@@ -61,7 +61,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
     },
     {
       q: "Is Desert Sound based in Faisalabad?",
-      a: "No. Our base is Karachi, and Faisalabad jobs are site visits from there. There is no Faisalabad showroom. [Book a survey](/contact).",
+      a: "No. Our base is Karachi, and Faisalabad jobs are site visits from there. There is no Faisalabad showroom. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
