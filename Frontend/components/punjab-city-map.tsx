@@ -1,4 +1,4 @@
-import { punjabCityCards, punjabTownNote } from "@/lib/punjab-service-content"
+import { punjabCityCards, punjabTownContact } from "@/lib/punjab-service-content"
 import { punjabMapPoints, punjabMapTowns } from "@/lib/punjab-map-geometry"
 import { PunjabMapScene, type MapLocation, type MapSide } from "@/components/punjab-map-scene"
 
@@ -29,33 +29,26 @@ const sides: Record<string, MapSide> = {
   "Nankana Sahib": "below",
 }
 
-// Every place is the same kind of pin. Cities with a page link to it; the rest show a short note.
+// Every place is the same kind of pin. Cities with a page link to it; the rest only offer contact.
 const cityLocations = punjabCityCards.map((card) => ({
   key: card.key,
   name: card.name,
   x: punjabMapPoints[card.key].x,
   y: punjabMapPoints[card.key].y,
   href: card.href as string | null,
-  lead: card.lead,
-  linkText: card.linkText,
-  linkHref: card.href,
-  tail: card.tail,
+  note: card.note,
+  contactHref: punjabTownContact.href,
 }))
 
-const townLocations = punjabMapTowns.map((town) => {
-  const note = punjabTownNote(town.name)
-  return {
-    key: town.name,
-    name: town.name,
-    x: town.x,
-    y: town.y,
-    href: null as string | null,
-    lead: note.lead,
-    linkText: note.linkText,
-    linkHref: note.href,
-    tail: note.tail,
-  }
-})
+const townLocations = punjabMapTowns.map((town) => ({
+  key: town.name,
+  name: town.name,
+  x: town.x,
+  y: town.y,
+  href: null as string | null,
+  note: "",
+  contactHref: punjabTownContact.href,
+}))
 
 const locations: MapLocation[] = [...cityLocations, ...townLocations]
   .sort((a, b) => a.y - b.y)
