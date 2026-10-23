@@ -57,34 +57,25 @@ const townLocations = punjabMapTowns.map((town) => {
   }
 })
 
-// North to south, so the pins drop in as a sweep down the province.
 const locations: MapLocation[] = [...cityLocations, ...townLocations]
   .sort((a, b) => a.y - b.y)
-  .map((place, rank) => ({
-    ...place,
-    side: sides[place.name] ?? "right",
-    delay: Number((1.6 + rank * 0.04).toFixed(2)),
-  }))
+  .map((place) => ({ ...place, side: sides[place.name] ?? "right" }))
 
-// The 3D scene builds in Three.js. The static drawing only shows if WebGL is unavailable.
+// A still 3D scene in Three.js; nothing on the map moves on its own.
+// The flat drawing only shows if WebGL is unavailable.
 const css = `
   .pm { --pm-brown: #7A5230; --pm-ink: #2B1D10; }
-  .pm-canvas { opacity: 0; transition: opacity .6s ease; }
+  .pm-canvas { opacity: 0; }
   .pm-fallback { opacity: 0; }
   .pm[data-gl="off"] .pm-fallback { opacity: 1; }
   .pm-fb-fill { fill: rgba(122,82,48,.1); }
   .pm-fb-line { fill: none; stroke: var(--pm-brown); stroke-width: 2.2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-  .pm-city { opacity: 0; transform: translateY(-14px) scale(.5); }
-  .pm[data-gl="on"] .pm-city, .pm[data-gl="off"] .pm-city { animation: pm-drop .7s cubic-bezier(.2,1.5,.4,1) forwards; }
-  .pm-card { opacity: 0; pointer-events: none; transform: translateY(-6px) scale(.98); transition: opacity .2s ease, transform .2s ease; }
+  .pm-city { opacity: 0; }
+  .pm[data-gl="on"] .pm-city, .pm[data-gl="off"] .pm-city { opacity: 1; }
+  .pm-card { opacity: 0; pointer-events: none; }
   .pm-city:hover, .pm-city:focus-within { z-index: 30; }
-  .pm-city:hover .pm-card, .pm-city:focus-within .pm-card { opacity: 1; pointer-events: auto; transform: none; }
-  @keyframes pm-drop { to { opacity: 1; transform: none; } }
+  .pm-city:hover .pm-card, .pm-city:focus-within .pm-card { opacity: 1; pointer-events: auto; }
   @media (hover: none) { .pm-link .pm-card { display: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .pm-canvas { transition: none; }
-    .pm-city { animation: none !important; opacity: 1; transform: none; }
-  }
 `
 
 export function PunjabCityMap() {
@@ -92,11 +83,8 @@ export function PunjabCityMap() {
     <figure className="pm mt-6 md:mt-8" data-gl="pending">
       <style>{css}</style>
       <PunjabMapScene locations={locations} />
-      <figcaption className="mx-auto mt-8 max-w-[680px] text-center">
-        <p className="text-base font-light tracking-tight text-black md:text-lg">
-          We have a team in Karachi and Lahore.
-        </p>
-        <p className="mt-3 text-[10px] font-light text-black/30">Boundaries: geoBoundaries, CC BY 4.0</p>
+      <figcaption className="mx-auto mt-6 max-w-[680px] text-center text-[10px] font-light text-black/30">
+        Boundaries: geoBoundaries, CC BY 4.0
       </figcaption>
     </figure>
   )
