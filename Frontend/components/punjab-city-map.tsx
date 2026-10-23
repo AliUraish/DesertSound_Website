@@ -1,4 +1,4 @@
-import { punjabCityCards, punjabTownContact } from "@/lib/punjab-service-content"
+import { punjabCityCards, punjabTownAbout, punjabTownContact } from "@/lib/punjab-service-content"
 import { punjabMapPoints, punjabMapTowns } from "@/lib/punjab-map-geometry"
 import { PunjabMapScene, type MapLocation, type MapSide } from "@/components/punjab-map-scene"
 
@@ -36,6 +36,7 @@ const cityLocations = punjabCityCards.map((card) => ({
   x: punjabMapPoints[card.key].x,
   y: punjabMapPoints[card.key].y,
   href: card.href as string | null,
+  about: card.about,
   note: card.note,
   contactHref: punjabTownContact.href,
 }))
@@ -46,6 +47,7 @@ const townLocations = punjabMapTowns.map((town) => ({
   x: town.x,
   y: town.y,
   href: null as string | null,
+  about: punjabTownAbout[town.name] ?? "",
   note: "",
   contactHref: punjabTownContact.href,
 }))
