@@ -11,69 +11,25 @@ export type PunjabCityCard = {
   key: "Lahore" | "Faisalabad" | "Multan" | "Sialkot" | "Bahawalpur"
   name: string
   href: string
-  lead: string
-  linkText: string
-  tail: string
+  /** Shown in the map card before "You can contact us." */
+  note: string
 }
 
-// These write-ups are shown inside the Punjab map. They are not part of the page body.
+// Cards inside the Punjab map: the city name links to its page, then a contact line.
 export const punjabCityCards: readonly PunjabCityCard[] = [
-  {
-    key: "Lahore",
-    name: "Lahore",
-    href: "/service/home-cinema-installation-lahore",
-    lead: "",
-    linkText: "We have a team in Lahore",
-    tail: ". Survey, design, install and calibration run the same way as everywhere else.",
-  },
-  {
-    key: "Faisalabad",
-    name: "Faisalabad",
-    href: "/service/home-cinema-installation-faisalabad",
-    lead: "A textile city where family compounds are common, so picking the right room comes first. Our team travels from Karachi for surveys in Faisalabad. See ",
-    linkText: "home cinema installation in Faisalabad",
-    tail: ".",
-  },
-  {
-    key: "Multan",
-    name: "Multan",
-    href: "/service/home-cinema-installation-multan",
-    lead: "Bright afternoons and pre-monsoon dust decide where the screen and the equipment go. We come up from Karachi for surveys in Multan. See ",
-    linkText: "home cinema installation in Multan",
-    tail: ".",
-  },
-  {
-    key: "Sialkot",
-    name: "Sialkot",
-    href: "/service/home-cinema-installation-sialkot",
-    lead: "Export workshops and close-set old-city houses make isolation an early question. Surveys from Karachi reach Sialkot. See ",
-    linkText: "home cinema installation in Sialkot",
-    tail: ".",
-  },
-  {
-    key: "Bahawalpur",
-    name: "Bahawalpur",
-    href: "/service/home-cinema-installation-bahawalpur",
-    lead: "On the edge of the Cholistan desert, a cinema room has to keep out daylight and grit. We travel from Karachi to Bahawalpur. See ",
-    linkText: "home cinema installation in Bahawalpur",
-    tail: ".",
-  },
+  { key: "Lahore", name: "Lahore", href: "/service/home-cinema-installation-lahore", note: "We have a team in Lahore." },
+  { key: "Faisalabad", name: "Faisalabad", href: "/service/home-cinema-installation-faisalabad", note: "" },
+  { key: "Multan", name: "Multan", href: "/service/home-cinema-installation-multan", note: "" },
+  { key: "Sialkot", name: "Sialkot", href: "/service/home-cinema-installation-sialkot", note: "" },
+  { key: "Bahawalpur", name: "Bahawalpur", href: "/service/home-cinema-installation-bahawalpur", note: "" },
 ]
 
 export const punjabCityCopy = punjabCityCards
-  .map((city) => `${city.name}\n${city.lead}[${city.linkText}](${city.href})${city.tail}`)
+  .map((city) => `[${city.name}](${city.href})\n${city.note ? `${city.note} ` : ""}You can contact us.`)
   .join("\n\n")
 
-// Punjab towns that have no page of their own get this short note on the map.
-// It makes no claim of local presence and matches the "Which Punjab cities do you cover?" FAQ.
-export function punjabTownNote(name: string) {
-  return {
-    lead: `We don't have a page for ${name} yet. `,
-    linkText: "Ask us",
-    href: "/contact-us",
-    tail: " and we will confirm whether a visit is possible.",
-  } as const
-}
+// Punjab towns without a page of their own: the map card only offers contact.
+export const punjabTownContact = { text: "Contact us", href: "/contact-us" } as const
 
 export const punjabServicePage: RankingSeoPage = {
   slug: punjabServicePath,
