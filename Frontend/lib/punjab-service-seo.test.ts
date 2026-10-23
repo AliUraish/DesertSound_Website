@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url"
 import {
   punjabCityCards,
   punjabCityCopy,
+  punjabTownAbout,
   punjabTownContact,
   punjabFaqJsonLdItems,
   punjabServiceDescription,
@@ -128,7 +129,7 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.match(punjabCityCopy, /We have a team in Lahore/)
   const lahoreCard = punjabCityCards.find((city) => city.key === "Lahore")
   assert.equal(lahoreCard?.note, "We have a team in Lahore.")
-  assert.match(punjabCityCopy, /\[Lahore\]\(\/service\/home-cinema-installation-lahore\)\nWe have a team in Lahore\. You can contact us\./)
+  assert.match(punjabCityCopy, /\[Lahore\]\(\/service\/home-cinema-installation-lahore\)\n[^\n]+ We have a team in Lahore\. You can contact us\./)
   for (const card of punjabCityCards.filter((city) => city.key !== "Lahore")) {
     assert.equal(card.note, "", card.name)
   }
@@ -188,7 +189,18 @@ test("Punjab map cards: page cities link by name and offer contact; towns only o
   const towns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
   assert.ok(towns.length >= 25)
   const mainCities = punjabCityCards.map((city) => city.name)
-  for (const name of towns) assert.ok(!mainCities.includes(name), `${name} already has a page`)
+  for (const name of towns) {
+    assert.ok(!mainCities.includes(name), `${name} already has a page`)
+    const about = punjabTownAbout[name]
+    assert.ok(about, `${name} has a line about what we do`)
+    assert.ok(about.length <= 120, `${name} line is short`)
+    assert.doesNotMatch(about, /team|office|showroom|branch|headquarters|Karachi|\bbest\b|prices|#1|don't have a page/i)
+  }
+  assert.deepEqual(Object.keys(punjabTownAbout).sort(), [...towns].sort())
+  for (const card of punjabCityCards) {
+    assert.ok(card.about.length > 40 && card.about.length <= 130, card.name)
+    assert.doesNotMatch(card.about, /team|office|showroom|branch|Karachi/i, card.name)
+  }
   assert.deepEqual(punjabTownContact, { text: "Contact us", href: "/contact-us" })
   for (const card of punjabCityCards) {
     assert.match(punjabCityCopy, new RegExp(`\\[${card.name}\\]\\(${card.href.replace(/\//g, "\\/")}\\)`))
