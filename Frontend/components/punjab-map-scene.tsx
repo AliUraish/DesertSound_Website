@@ -17,6 +17,8 @@ export type MapLocation = {
   y: number
   /** Pin link for cities that have their own page. Towns without a page have none. */
   href: string | null
+  /** What we do there and how. */
+  about: string
   /** Extra line for cities with a page, e.g. the Lahore team. */
   note: string
   contactHref: string
@@ -413,7 +415,7 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
                 {label}
               </button>
             )}
-            <div className={`pm-card absolute top-full w-max max-w-[min(260px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
+            <div className={`pm-card absolute top-full w-[min(270px,72vw)] pt-1 ${cardAlign(loc.x)}`}>
               <div className="rounded-xl bg-white px-4 py-3.5 text-left shadow-[0_18px_40px_rgba(43,29,16,0.22)]">
                 <p className="text-base font-light tracking-tight text-black">
                   {loc.href ? (
@@ -424,6 +426,9 @@ export function PunjabMapScene({ locations }: { locations: MapLocation[] }) {
                     loc.name
                   )}
                 </p>
+                {loc.about ? (
+                  <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">{loc.about}</p>
+                ) : null}
                 <p className="mt-1.5 text-sm font-light leading-relaxed text-black/70">
                   {loc.href ? (
                     <>
