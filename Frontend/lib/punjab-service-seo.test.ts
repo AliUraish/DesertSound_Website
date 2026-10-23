@@ -178,7 +178,7 @@ test("Punjab hub shows the city write-ups inside the map, not in the page body",
     assert.equal(punjabCityCards.filter((city) => city.href === href).length, 1, href)
   }
   assert.match(map, /punjabCityCards/)
-  assert.match(map, /prefers-reduced-motion/)
+  assert.doesNotMatch(map, /@keyframes|animation:|transition:/)
   assert.doesNotMatch(map, /home-cinema-installation-islamabad/)
   assert.doesNotMatch(map, /home-cinema-installation-punjab/)
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
@@ -204,14 +204,15 @@ test("Punjab towns without a page get a short note: no own link, no invented pre
   assert.match(map, /punjabTownNote/)
 })
 
-test("Punjab map is a Three.js scene with equal pins and the Karachi and Lahore team line below it", () => {
+test("Punjab map is a still Three.js scene with equal pins", () => {
   const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
   const scene = readFileSync(join(root, "components/punjab-map-scene.tsx"), "utf8")
-  assert.match(map, /We have a team in Karachi and Lahore\./)
+  assert.doesNotMatch(map, /team in Karachi/)
   assert.match(map, /<figcaption/)
   assert.match(scene, /^"use client"/)
   assert.match(scene, /await import\("three"\)/)
-  assert.match(scene, /prefers-reduced-motion/)
+  // The map holds still: no intro, no orbiting dash, no pointer tilt.
+  assert.doesNotMatch(scene, /dashOffset|pointermove|performance\.now|animationDelay/)
   assert.match(scene, /WebGLRenderer/)
   // One pin geometry for every place: no per-city sizes.
   assert.equal(scene.split("new THREE.SphereGeometry").length - 1, 1)
