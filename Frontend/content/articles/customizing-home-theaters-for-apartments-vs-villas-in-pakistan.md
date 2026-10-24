@@ -33,6 +33,6 @@ Acoustic treatment has room to be done properly — not a single panel behind th
 
 Apartments need efficiency: slim optics, controlled bass, seating that still leaves a walkway. Villas can take scale if power, HVAC, and isolation are in the design. In both cases, screen size, speaker angles, and the main seat come from a survey.
 
-Karachi apartments and Lahore houses fail for the same reason when they skip that step: gear chosen for a showroom, then forced into the room.
+Karachi apartments and Lahore houses fail for the same reason when they skip that step: gear chosen for a showroom, then forced into the room. [Home theatre installation in Islamabad](/service/home-cinema-installation-islamabad) starts with the same survey.
 
 Desert Sound designs each cinema to the building. [See home theatre design and installation](/service/home-theatre-design-and-installation/).

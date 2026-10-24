@@ -66,6 +66,6 @@ On [a Pakistan home cinema install](/home-cinema-and-cinema-installer-pakistan),
 
 If several people use the room, write the one-button start into the plan. A beautiful layout that needs four remotes is not finished.
 
-We do this sequence on apartments and villas so the builder, the painter, and the rack show up in the right order.
+We do this sequence on apartments and villas so the builder, the painter, and the rack show up in the right order. It is the same order we follow for an [Islamabad home theatre installation](/service/home-cinema-installation-islamabad).
 
 Desert Sound plans this for apartments and villas. [Home theatre design and installation](/service/home-theatre-design-and-installation/).
