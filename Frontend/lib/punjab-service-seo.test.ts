@@ -9,6 +9,7 @@ import {
   punjabLanderTownNames,
   punjabOtherTowns,
   punjabOtherTownsHeading,
+  punjabOtherTownsLead,
   punjabOtherTownsSection,
   punjabTownAbout,
   punjabTownContact,
@@ -206,6 +207,15 @@ test("Punjab hub lists every non-lander town in a visible Other Punjab towns sec
     nextHeading === -1
       ? punjabServicePage.body.slice(headingAt)
       : punjabServicePage.body.slice(headingAt, nextHeading)
+
+  assert.equal(
+    punjabOtherTownsLead,
+    "Outside the cities with their own pages, these are the Punjab towns we visit for home cinema projects, and each one starts with the same site visit.",
+  )
+  const leadAt = section.indexOf(punjabOtherTownsLead)
+  const firstBullet = section.indexOf("- **")
+  assert.ok(leadAt > section.indexOf(punjabOtherTownsHeading), "lead sentence renders after the heading")
+  assert.ok(firstBullet > leadAt, "lead sentence renders before the first bullet")
 
   const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
   const mapTowns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])

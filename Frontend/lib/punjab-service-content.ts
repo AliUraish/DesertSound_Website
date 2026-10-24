@@ -65,34 +65,34 @@ export const punjabTownContact = { text: "Contact us", href: "/contact-us" } as 
 
 export const punjabTownAbout: Record<string, string> = {
   Rawalpindi: "Older houses sit beside new extensions, so we check walls and roofs for sound leaks before we design the room.",
-  "Wah Cantt": "Planned, solidly built homes give us good rooms to work with. We design, install and calibrate inside them.",
+  "Wah Cantt": "Planned streets and newer homes give us room to work. We design, install and calibrate inside them.",
   Attock: "Hot summers by the Indus mean we plan quiet ventilation for the equipment before we install.",
-  Jhelum: "We survey the room, then design the screen, seats and speakers around it and hide the wiring.",
+  Jhelum: "Monsoon damp is a real question by the river, so we keep the rack and speakers off damp walls, then design and install.",
   Chakwal: "Homes on the Potohar plateau come in many shapes, so every design starts with a site survey.",
   "Mandi Bahauddin": "We survey the room, plan seating and screen size, then install with concealed cabling and calibrate.",
   Mianwali: "Long, hot summers shape the plan. We keep the equipment cool and quiet, then calibrate picture and sound.",
   Gujrat: "A city of furniture makers. We design seating and acoustic panels to suit the room, then install them.",
   Khushab: "Near the Salt Range. We survey the room for light and sound leaks, then design and install around it.",
   Gujranwala: "Large family houses often have a spare hall or basement. We help choose the room, then design and build it in.",
-  Narowal: "We survey the room, design the cinema around it, install with hidden wiring and calibrate from your seats.",
+  Narowal: "In shared family houses, we check how sound carries between rooms before we design the isolation.",
   Sargodha: "Citrus country with spacious homes. We size the screen and seating to the room, then install and calibrate.",
   Hafizabad: "We plan the room's light control and acoustics first, then install the system and calibrate it.",
   Chiniot: "Famous for carved woodwork. We can blend panels and seating with the wood already in the house.",
-  Sheikhupura: "We survey the room, design for its size and shape, install with concealed wiring and calibrate on site.",
+  Sheikhupura: "Daytime viewing often matters, so we plan blinds, wall colour and the screen for the light, then install.",
   Bhakkar: "On the edge of the Thal desert, the room has to keep out heat, light and dust before the cinema goes in.",
-  "Nankana Sahib": "We survey the room, design for its size and shape, then install and calibrate on site.",
+  "Nankana Sahib": "Many families want one room for films and for guests, so we design a lounge cinema that still works as a sitting room.",
   Jhang: "Hot summers and bright days: we plan blackout and a cool, quiet equipment space, then install.",
-  Kasur: "We survey the room, design the cinema, hide the wiring and calibrate picture and sound.",
+  Kasur: "Power cuts are part of the plan, so the survey includes advice on UPS or generator backup before we design and install.",
   "Toba Tek Singh": "Farmhouses and city homes alike: we pick the right room, then design, install and calibrate it.",
   Layyah: "Thal desert heat and dust shape the plan: a sealed room, cool equipment, then a careful calibration.",
-  Okara: "We plan the screen, seats and speakers for the room you have, then install with hidden cabling.",
+  Okara: "We size the screen to how far the seats sit from it, then place the speakers and hide the cabling.",
   Sahiwal: "We check light, sound leaks and the structure, then design and install the room.",
-  Pakpattan: "Every room starts with a survey. Then we design, install and calibrate from the seats you will use.",
+  Pakpattan: "Concrete roofs carry heat and sound, so we check the ceiling first, then design the room and calibrate it.",
   Khanewal: "A railway junction city, so we check rooms for outside noise before we design the isolation.",
   Burewala: "Cotton-belt heat means we plan ventilation for the equipment, then install and calibrate.",
   Muzaffargarh: "Between the Chenab and the Indus, summers are hot, so we plan cooling and blackout from the start.",
   "Dera Ghazi Khan": "Under the Suleman range, heat and dust lead the plan: a sealed room, cool equipment, careful calibration.",
-  Vehari: "In the cotton belt. We design the room for its size, install with concealed wiring and calibrate.",
+  Vehari: "High ceilings and hard floors echo, so we plan acoustic panels and soft finishes before the system goes in.",
   Bahawalnagar: "Near Cholistan, rooms need to keep out heat and grit. We seal them, then install and calibrate.",
   Rajanpur: "Summers are long and hot, so we plan cooling and blackout before we install anything.",
   "Rahim Yar Khan": "Long hot summers mean blackout, sealing and cool equipment space come first, then calibration.",
@@ -112,6 +112,9 @@ const punjabLanderTownSet = new Set<string>(punjabLanderTownNames)
 
 export const punjabOtherTownsHeading = "Other Punjab towns we visit"
 
+export const punjabOtherTownsLead =
+  "Outside the cities with their own pages, these are the Punjab towns we visit for home cinema projects, and each one starts with the same site visit."
+
 // Same short lines the map hover cards use. One list, so the section and the cards cannot drift.
 export const punjabOtherTowns = Object.entries(punjabTownAbout)
   .filter(([name]) => !punjabLanderTownSet.has(name))
@@ -119,6 +122,8 @@ export const punjabOtherTowns = Object.entries(punjabTownAbout)
 
 export const punjabOtherTownsSection = [
   `### ${punjabOtherTownsHeading}`,
+  "",
+  punjabOtherTownsLead,
   "",
   punjabOtherTowns.map(({ name, about }) => `- **${name}.** ${about}`).join("\n"),
 ].join("\n")
