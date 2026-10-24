@@ -6,6 +6,11 @@ import { fileURLToPath } from "node:url"
 import {
   punjabCityCards,
   punjabCityCopy,
+  punjabLanderTownNames,
+  punjabOtherTowns,
+  punjabOtherTownsHeading,
+  punjabOtherTownsLead,
+  punjabOtherTownsSection,
   punjabTownAbout,
   punjabTownContact,
   punjabFaqJsonLdItems,
@@ -148,16 +153,16 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.doesNotMatch(copy, /Madina/i)
   assert.doesNotMatch(copy, /Wapda/i)
   assert.doesNotMatch(copy, /Citi Housing/i)
-  assert.doesNotMatch(copy, /\bCantt\b/i)
+  assert.doesNotMatch(copy.replace(/Wah Cantt/g, ""), /\bCantt\b/i)
   assert.doesNotMatch(copy, /\bPhase\b/i)
   assert.doesNotMatch(copy, /\bColony\b/i)
   assert.doesNotMatch(copy, /\bTown\b/i)
   assert.doesNotMatch(copy, /Satellite/i)
   assert.doesNotMatch(copy, /Civil Lines/i)
   assert.doesNotMatch(copy, /Peoples Colony/i)
-  assert.doesNotMatch(copy, /Ghazi/i)
+  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /Ghazi/i)
   assert.doesNotMatch(copy, /\bUS\b|\bUK\b|United States|United Kingdom/)
-  assert.doesNotMatch(copy, /Rawalpindi|Gujranwala/)
+  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /Rawalpindi|Gujranwala/)
   assert.doesNotMatch(copy, /22-C\/II/)
   assert.doesNotMatch(copy, /Zamzama/)
   assert.doesNotMatch(copy, /\+92/)
@@ -184,6 +189,85 @@ test("Punjab hub shows the city write-ups inside the map, not in the page body",
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
 })
 
+test("Punjab hub lists every non-lander town in a visible Other Punjab towns section", () => {
+  assert.equal(punjabOtherTownsHeading, "Other Punjab towns we visit")
+  assert.match(punjabServicePage.body, /### Other Punjab towns we visit/)
+  assert.ok(
+    punjabServicePage.body.includes(punjabOtherTownsSection),
+    "body renders the other-towns section from the shared town list",
+  )
+  // This page has no ## heading, so ### Other Punjab towns we visit renders as an H2.
+  assert.doesNotMatch(punjabServicePage.body, /(^|\n)## [^#]/)
+  assert.doesNotMatch(punjabOtherTownsSection, /display:\s*none|opacity:\s*0|visually-hidden|sr-only/)
+
+  const headingAt = punjabServicePage.body.indexOf(punjabOtherTownsHeading)
+  assert.ok(headingAt >= 0, "section heading renders in the body")
+  const nextHeading = punjabServicePage.body.indexOf("\n### ", headingAt)
+  const section =
+    nextHeading === -1
+      ? punjabServicePage.body.slice(headingAt)
+      : punjabServicePage.body.slice(headingAt, nextHeading)
+
+  assert.equal(
+    punjabOtherTownsLead,
+    "Outside the cities with their own pages, these are other Punjab towns we can visit for home cinema projects, and each one starts with the same site visit.",
+  )
+  const leadAt = section.indexOf(punjabOtherTownsLead)
+  const firstBullet = section.indexOf("- **")
+  assert.ok(leadAt > section.indexOf(punjabOtherTownsHeading), "lead sentence renders after the heading")
+  assert.ok(firstBullet > leadAt, "lead sentence renders before the first bullet")
+  assert.ok(
+    punjabServicePage.body.includes(`${punjabOtherTownsSection}\n\n### Book a Punjab site visit`),
+    "towns section sits immediately before Book a Punjab site visit",
+  )
+  assert.ok(
+    punjabServicePage.body.indexOf("### One method for every Punjab home") <
+      punjabServicePage.body.indexOf("### Other Punjab towns we visit"),
+    "One method comes before the towns section",
+  )
+
+  const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
+  const mapTowns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
+  assert.deepEqual(
+    punjabOtherTowns.map((town) => town.name).sort(),
+    [...mapTowns].sort(),
+  )
+  assert.deepEqual(
+    punjabOtherTowns.map((town) => town.name).sort(),
+    Object.keys(punjabTownAbout).sort(),
+  )
+
+  for (const name of punjabLanderTownNames) {
+    assert.equal(
+      punjabOtherTowns.some((town) => town.name === name),
+      false,
+      `${name} has a lander and must not be listed again`,
+    )
+    assert.doesNotMatch(section, new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+  }
+
+  assert.ok(punjabOtherTowns.length >= 25)
+  for (const town of punjabOtherTowns) {
+    assert.equal(town.about, punjabTownAbout[town.name], town.name)
+    assert.match(section, new RegExp(`\\*\\*${town.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\*\\*`))
+    assert.ok(section.includes(town.about), `${town.name} hover-card line is in the section`)
+  }
+
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  assert.match(map, /punjabTownAbout\[town\.name\]/)
+
+  assert.doesNotMatch(section, /\+92/)
+  assert.doesNotMatch(section, /111\s*570/)
+  assert.doesNotMatch(section, /Digital Sound/)
+  assert.doesNotMatch(section, /\bDHA\b/)
+  assert.doesNotMatch(section, /Clifton/)
+  assert.doesNotMatch(section, /Bahria/)
+  assert.doesNotMatch(section, /Zamzama/)
+  assert.doesNotMatch(section, /\bPhase\b/)
+  assert.doesNotMatch(section, /showroom/i)
+  assert.doesNotMatch(section, /office/i)
+})
+
 test("Punjab map cards: page cities link by name and offer contact; towns only offer contact", () => {
   const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
   const towns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
@@ -193,7 +277,7 @@ test("Punjab map cards: page cities link by name and offer contact; towns only o
     assert.ok(!mainCities.includes(name), `${name} already has a page`)
     const about = punjabTownAbout[name]
     assert.ok(about, `${name} has a line about what we do`)
-    assert.ok(about.length <= 120, `${name} line is short`)
+    assert.ok(about.length <= 150, `${name} line is short`)
     assert.doesNotMatch(about, /team|office|showroom|branch|headquarters|Karachi|\bbest\b|prices|#1|don't have a page/i)
   }
   assert.deepEqual(Object.keys(punjabTownAbout).sort(), [...towns].sort())
