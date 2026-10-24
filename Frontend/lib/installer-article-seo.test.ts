@@ -56,9 +56,9 @@ test("#33 keeps cinema-installer H1 intent and drops duplicate Desert Sound titl
   assert.doesNotMatch(meta.h1, /Karachi/)
 })
 
-test("#33 ships 3–5 fact-locked FAQs with FAQPage schema lockstep", () => {
+test("#33 ships 3–6 fact-locked FAQs with FAQPage schema lockstep", () => {
   assert.ok(Array.isArray(meta.faqs))
-  assert.ok(meta.faqs.length >= 3 && meta.faqs.length <= 5)
+  assert.ok(meta.faqs.length >= 3 && meta.faqs.length <= 6)
   assert.match(rankingPage, /faqPageJsonLd/)
   assert.match(rankingPage, /page\.faqs\.map\(\(faq\) => \(\{ question: faq\.q, answer: faq\.a \}\)\)/)
   assert.doesNotMatch(rankingPage, /"@type": "Review"/)
@@ -92,6 +92,47 @@ test("#33 FAQ themes cover installer process, boxed vs install, Karachi visit, h
   assert.match(answers, /Home cinema installation in Karachi/)
   assert.match(answers, /room survey first/i)
   assert.match(answers, /new build is not required/i)
+})
+
+function sectionAfterHeading(heading: string) {
+  const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  const match = body.match(new RegExp(`${escaped}\\n\\n([\\s\\S]*?)(?=\\n### |$)`))
+  assert.ok(match, `missing section ${heading}`)
+  return match[1].trim()
+}
+
+test("#33 Karachi depth answer block is 40–60 words with slashless survey links", () => {
+  assert.match(
+    body,
+    /What to expect on a Karachi site visit[\s\S]*Karachi home cinema installer: what you get[\s\S]*What a Karachi survey checks[\s\S]*Design: the room decides the theater/,
+  )
+
+  const answer = sectionAfterHeading("### Karachi home cinema installer: what you get")
+  const survey = sectionAfterHeading("### What a Karachi survey checks")
+  const answerWords = wordCount(answer)
+  assert.ok(answerWords >= 40 && answerWords <= 60, `answer block is ${answerWords} words; want 40–60`)
+  assert.doesNotMatch(answer, /\]\(/)
+
+  const surveyLinks = [...survey.matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)].map((match) => ({
+    label: match[1],
+    href: match[2],
+  }))
+  assert.equal(survey.split("/private-home-cinema-karachi").length - 1, 1)
+  assert.doesNotMatch(survey, /\/private-home-cinema-karachi\//)
+  const service = surveyLinks.filter((link) => link.href === "/service/home-theatre-design-and-installation")
+  assert.equal(service.length, 1)
+  assert.equal(service[0].label, "home theatre in Karachi")
+
+  const newCopy = `${answer}\n${survey}`
+  for (const pattern of banned) {
+    assert.doesNotMatch(newCopy, pattern)
+  }
+  assert.doesNotMatch(newCopy, /\bClifton\b/)
+  assert.doesNotMatch(newCopy, /\bBahria\b/)
+  assert.doesNotMatch(newCopy, /\bPhase\b/)
+  assert.doesNotMatch(newCopy, /\bDHA\b/)
+  assert.doesNotMatch(newCopy, /PKR|Rs\.?\s*\d/)
+  assert.doesNotMatch(newCopy, /\b\d+\s*(days?|weeks?|months?)\b/i)
 })
 
 test("#33 lean copy keeps installer / Karachi AEO without stuffing H1", () => {

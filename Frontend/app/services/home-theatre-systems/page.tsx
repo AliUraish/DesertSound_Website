@@ -172,6 +172,13 @@ export default function HomeTheatreSystemsPage() {
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-4">
                     We plan home theater installation in Karachi and across Pakistan around the room: 4K/8K projection, Dolby Atmos, and smart control. This is cinema installation work, not a boxed retail system.
                   </p>
+                  <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-4">
+                    In Karachi,{" "}
+                    <Link href="/projects/residential/residency" className="underline underline-offset-4 hover:text-black">
+                      Residency Private Cinema
+                    </Link>
+                    {" "}pairs a large-format screen, acoustic wall finishes and a ceiling-mounted projector with recliners and a sofa, so the room still works once the film is over, with wiring hidden and picture and sound calibrated.
+                  </p>
                   <p className="text-base md:text-lg text-black/70 font-light leading-relaxed mb-8">
                     Site visits include{" "}
                     <Link href="/service/home-cinema-installation-islamabad" className="underline underline-offset-4 hover:text-black">
