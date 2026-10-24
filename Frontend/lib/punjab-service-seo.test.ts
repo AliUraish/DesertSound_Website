@@ -6,6 +6,10 @@ import { fileURLToPath } from "node:url"
 import {
   punjabCityCards,
   punjabCityCopy,
+  punjabLanderTownNames,
+  punjabOtherTowns,
+  punjabOtherTownsHeading,
+  punjabOtherTownsSection,
   punjabTownAbout,
   punjabTownContact,
   punjabFaqJsonLdItems,
@@ -148,16 +152,16 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.doesNotMatch(copy, /Madina/i)
   assert.doesNotMatch(copy, /Wapda/i)
   assert.doesNotMatch(copy, /Citi Housing/i)
-  assert.doesNotMatch(copy, /\bCantt\b/i)
+  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /\bCantt\b/i)
   assert.doesNotMatch(copy, /\bPhase\b/i)
   assert.doesNotMatch(copy, /\bColony\b/i)
   assert.doesNotMatch(copy, /\bTown\b/i)
   assert.doesNotMatch(copy, /Satellite/i)
   assert.doesNotMatch(copy, /Civil Lines/i)
   assert.doesNotMatch(copy, /Peoples Colony/i)
-  assert.doesNotMatch(copy, /Ghazi/i)
+  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /Ghazi/i)
   assert.doesNotMatch(copy, /\bUS\b|\bUK\b|United States|United Kingdom/)
-  assert.doesNotMatch(copy, /Rawalpindi|Gujranwala/)
+  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /Rawalpindi|Gujranwala/)
   assert.doesNotMatch(copy, /22-C\/II/)
   assert.doesNotMatch(copy, /Zamzama/)
   assert.doesNotMatch(copy, /\+92/)
@@ -182,6 +186,62 @@ test("Punjab hub shows the city write-ups inside the map, not in the page body",
   assert.doesNotMatch(map, /home-cinema-installation-islamabad/)
   assert.doesNotMatch(map, /home-cinema-installation-punjab/)
   assert.equal(copy.split("/service/home-cinema-installation-lahore").length - 1, 1)
+})
+
+test("Punjab hub lists every non-lander town in a visible Other Punjab towns section", () => {
+  assert.equal(punjabOtherTownsHeading, "Other Punjab towns we visit")
+  assert.match(punjabServicePage.body, /### Other Punjab towns we visit/)
+  assert.match(punjabServicePage.body, punjabOtherTownsSection)
+  // This page has no ## heading, so ### Other Punjab towns we visit renders as an H2.
+  assert.doesNotMatch(punjabServicePage.body, /(^|\n)## [^#]/)
+  assert.doesNotMatch(punjabOtherTownsSection, /display:\s*none|opacity:\s*0|visually-hidden|sr-only/)
+
+  const headingAt = punjabServicePage.body.indexOf(punjabOtherTownsHeading)
+  assert.ok(headingAt >= 0, "section heading renders in the body")
+  const nextHeading = punjabServicePage.body.indexOf("\n### ", headingAt)
+  const section =
+    nextHeading === -1
+      ? punjabServicePage.body.slice(headingAt)
+      : punjabServicePage.body.slice(headingAt, nextHeading)
+
+  const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
+  const mapTowns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
+  assert.deepEqual(
+    punjabOtherTowns.map((town) => town.name).sort(),
+    [...mapTowns].sort(),
+  )
+  assert.deepEqual(
+    punjabOtherTowns.map((town) => town.name).sort(),
+    Object.keys(punjabTownAbout).sort(),
+  )
+
+  for (const name of punjabLanderTownNames) {
+    assert.equal(
+      punjabOtherTowns.some((town) => town.name === name),
+      false,
+      `${name} has a lander and must not be listed again`,
+    )
+    assert.doesNotMatch(section, new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+  }
+
+  assert.ok(punjabOtherTowns.length >= 25)
+  for (const town of punjabOtherTowns) {
+    assert.equal(town.about, punjabTownAbout[town.name], town.name)
+    assert.match(section, new RegExp(`\\*\\*${town.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\*\\*`))
+    assert.match(section, town.about)
+  }
+
+  const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
+  assert.match(map, /punjabTownAbout\[town\.name\]/)
+
+  assert.doesNotMatch(section, /\+92/)
+  assert.doesNotMatch(section, /111\s*570/)
+  assert.doesNotMatch(section, /Digital Sound/)
+  assert.doesNotMatch(section, /\bDHA\b/)
+  assert.doesNotMatch(section, /Clifton/)
+  assert.doesNotMatch(section, /Bahria/)
+  assert.doesNotMatch(section, /Zamzama/)
+  assert.doesNotMatch(section, /\bPhase\b/)
 })
 
 test("Punjab map cards: page cities link by name and offer contact; towns only offer contact", () => {

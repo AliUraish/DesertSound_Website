@@ -98,6 +98,31 @@ export const punjabTownAbout: Record<string, string> = {
   "Rahim Yar Khan": "Long hot summers mean blackout, sealing and cool equipment space come first, then calibration.",
 }
 
+// Lander cities already have their own pages. The other-towns section skips them.
+export const punjabLanderTownNames = [
+  "Lahore",
+  "Islamabad",
+  "Multan",
+  "Faisalabad",
+  "Sialkot",
+  "Bahawalpur",
+] as const
+
+const punjabLanderTownSet = new Set<string>(punjabLanderTownNames)
+
+export const punjabOtherTownsHeading = "Other Punjab towns we visit"
+
+// Same short lines the map hover cards use. One list, so the section and the cards cannot drift.
+export const punjabOtherTowns = Object.entries(punjabTownAbout)
+  .filter(([name]) => !punjabLanderTownSet.has(name))
+  .map(([name, about]) => ({ name, about }))
+
+export const punjabOtherTownsSection = [
+  `### ${punjabOtherTownsHeading}`,
+  "",
+  punjabOtherTowns.map(({ name, about }) => `- **${name}.** ${about}`).join("\n"),
+].join("\n")
+
 export const punjabServicePage: RankingSeoPage = {
   slug: punjabServicePath,
   title: punjabServiceTitle,
@@ -106,6 +131,8 @@ export const punjabServicePage: RankingSeoPage = {
   body: `Desert Sound is a Karachi home cinema company, and this page covers our work in Punjab. Pick your city on the map for the local detail. Wherever the house is, a project runs in one order. We survey the room, design the theatre for it, build it in with the wiring hidden, and calibrate picture and sound from the seats you will use.
 
 Every Punjab project starts with a site visit. Ask for one on our [contact page](/contact-us).
+
+${punjabOtherTownsSection}
 
 ### One method for every Punjab home
 
