@@ -69,8 +69,8 @@ export const punjabTownAbout: Record<string, string> = {
   Attock: "Hot summers by the Indus mean we plan quiet ventilation for the equipment before we install.",
   Jhelum: "Monsoon damp is a real question by the river, so we keep the rack and speakers off damp walls, then design and install.",
   Chakwal: "Homes on the Potohar plateau come in many shapes, so every design starts with a site survey.",
-  "Mandi Bahauddin": "We survey the room, plan seating and screen size, then install with concealed cabling and calibrate.",
-  Mianwali: "Long, hot summers shape the plan. We keep the equipment cool and quiet, then calibrate picture and sound.",
+  "Mandi Bahauddin": "If the house is still being built, we mark speaker and screen positions and lay conduit before plastering, so no finished wall is cut open later.",
+  Mianwali: "If you want to add height speakers or a second subwoofer later, we leave spare conduit now, so an upgrade does not mean opening the walls again.",
   Gujrat: "A city of furniture makers. We design seating and acoustic panels to suit the room, then install them.",
   Khushab: "Near the Salt Range. We survey the room for light and sound leaks, then design and install around it.",
   Gujranwala: "Large family houses often have a spare hall or basement. We help choose the room, then design and build it in.",
@@ -81,21 +81,21 @@ export const punjabTownAbout: Record<string, string> = {
   Sheikhupura: "Daytime viewing often matters, so we plan blinds, wall colour and the screen for the light, then install.",
   Bhakkar: "On the edge of the Thal desert, the room has to keep out heat, light and dust before the cinema goes in.",
   "Nankana Sahib": "Many families want one room for films and for guests, so we design a lounge cinema that still works as a sitting room.",
-  Jhang: "Hot summers and bright days: we plan blackout and a cool, quiet equipment space, then install.",
+  Jhang: "We place the subwoofer and the seats together, so bass stays even at every seat instead of booming in one corner, then measure and calibrate.",
   Kasur: "Power cuts are part of the plan, so the survey includes advice on UPS or generator backup before we design and install.",
-  "Toba Tek Singh": "Farmhouses and city homes alike: we pick the right room, then design, install and calibrate it.",
-  Layyah: "Thal desert heat and dust shape the plan: a sealed room, cool equipment, then a careful calibration.",
+  "Toba Tek Singh": "We check the room's power on the survey and plan a separate circuit for the cinema, away from pumps and AC units, before we install.",
+  Layyah: "In-wall speakers need walls that can be opened, so on the survey we decide between in-wall, on-wall and floor-standing speakers for each wall.",
   Okara: "We size the screen to how far the seats sit from it, then place the speakers and hide the cabling.",
-  Sahiwal: "We check light, sound leaks and the structure, then design and install the room.",
+  Sahiwal: "Where there are two rows of seats, we set the riser height so the back row sees the whole screen, then tune the sound for both rows.",
   Pakpattan: "Concrete roofs carry heat and sound, so we check the ceiling first, then design the room and calibrate it.",
   Khanewal: "A railway junction city, so we check rooms for outside noise before we design the isolation.",
   Burewala: "Cotton-belt heat means we plan ventilation for the equipment, then install and calibrate.",
   Muzaffargarh: "Between the Chenab and the Indus, summers are hot, so we plan cooling and blackout from the start.",
   "Dera Ghazi Khan": "Under the Suleman range, heat and dust lead the plan: a sealed room, cool equipment, careful calibration.",
   Vehari: "High ceilings and hard floors echo, so we plan acoustic panels and soft finishes before the system goes in.",
-  Bahawalnagar: "Near Cholistan, rooms need to keep out heat and grit. We seal them, then install and calibrate.",
-  Rajanpur: "Summers are long and hot, so we plan cooling and blackout before we install anything.",
-  "Rahim Yar Khan": "Long hot summers mean blackout, sealing and cool equipment space come first, then calibration.",
+  Bahawalnagar: "Near Cholistan, grit finds its way into vents, so we put the equipment where its filters and fans can be reached for cleaning.",
+  Rajanpur: "A projector or a large TV depends on the room's size and how dark it can get, so we measure both on the survey before we suggest either.",
+  "Rahim Yar Khan": "One remote should run the room, so we plan lights, screen and sound on a single control scene before we install.",
 }
 
 // Lander cities already have their own pages. The other-towns section skips them.
@@ -113,7 +113,7 @@ const punjabLanderTownSet = new Set<string>(punjabLanderTownNames)
 export const punjabOtherTownsHeading = "Other Punjab towns we visit"
 
 export const punjabOtherTownsLead =
-  "Outside the cities with their own pages, these are the Punjab towns we visit for home cinema projects, and each one starts with the same site visit."
+  "Outside the cities with their own pages, these are other Punjab towns we can visit for home cinema projects, and each one starts with the same site visit."
 
 // Same short lines the map hover cards use. One list, so the section and the cards cannot drift.
 export const punjabOtherTowns = Object.entries(punjabTownAbout)
@@ -137,13 +137,13 @@ export const punjabServicePage: RankingSeoPage = {
 
 Every Punjab project starts with a site visit. Ask for one on our [contact page](/contact-us).
 
-${punjabOtherTownsSection}
-
 ### One method for every Punjab home
 
 For home theatre installation in Punjab, the steps never change from city to city: survey, design, installation with concealed cabling and power, then calibration. The full scope is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation), and the questions worth putting to any installer are in [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan).
 
 Our finished rooms, under [finished residential theatres](/projects/residential), are all Karachi homes. We show them as Karachi work, never as Punjab projects.
+
+${punjabOtherTownsSection}
 
 ### Book a Punjab site visit
 

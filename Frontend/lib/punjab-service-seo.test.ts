@@ -153,7 +153,7 @@ test("Punjab hub stays fact-locked: Lahore team line only, no invented local pre
   assert.doesNotMatch(copy, /Madina/i)
   assert.doesNotMatch(copy, /Wapda/i)
   assert.doesNotMatch(copy, /Citi Housing/i)
-  assert.doesNotMatch(copy.replace(punjabOtherTownsSection, ""), /\bCantt\b/i)
+  assert.doesNotMatch(copy.replace(/Wah Cantt/g, ""), /\bCantt\b/i)
   assert.doesNotMatch(copy, /\bPhase\b/i)
   assert.doesNotMatch(copy, /\bColony\b/i)
   assert.doesNotMatch(copy, /\bTown\b/i)
@@ -210,12 +210,21 @@ test("Punjab hub lists every non-lander town in a visible Other Punjab towns sec
 
   assert.equal(
     punjabOtherTownsLead,
-    "Outside the cities with their own pages, these are the Punjab towns we visit for home cinema projects, and each one starts with the same site visit.",
+    "Outside the cities with their own pages, these are other Punjab towns we can visit for home cinema projects, and each one starts with the same site visit.",
   )
   const leadAt = section.indexOf(punjabOtherTownsLead)
   const firstBullet = section.indexOf("- **")
   assert.ok(leadAt > section.indexOf(punjabOtherTownsHeading), "lead sentence renders after the heading")
   assert.ok(firstBullet > leadAt, "lead sentence renders before the first bullet")
+  assert.ok(
+    punjabServicePage.body.includes(`${punjabOtherTownsSection}\n\n### Book a Punjab site visit`),
+    "towns section sits immediately before Book a Punjab site visit",
+  )
+  assert.ok(
+    punjabServicePage.body.indexOf("### One method for every Punjab home") <
+      punjabServicePage.body.indexOf("### Other Punjab towns we visit"),
+    "One method comes before the towns section",
+  )
 
   const geometry = readFileSync(join(root, "lib/punjab-map-geometry.ts"), "utf8")
   const mapTowns = [...geometry.matchAll(/"name":"([^"]+)"/g)].map((match) => match[1])
@@ -255,6 +264,8 @@ test("Punjab hub lists every non-lander town in a visible Other Punjab towns sec
   assert.doesNotMatch(section, /Bahria/)
   assert.doesNotMatch(section, /Zamzama/)
   assert.doesNotMatch(section, /\bPhase\b/)
+  assert.doesNotMatch(section, /showroom/i)
+  assert.doesNotMatch(section, /office/i)
 })
 
 test("Punjab map cards: page cities link by name and offer contact; towns only offer contact", () => {
@@ -266,7 +277,7 @@ test("Punjab map cards: page cities link by name and offer contact; towns only o
     assert.ok(!mainCities.includes(name), `${name} already has a page`)
     const about = punjabTownAbout[name]
     assert.ok(about, `${name} has a line about what we do`)
-    assert.ok(about.length <= 120, `${name} line is short`)
+    assert.ok(about.length <= 150, `${name} line is short`)
     assert.doesNotMatch(about, /team|office|showroom|branch|headquarters|Karachi|\bbest\b|prices|#1|don't have a page/i)
   }
   assert.deepEqual(Object.keys(punjabTownAbout).sort(), [...towns].sort())
