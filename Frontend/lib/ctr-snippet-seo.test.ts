@@ -13,9 +13,9 @@ const affordableH1 = "Affordable Home Theatre Installation Ideas"
 const affordableDescription =
   "Room, screen, sound, seating, light and cables: where to spend first on an affordable home theatre, what to build in stages and what not to cheap out on."
 
-const emeraldSeoTitle = "Emerald Private Cinema | Home Theater Installation in Karachi"
+const emeraldSeoTitle = "Private Cinema Case Study: Karachi"
 const emeraldDescription =
-  "A dedicated private cinema in Karachi with acoustic detailing, hidden wiring, and picture and sound calibrated to the seats. See how Desert Sound built it."
+  "A dedicated private cinema in Karachi: stepped recliner rows, acoustic wall treatments, a controlled ceiling and hidden wiring, calibrated to the room."
 
 const residencySeoTitle = "Residency Private Cinema | Home Theater Installation in Karachi"
 const residencyDescription =
@@ -96,7 +96,7 @@ test("Emerald and Residency seoTitles stay locked; SERP descriptions are the Des
 
   assert.equal(projectSerpDescription(emerald), emeraldDescription)
   assert.equal(projectSerpDescription(residency), residencyDescription)
-  assert.equal(emeraldDescription.length, 155)
+  assert.equal(emeraldDescription.length, 151)
   assert.equal(residencyDescription.length, 152)
 
   assert.match(seo, /project\.seoDescription \?\?/)
