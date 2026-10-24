@@ -191,7 +191,10 @@ test("Punjab hub shows the city write-ups inside the map, not in the page body",
 test("Punjab hub lists every non-lander town in a visible Other Punjab towns section", () => {
   assert.equal(punjabOtherTownsHeading, "Other Punjab towns we visit")
   assert.match(punjabServicePage.body, /### Other Punjab towns we visit/)
-  assert.match(punjabServicePage.body, punjabOtherTownsSection)
+  assert.ok(
+    punjabServicePage.body.includes(punjabOtherTownsSection),
+    "body renders the other-towns section from the shared town list",
+  )
   // This page has no ## heading, so ### Other Punjab towns we visit renders as an H2.
   assert.doesNotMatch(punjabServicePage.body, /(^|\n)## [^#]/)
   assert.doesNotMatch(punjabOtherTownsSection, /display:\s*none|opacity:\s*0|visually-hidden|sr-only/)
@@ -228,7 +231,7 @@ test("Punjab hub lists every non-lander town in a visible Other Punjab towns sec
   for (const town of punjabOtherTowns) {
     assert.equal(town.about, punjabTownAbout[town.name], town.name)
     assert.match(section, new RegExp(`\\*\\*${town.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\*\\*`))
-    assert.match(section, town.about)
+    assert.ok(section.includes(town.about), `${town.name} hover-card line is in the section`)
   }
 
   const map = readFileSync(join(root, "components/punjab-city-map.tsx"), "utf8")
