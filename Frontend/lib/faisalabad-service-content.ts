@@ -76,7 +76,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
       a: "June is the month we plan hardest for. Afternoons often reach or exceed 40°C and dry dust storms roll through, so the projector and equipment rack are given room to breathe or a cooled spot, never a shut cupboard, and they draw their air from the side away from road and industrial dust. We settle this during the survey, before anything is bought.",
     },
     {
-      q: "Which areas of Faisalabad do you visit?",
+      q: "Do you work across Faisalabad?",
       a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],

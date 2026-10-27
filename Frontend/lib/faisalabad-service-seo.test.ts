@@ -152,7 +152,7 @@ test("Faisalabad copy is install-led, 800–1100 words, with required mesh links
     faisalabadServicePage.faqs[4].q,
     "How do you plan a home cinema for Faisalabad's mill-city heat and dust?",
   )
-  assert.equal(faisalabadServicePage.faqs[5].q, "Which areas of Faisalabad do you visit?")
+  assert.equal(faisalabadServicePage.faqs[5].q, "Do you work across Faisalabad?")
   assert.equal(faisalabadServicePage.faqs[5].a, FAISALABAD_VISIT_FAQ_ANSWER)
   assert.equal(faisalabadFaqJsonLdItems()[5].answer, FAISALABAD_VISIT_FAQ_ANSWER)
 })

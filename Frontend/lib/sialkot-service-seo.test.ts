@@ -152,7 +152,7 @@ test("Sialkot copy is install-led, 800–1100 words, with required mesh links", 
     sialkotServicePage.faqs[4].q,
     "How does Sialkot's industrial and dense housing affect a home cinema?",
   )
-  assert.equal(sialkotServicePage.faqs[5].q, "Which areas of Sialkot do you visit?")
+  assert.equal(sialkotServicePage.faqs[5].q, "Do you work across Sialkot?")
   assert.equal(sialkotServicePage.faqs[5].a, SIALKOT_VISIT_FAQ_ANSWER)
   assert.equal(sialkotFaqJsonLdItems()[5].answer, SIALKOT_VISIT_FAQ_ANSWER)
 })

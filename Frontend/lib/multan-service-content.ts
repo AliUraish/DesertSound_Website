@@ -76,7 +76,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
       a: "Yes, when it is planned for. The projector and AV rack get ventilation or a cooled space instead of a closed cabinet, intakes sit away from dusty doors, and air conditioning is placed so it stays quiet at the seats. That is decided on the site visit, before equipment is ordered.",
     },
     {
-      q: "Which areas of Multan do you visit?",
+      q: "Do you work across Multan?",
       a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
