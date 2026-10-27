@@ -534,13 +534,13 @@ export default function AudioSystemsPage() {
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
                   Contact Us
                 </Link>
                 <a
-                  href="tel:+922111570111"
+                  href="tel:+9221111570111"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-transparent px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-white hover:text-black"
                 >
                   <Phone className="h-5 w-5" />

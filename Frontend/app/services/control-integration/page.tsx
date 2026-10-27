@@ -502,7 +502,7 @@ export default function ControlIntegrationPage() {
 
               <div className="mb-12 flex justify-center">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
                   <span>Contact Us</span>
