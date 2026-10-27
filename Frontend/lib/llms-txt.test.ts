@@ -21,6 +21,7 @@ const requiredPaths = [
   "/contact-us",
   "/about-us",
   "/blogs",
+  "/home-theatre-system-cost-pakistan",
   "/projects",
   "/projects/residential",
   "/projects/commercial",
