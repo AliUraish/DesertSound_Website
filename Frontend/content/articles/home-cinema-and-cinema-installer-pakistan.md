@@ -99,6 +99,8 @@ In Karachi, you get a site survey of light, finishes, seating layout, cable path
 
 For a home cinema installer in Karachi, humid, salty air in homes near the sea is part of every [home theatre in Karachi](/service/home-theatre-design-and-installation) brief. The survey marks where the rack, projector and speakers can sit with airflow and away from damp exterior walls, and chooses cabling, terminations and finishes for that air. In a flat, shared walls, slab ceilings and the building's rules shape bass, cable paths and drilling; in a bungalow, rack distance and finished floors shape the layout. [Project Platinum](/projects/residential/project-platinum) shows the dedicated route, with two recliner rows; [Residency Private Cinema](/projects/residential/residency) keeps a lounge people still use after the film. The [private cinema planning guide for Karachi](/private-home-cinema-karachi) covers the rest of the plan. Generator and UPS backup is advice on the same visit: what should stay up through a cut and where backup can sit with ventilation.
 
+Outside Karachi, we have a team in Lahore for [home cinema installation in Lahore](/service/home-cinema-installation-lahore).
+
 ### Design: the room decides the theater
 
 Start with how the house is used. News and cricket in a living room is a different job from two films a week behind a door. Guests, children, and a sofa that still has to face conversation change speaker height, screen size, and how much bass the next room will tolerate.
