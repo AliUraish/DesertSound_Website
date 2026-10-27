@@ -4,7 +4,6 @@ import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
 import { theatreServiceFaqs } from "./theatre-service-faqs.ts"
-import { theatreInstallHowToSteps } from "./theatre-service-howto.ts"
 import { theatreServiceSerpDescription, theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
@@ -52,24 +51,22 @@ test("theatre service ranking meta matches catalog SERP strings", () => {
   assert.equal(description.length, 147)
 })
 
-test("theatre service HowTo stays lockstep with visible copy", () => {
-  assert.equal(theatreInstallHowToSteps.length, 4)
-  for (const step of theatreInstallHowToSteps) {
-    if (step.name !== "Plan around the room") {
-      assert.match(livePage, new RegExp(step.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
-    }
-  }
+test("theatre service keeps Service and FAQPage schema with visible copy", () => {
   assert.match(livePage, /We plan home theater installation in Karachi and across Pakistan around the room/)
   assert.match(livePage, /starts with the room/)
   assert.match(livePage, /Professional Home Cinema Design/)
   assert.match(livePage, /Immersive Audio & Visual Experience/)
   assert.match(livePage, /Smart Control & Integration/)
   assert.match(livePage, /Calibration & optimisation/)
-  assert.match(schema, /@type": "HowTo"/)
   assert.match(schema, /theatreServiceJsonLd/)
   assert.match(serviceRoute, /theatreServiceJsonLd/)
-  assert.match(serviceRoute, /theatreInstallHowToJsonLd/)
   assert.match(serviceRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
+})
+
+test("theatre JSON-LD contains no HowTo type", () => {
+  assert.doesNotMatch(schema, /"HowTo"/)
+  assert.doesNotMatch(serviceRoute, /HowTo/)
+  assert.doesNotMatch(livePage, /"@type": "HowTo"/)
 })
 
 test("FAQPage JSON-LD uses the same six visible Q&As", () => {

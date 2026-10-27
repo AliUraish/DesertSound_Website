@@ -3,7 +3,7 @@ import HomeTheatreSystemsPage from "@/app/services/home-theatre-systems/page"
 import { faqPageJsonLd } from "@/lib/seo"
 import { serviceRouteMetadata } from "@/lib/service-route-metadata"
 import { theatreServiceFaqs } from "@/lib/theatre-service-faqs"
-import { theatreInstallHowToJsonLd, theatreServiceJsonLd } from "@/lib/theatre-service-schema"
+import { theatreServiceJsonLd } from "@/lib/theatre-service-schema"
 
 const slug = "/service/home-theatre-design-and-installation"
 
@@ -19,10 +19,6 @@ export default function ServicePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(theatreServiceJsonLd()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdScript(theatreInstallHowToJsonLd()) }}
       />
       <script
         type="application/ld+json"
