@@ -551,7 +551,7 @@ export default function HomeTheatreSystemsPage() {
                   href="/contact-us"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-lg text-base font-medium hover:bg-white/90 transition-colors duration-300"
                 >
-                  Get Free Consultation
+                  Book a Consultation
                 </Link>
                 <a 
                   href="tel:+9221111570111"

@@ -70,16 +70,51 @@ test("home-networking title drops leading Best; schema name matches", () => {
   assert.doesNotMatch(catalogBlock.slice(0, 400), /title: "Best Home Networking/)
 })
 
-test("page sources outside the theatre service page do not promise a free consultation, survey, or site visit", () => {
-  const skip = join(frontendRoot, "app/services/home-theatre-systems/page.tsx")
-  const banned = new RegExp(`free (${["consultation", "survey", "site visit"].join("|")})`, "i")
+test("page sources do not promise a free consultation, survey, site survey, site visit, visit, quote, inspection, or estimate", () => {
+  const banned = new RegExp(
+    `free (${["consultation", "survey", "site survey", "site visit", "visit", "quote", "inspection", "estimate"].join("|")})`,
+    "i",
+  )
   const hits: string[] = []
   for (const file of sourceFiles) {
-    if (file === skip) continue
     if (file.endsWith(".test.ts")) continue
     if (!file.startsWith(frontendRoot + "/") && !file.startsWith(frontendRoot + "\\")) continue
     const text = readFileSync(file, "utf8")
     if (banned.test(text)) hits.push(relative(frontendRoot, file))
+  }
+  assert.deepEqual(hits, [])
+})
+
+test("networking title, meta, and headings contain no Best", () => {
+  const ranking = readFileSync(join(frontendRoot, "lib/ranking-seo-content.ts"), "utf8")
+  const seo = readFileSync(join(frontendRoot, "lib/seo.ts"), "utf8")
+  const rankingBlock = ranking.split('"slug": "/service/home-networking-and-wi-fi"')[1] ?? ""
+  const catalogBlock = seo.split('path: "/service/home-networking-and-wi-fi"')[1] ?? ""
+  const rankingPage = rankingBlock.split('"slug":')[0]
+  const catalogPage = catalogBlock.split("path:")[0]
+  const bestWord = /\bBest\b/i
+  assert.doesNotMatch(rankingPage, bestWord)
+  assert.doesNotMatch(catalogPage, bestWord)
+  const title = rankingPage.match(/"title":\s*"([^"]+)"/)?.[1] ?? ""
+  const description = rankingPage.match(/"description":\s*"([^"]+)"/)?.[1] ?? ""
+  const h1 = rankingPage.match(/"h1":\s*"([^"]+)"/)?.[1] ?? ""
+  const headings = [...rankingPage.matchAll(/###[^\n\\]+/g)].map((match) => match[0])
+  for (const text of [title, description, h1, ...headings]) {
+    assert.doesNotMatch(text, bestWord)
+  }
+  assert.doesNotMatch(catalogPage.match(/title:\s*"([^"]+)"/)?.[1] ?? "", bestWord)
+  assert.doesNotMatch(catalogPage.match(/description:\s*\n?\s*"([^"]+)"/)?.[1] ?? "", bestWord)
+})
+
+test("page, component, and lib sources do not claim systems work without internet", () => {
+  const banned = /without internet|continue without/i
+  const hits: string[] = []
+  for (const file of sourceFiles) {
+    if (file.endsWith(".test.ts")) continue
+    const rel = relative(repoRoot, file).replaceAll("\\", "/")
+    if (!/(^|\/)(app|components|lib)\//.test(rel)) continue
+    const text = readFileSync(file, "utf8")
+    if (banned.test(text)) hits.push(rel)
   }
   assert.deepEqual(hits, [])
 })

@@ -26,7 +26,7 @@ export const smartHomeServiceFaqs: SmartHomeServiceFaq[] = [
   {
     question: "Does home automation require strong Wi-Fi and internet access?",
     answer:
-      "A strong home network is essential for responsive app control, streaming, and connected devices. Many local automation functions can continue without internet access, depending on the selected system.",
+      "A strong home network is essential for responsive app control, streaming, and connected devices. We plan the network and backup around outages, depending on the selected system.",
   },
   {
     question: "Can the system be expanded later?",

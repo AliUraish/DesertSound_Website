@@ -74,7 +74,10 @@ test("theatre SERP copy is Pakistan-first from Karachi, with no HQ branding", ()
   assert.doesNotMatch(ranking, /\bHQ\b/)
   assert.doesNotMatch(livePage, /including Karachi/)
   assert.match(livePage, /Explore Solutions/)
-  assert.match(livePage, /Get Free Consultation/)
+  assert.match(livePage, /Book a Consultation/)
+  assert.doesNotMatch(livePage, /(?<![-\w])free\b/i)
+  assert.match(livePage, /href="\/contact-us"/)
+  assert.doesNotMatch(livePage, /\/#contact/)
 })
 
 test("theatre finished-rooms strip is present without remaking locked SERP title", () => {

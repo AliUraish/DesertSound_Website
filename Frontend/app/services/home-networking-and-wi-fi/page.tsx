@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "What happens if the internet goes down?",
     answer:
-      "Basic automation functions like lighting scenes, local control, and scheduled events usually continue to work without internet. However, remote access and cloud-based features may pause until the connection is restored.",
+      "We plan the network and backup around outages. However, remote access and cloud-based features may pause until the connection is restored.",
   },
 ]
 
@@ -485,7 +485,7 @@ export default function HomeNetworkingAndWifiPage() {
                   href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
-                  Book a Consultation
+                  Contact Us
                 </Link>
                 <a
                   href="tel:+9221111570111"
