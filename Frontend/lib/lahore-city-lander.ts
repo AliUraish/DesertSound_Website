@@ -18,7 +18,7 @@ export const lahoreCityLanderPage: RankingSeoPage = {
   imageAlt: "Home cinema installation by Desert Sound’s team in Lahore",
   body: `Desert Sound designs and installs home theaters in Lahore with a **team in Lahore** — the same design–install–calibrate process we use across Pakistan. This is cinema installation work: the room, the concealment, and the calibration. Not a boxed retail system. Not a Lahore showroom.
 
-Book a survey. We measure the space, write a scope, and the Lahore team installs. Call **+92 21 111 570 111** or email **info@desertsound.com.pk**.
+Book a survey. We measure the space, write a scope, and the Lahore team installs. Fill in the form on our [contact page](/contact-us) and we will contact you.
 
 ### What home cinema installation in Lahore means
 
@@ -49,10 +49,7 @@ Detail sits on [home theater / home cinema design and installation in Pakistan](
 
 ### Book a survey in Lahore
 
-Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a survey with our team in Lahore. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).
-
-**Karachi showroom**
-22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi`,
+Fill in the form on our [contact page](/contact-us) and we will contact you. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Lahore?",
@@ -74,11 +71,11 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a surve
   links: [
     {
       label: "Home theater / home cinema design and installation in Pakistan",
-      href: "/service/home-theatre-design-and-installation/",
+      href: "/service/home-theatre-design-and-installation",
     },
     {
       label: "What a cinema installer in Pakistan actually does",
-      href: "/home-cinema-and-cinema-installer-pakistan/",
+      href: "/home-cinema-and-cinema-installer-pakistan",
     },
     {
       label: "Project Platinum",

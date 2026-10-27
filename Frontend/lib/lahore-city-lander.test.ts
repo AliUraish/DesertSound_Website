@@ -32,8 +32,7 @@ const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 
 const LAHORE_AREA_SENTENCE =
   "We work across Lahore, covering areas such as DHA, Gulberg, Model Town and Johar Town."
-const KARACHI_NAP = "22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi"
-const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b/
+const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b|
 
 function visibleText(page: typeof lahoreCityLanderPage) {
   const body = page.body
@@ -49,6 +48,35 @@ function wordCount(text: string) {
 
 function faqAnswerPlainText(answer: string) {
   return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
+function faqPageJsonLdFromPage(page: typeof lahoreCityLanderPage) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faqAnswerPlainText(faq.a),
+      },
+    })),
+  }
+}
+
+function renderedPageData(page: typeof lahoreCityLanderPage) {
+  const faqs = page.faqs.map((faq) => `${faq.q}\n${faq.a}`).join("\n")
+  const links = page.links.map((link) => `${link.label}\n${link.href}`).join("\n")
+  return [
+    page.title,
+    page.description,
+    page.h1,
+    page.body,
+    faqs,
+    links,
+    JSON.stringify(faqPageJsonLdFromPage(page)),
+  ].join("\n")
 }
 
 test("Lahore lander uses locked slug, title, H1, and meta", () => {
@@ -127,8 +155,6 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
     /based in Lahore/i,
   )
   assert.match(haystack, /Not a Lahore showroom/)
-  assert.match(haystack, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
-  assert.match(haystack, /\+92 21 111 570 111/)
   assert.match(haystack, /We have a team in Lahore/)
   assert.doesNotMatch(lahoreCityLanderPage.body, /Karachi proof/)
   assert.doesNotMatch(lahoreCityLanderPage.body, /do not invent Lahore case studies/i)
@@ -154,7 +180,7 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
   assert.doesNotMatch(chrome, /DHA|Gulberg|Model Town|Johar/)
   const faqs = lahoreCityLanderPage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
   assert.doesNotMatch(faqs, AREA_NAME_BAN)
-  const outsideSentence = haystack.replaceAll(LAHORE_AREA_SENTENCE, "").replaceAll(KARACHI_NAP, "")
+  const outsideSentence = haystack.replaceAll(LAHORE_AREA_SENTENCE, "")
   assert.doesNotMatch(outsideSentence, AREA_NAME_BAN)
   assert.doesNotMatch(outsideSentence, /\bDHA\b/)
 })
@@ -206,13 +232,7 @@ test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Z
   assert.ok(faq)
   assert.equal(faq.a, expected)
 
-  const jsonLd = {
-    "@type": "FAQPage",
-    mainEntity: lahoreCityLanderPage.faqs.map((item) => ({
-      name: item.q,
-      acceptedAnswer: { text: faqAnswerPlainText(item.a) },
-    })),
-  }
+  const jsonLd = faqPageJsonLdFromPage(lahoreCityLanderPage)
   const entity = jsonLd.mainEntity.find((item) => item.name === "Is Desert Sound based in Lahore?")
   assert.ok(entity)
   assert.equal(entity.acceptedAnswer.text, expected)
@@ -221,8 +241,8 @@ test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Z
   assert.match(route, /answer: faq\.a/)
   assert.match(seo, /faqAnswerPlainText\(faq\.answer\)/)
 
-  for (const item of lahoreCityLanderPage.faqs) {
-    assert.doesNotMatch(item.a, /Zamzama/)
-    assert.doesNotMatch(faqAnswerPlainText(item.a), /Zamzama/)
-  }
+  const pageData = renderedPageData(lahoreCityLanderPage)
+  assert.doesNotMatch(pageData, /zamzama/i)
+  assert.doesNotMatch(pageData, /DHA Karachi/i)
+  assert.doesNotMatch(pageData, /111\s*570\s*111/)
 })
