@@ -155,7 +155,8 @@ test("theatre FAQPage acceptedAnswer text appears in server HTML outside script 
 test("smart-home FAQPage acceptedAnswer text appears in server HTML outside script tags", () => {
   assert.equal(smartHomeServiceFaqs.length, 5)
   assert.match(smartHomeRoute, /faqPageJsonLd\(smartHomeServiceFaqs\)/)
-  assert.equal((smartHomeRoute.match(/faqPageJsonLd/g) || []).length, 1)
+  assert.equal((smartHomeRoute.match(/faqPageJsonLd\(/g) || []).length, 1)
+  assert.equal((smartHomeRoute.match(/type="application\/ld\+json"/g) || []).length, 1)
   assert.doesNotMatch(smartHomeLive, /faqPageJsonLd/)
   assert.doesNotMatch(smartHomeLayout, /FAQPage|faqPageJsonLd/)
   assert.match(smartHomeLive, /smartHomeServiceFaqs/)
