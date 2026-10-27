@@ -162,6 +162,14 @@ test("smart-home FAQPage acceptedAnswer text appears in server HTML outside scri
   assert.match(smartHomeLive, /smartHomeServiceFaqs/)
   assertAccordionAlwaysRendersAnswers(smartHomeLive, "smart-home accordion")
   assertAnswersInVisibleHtml(smartHomeServiceFaqs, "smart-home")
+  assert.equal(
+    smartHomeServiceFaqs[3].answer,
+    "We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them.",
+  )
+  for (const faq of smartHomeServiceFaqs) {
+    assert.doesNotMatch(faq.answer, /without internet/)
+    assert.doesNotMatch(faq.answer, /continue without/)
+  }
 })
 
 test("no other /service/ page gains FAQPage JSON-LD", () => {
