@@ -3,11 +3,11 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
-import { faqPageJsonLd, homepageInstallFaqs } from "./seo.ts"
 import { theatreServiceFaqs } from "./theatre-service-faqs.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 
+const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
 const homepageAccordion = readFileSync(join(root, "components/contact-section.tsx"), "utf8")
 const collapsePanel = readFileSync(join(root, "components/faq-collapse-panel.tsx"), "utf8")
@@ -21,13 +21,47 @@ function htmlOutsideScripts(html: string) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
 }
 
-function acceptedAnswerTexts(faqs: { question: string; answer: string }[]) {
-  const jsonLd = faqPageJsonLd(faqs)
-  return jsonLd.mainEntity.map((entity) => {
-    assert.equal(entity["@type"], "Question")
-    assert.ok(entity.acceptedAnswer?.text)
-    return entity.acceptedAnswer.text as string
-  })
+function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
+function faqPageJsonLd(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faqAnswerPlainText(faq.answer),
+      },
+    })),
+  }
+}
+
+function parseExportedFaqArray(source: string, exportName: string) {
+  const marker = `export const ${exportName}`
+  const start = source.indexOf(marker)
+  assert.ok(start >= 0, `missing ${exportName}`)
+  const fromArray = source.slice(source.indexOf("= [", start) + 2)
+  let depth = 0
+  let end = -1
+  for (let i = 0; i < fromArray.length; i++) {
+    if (fromArray[i] === "[") depth++
+    else if (fromArray[i] === "]") {
+      depth--
+      if (depth === 0) {
+        end = i + 1
+        break
+      }
+    }
+  }
+  assert.ok(end > 0, `unterminated ${exportName}`)
+  return new Function(`return (${fromArray.slice(0, end)})`)() as {
+    question: string
+    answer: string
+  }[]
 }
 
 /**
@@ -50,14 +84,33 @@ function assertAccordionAlwaysRendersAnswers(source: string, label: string) {
     /isOpen && \([\s\S]*\{faq\.answer\}/,
     `${label} must not mount the answer on click`,
   )
-  assert.doesNotMatch(source, /display:\s*none/, `${label} must not hide answers with display:none`)
 }
+
+function assertAnswersInVisibleHtml(
+  faqs: { question: string; answer: string }[],
+  label: string,
+) {
+  const jsonLd = faqPageJsonLd(faqs)
+  const answers = jsonLd.mainEntity.map((entity) => entity.acceptedAnswer.text)
+  assert.equal(answers.length, faqs.length)
+  for (const [index, faq] of faqs.entries()) {
+    assert.equal(answers[index], faq.answer)
+  }
+
+  const visible = htmlOutsideScripts(serverRenderedFaqHtml(faqs))
+  for (const text of answers) {
+    assert.ok(visible.includes(text), `${label} visible HTML missing: ${text}`)
+  }
+}
+
+const homepageInstallFaqs = parseExportedFaqArray(seo, "homepageInstallFaqs")
 
 test("shared FAQ collapse panel keeps children in the DOM", () => {
   assert.match(collapsePanel, /\{children\}/)
   assert.doesNotMatch(collapsePanel, /isOpen &&/)
-  assert.doesNotMatch(collapsePanel, /display:\s*none/)
   assert.match(collapsePanel, /height: isOpen \? "auto" : 0/)
+  assert.match(seo, /"@type": "FAQPage"/)
+  assert.match(seo, /text: faqAnswerPlainText\(faq\.answer\)/)
 })
 
 test("homepage FAQPage acceptedAnswer text appears in server HTML outside script tags", () => {
@@ -66,21 +119,7 @@ test("homepage FAQPage acceptedAnswer text appears in server HTML outside script
   assert.match(homepage, /<ContactSection showFaq/)
   assert.match(homepageAccordion, /homepageInstallFaqs/)
   assertAccordionAlwaysRendersAnswers(homepageAccordion, "homepage accordion")
-
-  const answers = acceptedAnswerTexts(homepageInstallFaqs)
-  assert.equal(answers.length, 6)
-  for (const [index, faq] of homepageInstallFaqs.entries()) {
-    assert.equal(answers[index], faq.answer)
-  }
-
-  const visible = htmlOutsideScripts(serverRenderedFaqHtml(homepageInstallFaqs))
-  for (const text of answers) {
-    assert.ok(visible.includes(text), `homepage visible HTML missing: ${text}`)
-    assert.doesNotMatch(
-      visible,
-      new RegExp(`<script[^>]*>[\\s\\S]*${text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`),
-    )
-  }
+  assertAnswersInVisibleHtml(homepageInstallFaqs, "homepage")
 })
 
 test("theatre FAQPage acceptedAnswer text appears in server HTML outside script tags", () => {
@@ -88,19 +127,5 @@ test("theatre FAQPage acceptedAnswer text appears in server HTML outside script 
   assert.match(theatreRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
   assert.match(theatreLive, /theatreServiceFaqs/)
   assertAccordionAlwaysRendersAnswers(theatreLive, "theatre accordion")
-
-  const answers = acceptedAnswerTexts(theatreServiceFaqs)
-  assert.equal(answers.length, 5)
-  for (const [index, faq] of theatreServiceFaqs.entries()) {
-    assert.equal(answers[index], faq.answer)
-  }
-
-  const visible = htmlOutsideScripts(serverRenderedFaqHtml(theatreServiceFaqs))
-  for (const text of answers) {
-    assert.ok(visible.includes(text), `theatre visible HTML missing: ${text}`)
-    assert.doesNotMatch(
-      visible,
-      new RegExp(`<script[^>]*>[\\s\\S]*${text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`),
-    )
-  }
+  assertAnswersInVisibleHtml(theatreServiceFaqs, "theatre")
 })

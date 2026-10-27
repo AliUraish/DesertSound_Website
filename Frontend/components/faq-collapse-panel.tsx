@@ -5,7 +5,7 @@ import type { ReactNode } from "react"
 
 /**
  * FAQ answer panel that is always in the server HTML.
- * Closed state is visual only (height/opacity) — no mount-on-click, no display:none.
+ * Closed state is visual only (height/opacity). Answers stay mounted.
  */
 export function FaqCollapsePanel({
   id,
