@@ -102,7 +102,7 @@ export const catalogServicePages: SeoPage[] = [
     path: "/service/home-cinema-installation-karachi",
     title: "Home Cinema Installation in Karachi",
     description:
-      "Home cinema and home theatre installation in Karachi starts with a site survey. We then design, install and calibrate the room after that visit.",
+      "Home cinema and home theatre installation in Karachi starts with a site survey of your room. We then design, install and calibrate it for your seats.",
   },
   {
     path: "/service/home-cinema-installation-islamabad",

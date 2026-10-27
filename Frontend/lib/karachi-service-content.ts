@@ -5,7 +5,7 @@ export const karachiServicePath = "/service/home-cinema-installation-karachi"
 export const karachiServiceTitle = "Home Cinema Installation in Karachi"
 export const karachiServiceH1 = "Home Cinema Installation in Karachi"
 export const karachiServiceDescription =
-  "Home cinema and home theatre installation in Karachi starts with a site survey. We then design, install and calibrate the room after that visit."
+  "Home cinema and home theatre installation in Karachi starts with a site survey of your room. We then design, install and calibrate it for your seats."
 
 /**
  * One plain sentence of Karachi area names. Rendered as a normal paragraph
@@ -21,21 +21,21 @@ export const karachiServicePage: RankingSeoPage = {
   title: karachiServiceTitle,
   description: karachiServiceDescription,
   h1: karachiServiceH1,
-  body: `Desert Sound designs and installs home theaters in Karachi from our Karachi showroom. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit.
+  body: `Desert Sound designs and installs home theaters in Karachi, working from our showroom in the city. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit.
 
 Karachi is our local market. You hire us here for the same design–install–calibrate sequence we use across Pakistan. [Book a Karachi site-visit survey](/contact-us).
 
 ### What home cinema installation in Karachi means
 
-In Karachi, the house decides the cinema. West-facing glass is common. Afternoon sun will wash out a projector if blackout is not honest. Hard walls and bare floors bounce the dialogue. Neighbours sit close enough that bass has to be planned. A closed TV niche and a Karachi summer will cook a receiver if the rack cannot breathe. A floor plan sent by email is not a survey. Someone has to walk the room before any equipment is ordered.
+In Karachi, the house decides the cinema. West-facing glass is common. Afternoon sun will wash out a projector if the room cannot be fully blacked out. Hard walls and bare floors bounce the dialogue. Neighbours sit close enough that bass has to be planned. A closed TV niche and a Karachi summer will cook a receiver if the rack cannot breathe. A floor plan sent by email is not a survey. Someone has to walk the room before any equipment is ordered.
 
 A dedicated room can go darker and louder, with seats facing one way and light fully controlled. A living room that is also a theatre follows the same steps, with a picture sized to the sofa, less bass for the rooms nearby, and cables hidden where the walls allow. Either way, we fit the seats, the screen, and the speakers to this house, not to a brochure.
 
-What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Karachi work follows that after the visit.
+What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). In Karachi, that work starts after the survey.
 
 ### How we work in Karachi
 
-Four stages, always in order: survey, drawings, installation with hidden wiring and supply, then calibration. Our Karachi showroom is where you can talk through the brief. The work itself happens in your room.
+Four stages, always in order: survey, drawings, installation with hidden wiring and power, then calibration. Our Karachi showroom is where you can talk through the brief. The work itself happens in your room.
 
 On the survey we note light, finishes, neighbours, seating layout, cable paths and power. We mark where the rack, projector and speakers can sit with airflow. We lock seats first, then the screen, then the speakers. Reverse that and you will move a display twice. Fitting follows, and the job closes with picture and sound set from your main chair.
 
@@ -59,9 +59,9 @@ More of the planning choices sit on [planning a private home cinema in Karachi](
 
 ### Planning for humidity, sea air, light and power
 
-Humid, salty air in homes near the sea is part of every Karachi brief. The survey marks where the rack, projector and speakers can sit with airflow and away from damp exterior walls, and chooses cabling, terminations and finishes for that air. Dust and heat need a ventilated space, not a pretty cupboard with no airflow. Vent the rack, or do not put the receiver in a cabinet. Projectors need the same honesty: throw, heat, and dust on day one, not after the first shutdown mid-film.
+Sea air in Karachi carries salt and moisture, so the survey plans for it from the start. We place the rack, projector and speakers where air can move and away from damp outside walls, then pick cabling, terminations and finishes that suit that air. Dust and heat need a ventilated space, not a pretty cupboard with no airflow. Vent the rack, or do not put the receiver in a cabinet. Projectors need the same honesty: throw, heat, and dust on day one, not after the first shutdown mid-film.
 
-Load-shedding and voltage swings are part of the brief. Put the theatre on a UPS or inverter and a conditioner at the rack so a cut does not hard-shut a projector. Dedicated circuits beat a shared kitchen ring. Generator and UPS backup is advice on the same visit: what should stay up through a cut and where backup can sit with ventilation.
+Load-shedding and voltage swings are part of the brief. A UPS or inverter, with a conditioner at the rack, stops a cut from hard-shutting the projector, and a dedicated circuit beats sharing the kitchen ring. On the same visit we advise what should stay up through a cut and where backup can sit with ventilation.
 
 Lighting should dim in steps rather than switch off. Cove strips and wall washers give enough light to move around without washing out the picture. One control for lights, picture and sound keeps the room simple for the whole family — a movie scene you start with one tap, not four remotes on the sofa.
 
@@ -73,7 +73,7 @@ The survey sets the timeline, because every room is different. What stays the sa
   faqs: [
     {
       q: "What happens on a Karachi site survey?",
-      a: "We walk the room you already have and note light, finishes, neighbours, seating layout, cable paths and power. Then we lock seats, screen and speakers to that building and plan hidden wiring. Design, install and calibration follow that survey — not a boxed kit chosen first.",
+      a: "We walk the room and note light, finishes, neighbours, seating layout, cable paths and power. Then we lock seats, screen and speakers to that room and plan hidden wiring. Design, install and calibration follow that survey — not a boxed kit chosen first.",
     },
     {
       q: "Can you install a home cinema in a Karachi flat?",
@@ -81,7 +81,7 @@ The survey sets the timeline, because every room is different. What stays the sa
     },
     {
       q: "How do you plan for Karachi humidity and salty sea air?",
-      a: "Humid, salty air in homes near the sea is part of the brief. The survey marks where the rack, projector and speakers can sit with airflow and away from damp exterior walls, and chooses cabling, terminations and finishes for that air.",
+      a: "Salt and moisture in Karachi's sea air go into the plan from the first visit. We place the rack, projector and speakers where air can move and away from damp outside walls, and choose cabling, terminations and finishes that suit that air.",
     },
     {
       q: "How long does home cinema installation in Karachi take?",

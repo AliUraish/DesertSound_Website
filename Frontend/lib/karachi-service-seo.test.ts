@@ -108,7 +108,7 @@ test("Karachi lander uses slug A, locked title/H1/meta, and the single-brand tit
   assert.equal(karachiServiceH1, "Home Cinema Installation in Karachi")
   assert.equal(
     karachiServiceDescription,
-    "Home cinema and home theatre installation in Karachi starts with a site survey. We then design, install and calibrate the room after that visit.",
+    "Home cinema and home theatre installation in Karachi starts with a site survey of your room. We then design, install and calibrate it for your seats.",
   )
   assert.ok(karachiServiceDescription.length >= 140 && karachiServiceDescription.length <= 155)
   assert.equal(karachiServicePage.slug, karachiServicePath)
@@ -246,6 +246,7 @@ test("sitemap count is 126 and listings include the Karachi service URL slashles
 })
 
 test("theatre inbound is one Karachi line without remaking locked SERP title", () => {
+  assert.match(theatreLive, /We have a team in Karachi for/)
   assert.match(theatreLive, /home cinema installation in Karachi/)
   assert.match(theatreLive, /\/service\/home-cinema-installation-karachi/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-karachi").length - 1, 1)
@@ -286,10 +287,10 @@ test("inbound sources each link the Karachi lander exactly once, slashless", () 
   )
   assert.match(
     privateCinema,
-    /\[home cinema installation in Karachi\]\(\/service\/home-cinema-installation-karachi\)/,
+    /\[Karachi home cinema installation service\]\(\/service\/home-cinema-installation-karachi\)/,
   )
   assert.match(
     setupPost,
-    /\[home cinema installation in Karachi\]\(\/service\/home-cinema-installation-karachi\)/,
+    /\[how we install home cinemas in Karachi\]\(\/service\/home-cinema-installation-karachi\)/,
   )
 })

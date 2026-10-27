@@ -310,7 +310,7 @@ export default function HomeTheatreSystemsPage() {
               </li>
             </ul>
             <p className="mt-6 max-w-3xl text-lg text-black/70 font-light leading-relaxed">
-              Those rooms are the local proof of{" "}
+              We have a team in Karachi for{" "}
               <Link href="/service/home-cinema-installation-karachi" className="underline underline-offset-4 hover:text-black">
                 home cinema installation in Karachi
               </Link>
