@@ -73,9 +73,9 @@ test("ranking template wires the opt-in to FAQPage JSON-LD and the accordion", (
   assert.doesNotMatch(accordion, /isOpen && \(/)
 })
 
-test("no ranking /service/ page opts in this PR", () => {
+test("no ranking /service/ page sets emitFaqPageJsonLd", () => {
   assert.doesNotMatch(rankingCatalog, /emitFaqPageJsonLd:\s*true/)
-  assert.doesNotMatch(smartHomeRoute, /faqPageJsonLd/)
+  assert.doesNotMatch(smartHomeRoute, /emitFaqPageJsonLd/)
   assert.match(theatreRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
   assert.match(lahoreRoute, /faqPageJsonLd/)
   assert.doesNotMatch(lahoreRoute, /emitFaqPageJsonLd/)

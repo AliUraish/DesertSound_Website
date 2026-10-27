@@ -19,6 +19,7 @@ export function FaqCollapsePanel({
   return (
     <motion.div
       id={id}
+      aria-hidden={!isOpen}
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
       transition={{ duration: 0.3 }}

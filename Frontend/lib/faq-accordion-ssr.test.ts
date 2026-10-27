@@ -1,8 +1,9 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { readdirSync, readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
+import { smartHomeServiceFaqs } from "./smart-home-service-faqs.ts"
 import { theatreServiceFaqs } from "./theatre-service-faqs.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
@@ -16,6 +17,26 @@ const theatreRoute = readFileSync(
   join(root, "app/service/home-theatre-design-and-installation/page.tsx"),
   "utf8",
 )
+const smartHomeLive = readFileSync(join(root, "app/services/smart-home-automation/page.tsx"), "utf8")
+const smartHomeRoute = readFileSync(join(root, "app/service/smart-home-automation/page.tsx"), "utf8")
+const smartHomeLayout = readFileSync(
+  join(root, "app/services/smart-home-automation/layout.tsx"),
+  "utf8",
+)
+const rankingPage = readFileSync(join(root, "components/ranking-seo-page.tsx"), "utf8")
+const rankingCatalog = readFileSync(join(root, "lib/ranking-seo-content.ts"), "utf8")
+
+const servicePagesThatAlreadyEmitFaqPage = new Set([
+  "home-theatre-design-and-installation",
+  "home-cinema-installation-bahawalpur",
+  "home-cinema-installation-faisalabad",
+  "home-cinema-installation-islamabad",
+  "home-cinema-installation-lahore",
+  "home-cinema-installation-multan",
+  "home-cinema-installation-punjab",
+  "home-cinema-installation-sialkot",
+  "smart-home-automation",
+])
 
 function htmlOutsideScripts(html: string) {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
@@ -109,6 +130,7 @@ test("shared FAQ collapse panel keeps children in the DOM", () => {
   assert.match(collapsePanel, /\{children\}/)
   assert.doesNotMatch(collapsePanel, /isOpen &&/)
   assert.match(collapsePanel, /height: isOpen \? "auto" : 0/)
+  assert.match(collapsePanel, /aria-hidden=\{!isOpen\}/)
   assert.match(seo, /"@type": "FAQPage"/)
   assert.match(seo, /text: faqAnswerPlainText\(faq\.answer\)/)
 })
@@ -128,4 +150,31 @@ test("theatre FAQPage acceptedAnswer text appears in server HTML outside script 
   assert.match(theatreLive, /theatreServiceFaqs/)
   assertAccordionAlwaysRendersAnswers(theatreLive, "theatre accordion")
   assertAnswersInVisibleHtml(theatreServiceFaqs, "theatre")
+})
+
+test("smart-home FAQPage acceptedAnswer text appears in server HTML outside script tags", () => {
+  assert.equal(smartHomeServiceFaqs.length, 5)
+  assert.match(smartHomeRoute, /faqPageJsonLd\(smartHomeServiceFaqs\)/)
+  assert.equal((smartHomeRoute.match(/faqPageJsonLd/g) || []).length, 1)
+  assert.doesNotMatch(smartHomeLive, /faqPageJsonLd/)
+  assert.doesNotMatch(smartHomeLayout, /FAQPage|faqPageJsonLd/)
+  assert.match(smartHomeLive, /smartHomeServiceFaqs/)
+  assertAccordionAlwaysRendersAnswers(smartHomeLive, "smart-home accordion")
+  assertAnswersInVisibleHtml(smartHomeServiceFaqs, "smart-home")
+})
+
+test("no other /service/ page gains FAQPage JSON-LD", () => {
+  assert.doesNotMatch(rankingCatalog, /emitFaqPageJsonLd:\s*true/)
+  assert.match(rankingPage, /shouldEmitFaqPageJsonLd\(page\)/)
+
+  const serviceDir = join(root, "app/service")
+  for (const entry of readdirSync(serviceDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue
+    const page = readFileSync(join(serviceDir, entry.name, "page.tsx"), "utf8")
+    if (servicePagesThatAlreadyEmitFaqPage.has(entry.name)) {
+      assert.match(page, /faqPageJsonLd/, `${entry.name} should keep its FAQPage`)
+    } else {
+      assert.doesNotMatch(page, /faqPageJsonLd/, `${entry.name} must not gain FAQPage`)
+    }
+  }
 })

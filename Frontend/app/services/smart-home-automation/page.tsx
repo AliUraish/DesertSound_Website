@@ -3,9 +3,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useRef, useState } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { FaqCollapsePanel } from "@/components/faq-collapse-panel"
+import { smartHomeServiceFaqs } from "@/lib/smart-home-service-faqs"
 import {
   ArrowRight,
   CheckCircle2,
@@ -57,33 +59,7 @@ const features = [
   },
 ]
 
-const faqs = [
-  {
-    question: "What does a smart home automation system mean?",
-    answer:
-      "A smart home automation system connects functions such as lighting, climate, security, curtains, and entertainment so they can be managed through central controls, schedules, scenes, or remote access.",
-  },
-  {
-    question: "Can entertainment systems be included in the automation?",
-    answer:
-      "Yes. Home theatres, televisions, music systems, lighting, and motorised curtains can be integrated so an entire entertainment scene starts with one command.",
-  },
-  {
-    question: "Is voice control a good idea in Pakistan?",
-    answer:
-      "Voice control can be useful when it is supported by reliable internet access and careful system integration. We also provide physical and app-based controls so essential functions do not depend on voice commands alone.",
-  },
-  {
-    question: "Does home automation require strong Wi-Fi and internet access?",
-    answer:
-      "A strong home network is essential for responsive app control, streaming, and connected devices. Many local automation functions can continue without internet access, depending on the selected system.",
-  },
-  {
-    question: "Can the system be expanded later?",
-    answer:
-      "Yes. We design scalable systems that can accommodate additional rooms, devices, scenes, and control interfaces as your needs change.",
-  },
-]
+const faqs = smartHomeServiceFaqs
 
 function FeatureCard({
   feature,
@@ -148,21 +124,11 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
         </motion.div>
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 text-base font-light leading-relaxed text-black/70">
-              {faq.answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <FaqCollapsePanel isOpen={isOpen}>
+        <p className="pb-6 text-base font-light leading-relaxed text-black/70">
+          {faq.answer}
+        </p>
+      </FaqCollapsePanel>
     </motion.div>
   )
 }
