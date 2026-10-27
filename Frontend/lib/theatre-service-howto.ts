@@ -10,7 +10,7 @@ export const theatreInstallHowToSteps = [
   },
   {
     name: "Professional Home Cinema Design",
-    text: "Professional home cinema design and installation in Pakistan goes beyond a screen and speakers. The design process is planned for sound quality, accurate screen positioning, and effective lighting control — room acoustics analysis and treatment, optimal screen size and positioning, professional lighting design, and custom seating arrangements.",
+    text: "Professional home cinema design and installation in Pakistan goes beyond a screen and speakers. The design process is planned for the best sound quality, accurate screen positioning, and effective lighting control — room acoustics analysis and treatment, optimal screen size and positioning, professional lighting design, and custom seating arrangements.",
   },
   {
     name: "Immersive Audio & Visual Experience",

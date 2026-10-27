@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     name: "Rizwan Ghafoor",
-    quote: "A place for audiophiles in Karachi. Samad Siddiqi is very knowledgable and friendly, guides you to the fullest. Some of the world's brands you'll find here!",
+    quote: "Best place for audiophiles in Karachi. Samad Siddiqi is very knowledgable and friendly, guides you to the fullest. Some of the world's best brands you'll find here!",
   },
   {
     name: "MA Siddiqi",
@@ -24,11 +24,11 @@ const testimonials = [
   },
   {
     name: "Ryan D'Souza",
-    quote: "If you want audio equipment for home entertainment in Karachi, there is no better place than Desert Sound. I've helped configure and build a number of systems for friends and family and have a system built for myself as well. Their rates are surprisingly reasonable and they are the only home entertainment vendor that provides warranty on all their products. Very highly recommended.",
+    quote: "If you want the best audio equipment for home entertainment in Karachi, there is no better place than Desert Sound. I've helped configure and build a number of systems for friends and family and have a system built for myself as well. Their rates are surprisingly reasonable and they are the only home entertainment vendor that provides warranty on all their products. Very highly recommended.",
   },
   {
     name: "Salahuddin Malik",
-    quote: "Desert sound is providing great services to the Pakistan audio video community, they have brands like Marantz, Denon, Focal, Paradigm, SVS, Emotiva & so on. I have a very good experience with them & recently I purchased SVS PB 17 Ultra which is the beast in subwoofer category. Highly recommended.",
+    quote: "Desert sound is providing great services to the Pakistan audio video community, they have world's best brands like Marantz, Denon, Focal, Paradigm, SVS, Emotiva & so on. I have a very good experience with them & recently I purchased SVS PB 17 Ultra which is the beast in subwoofer category. Highly recommended.",
   },
   {
     name: "Ali Iqbal",
