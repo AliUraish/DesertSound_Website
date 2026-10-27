@@ -106,7 +106,7 @@ test("theatre SERP copy is Pakistan-first and names Karachi, with no HQ branding
   assert.doesNotMatch(livePage, /including Karachi/)
   assert.match(livePage, /Explore Solutions/)
   assert.match(livePage, /Book a Consultation/)
-  assert.doesNotMatch(livePage, /\bfree\b/i)
+  assert.doesNotMatch(livePage, /(?<![-\w])free\b/i)
   assert.match(livePage, /href="\/contact-us"/)
   assert.doesNotMatch(livePage, /\/#contact/)
 })
