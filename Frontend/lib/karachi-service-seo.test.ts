@@ -157,7 +157,7 @@ test("Karachi copy is install-led, 900–1100 body words, with required mesh lin
   assert.match(karachiServicePage.body, /### Rooms we've finished\n/)
   assert.match(karachiServicePage.body, /Planning for humidity, sea air, light and power/)
   assert.match(karachiServicePage.body, /After the site survey/)
-  assert.match(karachiServicePage.body, /our Karachi showroom/)
+  assert.match(karachiServicePage.body, /[Oo]ur Karachi showroom/)
   assert.match(karachiServicePage.body, /we have a team in Lahore/)
   assert.match(
     karachiServicePage.body,
