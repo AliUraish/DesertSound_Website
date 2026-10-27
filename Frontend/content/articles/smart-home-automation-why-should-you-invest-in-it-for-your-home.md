@@ -39,7 +39,7 @@ Do not expect magic bill cuts from a hub alone. You get savings when devices act
 
 ### Is It Worth It With Load-Shedding?
 
-Only if the system is planned for it. Pakistan power cuts and ISP drops are part of the design. Local scenes should still run on the home network when the WAN is down, so “Movie” does not depend on the internet. Cloud-only toys fail the first time the fibre blinks.
+Only if it is planned for. Load-shedding and internet drops are part of daily life in Pakistan, so we plan the network and backup around outages. During the survey, we check how your home handles both and plan the system around them.
 
 ### Security
 

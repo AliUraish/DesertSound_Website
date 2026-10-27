@@ -21,6 +21,9 @@ const REASONS_DESCRIPTION =
 const ANSWER_BLOCK =
   "It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan, load-shedding and internet drops are part of daily life, so we plan the network and backup around outages before any gadgets."
 
+const LOAD_SHEDDING_PARAGRAPH =
+  "Only if it is planned for. Load-shedding and internet drops are part of daily life in Pakistan, so we plan the network and backup around outages. During the survey, we check how your home handles both and plan the system around them."
+
 const INBOUND =
   "If you are still deciding, read [how we judge what a house actually needs automated](/smart-home-automation-why-should-you-invest-in-it-for-your-home)."
 
@@ -104,5 +107,12 @@ test("worth-it answer block has no link and schema stays Article/Breadcrumb with
   assert.doesNotMatch(worthIt.body, /"@type": "FAQPage"/)
   assert.doesNotMatch(worthIt.body, /"@type": "HowTo"/)
   assert.doesNotMatch(worthIt.body, /\bUPS\b/)
-  assert.doesNotMatch(worthIt.body, /keep(s)? working|without internet/i)
+  assert.doesNotMatch(
+    worthIt.body,
+    /keep(s)? working|without internet|still run|WAN is down|cloud-only/i,
+  )
+  assert.ok(
+    worthIt.body.includes(LOAD_SHEDDING_PARAGRAPH),
+    "worth-it post is missing the load-shedding paragraph",
+  )
 })
