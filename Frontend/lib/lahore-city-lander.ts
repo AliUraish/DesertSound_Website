@@ -60,7 +60,7 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a surve
     },
     {
       q: "Is Desert Sound based in Lahore?",
-      a: "The showroom is in Karachi: 22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi. Phone +92 21 111 570 111. We have a team in Lahore for surveys and installs. We do not claim a Lahore showroom.",
+      a: "Our showroom is in Karachi, and we have a team in Lahore for surveys and installation. Book a survey through our contact page.",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

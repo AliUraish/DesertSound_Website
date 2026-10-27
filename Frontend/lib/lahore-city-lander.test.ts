@@ -47,6 +47,10 @@ function wordCount(text: string) {
   return text.split(/\s+/).filter((word) => /[A-Za-z]{2,}/.test(word)).length
 }
 
+function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
 test("Lahore lander uses locked slug, title, H1, and meta", () => {
   assert.equal(lahoreCityLanderSlug, "/service/home-cinema-installation-lahore")
   assert.equal(lahoreCityLanderTitle, "Home Cinema Installation in Lahore | Desert Sound")
@@ -193,4 +197,32 @@ test("#33 upgrades existing Lahore mentions to the city lander", () => {
 test("homepage is untouched by the Lahore lander", () => {
   assert.doesNotMatch(homepage, /home-cinema-installation-lahore/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
+})
+
+test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Zamzama", () => {
+  const expected =
+    "Our showroom is in Karachi, and we have a team in Lahore for surveys and installation. Book a survey through our contact page."
+  const faq = lahoreCityLanderPage.faqs.find((item) => item.q === "Is Desert Sound based in Lahore?")
+  assert.ok(faq)
+  assert.equal(faq.a, expected)
+
+  const jsonLd = {
+    "@type": "FAQPage",
+    mainEntity: lahoreCityLanderPage.faqs.map((item) => ({
+      name: item.q,
+      acceptedAnswer: { text: faqAnswerPlainText(item.a) },
+    })),
+  }
+  const entity = jsonLd.mainEntity.find((item) => item.name === "Is Desert Sound based in Lahore?")
+  assert.ok(entity)
+  assert.equal(entity.acceptedAnswer.text, expected)
+  assert.match(route, /faqPageJsonLd\(faqs\)/)
+  assert.match(route, /question: faq\.q/)
+  assert.match(route, /answer: faq\.a/)
+  assert.match(seo, /faqAnswerPlainText\(faq\.answer\)/)
+
+  for (const item of lahoreCityLanderPage.faqs) {
+    assert.doesNotMatch(item.a, /Zamzama/)
+    assert.doesNotMatch(faqAnswerPlainText(item.a), /Zamzama/)
+  }
 })
