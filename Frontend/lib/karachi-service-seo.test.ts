@@ -49,7 +49,7 @@ const copy = `${karachiServicePage.body}\n${karachiServicePage.faqs.map((faq) =>
 const headings = [...karachiServicePage.body.matchAll(/^#{1,6}\s+.+$/gm)].map((match) => match[0])
 
 const lockedAreasSentence =
-  "We install home cinemas in homes across Karachi, including DHA, Clifton, PECHS and Gulshan-e-Iqbal."
+  "We work across Karachi, covering areas such as DHA, Clifton, PECHS and Gulshan-e-Iqbal."
 
 function wordCount(text: string) {
   return text
@@ -188,7 +188,7 @@ test("Karachi copy is install-led, 900–1100 body words, with required mesh lin
 test("Karachi areas sentence appears once and only in the where-we-work body", () => {
   assert.equal(karachiAreasSentence, lockedAreasSentence)
   assert.equal(karachiServicePage.body.split(lockedAreasSentence).length - 1, 1)
-  assert.match(karachiServicePage.body, /### Homes we work in\n\nWe install home cinemas in homes across Karachi/)
+  assert.match(karachiServicePage.body, /### Homes we work in\n\nWe work across Karachi, covering areas such as/)
 
   const bodyWithoutAreas = karachiServicePage.body.split(lockedAreasSentence).join("")
   const offLimits = [

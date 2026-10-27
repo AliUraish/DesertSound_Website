@@ -14,7 +14,7 @@ export const karachiServiceDescription =
  * schema, alt text or URL.
  */
 export const karachiAreasSentence =
-  "We install home cinemas in homes across Karachi, including DHA, Clifton, PECHS and Gulshan-e-Iqbal."
+  "We work across Karachi, covering areas such as DHA, Clifton, PECHS and Gulshan-e-Iqbal."
 
 export const karachiServicePage: RankingSeoPage = {
   slug: karachiServicePath,
