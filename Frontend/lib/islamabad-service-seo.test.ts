@@ -34,6 +34,10 @@ const article33 = readFileSync(
   "utf8",
 )
 const copy = `${islamabadServicePage.body}\n${islamabadServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const ISLAMABAD_AREA_SENTENCE =
+  "We work across Islamabad and Rawalpindi, covering areas such as the F and E sectors, DHA and Bahria Town."
+const ISLAMABAD_AREA_BAN =
+  /Blue Area|F-7|F-8|F-6|F-10|F-11|F-sectors|G-6|G-8|G-9|G-10|G-11|E-11|I-8|I-9|DHA Islamabad|Bahria|Diplomatic Enclave|Margalla|Centaurus|\bDHA\b|Rawalpindi/i
 
 function wordCount(text: string) {
   return text
@@ -171,10 +175,20 @@ test("Islamabad lander does not invent local proof, superlatives, or sister bran
   assert.match(copy, /We do not keep an office in Islamabad\./)
   assert.match(copy, /do not claim an office or showroom there/)
   assert.doesNotMatch(copy, /headquarters/i)
-  assert.doesNotMatch(
-    copy,
-    /Blue Area|F-7|F-8|F-6|F-10|F-11|F-sectors|G-6|G-8|G-9|G-10|G-11|E-11|I-8|I-9|DHA Islamabad|Bahria|Diplomatic Enclave|Margalla|Centaurus/i,
-  )
+  assert.equal(copy.split(ISLAMABAD_AREA_SENTENCE).length - 1, 1)
+  assert.equal(islamabadServicePage.body.split(ISLAMABAD_AREA_SENTENCE).length - 1, 1)
+  const outsideAreas = copy.replace(ISLAMABAD_AREA_SENTENCE, "")
+  assert.doesNotMatch(outsideAreas, ISLAMABAD_AREA_BAN)
+  const chrome = [
+    islamabadServiceTitle,
+    islamabadServiceH1,
+    islamabadServiceDescription,
+    islamabadServicePath,
+    schema,
+  ].join("\n")
+  assert.doesNotMatch(chrome, /Rawalpindi|DHA|Bahria|sector/i)
+  const faqText = islamabadServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqText, /Rawalpindi|DHA|Bahria|sector/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
   assert.match(copy, /These are not Islamabad case studies/)

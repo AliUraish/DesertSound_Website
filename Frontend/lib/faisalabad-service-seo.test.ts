@@ -33,6 +33,10 @@ const article33 = readFileSync(
   "utf8",
 )
 const copy = `${faisalabadServicePage.body}\n${faisalabadServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const FAISALABAD_AREA_SENTENCE =
+  "We work across Faisalabad, covering areas such as Madina Town, Wapda City, Peoples Colony and Civil Lines."
+const FAISALABAD_VISIT_FAQ_ANSWER =
+  "Yes. We work across the city. Book a survey and we will confirm the visit date."
 
 function wordCount(text: string) {
   return text
@@ -149,6 +153,8 @@ test("Faisalabad copy is install-led, 800–1100 words, with required mesh links
     "How do you plan a home cinema for Faisalabad's mill-city heat and dust?",
   )
   assert.equal(faisalabadServicePage.faqs[5].q, "Which areas of Faisalabad do you visit?")
+  assert.equal(faisalabadServicePage.faqs[5].a, FAISALABAD_VISIT_FAQ_ANSWER)
+  assert.equal(faisalabadFaqJsonLdItems()[5].answer, FAISALABAD_VISIT_FAQ_ANSWER)
 })
 
 test("Faisalabad lander does not invent local proof, superlatives, or sister brands", () => {
@@ -162,8 +168,25 @@ test("Faisalabad lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /our Faisalabad (office|HQ|showroom)/i)
   assert.match(copy, /No Faisalabad office or showroom exists to visit/)
   assert.doesNotMatch(copy, /headquarters/i)
+  assert.equal(copy.split(FAISALABAD_AREA_SENTENCE).length - 1, 1)
+  assert.equal(faisalabadServicePage.body.split(FAISALABAD_AREA_SENTENCE).length - 1, 1)
   assert.match(copy, /Madina Town, Wapda City, Peoples Colony and Civil Lines/)
-  assert.match(copy, /Madina Town, Wapda City, Peoples Colony, Civil Lines/)
+  assert.equal(copy.split("Madina Town").length - 1, 1)
+  assert.equal(copy.split("Wapda City").length - 1, 1)
+  assert.equal(copy.split("Peoples Colony").length - 1, 1)
+  assert.equal(copy.split("Civil Lines").length - 1, 1)
+  const outsideAreas = copy.replace(FAISALABAD_AREA_SENTENCE, "")
+  assert.doesNotMatch(outsideAreas, /Madina Town|Wapda City|Peoples Colony|Civil Lines/)
+  const chrome = [
+    faisalabadServiceTitle,
+    faisalabadServiceH1,
+    faisalabadServiceDescription,
+    faisalabadServicePath,
+    schema,
+  ].join("\n")
+  assert.doesNotMatch(chrome, /Madina Town|Wapda City|Peoples Colony|Civil Lines/)
+  const faqText = faisalabadServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqText, /Madina Town|Wapda City|Peoples Colony|Civil Lines/)
   assert.doesNotMatch(copy, /Susan Road|Canal Garden|DHA Faisalabad/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)
