@@ -157,7 +157,7 @@ export const catalogServicePages: SeoPage[] = [
   },
   {
     path: "/service/home-networking-and-wi-fi",
-    title: "Best Home Networking & Wi-Fi Service in Karachi",
+    title: "Home Networking & Wi-Fi Service in Karachi",
     description:
       "Best Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
     image: "/Pictures Final/Services/Home_networking/Cover.jpeg",

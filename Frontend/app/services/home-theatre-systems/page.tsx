@@ -548,13 +548,13 @@ export default function HomeTheatreSystemsPage() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-lg text-base font-medium hover:bg-white/90 transition-colors duration-300"
                 >
                   Get Free Consultation
                 </Link>
                 <a 
-                  href="tel:+922111570111"
+                  href="tel:+9221111570111"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg text-base font-medium hover:bg-white hover:text-black transition-all duration-300"
                 >
                   Call: (+92) 21-111-570-111
