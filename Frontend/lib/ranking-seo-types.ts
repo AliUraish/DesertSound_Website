@@ -7,6 +7,11 @@ export type RankingSeoPage = {
   h1: string
   body: string
   faqs: RankingSeoFaq[]
+  /**
+   * /service/ pages omit FAQPage JSON-LD unless this is true.
+   * Set only when the same `faqs` array is rendered visibly via FaqCollapsePanel.
+   */
+  emitFaqPageJsonLd?: boolean
   links: RankingSeoLink[]
   image?: string
   imageAlt?: string
