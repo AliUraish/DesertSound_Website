@@ -454,6 +454,87 @@ export default function HomeTheatreSystemsPage() {
           </div>
         </section>
 
+        <section className="py-16 lg:py-24 bg-[#F5F5DC]">
+          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
+                What drives the cost of a home theatre in Pakistan
+              </h2>
+              <p className="text-lg text-black/70 font-light leading-relaxed">
+                A home theatre has no fixed price, because the room sets most of the cost. A larger room needs a bigger screen or a brighter projector, more speakers and more acoustic treatment so every seat hears the same film. The speaker layout adds to it: each extra speaker, including ceiling speakers for height effects, means more cable, mounting and tuning. Seating can be a sofa you already own or rows of recliners on a riser. Wiring depends on the build stage, since cable laid before plastering is simpler than routing it through a finished room. Lighting, curtains and one-remote control add their own hardware and programming. We quote after a site survey, once we have measured the room and agreed what you want it to do.
+              </p>
+              {/* TODO cost-post link after Desk clear */}
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
+                Dedicated cinema room or living-room system
+              </h2>
+              <p className="text-lg text-black/70 font-light leading-relaxed">
+                A dedicated cinema room is built for watching films. Windows are blocked or covered, the walls and ceiling take acoustic treatment, seats are placed around the screen, and the equipment sits in a rack outside the room or in a hidden cabinet. A living-room system has to work for daily life as well. Light control comes from curtains or blinds instead of sealed walls, acoustic panels are fewer and finished to match the décor, and the screen may be a large TV or a drop-down projector screen. Speakers go in-wall or in-ceiling so the room still looks like a lounge. Both can be calibrated to the main seats, and the survey shows which one your room suits.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-16 lg:py-24 bg-[#F5F5DC]">
+          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
+                Home theatre in a new build or an existing home
+              </h2>
+              <p className="text-lg text-black/70 font-light leading-relaxed">
+                In a new build, plan the home theatre before plastering and before the false ceiling goes up. We mark the screen, projector and speaker positions, then run conduit and fix back boxes so speaker, video, network and power cables reach each point. Once the walls are finished, no cable shows. In a finished home, we work with what the room allows. Cables can run in slim surface trunking painted to match the wall, above an existing false ceiling, or through concealed channels cut and made good where the walls permit. In apartments, the survey also checks building rules on drilling and cable paths before anything is planned. Either way, every equipment position is agreed on the plan before any cable goes in.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-3xl"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
+                Lighting, curtains and one-remote movie scenes
+              </h2>
+              <p className="text-lg text-black/70 font-light leading-relaxed">
+                A home theatre feels more like a cinema when the room changes with the film. With a movie scene, one press dims the lights, closes the curtains, lowers the screen if you have one, and starts the projector and sound system on the right input. Another press brings the lights back up and opens the curtains when the film ends. Scenes can sit on a handheld remote or a wall keypad, so nobody has to find three remotes and a light switch in the dark. Lighting circuits and curtain motors need wiring planned with the rest of the theatre, which is easiest in a new build. The same scenes can extend to other rooms through{" "}
+                <Link href="/service/smart-home-automation" className="underline underline-offset-4 hover:text-black">
+                  smart home automation
+                </Link>
+                .
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Detailed Content Section C - Smart Control & Integration */}
         <section className="py-16 lg:py-24 bg-[#F5F5DC]">
           <div className="max-w-[88%] lg:max-w-7xl mx-auto px-4 lg:px-8">

@@ -210,7 +210,7 @@ test("theatre inbound is one Islamabad line without remaking locked SERP title",
   assert.match(theatreLive, /\/service\/home-cinema-installation-islamabad/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-islamabad").length - 1, 1)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan"/)
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
 })

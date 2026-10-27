@@ -196,10 +196,10 @@ test("#33 continue-exploring mesh uses descriptive anchors into theatre and #36 
 
 test("theatre SERP title/meta and homepage stay untouched", () => {
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
-  assert.match(seo, /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(seo, /title: "Home Theater Installation in Pakistan"/)
   assert.match(
     rankingCatalog,
-    /"title": "Home Theater Installation in Pakistan \| Design and Install"/,
+    /"title": "Home Theater Installation in Pakistan"/,
   )
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
   assert.match(theatreLive, /cinema installer process/)

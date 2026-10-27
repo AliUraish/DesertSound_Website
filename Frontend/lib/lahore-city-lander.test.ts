@@ -167,12 +167,12 @@ test("theatre inbound is one nationwide line; SERP title and meta stay locked", 
   assert.match(theatreRoute, /const slug = "\/service\/home-theatre-design-and-installation"/)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
   const catalogTheatre = seo.split('path: "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan"/)
   assert.match(
     rankingTheatre.slice(0, 800),
-    /Home theater installation across Pakistan from Karachi\. We design, install, and calibrate cinema rooms — site visits nationwide\./,
+    /Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats./,
   )
-  assert.match(catalogTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(catalogTheatre.slice(0, 500), /Home Theater Installation in Pakistan"/)
 })
 
 test("#33 upgrades existing Lahore mentions to the city lander", () => {

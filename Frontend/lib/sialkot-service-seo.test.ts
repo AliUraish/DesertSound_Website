@@ -208,10 +208,10 @@ test("theatre inbound is one Sialkot nationwide-strip line without remaking lock
   assert.match(theatreLive, /\/service\/home-cinema-installation-sialkot/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-sialkot").length - 1, 1)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan"/)
   assert.match(
     rankingTheatre.slice(0, 800),
-    /Home theater installation across Pakistan from Karachi. We design, install, and calibrate cinema rooms — site visits nationwide./,
+    /Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats./,
   )
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)

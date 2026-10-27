@@ -93,9 +93,9 @@ export const servicePages: SeoPage[] = [
 export const catalogServicePages: SeoPage[] = [
   {
     path: "/service/home-theatre-design-and-installation",
-    title: "Home Theater Installation in Pakistan | Design and Install",
+    title: "Home Theater Installation in Pakistan",
     description:
-      "Home theater installation across Pakistan from Karachi. We design, install, and calibrate cinema rooms — site visits nationwide.",
+      "Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats.",
     image: "/Pictures Final/Services/Home_Theatre/Cover.jpg",
   },
   {
