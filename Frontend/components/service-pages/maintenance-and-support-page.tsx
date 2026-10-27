@@ -370,7 +370,7 @@ export function MaintenanceAndSupportPage() {
                   href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
-                  Get Free Consultation
+                  Book a Consultation
                 </Link>
                 <a
                   href="tel:+9221111570111"

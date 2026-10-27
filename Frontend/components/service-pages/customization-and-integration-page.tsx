@@ -389,14 +389,14 @@ export function CustomizationAndIntegrationPage() {
                 Ready to design around your room?
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-                Get a free consultation and we will plan the furniture, acoustics, and control around the space you already have.
+                Fill in the form and we will contact you.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
-                  Get Free Consultation
+                  Book a Consultation
                 </Link>
                 <a
                   href="tel:+9221111570111"
