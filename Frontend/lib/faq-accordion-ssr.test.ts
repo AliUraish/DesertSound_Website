@@ -145,7 +145,7 @@ test("homepage FAQPage acceptedAnswer text appears in server HTML outside script
 })
 
 test("theatre FAQPage acceptedAnswer text appears in server HTML outside script tags", () => {
-  assert.equal(theatreServiceFaqs.length, 5)
+  assert.equal(theatreServiceFaqs.length, 6)
   assert.match(theatreRoute, /faqPageJsonLd\(theatreServiceFaqs\)/)
   assert.match(theatreLive, /theatreServiceFaqs/)
   assertAccordionAlwaysRendersAnswers(theatreLive, "theatre accordion")
