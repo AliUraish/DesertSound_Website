@@ -19,7 +19,7 @@ const REASONS_DESCRIPTION =
   "Five reasons for a smart home: convenience, security, energy use, simpler entertainment, and daily comfort — if the devices are actually integrated."
 
 const ANSWER_BLOCK =
-  "It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan it has to keep working through power cuts and internet drops, so we plan local control and the network before any gadgets."
+  "It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan, load-shedding and internet drops are part of daily life, so we plan the network and backup around outages before any gadgets."
 
 const INBOUND =
   "If you are still deciding, read [how we judge what a house actually needs automated](/smart-home-automation-why-should-you-invest-in-it-for-your-home)."
@@ -104,4 +104,5 @@ test("worth-it answer block has no link and schema stays Article/Breadcrumb with
   assert.doesNotMatch(worthIt.body, /"@type": "FAQPage"/)
   assert.doesNotMatch(worthIt.body, /"@type": "HowTo"/)
   assert.doesNotMatch(worthIt.body, /\bUPS\b/)
+  assert.doesNotMatch(worthIt.body, /keep(s)? working|without internet/i)
 })

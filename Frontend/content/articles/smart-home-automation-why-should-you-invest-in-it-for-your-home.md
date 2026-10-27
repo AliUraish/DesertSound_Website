@@ -17,7 +17,7 @@
 
 [Smart home automation](/service/smart-home-automation) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps. In Pakistan, a smart-home plan can start with lighting, AC and the home cinema, then add security once the wiring is planned.
 
-It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan it has to keep working through power cuts and internet drops, so we plan local control and the network before any gadgets.
+It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan, load-shedding and internet drops are part of daily life, so we plan the network and backup around outages before any gadgets.
 
 ### Control That Matches How You Live
 
