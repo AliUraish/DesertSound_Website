@@ -17,7 +17,7 @@
     },
     {
       "q": "What should I expect on a Karachi site visit for home cinema installation?",
-      "a": "On a Karachi site visit we survey light, finishes, power, and seating layout, then design and install to that room. Home cinema installation in Karachi is how we prove the method in finished residential theatres. Other Pakistan cities follow the same sequence after a site visit — not a different product, and not a promised day-count."
+      "a": "On a Karachi site visit we survey light, finishes, seating layout, cable paths and power. In homes near the sea in Karachi, we also account for humid, salty air when placing equipment and choosing finishes. Generator and UPS backup is discussed as advice only. Home cinema installation in Karachi is then designed and installed to that room."
     },
     {
       "q": "What should I ask before hiring a home cinema installer?",
@@ -26,6 +26,10 @@
     {
       "q": "Can you install a cinema in an existing finished room?",
       "a": "Yes. A new build is not required. The survey decides what you can hide in a finished apartment or house without opening marble or gypsum — surface routing, furniture paths, or a more compact layout. The process stays the same: design, conceal what the room allows, then calibrate. How long that takes depends on those constraints."
+    },
+    {
+      "q": "Can a home cinema fit in a Karachi apartment?",
+      "a": "A private cinema works in both Karachi apartments and bungalows; the survey plans around the space you have. In an apartment, that means a screen sized to the room, compact or in-wall speakers, bass measured so it stays in the flat, and cable routes that respect the building's rules."
     }
   ],
   "links": [
@@ -86,6 +90,14 @@ Proof is local. We finish rooms in Karachi and take that method on the road. You
 ### What to expect on a Karachi site visit
 
 A site visit is a survey of the room you already have: light, finishes, neighbours, power, and seating layout. The sequence is the same in an apartment lounge and in a dedicated room. After that, design and install are scoped to those facts. [Home cinema installation in Karachi](/service/home-theatre-design-and-installation/) is how we prove the method week to week in finished residential rooms. Other Pakistan cities get the same visit-then-design path, not a second product. Book the survey on +92 21 111 570 111, or [talk to Desert Sound](/contact-us/) at the Zamzama DHA showroom.
+
+### Karachi home cinema installer: what you get
+
+In Karachi, you get a site survey of light, finishes, seating layout, cable paths and power. A private cinema works in both Karachi apartments and bungalows; the survey plans around the space you have. Placement and finishes account for humid, salty air near the sea, wiring is hidden, and picture and sound are calibrated to your seats.
+
+### What a Karachi survey checks
+
+For a home cinema installer in Karachi, humid, salty air in homes near the sea is part of every [home theatre in Karachi](/service/home-theatre-design-and-installation) brief. The survey marks where the rack, projector and speakers can sit with airflow and away from damp exterior walls, and chooses cabling, terminations and finishes for that air. In a flat, shared walls, slab ceilings and the building's rules shape bass, cable paths and drilling; in a bungalow, rack distance and finished floors shape the layout. [Project Platinum](/projects/residential/project-platinum) shows the dedicated route, with two recliner rows; [Residency Private Cinema](/projects/residential/residency) keeps a lounge people still use after the film. The [private cinema planning guide for Karachi](/private-home-cinema-karachi) covers the rest of the plan. Generator and UPS backup is advice on the same visit: what should stay up through a cut and where backup can sit with ventilation.
 
 ### Design: the room decides the theater
 
