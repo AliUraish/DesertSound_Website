@@ -389,7 +389,7 @@ export function CustomizationAndIntegrationPage() {
                 Ready to design around your room?
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
-                Fill in the form and we will contact you.
+                Fill in the form and we will contact you. We then plan the furniture, acoustics, and control around the space you already have.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
