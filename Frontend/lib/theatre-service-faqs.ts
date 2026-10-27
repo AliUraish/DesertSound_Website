@@ -37,6 +37,6 @@ export const theatreServiceFaqs: TheatreServiceFaq[] = [
   {
     question: "Do you provide multi-room audio solutions?",
     answer:
-      "Yes. We distribute audio to multiple rooms with central control, so music can play in sync from the living room to the bedrooms.",
+      "Yes. We distribute audio to multiple rooms and outdoor spaces with central control, so music can play in sync from the living room to the bedrooms and the garden.",
   },
 ]
