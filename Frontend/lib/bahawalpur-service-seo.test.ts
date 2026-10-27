@@ -11,6 +11,7 @@ import {
   bahawalpurServicePath,
   bahawalpurServiceTitle,
 } from "./bahawalpur-service-content.ts"
+import { theatreServiceSerpDescription, theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
@@ -216,10 +217,10 @@ test("theatre inbound is one Bahawalpur nationwide-strip line without remaking l
   assert.equal(theatreLive.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
   assert.doesNotMatch(theatreLive, /\/service\/home-cinema-installation-bahawalpur\//)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan"/)
+  assert.match(rankingTheatre.slice(0, 500), new RegExp(theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
   assert.match(
     rankingTheatre.slice(0, 800),
-    /Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats./,
+    new RegExp(theatreServiceSerpDescription.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
   )
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)

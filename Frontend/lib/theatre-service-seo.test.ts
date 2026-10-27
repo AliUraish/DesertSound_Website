@@ -5,6 +5,7 @@ import test from "node:test"
 import { fileURLToPath } from "node:url"
 import { theatreServiceFaqs } from "./theatre-service-faqs.ts"
 import { theatreInstallHowToSteps } from "./theatre-service-howto.ts"
+import { theatreServiceSerpDescription, theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const livePage = readFileSync(join(root, "app/services/home-theatre-systems/page.tsx"), "utf8")
@@ -17,24 +18,37 @@ const ranking = readFileSync(join(root, "lib/ranking-seo-content.ts"), "utf8")
 const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 const schema = readFileSync(join(root, "lib/theatre-service-schema.ts"), "utf8")
 
-const title = "Home Theater Installation in Pakistan"
-const description =
-  "Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats."
+const title = theatreServiceSerpTitle
+const description = theatreServiceSerpDescription
 
 const depthStart = livePage.indexOf("What drives the cost of a home theatre in Pakistan")
 const depthEnd = livePage.indexOf("Smart Control & Integration")
 const depthCopy = livePage.slice(depthStart, depthEnd)
 const faqText = theatreServiceFaqs.map((faq) => `${faq.question} ${faq.answer}`).join(" ")
 
+function lock(value: string) {
+  return new RegExp(value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+}
+
+function quotedField(source: string, field: string) {
+  const match = source.match(new RegExp(`${field}:\\s*"((?:\\\\.|[^"\\\\])*)"`))
+  assert.ok(match, `missing ${field}`)
+  return JSON.parse(`"${match[1]}"`) as string
+}
+
 test("theatre service ranking meta matches catalog SERP strings", () => {
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
   const catalogTheatre = seo.split('path: "/service/home-theatre-design-and-installation"')[1]
   assert.ok(rankingTheatre)
   assert.ok(catalogTheatre)
-  assert.match(rankingTheatre.slice(0, 500), new RegExp(title.replace(/[|]/g, "\\|")))
-  assert.match(rankingTheatre.slice(0, 800), new RegExp(description.replace(/[|]/g, "\\|")))
-  assert.match(catalogTheatre.slice(0, 500), new RegExp(title.replace(/[|]/g, "\\|")))
-  assert.match(catalogTheatre.slice(0, 800), new RegExp(description.replace(/[|]/g, "\\|")))
+  assert.match(rankingTheatre.slice(0, 500), lock(title))
+  assert.match(rankingTheatre.slice(0, 800), lock(description))
+  assert.match(catalogTheatre.slice(0, 500), lock(title))
+  assert.match(catalogTheatre.slice(0, 800), lock(description))
+  assert.equal(quotedField(catalogTheatre, "title"), theatreServiceSerpTitle)
+  assert.equal(quotedField(catalogTheatre, "description"), theatreServiceSerpDescription)
+  assert.equal(quotedField(rankingTheatre, '"title"'), theatreServiceSerpTitle)
+  assert.equal(quotedField(rankingTheatre, '"description"'), theatreServiceSerpDescription)
   assert.equal(description.length, 147)
 })
 
@@ -81,7 +95,7 @@ test("FAQPage JSON-LD uses the same six visible Q&As", () => {
 })
 
 test("theatre SERP copy is Pakistan-first and names Karachi, with no HQ branding", () => {
-  assert.match(title, /^Home Theater Installation in Pakistan/)
+  assert.equal(title, theatreServiceSerpTitle)
   assert.match(description, /\bKarachi\b/)
   assert.match(description, /across Pakistan/)
   assert.doesNotMatch(description, /including Karachi/i)
@@ -102,12 +116,12 @@ test("theatre SERP copy is Pakistan-first and names Karachi, with no HQ branding
 test("theatre finished-rooms strip is present without remaking locked SERP title", () => {
   assert.match(livePage, /Karachi home cinema installations we&apos;ve finished/)
   assert.match(livePage, /cinema installer process/)
-  assert.equal(title, "Home Theater Installation in Pakistan")
+  assert.equal(title, theatreServiceSerpTitle)
 })
 
 test("homepage Theater title lock is untouched", () => {
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
-  assert.doesNotMatch(homepage, /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.doesNotMatch(homepage, lock(theatreServiceSerpTitle))
 })
 
 test("theatre depth sections sit between Immersive and Smart Control", () => {
@@ -126,7 +140,11 @@ test("theatre depth sections sit between Immersive and Smart Control", () => {
 
 test("theatre FAQs and depth copy carry no prices, durations, superlatives or UPS", () => {
   assert.ok(depthStart > 0 && depthEnd > depthStart)
-  for (const text of [faqText, depthCopy]) {
+  const depthParagraphs = [...depthCopy.matchAll(/<p className="[^"]+">([\s\S]*?)<\/p>/g)]
+    .map((match) => match[1].replace(/<[^>]+>/g, " "))
+    .join(" ")
+  assert.match(depthParagraphs, /no fixed price/)
+  for (const text of [faqText, depthParagraphs]) {
     assert.doesNotMatch(text, /\bPKR\b|\bRs\.?\s?\d|\blakh\b|\d+\s?%/i)
     assert.doesNotMatch(text, /\b\d+\s?(day|days|week|weeks|month|months)\b|timelines? vary/i)
     assert.doesNotMatch(text, /\bbest\b|#1|number one|Digital Sound|\bUPS\b/i)

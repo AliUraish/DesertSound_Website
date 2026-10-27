@@ -3,6 +3,11 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
+import { theatreServiceSerpTitle } from "./theatre-service-serp.ts"
+
+function lock(value: string) {
+  return new RegExp(value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+}
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const articlePath = join(root, "content/articles/home-cinema-and-cinema-installer-pakistan.md")
@@ -196,10 +201,10 @@ test("#33 continue-exploring mesh uses descriptive anchors into theatre and #36 
 
 test("theatre SERP title/meta and homepage stay untouched", () => {
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
-  assert.match(seo, /title: "Home Theater Installation in Pakistan"/)
+  assert.match(seo, new RegExp(`title: "${lock(theatreServiceSerpTitle).source}"`))
   assert.match(
     rankingCatalog,
-    /"title": "Home Theater Installation in Pakistan"/,
+    new RegExp(`"title": "${lock(theatreServiceSerpTitle).source}"`),
   )
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
   assert.match(theatreLive, /cinema installer process/)

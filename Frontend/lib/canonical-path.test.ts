@@ -5,6 +5,7 @@ import test from "node:test"
 import { fileURLToPath } from "node:url"
 import { cutoverRedirects, withTrailingSlashRedirects } from "../cutover-redirects.mjs"
 import { canonicalizePath, isCanonicalInternalHref, stripTrailingSlash } from "./canonical-path.ts"
+import { theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const nextConfig = readFileSync(join(root, "next.config.mjs"), "utf8")
@@ -111,5 +112,5 @@ test("truncated smart-home invest slug redirects to the live post", () => {
 
 test("homepage Theater title lock is untouched", () => {
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
-  assert.doesNotMatch(homepage, /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.doesNotMatch(homepage, new RegExp(theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
 })
