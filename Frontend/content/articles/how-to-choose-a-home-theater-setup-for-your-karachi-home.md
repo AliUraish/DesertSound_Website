@@ -32,7 +32,7 @@ If the room stays a living room by day, plan a setup that can disappear: wall-mo
 
 ### Let Karachi light and heat veto the fantasy
 
-West-facing glass is common here. Afternoon sun will wash out a projector no matter what you spent. Heavy curtains help a TV. They rarely make a bright DHA lounge into a cinema without a proper blackout plan.
+West-facing glass is common here. Afternoon sun will wash out a projector no matter what you spent. Heavy curtains help a TV. They rarely make a bright Karachi lounge into a cinema without a proper blackout plan.
 
 Heat is the other veto. A closed TV niche and a May afternoon will cook a receiver. Vent the rack, or do not put the AVR in a cabinet. Projectors need the same honesty: throw, heat, and dust on day one, not after the first shutdown mid-film.
 
@@ -52,7 +52,7 @@ In apartments, bass is a neighbour problem as much as a sound problem. In villas
 
 Load-shedding and voltage swings are part of the brief in Pakistan. Put the theatre on a UPS or inverter and a conditioner at the rack so a cut does not hard-shut a projector. Dedicated circuits beat a shared kitchen ring.
 
-If the house is still being built, pull speaker cable, HDMI, and spare conduit now. Closing gypsum with no path is how a later upgrade becomes a rebuild. In a finished Clifton or Bahria apartment, plan surface trunking, furniture routing, or a survey that says what you can hide without opening marble.
+If the house is still being built, pull speaker cable, HDMI, and spare conduit now. Closing gypsum with no path is how a later upgrade becomes a rebuild. In a finished Karachi apartment, plan surface trunking, furniture routing, or a survey that says what you can hide without opening marble.
 
 ### When to stop choosing and hire the install
 
