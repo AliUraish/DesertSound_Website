@@ -32,7 +32,7 @@ const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 
 const LAHORE_AREA_SENTENCE =
   "We work across Lahore, covering areas such as DHA, Gulberg, Model Town and Johar Town."
-const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b|
+const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b/
 
 function visibleText(page: typeof lahoreCityLanderPage) {
   const body = page.body
