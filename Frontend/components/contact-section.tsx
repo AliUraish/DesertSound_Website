@@ -1,8 +1,9 @@
 "use client"
 
 import { Phone, Mail, MapPin, Clock, ArrowUpRight, ChevronDown } from "lucide-react"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { useState } from "react"
+import { FaqCollapsePanel } from "@/components/faq-collapse-panel"
 import { homepageInstallFaqs, type FaqItem } from "@/lib/seo"
 
 function HomepageFaqAccordion({ faq, index }: { faq: FaqItem; index: number }) {
@@ -29,20 +30,9 @@ function HomepageFaqAccordion({ faq, index }: { faq: FaqItem; index: number }) {
           </motion.span>
         </button>
       </h3>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            id={panelId}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-4 text-sm font-light leading-relaxed text-[#F5F5DC]/60">{faq.answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <FaqCollapsePanel id={panelId} isOpen={isOpen}>
+        <p className="pb-4 text-sm font-light leading-relaxed text-[#F5F5DC]/60">{faq.answer}</p>
+      </FaqCollapsePanel>
     </div>
   )
 }

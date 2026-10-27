@@ -3,9 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { FaqCollapsePanel } from "@/components/faq-collapse-panel"
 import { theatreServiceFaqs } from "@/lib/theatre-service-faqs"
 import { 
   Tv, 
@@ -111,21 +112,11 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0], index: number }) {
         </motion.div>
       </button>
       
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 text-base text-black/70 font-light leading-relaxed">
-              {faq.answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <FaqCollapsePanel isOpen={isOpen}>
+        <p className="pb-6 text-base text-black/70 font-light leading-relaxed">
+          {faq.answer}
+        </p>
+      </FaqCollapsePanel>
     </motion.div>
   )
 }
