@@ -14,7 +14,7 @@
 
 Choose a home automation system for a Pakistani home by how it behaves on a bad day, not by how the app looks. Decide which parts are wired and which are wireless, ask how it behaves during a power or internet cut, plan the controller and network together, then match devices to what each room is used for.
 
-Most people start with an app or a gadget. In Pakistan the questions that matter are about wiring, the network, power cuts and the rooms you actually use. A glossy interface on a calm afternoon does not tell you how the house will feel at night, or after the lights flicker. This post covers those decisions in order, from how devices connect to what each room actually needs. If you are still deciding [whether automating pays off in your home](/smart-home-automation-why-should-you-invest-in-it-for-your-home), start there.
+Most people start with an app or a gadget. In Pakistan the questions that matter are about wiring, the network, power cuts and the rooms you actually use. A glossy interface on a calm afternoon does not tell you how the house will feel at night, or after the lights flicker. This post covers those decisions in order, from how devices connect to what each room needs. If you are still deciding [whether automating pays off in your home](/smart-home-automation-why-should-you-invest-in-it-for-your-home), start there.
 
 ## What Is a Home Automation System?
 
@@ -36,9 +36,9 @@ Do not treat the standard as the decision. Treat the house as the decision. New-
 
 ## Local Control or Cloud Control
 
-Some systems run scenes on a controller in the house, and others send commands through an internet service. A house controller can act without waiting on a remote server. A cloud service can be simpler to reach from outside the house and simpler to update. Those are trade-offs in how commands travel, not a ranking of products.
+Some systems run scenes on a controller in the house, and others send commands through an internet service. A controller in the house stores the scenes itself. A cloud service can be simpler to reach from outside the house and simpler to update.
 
-Remote access from a phone is useful in Pakistani heat, when you want the AC on before you arrive. It is less useful if every light switch depends on a login that lives on someone else's computers. Ask which functions need the internet and which are stored on the controller in the rack.
+Remote access from a phone is useful in Pakistani heat, when you want the AC on before you arrive. It is less useful if every light switch depends on a login that lives on someone else's computers.
 
 Ask how your system behaves during a power or internet cut, and which functions still need the internet. Treat that answer as part of the purchase, not as a footnote after the app demo. The demo is almost always on a good day.
 
@@ -52,7 +52,7 @@ We plan the network and backup around outages. For the data side of that work, s
 
 ## What Each Room Needs
 
-What you automate should match how the room is used, which is also [the everyday reasons families automate](/what-are-5-reasons-for-a-smart-home). Walk the house at the hours you actually live in it, not only during a tidy survey.
+What you automate should follow how each room is used, and those habits are [the everyday reasons families automate](/what-are-5-reasons-for-a-smart-home). Walk the house at the hours you live in it, not only during a tidy survey.
 
 ### Living Room
 
@@ -60,7 +60,7 @@ A living room is where scenes earn their keep. Lights, AC and curtains should sh
 
 ### Cinema or TV Room
 
-A cinema or TV room should start with one press for lights, screen and sound. The rest of the house can stay as it was. Keep the remote drawer empty: the point is a room that becomes a film, then returns to ordinary use without a hunt for handsets.
+A cinema or TV room should start with one press for lights, screen and sound. The rest of the house can stay as it was. Keep the remote drawer empty: the point is a room that switches into film mode, then returns to ordinary use without a hunt for handsets.
 
 ### Bedrooms
 
@@ -72,7 +72,7 @@ Kitchen and utility areas are about alerts and loads: leak or gas alerts, and sc
 
 ### Entrance, Gate and Outdoors
 
-At the entrance, gate and door status should be visible without a separate camera app. Outdoor lights can follow a schedule. Garden lighting or outdoor speakers can join the same control layer in general terms; they do not need their own world of remotes. Keep names and zones clear so the family is not guessing which switch is the gate.
+At the entrance, gate and door status should be visible without a separate camera app. Outdoor lights can follow a schedule. Garden lighting or outdoor speakers can join the same control layer; they do not need their own world of remotes. Keep names and zones clear so the family is not guessing which switch is the gate.
 
 ### The Equipment Rack
 
@@ -82,7 +82,7 @@ The equipment rack needs ventilation and power for the controller and network ge
 
 An installer usually begins with a survey of the wiring and the network: switch boxes, rack space, and how data moves through the house. A room-by-room plan comes next, listing what should be controlled and from where. Electrician work follows, including neutrals, cable routes and protected power at the rack. Scenes are programmed with the family present, because a scene that looks neat on a laptop can feel wrong at night. Handover is a walkthrough of those scenes, and changes later are expected as habits settle.
 
-None of that requires a branded shopping list at the first meeting. It requires an honest map of the house and a control layer the family will actually touch.
+None of that requires a branded shopping list at the first meeting. It requires an honest map of the house and a control layer the family will touch.
 
 ## Choosing Without Regret
 

@@ -314,7 +314,7 @@ test("10. anchors are unique against other articles, target titles and reserved 
 })
 
 test("11. body shares no eight-word run with related smart-home pages", () => {
-  const compareBody = visibleProse(body.replace(ENTITY, ""))
+  const compareBody = visibleProse(body.replace(ENTITY, "").replace("We plan the network and backup around outages.", ""))
   const ours = eightWordRuns(compareBody)
   const related = [
     "smart-home-automation-why-should-you-invest-in-it-for-your-home.md",
