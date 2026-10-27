@@ -79,7 +79,7 @@ Load-shedding is part of life here, so decide early which equipment should stay 
 
 ## How a private cinema gets built
 
-Every room follows the same order. First a survey measures the space, light, wiring routes and how you use it. Then the design fixes seats, screen, speakers and treatment on paper. Next comes the build, with cables hidden as walls and ceiling are finished. Last, picture and sound are calibrated to the seats rather than left on factory settings. Our [home theatre design and installation](/service/home-theatre-design-and-installation) page covers that service, and our guide for anyone looking for a [home cinema installer in Karachi](/home-cinema-and-cinema-installer-pakistan) explains what to ask before you hire. The survey sets the timeline for your room.
+Every room follows the same order. First a survey measures the space, light, wiring routes and how you use it. Then the design fixes seats, screen, speakers and treatment on paper. Next comes the build, with cables hidden as walls and ceiling are finished. Last, picture and sound are calibrated to the seats rather than left on factory settings. Our [home theatre design and installation](/service/home-theatre-design-and-installation) page covers that service, and our guide for anyone looking for a [home cinema installer in Karachi](/home-cinema-and-cinema-installer-pakistan) explains what to ask before you hire. When you are ready to hire, [home cinema installation in Karachi](/service/home-cinema-installation-karachi) is the install page. The survey sets the timeline for your room.
 
 ## Book a site survey
 

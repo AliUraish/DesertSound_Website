@@ -1,6 +1,7 @@
 import { bahawalpurServicePage } from "./bahawalpur-service-content"
 import { faisalabadServicePage } from "./faisalabad-service-content"
 import { islamabadServicePage } from "./islamabad-service-content"
+import { karachiServicePage } from "./karachi-service-content"
 import { lahoreCityLanderPage } from "./lahore-city-lander"
 import { loadBlogArticles, sortBlogArticles } from "./load-blog-articles"
 import { multanServicePage } from "./multan-service-content"
@@ -280,6 +281,7 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  karachiServicePage,
   islamabadServicePage,
   multanServicePage,
   faisalabadServicePage,

@@ -15,6 +15,7 @@ const links = [
   { href: "/privacy-policy", label: "Privacy policy" },
   { href: "/terms-and-condition", label: "Terms and condition" },
   { href: "/service/home-theatre-design-and-installation", label: "Home theatre design and installation" },
+  { href: "/service/home-cinema-installation-karachi", label: "Home cinema installation in Karachi" },
   { href: "/service/home-cinema-installation-islamabad", label: "Home cinema installation in Islamabad" },
   { href: "/service/home-cinema-installation-lahore", label: "Home cinema installation in Lahore" },
   { href: "/service/home-cinema-installation-multan", label: "Home cinema installation in Multan" },

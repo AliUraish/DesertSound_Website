@@ -53,7 +53,7 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
 
 ### Book a Sialkot site-visit survey
 
-[Book a Sialkot site-visit survey](/contact-us). Mention your neighbourhood and the room you are considering, and we will arrange the inspection. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Sialkot site-visit survey](/contact-us). Mention your neighbourhood and the room you are considering, and we will arrange the inspection. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Bahawalpur](/service/home-cinema-installation-bahawalpur), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Sialkot?",

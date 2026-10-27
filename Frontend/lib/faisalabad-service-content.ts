@@ -53,7 +53,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
 
 ### Book a Faisalabad site-visit survey
 
-[Book a Faisalabad site-visit survey](/contact-us). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Faisalabad site-visit survey](/contact-us). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), [Bahawalpur](/service/home-cinema-installation-bahawalpur), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",

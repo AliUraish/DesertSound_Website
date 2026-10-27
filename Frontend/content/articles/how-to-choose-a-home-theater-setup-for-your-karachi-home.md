@@ -58,4 +58,4 @@ If the house is still being built, pull speaker cable, HDMI, and spare conduit n
 
 A soundbar under a TV is yours. In-wall speakers, a projector, a ventilated rack, and calibration with measurement are not a weekend. If several people will use the room, the finish is one-button start — not four remotes on the arm of the sofa.
 
-[Talk to Desert Sound](/contact-us/) before the screen is ordered. We survey Karachi rooms, write the layout to that space, and install so the first film is the calibrated one, not the one you undo later. That survey-first order is how you [plan a private home cinema in Karachi](/private-home-cinema-karachi).
+[Talk to Desert Sound](/contact-us/) before the screen is ordered. We survey Karachi rooms, write the layout to that space, and install so the first film is the calibrated one, not the one you undo later. That survey-first order is how you [plan a private home cinema in Karachi](/private-home-cinema-karachi). Hire us for [home cinema installation in Karachi](/service/home-cinema-installation-karachi).

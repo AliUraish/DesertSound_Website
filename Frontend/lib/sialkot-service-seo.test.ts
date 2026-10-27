@@ -127,6 +127,8 @@ test("Sialkot copy is install-led, 800–1100 words, with required mesh links", 
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.match(copy, /\/service\/home-cinema-installation-bahawalpur/)
   assert.equal(copy.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
+  assert.match(copy, /\/service\/home-cinema-installation-karachi/)
+  assert.equal(copy.split("/service/home-cinema-installation-karachi").length - 1, 1)
   assert.match(copy, /We have teams in Lahore and Karachi/)
   assert.match(copy, /\[Book a Sialkot site-visit survey\]\(\/contact-us\)/)
   assert.doesNotMatch(copy, /through \[contact\]|via \[contact\]|drives the install/)
