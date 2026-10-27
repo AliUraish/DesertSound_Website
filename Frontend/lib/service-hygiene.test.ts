@@ -70,6 +70,20 @@ test("home-networking title drops leading Best; schema name matches", () => {
   assert.doesNotMatch(catalogBlock.slice(0, 400), /title: "Best Home Networking/)
 })
 
+test("page sources outside the theatre service page do not promise a free consultation, survey, or site visit", () => {
+  const skip = join(frontendRoot, "app/services/home-theatre-systems/page.tsx")
+  const banned = new RegExp(`free (${["consultation", "survey", "site visit"].join("|")})`, "i")
+  const hits: string[] = []
+  for (const file of sourceFiles) {
+    if (file === skip) continue
+    if (file.endsWith(".test.ts")) continue
+    if (!file.startsWith(frontendRoot + "/") && !file.startsWith(frontendRoot + "\\")) continue
+    const text = readFileSync(file, "utf8")
+    if (banned.test(text)) hits.push(relative(frontendRoot, file))
+  }
+  assert.deepEqual(hits, [])
+})
+
 test("homepage Smart Home Automation heading is a crawlable service link", () => {
   const section = readFileSync(join(frontendRoot, "components/services-section.tsx"), "utf8")
   assert.match(

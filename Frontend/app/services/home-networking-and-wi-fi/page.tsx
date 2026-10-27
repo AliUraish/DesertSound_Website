@@ -474,7 +474,7 @@ export default function HomeNetworkingAndWifiPage() {
               viewport={{ once: true }}
             >
               <h2 className="mb-6 text-3xl font-light tracking-tight text-white md:text-4xl lg:text-5xl">
-                Get Free Consultation
+                Book a Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
                 Speak with our team for expert guidance on your home or office network.
@@ -485,7 +485,7 @@ export default function HomeNetworkingAndWifiPage() {
                   href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
-                  Get Free Consultation
+                  Book a Consultation
                 </Link>
                 <a
                   href="tel:+9221111570111"

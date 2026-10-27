@@ -76,7 +76,7 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
       a: "Export workshops and freight sit close to many family compounds, and dense old-city homes often share walls and hard finishes. On the survey we measure what the room can hold — quieter bass for the next room, concealment the structure allows, and light control — then design to that building.",
     },
     {
-      q: "Which areas of Sialkot do you visit?",
+      q: "Do you work across Sialkot?",
       a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],

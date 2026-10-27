@@ -153,7 +153,7 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
     bahawalpurServicePage.faqs[4].q,
     "How do you keep desert dust and strong sunlight out of a Bahawalpur cinema?",
   )
-  assert.equal(bahawalpurServicePage.faqs[5].q, "Which areas of Bahawalpur do you visit?")
+  assert.equal(bahawalpurServicePage.faqs[5].q, "Do you work across Bahawalpur?")
   assert.equal(bahawalpurServicePage.faqs[5].a, BAHAWALPUR_VISIT_FAQ_ANSWER)
   assert.equal(bahawalpurFaqJsonLdItems()[5].answer, BAHAWALPUR_VISIT_FAQ_ANSWER)
 })

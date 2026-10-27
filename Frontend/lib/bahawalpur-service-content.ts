@@ -76,7 +76,7 @@ Summers in Bahawalpur run very hot and dry, and dust storms reach the city. For 
       a: "Both get handled during the survey. Openings are sealed or curtained so the screen sees no daylight, outside doors are kept away from the room, and the projector and rack breathe through ventilated or cooled space instead of a closed cupboard.",
     },
     {
-      q: "Which areas of Bahawalpur do you visit?",
+      q: "Do you work across Bahawalpur?",
       a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
