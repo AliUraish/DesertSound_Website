@@ -21,7 +21,7 @@ const schema = readFileSync(join(root, "lib/theatre-service-schema.ts"), "utf8")
 const title = theatreServiceSerpTitle
 const description = theatreServiceSerpDescription
 
-const depthStart = livePage.indexOf("What drives the cost of a home theatre in Pakistan")
+const depthStart = livePage.indexOf("How we quote a home theatre installation")
 const depthEnd = livePage.indexOf("Smart Control & Integration")
 const depthCopy = livePage.slice(depthStart, depthEnd)
 const faqText = theatreServiceFaqs.map((faq) => `${faq.question} ${faq.answer}`).join(" ")
@@ -126,7 +126,7 @@ test("homepage Theater title lock is untouched", () => {
 
 test("theatre depth sections sit between Immersive and Smart Control", () => {
   const immersive = livePage.indexOf("Immersive Audio & Visual Experience")
-  const cost = livePage.indexOf("What drives the cost of a home theatre in Pakistan")
+  const cost = livePage.indexOf("How we quote a home theatre installation")
   const dedicated = livePage.indexOf("Dedicated cinema room or living-room system")
   const build = livePage.indexOf("Home theatre in a new build or an existing home")
   const lighting = livePage.indexOf("Lighting, curtains and one-remote movie scenes")

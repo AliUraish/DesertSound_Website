@@ -464,7 +464,7 @@ export default function HomeTheatreSystemsPage() {
               className="max-w-3xl"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-black mb-6 tracking-tight">
-                What drives the cost of a home theatre in Pakistan
+                How we quote a home theatre installation
               </h2>
               <p className="text-lg text-black/70 font-light leading-relaxed">
                 A home theatre has no fixed price, because the room sets most of the cost. A larger room needs a bigger screen or a brighter projector, more speakers and more acoustic treatment so every seat hears the same film. The speaker layout adds to it: each extra speaker, including ceiling speakers for height effects, means more cable, mounting and tuning. Seating can be a sofa you already own or rows of recliners on a riser. Wiring depends on the build stage, since cable laid before plastering is simpler than routing it through a finished room. Lighting, curtains and one-remote control add their own hardware and programming. We quote after a site survey, once we have measured the room and agreed what you want it to do.
