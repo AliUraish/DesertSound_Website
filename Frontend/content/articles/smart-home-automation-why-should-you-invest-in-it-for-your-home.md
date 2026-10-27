@@ -45,11 +45,11 @@ Only if it is planned for. Load-shedding and internet drops are part of daily li
 
 Cameras, locks, and lighting schedules only help if the network is up and the family can use them. Scheduled lights are useful. An unchanged default password is not.
 
-Remote cameras are only as good as the uplink. If the ISP drops, you need to know what still works locally.
+Remote cameras are only as good as the uplink, which is why we plan the network and backup around outages.
 
 ### Remote Access
 
-Useful for AC and lights before you get home in Karachi heat. Less useful if it depends on a flaky hallway router. Fix the [network](/service/home-networking-and-wi-fi/) first.
+Useful for AC and lights before you get home in Karachi heat. Less useful if it depends on a flaky hallway router. Fix the [network](/service/home-networking-and-wi-fi) first.
 
 ### What Usually Gets Tied In
 
@@ -70,4 +70,4 @@ We map who lives in the house. A keypad by the door is for guests. The phone app
 
 If you already bought mixed brands, we integrate what we can and leave the rest off the main scenes so one dead bulb does not block “Movie.”
 
-Plan automation with the network and the cinema. [Talk to Desert Sound](/contact-us/).
+Plan automation with the network and the cinema. [Talk to Desert Sound](/contact-us).

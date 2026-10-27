@@ -29,6 +29,14 @@ const INBOUND =
 
 const BANNED = [/\bDHA\b/, /\bClifton\b/, /\bBahria\b/, /\bZamzama\b/, /\bPhase\b/, /Digital Sound/]
 
+const OUTAGE_CLAIM_BAN =
+  /keep(s)? working|without internet|still run|still works?|WAN is down|cloud-only|locally|offline|continue/i
+
+/** Template heading is not article prose; strip it so `continue` in the ban can stay. */
+function bodyProse(text: string) {
+  return text.replaceAll("Continue exploring", "")
+}
+
 function parseFrontmatter(raw: string, filename: string) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
   assert.ok(match, `${filename} must have JSON frontmatter`)
@@ -107,10 +115,9 @@ test("worth-it answer block has no link and schema stays Article/Breadcrumb with
   assert.doesNotMatch(worthIt.body, /"@type": "FAQPage"/)
   assert.doesNotMatch(worthIt.body, /"@type": "HowTo"/)
   assert.doesNotMatch(worthIt.body, /\bUPS\b/)
-  assert.doesNotMatch(
-    worthIt.body,
-    /keep(s)? working|without internet|still run|WAN is down|cloud-only/i,
-  )
+  assert.match(rankingPage, /Continue exploring/)
+  assert.doesNotMatch(bodyProse(worthIt.body), OUTAGE_CLAIM_BAN)
+  assert.doesNotMatch(bodyProse(JSON.stringify(worthIt.meta)), OUTAGE_CLAIM_BAN)
   assert.ok(
     worthIt.body.includes(LOAD_SHEDDING_PARAGRAPH),
     "worth-it post is missing the load-shedding paragraph",
