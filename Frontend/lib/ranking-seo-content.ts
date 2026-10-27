@@ -162,7 +162,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Customization and Integration System in Karachi, Pakistan",
     "description": "Expert customization and integration system services in Karachi, Pakistan, tailored to meet your home or business automation needs.",
     "h1": "Customization and Integration",
-    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [how to optimize your room for the best home cinema experience](/how-to-optimize-your-room-for-the-best-home-cinema-experience/).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
+    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [how to optimize your room for the home cinema experience](/how-to-optimize-your-room-for-the-best-home-cinema-experience/).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
     "faqs": [
       {
         "q": "Do you design custom furniture for the theatre room?",
@@ -238,7 +238,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Home Theater Installation in Pakistan | Design and Install",
     "description": "Home theater installation across Pakistan from Karachi. We design, install, and calibrate cinema rooms — site visits nationwide.",
     "h1": "Home Theater Installation",
-    "body": "We plan each home theater installation in Karachi and across Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room/).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
+    "body": "We plan each home theater installation in Karachi and across Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
     "faqs": [
       {
         "q": "What is in a full home theater system in Pakistan?",
@@ -264,19 +264,19 @@ const sitePages: RankingSeoPage[] = [
     "links": [
       {
         "label": "Smart home automation",
-        "href": "/service/smart-home-automation/"
+        "href": "/service/smart-home-automation"
       },
       {
         "label": "Audio distribution",
-        "href": "/service/audio-distribution/"
+        "href": "/service/audio-distribution"
       },
       {
         "label": "Control systems",
-        "href": "/service/control-systems/"
+        "href": "/service/control-systems"
       },
       {
         "label": "Blogs",
-        "href": "/blogs/"
+        "href": "/blogs"
       }
     ]
   },

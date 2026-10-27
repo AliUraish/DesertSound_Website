@@ -372,7 +372,7 @@ export const homepageInstallFaqs: FaqItem[] = [
       "Yes. Home cinema installation in Karachi is our core work, and we take projects nationwide after a site visit and a written scope. Local rooms get the full survey, hidden wiring, and calibration; out-of-city installs follow the same process after we visit the space.",
   },
   {
-    question: "Is this a retail “best home theater system” package?",
+    question: "Is this a retail home theater system package?",
     answer:
       "No. We do not sell boxed retail systems. Home theater installation here is a designed, installed, and calibrated room—not a shelf SKU.",
   },

@@ -70,20 +70,42 @@ test("home-networking title drops leading Best; schema name matches", () => {
   assert.doesNotMatch(catalogBlock.slice(0, 400), /title: "Best Home Networking/)
 })
 
+function isPageComponentOrLib(file: string) {
+  const rel = relative(repoRoot, file).replaceAll("\\", "/")
+  return /(^|\/)(app|components|lib)\//.test(rel)
+}
+
+const FREE_PROMISE = /(?<![-\w])free (consultation|survey|site survey|site visit|visit|quote|inspection|estimate)/i
+
 test("page sources do not promise a free consultation, survey, site survey, site visit, visit, quote, inspection, or estimate", () => {
-  const banned = new RegExp(
-    `free (${["consultation", "survey", "site survey", "site visit", "visit", "quote", "inspection", "estimate"].join("|")})`,
-    "i",
-  )
   const hits: string[] = []
   for (const file of sourceFiles) {
     if (file.endsWith(".test.ts")) continue
-    if (!file.startsWith(frontendRoot + "/") && !file.startsWith(frontendRoot + "\\")) continue
+    if (!isPageComponentOrLib(file)) continue
     const text = readFileSync(file, "utf8")
-    if (banned.test(text)) hits.push(relative(frontendRoot, file))
+    if (FREE_PROMISE.test(text)) hits.push(relative(frontendRoot, file))
   }
   assert.deepEqual(hits, [])
 })
+
+const AWARD_IDENTIFIERS = [
+  "Best Home Theater and Smart Home Solutions Company in Pakistan",
+  "Best Home Theater Company in Pakistan",
+  "Best Home Theater Company",
+]
+
+function maskNonCopyBestIdentifiers(text: string) {
+  let masked = text.replace(/\/\*[\s\S]*?\*\//g, " ")
+  masked = masked.replace(/(^|[^:"'])\/\/.*$/gm, "$1")
+  masked = masked.replace(/\]\((\/[^)]+)\)/g, "]()")
+  masked = masked.replace(/(?:href|src|slug|path|to|file)\s*[:=]\s*["'`][^"'`]+["'`]/g, "")
+  masked = masked.replace(/["'`]\/[^"'`]+["'`]/g, "''")
+  masked = masked.replace(/\b[\w./-]*best[\w./-]*\.(md|ts|tsx|js|mjs)/gi, "")
+  for (const award of AWARD_IDENTIFIERS) {
+    masked = masked.split(award).join("")
+  }
+  return masked
+}
 
 test("networking title, meta, and headings contain no Best", () => {
   const ranking = readFileSync(join(frontendRoot, "lib/ranking-seo-content.ts"), "utf8")
@@ -106,15 +128,26 @@ test("networking title, meta, and headings contain no Best", () => {
   assert.doesNotMatch(catalogPage.match(/description:\s*\n?\s*"([^"]+)"/)?.[1] ?? "", bestWord)
 })
 
+test("page, component, and lib visible copy does not use the word best", () => {
+  const banned = /\bbest\b/i
+  const hits: string[] = []
+  for (const file of sourceFiles) {
+    if (file.endsWith(".test.ts")) continue
+    if (!isPageComponentOrLib(file)) continue
+    const text = maskNonCopyBestIdentifiers(readFileSync(file, "utf8"))
+    if (banned.test(text)) hits.push(relative(repoRoot, file).replaceAll("\\", "/"))
+  }
+  assert.deepEqual(hits, [])
+})
+
 test("page, component, and lib sources do not claim systems work without internet", () => {
   const banned = /without internet|continue without/i
   const hits: string[] = []
   for (const file of sourceFiles) {
     if (file.endsWith(".test.ts")) continue
-    const rel = relative(repoRoot, file).replaceAll("\\", "/")
-    if (!/(^|\/)(app|components|lib)\//.test(rel)) continue
+    if (!isPageComponentOrLib(file)) continue
     const text = readFileSync(file, "utf8")
-    if (banned.test(text)) hits.push(rel)
+    if (banned.test(text)) hits.push(relative(repoRoot, file).replaceAll("\\", "/"))
   }
   assert.deepEqual(hits, [])
 })
