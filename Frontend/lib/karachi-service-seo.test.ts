@@ -230,8 +230,8 @@ test("Karachi lander does not invent local proof, superlatives, or sister brands
   assert.doesNotMatch(copy, /display:\s*none|opacity:\s*0|aria-hidden/i)
   assert.doesNotMatch(karachiServiceTitle, /Site Visits from Karachi/i)
   assert.match(karachiServiceDescription, /site survey/)
-  assert.match(karachiServiceDescription, /home cinema/)
-  assert.match(karachiServiceDescription, /home theatre/)
+  assert.match(karachiServiceDescription, /[Hh]ome cinema/)
+  assert.match(karachiServiceDescription, /[Hh]ome theatre/)
 })
 
 test("sitemap count is 126 and listings include the Karachi service URL slashless", () => {
