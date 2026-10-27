@@ -13,7 +13,7 @@ const PLAN = [
   {
     file: "how-home-theatres-are-becoming-part-of-modern-living-in-pakistan.md",
     after:
-      "Desert Sound designs each room to the walls you have, not a catalogue layout. We work from the same brief for [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad).",
+      "Desert Sound designs each room to the walls you have, not a catalogue layout. We plan [home cinemas in Islamabad](/service/home-cinema-installation-islamabad) the same way.",
   },
   {
     file: "customizing-home-theaters-for-apartments-vs-villas-in-pakistan.md",
@@ -71,8 +71,9 @@ test("each planned post has the locked Islamabad sentence and exactly one slashl
     )
 
     const anchor = plannedAnchor(item.after)
-    assert.equal(anchors.has(anchor), false, `duplicate Islamabad anchor "${anchor}"`)
-    anchors.add(anchor)
+    const key = anchor.toLowerCase()
+    assert.equal(anchors.has(key), false, `duplicate Islamabad anchor "${anchor}"`)
+    anchors.add(key)
 
     for (const pattern of BANNED) {
       assert.doesNotMatch(body, pattern, `${item.file} body matched ${pattern}`)
