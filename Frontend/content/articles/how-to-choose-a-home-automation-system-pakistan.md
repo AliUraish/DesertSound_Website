@@ -30,7 +30,7 @@ Wired control runs cabling to keypads and to the loads they switch. That is easi
 
 A practical catch sits in the switch box. Many smart switches need a neutral wire there. Have an electrician open the boxes and check before anyone orders hardware. Without a neutral, some positions will not take the device you had in mind, and the plan has to change around the wiring that is already in the wall.
 
-Wired systems include bus standards such as KNX. Wireless devices may use Wi-Fi, Zigbee, Z-Wave or Matter. Ask which standard each device uses and what controls it.
+Wired systems include bus standards such as KNX. Wireless devices may use Wi-Fi, Zigbee or Matter. Ask which standard each device uses and what controls it.
 
 Do not treat the standard as the decision. Treat the house as the decision. New-build work can hide bus cable behind finishes. A finished apartment may add wireless devices on a planned network. Either way, ask who programs the scenes, who supports the controller, and how a device is replaced years later. Stay with one control layer so guests are not handed a pile of logins.
 
@@ -40,7 +40,7 @@ Some systems run scenes on a controller in the house, and others send commands t
 
 Remote access from a phone is useful in Pakistani heat, when you want the AC on before you arrive. It is less useful if every light switch depends on a login that lives on someone else's computers.
 
-Ask how your system behaves during a power or internet cut, and which functions still need the internet. Treat that answer as part of the purchase, not as a footnote after the app demo. The demo is almost always on a good day.
+Ask how your system behaves during a power or internet cut. Treat that answer as part of the purchase, not as a footnote after the app demo. The demo is almost always on a good day.
 
 ## Power Cuts, Voltage Swings and Internet Drops
 
