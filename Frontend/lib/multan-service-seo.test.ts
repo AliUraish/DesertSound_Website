@@ -34,6 +34,10 @@ const article33 = readFileSync(
   "utf8",
 )
 const copy = `${multanServicePage.body}\n${multanServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const MULTAN_AREA_SENTENCE =
+  "We work across Multan, covering areas such as DHA Multan, Gulgasht Colony, Wapda Town and Shah Rukn-e-Alam Colony."
+const MULTAN_VISIT_FAQ_ANSWER =
+  "Yes. We work across the city. Book a survey and we will confirm the visit date."
 
 function wordCount(text: string) {
   return text
@@ -140,6 +144,8 @@ test("Multan copy is install-led, 600–900 words, with required mesh links", ()
   assert.match(multanServicePage.faqs[3].q, /professional home theater installation include/)
   assert.equal(multanServicePage.faqs[4].q, "Can a home cinema in Multan handle the summer heat and dust?")
   assert.equal(multanServicePage.faqs[5].q, "Which areas of Multan do you visit?")
+  assert.equal(multanServicePage.faqs[5].a, MULTAN_VISIT_FAQ_ANSWER)
+  assert.equal(multanFaqJsonLdItems()[5].answer, MULTAN_VISIT_FAQ_ANSWER)
 })
 
 test("Multan lander does not invent local proof, superlatives, or sister brands", () => {
@@ -154,8 +160,19 @@ test("Multan lander does not invent local proof, superlatives, or sister brands"
   assert.doesNotMatch(copy, /Multan office/i)
   assert.match(copy, /There is no Multan showroom/)
   assert.doesNotMatch(copy, /headquarters/i)
-  assert.match(copy, /DHA Multan, Multan Cantt, Gulgasht Colony and Wapda Town/)
-  assert.match(copy, /DHA Multan, Multan Cantt, Gulgasht Colony, Wapda Town/)
+  assert.equal(copy.split(MULTAN_AREA_SENTENCE).length - 1, 1)
+  assert.equal(multanServicePage.body.split(MULTAN_AREA_SENTENCE).length - 1, 1)
+  const outsideAreas = copy.replace(MULTAN_AREA_SENTENCE, "")
+  assert.equal(copy.split("Gulgasht").length - 1, 1)
+  assert.equal(copy.split("DHA Multan").length - 1, 1)
+  assert.equal(copy.split("Wapda Town").length - 1, 1)
+  assert.equal(copy.split("Shah Rukn-e-Alam Colony").length - 1, 1)
+  assert.doesNotMatch(outsideAreas, /DHA Multan|Gulgasht|Wapda Town|Shah Rukn-e-Alam/)
+  assert.doesNotMatch(copy, /\bCantt\b/)
+  const chrome = [multanServiceTitle, multanServiceH1, multanServiceDescription, multanServicePath, schema].join("\n")
+  assert.doesNotMatch(chrome, /DHA|Gulgasht|Wapda Town|Shah Rukn-e-Alam|Cantt/)
+  const faqText = multanServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqText, /DHA|Gulgasht|Wapda Town|Shah Rukn-e-Alam|Cantt/)
   assert.doesNotMatch(copy, /Bosan|Model Town|Royal Orchard|DHA [0-9]|Phase [0-9]/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)

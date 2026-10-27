@@ -34,7 +34,7 @@ The longer checklist is in [what a cinema installer in Pakistan actually does](/
 
 ### Homes we visit in Multan
 
-Site visits from Karachi cover homes across Multan, including DHA Multan, Multan Cantt, Gulgasht Colony and Wapda Town. These are areas we survey, not finished Multan projects. On the visit we compare the rooms you have (a lounge, a spare bedroom, a basement or an upper floor) and choose the one that can be darkened and sealed best.
+We work across Multan, covering areas such as DHA Multan, Gulgasht Colony, Wapda Town and Shah Rukn-e-Alam Colony. These are areas we survey, not finished Multan projects. On the visit we compare the rooms you have (a lounge, a spare bedroom, a basement or an upper floor) and choose the one that can be darkened and sealed best.
 
 ### Rooms we've finished
 
@@ -77,7 +77,7 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
     },
     {
       q: "Which areas of Multan do you visit?",
-      a: "We survey homes in DHA Multan, Multan Cantt, Gulgasht Colony, Wapda Town and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
+      a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [

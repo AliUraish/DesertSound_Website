@@ -34,7 +34,7 @@ Comparing installers? Read [what a cinema installer in Pakistan actually does](/
 
 ### Homes we visit in Bahawalpur
 
-Survey trips from Karachi reach DHA Bahawalpur, Bahawalpur Cantt, Model Town and Satellite Town. They are neighbourhoods we inspect, not completed Bahawalpur projects. A larger home may give a choice of rooms; we usually recommend whichever has the fewest exterior openings and sits farthest from a dusty courtyard.
+We work across Bahawalpur, covering areas such as DHA Bahawalpur, Model Town and Satellite Town. They are neighbourhoods we inspect, not completed Bahawalpur projects. A larger home may give a choice of rooms; we usually recommend whichever has the fewest exterior openings and sits farthest from a dusty courtyard.
 
 ### Rooms we've finished
 
@@ -77,7 +77,7 @@ Summers in Bahawalpur run very hot and dry, and dust storms reach the city. For 
     },
     {
       q: "Which areas of Bahawalpur do you visit?",
-      a: "Our survey trips cover DHA Bahawalpur, Bahawalpur Cantt, Model Town, Satellite Town and other parts of town. Send a request and we'll confirm a date.",
+      a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [

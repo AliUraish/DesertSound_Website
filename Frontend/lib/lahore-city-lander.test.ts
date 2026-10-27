@@ -30,6 +30,11 @@ const article = readFileSync(
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
 const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 
+const LAHORE_AREA_SENTENCE =
+  "We work across Lahore, covering areas such as DHA, Gulberg, Model Town and Johar Town."
+const KARACHI_NAP = "22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi"
+const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b/
+
 function visibleText(page: typeof lahoreCityLanderPage) {
   const body = page.body
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
@@ -133,6 +138,21 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
     lahoreCityLanderPage.body,
     /The same site-visit work covers \[home cinema installation in Islamabad\]\(\/service\/home-cinema-installation-islamabad\)/,
   )
+  assert.equal(haystack.split(LAHORE_AREA_SENTENCE).length - 1, 1)
+  assert.equal(lahoreCityLanderPage.body.split(LAHORE_AREA_SENTENCE).length - 1, 1)
+  const chrome = [
+    lahoreCityLanderTitle,
+    lahoreCityLanderH1,
+    lahoreCityLanderDescription,
+    lahoreCityLanderSlug,
+    lahoreCityLanderPage.imageAlt ?? "",
+  ].join("\n")
+  assert.doesNotMatch(chrome, /DHA|Gulberg|Model Town|Johar/)
+  const faqs = lahoreCityLanderPage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqs, AREA_NAME_BAN)
+  const outsideSentence = haystack.replaceAll(LAHORE_AREA_SENTENCE, "").replaceAll(KARACHI_NAP, "")
+  assert.doesNotMatch(outsideSentence, AREA_NAME_BAN)
+  assert.doesNotMatch(outsideSentence, /\bDHA\b/)
 })
 
 test("theatre inbound is one nationwide line; SERP title and meta stay locked", () => {
