@@ -9,7 +9,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const siteName = "Desert Sound"
 
 const investTitle = "Is Smart Home Automation Worth It in Pakistan?"
-const investH1 = "Smart Home Automation: Why Should You Invest in It for Your Home?"
+const investH1 = "Is Smart Home Automation Worth It in Pakistan?"
 const investDescription =
   "Is home automation in Pakistan worth it? One app for lights, AC, security and your home cinema. See what's worth automating first in your home."
 const pakistanSentence =
