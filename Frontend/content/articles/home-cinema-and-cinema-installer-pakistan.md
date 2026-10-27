@@ -89,7 +89,7 @@ Proof is local. We finish rooms in Karachi and take that method on the road. You
 
 ### What to expect on a Karachi site visit
 
-A site visit is a survey of the room you already have: light, finishes, neighbours, power, and seating layout. The sequence is the same in an apartment lounge and in a dedicated room. After that, design and install are scoped to those facts. [Home cinema installation in Karachi](/service/home-theatre-design-and-installation/) is how we prove the method week to week in finished residential rooms. Other Pakistan cities get the same visit-then-design path, not a second product. Book the survey on +92 21 111 570 111, or [talk to Desert Sound](/contact-us/) at the Zamzama DHA showroom.
+A site visit is a survey of the room you already have: light, finishes, neighbours, power, and seating layout. The sequence is the same in an apartment lounge and in a dedicated room. After that, design and install are scoped to those facts. [Home cinema installation in Karachi](/service/home-theatre-design-and-installation) is how we prove the method week to week in finished residential rooms. Other Pakistan cities get the same visit-then-design path, not a second product. Book the survey on +92 21 111 570 111, or [talk to Desert Sound](/contact-us/) at the Zamzama DHA showroom.
 
 ### Karachi home cinema installer: what you get
 
