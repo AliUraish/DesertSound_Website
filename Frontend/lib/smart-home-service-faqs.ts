@@ -26,7 +26,7 @@ export const smartHomeServiceFaqs: SmartHomeServiceFaq[] = [
   {
     question: "Does home automation require strong Wi-Fi and internet access?",
     answer:
-      "We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them.",
+      "Yes, a strong home network matters. App control, streaming and connected devices all run over Wi-Fi, so we plan coverage across the house as part of the system. Remote access and app features need the internet. During the survey, we check how your home handles load-shedding and internet drops, and plan the network and backup around them.",
   },
   {
     question: "Can the system be expanded later?",
