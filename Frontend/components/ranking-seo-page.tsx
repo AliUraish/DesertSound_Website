@@ -4,6 +4,8 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { canonicalizePath } from "@/lib/canonical-path"
+import { RankingFaqAccordion } from "@/components/ranking-faq-accordion"
+import { shouldEmitFaqPageJsonLd } from "@/lib/faq-page-opt-in"
 import { articleJsonLd, breadcrumbListJsonLd, faqPageJsonLd } from "@/lib/seo"
 import type { RankingSeoPage } from "@/lib/ranking-seo-types"
 
@@ -95,10 +97,9 @@ export function RankingSeoPageView({
   page: RankingSeoPage
   beforeBody?: ReactNode
 }) {
-  const faqSchema =
-    page.faqs.length > 0 && !page.slug.startsWith("/service/")
-      ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
-      : null
+  const faqSchema = shouldEmitFaqPageJsonLd(page)
+    ? faqPageJsonLd(page.faqs.map((faq) => ({ question: faq.q, answer: faq.a })))
+    : null
   const articleSchema = isBlogArticlePage(page.slug)
     ? articleJsonLd({
         path: page.slug,
@@ -174,14 +175,23 @@ export function RankingSeoPageView({
             <div className="mt-16 rounded-2xl bg-white p-6 shadow-lg md:p-10">
               <h2 className="text-2xl font-light tracking-tight md:text-3xl">Frequently asked questions</h2>
               <div className="mt-6 divide-y divide-black/10">
-                {page.faqs.map((faq) => (
-                  <div key={faq.q} className="py-5 first:pt-0 last:pb-0">
-                    <h3 className="text-lg font-light text-black">{faq.q}</h3>
-                    <p className="mt-2 text-base font-light leading-relaxed text-black/70">
-                      {renderInline(faq.a)}
-                    </p>
-                  </div>
-                ))}
+                {page.emitFaqPageJsonLd ? (
+                  <RankingFaqAccordion
+                    items={page.faqs.map((faq) => ({
+                      question: faq.q,
+                      answer: renderInline(faq.a),
+                    }))}
+                  />
+                ) : (
+                  page.faqs.map((faq) => (
+                    <div key={faq.q} className="py-5 first:pt-0 last:pb-0">
+                      <h3 className="text-lg font-light text-black">{faq.q}</h3>
+                      <p className="mt-2 text-base font-light leading-relaxed text-black/70">
+                        {renderInline(faq.a)}
+                      </p>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           )}

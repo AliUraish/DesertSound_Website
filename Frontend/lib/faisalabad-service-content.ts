@@ -34,7 +34,7 @@ Buyers who want the full set of questions to ask an installer will find it at [w
 
 ### Homes we visit in Faisalabad
 
-On visits from Karachi we survey homes across Faisalabad in Madina Town, Wapda City, Peoples Colony and Civil Lines. These are areas we survey, not finished Faisalabad projects. In a family compound there is often more than one candidate room, so we stand in each with you and pick whichever shuts out daylight and keeps sound in most easily.
+We work across Faisalabad, covering areas such as Madina Town, Wapda City, Peoples Colony and Civil Lines. These are areas we survey, not finished Faisalabad projects. In a family compound there is often more than one candidate room, so we stand in each with you and pick whichever shuts out daylight and keeps sound in most easily.
 
 ### Rooms we've finished
 
@@ -76,8 +76,8 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
       a: "June is the month we plan hardest for. Afternoons often reach or exceed 40°C and dry dust storms roll through, so the projector and equipment rack are given room to breathe or a cooled spot, never a shut cupboard, and they draw their air from the side away from road and industrial dust. We settle this during the survey, before anything is bought.",
     },
     {
-      q: "Which areas of Faisalabad do you visit?",
-      a: "We survey homes in Madina Town, Wapda City, Peoples Colony, Civil Lines and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
+      q: "Do you work across Faisalabad?",
+      a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [

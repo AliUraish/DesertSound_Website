@@ -30,7 +30,7 @@ That is why a home cinema installer in Lahore, in our meaning, is the person who
 
 ### We have a team in Lahore
 
-Our team in Lahore runs the project on the ground. They survey the room, then lock seats, screen, and speakers to the building. Install covers concealment and power. Calibration matches picture and sound to those seats. The method is the same one Desert Sound uses across Pakistan.
+Our team in Lahore runs the project on the ground. They survey the room, then lock seats, screen, and speakers to the building. Install covers concealment and power. Calibration matches picture and sound to those seats. The method is the same one Desert Sound uses across Pakistan. We work across Lahore, covering areas such as DHA, Gulberg, Model Town and Johar Town.
 
 Read [what a cinema installer in Pakistan actually does](/home-cinema-and-cinema-installer-pakistan) for the sequence in full.
 

@@ -35,7 +35,7 @@
   "links": [
     {
       "label": "Full home cinema design-and-install scope",
-      "href": "/service/home-theatre-design-and-installation/"
+      "href": "/service/home-theatre-design-and-installation"
     },
     {
       "label": "Project Platinum, a finished Karachi cinema",
@@ -55,7 +55,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -79,7 +79,7 @@ A dedicated room can go darker and louder. [Emerald Private Cinema](/projects/re
 
 Hire the installer who can walk you through a finished room like yours, then tell you what your room cannot do. Photos of concealed cable, a seating line that actually sees the screen, and a rack that can breathe count. A showroom wall of cartons does not.
 
-A cinema installer in Pakistan designs the room, conceals wiring and power before finishes close, then calibrates picture and sound — the same process from Karachi on nationwide site visits. Ask them to walk that sequence, then point you at finished rooms. The [full home cinema design-and-install scope](/service/home-theatre-design-and-installation/) is the service page for what gets specified; this page is what the installer actually does.
+A cinema installer in Pakistan designs the room, conceals wiring and power before finishes close, then calibrates picture and sound — the same process from Karachi on nationwide site visits. Ask them to walk that sequence, then point you at finished rooms. The [full home cinema design-and-install scope](/service/home-theatre-design-and-installation) is the service page for what gets specified; this page is what the installer actually does.
 
 Ask what they do before the walls close, and what they do after the first film. Design should name screen height, speaker layout, and a cable path. Install should name concealment, power, and ventilation. Calibration should name measurement at the main seat — not a preset left on from the factory.
 
@@ -89,7 +89,7 @@ Proof is local. We finish rooms in Karachi and take that method on the road. You
 
 ### What to expect on a Karachi site visit
 
-A site visit is a survey of the room you already have: light, finishes, neighbours, power, and seating layout. The sequence is the same in an apartment lounge and in a dedicated room. After that, design and install are scoped to those facts. [Home cinema installation in Karachi](/service/home-theatre-design-and-installation/) is how we prove the method week to week in finished residential rooms. Other Pakistan cities get the same visit-then-design path, not a second product. Book the survey on +92 21 111 570 111, or [talk to Desert Sound](/contact-us/) at the Zamzama DHA showroom.
+A site visit is a survey of the room you already have: light, finishes, neighbours, power, and seating layout. The sequence is the same in an apartment lounge and in a dedicated room. After that, design and install are scoped to those facts. [Home cinema installation in Karachi](/service/home-theatre-design-and-installation) is how we prove the method week to week in finished residential rooms. Other Pakistan cities get the same visit-then-design path, not a second product. Book the survey on +92 21 111 570 111, or [talk to Desert Sound](/contact-us) at the Zamzama DHA showroom.
 
 ### Karachi home cinema installer: what you get
 
@@ -143,4 +143,4 @@ Desert Sound installs home cinema rooms across Pakistan, from Karachi. The resid
 
 Do not hire on a national claim with no local rooms. Do not hire on a shop floor. Ask for a survey, a written scope that includes concealment and calibration, and finished theatres that match the brief.
 
-If the room is still a drawing, call before the walls close. If it is already painted, call before you buy the screen. [Talk to Desert Sound](/contact-us/) and we will tell you what the space can actually support — then install it as a [home theatre](/service/home-theatre-design-and-installation/), not a pile of boxes.
+If the room is still a drawing, call before the walls close. If it is already painted, call before you buy the screen. [Talk to Desert Sound](/contact-us) and we will tell you what the space can actually support — then install it as a [home theatre](/service/home-theatre-design-and-installation), not a pile of boxes.

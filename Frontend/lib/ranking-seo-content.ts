@@ -196,7 +196,7 @@ const sitePages: RankingSeoPage[] = [
   {
     "slug": "/service/home-networking-and-wi-fi",
     "image": "/Pictures Final/Services/Home_networking/Cover.jpeg",
-    "title": "Best Home Networking & Wi-Fi Service in Karachi",
+    "title": "Home Networking & Wi-Fi Service in Karachi",
     "description": "Best Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
     "h1": "Home Networking and Wi-Fi System in Pakistan",
     "body": "Home networking and Wi-Fi is the backbone for streaming, smart devices, and automation. A professional system means coverage, speed, and security through the whole property, not a single router in the hallway.\n\n### Home Wi-Fi Set-up and Installation in Karachi\nWe survey interference, walls, and device count, then place access points, lock down security, and shape bandwidth. [Audio distribution](/service/audio-distribution/) and 4K cinema both depend on this.\n\n### Best Home Networking and Wi-Fi Service in Karachi\nConsultation, install, [customization and integration](/service/customization-and-integration/), then maintenance. Mesh where it's needed, wired backbone where it's needed. [Smart home automation](/service/smart-home-automation/), lighting, climate, and cameras all ride on the same network.\n\n### Wi-Fi Service Company in Karachi\nApartments, villas, offices. We kill dead zones, set up mesh, configure routers, and keep the network secure.\n\n### Smart Home Devices on Wi-Fi\nEvery device gets a planned connection so automation and the home theatre stay responsive.",

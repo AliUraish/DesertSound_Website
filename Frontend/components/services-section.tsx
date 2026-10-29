@@ -137,7 +137,13 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
             </div>
             
             <h3 className={cn("text-2xl font-light mb-3 leading-tight", textColor)}>
-              {title}
+              {title === "Smart Home Automation" && link ? (
+                <a href={link} className="text-inherit no-underline">
+                  {title}
+                </a>
+              ) : (
+                title
+              )}
             </h3>
             
             <p className={cn("text-sm leading-relaxed opacity-80 mb-5", textColor)}>
@@ -182,7 +188,13 @@ const Card = ({ i, title, description, image, imagePosition, icon: Icon, color, 
                 </div>
                 
                 <h3 className={cn("text-5xl font-light mb-6 leading-tight", textColor)}>
-                    {title}
+                    {title === "Smart Home Automation" && link ? (
+                      <a href={link} className="text-inherit no-underline">
+                        {title}
+                      </a>
+                    ) : (
+                      title
+                    )}
                 </h3>
                 
                 <p className={cn("text-lg leading-relaxed opacity-80", textColor)}>

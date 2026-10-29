@@ -526,7 +526,7 @@ export default function AudioSystemsPage() {
               viewport={{ once: true }}
             >
               <h2 className="mb-6 text-3xl font-light tracking-tight text-white md:text-4xl lg:text-5xl">
-                Get Free Consultation
+                Book a Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
                 Speak with our team for expert guidance on your audio system.
@@ -534,13 +534,13 @@ export default function AudioSystemsPage() {
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
                   Contact Us
                 </Link>
                 <a
-                  href="tel:+922111570111"
+                  href="tel:+9221111570111"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white bg-transparent px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-white hover:text-black"
                 >
                   <Phone className="h-5 w-5" />

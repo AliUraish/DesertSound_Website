@@ -178,7 +178,7 @@ test("#33 apartment line is city-only Karachi, not Clifton or Bahria", () => {
 
 test("#33 continue-exploring mesh uses descriptive anchors into theatre and #36 cases", () => {
   const required = [
-    { href: "/service/home-theatre-design-and-installation/", label: /design-and-install scope/i },
+    { href: "/service/home-theatre-design-and-installation", label: /design-and-install scope/i },
     { href: "/projects/residential/project-platinum", label: /Project Platinum.*Karachi/i },
     { href: "/projects/residential/residency", label: /Residency.*Karachi/i },
     { href: "/projects/residential/studio-vellari", label: /Studio Vellari.*Karachi/i },
@@ -191,6 +191,8 @@ test("#33 continue-exploring mesh uses descriptive anchors into theatre and #36 
     assert.doesNotMatch(found.label, /click here/i)
     assert.doesNotMatch(found.label, /\bbest\b/i)
   }
+  assert.doesNotMatch(article, /\/service\/home-theatre-design-and-installation\//)
+  assert.doesNotMatch(article, /\/contact-us\//)
 })
 
 test("theatre SERP title/meta and homepage stay untouched", () => {

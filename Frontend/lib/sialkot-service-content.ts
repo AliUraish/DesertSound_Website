@@ -34,7 +34,7 @@ If you are comparing installers, our checklist at [what a cinema installer in Pa
 
 ### Homes we visit in Sialkot
 
-Site-visit surveys from Karachi cover Sialkot Cantt, Citi Housing, Model Town and Ghazi Officers Colony. These are areas we survey, not finished Sialkot projects. Cantonment streets are wider and its lawns larger than the lanes nearer the old core, so we judge each option by how far it sits from the party wall and the road, and choose the one that seals best.
+We work across Sialkot, covering areas such as Model Town, Citi Housing and Ghazi Officers Colony. These are areas we survey, not finished Sialkot projects. Street widths and lawn sizes vary across the city, so we judge each option by how far it sits from the party wall and the road, and choose the one that seals most tightly.
 
 ### Rooms we've finished
 
@@ -76,8 +76,8 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
       a: "Export workshops and freight sit close to many family compounds, and dense old-city homes often share walls and hard finishes. On the survey we measure what the room can hold — quieter bass for the next room, concealment the structure allows, and light control — then design to that building.",
     },
     {
-      q: "Which areas of Sialkot do you visit?",
-      a: "We survey homes in Sialkot Cantt, Citi Housing, Model Town, Ghazi Officers Colony and other parts of the city on visits from Karachi. Book a survey and we will confirm the visit date.",
+      q: "Do you work across Sialkot?",
+      a: "Yes. We work across the city. Book a survey and we will confirm the visit date.",
     },
   ],
   links: [

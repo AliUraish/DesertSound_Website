@@ -28,7 +28,7 @@ function articleBody(filename: string) {
   return match[1]
 }
 
-test("installer article has the locked Lahore sentence and exactly one slashless Lahore service link", () => {
+test("installer article has the locked Lahore sentence and exactly one link with this anchor", () => {
   const body = articleBody(FILE)
   assert.ok(body.includes(SENTENCE), `${FILE} is missing its locked sentence`)
   assert.match(body, /we have a team in Lahore/)
@@ -37,7 +37,12 @@ test("installer article has the locked Lahore sentence and exactly one slashless
   const planned = links.filter(
     (link) => link.href === LAHORE && link.label === "home cinema installation in Lahore",
   )
-  assert.equal(planned.length, 1, `${FILE} must have exactly one link to ${LAHORE}`)
+  assert.equal(planned.length, 1, `${FILE} must have exactly one link with this anchor to ${LAHORE}`)
+  assert.equal(
+    links.filter((link) => link.href === LAHORE).length,
+    3,
+    `${FILE} must have exactly 3 links to ${LAHORE}`,
+  )
   assert.equal(
     links.filter((link) => link.href === `${LAHORE}/`).length,
     0,

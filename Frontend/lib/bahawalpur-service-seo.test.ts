@@ -33,6 +33,10 @@ const article33 = readFileSync(
   "utf8",
 )
 const copy = `${bahawalpurServicePage.body}\n${bahawalpurServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const BAHAWALPUR_AREA_SENTENCE =
+  "We work across Bahawalpur, covering areas such as DHA Bahawalpur, Model Town and Satellite Town."
+const BAHAWALPUR_VISIT_FAQ_ANSWER =
+  "Yes. We work across the city. Book a survey and we will confirm the visit date."
 
 function wordCount(text: string) {
   return text
@@ -151,7 +155,9 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
     bahawalpurServicePage.faqs[4].q,
     "How do you keep desert dust and strong sunlight out of a Bahawalpur cinema?",
   )
-  assert.equal(bahawalpurServicePage.faqs[5].q, "Which areas of Bahawalpur do you visit?")
+  assert.equal(bahawalpurServicePage.faqs[5].q, "Do you work across Bahawalpur?")
+  assert.equal(bahawalpurServicePage.faqs[5].a, BAHAWALPUR_VISIT_FAQ_ANSWER)
+  assert.equal(bahawalpurFaqJsonLdItems()[5].answer, BAHAWALPUR_VISIT_FAQ_ANSWER)
 })
 
 test("Bahawalpur lander does not invent local proof, superlatives, or sister brands", () => {
@@ -166,8 +172,24 @@ test("Bahawalpur lander does not invent local proof, superlatives, or sister bra
   assert.match(copy, /there is no Bahawalpur showroom/)
   assert.match(copy, /There is no Bahawalpur showroom/)
   assert.doesNotMatch(copy, /headquarters/i)
-  assert.match(copy, /DHA Bahawalpur, Bahawalpur Cantt, Model Town and Satellite Town/)
-  assert.match(copy, /DHA Bahawalpur, Bahawalpur Cantt, Model Town, Satellite Town/)
+  assert.equal(copy.split(BAHAWALPUR_AREA_SENTENCE).length - 1, 1)
+  assert.equal(bahawalpurServicePage.body.split(BAHAWALPUR_AREA_SENTENCE).length - 1, 1)
+  assert.equal(copy.split("DHA Bahawalpur").length - 1, 1)
+  assert.equal(copy.split("Model Town").length - 1, 1)
+  assert.equal(copy.split("Satellite Town").length - 1, 1)
+  const outsideAreas = copy.replace(BAHAWALPUR_AREA_SENTENCE, "")
+  assert.doesNotMatch(outsideAreas, /DHA Bahawalpur|Model Town|Satellite Town/)
+  assert.doesNotMatch(copy, /\bCantt\b/)
+  const chrome = [
+    bahawalpurServiceTitle,
+    bahawalpurServiceH1,
+    bahawalpurServiceDescription,
+    bahawalpurServicePath,
+    schema,
+  ].join("\n")
+  assert.doesNotMatch(chrome, /DHA|Model Town|Satellite Town|Cantt/)
+  const faqText = bahawalpurServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqText, /DHA|Model Town|Satellite Town|Cantt/)
   assert.doesNotMatch(copy, /Hashmi Garden|Bhawalpur/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)

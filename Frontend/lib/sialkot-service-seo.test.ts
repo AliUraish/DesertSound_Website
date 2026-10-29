@@ -33,6 +33,10 @@ const article33 = readFileSync(
   "utf8",
 )
 const copy = `${sialkotServicePage.body}\n${sialkotServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")}`
+const SIALKOT_AREA_SENTENCE =
+  "We work across Sialkot, covering areas such as Model Town, Citi Housing and Ghazi Officers Colony."
+const SIALKOT_VISIT_FAQ_ANSWER =
+  "Yes. We work across the city. Book a survey and we will confirm the visit date."
 
 function wordCount(text: string) {
   return text
@@ -150,7 +154,9 @@ test("Sialkot copy is install-led, 800–1100 words, with required mesh links", 
     sialkotServicePage.faqs[4].q,
     "How does Sialkot's industrial and dense housing affect a home cinema?",
   )
-  assert.equal(sialkotServicePage.faqs[5].q, "Which areas of Sialkot do you visit?")
+  assert.equal(sialkotServicePage.faqs[5].q, "Do you work across Sialkot?")
+  assert.equal(sialkotServicePage.faqs[5].a, SIALKOT_VISIT_FAQ_ANSWER)
+  assert.equal(sialkotFaqJsonLdItems()[5].answer, SIALKOT_VISIT_FAQ_ANSWER)
 })
 
 test("Sialkot lander does not invent local proof, superlatives, or sister brands", () => {
@@ -164,8 +170,20 @@ test("Sialkot lander does not invent local proof, superlatives, or sister brands
   assert.doesNotMatch(copy, /our Sialkot (office|HQ|showroom|team)/i)
   assert.match(copy, /Sialkot has no Desert Sound branch/)
   assert.doesNotMatch(copy, /headquarters/i)
-  assert.match(copy, /Sialkot Cantt, Citi Housing, Model Town and Ghazi Officers Colony/)
-  assert.match(copy, /Sialkot Cantt, Citi Housing, Model Town, Ghazi Officers Colony/)
+  assert.equal(copy.split(SIALKOT_AREA_SENTENCE).length - 1, 1)
+  assert.equal(sialkotServicePage.body.split(SIALKOT_AREA_SENTENCE).length - 1, 1)
+  assert.equal(copy.split("Model Town").length - 1, 1)
+  assert.equal(copy.split("Citi Housing").length - 1, 1)
+  assert.equal(copy.split("Ghazi Officers Colony").length - 1, 1)
+  const outsideAreas = copy.replace(SIALKOT_AREA_SENTENCE, "")
+  assert.doesNotMatch(outsideAreas, /Model Town|Citi Housing|Ghazi Officers Colony/)
+  assert.doesNotMatch(copy, /\bCantt\b|Cantonment/)
+  const chrome = [sialkotServiceTitle, sialkotServiceH1, sialkotServiceDescription, sialkotServicePath, schema].join(
+    "\n",
+  )
+  assert.doesNotMatch(chrome, /Model Town|Citi Housing|Ghazi Officers Colony|Cantt|Cantonment/)
+  const faqText = sialkotServicePage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
+  assert.doesNotMatch(faqText, /Model Town|Citi Housing|Ghazi Officers Colony|Cantt|Cantonment/)
   assert.doesNotMatch(copy, /Sambrial|Ugoki|Defence Sialkot/i)
   assert.doesNotMatch(copy, /including Lahore, Islamabad/i)
   assert.doesNotMatch(copy, /\bUS\b|UK ranking|United States|United Kingdom/)

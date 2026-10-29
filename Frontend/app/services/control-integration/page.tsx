@@ -494,7 +494,7 @@ export default function ControlIntegrationPage() {
               viewport={{ once: true }}
             >
               <h2 className="mb-6 text-3xl font-light tracking-tight text-white md:text-4xl lg:text-5xl">
-                Get Free Consultation
+                Book a Consultation
               </h2>
               <p className="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-white/70">
                 Speak with our team for expert guidance on your control system.
@@ -502,7 +502,7 @@ export default function ControlIntegrationPage() {
 
               <div className="mb-12 flex justify-center">
                 <Link
-                  href="/#contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-medium text-black transition-colors duration-300 hover:bg-white/90"
                 >
                   <span>Contact Us</span>
