@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "What happens if the internet goes down?",
     answer:
-      "We plan the network and backup around outages. Remote access and app features may pause until the internet connection is back.",
+      "We plan the network and backup around outages.",
   },
 ]
 
