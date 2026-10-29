@@ -50,6 +50,7 @@ Detail sits on [home theater / home cinema design and installation in Pakistan](
 ### Book a survey in Lahore
 
 Fill in the form on our [contact page](/contact-us) and we will contact you. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Bahawalpur](/service/home-cinema-installation-bahawalpur). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+  contactCard: "form-only",
   faqs: [
     {
       q: "Do you install home cinemas in Lahore?",

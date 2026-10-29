@@ -246,3 +246,11 @@ test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Z
   assert.doesNotMatch(pageData, /DHA Karachi/i)
   assert.doesNotMatch(pageData, /111\s*570\s*111/)
 })
+
+test("Lahore contact card books through the form, without the Karachi phone or address", () => {
+  assert.equal(lahoreCityLanderPage.contactCard, "form-only")
+  const view = readFileSync(join(root, "components/ranking-seo-page.tsx"), "utf8")
+  const formOnly = view.split('page.contactCard === "form-only" ?')[1]?.split(") : (")[0] ?? ""
+  assert.match(formOnly, /Fill in the form and we will contact you\./)
+  assert.doesNotMatch(formOnly, /111\s*570\s*111|info@desertsound|Zamzama|DHA Karachi/)
+})
