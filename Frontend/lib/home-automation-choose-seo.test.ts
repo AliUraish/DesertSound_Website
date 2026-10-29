@@ -11,7 +11,7 @@ const articlesDir = join(root, "content/articles")
 const articleFile = "how-to-choose-a-home-automation-system-pakistan.md"
 const slug = "/how-to-choose-a-home-automation-system-pakistan"
 
-const TITLE = "How to Choose Home Automation in Pakistan"
+const TITLE = "Choosing Home Automation for a Pakistani Home"
 const DESCRIPTION =
   "Choosing home automation devices for a Pakistani home: wired or wireless, local or cloud control, power cuts and internet drops, and what each room needs."
 const ANSWER =
@@ -387,7 +387,7 @@ test("12. headings, schema, close, word count, sitemap and llms.txt", () => {
   const guides = llmsTxt.split("## Guides")[1]?.split("## ")[0] ?? ""
   assert.match(
     guides,
-    /How to choose a home automation system: https:\/\/www\.desertsound\.com\.pk\/how-to-choose-a-home-automation-system-pakistan/,
+    /Choosing home automation for a Pakistani home: https:\/\/www\.desertsound\.com\.pk\/how-to-choose-a-home-automation-system-pakistan/,
   )
   assert.doesNotMatch(guides, /how-to-choose-a-home-automation-system-pakistan\//)
 })
