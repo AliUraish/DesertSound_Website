@@ -33,7 +33,7 @@ Good for away-from-home AC and lights, guest control, and adding a zone later. U
 
 ### Reliability and Security
 
-A local panel still works if the internet is down, as long as the local network is up. Apps need a working path out. Do not treat the phone app as the only failover.
+We plan the network and backup around outages.
 
 Panels are not immune to problems — a dead switch or a locked screen happens — but they are not competing with Instagram for attention. Apps need a current phone, a password you remember, and Wi-Fi that reaches the sofa.
 
