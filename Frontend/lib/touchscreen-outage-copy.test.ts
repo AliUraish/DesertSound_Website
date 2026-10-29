@@ -23,4 +23,5 @@ test("touchscreen post uses the site outage-planning line", () => {
   assert.ok(body.includes("We plan the network and backup around outages."))
   assert.doesNotMatch(article, /works if the internet is down/i)
   assert.doesNotMatch(article, /failover/i)
+  assert.doesNotMatch(article, /fails? when Wi-?Fi fails/i)
 })

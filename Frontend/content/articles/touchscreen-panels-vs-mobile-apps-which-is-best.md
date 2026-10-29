@@ -27,7 +27,7 @@ They are also easier for people who do not want another login. The control is on
 
 ### Apps
 
-On the phone you already carry. Remote access from outside the house. Cheaper to deploy. They fail when Wi-Fi fails, and they disappear into a folder if the UI is messy.
+On the phone you already carry. Remote access from outside the house. Cheaper to deploy. They disappear into a folder if the UI is messy.
 
 Good for away-from-home AC and lights, guest control, and adding a zone later. Updates can add features without a site visit. That only helps if someone in the house actually opens the app.
 
