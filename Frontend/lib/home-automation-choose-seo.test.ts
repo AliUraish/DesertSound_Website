@@ -393,5 +393,5 @@ test("12. headings, schema, close, word count, sitemap and llms.txt", () => {
 })
 
 test("13. body does not claim local, offline, or leftover internet-need wording", () => {
-  assert.doesNotMatch(body, /still need the internet|works? locally|\boffline\b/i)
+  assert.doesNotMatch(body, /still need the internet|works? locally|\boffline\b|power returns|mains returns|last state|come back off/i)
 })

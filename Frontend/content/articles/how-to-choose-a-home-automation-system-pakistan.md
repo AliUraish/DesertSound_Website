@@ -46,7 +46,7 @@ Ask how your system behaves during a power or internet cut. Treat that answer as
 
 Pakistani houses deal with load-shedding, voltage that swings, and routers that reboot when the line returns. Those events are ordinary here, so they belong in the brief rather than in a later complaint.
 
-Put the controller, the router and the network switches on protected power, and ask what each device does when power returns. Some devices come back off. Some come back in the last state. Some wait for a cloud login. Surge and voltage protection matter for electronics; they are not optional extras around a rack full of delicate gear.
+Put the controller, the router and the network switches on protected power. Surge and voltage protection matter for electronics; they are not optional extras around a rack full of delicate gear.
 
 We plan the network and backup around outages. For the data side of that work, see [planning the home network around power cuts](/service/home-networking-and-wi-fi).
 
