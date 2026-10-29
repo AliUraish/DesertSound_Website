@@ -31,6 +31,7 @@ const servicePagesThatAlreadyEmitFaqPage = new Set([
   "home-cinema-installation-bahawalpur",
   "home-cinema-installation-faisalabad",
   "home-cinema-installation-islamabad",
+  "home-cinema-installation-karachi",
   "home-cinema-installation-lahore",
   "home-cinema-installation-multan",
   "home-cinema-installation-punjab",
