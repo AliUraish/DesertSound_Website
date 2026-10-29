@@ -1,9 +1,9 @@
 ---
 {
   "slug": "/how-to-choose-a-home-automation-system-pakistan",
-  "title": "How to Choose a Home Automation System for a Pakistani Home",
+  "title": "How to Choose Home Automation in Pakistan",
   "description": "Choosing home automation devices for a Pakistani home: wired or wireless, local or cloud control, power cuts and internet drops, and what each room needs.",
-  "h1": "How to Choose a Home Automation System for a Pakistani Home",
+  "h1": "How to Choose Home Automation in Pakistan",
   "image": "/smart-home-control-room-futuristic.jpg",
   "imageAlt": "Wall-mounted smart home control panel showing lighting scenes",
   "date": "2026-10-27",

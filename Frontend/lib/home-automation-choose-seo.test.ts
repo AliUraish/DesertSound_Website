@@ -11,7 +11,7 @@ const articlesDir = join(root, "content/articles")
 const articleFile = "how-to-choose-a-home-automation-system-pakistan.md"
 const slug = "/how-to-choose-a-home-automation-system-pakistan"
 
-const TITLE = "How to Choose a Home Automation System for a Pakistani Home"
+const TITLE = "How to Choose Home Automation in Pakistan"
 const DESCRIPTION =
   "Choosing home automation devices for a Pakistani home: wired or wireless, local or cloud control, power cuts and internet drops, and what each room needs."
 const ANSWER =
