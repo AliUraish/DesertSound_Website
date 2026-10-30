@@ -149,9 +149,9 @@ export const catalogServicePages: SeoPage[] = [
   },
   {
     path: "/service/audio-distribution",
-    title: "Audio Distribution Installation in Karachi | Audio Distribution Service",
+    title: "Multi-Room Audio Distribution in Pakistan",
     description:
-      "Professional audio distribution installation in Karachi, Pakistan for seamless sound in every room with a reliable smart audio system.",
+      "One system for music in every room. We plan the speakers, wiring and control for homes in Karachi and across Pakistan. Fill in the form and we will contact you.",
     image: "/Pictures Final/Services/Audio_Systems/Cover.jpg",
   },
   {

@@ -76,8 +76,8 @@ const sitePages: RankingSeoPage[] = [
   {
     "slug": "/service/audio-distribution",
     "image": "/Pictures Final/Services/Audio_Systems/Cover.jpg",
-    "title": "Audio Distribution Installation in Karachi | Audio Distribution Service",
-    "description": "Professional audio distribution installation in Karachi, Pakistan for seamless sound in every room with a reliable smart audio system.",
+    "title": "Multi-Room Audio Distribution in Pakistan",
+    "description": "One system for music in every room. We plan the speakers, wiring and control for homes in Karachi and across Pakistan. Fill in the form and we will contact you.",
     "h1": "Audio Distribution Installation in Pakistan",
     "body": "Audio distribution sends sound from a central source to many rooms, with independent control in each zone — living room music, bedroom podcast, garden speakers, one system.\n\n### Audio Distribution Service in Pakistan\nSite survey first: room size, construction, how you listen. Then design, install, and maintain. This sits next to [home theatre services](/service/home-theatre-design-and-installation/) for dedicated cinema rooms, plus [control-system installation](/service/control-systems/) so volume and source live on a phone, keypad, or voice assistant. [Home networking and Wi-Fi](/service/home-networking-and-wi-fi/) matters for streaming.\n\n### Audio Distribution System Service in Karachi\nKarachi apartments often need compact or wireless zones; villas and commercial spaces usually need wired multi-zone. We place speakers, balance acoustics, and integrate with [smart home automation](/service/smart-home-automation/) and the home cinema.\n\n### Smart Audio System in Karachi\nCeiling or in-wall speakers, multi-room, same playlist or different audio per room — homes, offices, hotels, cafes.",
     "faqs": [
