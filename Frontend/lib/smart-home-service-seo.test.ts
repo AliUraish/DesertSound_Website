@@ -20,6 +20,9 @@ const ANSWER_BLOCK =
 const FAQ4_ANSWER =
   "A strong home network is essential for responsive app control, streaming, and connected devices. We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them."
 const BLOG_ANCHOR = "choosing between wired, wireless and local control"
+const WHERE_WE_WORK =
+  "Desert Sound designs and installs home cinemas, home theatres and smart homes, with a showroom in Karachi, and is a member of CEDIA. We work with homes across Pakistan. We have a team in Lahore. Fill in the form and we will contact you."
+const SHOWROOM_PHRASE = "with a showroom in Karachi"
 
 function quotedJsonField(block: string, field: string) {
   const match = block.match(new RegExp(`"${field}":\\s*"((?:\\\\.|[^"\\\\])*)"`))
@@ -126,9 +129,13 @@ test("smart-home rewrite links, CTA, schema and outage locks", () => {
   }
   assert.doesNotMatch(page, /href="\/#contact"/)
   assert.match(page, />\s*Book a Consultation\s*</)
-  assert.match(page, /Fill in the form and we will contact you\./)
+  assert.ok(page.includes(WHERE_WE_WORK))
+  assert.equal(count(page, "Fill in the form and we will contact you."), 2)
   assert.equal(count(copy, /CEDIA/g), 1)
   assert.match(page, /We have a team in Lahore\./)
+  assert.doesNotMatch(page, /travels from Karachi/)
+  const pageOutsideShowroom = page.split(SHOWROOM_PHRASE).join("").split(ANSWER_BLOCK).join("")
+  assert.doesNotMatch(pageOutsideShowroom, /from Karachi/)
   assert.doesNotMatch(copyForBans, /(?<![-\w])free\b|complimentary|no[- ](charge|obligation)/i)
   assert.equal(count(page, BLOG_ANCHOR), 1)
   const copyNoAnchors = copyForBans.split(BLOG_ANCHOR).join("")

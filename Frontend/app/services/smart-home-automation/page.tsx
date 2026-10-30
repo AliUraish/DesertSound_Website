@@ -541,7 +541,7 @@ export default function SmartHomeAutomationPage() {
                 Where We Work
               </h2>
               <p className="text-lg font-light leading-relaxed text-black/70">
-                Desert Sound designs and installs home cinemas, home theatres and smart homes, with a showroom in Karachi, and is a member of CEDIA. For homes in other cities in Pakistan, the team travels from Karachi. We have a team in Lahore.
+                Desert Sound designs and installs home cinemas, home theatres and smart homes, with a showroom in Karachi, and is a member of CEDIA. We work with homes across Pakistan. We have a team in Lahore. Fill in the form and we will contact you.
               </p>
             </motion.div>
           </div>
