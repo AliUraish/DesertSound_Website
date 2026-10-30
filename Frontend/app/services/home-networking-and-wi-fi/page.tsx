@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "What happens if the internet goes down?",
     answer:
-      "Basic automation functions like lighting scenes, local control, and scheduled events usually continue to work without internet. However, remote access and cloud-based features may pause until the connection is restored.",
+      "We plan the network and backup around outages.",
   },
 ]
 

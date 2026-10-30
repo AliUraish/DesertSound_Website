@@ -165,7 +165,7 @@ export const catalogServicePages: SeoPage[] = [
     path: "/service/home-networking-and-wi-fi",
     title: "Home Networking & Wi-Fi Service in Karachi",
     description:
-      "Best Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
+      "Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
     image: "/Pictures Final/Services/Home_networking/Cover.jpeg",
   },
   {
@@ -378,7 +378,7 @@ export const homepageInstallFaqs: FaqItem[] = [
       "Yes. Home cinema installation in Karachi is our core work, and we take projects nationwide after a site visit and a written scope. Local rooms get the full survey, hidden wiring, and calibration; out-of-city installs follow the same process after we visit the space.",
   },
   {
-    question: "Is this a retail “best home theater system” package?",
+    question: "Is this a retail home theater system package?",
     answer:
       "No. We do not sell boxed retail systems. Home theater installation here is a designed, installed, and calibrated room—not a shelf SKU.",
   },

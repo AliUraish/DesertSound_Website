@@ -163,7 +163,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Customization and Integration System in Karachi, Pakistan",
     "description": "Expert customization and integration system services in Karachi, Pakistan, tailored to meet your home or business automation needs.",
     "h1": "Customization and Integration",
-    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [how to optimize your room for the best home cinema experience](/how-to-optimize-your-room-for-the-best-home-cinema-experience/).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
+    "body": "We design the cinema and smart home around the actual room: furniture, seating, acoustics, and the systems already in the house.\n\n### Custom Cabinetry and Furniture\nBespoke cabinets and furniture that hide equipment and match the interior.\n\n### Home Theatre Seating and Acoustics\nSeating for the throw distance, plus acoustic treatment so the room sounds as good as it looks — see [how to optimize your room for home cinema](/how-to-optimize-your-room-for-the-best-home-cinema-experience/).\n\n### Automation with Existing Systems\nLighting, HVAC, security, and entertainment on one control layer instead of three apps that don't talk. Ties into [control systems](/service/control-systems/) and [smart home automation](/service/smart-home-automation/).\n\n### Custom User Interfaces\nKeypads and touch layouts that match how the family actually uses the house.\n\n### Design Consultation\nWe work with you, and your architect or interior designer, so the tech doesn't fight the décor.",
     "faqs": [
       {
         "q": "Do you design custom furniture for the theatre room?",
@@ -197,9 +197,9 @@ const sitePages: RankingSeoPage[] = [
     "slug": "/service/home-networking-and-wi-fi",
     "image": "/Pictures Final/Services/Home_networking/Cover.jpeg",
     "title": "Home Networking & Wi-Fi Service in Karachi",
-    "description": "Best Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
+    "description": "Home Networking and Wi-Fi Service in Karachi, Pakistan. Expert home Wi-Fi setup and installation for fast, stable internet.",
     "h1": "Home Networking and Wi-Fi System in Pakistan",
-    "body": "Home networking and Wi-Fi is the backbone for streaming, smart devices, and automation. A professional system means coverage, speed, and security through the whole property, not a single router in the hallway.\n\n### Home Wi-Fi Set-up and Installation in Karachi\nWe survey interference, walls, and device count, then place access points, lock down security, and shape bandwidth. [Audio distribution](/service/audio-distribution/) and 4K cinema both depend on this.\n\n### Best Home Networking and Wi-Fi Service in Karachi\nConsultation, install, [customization and integration](/service/customization-and-integration/), then maintenance. Mesh where it's needed, wired backbone where it's needed. [Smart home automation](/service/smart-home-automation/), lighting, climate, and cameras all ride on the same network.\n\n### Wi-Fi Service Company in Karachi\nApartments, villas, offices. We kill dead zones, set up mesh, configure routers, and keep the network secure.\n\n### Smart Home Devices on Wi-Fi\nEvery device gets a planned connection so automation and the home theatre stay responsive.",
+    "body": "Home networking and Wi-Fi is the backbone for streaming, smart devices, and automation. A professional system means coverage, speed, and security through the whole property, not a single router in the hallway.\n\n### Home Wi-Fi Set-up and Installation in Karachi\nWe survey interference, walls, and device count, then place access points, lock down security, and shape bandwidth. [Audio distribution](/service/audio-distribution/) and 4K cinema both depend on this.\n\n### Home Networking and Wi-Fi Service in Karachi\nConsultation, install, [customization and integration](/service/customization-and-integration/), then maintenance. Mesh where it's needed, wired backbone where it's needed. [Smart home automation](/service/smart-home-automation/), lighting, climate, and cameras all ride on the same network.\n\n### Wi-Fi Service Company in Karachi\nApartments, villas, offices. We kill dead zones, set up mesh, configure routers, and keep the network secure.\n\n### Smart Home Devices on Wi-Fi\nEvery device gets a planned connection so automation and the home theatre stay responsive.",
     "faqs": [
       {
         "q": "What is a Home Networking and Wi-Fi System?",
@@ -239,7 +239,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Home Theater Installation in Pakistan",
     "description": "Home theatre installation in Karachi and across Pakistan: a site survey, a design for your room, hidden wiring, and sound calibrated to your seats.",
     "h1": "Home Theater Installation",
-    "body": "We plan each home theater installation in Karachi and across Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation/) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution/) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration/) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room/).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
+    "body": "We plan each home theater installation in Karachi and across Pakistan around the room: size, seating distance, screen, surround or Dolby Atmos, lighting, acoustics, and a network that can stream. Cinema rooms go into houses, apartments, and offices in Karachi, plus Lahore, Islamabad, and the rest of Pakistan.\n\n### Home Cinema Design and Installation\nWe start with the room: light, layout, how you watch. Then we spec display, speakers, control, and hidden wiring. [Smart home automation](/service/smart-home-automation) can dim lights, drop the projector, and start the film from one button or a voice command. [Audio distribution](/service/audio-distribution) can carry the same system into other rooms, and reliable [home networking and Wi-Fi](/service/home-networking-and-wi-fi) keeps 4K streams stable.\n\n### Home Theater Installation Company in Pakistan\nConsultation through calibration, with [customization and integration](/service/customization-and-integration) so displays, speakers, automation, and networking run as one system, built for local power and construction. See [how to plan home theater installation for any room](/how-to-plan-home-theater-installation-for-any-room).\n\n### Surround Sound and Calibration\nWe install surround and Atmos layouts, then calibrate levels, delays, and EQ so dialogue stays clear and the mix holds in every seat.",
     "faqs": [
       {
         "q": "What is in a full home theater system in Pakistan?",
@@ -265,19 +265,19 @@ const sitePages: RankingSeoPage[] = [
     "links": [
       {
         "label": "Smart home automation",
-        "href": "/service/smart-home-automation/"
+        "href": "/service/smart-home-automation"
       },
       {
         "label": "Audio distribution",
-        "href": "/service/audio-distribution/"
+        "href": "/service/audio-distribution"
       },
       {
         "label": "Control systems",
-        "href": "/service/control-systems/"
+        "href": "/service/control-systems"
       },
       {
         "label": "Blogs",
-        "href": "/blogs/"
+        "href": "/blogs"
       }
     ]
   },

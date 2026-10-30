@@ -34,7 +34,7 @@ The longer checklist is in [what a cinema installer in Pakistan actually does](/
 
 ### Homes we visit in Multan
 
-We work across Multan, covering areas such as DHA Multan, Gulgasht Colony, Wapda Town and Shah Rukn-e-Alam Colony. These are areas we survey, not finished Multan projects. On the visit we compare the rooms you have (a lounge, a spare bedroom, a basement or an upper floor) and choose the one that can be darkened and sealed best.
+We work across Multan, covering areas such as DHA Multan, Gulgasht Colony, Wapda Town and Shah Rukn-e-Alam Colony. These are areas we survey, not finished Multan projects. On the visit we compare the rooms you have (a lounge, a spare bedroom, a basement or an upper floor) and choose the one that can be darkened and sealed well.
 
 ### Rooms we've finished
 
