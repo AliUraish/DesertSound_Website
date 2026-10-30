@@ -30,6 +30,7 @@ const requiredPaths = [
   "/projects/residential/residency",
   "/projects/residential/studio-vellari",
   "/projects/commercial/xanders",
+  "/how-to-choose-a-home-automation-system-pakistan",
 ]
 
 test("llms.txt is plain text with canonical URL, locked NAP, and existing paths", () => {
