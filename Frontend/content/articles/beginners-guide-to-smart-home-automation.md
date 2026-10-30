@@ -54,4 +54,4 @@ Site survey: space, goals, and what is already wired. Then a design with product
 
 You can add outdoor lighting, weather-rated speakers, automated drapes, and more appliances later. That only stays clean if the first hub and network were sized for it.
 
-Desert Sound designs [smart home automation](/service/smart-home-automation/) as a system, not a shopping list. [Ask for a consultation](/contact-us/).
+Desert Sound designs [smart home automation](/service/smart-home-automation/) as a system, not a shopping list. [Ask for a consultation](/contact-us).

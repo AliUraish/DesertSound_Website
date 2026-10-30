@@ -39,4 +39,4 @@ Air quality devices and routines help some households. Start with lighting, secu
 
 Pick a platform and stick to it. A drawer of unused gadgets is not a smart home. If you are still deciding, read [how we judge what a house actually needs automated](/smart-home-automation-why-should-you-invest-in-it-for-your-home).
 
-[Talk to us](/contact-us/) about a [smart home](/service/smart-home-automation/) that covers those five.
+[Talk to us](/contact-us) about a [smart home](/service/smart-home-automation/) that covers those five.

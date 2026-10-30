@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -39,4 +39,4 @@ HDMI, speaker cable, and power need a planned route. Hidden runs keep the room u
 
 Spec the system as a whole. A strong display with weak speakers, or the reverse, is how rooms disappoint.
 
-[Contact us](/contact-us/) to spec a [home theatre](/service/home-theatre-design-and-installation/) as one system.
+[Contact us](/contact-us) to spec a [home theatre](/service/home-theatre-design-and-installation/) as one system.

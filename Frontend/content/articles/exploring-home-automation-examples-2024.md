@@ -41,4 +41,4 @@ Alexa, Google, or Siri for simple commands — if the devices are actually integ
 
 Garden valves on a schedule, weather-aware if the controller supports it. Movie scene: lights down, shades closed, playback started.
 
-[Contact us](/contact-us/) to pick the examples that fit your house, not a full catalogue.
+[Contact us](/contact-us) to pick the examples that fit your house, not a full catalogue.

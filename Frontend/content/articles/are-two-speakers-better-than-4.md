@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -37,4 +37,4 @@ Small lounge, mostly music and news: a good 2.1. Movies and a wider seating row:
 
 Placement and a matched amp beat buying more boxes. Cheap speakers installed correctly often beat expensive ones aimed at a wall.
 
-[Ask us](/contact-us/) to size speakers for the room — [audio distribution](/service/audio-distribution/) or a full [home theatre](/service/home-theatre-design-and-installation/).
+[Ask us](/contact-us) to size speakers for the room — [audio distribution](/service/audio-distribution/) or a full [home theatre](/service/home-theatre-design-and-installation/).

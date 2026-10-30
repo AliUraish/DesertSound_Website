@@ -58,4 +58,4 @@ If you already have a ventilated rack, keep the receiver there and run speaker c
 
 Budget is not a clean split. Wired can look cheaper on paper until you add labour to chase walls. Wireless can look cheaper until you add a mesh system so the rears stay in sync.
 
-Desert Sound will tell you which the room actually needs. [Contact us](/contact-us/).
+Desert Sound will tell you which the room actually needs. [Contact us](/contact-us).

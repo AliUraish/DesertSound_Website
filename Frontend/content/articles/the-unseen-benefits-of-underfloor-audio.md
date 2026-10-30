@@ -36,4 +36,4 @@ We integrate with Control4, Crestron, and other platforms you already run, plus 
 
 Parts sit protected from casual knocks. Moisture and point-load at the floor still matter — those get checked at design, not after. After install: checks, fault-finding, and room to add zones.
 
-Underfloor audio is a design choice with a survey behind it. See [smart home installation](/service/smart-home-automation/) if you want it on the same control layer as the rest of the house, or [contact Desert Sound](/contact-us/) to assess the floor.
+Underfloor audio is a design choice with a survey behind it. See [smart home installation](/service/smart-home-automation/) if you want it on the same control layer as the rest of the house, or [contact Desert Sound](/contact-us) to assess the floor.

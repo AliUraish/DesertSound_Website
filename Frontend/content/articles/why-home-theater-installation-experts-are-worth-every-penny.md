@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -33,4 +33,4 @@ The room is measured. The layout is specific to that space, not a generic 5.1 di
 
 Electrical work is done to a standard you can live with. That's the safety piece DIY skips.
 
-[Talk to Desert Sound](/contact-us/) about [home theatre installation](/service/home-theatre-design-and-installation/).
+[Talk to Desert Sound](/contact-us) about [home theatre installation](/service/home-theatre-design-and-installation/).

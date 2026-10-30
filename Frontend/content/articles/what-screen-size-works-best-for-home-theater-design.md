@@ -60,4 +60,4 @@ A drop-down screen keeps the wall clear when you're not watching. With a [smart 
 
 A black velvet border kills spill and makes colour look tighter, the way a commercial cinema frames the picture. Allow an extra 2–3 inches of wall for that frame so it doesn't get cut off.
 
-Measure the wall, apply the 1.5x rule, leave room for speakers, and check projector brightness before you lock the size. If you want that checked on site, [contact us](/contact-us/).
+Measure the wall, apply the 1.5x rule, leave room for speakers, and check projector brightness before you lock the size. If you want that checked on site, [contact us](/contact-us).

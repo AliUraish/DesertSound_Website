@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -66,4 +66,4 @@ If the room is also a guest bedroom, pick furniture you can move. A fixed riser 
 
 Upgrade later in this order: better speakers or a real sub, then a taut screen if you project, then lighting scenes. Decor last.
 
-A cheap room can still be installed badly. If you want the layout checked before you buy twice, see why a [proper install](/why-home-theater-installation-experts-are-worth-every-penny/) is worth it, or [contact us](/contact-us/).
+A cheap room can still be installed badly. If you want the layout checked before you buy twice, see why a [proper install](/why-home-theater-installation-experts-are-worth-every-penny/) is worth it, or [contact us](/contact-us).

@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -31,4 +31,4 @@ Devices on one app or keypad. Voice as a convenience layer, not the only control
 
 IoT just means the devices can talk over the network without you standing at each switch. AI in marketing copy usually means the thermostat learned your schedule — useful, not magic.
 
-We install the layer people use daily: lighting, climate, security, and AV. [Contact us](/contact-us/) to plan that for a Karachi home.
+We install the layer people use daily: lighting, climate, security, and AV. [Contact us](/contact-us) to plan that for a Karachi home.

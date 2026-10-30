@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -39,4 +39,4 @@ A room that exists for playback. Darker finishes, acoustic treatment, usually a 
 
 Shared lounge and a real budget: theatre. Spare room and you want the cinema feel: cinema. Both need the same fundamentals — placement, wiring, calibration. The label doesn't fix a bad layout.
 
-[Contact us](/contact-us/) and we'll tell you which the room can actually support — then install it as a [home theatre](/service/home-theatre-design-and-installation/).
+[Contact us](/contact-us) and we'll tell you which the room can actually support — then install it as a [home theatre](/service/home-theatre-design-and-installation/).

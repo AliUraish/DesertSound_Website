@@ -78,7 +78,7 @@ export function CareersFooter() {
             <a href="mailto:info@desertsound.com.pk" className="transition-colors hover:text-black">
               Email
             </a>
-            <Link href="/#contact" className="transition-colors hover:text-black">
+            <Link href="/contact-us" className="transition-colors hover:text-black">
               Contact
             </Link>
           </div>

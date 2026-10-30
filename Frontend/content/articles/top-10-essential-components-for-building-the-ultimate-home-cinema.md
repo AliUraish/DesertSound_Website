@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -61,4 +61,4 @@ One remote or keypad for picture, sound, and lights — see [control systems](/s
 
 Screen height, seat distance, dark surfaces that don't bounce light. The room is a component.
 
-Desert Sound specs and installs these as one [home theatre](/service/home-theatre-design-and-installation/). [Contact us](/contact-us/) to start with the room, not a shopping list.
+Desert Sound specs and installs these as one [home theatre](/service/home-theatre-design-and-installation/). [Contact us](/contact-us) to start with the room, not a shopping list.

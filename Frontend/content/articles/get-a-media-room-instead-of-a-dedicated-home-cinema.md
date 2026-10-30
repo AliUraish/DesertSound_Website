@@ -43,4 +43,4 @@ Projectors feel cinematic if the light is controlled. TVs stay bright and sharp 
 
 One room doing several jobs is usually cheaper than a dedicated cinema plus leftover living space. Dust, software updates, and the odd recalibration are the maintenance — not a second unused room. Keep cable under control so the daily-use space doesn't turn into a nest.
 
-A media room is the one that matches the week, not the photos. Same discipline on sound and light as a cinema; furniture and scenes stay flexible so the space earns its floor area. [Contact us](/contact-us/) if you want that layout measured before you buy the display.
+A media room is the one that matches the week, not the photos. Same discipline on sound and light as a cinema; furniture and scenes stay flexible so the space earns its floor area. [Contact us](/contact-us) if you want that layout measured before you buy the display.
