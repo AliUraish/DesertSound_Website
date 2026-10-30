@@ -194,9 +194,12 @@ export default function SmartHomeAutomationPage() {
                         src="/Pictures Final/Services/Smart_Home_Automation/image copy.jpg"
                         alt="Smart home automation living room"
                         className="h-full w-full object-cover"
-                width={1448}
-                height={1086}
-              />
+                        width={1448}
+                        height={1086}
+                        sizes="(min-width: 1024px) 50vw, 95vw"
+                        priority
+                        fetchPriority="high"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-black/10" />
 
                       <div className="absolute bottom-6 left-6 right-6">
