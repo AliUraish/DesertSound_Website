@@ -43,4 +43,4 @@ Not always. Some speakers already act as one. Many lights and sensors still need
 
 More brands play together than they used to. Daily use is still simpler if you pick one assistant and stay with it. Start with lighting or security, then expand.
 
-[Talk to us](/contact-us/) about a [smart home](/service/smart-home-automation/) that starts with what you'll actually use.
+[Talk to us](/contact-us) about a [smart home](/service/smart-home-automation/) that starts with what you'll actually use.

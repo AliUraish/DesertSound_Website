@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -32,4 +32,4 @@ A projector is not a TV you aim at a wall. Throw distance, screen size, ambient 
 
 We spec the model to the room — not a feature list copied from a brochure — then install and calibrate it as part of the [home theatre](/service/home-theatre-design-and-installation/).
 
-[Contact us](/contact-us/) to see current JVC options for your space.
+[Contact us](/contact-us) to see current JVC options for your space.

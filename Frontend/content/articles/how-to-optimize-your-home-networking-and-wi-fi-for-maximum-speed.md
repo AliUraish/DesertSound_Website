@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -43,4 +43,4 @@ Test against the speed you pay for. If a wired PC is far below the plan, call th
 
 A router in a closed cabinet throttles. Give it air, especially in summer.
 
-A cinema that freezes is often the network. Desert Sound plans [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) with the theatre so the scene and the stream share a stable path. [Contact us](/contact-us/) if the house already fights the Wi-Fi.
+A cinema that freezes is often the network. Desert Sound plans [home networking and Wi-Fi](/service/home-networking-and-wi-fi/) with the theatre so the scene and the stream share a stable path. [Contact us](/contact-us) if the house already fights the Wi-Fi.

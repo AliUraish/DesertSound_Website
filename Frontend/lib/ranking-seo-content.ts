@@ -27,7 +27,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ]
   },
@@ -50,7 +50,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ]
   },
@@ -316,7 +316,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ]
   },
@@ -381,7 +381,7 @@ const sitePages: RankingSeoPage[] = [
     "title": "Our Projects",
     "description": "Explore Desert Sound residential and commercial home theatre and smart home projects across Pakistan.",
     "h1": "Our Projects",
-    "body": "Browse Desert Sound project work across Pakistan — private cinemas, media rooms, and smart home installations.\n\n### Residential\nSee private home theatres and residential smart systems in our [residential projects library](/projects/residential).\n\n### Commercial\nSee hospitality, gym, and commercial AV installs in our [commercial projects library](/projects/commercial).\n\nNeed a similar build? [Contact us](/contact-us/) for a site visit.",
+    "body": "Browse Desert Sound project work across Pakistan — private cinemas, media rooms, and smart home installations.\n\n### Residential\nSee private home theatres and residential smart systems in our [residential projects library](/projects/residential).\n\n### Commercial\nSee hospitality, gym, and commercial AV installs in our [commercial projects library](/projects/commercial).\n\nNeed a similar build? [Contact us](/contact-us) for a site visit.",
     "faqs": [],
     "links": [
       {
@@ -394,7 +394,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ],
     "image": "/Pictures Final/Services/Home_Theatre/Cover.jpg"
@@ -413,7 +413,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ],
     "image": "/Pictures Final/Hero Page/homepage_header/homepage1.jpg"
@@ -432,7 +432,7 @@ const sitePages: RankingSeoPage[] = [
       },
       {
         "label": "Contact us",
-        "href": "/contact-us/"
+        "href": "/contact-us"
       }
     ],
     "image": "/Pictures Final/Hero Page/homepage_header/homepage1.jpg"

@@ -39,4 +39,4 @@ A screen that is too high is a neck problem on a long watch. Level it to the mai
 
 Plan the throw, the screen, the light, and the speakers as one layout. Then test a full film before you call it done.
 
-[Contact Desert Sound](/contact-us/) if you want that layout done before the holes go in the wall.
+[Contact Desert Sound](/contact-us) if you want that layout done before the holes go in the wall.

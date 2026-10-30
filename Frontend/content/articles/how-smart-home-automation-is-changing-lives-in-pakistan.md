@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -41,4 +41,4 @@ A professional install places speakers and the screen, hides cable, and builds t
 
 The useful future here is simple: systems that learn a schedule, and devices that waste less power. That only holds if the first install was compatible and the Wi-Fi was sized for it.
 
-Desert Sound builds [smart home automation](/service/smart-home-automation/) around the rooms you already live in. [Request a survey](/contact-us/).
+Desert Sound builds [smart home automation](/service/smart-home-automation/) around the rooms you already live in. [Request a survey](/contact-us).

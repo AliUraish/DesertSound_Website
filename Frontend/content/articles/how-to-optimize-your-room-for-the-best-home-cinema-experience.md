@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -43,4 +43,4 @@ Use HDMI that matches the resolution. A streamer or disc player that isn't the T
 
 Place speakers before you buy more of them. Fronts at ear height, surrounds beside or behind, sub where it actually sounds even — then calibrate levels and delay.
 
-[Contact us](/contact-us/) to optimize the room as part of [home theatre installation](/service/home-theatre-design-and-installation/).
+[Contact us](/contact-us) to optimize the room as part of [home theatre installation](/service/home-theatre-design-and-installation/).

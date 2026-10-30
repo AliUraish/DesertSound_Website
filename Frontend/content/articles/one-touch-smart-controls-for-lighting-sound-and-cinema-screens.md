@@ -50,4 +50,4 @@ Fade lights over 4–6 seconds, not instantly — the eye needs that ramp. Scree
 
 Put the processor and router on a UPS so a Karachi outage or spike doesn't wipe the config. Update control firmware and apps so new streaming boxes still join the scene. Revisit lighting levels when you add a source or change lamps.
 
-Use this with the [checklist for building a custom home cinema](/essential-checklist-for-building-a-custom-home-cinema/) if the room is still being planned. For a scene that actually fires cleanly, [contact us](/contact-us/).
+Use this with the [checklist for building a custom home cinema](/essential-checklist-for-building-a-custom-home-cinema/) if the room is still being planned. For a scene that actually fires cleanly, [contact us](/contact-us).

@@ -43,4 +43,4 @@ Bought-and-hoped kits drift: lights ignore the speakers, door sensors miss the e
 
 Start with one room — cameras and lights, or the lounge. Add later if the backbone was designed for it. You don't have to automate the whole house on day one, and you shouldn't be stuck with a dead-end hub when you want a second floor.
 
-Security, comfort, and time-saving only hold if the pieces share one processor. Start small if you want; just don't start with five apps. We specify for how homes here actually run, without a pile of unused gadgets. If you want that plan, [contact us](/contact-us/).
+Security, comfort, and time-saving only hold if the pieces share one processor. Start small if you want; just don't start with five apps. We specify for how homes here actually run, without a pile of unused gadgets. If you want that plan, [contact us](/contact-us).

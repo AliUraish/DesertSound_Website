@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
-export const theatreInstallServiceHref = "/service/home-theatre-design-and-installation/"
+export const theatreInstallServiceHref = "/service/home-theatre-design-and-installation"
 export const cinemaInstallerArticleHref = "/home-cinema-and-cinema-installer-pakistan"
 
 const caseLinkClassName =

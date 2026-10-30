@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "How quickly can you respond?",
     answer:
-      "Remote diagnostics usually start the same day. On-site visits are scheduled around the fault and the access we need to the rack and the room.",
+      "Fill in the form and we will contact you. On-site visits are scheduled around the fault and the access we need to the rack and the room.",
   },
 ]
 

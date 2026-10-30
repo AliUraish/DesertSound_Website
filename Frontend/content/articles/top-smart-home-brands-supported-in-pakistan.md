@@ -58,4 +58,4 @@ Most consumer brands assume stable mains — US, Canada, Germany. A hub that for
 
 Vague answers are the answer.
 
-Pakistani firms who design for load shedding, climate, and how people actually use a house are worth knowing. Desert Sound specifies stacks we can stand behind. If you want that filter applied to a house or office, [contact us](/contact-us/).
+Pakistani firms who design for load shedding, climate, and how people actually use a house are worth knowing. Desert Sound specifies stacks we can stand behind. If you want that filter applied to a house or office, [contact us](/contact-us).

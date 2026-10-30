@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -60,4 +60,4 @@ We also flag rooms that cannot take a projector yet: too much glass, no blackout
 
 Maintenance is the other half. A yearly check of HDMI, filters, and firmware is cheaper than a “dead” system that only needed a lead and a picture mode reset.
 
-See [home theatre design and installation](/service/home-theatre-design-and-installation/) or [contact us](/contact-us/).
+See [home theatre design and installation](/service/home-theatre-design-and-installation/) or [contact us](/contact-us).

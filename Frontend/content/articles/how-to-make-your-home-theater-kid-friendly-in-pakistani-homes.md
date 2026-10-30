@@ -43,4 +43,4 @@ One movie scene: lights dim, curtains close, projector and audio on. Add parenta
 
 Keep microfiber cloths and a small vacuum near the rack. Daily wipe, weekly dust in the vents and under seats. House rules that stick: no climbing the cabinet, no pulling cables, no drinks at the equipment wall. Spills will still happen. That is use, not failure — clean it and keep the rules.
 
-A kid-friendly theatre is a layout decision, not a later add-on. [Talk to Desert Sound](/contact-us/) if you want the room planned for the household you actually have.
+A kid-friendly theatre is a layout decision, not a later add-on. [Talk to Desert Sound](/contact-us) if you want the room planned for the household you actually have.

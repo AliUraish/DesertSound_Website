@@ -3,9 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useRef, useState } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { FaqCollapsePanel } from "@/components/faq-collapse-panel"
 import {
   Wifi,
   Settings,
@@ -80,7 +81,7 @@ const faqs = [
   {
     question: "What happens if the internet goes down?",
     answer:
-      "We plan the network and backup around outages.",
+      "We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them.",
   },
 ]
 
@@ -135,19 +136,9 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         </motion.div>
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <p className="pb-6 text-base font-light leading-relaxed text-black/70">{faq.answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <FaqCollapsePanel isOpen={isOpen}>
+        <p className="pb-6 text-base font-light leading-relaxed text-black/70">{faq.answer}</p>
+      </FaqCollapsePanel>
     </motion.div>
   )
 }

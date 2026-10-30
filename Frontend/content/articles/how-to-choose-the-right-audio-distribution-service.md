@@ -63,4 +63,4 @@ Price talk without that map is guesswork. We will not invent a package that igno
 
 Commercial spaces — a cafe, a small office — follow the same rules with different hours and a limiter so staff are not shouting over the playlist.
 
-Desert Sound designs, installs, and maintains these systems next to the home theatre. [See audio distribution](/service/audio-distribution/) or [contact us](/contact-us/).
+Desert Sound designs, installs, and maintains these systems next to the home theatre. [See audio distribution](/service/audio-distribution/) or [contact us](/contact-us).

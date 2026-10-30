@@ -55,4 +55,4 @@ If lights and AC are meant to run all day, automation has nothing to turn off. B
 
 Don't expect an overnight collapse in the bill. Apartments see a modest change, often enough to stay off a higher tariff. Larger houses with several AC units notice more, mostly from AC, shutdown routines, and how backup power is used. The gain is consistent control, not a stunt number.
 
-Convenience and equipment protection come with the same schedules. The bill change is gradual. In a country where tariffs move, that routine is the point. If you want schedules that match how the house is actually used, [contact us](/contact-us/).
+Convenience and equipment protection come with the same schedules. The bill change is gradual. In a country where tariffs move, that routine is the point. If you want schedules that match how the house is actually used, [contact us](/contact-us).

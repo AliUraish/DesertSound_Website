@@ -39,4 +39,4 @@ Houses use zones for living, dining, outdoor, and a theatre that stays separate.
 
 Desert Sound plans the zones to the building — Karachi villas, apartments, and commercial floors — then installs and tunes them.
 
-[Ask us](/contact-us/) to plan [audio distribution](/service/audio-distribution/) for your home or site.
+[Ask us](/contact-us) to plan [audio distribution](/service/audio-distribution/) for your home or site.

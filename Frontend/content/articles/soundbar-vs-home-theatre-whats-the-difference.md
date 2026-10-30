@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -46,4 +46,4 @@ A soundbar is a short install: power, one cable to the TV, maybe a sub pairing. 
 
 Measure the room before you shop. Furniture and glass change both options. If you want surround, start with a 5.1 plan, not a bar that claims it.
 
-[Contact us](/contact-us/) if you're choosing between a bar and a full [home theatre](/service/home-theatre-design-and-installation/) for the room you have.
+[Contact us](/contact-us) if you're choosing between a bar and a full [home theatre](/service/home-theatre-design-and-installation/) for the room you have.
