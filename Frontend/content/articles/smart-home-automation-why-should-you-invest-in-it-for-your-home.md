@@ -17,7 +17,7 @@
 
 [Smart home automation](/service/smart-home-automation) is one control layer for lights, climate, security, and the cinema — not a drawer of single-purpose apps. In Pakistan, a smart-home plan can start with lighting, AC and the home cinema, then add security once the wiring is planned.
 
-It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan it has to keep working through power cuts and internet drops, so we plan local control and the network before any gadgets.
+It is worth it when it removes daily friction: one scene for the lights, AC and home cinema, and rooms that shut down when nobody is in them. In Pakistan, load-shedding and internet drops are part of daily life, so we plan the network and backup around outages before any gadgets.
 
 ### Control That Matches How You Live
 
@@ -39,17 +39,17 @@ Do not expect magic bill cuts from a hub alone. You get savings when devices act
 
 ### Is It Worth It With Load-Shedding?
 
-Only if the system is planned for it. Pakistan power cuts and ISP drops are part of the design. Local scenes should still run on the home network when the WAN is down, so “Movie” does not depend on the internet. Cloud-only toys fail the first time the fibre blinks.
+Only if it is planned for. Load-shedding and internet drops are part of daily life in Pakistan, so we plan the network and backup around outages. During the survey, we check how your home handles both and plan the system around them.
 
 ### Security
 
 Cameras, locks, and lighting schedules only help if the network is up and the family can use them. Scheduled lights are useful. An unchanged default password is not.
 
-Remote cameras are only as good as the uplink. If the ISP drops, you need to know what still works locally.
+Remote cameras are only as good as the uplink, which is why we plan the network and backup around outages.
 
 ### Remote Access
 
-Useful for AC and lights before you get home in Karachi heat. Less useful if it depends on a flaky hallway router. Fix the [network](/service/home-networking-and-wi-fi/) first.
+Useful for AC and lights before you get home in Karachi heat. Less useful if it depends on a flaky hallway router. Fix the [network](/service/home-networking-and-wi-fi) first.
 
 ### What Usually Gets Tied In
 
@@ -70,4 +70,4 @@ We map who lives in the house. A keypad by the door is for guests. The phone app
 
 If you already bought mixed brands, we integrate what we can and leave the rest off the main scenes so one dead bulb does not block “Movie.”
 
-Plan automation with the network and the cinema. [Talk to Desert Sound](/contact-us/).
+Plan automation with the network and the cinema. [Talk to Desert Sound](/contact-us).
