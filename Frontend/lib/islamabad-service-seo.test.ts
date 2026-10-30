@@ -11,6 +11,7 @@ import {
   islamabadServicePath,
   islamabadServiceTitle,
 } from "./islamabad-service-content.ts"
+import { theatreServiceSerpDescription, theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
@@ -212,7 +213,11 @@ test("theatre inbound is one Islamabad line without remaking locked SERP title",
   assert.match(theatreLive, /\/service\/home-cinema-installation-islamabad/)
   assert.equal(theatreLive.split("/service/home-cinema-installation-islamabad").length - 1, 1)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(rankingTheatre.slice(0, 500), new RegExp(theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
+  assert.match(
+    rankingTheatre.slice(0, 800),
+    new RegExp(theatreServiceSerpDescription.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+  )
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
 })

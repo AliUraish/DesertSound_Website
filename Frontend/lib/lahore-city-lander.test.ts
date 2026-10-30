@@ -10,6 +10,7 @@ import {
   lahoreCityLanderSlug,
   lahoreCityLanderTitle,
 } from "./lahore-city-lander.ts"
+import { theatreServiceSerpDescription, theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const route = readFileSync(
@@ -171,12 +172,12 @@ test("theatre inbound is one nationwide line; SERP title and meta stay locked", 
   assert.match(theatreRoute, /const slug = "\/service\/home-theatre-design-and-installation"/)
   const rankingTheatre = ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]
   const catalogTheatre = seo.split('path: "/service/home-theatre-design-and-installation"')[1]
-  assert.match(rankingTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(rankingTheatre.slice(0, 500), new RegExp(theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
   assert.match(
     rankingTheatre.slice(0, 800),
-    /Home theater installation across Pakistan from Karachi\. We design, install, and calibrate cinema rooms — site visits nationwide\./,
+    new RegExp(theatreServiceSerpDescription.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
   )
-  assert.match(catalogTheatre.slice(0, 500), /Home Theater Installation in Pakistan \| Design and Install/)
+  assert.match(catalogTheatre.slice(0, 500), new RegExp(theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))
 })
 
 test("#33 upgrades existing Lahore mentions to the city lander", () => {

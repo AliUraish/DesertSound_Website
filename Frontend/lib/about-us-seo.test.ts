@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import { fileURLToPath } from "node:url"
+import { theatreServiceSerpTitle } from "./theatre-service-serp.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const siteName = "Desert Sound"
@@ -62,6 +63,6 @@ test("about-us H1, homepage, and theatre titles stay untouched", () => {
   assert.match(theatreRoute, /serviceRouteMetadata\(slug\)/)
   assert.match(
     ranking.split('"slug": "/service/home-theatre-design-and-installation"')[1]?.slice(0, 500) ?? "",
-    /Home Theater Installation in Pakistan \| Design and Install/,
+    new RegExp(`${theatreServiceSerpTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`),
   )
 })
