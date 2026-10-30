@@ -55,11 +55,17 @@ const TABLE_LINKS = [
   { label: "Book a Consultation", href: "/contact-us" },
 ] as const
 
+const KARACHI_LANDER_LINK = {
+  label: "home cinema installation in Karachi",
+  href: "/service/home-cinema-installation-karachi",
+} as const
+
 const BODY_LINK_ORDER = [
   TABLE_LINKS[3],
   TABLE_LINKS[1],
   TABLE_LINKS[0],
   TABLE_LINKS[2],
+  KARACHI_LANDER_LINK,
   TABLE_LINKS[4],
 ]
 
@@ -191,9 +197,9 @@ test("T4 answer block is locked and shares no 8-word run", () => {
   }
 })
 
-test("T5 body has exactly the five slashless links, Continue exploring stays empty", () => {
+test("T5 body has exactly the six slashless links, Continue exploring stays empty", () => {
   assert.deepEqual(anchors, BODY_LINK_ORDER)
-  assert.equal(anchors.length, 5)
+  assert.equal(anchors.length, 6)
   for (const expected of TABLE_LINKS) {
     assert.ok(
       anchors.some((link) => link.label === expected.label && link.href === expected.href),
@@ -203,8 +209,11 @@ test("T5 body has exactly the five slashless links, Continue exploring stays emp
   for (const link of anchors) {
     assert.ok(link.href.startsWith("/"))
     assert.doesNotMatch(link.href, /\/$/)
-    assert.notEqual(link.href, "/service/home-cinema-installation-karachi")
   }
+  assert.equal(
+    anchors.filter((link) => link.href === "/service/home-cinema-installation-karachi").length,
+    1,
+  )
   assert.deepEqual(meta.links, [])
 })
 
