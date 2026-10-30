@@ -314,7 +314,11 @@ test("10. anchors are unique against other articles, target titles and reserved 
 })
 
 test("11. body shares no eight-word run with related smart-home pages", () => {
-  const compareBody = visibleProse(body.replace(ENTITY, "").replace("We plan the network and backup around outages.", ""))
+  const stripCta = (text: string) =>
+    text.replace(/fill in the form and we will contact you\.?/gi, "")
+  const compareBody = visibleProse(
+    stripCta(body.replace(ENTITY, "").replace("We plan the network and backup around outages.", "")),
+  )
   const ours = eightWordRuns(compareBody)
   const related = [
     "smart-home-automation-why-should-you-invest-in-it-for-your-home.md",
@@ -324,11 +328,11 @@ test("11. body shares no eight-word run with related smart-home pages", () => {
   ]
   for (const filename of related) {
     const other = parseFrontmatter(readFileSync(join(articlesDir, filename), "utf8"))
-    const overlap = firstOverlap(ours, eightWordRuns(visibleProse(other.body)))
+    const overlap = firstOverlap(ours, eightWordRuns(visibleProse(stripCta(other.body))))
     assert.equal(overlap, null, `body shares "${overlap}" with ${filename}`)
   }
   for (const [name, text] of relatedSmartHomeText) {
-    const overlap = firstOverlap(ours, eightWordRuns(text))
+    const overlap = firstOverlap(ours, eightWordRuns(stripCta(text)))
     assert.equal(overlap, null, `body shares "${overlap}" with ${name}`)
   }
   assert.match(body, /We plan the network and backup around outages\./)

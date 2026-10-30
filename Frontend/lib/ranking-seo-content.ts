@@ -323,8 +323,8 @@ const sitePages: RankingSeoPage[] = [
   {
     "slug": "/service/smart-home-automation",
     "image": "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
-    "title": "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
-    "description": "Smart Home Automation Services in Karachi, Pakistan - Desert Sound",
+    "title": "Home Automation System in Pakistan",
+    "description": "Home automation system design and installation for homes across Pakistan: lights, AC, curtains, security and cinema on one app, planned around outages.",
     "h1": "Smart Home Automation System in Pakistan",
     "body": "A smart home automation system in Pakistan ties lighting, climate, entertainment, and security into one system you actually use. Apartments, villas, and commercial spaces can start small and grow.\n\n### Home Automation System Installation in Pakistan\nWe plan around the layout and what you want controlled. Control-system installation puts lights, HVAC, cameras, and entertainment on a phone, tablet, or wall panel — see [control systems](/service/control-systems/). [Home networking and Wi-Fi](/service/home-networking-and-wi-fi/) has to be solid first, or automation feels laggy. Entertainment is part of it too: [home theatre design and installation](/service/home-theatre-design-and-installation/) so audio, video, lights, and curtains move together, with [audio distribution](/service/audio-distribution/) keeping music in sync across rooms.\n\n### Voice Control Home Automation System\nHands-free commands for lights, AC, security, and the cinema. \"Movie night\" can dim the room and start the projector without a pile of remotes.\n\n### WiFi Controlled Home Automation\nControl the house from anywhere on a phone — only works with reliable networking and a control system that reports real status.",
     "faqs": [

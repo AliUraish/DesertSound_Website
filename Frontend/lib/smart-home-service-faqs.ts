@@ -14,9 +14,14 @@ export const smartHomeServiceFaqs: SmartHomeServiceFaq[] = [
       "A smart home automation system connects functions such as lighting, climate, security, curtains, and entertainment so they can be managed through central controls, schedules, scenes, or remote access.",
   },
   {
-    question: "Can entertainment systems be included in the automation?",
+    question: "Can home automation be added to an existing home?",
     answer:
-      "Yes. Home theatres, televisions, music systems, lighting, and motorised curtains can be integrated so an entire entertainment scene starts with one command.",
+      "Yes, though what fits depends on the home. We work with the wiring already in the walls, check each switch box for a neutral wire, and look at wireless devices where a new cable route isn't practical. Changes to the distribution board need a qualified electrician. The site survey shows what your home allows.",
+  },
+  {
+    question: "Does home automation require strong Wi-Fi and internet access?",
+    answer:
+      "A strong home network is essential for responsive app control, streaming, and connected devices. We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them.",
   },
   {
     question: "Is voice control a good idea in Pakistan?",
@@ -24,9 +29,9 @@ export const smartHomeServiceFaqs: SmartHomeServiceFaq[] = [
       "Voice control can be useful when it is supported by reliable internet access and careful system integration. We also provide physical and app-based controls so essential functions do not depend on voice commands alone.",
   },
   {
-    question: "Does home automation require strong Wi-Fi and internet access?",
+    question: "Can entertainment systems be included in the automation?",
     answer:
-      "A strong home network is essential for responsive app control, streaming, and connected devices. We plan the network and backup around outages. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them.",
+      "Yes. Home theatres, televisions, music systems, lighting, and motorised curtains can be integrated so an entire entertainment scene starts with one command.",
   },
   {
     question: "Can the system be expanded later?",
