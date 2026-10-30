@@ -33,7 +33,6 @@ const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
 
 const LAHORE_AREA_SENTENCE =
   "We work across Lahore, covering areas such as DHA, Gulberg, Model Town and Johar Town."
-const KARACHI_NAP = "22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi"
 const AREA_NAME_BAN = /Gulberg|Model Town|Johar Town|\bJohar\b/
 
 function visibleText(page: typeof lahoreCityLanderPage) {
@@ -46,6 +45,39 @@ function visibleText(page: typeof lahoreCityLanderPage) {
 
 function wordCount(text: string) {
   return text.split(/\s+/).filter((word) => /[A-Za-z]{2,}/.test(word)).length
+}
+
+function faqAnswerPlainText(answer: string) {
+  return answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*/g, "")
+}
+
+function faqPageJsonLdFromPage(page: typeof lahoreCityLanderPage) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faqAnswerPlainText(faq.a),
+      },
+    })),
+  }
+}
+
+function renderedPageData(page: typeof lahoreCityLanderPage) {
+  const faqs = page.faqs.map((faq) => `${faq.q}\n${faq.a}`).join("\n")
+  const links = page.links.map((link) => `${link.label}\n${link.href}`).join("\n")
+  return [
+    page.title,
+    page.description,
+    page.h1,
+    page.body,
+    faqs,
+    links,
+    JSON.stringify(faqPageJsonLdFromPage(page)),
+  ].join("\n")
 }
 
 test("Lahore lander uses locked slug, title, H1, and meta", () => {
@@ -128,8 +160,6 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
     /based in Lahore/i,
   )
   assert.match(haystack, /Not a Lahore showroom/)
-  assert.match(haystack, /22-C\/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi/)
-  assert.match(haystack, /\+92 21 111 570 111/)
   assert.match(haystack, /We have a team in Lahore/)
   assert.doesNotMatch(lahoreCityLanderPage.body, /Karachi proof/)
   assert.doesNotMatch(lahoreCityLanderPage.body, /do not invent Lahore case studies/i)
@@ -155,7 +185,7 @@ test("Lahore lander is sister-safe, Karachi NAP only, and fact-locked", () => {
   assert.doesNotMatch(chrome, /DHA|Gulberg|Model Town|Johar/)
   const faqs = lahoreCityLanderPage.faqs.map((faq) => `${faq.q} ${faq.a}`).join("\n")
   assert.doesNotMatch(faqs, AREA_NAME_BAN)
-  const outsideSentence = haystack.replaceAll(LAHORE_AREA_SENTENCE, "").replaceAll(KARACHI_NAP, "")
+  const outsideSentence = haystack.replaceAll(LAHORE_AREA_SENTENCE, "")
   assert.doesNotMatch(outsideSentence, AREA_NAME_BAN)
   assert.doesNotMatch(outsideSentence, /\bDHA\b/)
 })
@@ -198,4 +228,34 @@ test("#33 upgrades existing Lahore mentions to the city lander", () => {
 test("homepage is untouched by the Lahore lander", () => {
   assert.doesNotMatch(homepage, /home-cinema-installation-lahore/)
   assert.match(homepage, /Home Cinema Service in Pakistan \| Home Theater Installation/)
+})
+
+test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Zamzama", () => {
+  const expected =
+    "Our showroom is in Karachi, and we have a team in Lahore for surveys and installation. Book a survey through our contact page."
+  const faq = lahoreCityLanderPage.faqs.find((item) => item.q === "Is Desert Sound based in Lahore?")
+  assert.ok(faq)
+  assert.equal(faq.a, expected)
+
+  const jsonLd = faqPageJsonLdFromPage(lahoreCityLanderPage)
+  const entity = jsonLd.mainEntity.find((item) => item.name === "Is Desert Sound based in Lahore?")
+  assert.ok(entity)
+  assert.equal(entity.acceptedAnswer.text, expected)
+  assert.match(route, /faqPageJsonLd\(faqs\)/)
+  assert.match(route, /question: faq\.q/)
+  assert.match(route, /answer: faq\.a/)
+  assert.match(seo, /faqAnswerPlainText\(faq\.answer\)/)
+
+  const pageData = renderedPageData(lahoreCityLanderPage)
+  assert.doesNotMatch(pageData, /zamzama/i)
+  assert.doesNotMatch(pageData, /DHA Karachi/i)
+  assert.doesNotMatch(pageData, /111\s*570\s*111/)
+})
+
+test("Lahore contact card books through the form, without the Karachi phone or address", () => {
+  assert.equal(lahoreCityLanderPage.contactCard, "form-only")
+  const view = readFileSync(join(root, "components/ranking-seo-page.tsx"), "utf8")
+  const formOnly = view.split('page.contactCard === "form-only" ?')[1]?.split(") : (")[0] ?? ""
+  assert.match(formOnly, /Fill in the form and we will contact you\./)
+  assert.doesNotMatch(formOnly, /111\s*570\s*111|info@desertsound|Zamzama|DHA Karachi/)
 })

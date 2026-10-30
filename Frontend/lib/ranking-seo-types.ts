@@ -13,6 +13,11 @@ export type RankingSeoPage = {
    */
   emitFaqPageJsonLd?: boolean
   links: RankingSeoLink[]
+  /**
+   * "form-only" drops the Karachi phone, email and address from the contact card,
+   * for city pages that book through the contact form.
+   */
+  contactCard?: "form-only"
   image?: string
   imageAlt?: string
   date?: string

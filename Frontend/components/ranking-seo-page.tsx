@@ -216,10 +216,16 @@ export function RankingSeoPageView({
           <div className="mt-16 rounded-2xl bg-black px-6 py-10 text-[#F5F5DC] md:px-10">
             <p className="text-xs uppercase tracking-[0.2em] text-[#F5F5DC]/50">Contact</p>
             <p className="mt-3 text-2xl font-light">Ready to plan the room?</p>
-            <p className="mt-3 text-lg font-light">+92 21 111 570 111 · info@desertsound.com.pk</p>
-            <p className="mt-2 text-sm font-light text-[#F5F5DC]/60">
-              22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi
-            </p>
+            {page.contactCard === "form-only" ? (
+              <p className="mt-3 text-lg font-light">Fill in the form and we will contact you.</p>
+            ) : (
+              <>
+                <p className="mt-3 text-lg font-light">+92 21 111 570 111 · info@desertsound.com.pk</p>
+                <p className="mt-2 text-sm font-light text-[#F5F5DC]/60">
+                  22-C/II, 2nd Zamzama Commercial Lane, Phase V, DHA Karachi
+                </p>
+              </>
+            )}
             <Link
               href="/contact-us"
               className="mt-6 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-white/90"
