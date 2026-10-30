@@ -96,5 +96,9 @@ Call **+92 21 111 570 111** or email **info@desertsound.com.pk** to book a surve
       label: "Stanley Seats",
       href: "/projects/residential/stanley-seats",
     },
+    {
+      label: "Home cinema installation in Karachi",
+      href: "/service/home-cinema-installation-karachi",
+    },
   ],
 }

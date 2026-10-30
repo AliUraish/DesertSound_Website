@@ -28,6 +28,7 @@ const requiredHrefs = [
   "/projects/residential/project-platinum",
   "/service/home-theatre-design-and-installation",
   "/home-cinema-and-cinema-installer-pakistan",
+  "/service/home-cinema-installation-karachi",
   "/contact-us",
 ] as const
 
@@ -101,13 +102,13 @@ test("private cinema Karachi guide locks title, H1, and meta without doubling th
   assert.equal(meta.imageAlt, "Karachi private home cinema by Desert Sound")
 })
 
-test("private cinema Karachi guide has each of seven internal links exactly once, none with a trailing slash", () => {
+test("private cinema Karachi guide has each of eight internal links exactly once, none with a trailing slash", () => {
   const hrefs = [
     ...markdownHrefs(body),
     ...meta.faqs.flatMap((faq: { q: string; a: string }) => markdownHrefs(`${faq.q} ${faq.a}`)),
     ...meta.links.map((link: { href: string }) => link.href),
   ]
-  assert.equal(hrefs.length, 7)
+  assert.equal(hrefs.length, 8)
   assert.equal(meta.links.length, 0)
   for (const href of requiredHrefs) {
     const count = hrefs.filter((item) => item === href).length

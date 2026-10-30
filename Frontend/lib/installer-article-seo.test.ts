@@ -119,9 +119,10 @@ test("#33 Karachi depth answer block is 40–60 words with slashless survey link
   }))
   assert.equal(survey.split("/private-home-cinema-karachi").length - 1, 1)
   assert.doesNotMatch(survey, /\/private-home-cinema-karachi\//)
-  const service = surveyLinks.filter((link) => link.href === "/service/home-theatre-design-and-installation")
+  const service = surveyLinks.filter((link) => link.href === "/service/home-cinema-installation-karachi")
   assert.equal(service.length, 1)
   assert.equal(service[0].label, "home theatre in Karachi")
+  assert.doesNotMatch(survey, /\/service\/home-cinema-installation-karachi\//)
 
   const newCopy = `${answer}\n${survey}`
   for (const pattern of banned) {

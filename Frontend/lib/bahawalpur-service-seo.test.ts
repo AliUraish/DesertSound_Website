@@ -131,6 +131,8 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   assert.equal(copy.split("/service/home-cinema-installation-multan").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-faisalabad").length - 1, 1)
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
+  assert.match(copy, /\/service\/home-cinema-installation-karachi/)
+  assert.equal(copy.split("/service/home-cinema-installation-karachi").length - 1, 1)
   assert.match(copy, /We have teams in Lahore and Karachi/)
   assert.match(copy, /\[Book a Bahawalpur site-visit survey\]\(\/contact-us\)/)
   assert.doesNotMatch(copy, /through \[contact\]|via \[contact\]|Use \[contact\]/)

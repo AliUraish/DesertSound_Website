@@ -53,7 +53,7 @@ Summers in Bahawalpur run very hot and dry, and dust storms reach the city. For 
 
 ### Book a Bahawalpur site-visit survey
 
-[Book a Bahawalpur site-visit survey](/contact-us). Tell us your neighbourhood and which room you have in mind, and we'll schedule our trip. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), and [Sialkot](/service/home-cinema-installation-sialkot). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Bahawalpur site-visit survey](/contact-us). Tell us your neighbourhood and which room you have in mind, and we'll schedule our trip. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Bahawalpur?",
