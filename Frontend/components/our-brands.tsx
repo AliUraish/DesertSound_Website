@@ -35,12 +35,12 @@ const brands = [
 ]
 
 const awards = [
-  { name: "Award 1", logo: "/Awards/global_2025.png" },
-  { name: "Award 2", logo: "/Awards/IE_2025.png" },
-  { name: "Award 3", logo: "/Awards/image-removebg-preview (1).png" },
-  { name: "Award 4", logo: "/Awards/image_copy-removebg-preview.png" },
-  { name: "Award 5", logo: "/Awards/image_copy_2-removebg-preview.png" },
-  { name: "Award 6", logo: "/Awards/image_copy_3-removebg-preview.png", wide: true },
+  { name: "Award 1", logo: "/Awards/global_2025.webp" },
+  { name: "Award 2", logo: "/Awards/IE_2025.webp" },
+  { name: "Award 3", logo: "/Awards/image-removebg-preview (1).webp" },
+  { name: "Award 4", logo: "/Awards/image_copy-removebg-preview.webp" },
+  { name: "Award 5", logo: "/Awards/image_copy_2-removebg-preview.webp" },
+  { name: "Award 6", logo: "/Awards/image_copy_3-removebg-preview.webp", wide: true },
 ]
 
 const certifications = [
@@ -110,10 +110,12 @@ function StaticLogoRow({
   title,
   items,
   className = "mt-12",
+  fitDisplayedSize = false,
 }: {
   title: string
   items: { name: string; logo: string; wide?: boolean }[]
   className?: string
+  fitDisplayedSize?: boolean
 }) {
   return (
     <div className={`mx-auto max-w-7xl px-6 text-center lg:px-10 ${className}`}>
@@ -135,9 +137,17 @@ function StaticLogoRow({
               alt={item.name}
               className="h-full w-full object-contain opacity-90"
               loading="lazy"
-              width={item.wide ? 440 : 250}
-              height={176}
-              sizes={item.wide ? "(min-width: 1024px) 440px, 320px" : "(min-width: 1024px) 250px, 190px"}
+              width={fitDisplayedSize ? (item.wide ? 392 : 202) : item.wide ? 440 : 250}
+              height={fitDisplayedSize ? 136 : 176}
+              sizes={
+                fitDisplayedSize
+                  ? item.wide
+                    ? "(min-width: 1024px) 392px, (min-width: 640px) 332px, 272px"
+                    : "(min-width: 1024px) 202px, (min-width: 640px) 172px, 142px"
+                  : item.wide
+                    ? "(min-width: 1024px) 440px, 320px"
+                    : "(min-width: 1024px) 250px, 190px"
+              }
               quality={75}
             />
           </div>
@@ -313,7 +323,7 @@ export function OurBrands() {
         </div>
       </div>
 
-      <StaticLogoRow title="Awards" items={awards} />
+      <StaticLogoRow title="Awards" items={awards} fitDisplayedSize />
     </section>
   )
 }
