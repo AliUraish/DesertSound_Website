@@ -92,4 +92,8 @@ test("app, lib, and content sources do not promise 24-hour or same-day replies",
   assert.match(contactSection, /Fill in the form and we will contact you\./)
   assert.doesNotMatch(maintenance, /same day/i)
   assert.doesNotMatch(maintenance, /Remote diagnostics usually start the same day/)
+  assert.match(
+    maintenance,
+    /We start with remote diagnostics where possible, then arrange a visit if needed\./,
+  )
 })
