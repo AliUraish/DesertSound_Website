@@ -495,7 +495,7 @@ export default function SmartHomeAutomationPage() {
               className="max-w-3xl"
             >
               <h2 className="mb-6 text-3xl font-light tracking-tight text-black md:text-4xl lg:text-5xl">
-                Built for Load-Shedding and Internet Drops
+                Planning for Load-Shedding and Internet Drops
               </h2>
               <p className="text-lg font-light leading-relaxed text-black/70">
                 Power cuts and internet outages are part of daily life in Pakistan, so we plan for both from the start. We plan the network and backup around outages, starting with{" "}

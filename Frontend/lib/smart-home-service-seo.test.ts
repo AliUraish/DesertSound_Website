@@ -138,10 +138,11 @@ test("smart-home rewrite links, CTA, schema and outage locks", () => {
   assert.doesNotMatch(pageOutsideShowroom, /from Karachi/)
   assert.doesNotMatch(copyForBans, /(?<![-\w])free\b|complimentary|no[- ](charge|obligation)/i)
   assert.equal(count(page, BLOG_ANCHOR), 1)
+  assert.ok(page.includes("Planning for Load-Shedding and Internet Drops"))
   const copyNoAnchors = copyForBans.split(BLOG_ANCHOR).join("")
   assert.doesNotMatch(
     copyNoAnchors,
-    /mains returns|power returns|set during programming|without (the )?internet|\bruns? locally|works locally|still works|still run|keeps? working|offline|local control|continue to work|WAN is down/i,
+    /mains returns|power returns|set during programming|without (the )?internet|\bruns? locally|works locally|still works|still run|keeps? working|offline|local control|continue to work|WAN is down|built for/i,
   )
   assert.doesNotMatch(copyForBans, /\bbest\b|#1|number one|leading|trusted|Digital Sound|\bUPS\b|Z-?Wave/i)
   assert.doesNotMatch(copyForBans, /\bPKR\b|\bRs\.?\s?\d|\blakh\b|\d+\s?%/i)
