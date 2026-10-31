@@ -143,8 +143,9 @@ export const catalogServicePages: SeoPage[] = [
   },
   {
     path: "/service/smart-home-automation",
-    title: "Smart Home Automation System in Pakistan | Voice & WiFi Controlled Installation",
-    description: "Smart Home Automation Services in Karachi, Pakistan - Desert Sound",
+    title: "Home Automation System in Pakistan",
+    description:
+      "Home automation system design and installation for homes across Pakistan: lights, AC, curtains, security and cinema on one app, planned around outages.",
     image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
   },
   {
