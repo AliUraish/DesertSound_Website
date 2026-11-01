@@ -1,9 +1,9 @@
 ---
 {
   "slug": "/how-to-plan-home-theater-installation-for-any-room",
-  "title": "How to Plan Home Theater Installation for Any Room",
-  "description": "Plan the room before you buy the display. Size, light, and seating decide the gear for a home theatre in Pakistan — not the other way around.",
-  "h1": "How to Plan Home Theater Installation for Any Room",
+  "title": "Plan or Renovate a Home Theater Room in Pakistan",
+  "description": "Planning or renovating a home theater room in Pakistan? Size, light, seating, wiring and power set the plan, and a site survey shapes the budget.",
+  "h1": "How to Plan or Renovate a Home Theater Room in Pakistan",
   "image": "/blog-images/how-to-plan-home-theater-installation-for-any-room.jpeg",
   "faqs": [],
   "links": [
@@ -18,6 +18,8 @@
   ]
 }
 ---
+
+Planning or renovating a home theater room in Pakistan starts with the room, not the gear. Seating, light, wiring, acoustics and power decide the work, and a site survey shapes the budget before anything is bought.
 
 Plan the room before you buy the display. Size, light, and seating decide the gear — not the other way around.
 
