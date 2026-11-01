@@ -9,7 +9,7 @@
   "links": [
     {
       "label": "Home theatre design and installation",
-      "href": "/service/home-theatre-design-and-installation/"
+      "href": "/service/home-theatre-design-and-installation"
     },
     {
       "label": "Contact us",
@@ -34,6 +34,8 @@ Stay away from the noisiest part of the house if you can. A dark room is easier 
 Display, audio, then concealment and seating. Leave money for cabling and calibration. Do not spend it all on the panel.
 
 Mounts, cable, a ventilated rack, and blackout are part of the system. They are not extras you add if anything is left.
+
+For what drives the cost of the system itself, see [home theatre system cost in Pakistan](/home-theatre-system-cost-pakistan).
 
 ### DIY vs Professional
 
@@ -70,4 +72,4 @@ If several people use the room, write the one-button start into the plan. A beau
 
 We do this sequence on apartments and villas so the builder, the painter, and the rack show up in the right order. It is the same order we follow for an [Islamabad home theatre installation](/service/home-cinema-installation-islamabad).
 
-Desert Sound plans this for apartments and villas. [Home theatre design and installation](/service/home-theatre-design-and-installation/).
+Desert Sound plans this for apartments and villas. [Home theatre design and installation](/service/home-theatre-design-and-installation).

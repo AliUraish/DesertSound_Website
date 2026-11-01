@@ -76,3 +76,15 @@ test("planning guide intro leads the body and stays free of cost/free claims", (
   assert.doesNotMatch(meta.description, freePattern)
   assert.doesNotMatch(planIntro, freePattern)
 })
+
+test("planning guide points once to the cost post without trailing slashes", () => {
+  const costHrefs = [...body.matchAll(/\]\(([^)]+)\)/g)]
+    .map((match) => match[1])
+    .filter((href) => href.startsWith("/home-theatre-system-cost-pakistan"))
+  assert.equal(costHrefs.length, 1)
+  assert.equal(costHrefs[0], "/home-theatre-system-cost-pakistan")
+  assert.doesNotMatch(body, /\/home-theatre-system-cost-pakistan\//)
+  assert.doesNotMatch(article, /\/service\/home-theatre-design-and-installation\//)
+  assert.doesNotMatch(meta.title, /cost/i)
+  assert.doesNotMatch(meta.description, /cost/i)
+})
