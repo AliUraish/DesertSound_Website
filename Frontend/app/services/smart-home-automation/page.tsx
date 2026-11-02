@@ -271,7 +271,7 @@ export default function SmartHomeAutomationPage() {
                 Systems We Work With
               </h2>
               <p className="text-lg font-light leading-relaxed text-black/70">
-                We work with wired and wireless home automation systems. Wired systems, such as KNX, run on cabling laid in the walls and the distribution board, so they are planned in while cable routes are still open. Wireless systems, such as Wi-Fi, Zigbee and Matter-based devices, connect over the home network or through a hub, so they fit finished homes and later additions. Many homes use a mix of the two. The system for each home is decided after the survey, based on the construction stage, the walls and how the family wants to control it. For the questions to weigh before a survey, see{" "}
+                We work with wired and wireless home automation systems. Wired systems, such as KNX, run on cabling laid in the walls and the distribution board, so they are planned in while cable routes are still open. Wireless systems, such as Wi-Fi and Zigbee, connect over the home network or through a hub, so they fit finished homes and later additions. Many homes use a mix of the two. The system for each home is decided after the survey, based on the construction stage, the walls and how the family wants to control it. For the questions to weigh before a survey, see{" "}
                 <Link href="/how-to-choose-a-home-automation-system-pakistan" className="underline underline-offset-4 hover:text-black">choosing between wired, wireless and local control</Link>.
               </p>
             </motion.div>

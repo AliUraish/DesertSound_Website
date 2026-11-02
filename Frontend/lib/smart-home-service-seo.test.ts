@@ -8,6 +8,7 @@ import { smartHomeServiceFaqs } from "./smart-home-service-faqs.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const page = readFileSync(join(root, "app/services/smart-home-automation/page.tsx"), "utf8")
+const faqsSource = readFileSync(join(root, "lib/smart-home-service-faqs.ts"), "utf8")
 const route = readFileSync(join(root, "app/service/smart-home-automation/page.tsx"), "utf8")
 const ranking = readFileSync(join(root, "lib/ranking-seo-content.ts"), "utf8")
 const seo = readFileSync(join(root, "lib/seo.ts"), "utf8")
@@ -148,4 +149,6 @@ test("smart-home rewrite links, CTA, schema and outage locks", () => {
   assert.doesNotMatch(copyForBans, /\bPKR\b|\bRs\.?\s?\d|\blakh\b|\d+\s?%/i)
   assert.doesNotMatch(copyForBans, /\b\d+\s?(day|days|week|weeks|month|months|hours?)\b/i)
   assert.doesNotMatch(copyForBans, /DHA|Clifton|Gulberg|Bahria|Zamzama|\bPhase\b|\bUS\b|\bUK\b/)
+  assert.doesNotMatch(page, /\bMatter\b/)
+  assert.doesNotMatch(faqsSource, /\bMatter\b/)
 })
