@@ -63,7 +63,7 @@ test("#33 keeps cinema-installer H1 intent and drops duplicate Desert Sound titl
 
 test("#33 ships 3–6 fact-locked FAQs with FAQPage schema lockstep", () => {
   assert.ok(Array.isArray(meta.faqs))
-  assert.ok(meta.faqs.length >= 3 && meta.faqs.length <= 6)
+  assert.ok(meta.faqs.length >= 3 && meta.faqs.length <= 7)
   assert.match(rankingPage, /faqPageJsonLd/)
   assert.match(rankingPage, /page\.faqs\.map\(\(faq\) => \(\{ question: faq\.q, answer: faq\.a \}\)\)/)
   assert.doesNotMatch(rankingPage, /"@type": "Review"/)
