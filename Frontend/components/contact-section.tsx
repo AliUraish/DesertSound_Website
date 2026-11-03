@@ -3,8 +3,63 @@
 import { Phone, Mail, MapPin, Clock, ArrowUpRight, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
+import Image from "next/image"
 import { FaqCollapsePanel } from "@/components/faq-collapse-panel"
 import { homepageInstallFaqs, type FaqItem } from "@/lib/seo"
+
+const SHOWROOM_MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7242.813381935862!2d67.03972317603166!3d24.815761947043313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dadae2d8b33%3A0x49aa1a50e8f47adb!2sDesert%20Sound%20-%20Home%20Theater%20%26%20Smart%20Home%20Solution!5e0!3m2!1sen!2s!4v1781268452784!5m2!1sen!2s"
+
+const SHOWROOM_MAPS_URL =
+  "https://www.google.com/maps/place/Desert+Sound+-+Home+Theater+%26+Smart+Home+Solution/@24.815761947043313,67.03972317603166,16z"
+
+function ShowroomMapFacade() {
+  const [mapLoaded, setMapLoaded] = useState(false)
+
+  return (
+    <div className="relative h-[320px] w-full md:h-[420px]">
+      {mapLoaded ? (
+        <iframe
+          src={SHOWROOM_MAP_EMBED_SRC}
+          title="Desert Sound Zamzama location"
+          className="h-[320px] w-full md:h-[420px]"
+          style={{ border: 0 }}
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      ) : (
+        <>
+          <Image
+            src="/showroom-map.webp"
+            alt="Map showing Desert Sound's showroom location in DHA Karachi"
+            width={1184}
+            height={420}
+            sizes="(min-width: 1280px) 1184px, 100vw"
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+          <button
+            type="button"
+            onClick={() => setMapLoaded(true)}
+            className="absolute inset-0 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#F5F5DC]"
+          >
+            <span className="rounded-full bg-black px-4 py-2 text-sm font-medium text-[#F5F5DC] shadow-lg">
+              Load interactive map
+            </span>
+          </button>
+        </>
+      )}
+      <a
+        href={SHOWROOM_MAPS_URL}
+        target="_blank"
+        rel="noopener"
+        className="absolute bottom-3 left-3 z-10 rounded bg-[#F5F5DC] px-2 py-1 text-sm text-black underline"
+      >
+        Open in Google Maps
+      </a>
+    </div>
+  )
+}
 
 function HomepageFaqAccordion({ faq, index }: { faq: FaqItem; index: number }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -278,15 +333,7 @@ export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           className="mt-6 overflow-hidden rounded-2xl border border-[#F5F5DC]/10 bg-[#F5F5DC] shadow-2xl lg:mt-8"
         >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7242.813381935862!2d67.03972317603166!3d24.815761947043313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33dadae2d8b33%3A0x49aa1a50e8f47adb!2sDesert%20Sound%20-%20Home%20Theater%20%26%20Smart%20Home%20Solution!5e0!3m2!1sen!2s!4v1781268452784!5m2!1sen!2s"
-            title="Desert Sound Zamzama location"
-            className="h-[320px] w-full md:h-[420px]"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <ShowroomMapFacade />
         </motion.div>
       </div>
     </section>
