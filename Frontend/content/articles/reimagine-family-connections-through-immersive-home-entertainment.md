@@ -39,4 +39,4 @@ A cinema stack is also the games stack if the speakers and seating are planned f
 
 A weekday can stay simple: climate and a quiet playlist in the morning, volume limited from another room in the afternoon, one wall button at night. That only works if lighting, shades, and audio are on the same control layer.
 
-Desert Sound plans the theatre for the household, then installs and supports it. [Start with a site visit](/contact-us/).
+Desert Sound plans the theatre for the household, then installs and supports it. [Start with a site visit](/contact-us).

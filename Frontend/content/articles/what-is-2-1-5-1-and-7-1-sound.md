@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -39,4 +39,4 @@ Adds two extra surrounds, usually side plus rear. Helps in longer rooms with mor
 
 Pick the layout for the room, then place and calibrate. A tight 5.1 beats a sloppy 7.1. Gaming and films benefit from surrounds; stereo music often doesn't need them.
 
-[Home theatre installation](/service/home-theatre-design-and-installation/) starts with that decision. [Contact us](/contact-us/) if you want the layout drawn for your seats.
+[Home theatre installation](/service/home-theatre-design-and-installation/) starts with that decision. [Contact us](/contact-us) if you want the layout drawn for your seats.

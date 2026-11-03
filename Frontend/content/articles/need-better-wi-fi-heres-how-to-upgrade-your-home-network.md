@@ -35,4 +35,4 @@ Switch to a quieter channel if neighbours crowd yours. Password-protect the netw
 
 Powerline adapters use electrical wiring. They can help in a finished home; results depend on the circuit. Ethernet to the TV, console, or desk still beats another wireless hop and frees airtime for phones.
 
-[Contact us](/contact-us/) if you want the network designed, not patched.
+[Contact us](/contact-us) if you want the network designed, not patched.

@@ -21,7 +21,9 @@ const libraryOptions = [
   },
 ]
 
-export function ProjectLibraryChooser() {
+export function ProjectLibraryChooser({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+  const Heading = headingAs
+
   return (
     <section id="projects" className="bg-background pt-16 pb-10 lg:pt-24 lg:pb-12">
       <div className="max-w-[90%] mx-auto px-4 lg:px-8">
@@ -35,7 +37,7 @@ export function ProjectLibraryChooser() {
           <span className="inline-block bg-foreground text-background text-xs font-medium tracking-wide uppercase px-4 py-2 rounded-full mb-5">
             Project Categories
           </span>
-          <h2 className="text-3xl lg:text-6xl font-light text-foreground mb-3">Select a Project Category</h2>
+          <Heading className="text-3xl lg:text-6xl font-light text-foreground mb-3">Select a Project Category</Heading>
           <p className="text-muted-foreground text-base lg:text-lg max-w-2xl">
             Select a category to open its dedicated project library.
           </p>

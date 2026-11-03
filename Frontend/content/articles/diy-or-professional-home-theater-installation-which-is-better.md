@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -60,4 +60,4 @@ If you start DIY and stop, call before the walls close. An open chase is cheap t
 
 We would rather take over a half-done room than pretend the guessed HDMI run will magically hold 4K later.
 
-Desert Sound does the full path: consult, install, calibrate, support. [Contact us](/contact-us/).
+Desert Sound does the full path: consult, install, calibrate, support. [Contact us](/contact-us).

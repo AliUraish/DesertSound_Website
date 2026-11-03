@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -60,4 +60,4 @@ Keep source labels short: Film, Game, Music, Laptop. Kids and guests will use th
 
 The network sits under all of this. A match, a 4K series, and a cloud concert fail in the same way when the hallway router gives up. Plan [home networking](/service/home-networking-and-wi-fi/) with the room, not after the first buffering night.
 
-If you want those modes as one-button scenes, [contact us](/contact-us/).
+If you want those modes as one-button scenes, [contact us](/contact-us).

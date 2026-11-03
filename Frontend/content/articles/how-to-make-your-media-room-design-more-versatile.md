@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -35,4 +35,4 @@ Front speakers that are good for music. Add surrounds and a sub so the same room
 
 That's [a theatre layout and control plan](/service/home-theatre-design-and-installation), not themed wallpaper.
 
-[Contact us](/contact-us/) to design a media room that changes use without a rebuild.
+[Contact us](/contact-us) to design a media room that changes use without a rebuild.

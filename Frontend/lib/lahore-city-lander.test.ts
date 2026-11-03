@@ -250,9 +250,10 @@ test("Lahore FAQ showroom answer matches page data and FAQPage JSON-LD without Z
   assert.doesNotMatch(pageData, /zamzama/i)
   assert.doesNotMatch(pageData, /DHA Karachi/i)
   assert.doesNotMatch(pageData, /111\s*570\s*111/)
+  assert.doesNotMatch(pageData, /info@/)
 })
 
-test("Lahore contact card books through the form, without the Karachi phone or address", () => {
+test("Lahore contact card books through the form, Karachi NAP only", () => {
   assert.equal(lahoreCityLanderPage.contactCard, "form-only")
   const view = readFileSync(join(root, "components/ranking-seo-page.tsx"), "utf8")
   const formOnly = view.split('page.contactCard === "form-only" ?')[1]?.split(") : (")[0] ?? ""
