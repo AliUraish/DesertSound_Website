@@ -72,6 +72,6 @@ That work sits inside [everything an installer handles between survey and handov
 
 On a site survey we measure the room, the wiring routes, the power and the light. Those facts are what the quote is written against, so the figure holds when the work starts rather than drifting once the walls are open. That is also [how we design and fit a complete theatre room](/service/home-theatre-design-and-installation): the survey first, then the layout, then the install.
 
-If you are building a separate room just for films in Karachi, [planning a dedicated cinema room in Karachi](/private-home-cinema-karachi) compares it with a shared lounge, the choice that moves the screen, the speakers, the treatment and the seats.
+If you are building a separate room just for films in Karachi, [planning a dedicated cinema room in Karachi](/private-home-cinema-karachi) compares it with a shared lounge, the choice that moves the screen, the speakers, the treatment and the seats. For the install itself in the city, see [home cinema installation in Karachi](/service/home-cinema-installation-karachi).
 
 Desert Sound designs and installs home cinemas, home theatres and smart homes across Pakistan, with a showroom in Karachi. [Book a Consultation](/contact-us). Fill in the form and we will contact you.
