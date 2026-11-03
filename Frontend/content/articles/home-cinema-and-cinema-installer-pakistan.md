@@ -8,6 +8,10 @@
   "image": "/blog-images/home-cinema-and-cinema-installer-pakistan.jpg",
   "faqs": [
     {
+      "q": "Do you install home theatres across Pakistan?",
+      "a": "Yes. Desert Sound designs and installs home theatres and private cinemas across Pakistan, in apartments and bungalows. Each room is surveyed, designed, wired out of sight and calibrated to its seats. We have a team in Lahore. Our showroom is in Karachi. We are a CEDIA member. Fill in the form and we will contact you."
+    },
+    {
       "q": "What does a cinema installer in Pakistan actually do?",
       "a": "A cinema installer designs the room, conceals wiring and power before finishes close, then calibrates picture and sound to the seats — not a boxed kit dropped in. Desert Sound follows that sequence from Karachi, with the same method on Pakistan site visits. Finished Karachi residential rooms are the local proof of the work."
     },
