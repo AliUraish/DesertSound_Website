@@ -97,8 +97,8 @@ function HeroSlideImage({
         sizes="100vw"
         quality={75}
         priority={isFirstSlide}
-        loading={isFirstSlide ? "eager" : "lazy"}
-        fetchPriority={isFirstSlide ? "high" : "auto"}
+        loading="eager"
+        fetchPriority={isFirstSlide ? "high" : "low"}
         decoding="async"
         className="w-full h-full object-cover"
         style={{
@@ -248,6 +248,7 @@ export function HeroSection() {
   }, [currentSlide])
 
   const slide = heroSlides[currentSlide]
+  const nextSlide = heroSlides[(currentSlide + 1) % heroSlides.length]
   // Keep the LCP hero painted through hydration. A 1.5s fade-from-0 on the first
   // slide is invisible to LCP and was competing with the ~8.7s mobile baseline.
   const animateSlide = hasMounted && (currentSlide !== 0 || hasLeftFirstSlide)
@@ -264,6 +265,19 @@ export function HeroSection() {
               isFirstSlide={currentSlide === 0}
             />
           </AnimatePresence>
+          {/* Preload the upcoming slide (opacity 0, not display:none) so rotation never becomes a late LCP. */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden opacity-0">
+            <Image
+              src={nextSlide.image}
+              alt=""
+              width={1920}
+              height={1080}
+              sizes="100vw"
+              quality={75}
+              loading="eager"
+              fetchPriority="low"
+            />
+          </div>
 
           <div className="relative z-10 flex h-full flex-col justify-end px-4 pb-5 md:px-6 md:pb-8 lg:px-8 lg:pb-12">
             <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 md:gap-6 lg:gap-8">

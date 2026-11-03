@@ -307,7 +307,7 @@ export function NewsletterPrompt() {
   if (!mounted) return null
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-[5.75rem] z-40 flex justify-center px-4 lg:top-[7.25rem]">
+    <div className="pointer-events-none absolute inset-x-0 top-[5.75rem] z-40 flex justify-center px-4 lg:top-[7.25rem]">
       <div ref={boxRef} className="pointer-events-auto relative w-full max-w-md">
         <canvas
           ref={canvasRef}

@@ -39,7 +39,7 @@ export default function HomePage() {
           __html: JSON.stringify(faqPageJsonLd(homepageInstallFaqs)).replace(/</g, "\\u003c"),
         }}
       />
-      <main className="min-h-screen bg-background">
+      <main className="relative min-h-screen bg-background">
         <Header />
         <NewsletterPrompt />
         <HeroSection />
