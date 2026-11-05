@@ -8,6 +8,7 @@ import { multanServicePage } from "./multan-service-content"
 import { punjabServicePage } from "./punjab-service-content"
 import type { RankingSeoPage } from "./ranking-seo-types"
 import { sialkotServicePage } from "./sialkot-service-content"
+import { smartHomeKarachiPage } from "./smart-home-karachi-content"
 
 export type { BlogPost, RankingSeoFaq, RankingSeoLink, RankingSeoPage } from "./ranking-seo-types"
 
@@ -376,6 +377,7 @@ const sitePages: RankingSeoPage[] = [
       }
     ]
   },
+  smartHomeKarachiPage,
   {
     "slug": "/projects",
     "title": "Our Projects",

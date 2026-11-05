@@ -37,6 +37,7 @@ const servicePagesThatAlreadyEmitFaqPage = new Set([
   "home-cinema-installation-punjab",
   "home-cinema-installation-sialkot",
   "smart-home-automation",
+  "smart-home-automation-karachi",
 ])
 
 function htmlOutsideScripts(html: string) {

@@ -15,6 +15,7 @@ import {
   karachiServiceTitle,
 } from "./karachi-service-content.ts"
 import { projectLibraries } from "./projects-data.ts"
+import { smartHomeKarachiPath } from "./smart-home-karachi-content.ts"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const homepage = readFileSync(join(root, "app/page.tsx"), "utf8")
@@ -71,6 +72,7 @@ function sitemapUrlCount() {
   const inlineRankingRoutes = [...ranking.matchAll(/"slug": "([^"]+)"/g)].map((match) => match[1])
   const importedLanderRoutes = [
     karachiServicePath,
+    smartHomeKarachiPath,
     "/service/home-cinema-installation-islamabad",
     "/service/home-cinema-installation-lahore",
     "/service/home-cinema-installation-multan",
@@ -236,7 +238,7 @@ test("Karachi lander does not invent local proof, superlatives, or sister brands
 
 test("sitemap and listings include the Karachi service URL slashless", () => {
   // Other PRs add pages too, so check the floor rather than an exact count.
-  assert.ok(sitemapUrlCount() >= 126)
+  assert.ok(sitemapUrlCount() >= 129)
   assert.match(sitemap, /rankingSeoPages/)
   assert.match(htmlSitemap, /\/service\/home-cinema-installation-karachi/)
   assert.doesNotMatch(htmlSitemap, /\/service\/home-cinema-installation-karachi\//)
