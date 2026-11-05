@@ -24,6 +24,7 @@ const links = [
   { href: "/service/home-cinema-installation-bahawalpur", label: "Home cinema installation in Bahawalpur" },
   { href: "/service/home-cinema-installation-punjab", label: "Home cinema installation in Punjab" },
   { href: "/service/smart-home-automation", label: "Smart home automation" },
+  { href: "/service/smart-home-automation-karachi", label: "Smart home automation in Karachi" },
   { href: "/service/audio-distribution", label: "Audio distribution" },
   { href: "/service/control-systems", label: "Control systems" },
   { href: "/service/home-networking-and-wi-fi", label: "Home networking and Wi-Fi" },
