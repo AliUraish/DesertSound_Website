@@ -53,9 +53,9 @@ test("Bahawalpur lander uses slug A, locked title/H1/meta, and is not a blog", (
   assert.equal(bahawalpurServiceH1, "Home Cinema Installation in Bahawalpur")
   assert.equal(
     bahawalpurServiceDescription,
-    "Home cinema installation in Bahawalpur from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+    "Home cinema installation in Bahawalpur by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   )
-  assert.ok(bahawalpurServiceDescription.length >= 150 && bahawalpurServiceDescription.length <= 160)
+  assert.equal(bahawalpurServiceDescription.length, 134)
   assert.equal(bahawalpurServicePage.slug, bahawalpurServicePath)
   assert.equal(bahawalpurServicePage.title, bahawalpurServiceTitle)
   assert.equal(bahawalpurServicePage.h1, bahawalpurServiceH1)
@@ -73,7 +73,7 @@ test("Bahawalpur ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(catalogSlice.slice(0, 800), /Home Cinema Installation in Bahawalpur \| Desert Sound/)
   assert.match(
     catalogSlice.slice(0, 900),
-    /Home cinema installation in Bahawalpur from Desert Sound's Karachi team/,
+    /Home cinema installation in Bahawalpur by Desert Sound/,
   )
   assert.match(schema, /@type": "Country"/)
   assert.match(schema, /@type": "City"/)
@@ -205,7 +205,8 @@ test("Bahawalpur lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(bahawalpurServiceTitle, /Site Visits from Karachi/i)
   assert.match(bahawalpurServiceDescription, /site visit/)
-  assert.match(bahawalpurServiceDescription, /Karachi/)
+  assert.match(bahawalpurServiceDescription, /by Desert Sound/)
+  assert.doesNotMatch(bahawalpurServiceDescription, /Karachi team/)
 })
 
 test("sitemap and llms listings include the Bahawalpur service URL", () => {

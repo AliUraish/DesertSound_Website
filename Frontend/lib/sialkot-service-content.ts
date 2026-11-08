@@ -5,7 +5,7 @@ export const sialkotServicePath = "/service/home-cinema-installation-sialkot"
 export const sialkotServiceTitle = "Home Cinema Installation in Sialkot | Desert Sound"
 export const sialkotServiceH1 = "Home Cinema Installation in Sialkot"
 export const sialkotServiceDescription =
-  "Home cinema installation in Sialkot from Desert Sound's Karachi team. Design, install, and calibrate on a planned site visit — cinema rooms across Pakistan."
+  "Home cinema installation in Sialkot by Desert Sound. Design, install, and calibrate on a planned site visit — cinema rooms across Pakistan."
 
 export const sialkotServicePage: RankingSeoPage = {
   slug: sialkotServicePath,

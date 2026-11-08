@@ -53,9 +53,9 @@ test("Faisalabad lander uses slug A, locked title/H1/meta, and is not a blog", (
   assert.equal(faisalabadServiceH1, "Home Cinema Installation in Faisalabad")
   assert.equal(
     faisalabadServiceDescription,
-    "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+    "Home cinema installation in Faisalabad by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   )
-  assert.ok(faisalabadServiceDescription.length >= 150 && faisalabadServiceDescription.length <= 160)
+  assert.equal(faisalabadServiceDescription.length, 134)
   assert.equal(faisalabadServicePage.slug, faisalabadServicePath)
   assert.equal(faisalabadServicePage.title, faisalabadServiceTitle)
   assert.equal(faisalabadServicePage.h1, faisalabadServiceH1)
@@ -71,7 +71,7 @@ test("Faisalabad ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(catalogSlice.slice(0, 800), /Home Cinema Installation in Faisalabad \| Desert Sound/)
   assert.match(
     catalogSlice.slice(0, 900),
-    /Home cinema installation in Faisalabad from Desert Sound's Karachi team/,
+    /Home cinema installation in Faisalabad by Desert Sound/,
   )
   assert.match(schema, /@type": "Country"/)
   assert.match(schema, /@type": "City"/)
@@ -204,7 +204,8 @@ test("Faisalabad lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(faisalabadServiceTitle, /Site Visits from Karachi/i)
   assert.match(faisalabadServiceDescription, /site visit/)
-  assert.match(faisalabadServiceDescription, /Karachi/)
+  assert.match(faisalabadServiceDescription, /by Desert Sound/)
+  assert.doesNotMatch(faisalabadServiceDescription, /Karachi team/)
 })
 
 test("sitemap and llms listings include the Faisalabad service URL", () => {

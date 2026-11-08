@@ -5,7 +5,7 @@ export const faisalabadServicePath = "/service/home-cinema-installation-faisalab
 export const faisalabadServiceTitle = "Home Cinema Installation in Faisalabad | Desert Sound"
 export const faisalabadServiceH1 = "Home Cinema Installation in Faisalabad"
 export const faisalabadServiceDescription =
-  "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
+  "Home cinema installation in Faisalabad by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
 
 export const faisalabadServicePage: RankingSeoPage = {
   slug: faisalabadServicePath,
@@ -57,7 +57,7 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",
-      a: "Yes. Our team comes to the house for the survey and then fit the theatre, following the identical plan, build and tune routine we use for every Pakistani home.",
+      a: "Yes. Our team comes to the house for the survey and then fits the theatre, following the identical plan, build and tune routine we use for every Pakistani home.",
     },
     {
       q: "Is Desert Sound based in Faisalabad?",

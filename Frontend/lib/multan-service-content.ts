@@ -5,7 +5,7 @@ export const multanServicePath = "/service/home-cinema-installation-multan"
 export const multanServiceTitle = "Home Cinema Installation in Multan | Desert Sound"
 export const multanServiceH1 = "Home Cinema Installation in Multan"
 export const multanServiceDescription =
-  "Home cinema installation in Multan from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan."
+  "Home cinema installation in Multan by Desert Sound. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan."
 
 export const multanServicePage: RankingSeoPage = {
   slug: multanServicePath,

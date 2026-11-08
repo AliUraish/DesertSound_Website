@@ -54,9 +54,9 @@ test("Multan lander uses slug A, locked title/H1/meta, and is not a blog", () =>
   assert.equal(multanServiceH1, "Home Cinema Installation in Multan")
   assert.equal(
     multanServiceDescription,
-    "Home cinema installation in Multan from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan.",
+    "Home cinema installation in Multan by Desert Sound. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan.",
   )
-  assert.ok(multanServiceDescription.length >= 150 && multanServiceDescription.length <= 160)
+  assert.equal(multanServiceDescription.length, 135)
   assert.equal(multanServicePage.slug, multanServicePath)
   assert.equal(multanServicePage.title, multanServiceTitle)
   assert.equal(multanServicePage.h1, multanServiceH1)
@@ -72,7 +72,7 @@ test("Multan ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(catalogSlice.slice(0, 800), /Home Cinema Installation in Multan \| Desert Sound/)
   assert.match(
     catalogSlice.slice(0, 900),
-    /Home cinema installation in Multan from Desert Sound's Karachi team/,
+    /Home cinema installation in Multan by Desert Sound/,
   )
   assert.match(schema, /@type": "Country"/)
   assert.match(schema, /@type": "City"/)
@@ -190,7 +190,8 @@ test("Multan lander does not invent local proof, superlatives, or sister brands"
   assert.doesNotMatch(copy, /Karachi residential theatres/)
   assert.doesNotMatch(multanServiceTitle, /Site Visits from Karachi/i)
   assert.match(multanServiceDescription, /site visit/)
-  assert.match(multanServiceDescription, /Karachi/)
+  assert.match(multanServiceDescription, /by Desert Sound/)
+  assert.doesNotMatch(multanServiceDescription, /Karachi team/)
 })
 
 test("sitemap and llms listings include the Multan service URL", () => {

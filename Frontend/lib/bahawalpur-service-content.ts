@@ -5,7 +5,7 @@ export const bahawalpurServicePath = "/service/home-cinema-installation-bahawalp
 export const bahawalpurServiceTitle = "Home Cinema Installation in Bahawalpur | Desert Sound"
 export const bahawalpurServiceH1 = "Home Cinema Installation in Bahawalpur"
 export const bahawalpurServiceDescription =
-  "Home cinema installation in Bahawalpur from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
+  "Home cinema installation in Bahawalpur by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
 
 export const bahawalpurServicePage: RankingSeoPage = {
   slug: bahawalpurServicePath,
