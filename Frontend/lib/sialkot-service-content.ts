@@ -12,9 +12,9 @@ export const sialkotServicePage: RankingSeoPage = {
   title: sialkotServiceTitle,
   description: sialkotServiceDescription,
   h1: sialkotServiceH1,
-  body: `Desert Sound's Karachi team designs and installs home theaters in Sialkot. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Sialkot showroom.
+  body: `Desert Sound designs and installs home theaters in Sialkot. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Sialkot showroom.
 
-We have teams in Lahore and Karachi. For a Sialkot house we travel from Karachi, survey the building, and install for that house. [Book a Sialkot site-visit survey](/contact-us).
+We work across Sialkot. For a Sialkot house our team comes to the house for the survey, then we install for that house. [Book a Sialkot site-visit survey](/contact-us).
 
 ### What home cinema installation in Sialkot means
 
@@ -24,9 +24,9 @@ A room used only as a cinema can be darker, and quieter for the house next door.
 
 What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Sialkot work follows that after the visit.
 
-### Site visits from Karachi: how we work in Sialkot
+### How we work in Sialkot
 
-Sialkot projects move through four stages: inspection, drawings, fitting (with concealed wiring and supply), then balancing. Our showcase rooms are Karachi homes, and those are where the stages were proven; Sialkot clients receive the identical routine on each trip.
+Sialkot projects move through four stages: inspection, drawings, fitting (with concealed wiring and supply), then balancing. Our showcase rooms are Karachi homes, and those are where the stages were proven; Sialkot clients receive the identical routine.
 
 During the inspection we listen as well as measure. Shared walls, the floor above, and any workshop or traffic noise reaching the room are noted, and the screen, seating and cable paths are fixed before decorators arrive. Fitting comes next, then balancing at the principal chair. Sialkot has no Desert Sound branch.
 
@@ -57,11 +57,11 @@ Sialkot is an export and industrial city — sports goods, surgical instruments 
   faqs: [
     {
       q: "Do you install home cinemas in Sialkot?",
-      a: "Yes. Specialists from Karachi make the trip to inspect your property and complete the build, with the same drawings-to-balancing approach used countrywide.",
+      a: "Yes. Our team comes to the house for the survey and completes the build, with the same drawings-to-balancing approach used countrywide.",
     },
     {
       q: "Is Desert Sound based in Sialkot?",
-      a: "No. We operate from Karachi and serve Sialkot by visiting. There is no Sialkot showroom. [Book a survey](/contact-us).",
+      a: "No. We work across Sialkot. There is no Sialkot showroom. Our showroom is in Karachi. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

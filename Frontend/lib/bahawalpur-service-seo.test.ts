@@ -96,7 +96,8 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   const words = wordCount(copy)
   assert.ok(words >= 800 && words <= 1100, `copy is ${words} words; want 800–1100`)
   assert.match(bahawalpurServicePage.body, /What home cinema installation in Bahawalpur means/)
-  assert.match(bahawalpurServicePage.body, /Site visits from Karachi: how we work in Bahawalpur/)
+  assert.match(bahawalpurServicePage.body, /### How we work in Bahawalpur\n/)
+  assert.doesNotMatch(copy, /Site visits from Karachi/)
   assert.match(bahawalpurServicePage.body, /### Homes we visit in Bahawalpur\n/)
   assert.match(bahawalpurServicePage.body, /### Rooms we've finished\n/)
   assert.doesNotMatch(bahawalpurServicePage.body, /Karachi proof/)
@@ -134,7 +135,12 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
   assert.match(copy, /\/service\/home-cinema-installation-karachi/)
   assert.equal(copy.split("/service/home-cinema-installation-karachi").length - 1, 1)
-  assert.match(copy, /We have teams in Lahore and Karachi/)
+  assert.match(copy, /For a Bahawalpur house our team comes to the house for the survey/)
+  assert.doesNotMatch(copy, /teams in Lahore and Karachi/)
+  assert.doesNotMatch(
+    copy,
+    /travel from Karachi|travels from Karachi|site visits from Karachi|operate from Karachi|trip from Karachi/,
+  )
   assert.match(copy, /\[Book a Bahawalpur site-visit survey\]\(\/contact-us\)/)
   assert.doesNotMatch(copy, /through \[contact\]|via \[contact\]|Use \[contact\]/)
   assert.equal(copy.split("](/contact-us)").length - 1, 3)

@@ -12,9 +12,9 @@ export const bahawalpurServicePage: RankingSeoPage = {
   title: bahawalpurServiceTitle,
   description: bahawalpurServiceDescription,
   h1: bahawalpurServiceH1,
-  body: `Desert Sound's Karachi team designs and installs home theaters in Bahawalpur. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Bahawalpur showroom.
+  body: `Desert Sound designs and installs home theaters in Bahawalpur. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Bahawalpur showroom.
 
-We have teams in Lahore and Karachi. For a Bahawalpur house we travel from Karachi, survey the building, and install for that house. [Book a Bahawalpur site-visit survey](/contact-us).
+We work across Bahawalpur. For a Bahawalpur house our team comes to the house for the survey, then we install for that house. [Book a Bahawalpur site-visit survey](/contact-us).
 
 ### What home cinema installation in Bahawalpur means
 
@@ -24,9 +24,9 @@ A room used only as a cinema can be darker, and the walls can keep the sound in.
 
 What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Bahawalpur work follows that after the visit.
 
-### Site visits from Karachi: how we work in Bahawalpur
+### How we work in Bahawalpur
 
-Four stages, always in order: survey, drawings, installation with hidden wiring and supply, then calibration. Karachi is where our showcase rooms live and where this routine was refined; Bahawalpur clients get identical discipline delivered to their gate.
+Four stages, always in order: survey, drawings, installation with hidden wiring and supply, then calibration. Karachi is where our showcase rooms live and where this routine was refined; Bahawalpur clients get the identical discipline on a site visit to the house.
 
 During the walk-through we note every window, skylight and veranda opening, check how tightly doors close, and mark spots for projector, rack and seating before plaster or paint is finished. Fitting follows, and the visit ends with picture and sound set from your main chair.
 
@@ -53,15 +53,15 @@ Summers in Bahawalpur run very hot and dry, and dust storms reach the city. For 
 
 ### Book a Bahawalpur site-visit survey
 
-[Book a Bahawalpur site-visit survey](/contact-us). Tell us your neighbourhood and which room you have in mind, and we'll schedule our trip. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Bahawalpur site-visit survey](/contact-us). Tell us your neighbourhood and which room you have in mind, and our team comes to the house for the survey. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Faisalabad](/service/home-cinema-installation-faisalabad), [Sialkot](/service/home-cinema-installation-sialkot), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Bahawalpur?",
-      a: "Yes. Our team travels from Karachi to Bahawalpur to survey the house, then build and tune the theatre, following one countrywide sequence.",
+      a: "Yes. Our team comes to the house for the survey, then we build and tune the theatre for that house, following one countrywide sequence.",
     },
     {
       q: "Is Desert Sound based in Bahawalpur?",
-      a: "No. Desert Sound operates from Karachi and reaches Bahawalpur on site visits from Karachi. There is no Bahawalpur showroom. [Book a survey](/contact-us).",
+      a: "No. We work across Bahawalpur. There is no Bahawalpur showroom. Our showroom is in Karachi. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",
