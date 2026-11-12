@@ -67,7 +67,7 @@ const RESERVED_ANCHORS = [
 
 const BRANDS =
   /\b(Control4|Crestron|Lutron|Philips Hue|Nest|Ecobee|Alexa|Siri|Google Assistant|Google Home|HomeKit|SmartThings|Sonoff|Tuya|HDL|Savant|Xiaomi|Aqara|Schneider|Legrand)\b/
-const STANDARDS = /Wi-?Fi|Zigbee|KNX|\bMatter\b/
+const STANDARDS = /Wi-?Fi|Zigbee|KNX/
 const STANDARD_JUDGEMENT =
   /better|worse|more reliable|less reliable|superior|compatible|works with|certified|future-proof/i
 const WE_OUR_US = /\b(we|our|us)\b|Desert Sound/i
@@ -264,6 +264,7 @@ test("7. brands, competitors and neighbourhoods stay out", () => {
 
 test("8. standards appear as neutral body categories only", () => {
   assert.match(body, STANDARDS)
+  assert.doesNotMatch(body, /\bMatter\b/)
   assert.doesNotMatch(surfaceText, STANDARDS)
   const sentences = body.split(/(?<=[.!?])\s+/)
   for (const sentence of sentences) {
