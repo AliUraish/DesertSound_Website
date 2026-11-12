@@ -9,17 +9,17 @@
   "links": [
     {
       "label": "smart home automation",
-      "href": "/service/smart-home-automation/"
+      "href": "/service/smart-home-automation"
     },
     {
       "label": "audio distribution",
-      "href": "/service/audio-distribution/"
+      "href": "/service/audio-distribution"
     }
   ]
 }
 ---
 
-One-touch control works when every device talks to a central [smart home automation](/service/smart-home-automation/) processor — over IP, RS-232, or Zigbee — instead of each getting its own command. Press one scene and the processor times the rest: screen down while the projector warms, lights fading on a curve. The timing is the product. A pile of apps is not.
+One-touch control works when every device talks to a central [smart home automation](/service/smart-home-automation) processor — over IP, RS-232, or Zigbee — instead of each getting its own command. Press one scene and the processor times the rest: screen down while the projector warms, lights fading on a curve. The timing is the product. A pile of apps is not.
 
 ### What the System Needs
 
@@ -34,7 +34,7 @@ A scene is several actions on one button, written for how the room is used.
 
 **Movie night:** screen down, projector on in 4K, receiver in surround, playback handed to the usual streamer, overheads off, step lights at about 10% so people can still walk, blackout shades closed.
 
-**Pause / intermission:** sconces come up to about 20% so people can move without full house lights. Play restores the dark and the soundtrack. The same processor can sit alongside [audio distribution](/service/audio-distribution/) so volume and source stay in one place.
+**Pause / intermission:** sconces come up to about 20% so people can move without full house lights. Play restores the dark and the soundtrack. The same processor can sit alongside [audio distribution](/service/audio-distribution) so volume and source stay in one place.
 
 **Sports or gaming:** screen down, overheads around 40% so the room stays usable for talk and food. Different brief, different scene — don't force movie-dark on a match.
 
@@ -48,6 +48,6 @@ Fade lights over 4–6 seconds, not instantly — the eye needs that ramp. Scree
 
 ### Keep It Running
 
-Put the processor and router on a UPS so a Karachi outage or spike doesn't wipe the config. Update control firmware and apps so new streaming boxes still join the scene. Revisit lighting levels when you add a source or change lamps.
+We plan the network and backup around outages. Update control firmware and apps so new streaming boxes still join the scene. Revisit lighting levels when you add a source or change lamps.
 
-Use this with the [checklist for building a custom home cinema](/essential-checklist-for-building-a-custom-home-cinema/) if the room is still being planned. For a scene that actually fires cleanly, [contact us](/contact-us).
+Use this with the [checklist for building a custom home cinema](/essential-checklist-for-building-a-custom-home-cinema) if the room is still being planned. For a scene that actually fires cleanly, [contact us](/contact-us).
