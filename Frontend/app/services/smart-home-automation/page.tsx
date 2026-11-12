@@ -522,7 +522,7 @@ export default function SmartHomeAutomationPage() {
               <p className="text-lg font-light leading-relaxed text-black/70">
                 Whether you want a full home automation solution or automation for a few rooms, every project starts with a site survey. We walk through the rooms, check the existing wiring and switch boxes, look at Wi-Fi coverage, note the existing backup supply and ask how the family uses each space, indoors and out. The design comes next: which controls go in each room, where the controller and network equipment sit, and the scenes the home needs, from outdoor lighting, the gate and garden audio to{" "}
                 <Link href="/service/home-theatre-design-and-installation" className="underline underline-offset-4 hover:text-black">a home cinema tied into the same scenes</Link>
-                {" "}if you have one. The quote follows the design, because the number of rooms, the devices and the wiring work set the cost. Then we install and programme the system, planning around a qualified electrician for any board or circuit work. At handover, we show the family how each control works.
+                {" "}if you have one. The quote follows the design, because the number of rooms, the devices and the wiring work set the cost. Then we install and programme the system, planning around a qualified electrician for any board or circuit work. At handover, we show the family how each control works. For homes in Karachi, see <Link href="/service/smart-home-automation-karachi" className="underline underline-offset-4 hover:text-black">smart home automation in Karachi</Link>.
               </p>
             </motion.div>
           </div>
