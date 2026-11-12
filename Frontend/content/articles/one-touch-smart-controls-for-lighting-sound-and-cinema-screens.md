@@ -40,7 +40,7 @@ A scene is several actions on one button, written for how the room is used.
 
 ### Interfaces
 
-The household has to use it without a tutorial. Handheld remotes that keep volume and transport as physical buttons, with a screen for source and lighting, work better than a phone-only setup. A wall keypad by the door is the clean all-off when you leave. Voice is fine for dim and pause. Tablets and phones cover control from another room.
+The household has to use it without a tutorial. Handheld remotes that keep volume and transport as physical buttons, with a screen for source and lighting, work better than a phone-only setup. A wall keypad by the door is the clean all-off when you leave. Voice is fine for dim and pause. Tablets and phones cover control from another room. For when a wall panel or a phone app is the better fit, see [touchscreen panels vs. mobile apps](/touchscreen-panels-vs-mobile-apps-which-is-best).
 
 ### Programming Details
 
