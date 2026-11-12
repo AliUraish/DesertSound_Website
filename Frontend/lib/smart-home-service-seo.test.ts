@@ -125,9 +125,15 @@ test("smart-home rewrite links, CTA, schema and outage locks", () => {
     "/service/control-systems",
     "/contact-us",
     "/how-to-choose-a-home-automation-system-pakistan",
+    "/service/smart-home-automation-karachi",
   ]) {
     assert.equal(count(page, `href="${href}"`), 1, `href ${href} should appear once`)
   }
+  assert.doesNotMatch(page, /href="\/service\/smart-home-automation-karachi\//)
+  assert.match(
+    page,
+    /At handover, we show the family how each control works\. For homes in Karachi, see <Link href="\/service\/smart-home-automation-karachi" className="underline underline-offset-4 hover:text-black">smart home automation in Karachi<\/Link>\./,
+  )
   assert.doesNotMatch(page, /href="\/#contact"/)
   assert.match(page, />\s*Book a Consultation\s*</)
   assert.ok(page.includes(WHERE_WE_WORK))
