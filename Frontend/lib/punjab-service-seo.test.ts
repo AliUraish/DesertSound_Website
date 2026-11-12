@@ -124,7 +124,25 @@ test("Punjab hub copy links each destination once, slashless, with booking only 
     assert.doesNotMatch(link.href, /\/$/)
   }
   assert.equal(punjabServicePage.faqs[0].q, "Do you install home cinemas in Punjab?")
+  assert.equal(
+    punjabServicePage.faqs[0].a,
+    "Yes. We have a team in Lahore, and we work across Faisalabad, Multan, Sialkot and Bahawalpur. Every project follows the same order: survey, design, install, calibrate.",
+  )
+  assert.equal(
+    punjabFaqJsonLdItems()[0].answer,
+    "Yes. We have a team in Lahore, and we work across Faisalabad, Multan, Sialkot and Bahawalpur. Every project follows the same order: survey, design, install, calibrate.",
+  )
+  assert.doesNotMatch(copy, /travels from Karachi|travel from Karachi|site visits from Karachi/)
   assert.equal(punjabServicePage.faqs[1].q, "Does Desert Sound have an office in Punjab?")
+  assert.equal(
+    punjabServicePage.faqs[1].a,
+    "Our showroom is in Karachi. We have a team in Lahore. We have no office or showroom in Faisalabad, Multan, Sialkot or Bahawalpur. We work across those cities.",
+  )
+  assert.equal(
+    punjabFaqJsonLdItems()[1].answer,
+    "Our showroom is in Karachi. We have a team in Lahore. We have no office or showroom in Faisalabad, Multan, Sialkot or Bahawalpur. We work across those cities.",
+  )
+  assert.doesNotMatch(copy, /based in Karachi|serve those cities on site visits/)
   assert.equal(punjabServicePage.faqs[2].q, "Which Punjab cities do you cover?")
   assert.equal(punjabServicePage.faqs[3].q, "What happens on a Punjab site visit?")
   assert.equal(punjabServicePage.faqs[4].q, "How do I book a survey in Punjab?")

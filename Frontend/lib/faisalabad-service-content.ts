@@ -5,16 +5,16 @@ export const faisalabadServicePath = "/service/home-cinema-installation-faisalab
 export const faisalabadServiceTitle = "Home Cinema Installation in Faisalabad | Desert Sound"
 export const faisalabadServiceH1 = "Home Cinema Installation in Faisalabad"
 export const faisalabadServiceDescription =
-  "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
+  "Home cinema installation in Faisalabad by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan."
 
 export const faisalabadServicePage: RankingSeoPage = {
   slug: faisalabadServicePath,
   title: faisalabadServiceTitle,
   description: faisalabadServiceDescription,
   h1: faisalabadServiceH1,
-  body: `Desert Sound's Karachi team designs and installs home theaters in Faisalabad. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Faisalabad showroom.
+  body: `Desert Sound designs and installs home theaters in Faisalabad. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Faisalabad showroom.
 
-We have teams in Lahore and Karachi. For a Faisalabad house we travel from Karachi, survey the building, and install for that house. [Book a Faisalabad site-visit survey](/contact-us).
+We work across Faisalabad. For a Faisalabad house our team comes to the house for the survey, then we install for that house. [Book a Faisalabad site-visit survey](/contact-us).
 
 ### What home cinema installation in Faisalabad means
 
@@ -24,9 +24,9 @@ Some families give the cinema a room of its own, so the screen can sit in the da
 
 What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Faisalabad work follows that after the visit.
 
-### Site visits from Karachi: how we work in Faisalabad
+### How we work in Faisalabad
 
-For Faisalabad, our order never changes: look first, draw second, build third (hidden cabling, power), and tune last. The rooms we are proudest of are in Karachi, and that is where we refine this method; a Faisalabad family gets exactly the same discipline, brought to your door.
+For Faisalabad, our order never changes: look first, draw second, build third (hidden cabling, power), and tune last. The rooms we are proudest of are in Karachi, and that is where we refine this method; a Faisalabad family gets exactly the same discipline.
 
 Walking through, we measure the room, pin down where the sofa row and the screen wall will be, and sketch where wiring and power need to run while the plaster is still open. Fitting follows, and the job closes with tuning from your favourite seat. No Faisalabad office or showroom exists to visit.
 
@@ -53,15 +53,15 @@ Summer afternoon highs in Faisalabad often reach or exceed 40°C, and dust storm
 
 ### Book a Faisalabad site-visit survey
 
-[Book a Faisalabad site-visit survey](/contact-us). Tell us which room you have in mind and we will plan the trip from Karachi. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), [Bahawalpur](/service/home-cinema-installation-bahawalpur), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
+[Book a Faisalabad site-visit survey](/contact-us). Tell us which room you have in mind and we will plan the survey. The same site-visit work covers [home cinema installation in Islamabad](/service/home-cinema-installation-islamabad), [Lahore](/service/home-cinema-installation-lahore), [Multan](/service/home-cinema-installation-multan), [Sialkot](/service/home-cinema-installation-sialkot), [Bahawalpur](/service/home-cinema-installation-bahawalpur), and [Karachi](/service/home-cinema-installation-karachi). Punjab coverage is on [home cinema installation in Punjab](/service/home-cinema-installation-punjab).`,
   faqs: [
     {
       q: "Do you install home cinemas in Faisalabad?",
-      a: "Yes. Our people travel from Karachi to survey and then fit the theatre, following the identical plan, build and tune routine we use for every Pakistani home.",
+      a: "Yes. Our team comes to the house for the survey and then fits the theatre, following the identical plan, build and tune routine we use for every Pakistani home.",
     },
     {
       q: "Is Desert Sound based in Faisalabad?",
-      a: "No. Our base is Karachi, and Faisalabad jobs are site visits from there. There is no Faisalabad showroom. [Book a survey](/contact-us).",
+      a: "No. We work across Faisalabad. There is no Faisalabad showroom. Our showroom is in Karachi. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

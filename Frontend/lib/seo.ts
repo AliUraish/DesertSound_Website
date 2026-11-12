@@ -114,25 +114,25 @@ export const catalogServicePages: SeoPage[] = [
     path: "/service/home-cinema-installation-multan",
     title: "Home Cinema Installation in Multan | Desert Sound",
     description:
-      "Home cinema installation in Multan from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan.",
+      "Home cinema installation in Multan by Desert Sound. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan.",
   },
   {
     path: "/service/home-cinema-installation-faisalabad",
     title: "Home Cinema Installation in Faisalabad | Desert Sound",
     description:
-      "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+      "Home cinema installation in Faisalabad by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   },
   {
     path: "/service/home-cinema-installation-sialkot",
     title: "Home Cinema Installation in Sialkot | Desert Sound",
     description:
-      "Home cinema installation in Sialkot from Desert Sound's Karachi team. Design, install, and calibrate on a planned site visit — cinema rooms across Pakistan.",
+      "Home cinema installation in Sialkot by Desert Sound. Design, install, and calibrate on a planned site visit — cinema rooms across Pakistan.",
   },
   {
     path: "/service/home-cinema-installation-bahawalpur",
     title: "Home Cinema Installation in Bahawalpur | Desert Sound",
     description:
-      "Home cinema installation in Bahawalpur from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+      "Home cinema installation in Bahawalpur by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   },
   {
     path: "/service/home-cinema-installation-punjab",

@@ -53,9 +53,9 @@ test("Bahawalpur lander uses slug A, locked title/H1/meta, and is not a blog", (
   assert.equal(bahawalpurServiceH1, "Home Cinema Installation in Bahawalpur")
   assert.equal(
     bahawalpurServiceDescription,
-    "Home cinema installation in Bahawalpur from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+    "Home cinema installation in Bahawalpur by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   )
-  assert.ok(bahawalpurServiceDescription.length >= 150 && bahawalpurServiceDescription.length <= 160)
+  assert.equal(bahawalpurServiceDescription.length, 134)
   assert.equal(bahawalpurServicePage.slug, bahawalpurServicePath)
   assert.equal(bahawalpurServicePage.title, bahawalpurServiceTitle)
   assert.equal(bahawalpurServicePage.h1, bahawalpurServiceH1)
@@ -73,7 +73,7 @@ test("Bahawalpur ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(catalogSlice.slice(0, 800), /Home Cinema Installation in Bahawalpur \| Desert Sound/)
   assert.match(
     catalogSlice.slice(0, 900),
-    /Home cinema installation in Bahawalpur from Desert Sound's Karachi team/,
+    /Home cinema installation in Bahawalpur by Desert Sound/,
   )
   assert.match(schema, /@type": "Country"/)
   assert.match(schema, /@type": "City"/)
@@ -96,7 +96,8 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   const words = wordCount(copy)
   assert.ok(words >= 800 && words <= 1100, `copy is ${words} words; want 800–1100`)
   assert.match(bahawalpurServicePage.body, /What home cinema installation in Bahawalpur means/)
-  assert.match(bahawalpurServicePage.body, /Site visits from Karachi: how we work in Bahawalpur/)
+  assert.match(bahawalpurServicePage.body, /### How we work in Bahawalpur\n/)
+  assert.doesNotMatch(copy, /Site visits from Karachi/)
   assert.match(bahawalpurServicePage.body, /### Homes we visit in Bahawalpur\n/)
   assert.match(bahawalpurServicePage.body, /### Rooms we've finished\n/)
   assert.doesNotMatch(bahawalpurServicePage.body, /Karachi proof/)
@@ -134,7 +135,12 @@ test("Bahawalpur copy is install-led, 800–1100 words, with required mesh links
   assert.equal(copy.split("/service/home-cinema-installation-sialkot").length - 1, 1)
   assert.match(copy, /\/service\/home-cinema-installation-karachi/)
   assert.equal(copy.split("/service/home-cinema-installation-karachi").length - 1, 1)
-  assert.match(copy, /We have teams in Lahore and Karachi/)
+  assert.match(copy, /For a Bahawalpur house our team comes to the house for the survey/)
+  assert.doesNotMatch(copy, /teams in Lahore and Karachi/)
+  assert.doesNotMatch(
+    copy,
+    /travel from Karachi|travels from Karachi|site visits from Karachi|operate from Karachi|trip from Karachi/,
+  )
   assert.match(copy, /\[Book a Bahawalpur site-visit survey\]\(\/contact-us\)/)
   assert.doesNotMatch(copy, /through \[contact\]|via \[contact\]|Use \[contact\]/)
   assert.equal(copy.split("](/contact-us)").length - 1, 3)
@@ -199,7 +205,8 @@ test("Bahawalpur lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(bahawalpurServiceTitle, /Site Visits from Karachi/i)
   assert.match(bahawalpurServiceDescription, /site visit/)
-  assert.match(bahawalpurServiceDescription, /Karachi/)
+  assert.match(bahawalpurServiceDescription, /by Desert Sound/)
+  assert.doesNotMatch(bahawalpurServiceDescription, /Karachi team/)
 })
 
 test("sitemap and llms listings include the Bahawalpur service URL", () => {

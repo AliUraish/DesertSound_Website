@@ -151,11 +151,11 @@ Tell us your city, your area and the room you have in mind through our [contact 
   faqs: [
     {
       q: "Do you install home cinemas in Punjab?",
-      a: "Yes. We have a team in Lahore, and for Faisalabad, Multan, Sialkot and Bahawalpur our team travels from Karachi. Every project follows the same order: survey, design, install, calibrate.",
+      a: "Yes. We have a team in Lahore, and we work across Faisalabad, Multan, Sialkot and Bahawalpur. Every project follows the same order: survey, design, install, calibrate.",
     },
     {
       q: "Does Desert Sound have an office in Punjab?",
-      a: "Desert Sound is based in Karachi. We have a team in Lahore. We have no office or showroom in Faisalabad, Multan, Sialkot or Bahawalpur, and we serve those cities on site visits.",
+      a: "Our showroom is in Karachi. We have a team in Lahore. We have no office or showroom in Faisalabad, Multan, Sialkot or Bahawalpur. We work across those cities.",
     },
     {
       q: "Which Punjab cities do you cover?",

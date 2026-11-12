@@ -5,16 +5,16 @@ export const multanServicePath = "/service/home-cinema-installation-multan"
 export const multanServiceTitle = "Home Cinema Installation in Multan | Desert Sound"
 export const multanServiceH1 = "Home Cinema Installation in Multan"
 export const multanServiceDescription =
-  "Home cinema installation in Multan from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan."
+  "Home cinema installation in Multan by Desert Sound. Design, install, and calibrate on a site visit — home cinema rooms across Pakistan."
 
 export const multanServicePage: RankingSeoPage = {
   slug: multanServicePath,
   title: multanServiceTitle,
   description: multanServiceDescription,
   h1: multanServiceH1,
-  body: `Desert Sound's Karachi team designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
+  body: `Desert Sound designs and installs home theaters in Multan. We visit the house, design the cinema for those seats, build it into the room, and calibrate it there. It is a cinema built into the home, not a boxed kit, and there is no Multan showroom.
 
-We have teams in Lahore and Karachi. For a Multan house we travel from Karachi, survey the building, and install for that house. [Book a Multan site-visit survey](/contact-us).
+We work across Multan. For a Multan house our team comes to the house for the survey, then we install for that house. [Book a Multan site-visit survey](/contact-us).
 
 ### What home cinema installation in Multan means
 
@@ -24,9 +24,9 @@ A room used only as a cinema can be darker, and quieter for the neighbours. A li
 
 What the full install covers is on [home theater / home cinema design and installation in Pakistan](/service/home-theatre-design-and-installation). Multan work follows that after the visit.
 
-### Site visits from Karachi: how we work in Multan
+### How we work in Multan
 
-A Multan job runs survey → design → install (concealment and power) → calibrate. The steps match the rest of Pakistan. The finished rooms we study week to week sit in Karachi; Multan gets the same method on travel.
+A Multan job runs survey → design → install (concealment and power) → calibrate. The steps match the rest of Pakistan. The finished rooms we study week to week sit in Karachi; Multan gets the same method.
 
 On site we measure, fix the seating and screen positions to the structure, and plan routes for cables and power before paint goes on. Then comes the install, then a calibration pass at the main seat. There is no Multan showroom.
 
@@ -57,11 +57,11 @@ Summer afternoons in Multan often pass 40°C, and dust storms are common before 
   faqs: [
     {
       q: "Do you install home cinemas in Multan?",
-      a: "Yes. Our Karachi crew travels for Multan surveys and installs, using the same design–install–calibrate sequence we use across Pakistan.",
+      a: "Yes. Our team comes to the house for the survey and installs, using the same design–install–calibrate sequence we use across Pakistan.",
     },
     {
       q: "Is Desert Sound based in Multan?",
-      a: "No. We work Multan on site visits from Karachi. There is no Multan showroom. [Book a survey](/contact-us).",
+      a: "No. We work across Multan. There is no Multan showroom. Our showroom is in Karachi. [Book a survey](/contact-us).",
     },
     {
       q: "What does a home cinema installer do on a site visit?",

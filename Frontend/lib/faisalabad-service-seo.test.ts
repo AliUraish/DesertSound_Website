@@ -53,9 +53,9 @@ test("Faisalabad lander uses slug A, locked title/H1/meta, and is not a blog", (
   assert.equal(faisalabadServiceH1, "Home Cinema Installation in Faisalabad")
   assert.equal(
     faisalabadServiceDescription,
-    "Home cinema installation in Faisalabad from Desert Sound's Karachi team. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
+    "Home cinema installation in Faisalabad by Desert Sound. Design, install, and calibrate on a site visit — cinema rooms across Pakistan.",
   )
-  assert.ok(faisalabadServiceDescription.length >= 150 && faisalabadServiceDescription.length <= 160)
+  assert.equal(faisalabadServiceDescription.length, 134)
   assert.equal(faisalabadServicePage.slug, faisalabadServicePath)
   assert.equal(faisalabadServicePage.title, faisalabadServiceTitle)
   assert.equal(faisalabadServicePage.h1, faisalabadServiceH1)
@@ -71,7 +71,7 @@ test("Faisalabad ranking catalog and Service JSON-LD stay in lockstep", () => {
   assert.match(catalogSlice.slice(0, 800), /Home Cinema Installation in Faisalabad \| Desert Sound/)
   assert.match(
     catalogSlice.slice(0, 900),
-    /Home cinema installation in Faisalabad from Desert Sound's Karachi team/,
+    /Home cinema installation in Faisalabad by Desert Sound/,
   )
   assert.match(schema, /@type": "Country"/)
   assert.match(schema, /@type": "City"/)
@@ -94,7 +94,8 @@ test("Faisalabad copy is install-led, 800–1100 words, with required mesh links
   const words = wordCount(copy)
   assert.ok(words >= 800 && words <= 1100, `copy is ${words} words; want 800–1100`)
   assert.match(faisalabadServicePage.body, /What home cinema installation in Faisalabad means/)
-  assert.match(faisalabadServicePage.body, /Site visits from Karachi: how we work in Faisalabad/)
+  assert.match(faisalabadServicePage.body, /### How we work in Faisalabad\n/)
+  assert.doesNotMatch(copy, /Site visits from Karachi/)
   assert.match(faisalabadServicePage.body, /### Homes we visit in Faisalabad\n/)
   assert.match(faisalabadServicePage.body, /### Rooms we've finished\n/)
   assert.doesNotMatch(faisalabadServicePage.body, /Karachi proof/)
@@ -134,7 +135,12 @@ test("Faisalabad copy is install-led, 800–1100 words, with required mesh links
   assert.equal(copy.split("/service/home-cinema-installation-bahawalpur").length - 1, 1)
   assert.match(copy, /\/service\/home-cinema-installation-karachi/)
   assert.equal(copy.split("/service/home-cinema-installation-karachi").length - 1, 1)
-  assert.match(copy, /We have teams in Lahore and Karachi/)
+  assert.match(copy, /For a Faisalabad house our team comes to the house for the survey/)
+  assert.doesNotMatch(copy, /teams in Lahore and Karachi/)
+  assert.doesNotMatch(
+    copy,
+    /travel from Karachi|travels from Karachi|site visits from Karachi|operate from Karachi|trip from Karachi/,
+  )
   assert.match(copy, /\[Book a Faisalabad site-visit survey\]\(\/contact-us\)/)
   assert.doesNotMatch(copy, /through \[contact\]|on the \[contact\]/)
   assert.ok(copy.split("](/contact-us)").length - 1 >= 2)
@@ -198,7 +204,8 @@ test("Faisalabad lander does not invent local proof, superlatives, or sister bra
   assert.doesNotMatch(copy, /Karachi proof/)
   assert.doesNotMatch(faisalabadServiceTitle, /Site Visits from Karachi/i)
   assert.match(faisalabadServiceDescription, /site visit/)
-  assert.match(faisalabadServiceDescription, /Karachi/)
+  assert.match(faisalabadServiceDescription, /by Desert Sound/)
+  assert.doesNotMatch(faisalabadServiceDescription, /Karachi team/)
 })
 
 test("sitemap and llms listings include the Faisalabad service URL", () => {
