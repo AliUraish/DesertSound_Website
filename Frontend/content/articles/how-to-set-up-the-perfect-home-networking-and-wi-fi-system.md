@@ -40,4 +40,4 @@ Change the default admin login on day one. Use WPA3 if the router supports it, W
 
 Reboot, then check firmware. Slow speeds are often interference or an ISP issue, not a new router. Dead rooms need another node or a cable.
 
-[Contact us](/contact-us/) for a [home network and Wi-Fi](/service/home-networking-and-wi-fi/) planned with the rest of the house.
+[Contact us](/contact-us) for a [home network and Wi-Fi](/service/home-networking-and-wi-fi/) planned with the rest of the house.

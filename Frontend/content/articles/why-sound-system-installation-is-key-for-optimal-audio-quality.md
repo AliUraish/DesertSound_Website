@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -58,4 +58,4 @@ For a shared lounge, we often start with a strong three-front setup and one sub,
 
 If the house also wants kitchen and bedroom music, that is a zone plan, not more cinema speakers pointed at the hallway.
 
-A sound system install is part of every Desert Sound cinema, not an add-on. See [audio distribution](/service/audio-distribution/) or [contact us](/contact-us/).
+A sound system install is part of every Desert Sound cinema, not an add-on. See [audio distribution](/service/audio-distribution/) or [contact us](/contact-us).

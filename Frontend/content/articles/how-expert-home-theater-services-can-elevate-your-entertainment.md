@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -41,4 +41,4 @@ Sightlines and distance first. Everyone should see the screen without necks cran
 
 Support when a source drops offline. Safer electrical runs than a weekend stack on a power strip. Equipment chosen for the room, not the catalogue page.
 
-[Book a site visit](/contact-us/) for [home theatre design and installation](/service/home-theatre-design-and-installation/).
+[Book a site visit](/contact-us) for [home theatre design and installation](/service/home-theatre-design-and-installation/).

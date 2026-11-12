@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -47,4 +47,4 @@ A projector left on maximum lamp and speakers driven into clip wear faster. Sens
 
 Use a calibration disc or a tool such as THX Optimizer, then confirm on a film you know. Note lights-on versus lights-off before you lock settings. If you do not want to own that process, it belongs in the install — not as a favour later.
 
-Calibration is how a [home theatre](/service/home-theatre-design-and-installation/) reaches the performance you already paid for. [Book it with Desert Sound](/contact-us/).
+Calibration is how a [home theatre](/service/home-theatre-design-and-installation/) reaches the performance you already paid for. [Book it with Desert Sound](/contact-us).

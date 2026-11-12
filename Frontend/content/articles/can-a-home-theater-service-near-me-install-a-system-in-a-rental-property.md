@@ -49,4 +49,4 @@ Many owners refuse in their head and agree when they see you aren't opening wall
 
 A few months' stay, probably not. A multi-year Karachi rental after long commutes, yes — the evenings are why people want the room. We plan around the property, not a villa template.
 
-A rental cinema is a constraints problem, not a loophole. [Contact us](/contact-us/) if you want a layout that comes out cleanly when the lease ends.
+A rental cinema is a constraints problem, not a loophole. [Contact us](/contact-us) if you want a layout that comes out cleanly when the lease ends.

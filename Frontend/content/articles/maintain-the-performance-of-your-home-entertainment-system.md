@@ -33,4 +33,4 @@ Service contracts and extended cover should state response time and what is incl
 
 You should expect: preventive visits, faster repairs when something breaks, remote diagnosis where it is safe, current firmware, and a route to add a source or a zone without starting over.
 
-Book a check before the system feels broken. [Contact Desert Sound](/contact-us/) for maintenance on audio, video, and automation.
+Book a check before the system feels broken. [Contact Desert Sound](/contact-us) for maintenance on audio, video, and automation.

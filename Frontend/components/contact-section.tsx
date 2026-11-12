@@ -178,7 +178,7 @@ export function ContactSection({ showFaq = false }: { showFaq?: boolean }) {
               Send us a message
             </h3>
             <p className="text-black/60 mb-4">
-              We&apos;ll get back to you within 24 hours
+              Fill in the form and we will contact you.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">

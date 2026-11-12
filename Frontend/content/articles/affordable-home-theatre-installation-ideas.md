@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -60,6 +60,6 @@ Skip decorative kits until the room plays a film you can sit through. Skip 8K an
 
 If you are in a rental, use furniture and trunking you can take with you. Do not cut a landlord’s marble for a Saturday project. Wireless rears and a soundbar are the honest setup there.
 
-When you are ready for in-wall cable or a projector, that is the moment to [contact Desert Sound](/contact-us/) rather than guessing the throw.
+When you are ready for in-wall cable or a projector, that is the moment to [contact Desert Sound](/contact-us) rather than guessing the throw.
 
-For a room that still needs a proper install path, [contact Desert Sound](/contact-us/).
+For a room that still needs a proper install path, [contact Desert Sound](/contact-us).

@@ -45,4 +45,4 @@ Default EQ and delay are not a cinema. Level, EQ, delay, and room correction are
 
 A drawer of remotes is the old failure mode. Lights, shades, and playback should be one scene or one keypad. If starting a film takes a tour of the rack, the system isn't finished. One-touch and a dim on play are what make the room get used.
 
-Buy the room plan first, then the kit. Place speakers to the seat, treat the hard surfaces, set screen height to the eye, run proper cable, and calibrate. One scene should start the film. Expensive equipment is not a result. If you want the plan and the install to match the spend, [contact us](/contact-us/).
+Buy the room plan first, then the kit. Place speakers to the seat, treat the hard surfaces, set screen height to the eye, run proper cable, and calibrate. One scene should start the film. Expensive equipment is not a result. If you want the plan and the install to match the spend, [contact us](/contact-us).

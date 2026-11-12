@@ -25,6 +25,7 @@ const smartHomeLayout = readFileSync(
 )
 const rankingPage = readFileSync(join(root, "components/ranking-seo-page.tsx"), "utf8")
 const rankingCatalog = readFileSync(join(root, "lib/ranking-seo-content.ts"), "utf8")
+const networkingLive = readFileSync(join(root, "app/services/home-networking-and-wi-fi/page.tsx"), "utf8")
 
 const servicePagesThatAlreadyEmitFaqPage = new Set([
   "home-theatre-design-and-installation",
@@ -163,6 +164,16 @@ test("smart-home FAQPage acceptedAnswer text appears in server HTML outside scri
   assert.match(smartHomeLive, /smartHomeServiceFaqs/)
   assertAccordionAlwaysRendersAnswers(smartHomeLive, "smart-home accordion")
   assertAnswersInVisibleHtml(smartHomeServiceFaqs, "smart-home")
+})
+
+test("networking FAQ answers stay in the server HTML when the accordion is closed", () => {
+  assertAccordionAlwaysRendersAnswers(networkingLive, "networking accordion")
+  assert.match(
+    networkingLive,
+    /We plan the network and backup around outages\. During the survey, we check how your home handles load-shedding and internet drops, and plan the system around them\./,
+  )
+  assert.doesNotMatch(networkingLive, /isOpen &&/)
+  assert.doesNotMatch(networkingLive, /display:\s*none/)
 })
 
 test("no other /service/ page gains FAQPage JSON-LD", () => {

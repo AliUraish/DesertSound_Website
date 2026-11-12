@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -43,4 +43,4 @@ A theatre scene belongs with the rest: lights down, shades closed, system on. De
 
 Comfort is fewer small tasks. Security is knowing the door and the feed without standing in the porch. Utility use usually drops when cooling and lights stop running empty — the amount depends on the house, not a generic percentage.
 
-Desert Sound specifies what the rooms need, then installs it. [See smart home automation](/service/smart-home-automation/) or [contact us](/contact-us/) for a plan that includes the theatre.
+Desert Sound specifies what the rooms need, then installs it. [See smart home automation](/service/smart-home-automation/) or [contact us](/contact-us) for a plan that includes the theatre.

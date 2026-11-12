@@ -9,23 +9,23 @@
   "links": [
     {
       "label": "Smart Home Automation",
-      "href": "/service/smart-home-automation/"
+      "href": "/service/smart-home-automation"
     },
     {
       "label": "Audio distribution systems",
-      "href": "/service/audio-distribution/"
+      "href": "/service/audio-distribution"
     }
   ]
 }
 ---
 
-A big panel is not a home cinema. Display, light, seating, wiring, and [audio distribution](/service/audio-distribution/) have to work as one. Most "just get 8K" advice ignores the room.
+A big panel is not a home cinema. Display, light, seating, wiring, and [audio distribution](/service/audio-distribution) have to work as one. Most "just get 8K" advice ignores the room.
 
 ### 4K versus 8K
 
 4K is four times the pixels of Full HD. For almost every living room we see, that is the practical step up: sharp, widely supported, and easier to feed with real content.
 
-8K doubles 4K's pixels. There is still little native 8K film or series to watch. You also need a large screen and enough seating distance before the extra pixels show. In a compact Karachi apartment, 8K is usually spend you cannot see. Put that budget into control, [smart home automation](/service/smart-home-automation/), or the speakers.
+8K doubles 4K's pixels. There is still little native 8K film or series to watch. You also need a large screen and enough seating distance before the extra pixels show. In a compact Karachi apartment, 8K is usually spend you cannot see. Put that budget into control, [smart home automation](/service/smart-home-automation), or the speakers.
 
 ### Micro-LED
 

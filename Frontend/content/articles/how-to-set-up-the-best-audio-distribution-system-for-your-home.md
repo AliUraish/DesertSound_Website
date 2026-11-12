@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -47,4 +47,4 @@ Dust grilles. Walk every zone monthly. On wireless, watch the network. On wired,
 
 A cinema scene — lights, shades, sound — can sit on the same control as the house audio.
 
-[Audio distribution](/service/audio-distribution/) is how the rest of the house keeps up with the theatre. [Talk to Desert Sound](/contact-us/) to size the zones.
+[Audio distribution](/service/audio-distribution/) is how the rest of the house keeps up with the theatre. [Talk to Desert Sound](/contact-us) to size the zones.

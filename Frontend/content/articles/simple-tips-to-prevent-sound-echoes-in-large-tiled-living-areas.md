@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -45,4 +45,4 @@ Bare wood, shiny leather, and metal bounce like tile. A large upholstered sectio
 
 Tall indoor plants in empty corners (a fiddle-leaf fig, a peace lily) scatter energy so it doesn't keep a clean path across the floor.
 
-Skipping this is a common [mistake to avoid](/top-mistakes-to-avoid-when-setting-up-your-home-theater-projector-and-screen/) — the picture looks fine and the room still chatters. If the living area is also the cinema, [contact us](/contact-us/) and we'll treat the reflections that matter.
+Skipping this is a common [mistake to avoid](/top-mistakes-to-avoid-when-setting-up-your-home-theater-projector-and-screen/) — the picture looks fine and the room still chatters. If the living area is also the cinema, [contact us](/contact-us) and we'll treat the reflections that matter.

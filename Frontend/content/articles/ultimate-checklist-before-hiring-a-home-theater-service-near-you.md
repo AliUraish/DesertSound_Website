@@ -45,4 +45,4 @@ Read reviews and notice repeated complaints — especially no follow-up. Ask for
 
 Ask how many days, whether work is staged, and how furniture and floors are protected. Ask about a dedicated circuit, ventilation for the projector and receiver, HDMI bandwidth, and ARC/eARC if you use TV apps. Wiring should leave a path to add a source later without ripping the wall again.
 
-Walk away if they dodge photos, refuse a written warranty, or upsell every box without saying why. [Contact Desert Sound](/contact-us/) if you want [home theatre design and installation](/service/home-theatre-design-and-installation/) that plans the room before the gear.
+Walk away if they dodge photos, refuse a written warranty, or upsell every box without saying why. [Contact Desert Sound](/contact-us) if you want [home theatre design and installation](/service/home-theatre-design-and-installation/) that plans the room before the gear.

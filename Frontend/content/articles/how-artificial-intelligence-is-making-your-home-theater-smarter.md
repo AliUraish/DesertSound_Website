@@ -43,4 +43,4 @@ Play can dim lights and close motorized shades. Bias lighting behind the [home c
 
 Some systems flag a hot projector lamp, odd power draw on the speakers, or a slow network, and give the stream priority so it doesn't buffer when the rest of the house is online. That's maintenance, not magic. The point is an uninterrupted night, not a dashboard.
 
-None of this replaces speaker placement or a treated room. AI takes the fiddly work off the night — picture, level, lights — once the hardware is already in the right place. For that design, [contact us](/contact-us/).
+None of this replaces speaker placement or a treated room. AI takes the fiddly work off the night — picture, level, lights — once the hardware is already in the right place. For that design, [contact us](/contact-us).

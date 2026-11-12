@@ -47,4 +47,4 @@ Imported motion seats that tilt are large, costly, and hard to source here. Tran
 
 Sound first. Then lighting. Scent and motion only if the room is used hard enough to justify them. Unused gadgets are just rack heat. Daily use beats a loaded rack that sits dark.
 
-If you're planning a cinema in Karachi and want those layers specified in order, [contact us](/contact-us/).
+If you're planning a cinema in Karachi and want those layers specified in order, [contact us](/contact-us).

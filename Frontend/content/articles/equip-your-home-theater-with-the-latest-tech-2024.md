@@ -13,7 +13,7 @@
     },
     {
       "label": "Contact us",
-      "href": "/contact-us/"
+      "href": "/contact-us"
     }
   ]
 }
@@ -37,4 +37,4 @@ In-wall or in-ceiling speakers keep the room looking like a room. Surround still
 
 Lights, shades, source, and volume on one keypad or app. That's [control systems](/service/control-systems/), not a drawer of remotes.
 
-[Contact Desert Sound](/contact-us/) to spec a [home theatre](/service/home-theatre-design-and-installation/) for the room you have.
+[Contact Desert Sound](/contact-us) to spec a [home theatre](/service/home-theatre-design-and-installation/) for the room you have.
