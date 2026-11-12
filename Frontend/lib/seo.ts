@@ -149,6 +149,12 @@ export const catalogServicePages: SeoPage[] = [
     image: "/Pictures Final/Services/Smart_Home_Automation/image copy.jpg",
   },
   {
+    path: "/service/smart-home-automation-karachi",
+    title: "Smart Home Automation in Karachi",
+    description:
+      "Smart home automation in Karachi: lighting, AC, curtains, security and home cinema on one app, planned after a survey of your apartment or bungalow.",
+  },
+  {
     path: "/service/audio-distribution",
     title: "Multi-Room Audio Distribution in Pakistan",
     description:
