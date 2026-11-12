@@ -88,3 +88,23 @@ test("planning guide points once to the cost post without trailing slashes", () 
   assert.doesNotMatch(meta.title, /cost/i)
   assert.doesNotMatch(meta.description, /cost/i)
 })
+
+test("planning guide redo-a-room cost section sits after budget and stays claim-free", () => {
+  const heading = "### What Drives the Cost of Renovating or Redoing a Home Theater Room"
+  assert.equal(body.split(heading).length - 1, 1)
+
+  const headingIndex = body.indexOf(heading)
+  const costHrefs = [...body.matchAll(/\]\(([^)]+)\)/g)]
+    .map((match) => match[1])
+    .filter((href) => href.startsWith("/home-theatre-system-cost-pakistan"))
+  assert.equal(costHrefs.length, 1)
+  assert.equal(costHrefs[0], "/home-theatre-system-cost-pakistan")
+  assert.ok(body.indexOf("/home-theatre-system-cost-pakistan") > headingIndex)
+
+  assert.equal(body.split("](/contact-us)").length - 1, 1)
+  assert.doesNotMatch(body, /\]\(\/contact-us\/\)/)
+
+  const section = body.slice(headingIndex, body.indexOf("### DIY vs Professional"))
+  assert.doesNotMatch(section, /\d/)
+  assert.doesNotMatch(section, /(?<![-\w])free\b|\bbest\b|#1|\bleading\b|\btop\b/i)
+})
