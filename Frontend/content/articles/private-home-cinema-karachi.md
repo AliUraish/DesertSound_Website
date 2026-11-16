@@ -1,7 +1,7 @@
 ---
 {
   "slug": "/private-home-cinema-karachi",
-  "title": "Private Home Cinema in Karachi: How to Plan One",
+  "title": "Private Cinema in Karachi: Planning One at Home",
   "description": "Planning a private cinema at home in Karachi? Compare a dedicated room with a shared lounge, then plan seating, screen, sound, wiring and the site survey.",
   "h1": "Planning a Private Home Cinema in Karachi",
   "date": "2026-10-13",
