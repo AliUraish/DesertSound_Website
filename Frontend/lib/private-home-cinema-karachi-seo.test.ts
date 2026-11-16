@@ -75,7 +75,7 @@ const pageCopy = `${body}\n${meta.faqs.map((faq: { q: string; a: string }) => `$
 
 test("private cinema Karachi guide locks title, H1, and meta without doubling the brand", () => {
   assert.equal(meta.slug, "/private-home-cinema-karachi")
-  assert.equal(meta.title, "Private Home Cinema in Karachi: How to Plan One")
+  assert.equal(meta.title, "Private Cinema in Karachi: Planning One at Home")
   assert.equal(meta.h1, "Planning a Private Home Cinema in Karachi")
   assert.equal(
     meta.description,
@@ -86,7 +86,7 @@ test("private cinema Karachi guide locks title, H1, and meta without doubling th
   assert.equal(blogTitleSegment(meta.title), meta.title)
   assert.equal(
     `${blogTitleSegment(meta.title)} | Desert Sound`,
-    "Private Home Cinema in Karachi: How to Plan One | Desert Sound",
+    "Private Cinema in Karachi: Planning One at Home | Desert Sound",
   )
   assert.match(slugPage, /blogTitleSegment\(page\.title\)/)
   assert.match(layout, /template:\s*`%s \| \$\{siteName\}`/)
