@@ -65,4 +65,4 @@ If cameras and lights already exist, we note which ones fall over when the movie
 
 A password and a firmware update are part of handover. So is a simple map of what is wired and what is wireless, so the next person in the house can add a laptop without guessing.
 
-Plan the network with the cinema, not after. [Home networking and Wi-Fi](/service/home-networking-and-wi-fi/).
+Plan the network with the cinema, not after. [Home networking and Wi-Fi](/service/home-networking-and-wi-fi/). For homes in Karachi, see our [smart home automation in Karachi](/service/smart-home-automation-karachi) page.

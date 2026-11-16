@@ -19,7 +19,7 @@
 }
 ---
 
-One-touch control works when every device talks to a central [smart home automation](/service/smart-home-automation) processor — over IP, RS-232, or Zigbee — instead of each getting its own command. Press one scene and the processor times the rest: screen down while the projector warms, lights fading on a curve. The timing is the product. A pile of apps is not.
+One-touch control works when every device talks to a central [smart home automation](/service/smart-home-automation) processor — over IP, RS-232, or Zigbee — instead of each getting its own command. Press one scene and the processor times the rest: screen down while the projector warms, lights fading on a curve. The timing is the product. A pile of apps is not. If you're in Karachi, see our [smart home automation in Karachi](/service/smart-home-automation-karachi) page.
 
 ### What the System Needs
 
