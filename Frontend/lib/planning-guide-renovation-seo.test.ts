@@ -8,10 +8,10 @@ import { blogTitleSegment } from "./load-blog-articles.ts"
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const siteName = "Desert Sound"
 
-const planTitle = "Plan or Renovate a Home Theater Room in Pakistan"
+const planTitle = "Renovating or Redoing a Home Theater Room"
 const planH1 = "How to Plan or Renovate a Home Theater Room in Pakistan"
 const planDescription =
-  "Planning or renovating a home theater room in Pakistan? Size, light, seating, wiring and power set the plan, and a site survey shapes the budget."
+  "Renovating or redoing a home theater room in Pakistan? This guide covers what shapes the work and budget: size, light, seating, wiring and power."
 const planIntro =
   "Planning or renovating a home theater room in Pakistan starts with the room, not the gear. Seating, light, wiring, acoustics and power decide the work, and a site survey shapes the budget before anything is bought."
 const planSlug = "/how-to-plan-home-theater-installation-for-any-room"
