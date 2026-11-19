@@ -1,8 +1,8 @@
 ---
 {
   "slug": "/how-to-plan-home-theater-installation-for-any-room",
-  "title": "Plan or Renovate a Home Theater Room in Pakistan",
-  "description": "Planning or renovating a home theater room in Pakistan? Size, light, seating, wiring and power set the plan, and a site survey shapes the budget.",
+  "title": "Renovating or Redoing a Home Theater Room",
+  "description": "Renovating or redoing a home theater room in Pakistan? This guide covers what shapes the work and budget: size, light, seating, wiring and power.",
   "h1": "How to Plan or Renovate a Home Theater Room in Pakistan",
   "image": "/blog-images/how-to-plan-home-theater-installation-for-any-room.jpeg",
   "faqs": [],
